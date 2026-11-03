@@ -103,4 +103,3 @@ def test_openalex_client_batch_parsing():
     assert res["citation_count"] == 6071
     assert res["openalex_id"] == "https://openalex.org/W4385318467"
     assert len(res["referenced_works"]) == 2
-
