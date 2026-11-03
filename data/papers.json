@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-03T05:33:20Z",
-  "total_count": 162,
+  "last_updated": "2026-11-03T07:11:06Z",
+  "total_count": 165,
   "papers": [
     {
       "id": "2611.02365",
@@ -30,16 +30,128 @@
       "code_url": "https://github.com/MAdrid1011/SCARF",
       "project_url": null,
       "abstract": "Depth-guided, cost-volume-based Generalizable 3D Gaussian Splatting (G-3DGS) encoders reconstruct scenes as sets of Gaussian primitives directly from multi-view images without requiring per-scene optimization, thereby facilitating feed-forward novel-view synthesis on edge computing platforms. However, their shared encoder architecture presents two primary bottlenecks. First, the per-pixel depth search disregards semantic similarity within the 2D feature space, causing depth search operations to account for over 65% of memory traffic due to redundant exhaustive candidate scans. Second, the sequential pipeline of depth prediction followed by Gaussian generation neglects local 3D geometric continuity, resulting in more than 52% of generated Gaussians being redundant prior to instantiation. In this paper, we introduce SCARF, a dataflow-co-designed accelerator that aligns each bottleneck with a corresponding scene-level regularity. To mitigate the first bottleneck, Feature Similarity Depth Reuse reconceptualizes depth search as a problem of semantic locality: depth consistency is determined by affinity in feature space rather than physical address proximity. It transforms exhaustive per-pixel depth searches into anchor-centered local searches. To overcome the second bottleneck, Scene-Adaptive Early Sparsification disrupts the conventional serial depth-to-materialization boundary by probing each tile to infer local scene regularity. It then selectively activates only the minimally sufficient generation pathway, eliminating redundant Gaussian computations before primitive instantiation. On a 27.8 square millimeter 28 nm post-layout design, SCARF delivers a 2.94x geometric-mean end-to-end speedup with maximum PSNR degradation below 0.072%, 2.23 inferences per joule, and 34.5x GPU energy efficiency.",
-      "tldr": "Depth-guided, cost-volume-based Generalizable 3D Gaussian Splatting (G-3DGS) encoders reconstruct scenes as sets of Gaussian primitives directly from multi-view images without requiring per-scene optimization, thereby facilitating feed-forw...",
+      "tldr": "Introduces SCARF, a dataflow-co-designed accelerator that aligns each bottleneck with a corresponding scene-level regularity.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.AR",
       "comment": "17 pages, 16 figures. Accepted by MICRO 2026; awarded all three MICRO 2026 Artifact Evaluation badges. Code repo: https://github.com/MAdrid1011/SCARF"
+    },
+    {
+      "id": "2611.02658",
+      "arxiv_id": "2611.02658",
+      "doi": null,
+      "source": "arxiv",
+      "title": "OctreeSplat: Hierarchical Octree-Guided Feed-Forward Gaussian Splatting",
+      "authors": [
+        "Yibin Zhao",
+        "Yihan Pan",
+        "Wenli Yang",
+        "Jun Nan",
+        "Jianjun Yi"
+      ],
+      "first_author": "Zhao et al.",
+      "published_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "paper_url": "https://arxiv.org/abs/2611.02658",
+      "pdf_url": "https://arxiv.org/pdf/2611.02658.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) has shown considerable potential for novel view synthesis (NVS) and 3D reconstruction. Feed-forward methods avoid costly per-scene optimization, but fixed image or spatial resolutions limit their ability to allocate primitives according to local complexity. We present OctreeSplat, a hierarchical octree-guided feed-forward Gaussian splatting. OctreeSplat extracts multi-view features and geometric priors from a frozen visual foundation model (VFM), constructs a hierarchical octree, and predicts densification scores. The resulting representation allocates Gaussian primitives at spatially varying densities according to local complexity. Stochastic solids volume rendering improves depth rendering, strengthens geometric supervision, and supports surface reconstruction. When camera parameters are available, an optional test-time optimization (TTO) module improves agreement between predicted and ground-truth parameters. Training updates only 76 million additional parameters and requires 35 GPU-hours. Experiments on Replica, TUM, Tanks and Temples, and DTU demonstrate competitive RGB view synthesis, depth synthesis, and surface reconstruction. OctreeSplat reduces the number of Gaussian primitives while maintaining high reconstruction quality.",
+      "tldr": "Presents OctreeSplat, a hierarchical octree-guided feed-forward Gaussian splatting.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "Human Avatars & VR"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Feed-Forward",
+        "Mesh & Surface",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null
+    },
+    {
+      "id": "2611.02767",
+      "arxiv_id": "2611.02767",
+      "doi": null,
+      "source": "arxiv",
+      "title": "GaussFlaw: Fine-Grained Perceptual Diagnosis for 3D Gaussian Splatting",
+      "authors": [
+        "Shaocheng Shen",
+        "Zihan Zheng",
+        "Kejin Li",
+        "Lu Liu",
+        "Xiaoyun Zhang",
+        "Qiang Hu",
+        "Wenjun Zhang"
+      ],
+      "first_author": "Shen et al.",
+      "published_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "paper_url": "https://arxiv.org/abs/2611.02767",
+      "pdf_url": "https://arxiv.org/pdf/2611.02767.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) enables photorealistic novel- view synthesis with real-time rendering, yet fine-grained di- agnosis of its rendering artifacts remains challenging. These artifacts are typically spatially localized and exhibit diverse degradation patterns, making them difficult to character- ize using global quality metrics and image-level assessment benchmarks, which provide no explicit indication of where they occur or what types of artifacts they represent. To ad- dress this limitation, we introduce GaussFlaw-80K, the first large-scale dataset for fine-grained perceptual diagnosis in 3DGS. Constructed through a model-assisted human-in-the- loop pipeline, GaussFlaw-80K contains 80,049 artifact re- gions across 14,289 rendered images, each annotated with a pixel-level mask and one of eight flaw labels spanning ge- ometric, blending, and photometric degradations. These an- notations turn 3DGS artifact diagnosis into an explicit and measurable task. Building on this dataset, we propose Ge- oCritic, a geometry-guided multi-task model that integrates RGB appearance with depth-derived cues to jointly localize artifacts and classify their flaw types. Beyond evaluation, we further demonstrate the downstream benefits of fine-grained diagnosis through three complementary targeted operations: Gaussian densification, attribute correction, and outlier prun- ing. Experiments show that GeoCritic achieves an AUC-J of 0.9507 and an Acc@1 of 80.08%, while diagnosis-guided re- finement improves all reported global and crop-level metrics across diverse datasets and 3DGS backbones.",
+      "tldr": "To ad- dress this limitation, we introduce GaussFlaw-80K, the first large-scale dataset for fine-grained perceptual diagnosis in 3DGS.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null
+    },
+    {
+      "id": "2611.03114",
+      "arxiv_id": "2611.03114",
+      "doi": null,
+      "source": "arxiv",
+      "title": "3D Gaussian Splatting within Self-Learned Neural View-Dependent Color Fields",
+      "authors": [
+        "Yixiao Yang",
+        "Yu-Shen Liu",
+        "Zhizhong Han"
+      ],
+      "first_author": "Yang et al.",
+      "published_date": "2026-11-02",
+      "updated_date": "2026-11-02",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "paper_url": "https://arxiv.org/abs/2611.03114",
+      "pdf_url": "https://arxiv.org/pdf/2611.03114.pdf",
+      "code_url": "https://github.com/yangyixi21/Neural-Color-Fields-3DGS",
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) has become a vital tool in novel view synthesis. 3D Gaussian functions with attributes like color, opacity, and scale are stacked together to explicitly model a radiance field. However, discrete 3D Gaussians usually produce poor depth with few geometry details but lots of floaters, which hinders the effective modeling of smooth radiance fields. To address this issue, we propose to learn a radiance field within a continuous view-dependent color field parameterized by neural networks. With continuous constraints in color, the bias on low-frequency signals of neural networks can highly encourage the geometry modeling to contribute to high-frequency color variations on images, getting rid of solely relying on the color attribute itself. Moreover, we impose a constraint to improve the Lipschitz continuity of the neural color field, making large changes of each Gaussian's color also match with large changes of its position in terms of a ratio. To this end, we additionally introduce novel self-learning strategies to improve the learning of the neural view-dependent color field without any external knowledge or priors, aiming for better generalization on unseen scenes. Our numerical and visual comparisons on widely used benchmarks justify our idea and show better ability of high fidelity geometry recovery in 3DGS. Project page: https://github.com/yangyixi21/Neural-Color-Fields-3DGS.",
+      "tldr": "Proposes to learn a radiance field within a continuous view-dependent color field parameterized by neural networks.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null
     },
     {
       "id": "2611.01677",
@@ -83,14 +195,15 @@
       "code_url": null,
       "project_url": "https://xiaomiautoworldmodel.github.io/CausalWorldModel/",
       "abstract": "We present Xiaomi Auto World Model 2.0, a unified streaming causal world model for Physical AI. It models and generates causal physical evolution in the real world, and unifies heterogeneous conditioning inputs for view-consistent generation. The architecture integrates View-Temporal Attention (VTA) to capture cross-view spatial dependencies and temporal dynamics, together with Multi-view Rotary Position Encoding (RoPE) to encode positional relationships across views and time. WorldRec 2.0 reconstructs static and dynamic 3D Gaussians from multi-view, multi-temporal observations in a single forward pass and uses their renderings as explicit scene context to preserve geometry and appearance during long-horizon generation. Conditioning inputs are fused through VAE latent concatenation in a shared representation space. We incorporate Gated Linear Attention (GLA) into the temporal layers of VTA for efficient streaming inference, reducing computation and KV-cache memory during multi-view rollouts. A physical-interaction data pipeline covers diverse interactions and long-tailed events. From Pre-train onward, these data are combined with large-scale videos and heterogeneous visual modalities to learn visual, geometric, and dynamic priors. During Mid-train, training across diverse view configurations further improves the model's ability to capture how actions and object states shape subsequent scene evolution. After distillation-based Post-train, we apply the model to closed-loop simulation, closed-loop training, and World Action Model (WAM) applications. These applications generate physically consistent future states and support world-state prediction, policy learning, and action generation for Physical AI.",
-      "tldr": "We present Xiaomi Auto World Model 2.0, a unified streaming causal world model for Physical AI.",
+      "tldr": "Presents Xiaomi Auto World Model 2.0, a unified streaming causal world model for Physical AI.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
         "Autonomous Driving & Urban Scenes"
       ],
       "tags": [
-        "Physics & Simulation"
+        "Physics & Simulation",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.AI",
       "comment": "40 pages, 20 figures. Project page: https://xiaomiautoworldmodel.github.io/CausalWorldModel/"
@@ -119,7 +232,7 @@
       "code_url": null,
       "project_url": "https://vlsplat.github.io/",
       "abstract": "Learning semantic representations for 3D Gaussian Splatting has recently emerged as a promising direction for 3D scene understanding. However, existing 2D-to-3D semantic lifting approaches rely primarily on 2D segmentation supervision and lack object-level priors, causing the learned representation to be driven by local mask evidence rather than holistic object structure. In this paper, we present VLSplat, a vision-language guided approach for object-centric semantic lifting in 3D Gaussian Splatting. Our method augments mask-based lifting with object-level semantic priors derived from vision-language models and refines Gaussian representations using an object-group scene graph. The refinement is performed through two language-guided modules: intra-group refinement suppresses semantic noise within object groups, while inter-group acquisition expands object support regions by incorporating structurally relevant candidates from neighboring groups. Extensive experiments on indoor scene datasets demonstrate that VLSplat improves the semantic consistency and structural completeness of object-level categories. Our code and models are available at https://vlsplat.github.io/.",
-      "tldr": "Learning semantic representations for 3D Gaussian Splatting has recently emerged as a promising direction for 3D scene understanding.",
+      "tldr": "Presents VLSplat, a vision-language guided approach for object-centric semantic lifting in 3D Gaussian Splatting.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -152,13 +265,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "The efficiency and fidelity of 3D Gaussian Splatting critically depend on adaptive density control, which grows and suppresses Gaussian primitives throughout optimization. However, the standard pipeline still relies on heuristic view-space gradients, scale thresholds, and global opacity resets, rather than explicitly assessing the loss-reducing effect of each split, clone, or opacity update. This mismatch can allocate primitives to already-sufficient regions, miss under-reconstructed structures, and destabilize training through blanket opacity changes. In this work, we recast adaptive density control as a collection of local loss-reduction decisions. We derive efficient Taylor-based per-Gaussian surrogates that predict the objective change caused by three primitive-level operations: splitting, cloning, and opacity decay. This yields a unified loss-aware framework with three components. First, we extend second-order splitting to a normalized joint position-scale space, enabling children to adapt not only their locations but also their anisotropic extents. Second, we formulate duplicate cloning as a surrogate minimization problem, selecting only Gaussians whose duplicated contribution is predicted to improve reconstruction and assigning each child a principled opacity. Third, we replace global opacity reset with selective soft opacity decay that weakens harmful primitives while preserving useful ones. Across standard 3DGS benchmarks, our method produces more targeted primitive allocation and achieves improved rendering quality with comparable or smaller Gaussian budgets compared to baselines.",
-      "tldr": "The efficiency and fidelity of 3D Gaussian Splatting critically depend on adaptive density control, which grows and suppresses Gaussian primitives throughout optimization.",
+      "tldr": "Across standard 3DGS benchmarks, our method produces more targeted primitive allocation and achieves improved rendering quality with comparable or smaller Gaussian budgets compared to baselines.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
       ],
       "tags": [
-        "Densification & Pruning"
+        "Densification & Pruning",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Accepted to NeurIPS 2026"
@@ -192,13 +306,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Interactive world generation requires both accurate local control and stable scene consistency over long rollouts. Existing methods improve local generation through camera or geometry conditioning and extend historical context with memory mechanisms. However, long-horizon exploration remains challenging as target-view guidance becomes incomplete and inconsistencies accumulate across repeated scene updates. We present \\textbf{GSExplorer}, a generation--reconstruction framework built around a persistent 3D Gaussian world state. At each step, the current 3DGS scene provides multimodal rendering conditions for a condition-driven video generator, while camera geometry is injected through a separate Relative Ray Encoding branch. Generated videos are then fed back to a SLAM-based reconstruction backend, where inconsistency filtering prevents conflicting content from corrupting the scene and cross-chunk bundle adjustment improves spatial alignment across generation steps. We further design a data-construction pipeline that reproduces realistic 3DGS degradation during scene extrapolation, yielding 293K training pairs of degraded multimodal renderings and real target videos. GSExplorer achieves the best overall performance among the compared methods on both single-step and three-step WorldScore evaluation, with strong camera control and consistency across both settings, including a Camera Control score of 99.07 in single-step extrapolation. On 481-frame leave-and-return rollouts, it also shows strong revisit consistency, demonstrating the value of maintaining a reliable 3D world state for continued exploration.",
-      "tldr": "Interactive world generation requires both accurate local control and stable scene consistency over long rollouts.",
+      "tldr": "Presents \\textbf{GSExplorer}, a generation--reconstruction framework built around a persistent 3D Gaussian world state.",
       "primary_category": "Active Perception, SLAM & Robotics",
       "categories": [
         "Active Perception, SLAM & Robotics"
       ],
       "tags": [
         "SLAM",
+        "Foundations",
         "Active Perception"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -227,14 +342,15 @@
       "code_url": null,
       "project_url": null,
       "abstract": "3D Gaussian Splatting sorts every splat by depth in every frame. Viewers that draw splats with the hardware rasterizer and sort them on the CPU, as most web and mobile viewers do, spend most of the frame time in this sort. We present AbacusGS, which stores the blending order of a 3DGS scene in the scene layout. AbacusGS groups the splats into octree boxes of at most 128 splats and stores each box in order along an axis chosen at write time. In each frame, AbacusGS sorts only the visible boxes, and one dot product per box decides whether the box is read forward or backward. A short order-aware fine-tuning converts an existing 3DGS model, and the over operator of 3DGS stays unchanged. On 13 standard scenes, AbacusGS loses 0.13 dB PSNR on average against an equally fine-tuned 3DGS model. In an OpenGL viewer that orders splats on the CPU, AbacusGS renders frames 4.5 times faster than per-splat sorting. We also present a compact format of 17 bytes per splat and a CUDA tile renderer that use the same order. The code will be released.",
-      "tldr": "3D Gaussian Splatting sorts every splat by depth in every frame.",
+      "tldr": "Presents AbacusGS, which stores the blending order of a 3DGS scene in the scene layout.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration",
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "CUDA & Rasterization"
+        "CUDA & Rasterization",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "10 pages, 5 figures, 6 tables"
@@ -265,7 +381,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "4D Gaussian Splatting (4DGS) models are computationally expensive to train but distributed as easily copied parameter files. Existing watermarks protect these assets by fine-tuning the scene against a neural decoder to extract bit strings from rendered video, a heavy process vulnerable to the temporal dynamics of dynamic scenes. However, if the threat model targets the redistributed file itself, verification can be vastly simplified. Because the canonical Spherical-Harmonic (SH) coefficients of 4DGS are time- and view-invariant, parameter-space perturbations can be recovered via deterministic arithmetic. We propose **SHield**, the first non-blind, decoder-free watermarking approach that natively embeds full-resolution RGB images into 4DGS files. SHield tiles a zero-mean payload across the SH coefficients of a key-selected Gaussian subset, applying a brief anchored optimization to preserve visual fidelity. To verify ownership, it geometrically re-associates the key using canonical Gaussian centres to survive file tampering and recovers the payload in closed form. Across 30 scenes (D-NeRF, HyperNeRF, DyNeRF), SHield guarantees near-perfect payload recovery (Pearson $r \\geq 0.991$) on all 150 tested models with a mean rendering penalty of $\\leq 0.13$~dB. Held-out evaluation yields perfect detection on 400 true trials and zero false positives across $1{,}600$ wrong-subset null trials. We also strictly bound the method's robustness: SHield survives INT8 quantization and $30\\%$ opacity pruning for the image payload, and on aggressive SH-degree-1 truncation bit payloads are still decodable.",
-      "tldr": "4D Gaussian Splatting (4DGS) models are computationally expensive to train but distributed as easily copied parameter files.",
+      "tldr": "Proposes **SHield**, the first non-blind, decoder-free watermarking approach that natively embeds full-resolution RGB images into 4DGS files.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
@@ -274,7 +390,8 @@
       "tags": [
         "Densification & Pruning",
         "4DGS",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "35 pages, 9 figures, 21 tables, 2 algorithms"
@@ -305,13 +422,14 @@
       "code_url": null,
       "project_url": "https://rose-lab-admin.github.io/rose-lunar-dt-rec",
       "abstract": "In this paper, we present a reconstruction pipeline that empirically quantifies the photorealistic scene reconstruction accuracy from both human-controlled and rover mast camera monocular feeds against physical ground truth as a function of Lunar traversal effects (e.g., motion blur, haze due to lofted regolith, trajectory bias, and sparse views). First, we benchmark six variants of 3D Gaussian Splatting (3DGS) across three Lunar analog scenes on held-out test sets using standard photometric metrics. We then establish how under traversal effects, this test-set-specific Novel View Synthesis (NVS) performance does not proportionally scale to the same photometric metrics in the reconstructed DTs. Our results quantify that splat training metrics alone are insufficient predictors of Cross-Reconstruction Photorealistic NVS Fidelity (CRPNVS), and that factors such as rover trajectory bias and geometric scene coverage play a critical role in determining the photorealistic quality of the reconstructed scenes targeting Lunar analog Digital Twins. Additionally, we pilot study Coverage Score ($S_c$), a geometry-based diagnostic derived from COLMAP poses and point cloud structure that provides a meaningful heuristic about the highest achievable CRPNVS structural fidelity, independently of splat training performance in the absence of a human-controlled reference. These findings establish a standardized, human control-referenced evaluation pipeline for photorealistic scene reconstruction for Lunar-analog Digital Twin development and future planetary exploration. Code and project page: https://rose-lab-admin.github.io/rose-lunar-dt-rec",
-      "tldr": "In this paper, we present a reconstruction pipeline that empirically quantifies the photorealistic scene reconstruction accuracy from both human-controlled and rover mast camera monocular feeds against physical ground truth as a function of...",
+      "tldr": "Presents a reconstruction pipeline that empirically quantifies the photorealistic scene reconstruction accuracy from both human-controlled and rover mast camera monocular feeds against physical ground truth...",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS"
       ],
       "tags": [
         "Physics & Simulation",
+        "Foundations",
         "Active Perception"
       ],
       "primary_arxiv_category": "cs.RO",
@@ -404,14 +522,15 @@
       "code_url": null,
       "project_url": "https://advanced-vision-and-learning-lab.github.io/MoRE-GS-website/",
       "abstract": "Future dynamic novel-view synthesis requires extrapolating multiple motion regimes within the same scene. A single dynamics model may not simultaneously represent stationary regions, coordinated motion, local interactions, and articulated trajectories. We introduce Motion Regime Expert Routing for Gaussian Splatting (MoRE-GS), a causal, render-aware framework for forecasting dynamic 3D Gaussian scenes. MoRE-GS freezes a Gaussian representation reconstructed exclusively from the observed temporal prefix and forecasts its control-keypoint motion using four complementary experts: persistence, a coefficient-space Transformer, a graph convolutional network, and a structured Transformer with rigid and non-rigid motion constraints. A compact routing table assigns expert mixtures across soft motion groups and forecast-horizon bins, while a persistence gate suppresses unreliable extrapolation. Across D-NeRF and HyperNeRF scenes, MoRE-GS achieves improved performance against other methods, and these results demonstrate that renderer-calibrated composition of complementary motion predictors improves causal dynamic Gaussian forecasting across heterogeneous motion regimes. Project page: https://advanced-vision-and-learning-lab.github.io/MoRE-GS-website/",
-      "tldr": "Future dynamic novel-view synthesis requires extrapolating multiple motion regimes within the same scene.",
+      "tldr": "Introduces Motion Regime Expert Routing for Gaussian Splatting (MoRE-GS), a causal, render-aware framework for forecasting dynamic 3D Gaussian scenes.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "4DGS"
+        "4DGS",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -439,7 +558,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Single-exposure high dynamic range (HDR) novel view synthesis (NVS) recovers HDR scenes from low dynamic range (LDR) views captured at a single exposure and estimates camera response function (CRF) for LDR re-exposure. Without HDR ground-truth, using single-exposure LDR views as the sole source of direct supervision underconstrains HDR reconstruction and cannot ensure its faithful recovery, motivating the need for learned LDR-to-HDR reconstruction priors. Moreover, single-exposure LDR views supervise CRF only over a limited range, necessitating a learnable prior for reliable re-exposure beyond it. We propose PriorGS, a 3D Gaussian Splatting framework that addresses both challenges by (1) guiding HDR recovery with pseudo-HDR supervision from 2D single-exposure HDR reconstruction methods while anchoring it to input LDR views through a closed reconstruction loop; and (2) regularizing CRF modeling with a learnable prior that guarantees monotonicity and promotes plausible responses. Yet cross-view inconsistencies in independently generated pseudo-HDR targets impair scene reconstruction when HDR is encoded directly as Gaussian's color attribute. We therefore introduce a 3D base-gain HDR representation that factors HDR radiance into an LDR base and an overlaid 3D gain field, promoting robustness to such inconsistencies and enabling 3D HDR appearance editing. Extensive experiments demonstrate PriorGS's substantial superiority over baselines.",
-      "tldr": "Single-exposure high dynamic range (HDR) novel view synthesis (NVS) recovers HDR scenes from low dynamic range (LDR) views captured at a single exposure and estimates camera response function (CRF) for LDR re-exposure.",
+      "tldr": "Proposes PriorGS, a 3D Gaussian Splatting framework that addresses both challenges by (1) guiding HDR recovery with pseudo-HDR supervision from 2D single-exposure HDR reconstruction methods while anchoring...",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
@@ -475,7 +594,7 @@
       "code_url": "https://github.com/Ballbo5354/P-2-Gaussian",
       "project_url": null,
       "abstract": "Sparse-view cone-beam computed tomography (CBCT) reconstruction reduces imaging dose and scan time, but severe angular undersampling makes the inverse problem highly ill-posed. Existing 3D Gaussian Splatting (3DGS) methods initialize Gaussian primitives from Feldkamp-Davis-Kress (FDK) reconstructions that are contaminated by streak artifacts. The limited angular coverage also leaves the Gaussian parameters underconstrained, producing needle-like artifacts. We propose P2-Gaussian, a prior-driven and projection-guided 3DGS framework. In this framework, a latent rectified flow model, Sparse2Prior, first restores the artifact-corrupted FDK volume into an anatomical prior in approximately 5 s. Gaussian primitives are then initialized from this prior in a tissue-adaptive manner, which yields a compact representation with 62%-65% fewer optimized primitives than random sampling. During optimization, virtual projections synthesized at intermediate angles between the measured projections are activated in rotation, while measured projections remain dominant in the objective function. Experiments on 5, 10 and 20 measured views showed that the proposed P2-Gaussian achieved the highest PSNR and SSIM among all methods. Compared with the optimization-based Gaussian baseline, our method increases PSNR by 5.98, 4.25 and 2.49 dB and accelerates reconstruction by 2.6-3.0 times. These results indicate that coupling a learned anatomical prior with measurement-constrained Gaussian optimization is effective for sparse-view CBCT reconstruction. Code is publicly available at: https://github.com/Ballbo5354/P-2-Gaussian.",
-      "tldr": "Sparse-view cone-beam computed tomography (CBCT) reconstruction reduces imaging dose and scan time, but severe angular undersampling makes the inverse problem highly ill-posed.",
+      "tldr": "Proposes P2-Gaussian, a prior-driven and projection-guided 3DGS framework.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -483,7 +602,8 @@
       ],
       "tags": [
         "Sparse-View",
-        "Medical & Healthcare"
+        "Medical & Healthcare",
+        "Foundations"
       ],
       "primary_arxiv_category": "physics.med-ph",
       "comment": "25 pages, 9 figures"
@@ -517,14 +637,15 @@
       "code_url": null,
       "project_url": "https://wzlwlm13.github.io/MLLM-GS",
       "abstract": "Novel view synthesis (NVS) in degraded scenes aims to reconstruct 3D scenes from multi-view observations affected by various degradations, and to generate clear and photorealistic images at unseen viewpoints. Despite recent advances, existing methods often rely on degradation-specific models, limiting their generalization across diverse extreme environments. Generative models provide rich visual priors, but their outputs often suffer from pixel misalignment and color deviations, which can propagate into the reconstructed 3D scene and compromise reconstruction quality. Furthermore, the high computational and memory costs of 3D reconstruction hinder the practical application of NVS in extreme environments. To this end, we propose MLLM-GS, a multimodal large language model (MLLM) prior-guided framework for fast NVS in extreme environments. MLLM-GS consists of two branches: MLLM prior-guided view enhancement and fast 3D scene reconstruction. The former leverages the rich visual priors of a frozen MLLM to enhance views under different severe degradations and introduces a lightweight correction network to reduce pixel shifts and color distortions in MLLM outputs. With supervision from only a few paired clean views, this branch produces reliable enhanced views for all degraded observations, providing pseudo-GT views for subsequent 3D reconstruction. The latter improves 3DGS efficiency by optimizing rasterization, Gaussian memory layout, and parameter updates, reducing redundant computation, memory-access overhead, and optimization costs. Extensive experiments on multiple degraded scenes demonstrate that MLLM-GS effectively handles various severe degradations and achieves high-quality NVS with significantly lower reconstruction time and memory consumption. Project Page: https://wzlwlm13.github.io/MLLM-GS",
-      "tldr": "Novel view synthesis (NVS) in degraded scenes aims to reconstruct 3D scenes from multi-view observations affected by various degradations, and to generate clear and photorealistic images at unseen viewpoints.",
+      "tldr": "To this end, we propose MLLM-GS, a multimodal large language model (MLLM) prior-guided framework for fast NVS in extreme environments.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration",
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "CUDA & Rasterization"
+        "CUDA & Rasterization",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -558,7 +679,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "We present LucidLyra, a framework that makes generatively reconstructed 3D scenes directly queryable for semantics and instances in a feed-forward manner from video latents. While generative 3D reconstruction can synthesize virtual environments from a single image, downstream applications in robotics and physical AI require not only visual realism but also access to scene semantics and object identities. Existing 3D understanding approaches, however, require captured multi-view scenes, have limited generalization capabilities, or rely on expensive per-scene processing and optimization. To bridge this gap, our method distills complementary knowledge from a camera-controlled video diffusion model and frozen 2D vision foundation models into a unified model to jointly infer 3D Gaussians encoding geometry, appearance, open-vocabulary semantics, and class-agnostic instance cues. The resulting scenes support novel-view rendering, open-vocabulary segmentation, and object grouping without per-scene optimization, while training requires neither manual 3D annotations nor captured multi-view data. Our method outperforms baselines combining state-of-the-art 3DGS segmentation approaches with generative 3D scene reconstruction on curated synthetic and real-image-conditioned benchmarks, while preserving reconstruction quality. Furthermore, our latent formulation naturally extends to monocular video, reconstructing structured dynamic 3D scenes across time. By turning renderable but unstructured outputs into queryable 3D worlds, LucidLyra enables downstream applications including 3D scene editing, 3D asset mining, and robotic simulation.",
-      "tldr": "We present LucidLyra, a framework that makes generatively reconstructed 3D scenes directly queryable for semantics and instances in a feed-forward manner from video latents.",
+      "tldr": "Presents LucidLyra, a framework that makes generatively reconstructed 3D scenes directly queryable for semantics and instances in a feed-forward manner from video latents.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -567,7 +688,8 @@
       "tags": [
         "Diffusion",
         "Feed-Forward",
-        "Physics & Simulation"
+        "Physics & Simulation",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Project Page: https://research.nvidia.com/labs/sil/projects/lucidlyra"
@@ -599,7 +721,7 @@
       "code_url": null,
       "project_url": "https://cvlab-kaist.github.io/L3G-World/",
       "abstract": "Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging. Existing approaches rely on either temporal context or explicit 3D memory, both of which scale poorly because memory grows with the length of the generated stream. Moreover, explicit 3D memories condition latent video generators by re-encoding RGB renderings, which precludes real-time generation. In this paper, we introduce a Latent 3D Gaussian Memory (L3G) that combines the efficiency of feed-forward reconstruction with a compact, rapidly renderable scene representation. Building on this memory, we propose L3G-World, in which a memory updater and a video diffusion transformer (DiT) alternate autoregressively to generate spatially consistent worlds. The memory updater spawns Gaussians in newly observed regions and refines existing ones, so that the memory grows with scene extent rather than stream length. Each Gaussian further stores a VAE latent feature, allowing the memory to be rendered directly into the DiT's latent space without VAE re-encoding. Experiments show that L3G-World achieves state-of-the-art generation quality and long-horizon spatial consistency, with up to $38.6\\times$ fewer 3D primitives, $3.2\\times$ faster memory updates, and $359\\times$ faster memory rendering relative to the most efficient prior 3D-memory baseline for each metric, enabling real-time world generation at 9 FPS.",
-      "tldr": "Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging.",
+      "tldr": "Introduces a Latent 3D Gaussian Memory (L3G) that combines the efficiency of feed-forward reconstruction with a compact, rapidly renderable scene representation.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -608,6 +730,7 @@
       "tags": [
         "Diffusion",
         "Feed-Forward",
+        "Foundations",
         "Active Perception"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -639,7 +762,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "3D Gaussian Splatting (3DGS) is increasingly explored as an input representation for 3D perception. Yet it remains unclear how current 3D architectures exploit heterogeneous Gaussian attributes. This ambiguity makes accuracy hard to interpret and limits principled architecture design for 3DGS perception. However, existing object-level 3DGS datasets lack the appearance variation or artifact control needed for systematic attribute-level analysis. We introduce COGS, a large-scale 3DGS dataset with 15,675 artifact-filtered and appearance-rich objects across 40 categories. Built on COGS, we establish COGS-Bench for object classification and attribute-usage diagnosis, complemented by external validation. Our benchmark shows that Gaussian attributes are not uniformly beneficial: selected subsets can outperform the full attribute set, and the effects of appearance, opacity, and covariance-related attribute combinations vary substantially across architectures. We further study this finding with HALO, a reference model that preserves attribute-specific evidence before hierarchical aggregation. Experiments on COGS-Bench and external 3DGS datasets demonstrate that COGS supports systematic diagnosis of 3DGS attribute usage, while HALO highlights the value of role-preserving attribute organization. Our dataset is available at https://huggingface.co/datasets/XiaoZhengCV/COGS.",
-      "tldr": "3D Gaussian Splatting (3DGS) is increasingly explored as an input representation for 3D perception.",
+      "tldr": "Introduces COGS, a large-scale 3DGS dataset with 15,675 artifact-filtered and appearance-rich objects across 40 categories.",
       "primary_category": "Autonomous Driving & Urban Scenes",
       "categories": [
         "Autonomous Driving & Urban Scenes"
@@ -675,7 +798,7 @@
       "code_url": null,
       "project_url": "https://waveviewer.github.io/ACD-GS/",
       "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful paradigm for real-time photorealistic novel view synthesis. However, its training-time densification remains largely heuristic, often resulting in redundant Gaussian proliferation and inaccurate geometric reconstruction. Existing methods predominantly rely on first-order screen-space gradients to trigger cloning and splitting, which fail to distinguish true geometric discontinuities from high-frequency textures or noisy residuals. To address this limitation, we propose ACD-GS, an Asymmetric Curvature-aware Densification framework for compact and geometry-aware 3D Gaussian optimization. Our key insight is that second-order depth responses provide a more reliable structural prior for density control, enabling asymmetric regulation of cloning and splitting to better capture geometric discontinuities. Building on this, we introduce a multi-view photometric consistency constraint to suppress transient single-view errors, together with a capacity-aware adaptive regulation strategy that balances densification and pruning during training. Unlike post-hoc compression or quantization-based approaches, ACD-GS directly prevents redundant Gaussian generation during training, yielding inherently compact representations. Extensive experiments demonstrate that our method reduces nearly 60% of Gaussian count and storage while maintaining competitive rendering fidelity, consistently outperforming existing methods across multiple datasets. Our code is available in https://waveviewer.github.io/ACD-GS/.",
-      "tldr": "3D Gaussian Splatting (3DGS) has emerged as a powerful paradigm for real-time photorealistic novel view synthesis.",
+      "tldr": "Proposes ACD-GS, an Asymmetric Curvature-aware Densification framework for compact and geometry-aware 3D Gaussian optimization.",
       "primary_category": "2D Gaussians, Geometry & Compression",
       "categories": [
         "2D Gaussians, Geometry & Compression",
@@ -683,7 +806,8 @@
       ],
       "tags": [
         "Densification & Pruning",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -721,7 +845,8 @@
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -750,7 +875,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Feed-forward 3D Gaussian Splatting has recently emerged as a promising alternative to per-scene optimization, enabling fast novel view synthesis by predicting Gaussian primitives directly from input images. However, it quickly faces a bottleneck of rendering efficiency while scaling from sparse to dense multi-view inputs, which offer more geometric constraints but produce a rapidly growing set of candidate Gaussians. Existing solutions cannot reliably distinguish redundant primitives, leading to many redundant primitives from repeatedly observed regions and increased rendering cost without much gain in visual quality. We propose BudSplat, a compact feed-forward 3DGS framework that learns to keep the most valuable Gaussians under a limited primitive count. BudSplat has two novel designs. The first is a detail-aware importance score that is extracted from multi-level visual tokens, providing an explicit cue for regions where pruning is likely to harm perceptual quality. The score can be injected into voxel fusion to preserve high-value local contributors during multi-view aggregation. The second is quality-aware Gaussian pruning that selects a compact set of primitives by jointly considering rendering contribution and detail importance. The quality-aware pruning enables local quota redistribution that helps avoid over-allocating primitives to large redundant regions. Experiments on RE10K, DL3DV, and ACID show that BudSplat achieves a favorable trade-off among rendering quality and efficiency.",
-      "tldr": "Feed-forward 3D Gaussian Splatting has recently emerged as a promising alternative to per-scene optimization, enabling fast novel view synthesis by predicting Gaussian primitives directly from input images.",
+      "tldr": "Proposes BudSplat, a compact feed-forward 3DGS framework that learns to keep the most valuable Gaussians under a limited primitive count.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration",
@@ -759,7 +884,8 @@
       "tags": [
         "Densification & Pruning",
         "Feed-Forward",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -791,13 +917,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "While single-view novel view synthesis methods have been dramatically enhanced recently, how to quantify their performance has yet to be standardized. In this work, we demonstrate that an important factor lies in how each method's own reference frame is aligned with the so-called ground-truth pose. Existing methods often rely on test-time optimization of target poses for this alignment, which inherently is ill-posed due to the complexity of the optimization landscape of camera poses vs render accuracy, leading to methods being evaluated at an arbitrary local optimum. Some recognize this limitation and thus rely on 3D reconstructions of entire scenes using training and test views to align poses, which may be infeasible. In this work, instead, we propose to use traditional 2D-to-2D and 2D-to-3D image matching techniques to align 3D reconstructions. We also evaluate only within co-visible regions, between different views, which is the only place where a `correct' ground truth can be defined. Our evaluations show that with proper coordinate alignment, novel-view synthesis methods that use explicit 3D Gaussians achieve the state of the art, despite being previously reported in the literature to be outperformed by pure image-based 2D methods. We further provide a simple baseline that directly utilizes an off-the-shelf video generator and a feed-forward geometry estimator. Our simple baseline is already comparable to state-of-the-art methods specifically trained for novel-view synthesis, without any task-specific training.",
-      "tldr": "While single-view novel view synthesis methods have been dramatically enhanced recently, how to quantify their performance has yet to be standardized.",
+      "tldr": "In this work, instead, we propose to use traditional 2D-to-2D and 2D-to-3D image matching techniques to align 3D reconstructions.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -827,14 +954,15 @@
       "code_url": null,
       "project_url": null,
       "abstract": "The achievable gains of multiple-input multiple-output (MIMO) systems depend on channel state information (CSI), whose acquisition consumes pilot and feedback resources for every user in every coherence interval. Meanwhile, the propagation environment that shapes the channel persists. Exploiting such information will help to greatly reduce the overhead of CSI acquisition. This paper investigates the spatial MIMO channel rendering problem, which learns a latent beamspace channel scene from sparse observations and renders the long-term transmit and receive beam pair power map at unobserved user locations. Motivated by 3D Gaussian splatting in visual scene rendering, the proposed MIMO Gaussian splatting (MIMO-GS) represents the scene with pairs of receive and transmit 3D Gaussians, projects them from the user and base station onto the corresponding beam domains, and accumulates the beam associations through beam pair splatting. On a simulated urban scenario and measured indoor channels, MIMO-GS renders 5.5 times faster than ray tracing without a calibrated replica. Applied to multiuser beam management, the rendered maps allow users and transmit beams to be scheduled without sounding while accounting for the inter-user interference, and the net sum rate reaches 98% of the genie-aided benchmark, 19% above a position-based predictor.",
-      "tldr": "The achievable gains of multiple-input multiple-output (MIMO) systems depend on channel state information (CSI), whose acquisition consumes pilot and feedback resources for every user in every coherence interval.",
+      "tldr": "The achievable gains of multiple-input multiple-output (MIMO) systems depend on channel state information (CSI), whose acquisition consumes pilot and feedback resources for every user in every coherence...",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration",
         "Autonomous Driving & Urban Scenes"
       ],
       "tags": [
-        "Ray Tracing"
+        "Ray Tracing",
+        "Foundations"
       ],
       "primary_arxiv_category": "eess.SP",
       "comment": null
@@ -863,7 +991,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Achieving high-quality reconstruction and responsive camera tracking remains challenging for monocular RGB Gaussian splatting SLAM under a limited optimization budget. We present an online system that addresses this challenge by combining learned geometric priors with explicit geometric camera tracking, which can substantially outperform learned camera prediction in terms of tracking accuracy. A frozen streaming 3D foundation model serves as a virtual RGB-D sensor, providing depth estimation from monocular video. An explicit geometric solver then estimates camera motion through feature reprojection, and a streaming Gaussian mapper integrates the resulting observations into a dense scene representation. We further show that geometric tracking improves camera pose accuracy across representative streaming geometry backbones, demonstrating the broader applicability of our approach. Extensive experiments on indoor and outdoor datasets show that our method significantly improves reconstruction quality over existing approaches, achieving about 7 FPS on a single RTX 4090 and delivering 2-3 times the throughput of the evaluated prior SLAM systems.",
-      "tldr": "Achieving high-quality reconstruction and responsive camera tracking remains challenging for monocular RGB Gaussian splatting SLAM under a limited optimization budget.",
+      "tldr": "Presents an online system that addresses this challenge by combining learned geometric priors with explicit geometric camera tracking, which can substantially outperform learned camera prediction in terms...",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
@@ -871,7 +999,8 @@
       ],
       "tags": [
         "SLAM",
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "10 pages, 4 figures"
@@ -898,7 +1027,7 @@
       "code_url": null,
       "project_url": "https://honeycomb-surfels.github.io/",
       "abstract": "Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings. We introduce Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation. Hexels exploit locally planar regions with smoothly varying appearance using fewer, larger primitives. Their hexagonal support provides an area- and boundary-efficient domain, while the local color field captures appearance variation within each primitive. Across 34 scenes, Hexels improve PSNR over memory-matched 2DGS by 4.53-7.38 dB across datasets while requiring lower training VRAM. We further ablate Hexels by showing that per primitive, Hexels outperform 2DGS by upto 4.74 dB while using lower training VRAM and having 2.31 times faster FPS. Even in unconstrained settings, Hexels offers complementary quality-memory trade-offs. For efficient 3D surface reconstruction, Hexels reduce error by 28.9% compared with memory-matched 2DGS across 15 DTU scans. On 6 Tanks and Temples surface scenes, Hexels achieves the highest mean F1 among compared methods (34.38%, versus 31.72% for 2DGS). We further also show that Hexels, as a general primitive, improves 2D image representation over Image-GS. Hexels push the Pareto frontier on the quality-efficiency trade-off of surface-aligned primitives.",
-      "tldr": "Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings.",
+      "tldr": "Introduces Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation.",
       "primary_category": "2D Gaussians, Geometry & Compression",
       "categories": [
         "2D Gaussians, Geometry & Compression",
@@ -907,6 +1036,7 @@
       "tags": [
         "2DGS",
         "Mesh & Surface",
+        "Foundations",
         "VR & XR"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -933,7 +1063,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Inserting virtual objects into scenes reconstructed via 2D or 3D Gaussian Splatting (2DGS/3DGS) is a key capability for content creation, AR, and synthetic data generation. However, realistic insertion requires the object to be seamlessly lit by the scene and, conversely, to cast physically plausible shadows onto it. Existing approaches either harmonize appearance in image space, sacrificing multi-view consistency, or approximate scene illumination with an environment map at the insertion point, which cannot represent near-field area lights such as windows and lamps that dominate indoor lighting. To address this, we present GraftRay, a unified method for physically consistent insertion of mesh objects into indoor scenes represented by either 2D or 3D Gaussians. We recover scene materials and surface normals with diffusion-based priors, and explicitly model spatially-extended emitters, solving their radiance in closed form. A hybrid renderer then jointly path-traces the scene Gaussians and inserted meshes, producing view-consistent shading, interreflections, and soft shadows. On FIPT, GraftRay sets a new state of the art, outperforming recent baselines such as ComGS and EAG-PT in rendering fidelity and shadow accuracy, while maintaining highly competitive rendering efficiency.",
-      "tldr": "Inserting virtual objects into scenes reconstructed via 2D or 3D Gaussian Splatting (2DGS/3DGS) is a key capability for content creation, AR, and synthetic data generation.",
+      "tldr": "To address this, we present GraftRay, a unified method for physically consistent insertion of mesh objects into indoor scenes represented by either 2D or 3D Gaussians.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -944,6 +1074,7 @@
         "Diffusion",
         "Relighting & BRDF",
         "Ray Tracing",
+        "Foundations",
         "Mesh & Surface"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -976,7 +1107,7 @@
       "code_url": null,
       "project_url": "https://3dgofish.github.io/",
       "abstract": "Robots, autonomous vehicles, and consumer 360° cameras use fisheye lenses for wide fields of view (FoVs). Simulation-ready digital twins require photorealistic rendering across the full FoV and an aligned collision mesh. However, prior fisheye Gaussian Splatting methods only rasterize up to 180° and do not produce meshes, while Gaussian surface reconstruction methods assume pinhole training images. We present GOFish, the first 3D Gaussian Splatting surface reconstruction method to train directly on fisheye images, rasterize FoVs beyond 180°, and extract an aligned mesh from the same scene. Calibrated densification recovers the surface across the entire FoV, while Calibrated Mip Filtering and Wide-Angle Appearance Modeling keep pixel blur and lens falloff out of the scene and mesh. Across the 200° FIORD and 205° FullCircle benchmarks, GOFish improves PSNR over the best prior method by 2.28 and 1.97 dB, respectively. It also outperforms fisheye rendering baselines within their own FoVs and achieves the highest mesh F-score on FIORD and the main ScanNet++ set. Together, the Gaussian scene and mesh form a LiDAR-free, simulation-ready digital twin that renders in real time, ray traces the full FoV, and provides collision geometry.",
-      "tldr": "Robots, autonomous vehicles, and consumer 360° cameras use fisheye lenses for wide fields of view (FoVs).",
+      "tldr": "Presents GOFish, the first 3D Gaussian Splatting surface reconstruction method to train directly on fisheye images, rasterize FoVs beyond 180°, and extract an aligned mesh from the same scene.",
       "primary_category": "2D Gaussians, Geometry & Compression",
       "categories": [
         "2D Gaussians, Geometry & Compression",
@@ -986,7 +1117,8 @@
         "Densification & Pruning",
         "Mesh & Surface",
         "LiDAR-Fusion",
-        "Physics & Simulation"
+        "Physics & Simulation",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Project Page: https://3dgofish.github.io/"
@@ -1019,13 +1151,14 @@
       "code_url": null,
       "project_url": "https://comedy0913.github.io/projects/geogsplat",
       "abstract": "Feed-forward Gaussian Splatting enables efficient novel view synthesis, but pixel-aligned prediction makes the primitive count grow with image resolution and view count, leading to substantial redundancy and increased computational cost. Non-pixel-aligned methods address this limitation by predicting a fixed number of Gaussians. Without explicit ray and depth constraints, these methods yield misplaced Gaussian centers, causing rendering artifacts under large viewpoint changes. To address this issue, we introduce GeoGSplat, a geometry-grounded feed-forward model that explicitly incorporates geometric priors into the non-pixel-aligned framework. A dual-branch encoder constructs Anchors and Triplane to capture coarse 3D structure and fine-grained scene features, respectively. Subsequently, a hierarchical decoder progressively decodes dense 3D points and Gaussian primitives, enabling 3D reconstruction and novel view synthesis. GeoGSplat surpasses both state-of-the-art pixel-aligned and non-pixel-aligned Gaussian Splatting methods on DTU and NRGBD in terms of novel view synthesis and reconstruction. The advantage of our geometry-grounded paradigm further increases as target viewpoints move farther from the input cameras, demonstrating stronger generalization to large viewpoint changes. Project Page: https://comedy0913.github.io/projects/geogsplat",
-      "tldr": "Feed-forward Gaussian Splatting enables efficient novel view synthesis, but pixel-aligned prediction makes the primitive count grow with image resolution and view count, leading to substantial redundancy and increased computational cost.",
+      "tldr": "Proposes GeoGSplat, a geometry-grounded feed-forward model that explicitly incorporates geometric priors into the non-pixel-aligned framework.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1059,7 +1192,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Open-vocabulary 3D occupancy prediction represents scene geometry and semantics in a unified voxel grid, enabling recognition beyond predefined categories. One approach reconstructs scenes with 3D Gaussians and converts them into voxel occupancy. However, Gaussian scale inflation and excessive overlap can distort voxel occupancy predictions, while semantic mixing can arise within Gaussians spanning multiple categories and during 3D--2D semantic feature alignment. We propose GCSR-OCC, which combines geometry calibration and multi-mode query-conditioned semantic routing for indoor occupancy prediction from a single RGB image. The Evidence-Conserving Gaussian-to-Occupancy operator (EC-G2O) uses kernel mass normalization, $p$-norm aggregation, and a learnable gain to suppress scale inflation and excessive local evidence accumulation while calibrating occupancy responses. Multi-mode Query-First Gaussian Semantic Routing (MM-QGSR) matches multiple semantic modes per Gaussian to text queries and aggregates query-specific evidence into voxels through a learnable text-conditioned router. Fine-grained subclass queries and smoothed semantic aggregation further refine voxel-level predictions. Without 3D semantic annotations, GCSR-OCC achieves state-of-the-art performance in open-vocabulary occupancy prediction on Occ-ScanNet, with 63.31% geometric IoU and 27.44% semantic mIoU. It also reduces geometric aggregation latency from 19.76 ms to 12.88 ms. Our code will be made publicly available.",
-      "tldr": "Open-vocabulary 3D occupancy prediction represents scene geometry and semantics in a unified voxel grid, enabling recognition beyond predefined categories.",
+      "tldr": "Proposes GCSR-OCC, which combines geometry calibration and multi-mode query-conditioned semantic routing for indoor occupancy prediction from a single RGB image.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -1096,13 +1229,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "The growing need for high-quality 3D content remains among the most prevalent challenges in virtual reality (VR). Recently, novel view synthesis techniques have enabled rapid content creation, with 3D Gaussian Splatting (3DGS) emerging as one of the most promising methods for generating high-fidelity 3D scenes. However, using 3DGS to reconstruct unbounded outdoor scenes can leave horizons incomplete due to missing data or a lack of distant geometric constraints. Such incompleteness can break immersion, compromising VR's core characteristic. A typical workaround in traditional VR systems is a textured cube (skybox) or sphere (skydome) surrounding the environment to create the illusion of a distant background. However, these approaches struggle to blend seamlessly with the reconstructed 3DGS geometry. To address these issues, we introduce the DomeGS framework, which incorporates the skydome concept not as a flat background shell, but as a part of the reconstructed Gaussian Splatting 3D scene. By integrating the horizon and sky into the 3DGS representation, our method provides a unified, scene-consistent environment bridging foregrounds and backgrounds for greater realism. Experimental evaluation with N=36 users demonstrates that DomeGS significantly increases spatial presence (p=0.042) and realism (p=0.042) compared to the skybox baseline.",
-      "tldr": "The growing need for high-quality 3D content remains among the most prevalent challenges in virtual reality (VR).",
+      "tldr": "Proposes the DomeGS framework, which incorporates the skydome concept not as a flat background shell, but as a part of the reconstructed Gaussian Splatting 3D scene.",
       "primary_category": "Human Avatars & VR",
       "categories": [
         "Human Avatars & VR"
       ],
       "tags": [
-        "VR & XR"
+        "VR & XR",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.GR",
       "comment": "9 pages, 10 figues"
@@ -1137,7 +1271,8 @@
         "Medical, Defense & Multimodal Sensors"
       ],
       "tags": [
-        "Medical & Healthcare"
+        "Medical & Healthcare",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Code and project page: https://github.com/BocchiSlice/CTBakeGS"
@@ -1165,7 +1300,7 @@
       "code_url": null,
       "project_url": "https://jaesung8.github.io/clustersplat/",
       "abstract": "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians. Prior methods typically extract 3D targets by applying heuristic thresholding or top-ratio filtering to dense primitive-level relevance scores. However, these scores often vary substantially across scenes and prompts, making such heuristics sensitive and leading to unstable targeting. ClusterSplat addresses this by reframing 3D target selection as cluster-level selection over scene-adaptive candidates. The method first learns instance-aware Gaussian features, forms feature-aware seed voxels, and merges neighboring seed voxels when a description-length criterion decreases, producing a scene-specific set of cluster candidates. Given a referring expression, a query-conditioned cluster scorer ranks the cluster candidates with a lightweight MLP, and the selected cluster directly defines the explicit 3D target while its cluster score is rendered for the 2D mask. On ScanRefer, ClusterSplat achieves the best rendered 2D segmentation and explicit 3D target metrics among the compared 3DGS baselines. It also obtains the best average Ref-LERF scores, supporting the same trend under fine-grained referring descriptions. On ScanNet v2 class name queries, ClusterSplat achieves the strongest rendered 2D results and the highest 3D matching accuracy, while maintaining competitive 3D IoU. Our project page is available at https://jaesung8.github.io/clustersplat/ .",
-      "tldr": "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians.",
+      "tldr": "On ScanRefer, ClusterSplat achieves the best rendered 2D segmentation and explicit 3D target metrics among the compared 3DGS baselines.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -1203,14 +1338,15 @@
       "code_url": null,
       "project_url": "https://2hitee.github.io/VidEdit3D-page/",
       "abstract": "Recent advancements in text-guided 3D editing, particularly with 3D Gaussian Splatting (3DGS), have shown promise but still lag behind the flexibility of 2D editing tools. Existing methods face a critical trade-off between preserving multi-view consistency and allowing structural modifications. Image-based editors can also struggle to apply the intended edit to objects viewed from unusual angles. To address these limitations, we introduce VidEdit3D, a framework that reformulates 3D scene editing as a trajectory-based video editing task. By drawing a parallel between camera movement in static 3D scenes and temporal dynamics in video, we leverage the robust spatiotemporal priors of pre-trained Video Diffusion Models (VDMs) to encourage semantic and structural coherence across views. Specifically, we propose Trajectory-Guided Rendering (TGR) to select informative keyframes and construct smooth video clips aligned with VDM input requirements. To propagate edits from an anchor view to these clips, we develop Flow-Aligned Video Editing (FAVE), a training-free framework incorporating an Editing Consistency Guidance (ECG) mechanism. ECG contrasts source and edited image conditions at a shared latent state, using scheduled source-image amplification to strengthen adherence to the edited reference while maintaining original scene context. Finally, we introduce Region-Selective 3DGS Refinement (RS-GS) to strictly confine geometric and appearance updates to target primitives, reducing background attribute leakage. Experiments demonstrate stronger instruction alignment and better multi-view consistency than the baselines.",
-      "tldr": "Recent advancements in text-guided 3D editing, particularly with 3D Gaussian Splatting (3DGS), have shown promise but still lag behind the flexibility of 2D editing tools.",
+      "tldr": "Proposes VidEdit3D, a framework that reformulates 3D scene editing as a trajectory-based video editing task.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
         "Dynamic & 4DGS"
       ],
       "tags": [
-        "Diffusion"
+        "Diffusion",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Project Page: https://2hitee.github.io/VidEdit3D-page/"
@@ -1242,7 +1378,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Monocular outdoor navigation requires robust camera motion estimation and a dense, navigable map, where 3D Gaussian Splatting SLAM serves this task through an explicit differentiable parameterization and closed-form projection. However, typically, the geometry is recovered by associating 2D pixels with 3D points, so a modular SLAM system absorbs tracking error into the map, leading to cascading degradation. To address these gaps, we present SG^2SLAM, which couples streaming spatial geometry with a ray-conditioned 3DGS kernel. Streaming spatial geometry replaces the per- frame cross-dimensional correspondence with a chunk-level metric prior that supervises tracking and mapping from one source. A ray-conditioned kernel extends each primitive with a viewing-direction subspace that senses the monocular camera viewpoints. The joint optimization over spatial geometry and poses ensures a globally consistent map and trajectory outcome. Experiments on the KITTI and Waymo Open datasets show that our SG^2SLAM surpasses the per-frame association baselines in the monocular outdoor navigation task. Code will be made publicly available upon acceptance.",
-      "tldr": "Monocular outdoor navigation requires robust camera motion estimation and a dense, navigable map, where 3D Gaussian Splatting SLAM serves this task through an explicit differentiable parameterization and closed-form projection.",
+      "tldr": "To address these gaps, we present SG^2SLAM, which couples streaming spatial geometry with a ray-conditioned 3DGS kernel.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
@@ -1250,7 +1386,8 @@
       ],
       "tags": [
         "SLAM",
-        "Autonomous Driving"
+        "Autonomous Driving",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.RO",
       "comment": "9 pages"
@@ -1278,7 +1415,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "3D Gaussian Splatting (3DGS) has become a promising representation for real-time novel view synthesis and 3D scene reconstruction. For practical deployment, recent studies have explored pose-free feed-forward 3DGS, which reconstructs Gaussian representations directly from unposed input images. However, these methods remain sensitive to residual pose errors, which perturb canonical-space Gaussian transformation, introducing noisy supervision for geometry and attribute learning. To address this problem, we present SG-Splat, a pose-free feed-forward 3DGS framework that improves robustness to pose uncertainty and stabilizes the learning of Gaussian primitives. SG-Splat decouples geometry estimation and Gaussian attribute prediction into two dedicated branches, reducing error coupling between pose-sensitive geometry and Gaussian attributes. We further introduce a coarse-to-fine refinement pipeline, consisting of Flow-Guided Pose Refinement (FGPR) and Residual-Guided Geometry Correction (RGC), to improve geometric alignment before Gaussian attribute reconstruction. Specifically, FGPR refines camera poses with flow-based correlation features and differentiable bundle adjustment. RGC then corrects initial point maps using depth residuals derived from FGPR, producing more reliable Gaussian centers. To stabilize training, we introduce a dual-path strategy that mixes ground-truth and predicted poses for canonical transformation. It provides clean supervision for Gaussian attributes while improving geometry robustness to residual pose errors. Extensive experiments on DL3DV and RealEstate10K show that SG-Splat achieves state-of-the-art performance in both novel view synthesis and pose estimation.",
-      "tldr": "3D Gaussian Splatting (3DGS) has become a promising representation for real-time novel view synthesis and 3D scene reconstruction.",
+      "tldr": "Proposes SG-Splat, a pose-free feed-forward 3DGS framework that improves robustness to pose uncertainty and stabilizes the learning of Gaussian primitives.",
       "primary_category": "Active Perception, SLAM & Robotics",
       "categories": [
         "Active Perception, SLAM & Robotics",
@@ -1286,7 +1423,8 @@
       ],
       "tags": [
         "Feed-Forward",
-        "Sparse-View"
+        "Sparse-View",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1313,7 +1451,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Visual captures provide detailed scene appearance, but converting them into interactive simulation environments requires object reconstruction, physical modeling, and correction of intermediate errors. We present SceneAgent, an agentic pipeline that coordinates these steps through simulator-based visual inspection and repair. The pipeline processes 3D Gaussian Splatting (3DGS), photogrammetry, LiDAR captures, AI-generated 3DGS scenes, and 4D videos of dynamic scenes, and combines object segmentation, physical parameter estimation, part decomposition, articulation, and deformable simulation. To support policy learning, SceneAgent generates diverse object variants (\"digital sisters\") and scripted demonstrations. On a cluttered bin scene from GraspClutter6D, SceneAgent raises F1 at 1 cm for every coding agent with scorable outputs both with and without its skills, and its reconstructions are better than SimFoundry: all agent configurations exceed SimFoundry's F1 score, with a best of 60.75% versus 6.9%. On three dynamic scenes from 4DCodeBench, SceneAgent raises the mean dynamic IoU of Gemini 4 Argon from 0.86% to 99.09%. We further demonstrate diverse simulated interactions and preliminary policy transfer to a real robot.",
-      "tldr": "Visual captures provide detailed scene appearance, but converting them into interactive simulation environments requires object reconstruction, physical modeling, and correction of intermediate errors.",
+      "tldr": "Presents SceneAgent, an agentic pipeline that coordinates these steps through simulator-based visual inspection and repair.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
@@ -1321,7 +1459,8 @@
       ],
       "tags": [
         "LiDAR-Fusion",
-        "Physics & Simulation"
+        "Physics & Simulation",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.RO",
       "comment": null
@@ -1354,6 +1493,7 @@
       ],
       "tags": [
         "Physics & Simulation",
+        "Foundations",
         "Mesh & Surface"
       ],
       "primary_arxiv_category": "cs.RO",
@@ -1384,7 +1524,7 @@
       "code_url": null,
       "project_url": "https://privacypreserving3dgs.github.io/",
       "abstract": "3D Gaussian Splatting (3DGS) has rapidly become the preferred representation for high-fidelity novel view synthesis and 3D scene reconstruction. However, the learned representation encodes sensitive visual information including human faces, license plates, documents, and computer screens, raising significant privacy concerns when trained splats are shared or deployed. In this work, we address the underexplored problem of privacy preservation in Gaussian Splatting by proposing a representation-level anonymization framework that directly anonymizes a trained splat. Given a trained splat and a user-provided reference view identifying sensitive content, our method localizes the corresponding regions in the underlying 3D representation and directly anonymizes them, ensuring that the sensitive information is absent from all subsequently rendered novel views while preserving the overall scene geometry and visual fidelity. We achieve this post-training anonymization in less than 1 second. Furthermore, we extend our framework with a privacy-by-design training strategy that prevents sensitive content from being embedded into the representation during optimization, enabling the generation of privacy-preserving splats directly from training images. Our method achieves a remarkably low Face Similarity Measure (FSM) of 9.79% at a retained Face Detection Rate (FDR) of 39.47% and makes sensitive text completely unreadable with an OCR Character Error Rate of 1.00. Our work aims to serve as the primary stepping stone towards privacy-aware 3D representations and motivates further research along these directions.",
-      "tldr": "3D Gaussian Splatting (3DGS) has rapidly become the preferred representation for high-fidelity novel view synthesis and 3D scene reconstruction.",
+      "tldr": "Our method achieves a remarkably low Face Similarity Measure (FSM) of 9.79% at a retained Face Detection Rate (FDR) of 39.47% and makes sensitive text completely unreadable with an OCR Character Error Rate...",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -1416,14 +1556,15 @@
       "code_url": null,
       "project_url": null,
       "abstract": "We present GaussianSpline, a dynamic 4D Gaussian Splatting method that models per-Gaussian motion using adaptive, non-uniform piecewise cubic Bézier splines. Unlike approaches based on global deformations, fixed-order polynomials, or uniformly parameterized splines, GaussianSpline jointly learns the Bézier control points and the temporal partition of each Gaussian's trajectory. This adaptive representation allocates greater temporal capacity to highly dynamic regions while maintaining compact trajectories for near-static regions, enabling high-fidelity reconstruction of complex and rapidly changing motion. To jointly achieve globally smooth motion and local adaptivity, we enforce $G^1$ continuity between consecutive Bézier segments using a reflection-based constraint on their control points. This produces smooth, fully differentiable trajectories while preserving the flexibility of non-uniform temporal parameterization. Experiments on the Neural 3D Video benchmark, the Google Immersive dataset, as well as on synthetic scenes demonstrate that GaussianSpline substantially improves reconstruction quality in scenes with highly non-uniform and challenging dynamics, while maintaining competitive performance on general dynamic scenes compared with state-of-the-art 4D Gaussian Splatting methods.",
-      "tldr": "We present GaussianSpline, a dynamic 4D Gaussian Splatting method that models per-Gaussian motion using adaptive, non-uniform piecewise cubic Bézier splines.",
+      "tldr": "Presents GaussianSpline, a dynamic 4D Gaussian Splatting method that models per-Gaussian motion using adaptive, non-uniform piecewise cubic Bézier splines.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "4DGS"
+        "4DGS",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.GR",
       "comment": "8 pages, 4 figures"
@@ -1454,7 +1595,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Sparse-view 4D reconstruction is highly under-constrained when only a few cameras are available. Generative priors can recover missing appearances, but video models are computationally impractical for iterative reconstruction, whereas single-view models produce temporally inconsistent pseudo-observations. Moreover, directly absorbing uncertain generative outputs into Gaussian optimization often creates redundant primitives and floating artifacts. To address these challenges, we propose DUET4D, a self-corrective coupled guidance framework for sparse-view 4D Gaussian splatting. The core of our approach is a self-corrective framework where the 4D representation guides generative prior for spatio-temporal consistent supervisions. We first construct sequential alignments from current Gaussian evidence to steer the latent restoration. Then we use Sequential Fidelity Resampling to lift generative supervisions into Gaussian space to selectively distinguish repeatedly supported primitives. The corrected representation then provides more reliable Gaussian evidence for the next restoration cycle. Extensive experiments demonstrate that DUET4D significantly improves rendering quality and rendering efficiency.",
-      "tldr": "Sparse-view 4D reconstruction is highly under-constrained when only a few cameras are available.",
+      "tldr": "To address these challenges, we propose DUET4D, a self-corrective coupled guidance framework for sparse-view 4D Gaussian splatting.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS",
@@ -1462,7 +1603,8 @@
       ],
       "tags": [
         "4DGS",
-        "Sparse-View"
+        "Sparse-View",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1498,7 +1640,8 @@
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "CUDA & Rasterization"
+        "CUDA & Rasterization",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "13 pages"
@@ -1526,13 +1669,14 @@
       "code_url": "https://github.com/DCVL-3D/CGR-GS_release",
       "project_url": null,
       "abstract": "Recent studies on generalizable human Gaussian splatting have achieved the notable progress in synthesizing novel views of unseen human subjects from multi-view images. Despite this progress, existing methods still struggle to represent fine-grained details of human subjects, which inherently involve high geometric and textural complexity. This is because previous methods do not impose a constraint on how densely Gaussians are placed, which often leads to blurry rendering results in complex regions. To address this problem, we propose a complexity-guided regularization scheme. The key idea is to leverage a complexity prior computed via the local entropy in geometric and textural characteristics of a clothed human. This effectively prevents Gaussians from being coarsely placed in complex regions, which facilitates the faithful reconstruction of intricate structures. Furthermore, we sample local patches predominantly from complex regions according to this complexity prior, which allows the model to be sufficiently supervised by local details. Experimental results on benchmark datasets demonstrate that our method delivers state-of-the-art performance while maintaining the real-time inference speed in generalizable human Gaussian splatting. The code and model are publicly available at https://github.com/DCVL-3D/CGR-GS_release.",
-      "tldr": "Recent studies on generalizable human Gaussian splatting have achieved the notable progress in synthesizing novel views of unseen human subjects from multi-view images.",
+      "tldr": "Proposes a complexity-guided regularization scheme.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
       ],
       "tags": [
-        "Feed-Forward"
+        "Feed-Forward",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "28 pages, 11 figures, including appendix. Accepted to NeurIPS 2026"
@@ -1562,13 +1706,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Driving video captured through a windshield violates the world-space consistency assumed by 3D Gaussian Splatting (3DGS): the road scene exhibits parallax while cabin reflections remain attached to the camera, causing standard 3DGS to embed reflected content into the reconstructed scene. We introduce RIDE-Splat, a pipeline for reflection-free 3D reconstruction from posed driving video without clean images, reflection masks, or pretrained networks. RIDE-Splat assigns world-consistent transmission through the windshield to a 3DGS scene and the dominant camera-attached reflection to one shared, signed RGB image. It builds the clean reconstruction in two passes. First, it learns the 3D geometry and the signed reflection image, representing both added radiance and transmission attenuation. Then, it uses the reflection-removed training images to fit a clean 3DGS model. At inference, the reflection image is discarded, preserving the standard 3DGS rendering path. We also introduce the RIDE-Splat Dataset, the first 3D reconstruction benchmark for reflection removal from driving video -- with real driving scenes, physical windshield reflections in training views, and separately captured non-reflective evaluation images. Across the RIDE-Splat Dataset, XLD, and Wayve, RIDE-Splat outperforms 3DGS, DC-Gaussian, and RobustSplat on all nine aggregate metrics, improving PSNR by up to 3.59 dB and reducing LPIPS by up to 0.0876. We achieve the highest metrics in 38 out of 42 per-scene comparisons and removes windshield reflections that remain visible in the baselines while preserving the transmitted scene.",
-      "tldr": "Driving video captured through a windshield violates the world-space consistency assumed by 3D Gaussian Splatting (3DGS): the road scene exhibits parallax while cabin reflections remain attached to the camera, causing standard 3DGS to embed...",
+      "tldr": "Introduces RIDE-Splat, a pipeline for reflection-free 3D reconstruction from posed driving video without clean images, reflection masks, or pretrained networks.",
       "primary_category": "Autonomous Driving & Urban Scenes",
       "categories": [
         "Autonomous Driving & Urban Scenes"
       ],
       "tags": [
-        "Autonomous Driving"
+        "Autonomous Driving",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1595,13 +1740,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "3D Gaussian Splatting (3DGS) has emerged as a promising approach for fast, high-quality novel-view rendering. However, its large parameter size remains a bottleneck for storage and transmission. We propose RacerGS, a compact 3DGS compression framework that achieves scene reconstruction at significantly reduced storage sizes with preserved fidelity. To obtain compact and spatially coherent features, we design a hash projection model that projects the anchor hash encodings into compact context features. Additionally, we introduce a FiLM-modulated autoregressive GRU context model that utilizes causal dependencies among anchor feature groups and uses recurrent hidden states to refine entropy-model parameters, improving bitrate efficiency. Furthermore, we adaptively entropy-code quantized anchor-attribute residuals relative to their context-predicted means, leveraging spatial consistency to reduce symbol entropy. Overall, RacerGS achieves more than 150x compression over vanilla 3DGS and 28x over Scaffold-GS, while providing comparable rendering quality. Extensive experiments across five datasets demonstrate that RacerGS outperforms prior 3DGS compression methods in both storage reduction and rate-distortion performance.",
-      "tldr": "3D Gaussian Splatting (3DGS) has emerged as a promising approach for fast, high-quality novel-view rendering.",
+      "tldr": "Proposes RacerGS, a compact 3DGS compression framework that achieves scene reconstruction at significantly reduced storage sizes with preserved fidelity.",
       "primary_category": "2D Gaussians, Geometry & Compression",
       "categories": [
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1629,7 +1775,7 @@
       "code_url": null,
       "project_url": "https://xiaobin2001.github.io/ParetoGS-Web/",
       "abstract": "Scalable 3D Gaussian Splatting allows one scene representation to serve different Gaussian-count budgets, yet its quality-budget curve may lag behind models optimized separately for each budget. Reducing the number of Gaussians changes both the selected members and the reconstruction tasks carried by the survivors; parameters inherited from a high-budget model may fit a low-budget representation poorly. We propose ParetoGS, which describes member changes and parameter evolution with a small set of adapted budget anchors and decodes intermediate budgets without separate optimization at every requested count. ParetoGS alternates pruning and fixed-member adaptation to build nested anchors with persistent identities, and encodes their parameter changes relative to the full model in a compact residual atlas. At decoding, it interpolates the states of shared members and gradually introduces the rendering contributions of new members, connecting sparse anchors into a continuous-budget representation. Across 13 scenes, ParetoGS attains better average PSNR, SSIM, and LPIPS with fewer Gaussians than the compared prefix methods at 10% of each method's own full model. From a shared full model, it also outperforms FlexGS-imp at its trained 1%, 5%, and 10% budgets and NanoGS-imp at the 1% and 0.1% budgets. On Garden, its non-anchor quality approaches an empirical reference from independently optimized GNS models at higher retention ratios and exceeds it at some lower-budget points. Across 13 scenes, encoding reduces mean additional state from 390.0 to 85.7 MB with an average PSNR change of 0.01 dB. Project page: https://xiaobin2001.github.io/ParetoGS-Web/",
-      "tldr": "Scalable 3D Gaussian Splatting allows one scene representation to serve different Gaussian-count budgets, yet its quality-budget curve may lag behind models optimized separately for each budget.",
+      "tldr": "Proposes ParetoGS, which describes member changes and parameter evolution with a small set of adapted budget anchors and decodes intermediate budgets without separate optimization at every requested count.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration",
@@ -1637,7 +1783,8 @@
       ],
       "tags": [
         "Densification & Pruning",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1666,12 +1813,13 @@
       "code_url": "https://github.com/JuIvyy/LegoOcc",
       "project_url": null,
       "abstract": "Open-vocabulary 3D occupancy prediction is important for embodied agents operating in complex environments whose semantic categories extend beyond fixed taxonomies. While recent studies have explored open-vocabulary occupancy in outdoor driving scenarios, indoor environments remain challenging due to dense occlusions, complex geometry, and fine-grained long-tailed semantics. To reduce the need for expensive voxel-level semantic annotations, we study a geometry-only supervision setting requiring only binary occupancy labels. We build upon Language-Embedded Gaussians as a unified representation coupling 3D geometry with language-aligned semantics. For geometry learning, we introduce an opacity-aware Poisson-based Gaussian-to-Occupancy formulation that enables stable volumetric aggregation under binary occupancy supervision. For semantic learning, we render Gaussian features into images and align them with a frozen open-vocabulary model, together with Progressive Temperature Decay to reduce feature mixing during Gaussian splatting. Building on this framework, we further introduce Instance-Level Semantic Consistency to alleviate fragmented object predictions, and Covisibility-Aware Support-View Selection to provide informative and less redundant multi-view semantic supervision. We also extend our framework to outdoor driving scenarios to evaluate its generality across substantially different environments. Extensive experiments on indoor and outdoor benchmarks demonstrate that our method achieves strong open-vocabulary occupancy performance, validating the effectiveness and generality of our framework. Code will be available at https://github.com/JuIvyy/LegoOcc.",
-      "tldr": "Open-vocabulary 3D occupancy prediction is important for embodied agents operating in complex environments whose semantic categories extend beyond fixed taxonomies.",
+      "tldr": "For geometry learning, we introduce an opacity-aware Poisson-based Gaussian-to-Occupancy formulation that enables stable volumetric aggregation under binary occupancy supervision.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
       ],
       "tags": [
+        "Foundations",
         "Mesh & Surface"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -1707,7 +1855,8 @@
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
-        "CUDA & Rasterization"
+        "CUDA & Rasterization",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -1734,14 +1883,15 @@
       "code_url": "https://github.com/quanth238/birth-death-3dgs",
       "project_url": null,
       "abstract": "3D Gaussian Splatting (3DGS) has become a standard representation for real-time novel-view synthesis. Yet, its quality-efficiency trade-off still relies heavily on adaptive density control. Existing cloning, splitting, and pruning rules use proxy signals, such as position gradients, opacity, and image-space error. Although effective in practice, these signals do not directly answer the structural question behind density control: where should new Gaussians be allocated to reduce the multi-view reconstruction loss, and which existing primitives can be pruned with minimal penalty. To address this, we propose first-variation birth-death control for 3DGS, a principled approach that replaces heuristic structural decisions with a variational score derived from the reconstruction loss. At each structural update, we freeze the current Gaussian population, attach auxiliary mass coordinates to each primitive, and differentiate the multiview loss with respect to these coordinates. We demonstrate that this score is a coordinate of the first variation of the Splat Regression Model, giving a rigorous local descent surrogate for birth-death moves: high-score Gaussians are selected as birth sites, while low-score, low-opacity Gaussians are selected for removal. Across standard 3DGS benchmarks, integrating this score into 3DGS-MCMC yields state-of-the-art reconstruction quality and outperforms existing methods, delivering the most significant gains under tight Gaussian budgets. Ultimately, our work provides compelling evidence that gradient-based variational metrics offer a principled alternative to proxy heuristics in 3DGS.",
-      "tldr": "3D Gaussian Splatting (3DGS) has become a standard representation for real-time novel-view synthesis.",
+      "tldr": "To address this, we propose first-variation birth-death control for 3DGS, a principled approach that replaces heuristic structural decisions with a variational score derived from the reconstruction loss.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
       ],
       "tags": [
         "Densification & Pruning",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Code is available at: https://github.com/quanth238/birth-death-3dgs"
@@ -1767,7 +1917,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Language-aware 3D Gaussian Splatting (3DGS) has advanced language-driven 3D scene understanding by incorporating semantic and relational cues into reconstructed scenes. However, relation-aware grounding depends not only on representing such information, but also on whether the underlying scene-side evidence is reliable and sufficient. Multi-view semantic aggregation can incorporate weak observations, while object relations can remain under-observed along the available camera trajectory, leading to ambiguous evidence for target disambiguation. We present RelateGS, a structured language-aware Gaussian representation that selectively refines semantic and relational evidence for 3D visual grounding. RelateGS suppresses unreliable observations during semantic feature uplifting and consolidates multi-view object observations into a persistent 3D graph. The graph further identifies under-observed object relations and guides targeted re-querying of informative existing frames to complement their evidence. Experiments on Sr3D+ and Nr3D demonstrate competitive 3D grounding performance, improving the previous best by 7.9 and 1.7 percentage points at Acc@0.25, respectively.",
-      "tldr": "Language-aware 3D Gaussian Splatting (3DGS) has advanced language-driven 3D scene understanding by incorporating semantic and relational cues into reconstructed scenes.",
+      "tldr": "Presents RelateGS, a structured language-aware Gaussian representation that selectively refines semantic and relational evidence for 3D visual grounding.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -1801,7 +1951,7 @@
       "code_url": null,
       "project_url": "https://abwerby.github.io/GEMS/",
       "abstract": "Real-world environments undergo continual semi-static changes, requiring a memory representation that captures both the spatial and temporal evolution of a scene. Existing spatio-temporal memories for robots typically rely either on structured representations, which are limited to the entities and attributes captured during construction, or on image-based memories, which are constrained to previously observed viewpoints. We introduce GEMS, a framework that combines a persistent spatio-temporal 3D Gaussian Splatting (3DGS) map with an agentic reasoning pipeline. The 3DGS map is reconstructed once and subsequently updated only in regions where the scene changes, storing only these modifications while preserving visual detail across time. The agentic pipeline leverages this map to render novel views on demand, iteratively accumulating evidence to answer spatio-temporal questions and ground objects from natural-language queries. To advance future research, we introduce GEMS-Bench, a spatiotemporal question-answering benchmark focused on semi-static environments. It comprises 3 real-world and 12 synthetic environments, spanning 473 question-answer pairs. We evaluate GEMS on novel-view synthesis quality across scene updates, 3D object grounding, spatiotemporal question answering, and storage efficiency. GEMS outperforms recent baselines in 3D object grounding and spatiotemporal question answering, while achieving rendering quality on par with dedicated scene-update methods. Code and data: https://abwerby.github.io/GEMS/",
-      "tldr": "Real-world environments undergo continual semi-static changes, requiring a memory representation that captures both the spatial and temporal evolution of a scene.",
+      "tldr": "Introduces GEMS, a framework that combines a persistent spatio-temporal 3D Gaussian Splatting (3DGS) map with an agentic reasoning pipeline.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS"
@@ -1834,7 +1984,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Online semantic 3D Gaussian Splatting (3DGS) enables open-vocabulary scene understanding from streaming observations. However, existing methods recover geometric context missing from image-derived semantic features using an additionally learned 3D network, incurring extra training and runtime overhead. We observe that such geometric-semantic evidence may already exist in the agent's observation history and can be retrieved rather than learned. Based on this insight, we introduce RecallGS (Geometry-Grounded Recall for Online Semantic Gaussian Splatting), a lightweight, training-free mechanism that treats past observations as a non-parametric geometric-semantic prior. RecallGS follows a recall-ground-fuse pipeline: CLIP retrieves relevant observations, alpha-compositing weights identify geometrically supported views, and aggregate their semantic features over each Gaussian's rendered footprint. On ScanNet and ScanNet++, RecallGS achieves strong semantic segmentation performance at 2.48 FPS, demonstrating that geometric-semantic context can be effectively recovered from observation history without an additional learned 3D branch.",
-      "tldr": "Online semantic 3D Gaussian Splatting (3DGS) enables open-vocabulary scene understanding from streaming observations.",
+      "tldr": "Based on this insight, we introduce RecallGS (Geometry-Grounded Recall for Online Semantic Gaussian Splatting), a lightweight, training-free mechanism that treats past observations as a non-parametric...",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS"
@@ -1903,7 +2053,7 @@
       "code_url": null,
       "project_url": "https://ranrhuang.github.io/pixgr/",
       "abstract": "We present PixGR, an efficient framework that integrates lightweight pixel-space generative modeling into feed-forward 3D Gaussian reconstruction to model scene uncertainty. Context observations are encoded once into a scene latent representation, which conditions generative decoding from noisy target views to produce a shared 3D Gaussian representation. We formulate this process using pixel-space flow matching, enabling end-to-end optimization of 3D reconstruction with direct pixel-space generative supervision through differentiable rendering. This avoids VAE-based latent compression and error propagation inherent in previous two-stage pipelines. To preserve feed-forward efficiency, PixGR caches the scene representation and performs iterative inference using a lightweight DiT decoder. Experiments demonstrate that PixGR outperforms regression-based approaches in challenging sparse-view settings, particularly with widely spaced observations and view extrapolation. Meanwhile, it maintains sub-second inference and remains competitive with substantially heavier pretrained generative models. Our project page is available at https://ranrhuang.github.io/pixgr/.",
-      "tldr": "We present PixGR, an efficient framework that integrates lightweight pixel-space generative modeling into feed-forward 3D Gaussian reconstruction to model scene uncertainty.",
+      "tldr": "Presents PixGR, an efficient framework that integrates lightweight pixel-space generative modeling into feed-forward 3D Gaussian reconstruction to model scene uncertainty.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -1912,7 +2062,8 @@
       "tags": [
         "Feed-Forward",
         "Sparse-View",
-        "Compression"
+        "Compression",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "Project page: https://ranrhuang.github.io/pixgr/"
@@ -1942,7 +2093,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Neurosurgical navigation commonly presents magnetic resonance imaging (MRI) as 2D slices, making it difficult to relate the anatomy in those slices to the cortical surface observed through the surgical microscope. We seek a common 3D visualization that combines a photorealistic reconstruction of the exposed cortex during tumor surgery with whole-brain MRI context and diffusion tractography pathways. This requires the reconstructed cortex to form a clear boundary around the brain anatomy rather than a diffuse volume that obscures internal structures. Conventional 3D Gaussian Splatting (3DGS) can reproduce observed views but, under limited surgical view coverage, may distribute opacity through a thick and geometrically ambiguous band. We introduce height-field 2D Gaussian Splatting (H-2DGS), a three-stage pipeline that concentrates a robust 3DGS reconstruction, fuses its depth into a shared truncated signed distance field (TSDF) surface, and represents that surface with curved, surface-oriented Gaussian primitives. Separate height, color, and opacity bases provide local geometry and appearance, while a neighbor-transition objective coordinates overlapping patches. The explicit surface further supports postoperative alignment: MRI-derived depth deforms the reconstruction, and tracked-color supervision with alternating optimization preserves its appearance. Across five real neurosurgical cases, H-2DGS gives low multi-view depth inconsistency, a compact 7.97MB representation, and interactive rendering at 29--42ms per frame. The resulting sharp, deformable surface integrates clearly with tractography and MRI anatomy, including a postoperative resection cavity.",
-      "tldr": "Neurosurgical navigation commonly presents magnetic resonance imaging (MRI) as 2D slices, making it difficult to relate the anatomy in those slices to the cortical surface observed through the surgical microscope.",
+      "tldr": "Introduces height-field 2D Gaussian Splatting (H-2DGS), a three-stage pipeline that concentrates a robust 3DGS reconstruction, fuses its depth into a shared truncated signed distance field (TSDF) surface,...",
       "primary_category": "2D Gaussians, Geometry & Compression",
       "categories": [
         "2D Gaussians, Geometry & Compression",
@@ -1952,7 +2103,8 @@
         "2DGS",
         "Diffusion",
         "Mesh & Surface",
-        "Medical & Healthcare"
+        "Medical & Healthcare",
+        "Foundations"
       ],
       "primary_arxiv_category": "eess.IV",
       "comment": null
@@ -1983,7 +2135,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Relighting and novel view synthesis of human portraits are essential in applications such as portrait photography, virtual reality (VR), and augmented reality (AR). Despite recent progress, 3D-aware portrait relighting remains challenging due to the demands for photorealistic rendering, real-time performance, and generalization to unseen subjects. Existing works either rely on supervision from limited and expensive light stage captured data or produce suboptimal results. Moreover, many works are based on generative NeRFs, which suffer from poor 3D consistency and low real-time performance. We resort to recent progress on generative 3D Gaussians and design a lighting model based on a unified neural radiance transfer representation, which responds linearly to incident light. Using only in-the-wild images, our method achieves state-of-the-art relighting results and a significantly faster rendering speed ($\\times12$) compared to previous 3D-aware portrait relighting research. Project page: http://www.geometrylearning.com/GSHeadRelight/.",
-      "tldr": "Relighting and novel view synthesis of human portraits are essential in applications such as portrait photography, virtual reality (VR), and augmented reality (AR).",
+      "tldr": "Using only in-the-wild images, our method achieves state-of-the-art relighting results and a significantly faster rendering speed ($\\times12$) compared to previous 3D-aware portrait relighting research.",
       "primary_category": "Human Avatars & VR",
       "categories": [
         "Human Avatars & VR",
@@ -1991,7 +2143,8 @@
       ],
       "tags": [
         "Relighting & BRDF",
-        "VR & XR"
+        "VR & XR",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null
@@ -2024,13 +2177,14 @@
       "code_url": null,
       "project_url": null,
       "abstract": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments. Its standard training recipe, however, is expensive across all existing paradigms: imitation learning requires fleet-scale driving logs whose behavior distribution only thinly covers the safety-critical tail; closed-loop reinforcement learning in a photorealistic simulator, while offering diverse behaviors, is bottlenecked by sample-efficiency, per-step cost of rendering, and a forward pass through a large vision backbone. Self-play in vectorized simulators changes the economics: at millions of rollout steps per second, one can obtain a state distribution with natural diversity in collisions, near-misses, and recoveries that no driving log contains, and a highly reactive policy emerges from a basic driving-quality reward. Our approach exploits this asymmetry. We pretrain a single policy by self-play, distill its rollouts into a flow-matching trajectory teacher that also plans, and train lightweight adapters on a frozen pretrained vision backbone to reproduce the latent space of either teacher through the action KL divergence, a batch-relational low-rank structural loss, and, for the planner, a trajectory-matching loss. Every target traces back to the self-play policy, so alignment never supervises against a logged trajectory: a paired dataset of (image, scene-state) frames suffices, with no need for the curated expert demonstrations that imitation pretraining is built on. From this one self-play teacher we obtain two end-to-end students: a closed-loop policy that outperforms every published imitation-based end-to-end method on the photorealistic 3D Gaussian splatting closed-loop benchmark HUGSim, and a planner that reaches 59.4 EPDMS on NAVSIM navhard, above every published method including DriveZero-Scale (57.1), and 95.5 PDMS on navtest, without human demonstrations.",
-      "tldr": "End-to-end autonomous driving has achieved state-of-the-art performance on benchmarks and real-world deployments.",
+      "tldr": "From this one self-play teacher we obtain two end-to-end students: a closed-loop policy that outperforms every published imitation-based end-to-end method on the photorealistic 3D Gaussian splatting...",
       "primary_category": "Autonomous Driving & Urban Scenes",
       "categories": [
         "Autonomous Driving & Urban Scenes"
       ],
       "tags": [
-        "Autonomous Driving"
+        "Autonomous Driving",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.RO",
       "comment": null
@@ -2094,13 +2248,14 @@
       "code_url": null,
       "project_url": "https://chenbangpu.github.io/R4DGS/",
       "abstract": "Dynamic representations based on 4D Gaussian Splatting (4DGS) have shown strong capabilities in reconstruction and rendering, yet current methods remain limited in supporting complex natural-language referring in dynamic scenes. Existing 4D Gaussian methods are primarily designed for rendering-oriented dynamic modeling, while current semantic extensions often rely on scene-specific semantic optimization or are evaluated on relatively simple query settings. In this paper, we study Referring 4D Gaussian Splatting (R4DGS), a task for grounding temporally varying, multi-target or reasoning-intensive, and zero-target or distractor expressions in dynamic 4D scenes. To support this task, we introduce R4D-Bench-QA, a benchmark with structured query annotations. We further present ReferGaussian, a unified framework built upon 4DGS that converts low-level dynamic Gaussians into persistent, language-addressable entities for training-free referring inference. ReferGaussian organizes mask-supported Gaussian entities in an EntityBank, uses Multimodal Large Language Models (MLLMs) to decompose complex queries into trackable object phrases and structured referring constraints, and performs constraint-aware grounding without scene-specific semantic optimization. Experiments on R4D-Bench-QA and the 4D LangSplat protocol demonstrate improved temporal target selection and competitive spatiotemporal grounding without scene-specific semantic training. Project resources are available at https://chenbangpu.github.io/R4DGS/.",
-      "tldr": "Dynamic representations based on 4D Gaussian Splatting (4DGS) have shown strong capabilities in reconstruction and rendering, yet current methods remain limited in supporting complex natural-language referring in dynamic scenes.",
+      "tldr": "To support this task, we introduce R4D-Bench-QA, a benchmark with structured query annotations.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS"
       ],
       "tags": [
-        "4DGS"
+        "4DGS",
+        "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "10 pages. Accepted at ACM Multimedia 2026. Project page: https://chenbangpu.github.io/R4DGS/"
