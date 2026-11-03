@@ -2,12 +2,11 @@
 
 [![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-162-10b981)](#taxonomy-overview)
 
-> **Interactive Searchable Database**: Browse, filter by subdomain or emergent technical tags, toggle Dark/Light mode, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
+> **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
-An autonomous, schema-validated **One Big Table (OBT)** research database tracking frontier **3D/4D Gaussian Splatting** and neural rendering literature. Built with **Data Operations & DevSecOps** best practices:
-- **Single Source of Truth**: Canonical records stored in [`data/papers.json`](data/papers.json) and validated via **Pydantic v2** (supporting both arXiv preprints and non-arXiv IEEE/CVF/ACM publications).
-- **Declarative Taxonomy & Emergent Tagging**: Subdomains and technical tags are defined in [`config/taxonomy.yaml`](config/taxonomy.yaml) and enriched via GitHub Models (`gpt-4o-mini`) with deterministic fallback.
-- **Trunk-Based CI/CD (<72h Branch SLA)**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday (`midweek-sync.yml`) and published to GitHub Pages with tagged releases every Sunday (`weekly-release.yml`).
+An autonomous research database tracking **3D/4D Gaussian Splatting** and neural rendering literature.
+- **Support for Multiple Publication Sources**: Currently supporting arXiv preprints with planned future support for non-arXiv IEEE/CVF/ACM publications.
+- **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
 *Last updated: `2026-11-03` | Total Papers: **162** | With Official Code: **12***
 
@@ -28,7 +27,7 @@ An autonomous, schema-validated **One Big Table (OBT)** research database tracki
 
 ---
 
-## Latest Frontier Additions (Top 25 Most Recent)
+## Latest Additions (Top 25 Most Recent)
 
 | Date | Title | First Author | Category | Links |
 | :---: | :--- | :--- | :--- | :---: |
