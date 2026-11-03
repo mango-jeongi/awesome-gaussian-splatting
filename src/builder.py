@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import shutil
 from collections import Counter
 from pathlib import Path
@@ -10,6 +11,18 @@ from src.schema import PaperDatabase, PaperRecord, TaxonomyConfig
 
 REPO_URL = "https://github.com/mango-jeongi/awesome-gaussian-splatting"
 PAGES_URL = "https://mango-jeongi.github.io/awesome-gaussian-splatting/"
+
+
+def gfm_slug(text: str) -> str:
+    """Generate a GitHub Flavored Markdown (GFM) header anchor slug.
+
+    GFM downcases, strips punctuation (preserving whitespace and hyphens),
+    and converts each whitespace character to a hyphen. Punctuation removal
+    surrounding characters like ' & ' leaves two spaces, which translates
+    to '--'.
+    """
+    cleaned = re.sub(r"[^\w\s-]", "", text.lower())
+    return re.sub(r"\s", "-", cleaned)
 
 
 def _format_links(p: PaperRecord) -> str:
@@ -37,17 +50,17 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
         cat_counts[p.primary_category] += 1
 
     lines: list[str] = [
-        "# Awesome 3D Gaussian Splatting (3DGS) — Frontier Research Database",
+        "# Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database",
         "",
-        f"[![CI Quality Gate]({REPO_URL}/actions/workflows/ci.yml/badge.svg)]({REPO_URL}/actions/workflows/ci.yml) "
+        f"[![CI Quality Gate]({REPO_URL}/actions/workflows/ci.yml/badge.svg?branch=main)]({REPO_URL}/actions/workflows/ci.yml) "
         f"[![Daily arXiv Feed]({REPO_URL}/actions/workflows/daily-feed.yml/badge.svg)]({REPO_URL}/actions/workflows/daily-feed.yml) "
         f"[![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)]({PAGES_URL}) "
         f"[![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-{total}-10b981)](#taxonomy-overview)",
         "",
         f"> **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[{PAGES_URL.replace('https://', '').rstrip('/')}]({PAGES_URL})**.",
         "",
-        "An autonomous research database tracking **3D/4D Gaussian Splatting** and neural rendering literature.",
-        "- **Support for Multiple Publication Sources**: Currently supporting arXiv preprints with planned future support for non-arXiv IEEE/CVF/ACM publications.",
+        "An autonomous research database aggregating **3D/4D Gaussian Splatting** and neural rendering literature.",
+        "- **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.",
         "- **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.",
         "",
         f"*Last updated: `{last_date}` | Total Papers: **{total}** | With Official Code: **{with_code}***",
@@ -62,9 +75,7 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
 
     for cat in taxonomy.categories:
         cnt = cat_counts.get(cat.name, 0)
-        anchor = cat.name.lower().replace("&", "").replace(",", "").replace(" ", "-")
-        while "--" in anchor:
-            anchor = anchor.replace("--", "-")
+        anchor = gfm_slug(cat.name)
         lines.append(f"| **[{cat.name}](#{anchor})** | `{cnt}` | {cat.description} |")
 
     lines.extend(
@@ -122,6 +133,23 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
         [
             "---",
             "",
+            "## Architecture & Multi-Phase Roadmap",
+            "",
+            "- **Phase 1: Foundations & Automated Ingestion (Completed)**",
+            "  - Autonomous daily arXiv delta ingestion, Schema-on-Read One Big Table (`data/papers.json`), and deterministic rule-based taxonomy tagger.",
+            "  - Trunk-based CI/CD workflows and instant-search responsive GitHub Pages web portal with dark/light themes and BibTeX export.",
+            "",
+            "- **Phase 2: Multi-Source Literature Expansion (In Progress)**",
+            "  - Hugging Face Daily Papers integration (tracking community upvotes, trending papers, and interactive Gradio spaces).",
+            "  - Ingestion of non-arXiv peer-reviewed proceedings (CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS).",
+            "  - Headless daemon orchestration on local hardware (`ssh msi-raider`) for Figure 1 teaser thumbnails and benchmark table extraction.",
+            "",
+            "- **Phase 3: Citation Intelligence & Knowledge Graph Network (Active Development)**",
+            "  - Integration with OpenAlex and Semantic Scholar APIs to track global citation counts and citation velocity.",
+            "  - Cross-paper reference network mapping mutual citations and foundational lineage within the 3DGS corpus.",
+            "",
+            "---",
+            "",
             "## Adding New Tags or Categories",
             "",
             "1. Edit [`config/taxonomy.yaml`](config/taxonomy.yaml) to add a new category or keyword trigger under `categories` or `technical_tags`.",
@@ -131,6 +159,13 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
             "   uv run python -m src.cli build",
             "   ```",
             "3. Both `data/papers.json`, `README.md`, and the dynamic filter pills on the GitHub Pages web app will automatically reflect the expanded taxonomy.",
+            "",
+            "---",
+            "",
+            "## Contributing",
+            "",
+            "- **Submit a Paper or Code**: Authors and researchers are encouraged to submit newly released papers, official repositories, or project demos via our [Paper Submission Form](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues/new?template=paper_submission.yml).",
+            "- **Direct Contributions**: See [`CONTRIBUTING.md`](CONTRIBUTING.md) for local environment setup, testing standards, and taxonomy pull request guidelines.",
             "",
             "---",
             "",

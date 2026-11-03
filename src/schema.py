@@ -284,6 +284,39 @@ class PaperRecord(BaseModel):
         description="Raw author comment field from arXiv.",
     )
 
+    # Phase 3: Citation Intelligence & Knowledge Graph
+    citation_count: int = Field(
+        default=0,
+        ge=0,
+        description="Total global citations tracked via OpenAlex or academic graphs.",
+    )
+    influential_citation_count: int = Field(
+        default=0,
+        ge=0,
+        description="Influential citations tracked via academic graphs.",
+    )
+    openalex_id: str | None = Field(
+        default=None,
+        description="Canonical OpenAlex Work ID (e.g., 'https://openalex.org/W4385318467').",
+    )
+    referenced_works: list[str] = Field(
+        default_factory=list,
+        description="Work IDs/DOIs of papers referenced by this paper.",
+    )
+    db_citation_count: int = Field(
+        default=0,
+        ge=0,
+        description="Number of papers in this specific 3DGS database that cite this paper.",
+    )
+    db_citations: list[str] = Field(
+        default_factory=list,
+        description="IDs of papers in this database citing this paper.",
+    )
+    db_references: list[str] = Field(
+        default_factory=list,
+        description="IDs of papers in this database cited by this paper.",
+    )
+
     @field_validator("title", "abstract", "tldr", mode="before")
     @classmethod
     def clean_whitespace(cls, v: object) -> str:
@@ -448,6 +481,18 @@ class PaperDatabase(BaseModel):
         self.total_count = len(self.papers)
         self.last_updated = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
         return added
+
+    def get(self, paper_id: str) -> PaperRecord | None:
+        """Lookup a paper by canonical ID, arXiv ID, or clean DOI."""
+        norm_id = paper_id.lower().strip()
+        for p in self.papers:
+            if p.id.lower() == norm_id:
+                return p
+            if p.arxiv_id and p.arxiv_id.lower() == norm_id:
+                return p
+            if p.doi and p.doi.lower().strip().replace("https://doi.org/", "") == norm_id:
+                return p
+        return None
 
     @classmethod
     def load(cls, path: str | Path) -> PaperDatabase:

@@ -9,6 +9,10 @@ from pathlib import Path
 from src.builder import build_artifacts
 from src.enricher import MultiProviderEnricher
 from src.extractors.arxiv import ArxivExtractor
+from src.extractors.citations import (
+    build_citation_knowledge_graph,
+    enrich_database_citations,
+)
 from src.extractors.huggingface import HuggingFaceExtractor
 from src.schema import PaperDatabase
 from src.seed import seed_database
@@ -82,6 +86,45 @@ def cmd_seed(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_citations(args: argparse.Namespace) -> int:
+    """Enrich papers with global citation counts from OpenAlex and build internal knowledge graph."""
+    db = PaperDatabase.load(args.data)
+    stats = enrich_database_citations(db, batch_size=args.batch_size, max_papers=args.limit)
+    db.save(args.data)
+    if args.build:
+        build_artifacts(
+            data_path=args.data,
+            taxonomy_path=args.taxonomy,
+            readme_path=args.readme,
+            docs_data_path=args.docs_data,
+        )
+    print(
+        f"[citations] Enriched {stats.get('enriched_papers', 0)} papers | "
+        f"Knowledge graph: {stats.get('total_edges', 0)} internal citation edges across "
+        f"{stats.get('connected_papers', 0)} papers"
+    )
+    return 0
+
+
+def cmd_graph(args: argparse.Namespace) -> int:
+    """Compute and update internal knowledge graph cross-references without network calls."""
+    db = PaperDatabase.load(args.data)
+    stats = build_citation_knowledge_graph(db)
+    db.save(args.data)
+    if args.build:
+        build_artifacts(
+            data_path=args.data,
+            taxonomy_path=args.taxonomy,
+            readme_path=args.readme,
+            docs_data_path=args.docs_data,
+        )
+    print(
+        f"[graph] Built internal knowledge graph: {stats.get('total_edges', 0)} edges "
+        f"across {stats.get('connected_papers', 0)}/{stats.get('total_nodes', 0)} papers"
+    )
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     """Validate that data/papers.json conforms strictly to the Pydantic v2 OBT schema."""
     db = PaperDatabase.load(args.data)
@@ -128,6 +171,16 @@ def main(argv: list[str] | None = None) -> int:
 
     p_val = sub.add_parser("validate", help="Validate data/papers.json against Pydantic v2 schema")
     p_val.set_defaults(func=cmd_validate)
+
+    p_cit = sub.add_parser("citations", help="Enrich citation metrics and build knowledge graph")
+    p_cit.add_argument("--batch-size", type=int, default=40)
+    p_cit.add_argument("--limit", type=int, default=None)
+    p_cit.add_argument("--build", action="store_true", help="Automatically rebuild README and docs")
+    p_cit.set_defaults(func=cmd_citations)
+
+    p_grp = sub.add_parser("graph", help="Compute internal knowledge graph cross-references")
+    p_grp.add_argument("--build", action="store_true", help="Automatically rebuild README and docs")
+    p_grp.set_defaults(func=cmd_graph)
 
     args = parser.parse_args(argv)
     return int(args.func(args))

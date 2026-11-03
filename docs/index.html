@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Awesome 3D Gaussian Splatting — Frontier Research Database</title>
+  <title>Awesome 3D Gaussian Splatting — Comprehensive Research Database</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,7 +42,7 @@
             Awesome 3D Gaussian Splatting
           </h1>
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-            Autonomous Frontier Research Database (OBT)
+            Comprehensive Research Database (OBT)
           </p>
         </div>
       </div>
@@ -71,7 +71,7 @@
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Stats Banner -->
-    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+    <section class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
       <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Total Papers Indexed</div>
         <div id="statTotal" class="text-2xl font-bold text-sky-600 dark:text-sky-400 mt-1 mono">—</div>
@@ -81,8 +81,12 @@
         <div id="statWithCode" class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1 mono">—</div>
       </div>
       <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Knowledge Graph Edges</div>
+        <div id="statEdges" class="text-2xl font-bold text-indigo-500 dark:text-indigo-400 mt-1 mono">—</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Filtered Results</div>
-        <div id="statFiltered" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mt-1 mono">—</div>
+        <div id="statFiltered" class="text-2xl font-bold text-amber-600 dark:text-amber-400 mt-1 mono">—</div>
       </div>
       <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
         <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Last CI Sync</div>
@@ -111,6 +115,8 @@
           <select id="sortSelect" aria-label="Sort Order"
                   class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
             <option value="newest">Sort: Newest First</option>
+            <option value="citations">Sort: Most Cited (OpenAlex)</option>
+            <option value="db_citations">Sort: Most Cited in DB</option>
             <option value="oldest">Sort: Oldest First</option>
             <option value="code">Sort: Has Code First</option>
             <option value="title">Sort: Title (A–Z)</option>
@@ -359,6 +365,18 @@
 
     window.openBibtex = openBibtexModal;
 
+    window.jumpToPaper = function(paperId) {
+      searchInput.value = paperId;
+      selectedCategory = 'ALL';
+      selectedTags.clear();
+      renderFilters();
+      renderPapers();
+      const container = document.getElementById('papersContainer');
+      if (container) {
+        window.scrollTo({ top: container.offsetTop - 80, behavior: 'smooth' });
+      }
+    };
+
     function renderPapers() {
       const q = searchInput.value.trim().toLowerCase();
       const yr = yearSelect.value;
@@ -386,6 +404,8 @@
       });
 
       filtered.sort((a, b) => {
+        if (sortBy === 'citations') return (b.citation_count || 0) - (a.citation_count || 0) || (b.published_date || '').localeCompare(a.published_date || '');
+        if (sortBy === 'db_citations') return (b.db_citation_count || 0) - (a.db_citation_count || 0) || (b.citation_count || 0) - (a.citation_count || 0) || (b.published_date || '').localeCompare(a.published_date || '');
         if (sortBy === 'oldest') return (a.published_date || '').localeCompare(b.published_date || '');
         if (sortBy === 'code') return (b.code_url ? 1 : 0) - (a.code_url ? 1 : 0) || (b.published_date || '').localeCompare(a.published_date || '');
         if (sortBy === 'title') return (a.title || '').localeCompare(b.title || '');
@@ -426,6 +446,14 @@
                 </span>
                 ${venueHtml}
                 ${sourceBadge}
+                ${(p.citation_count && p.citation_count > 0) ? `
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20" title="${p.citation_count.toLocaleString()} citations on OpenAlex">
+                    ★ ${p.citation_count.toLocaleString()} cites
+                  </span>` : ''}
+                ${(p.db_citation_count && p.db_citation_count > 0) ? `
+                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20" title="Cited by ${p.db_citation_count} other papers in this database">
+                    🔗 ${p.db_citation_count} in DB
+                  </span>` : ''}
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
                 ${p.paper_url ? `<a href="${escapeHtml(p.paper_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">Paper</a>` : ''}
@@ -445,6 +473,22 @@
             </p>
 
             ${p.tldr ? `<p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950/70 p-2.5 rounded-xl border border-slate-200/70 dark:border-slate-800/80 mb-3"><strong class="text-sky-600 dark:text-sky-400">TL;DR:</strong> ${escapeHtml(p.tldr)}</p>` : ''}
+
+            ${((p.db_references && p.db_references.length > 0) || (p.db_citations && p.db_citations.length > 0)) ? `
+              <div class="mb-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800/60 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs">
+                ${p.db_references && p.db_references.length > 0 ? `
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-slate-500 dark:text-slate-400 font-medium">References in DB:</span>
+                    ${p.db_references.slice(0, 4).map(refId => `<button type="button" onclick="jumpToPaper('${escapeHtml(refId)}')" class="mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-600 dark:text-sky-400 hover:border-sky-500 text-[10px] transition">${escapeHtml(refId)}</button>`).join('')}
+                    ${p.db_references.length > 4 ? `<span class="text-[10px] text-slate-400">+${p.db_references.length - 4} more</span>` : ''}
+                  </div>` : ''}
+                ${p.db_citations && p.db_citations.length > 0 ? `
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span class="text-slate-500 dark:text-slate-400 font-medium">Cited by in DB:</span>
+                    ${p.db_citations.slice(0, 4).map(citId => `<button type="button" onclick="jumpToPaper('${escapeHtml(citId)}')" class="mono px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 hover:border-indigo-500 text-[10px] transition">${escapeHtml(citId)}</button>`).join('')}
+                    ${p.db_citations.length > 4 ? `<span class="text-[10px] text-indigo-400">+${p.db_citations.length - 4} more</span>` : ''}
+                  </div>` : ''}
+              </div>` : ''}
 
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex flex-wrap gap-1.5">${tagsHtml}</div>
@@ -480,6 +524,9 @@
         allPapers = data.papers || [];
         document.getElementById('statTotal').textContent = allPapers.length;
         document.getElementById('statWithCode').textContent = allPapers.filter(p => p.code_url).length;
+        const totalEdges = allPapers.reduce((sum, p) => sum + (p.db_references ? p.db_references.length : 0), 0);
+        const edgesEl = document.getElementById('statEdges');
+        if (edgesEl) edgesEl.textContent = totalEdges;
         document.getElementById('statUpdated').textContent = (data.last_updated || '').slice(0, 10) || 'Today';
         renderFilters();
         renderPapers();

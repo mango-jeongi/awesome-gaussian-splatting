@@ -1,0 +1,67 @@
+name: Paper or Code Submission
+description: Submit a new Gaussian Splatting research paper, code repo, or project demo.
+title: "[Paper]: "
+labels: ["paper-submission", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to Awesome 3D Gaussian Splatting! Please fill out the details below.
+  - type: input
+    id: title
+    attributes:
+      label: Paper Title
+      placeholder: "e.g., 2D Gaussian Splatting for Geometrically Accurate Radiance Fields"
+    validations:
+      required: true
+  - type: input
+    id: arxiv_id
+    attributes:
+      label: arXiv ID or DOI
+      placeholder: "e.g., 2403.17888 or 10.1145/3592433"
+    validations:
+      required: false
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      placeholder: "e.g., Binbin Huang, Zehao Yu, Anpei Chen, Andreas Geiger, Shenghua Gao"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Primary Subdomain Category
+      options:
+        - "Foundations & Acceleration"
+        - "Dynamic & 4DGS"
+        - "Active Perception, SLAM & Robotics"
+        - "Human Avatars & VR"
+        - "Generative Priors & 3D Reconstruction"
+        - "Autonomous Driving & Urban Scenes"
+        - "Medical, Defense & Multimodal Sensors"
+        - "2D Gaussians, Geometry & Compression"
+    validations:
+      required: true
+  - type: input
+    id: code_url
+    attributes:
+      label: Official Code Repository URL
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+  - type: input
+    id: project_url
+    attributes:
+      label: Project / Demo Page URL
+      placeholder: "https://...github.io/..."
+    validations:
+      required: false
+  - type: textarea
+    id: tldr
+    attributes:
+      label: TL;DR (1-2 Sentences)
+      placeholder: "Brief technical summary highlighting core contribution and performance."
+    validations:
+      required: false
+

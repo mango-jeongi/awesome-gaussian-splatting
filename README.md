@@ -1,11 +1,11 @@
-# Awesome 3D Gaussian Splatting (3DGS) — Frontier Research Database
+# Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-165-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-165-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
-An autonomous research database tracking **3D/4D Gaussian Splatting** and neural rendering literature.
-- **Support for Multiple Publication Sources**: Currently supporting arXiv preprints with planned future support for non-arXiv IEEE/CVF/ACM publications.
+An autonomous research database aggregating **3D/4D Gaussian Splatting** and neural rendering literature.
+- **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
 *Last updated: `2026-11-03` | Total Papers: **165** | With Official Code: **13***
@@ -16,14 +16,14 @@ An autonomous research database tracking **3D/4D Gaussian Splatting** and neural
 
 | Category | Papers | Description |
 | :--- | :---: | :--- |
-| **[Foundations & Acceleration](#foundations-acceleration)** | `39` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
-| **[Dynamic & 4DGS](#dynamic-4dgs)** | `27` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
-| **[Active Perception, SLAM & Robotics](#active-perception-slam-robotics)** | `21` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
-| **[Human Avatars & VR](#human-avatars-vr)** | `6` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
-| **[Generative Priors & 3D Reconstruction](#generative-priors-3d-reconstruction)** | `27` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
-| **[Autonomous Driving & Urban Scenes](#autonomous-driving-urban-scenes)** | `15` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
-| **[Medical, Defense & Multimodal Sensors](#medical-defense-multimodal-sensors)** | `17` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
-| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry-compression)** | `11` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
+| **[Foundations & Acceleration](#foundations--acceleration)** | `39` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
+| **[Dynamic & 4DGS](#dynamic--4dgs)** | `27` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
+| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `21` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
+| **[Human Avatars & VR](#human-avatars--vr)** | `6` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
+| **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `27` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
+| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `15` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
+| **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `17` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
+| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `11` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
 ---
 
@@ -322,6 +322,23 @@ An autonomous research database tracking **3D/4D Gaussian Splatting** and neural
 
 ---
 
+## Architecture & Multi-Phase Roadmap
+
+- **Phase 1: Foundations & Automated Ingestion (Completed)**
+  - Autonomous daily arXiv delta ingestion, Schema-on-Read One Big Table (`data/papers.json`), and deterministic rule-based taxonomy tagger.
+  - Trunk-based CI/CD workflows and instant-search responsive GitHub Pages web portal with dark/light themes and BibTeX export.
+
+- **Phase 2: Multi-Source Literature Expansion (In Progress)**
+  - Hugging Face Daily Papers integration (tracking community upvotes, trending papers, and interactive Gradio spaces).
+  - Ingestion of non-arXiv peer-reviewed proceedings (CVPR, ICCV, ECCV, SIGGRAPH, NeurIPS).
+  - Headless daemon orchestration on local hardware (`ssh msi-raider`) for Figure 1 teaser thumbnails and benchmark table extraction.
+
+- **Phase 3: Citation Intelligence & Knowledge Graph Network (Active Development)**
+  - Integration with OpenAlex and Semantic Scholar APIs to track global citation counts and citation velocity.
+  - Cross-paper reference network mapping mutual citations and foundational lineage within the 3DGS corpus.
+
+---
+
 ## Adding New Tags or Categories
 
 1. Edit [`config/taxonomy.yaml`](config/taxonomy.yaml) to add a new category or keyword trigger under `categories` or `technical_tags`.
@@ -331,6 +348,13 @@ An autonomous research database tracking **3D/4D Gaussian Splatting** and neural
    uv run python -m src.cli build
    ```
 3. Both `data/papers.json`, `README.md`, and the dynamic filter pills on the GitHub Pages web app will automatically reflect the expanded taxonomy.
+
+---
+
+## Contributing
+
+- **Submit a Paper or Code**: Authors and researchers are encouraged to submit newly released papers, official repositories, or project demos via our [Paper Submission Form](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues/new?template=paper_submission.yml).
+- **Direct Contributions**: See [`CONTRIBUTING.md`](CONTRIBUTING.md) for local environment setup, testing standards, and taxonomy pull request guidelines.
 
 ---
 

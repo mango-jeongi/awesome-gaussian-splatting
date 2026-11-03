@@ -60,7 +60,7 @@ jobs:
 
           TAG="v$(date -u +'%Y.W%V')"
           if ! git rev-parse "$TAG" >/dev/null 2>&1; then
-            git tag -a "$TAG" main -m "Weekly 3DGS Frontier Database Release $TAG"
+            git tag -a "$TAG" main -m "Weekly 3DGS Database Release $TAG"
             git push origin "$TAG"
             gh release create "$TAG" --title "Weekly 3DGS Paper Digest ($TAG)" --generate-notes || true
           fi
