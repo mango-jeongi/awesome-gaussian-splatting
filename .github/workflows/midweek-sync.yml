@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v8
+        uses: astral-sh/setup-uv@v10
         with:
           enable-cache: true
 
@@ -50,4 +50,3 @@ jobs:
           git push origin main
           git checkout -B feed main
           git push origin feed
-
