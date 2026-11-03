@@ -124,14 +124,17 @@ categories:
       - "ultrasound"
       - "pocus"
       - "mri"
-      - "ct reconstruction"
+      - "ct scan"
+      - "computed tomography"
       - "endoscopic"
       - "endoscopy"
       - "surgical"
       - "clinical"
+      - "biomedical"
       - "thermal"
       - "infrared"
       - "x-ray"
+      - "radiography"
       - "sar"
       - "radar"
       - "event camera"
@@ -162,24 +165,26 @@ categories:
       - "brdf"
 
 technical_tags:
-  "3DGS": ["3d gaussian splatting", "3dgs", "gaussian splatting"]
-  "4DGS": ["4dgs", "4d gaussian", "dynamic gaussian"]
-  "2DGS": ["2dgs", "2d gaussian", "gaussian surfel"]
-  "SLAM": ["slam", "simultaneous localization and mapping", "visual odometry"]
-  "Diffusion": ["diffusion", "score distillation", "denoising"]
-  "Feed-Forward": ["feed-forward", "generalizable", "single-pass"]
+  "CUDA & Rasterization": ["cuda", "rasterizer", "rasterization", "tile-based", "rendering pipeline"]
+  "Anti-Aliasing": ["anti-aliasing", "mip-splatting", "multi-scale", "sampling filter"]
+  "Densification & Pruning": ["densification", "pruning", "gradient-based", "mcmc", "opacity reset"]
+  "4DGS": ["4dgs", "4d gaussian", "dynamic gaussian", "deformation field"]
+  "2DGS": ["2dgs", "2d gaussian", "gaussian surfel", "surfel"]
+  "SLAM": ["slam", "simultaneous localization and mapping", "visual odometry", "tracking and mapping"]
+  "Diffusion": ["diffusion", "score distillation", "denoising", "sds loss", "text-to-3d", "image-to-3d"]
+  "Feed-Forward": ["feed-forward", "generalizable", "single-pass", "pixelnerf-style"]
   "Sparse-View": ["sparse-view", "few-shot", "unposed", "colmap-free"]
-  "Compression": ["compression", "quantization", "pruning", "compactness", "codebook"]
-  "Mesh & Surface": ["mesh", "surface reconstruction", "sdf", "marching cubes", "poisson"]
+  "Compression": ["compression", "quantization", "pruning", "compactness", "codebook", "entropy coding"]
+  "Mesh & Surface": ["mesh extraction", "surface reconstruction", "sdf", "marching cubes", "poisson reconstruction"]
   "LiDAR-Fusion": ["lidar", "point cloud fusion", "radar"]
   "Thermal & IR": ["thermal", "infrared", "lwir", "mwir", "radiometric"]
-  "Ultrasound & Medical": ["ultrasound", "mri", "ct", "endoscopic", "surgical", "x-ray"]
-  "Avatars": ["avatar", "smpl", "talking head", "human reconstruction"]
-  "Relighting & BRDF": ["relighting", "inverse rendering", "brdf", "pbr", "albedo"]
-  "Autonomous Driving": ["autonomous driving", "urban scene", "street view", "waymo", "nuscenes"]
-  "Active Perception": ["active perception", "next-best-view", "active mapping", "exploration"]
+  "Medical & Healthcare": ["ultrasound", "pocus", "mri", "computed tomography", "ct scan", "endoscopic", "endoscopy", "surgical", "biomedical", "x-ray", "radiography", "histopathology"]
+  "Avatars": ["avatar", "smpl", "smpl-x", "talking head", "human reconstruction", "animatable"]
+  "Relighting & BRDF": ["relighting", "inverse rendering", "brdf", "pbr", "albedo", "shadow"]
+  "Autonomous Driving": ["autonomous driving", "driving scene", "street view", "waymo", "nuscenes", "kitti"]
+  "Active Perception": ["active perception", "next-best-view", "active mapping", "autonomous exploration"]
   "Event Camera": ["event camera", "event-based", "neuromorphic"]
   "Physics & Simulation": ["physics", "mpm", "elastoplastic", "simulation", "digital twin"]
-  "VR & XR": ["virtual reality", "vr", "xr", "headset", "foveated"]
+  "VR & XR": ["virtual reality", "vr", "xr", "headset", "foveated", "telepresence"]
   "Ray Tracing": ["ray tracing", "path tracing", "optix"]
 

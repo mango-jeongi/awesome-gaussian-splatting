@@ -14,6 +14,160 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 PaperSource = Literal["arxiv", "ieee", "cvf", "acm", "manual", "huggingface"]
 
 
+def synthesize_tldr(abstract: str) -> str:
+    """Distill the core technical contribution from an abstract, stripping generic preamble."""
+    if not abstract:
+        return ""
+
+    text = re.sub(r"\s+", " ", abstract).strip()
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+
+    background_markers = (
+        "neural radiance field",
+        "recently",
+        "in recent years",
+        "novel view synthesis",
+        "has attracted significant attention",
+        "has emerged as",
+        "have achieved impressive",
+        "is a fundamental problem",
+        "has demonstrated remarkable",
+        "remains challenging",
+        "despite the success",
+        "although 3d gaussian",
+        "3d gaussian splatting (3dgs) has",
+        "3d gaussian splatting has revolutionized",
+        "recent 3dgs methods",
+        "existing 3dgs methods",
+        "existing methods",
+        "current methods",
+    )
+
+    action_markers = (
+        "we propose",
+        "we introduce",
+        "we present",
+        "we develop",
+        "we design",
+        "this paper proposes",
+        "this paper introduces",
+        "this paper presents",
+        "this paper develops",
+        "this work proposes",
+        "this work introduces",
+        "this work presents",
+        "this work develops",
+        "to address this",
+        "to overcome this",
+        "to tackle this",
+    )
+
+    # 1. Prefer explicit contribution sentence
+    candidate = ""
+    for s in sentences:
+        s_lower = s.lower().strip()
+        if any(m in s_lower for m in action_markers):
+            candidate = s.strip()
+            break
+
+    # 2. Otherwise pick first non-background sentence highlighting capability
+    if not candidate:
+        for s in sentences:
+            s_lower = s.lower().strip()
+            if any(s_lower.startswith(bm) or bm in s_lower[:50] for bm in background_markers):
+                continue
+            if any(
+                w in s_lower
+                for w in (
+                    "achieves",
+                    "enables",
+                    "allows",
+                    "formulates",
+                    "demonstrates",
+                    "outperforms",
+                )
+            ):
+                candidate = s.strip()
+                break
+
+    # 3. Fallback to first non-background sentence or first sentence
+    if not candidate:
+        non_bg = [
+            s.strip()
+            for s in sentences
+            if not any(s.lower().strip().startswith(bm) for bm in background_markers)
+        ]
+        candidate = non_bg[0] if non_bg else sentences[0].strip()
+
+    # Clean boilerplate prefixes into concise active summary
+    clean = candidate
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+propose\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+introduce\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Introduces ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+present\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Presents ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+develop\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Develops ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+design\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Designs ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+proposes\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+introduces\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Introduces ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+presents\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Presents ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^to (address|tackle|overcome) (this|these) (issue|problem|limitation)s?,?\s+(we\s+)?(propose|introduce|present)\s+",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+
+    # Clean trailing fragments
+    clean = re.sub(r"\s+", " ", clean).strip()
+    if len(clean) > 210:
+        cut = clean[:207]
+        last_space = cut.rfind(" ")
+        clean = (cut[:last_space] if last_space > 120 else cut) + "..."
+
+    if clean and clean[0].islower():
+        clean = clean[0].upper() + clean[1:]
+    return clean
+
+
 class CategoryRule(BaseModel):
     """Declarative domain category definition loaded from config/taxonomy.yaml."""
 
@@ -118,7 +272,7 @@ class PaperRecord(BaseModel):
         description="All assigned 3DGS taxonomy categories.",
     )
     tags: list[str] = Field(
-        default_factory=lambda: ["3DGS"],
+        default_factory=lambda: ["Foundations"],
         description="Canonical and emergent technical tags for filtering.",
     )
     primary_arxiv_category: str | None = Field(
@@ -201,14 +355,17 @@ class PaperRecord(BaseModel):
         seen_tags: list[str] = []
         for t in self.tags:
             clean_t = t.strip()
-            if clean_t and clean_t not in seen_tags:
+            if (
+                clean_t
+                and clean_t not in seen_tags
+                and clean_t not in ("3DGS", "Ultrasound & Medical")
+            ):
                 seen_tags.append(clean_t)
-        self.tags = seen_tags or ["3DGS"]
+        self.tags = seen_tags or ["Foundations"]
 
-        # Fallback TL;DR from first sentence of abstract
+        # Synthesize concise TL;DR from abstract
         if not self.tldr and self.abstract:
-            first_sent = re.split(r"(?<=[.!?])\s+", self.abstract)[0]
-            self.tldr = first_sent[:240] + ("..." if len(first_sent) > 240 else "")
+            self.tldr = synthesize_tldr(self.abstract)
 
         return self
 

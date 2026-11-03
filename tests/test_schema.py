@@ -83,5 +83,6 @@ def test_taxonomy_yaml_loads() -> None:
     tax_path = Path(__file__).resolve().parent.parent / "config" / "taxonomy.yaml"
     tax = TaxonomyConfig.from_yaml(tax_path)
     assert len(tax.categories) >= 6
-    assert "3DGS" in tax.technical_tags
+    assert "4DGS" in tax.technical_tags
     assert "SLAM" in tax.technical_tags
+    assert "CUDA & Rasterization" in tax.technical_tags

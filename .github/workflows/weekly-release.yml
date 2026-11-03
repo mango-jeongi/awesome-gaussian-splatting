@@ -11,6 +11,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: "true"
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -18,7 +21,7 @@ concurrency:
 jobs:
   release-and-build:
     name: Merge feed -> main, Tag Release & Prepare Pages
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
@@ -76,7 +79,7 @@ jobs:
   deploy-pages:
     name: Deploy to GitHub Pages
     needs: release-and-build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

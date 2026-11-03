@@ -72,6 +72,167 @@ def extract_urls_and_venue(record: PaperRecord) -> PaperRecord:
     )
 
 
+def matches_pattern(pattern: str, text: str) -> bool:
+    """Match a keyword pattern with word-boundary safety for short acronyms/terms."""
+    p = pattern.strip().lower()
+    if not p:
+        return False
+    # If short token (<= 4 chars, e.g. ct, mri, lod, sdf, vr, xr, sar), enforce regex word boundary
+    if len(p) <= 4 and re.match(r"^[a-z0-9_-]+$", p):
+        return bool(re.search(r"\b" + re.escape(p) + r"\b", text))
+    return p in text
+
+
+def synthesize_tldr(title: str, abstract: str) -> str:
+    """Distill the core technical contribution from an abstract, stripping generic preamble."""
+    if not abstract:
+        return ""
+
+    text = re.sub(r"\s+", " ", abstract).strip()
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+
+    background_markers = (
+        "neural radiance field",
+        "recently,",
+        "in recent years",
+        "novel view synthesis",
+        "has attracted significant attention",
+        "has emerged as",
+        "have achieved impressive",
+        "is a fundamental problem",
+        "has demonstrated remarkable",
+        "remains challenging",
+        "despite the success",
+        "although 3d gaussian",
+        "3d gaussian splatting (3dgs) has",
+        "3d gaussian splatting has revolutionized",
+    )
+
+    action_markers = (
+        "we propose",
+        "we introduce",
+        "we present",
+        "we develop",
+        "we design",
+        "this paper proposes",
+        "this paper introduces",
+        "this paper presents",
+        "this paper develops",
+        "this work proposes",
+        "this work introduces",
+        "this work presents",
+        "this work develops",
+        "to address this",
+        "to overcome this",
+        "to tackle this",
+    )
+
+    # 1. Prefer explicit contribution sentence
+    candidate = ""
+    for s in sentences:
+        s_lower = s.lower().strip()
+        if any(m in s_lower for m in action_markers):
+            candidate = s.strip()
+            break
+
+    # 2. Otherwise pick first non-background sentence highlighting capability
+    if not candidate:
+        for s in sentences:
+            s_lower = s.lower().strip()
+            if any(s_lower.startswith(bm) or bm in s_lower[:50] for bm in background_markers):
+                continue
+            if any(
+                w in s_lower
+                for w in (
+                    "achieves",
+                    "enables",
+                    "allows",
+                    "formulates",
+                    "demonstrates",
+                    "outperforms",
+                )
+            ):
+                candidate = s.strip()
+                break
+
+    # 3. Fallback to first non-background sentence or first sentence
+    if not candidate:
+        non_bg = [
+            s.strip()
+            for s in sentences
+            if not any(s.lower().strip().startswith(bm) for bm in background_markers)
+        ]
+        candidate = non_bg[0] if non_bg else sentences[0].strip()
+
+    # Clean boilerplate prefixes into concise active summary
+    clean = candidate
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+propose\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+introduce\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Introduces ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+present\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Presents ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+develop\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Develops ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^(in this (paper|work|study|letter),?\s+)?we\s+design\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Designs ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+proposes\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+introduces\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Introduces ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^this (paper|work|study)\s+presents\s+(a\s+novel\s+|an\s+effective\s+|a\s+new\s+)?",
+        "Presents ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+    clean = re.sub(
+        r"^to (address|tackle|overcome) (this|these) (issue|problem|limitation)s?,?\s+(we\s+)?(propose|introduce|present)\s+",
+        "Proposes ",
+        clean,
+        flags=re.IGNORECASE,
+    )
+
+    # Clean trailing fragments
+    clean = re.sub(r"\s+", " ", clean).strip()
+    if len(clean) > 210:
+        cut = clean[:207]
+        last_space = cut.rfind(" ")
+        clean = (cut[:last_space] if last_space > 120 else cut) + "..."
+
+    if clean and clean[0].islower():
+        clean = clean[0].upper() + clean[1:]
+    return clean
+
+
 class DeterministicEnricher:
     """Rule-based category classifier and technical tagger driven by `config/taxonomy.yaml`."""
 
@@ -82,10 +243,10 @@ class DeterministicEnricher:
         record = extract_urls_and_venue(record)
         text = f"{record.title} {record.abstract} {record.comment or ''}".lower()
 
-        # Score each category in taxonomy.yaml by keyword hits
+        # Score each category in taxonomy.yaml with word-boundary awareness
         scored_cats: list[tuple[int, str]] = []
         for cat in self.taxonomy.categories:
-            score = sum(1 for kw in cat.keywords if kw.lower() in text)
+            score = sum(1 for kw in cat.keywords if matches_pattern(kw, text))
             if score > 0:
                 scored_cats.append((score, cat.name))
 
@@ -97,38 +258,35 @@ class DeterministicEnricher:
         else:
             categories = [self.taxonomy.default_category]
 
-        # Match technical tags from taxonomy.yaml
+        # Match technical tags from taxonomy.yaml with word-boundary safety
         matched_tags: list[str] = []
         for tag_name, triggers in self.taxonomy.technical_tags.items():
-            if any(trig.lower() in text for trig in triggers):
+            if any(matches_pattern(trig, text) for trig in triggers):
                 matched_tags.append(tag_name)
 
-        # Preserve any existing emergent tags discovered earlier
+        # Preserve any existing emergent tags discovered earlier (excluding overused "3DGS" and "Ultrasound & Medical")
         valid_cat_names = {c.name for c in self.taxonomy.categories}
         existing_custom_tags = [
-            t for t in record.tags if t not in matched_tags and t not in valid_cat_names
+            t
+            for t in record.tags
+            if t not in matched_tags
+            and t not in valid_cat_names
+            and t not in ("3DGS", "Ultrasound & Medical")
         ]
         all_tags = matched_tags + existing_custom_tags
         if not all_tags:
-            all_tags = ["3DGS"]
+            all_tags = ["Foundations"]
 
-        # Synthesize concise TL;DR if missing
+        # Generate refined TL;DR if missing or if it looks like a boilerplate first sentence
         tldr = record.tldr
-        if not tldr and record.abstract:
-            sentences = re.split(r"(?<=[.!?])\s+", record.abstract.strip())
-            # Prefer a sentence mentioning "propose", "introduce", "present", or fallback to first sentence
-            contrib_sent = next(
-                (
-                    s
-                    for s in sentences
-                    if any(
-                        w in s.lower()
-                        for w in ("we propose", "we introduce", "we present", "this paper")
-                    )
-                ),
-                sentences[0],
-            )
-            tldr = contrib_sent[:240] + ("..." if len(contrib_sent) > 240 else "")
+        needs_refinement = (
+            not tldr
+            or tldr.lower().startswith("3d gaussian splatting (3dgs) has recently")
+            or tldr.lower().startswith("in this paper, we propose")
+            or tldr.lower().startswith("neural radiance fields")
+        )
+        if needs_refinement and record.abstract:
+            tldr = synthesize_tldr(record.title, record.abstract)
 
         return PaperRecord.model_validate(
             record.model_copy(
@@ -136,7 +294,7 @@ class DeterministicEnricher:
                     "primary_category": categories[0],
                     "categories": categories,
                     "tags": all_tags[:8],
-                    "tldr": tldr,
+                    "tldr": tldr or record.tldr,
                 }
             ).model_dump()
         )

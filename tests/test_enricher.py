@@ -28,10 +28,12 @@ def test_deterministic_enricher_categorization_and_tags() -> None:
         arxiv_id="2409.99999",
         title="ThermalGaussian: Thermal 3D Gaussian Splatting for Multimodal Scenes",
         published_date="2024-09-15",
-        abstract="We propose ThermalGaussian to reconstruct 3D thermal infrared and RGB scenes using 3D Gaussian Splatting.",
+        abstract="Recent 3DGS methods cannot handle thermal sensors. In this paper, we propose ThermalGaussian to reconstruct 3D thermal infrared and RGB scenes using joint radiometric splatting.",
     )
     res = enricher.enrich(rec, use_llm=False)
     assert res.primary_category == "Medical, Defense & Multimodal Sensors"
     assert "Thermal & IR" in res.tags
-    assert "3DGS" in res.tags
-    assert "We propose ThermalGaussian" in res.tldr
+    # Verify word-boundary precision: general reconstruction should NOT trigger Medical & Healthcare
+    assert "Medical & Healthcare" not in res.tags
+    # Verify TL;DR is distilled from the contribution rather than the generic first sentence
+    assert res.tldr.startswith("Proposes ThermalGaussian to reconstruct 3D thermal infrared")
