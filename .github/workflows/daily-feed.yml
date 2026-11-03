@@ -1,0 +1,63 @@
+name: Daily arXiv Feed Ingestion
+
+on:
+  schedule:
+    # Runs Monday-Friday at 02:00 UTC (aligned with arXiv Sunday-Thursday announcements)
+    - cron: "0 2 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      max_results:
+        description: "Maximum recent arXiv entries to query"
+        required: false
+        default: "60"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  ingest-feed:
+    name: Fetch & Enrich arXiv Delta -> feed branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout feed branch
+        uses: actions/checkout@v4
+        with:
+          ref: feed
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run arXiv Ingestion & Multi-Provider Enrichment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENABLE_GH_MODELS: "true"
+          ENABLE_GEMINI: "false"
+        run: |
+          MAX_RES="${{ github.event.inputs.max_results || '60' }}"
+          uv run python -m src.cli ingest --max-results "$MAX_RES"
+          uv run python -m src.cli build
+          uv run python -m src.cli validate
+
+      - name: Commit and push delta to feed branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/papers.json docs/papers.json README.md
+          if git diff --cached --quiet; then
+            echo "No new papers found today."
+          else
+            DATE_UTC=$(date -u +"%Y-%m-%d")
+            git commit -m "chore(feed): daily arXiv 3DGS ingestion ($DATE_UTC) [skip ci]"
+            git push origin feed
+          fi
+

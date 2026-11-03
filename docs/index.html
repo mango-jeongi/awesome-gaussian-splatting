@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome 3D Gaussian Splatting — Frontier Research Database</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    code, pre, .mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+  <!-- Top Navigation Bar -->
+  <header class="sticky top-0 z-30 backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold shadow-sm">
+          3D
+        </div>
+        <div>
+          <h1 class="font-bold text-base sm:text-lg tracking-tight leading-none">
+            Awesome 3D Gaussian Splatting
+          </h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            Autonomous Frontier Research Database (OBT)
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://github.com/mango-jeongi/awesome-gaussian-splatting" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>GitHub Repo</span>
+        </a>
+
+        <button id="themeToggle" type="button" aria-label="Toggle Dark/Light Mode"
+                class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="sunIcon" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg id="moonIcon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Stats Banner -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+      <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Total Papers Indexed</div>
+        <div id="statTotal" class="text-2xl font-bold text-sky-600 dark:text-sky-400 mt-1 mono">—</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">With Official Code</div>
+        <div id="statWithCode" class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1 mono">—</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Filtered Results</div>
+        <div id="statFiltered" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mt-1 mono">—</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Last CI Sync</div>
+        <div id="statUpdated" class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2 mono">—</div>
+      </div>
+    </section>
+
+    <!-- Search & Controls Panel -->
+    <section class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm mb-6 space-y-4">
+      <div class="flex flex-col md:flex-row gap-3">
+        <div class="relative flex-1">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input id="searchInput" type="search"
+                 placeholder="Search title, authors, abstract, venue, arXiv ID, or tags (press '/' to focus)..."
+                 class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition" />
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="yearSelect" aria-label="Filter by Year"
+                  class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <option value="ALL">All Years</option>
+          </select>
+
+          <select id="sortSelect" aria-label="Sort Order"
+                  class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <option value="newest">Sort: Newest First</option>
+            <option value="oldest">Sort: Oldest First</option>
+            <option value="code">Sort: Has Code First</option>
+            <option value="title">Sort: Title (A–Z)</option>
+          </select>
+
+          <label class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium cursor-pointer select-none">
+            <input id="codeOnlyCheckbox" type="checkbox" class="rounded text-sky-500 focus:ring-sky-500" />
+            <span>Code Available</span>
+          </label>
+
+          <button id="resetBtn" type="button"
+                  class="px-3 py-2 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Domain Category Filter Pills -->
+      <div>
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+          Subdomain Categories
+        </div>
+        <div id="categoryPills" class="flex flex-wrap gap-1.5"></div>
+      </div>
+
+      <!-- Dynamic Technical & Emergent Tag Pills -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Technical &amp; Emergent Tags (Multi-Select)
+          </span>
+          <button id="toggleAllTagsBtn" type="button" class="text-xs text-sky-500 hover:underline hidden">
+            Show all tags
+          </button>
+        </div>
+        <div id="tagPills" class="flex flex-wrap gap-1.5"></div>
+      </div>
+    </section>
+
+    <!-- Paper Feed List -->
+    <section id="papersContainer" class="space-y-3"></section>
+  </main>
+
+  <!-- BibTeX Citation Modal -->
+  <div id="bibtexModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-xl w-full p-5 shadow-xl">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-semibold text-sm">BibTeX Citation</h3>
+        <button id="closeModalBtn" type="button" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg leading-none">&times;</button>
+      </div>
+      <pre id="bibtexContent" class="p-3 rounded-xl bg-slate-100 dark:bg-slate-950 text-xs overflow-x-auto border border-slate-200 dark:border-slate-800 select-all"></pre>
+      <div class="mt-4 flex justify-end gap-2">
+        <button id="copyBibtexBtn" type="button"
+                class="px-4 py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-medium transition">
+          Copy to Clipboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme management (defaults to dark mode, persisted in localStorage)
+    const htmlEl = document.documentElement;
+    const savedTheme = localStorage.getItem('3dgs_theme') || 'dark';
+    if (savedTheme === 'dark') {
+      htmlEl.classList.add('dark');
+    } else {
+      htmlEl.classList.remove('dark');
+    }
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const isDark = htmlEl.classList.toggle('dark');
+      localStorage.setItem('3dgs_theme', isDark ? 'dark' : 'light');
+    });
+
+    // Global State
+    let allPapers = [];
+    let selectedCategory = 'ALL';
+    let selectedTags = new Set();
+    let showAllTags = false;
+
+    const searchInput = document.getElementById('searchInput');
+    const yearSelect = document.getElementById('yearSelect');
+    const sortSelect = document.getElementById('sortSelect');
+    const codeOnlyCheckbox = document.getElementById('codeOnlyCheckbox');
+    const categoryPillsEl = document.getElementById('categoryPills');
+    const tagPillsEl = document.getElementById('tagPills');
+    const toggleAllTagsBtn = document.getElementById('toggleAllTagsBtn');
+    const papersContainer = document.getElementById('papersContainer');
+
+    // Keyboard shortcut '/' to focus search
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      } else if (e.key === 'Escape') {
+        closeBibtexModal();
+      }
+    });
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function generateBibtex(p) {
+      const firstWord = (p.title || 'paper').split(/\s+/)[0].replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+      const authorSlug = (p.first_author || 'author').split(/\s+/)[0].replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+      const key = `${authorSlug}${p.year}${firstWord}`;
+      const authors = (p.authors || ['Unknown']).join(' and ');
+      const journal = p.venue || (p.arxiv_id ? `arXiv preprint arXiv:${p.arxiv_id}` : 'Preprint');
+      return `@article{${key},\n  title={${p.title}},\n  author={${authors}},\n  journal={${journal}},\n  year={${p.year}}${p.paper_url ? `,\n  url={${p.paper_url}}` : ''}\n}`;
+    }
+
+    function openBibtexModal(paperId) {
+      const p = allPapers.find(item => item.id === paperId);
+      if (!p) return;
+      document.getElementById('bibtexContent').textContent = generateBibtex(p);
+      const modal = document.getElementById('bibtexModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeBibtexModal() {
+      const modal = document.getElementById('bibtexModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('closeModalBtn').addEventListener('click', closeBibtexModal);
+    document.getElementById('copyBibtexBtn').addEventListener('click', () => {
+      const text = document.getElementById('bibtexContent').textContent;
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyBibtexBtn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = 'Copy to Clipboard'; }, 1500);
+    });
+
+    function renderFilters() {
+      // 1. Dynamic Categories from papers.json
+      const catCounts = {};
+      const tagCounts = {};
+      const years = new Set();
+
+      for (const p of allPapers) {
+        if (p.year) years.add(p.year);
+        const cats = p.categories && p.categories.length ? p.categories : [p.primary_category || 'Foundations & Acceleration'];
+        for (const c of cats) {
+          catCounts[c] = (catCounts[c] || 0) + 1;
+        }
+        for (const t of (p.tags || [])) {
+          tagCounts[t] = (tagCounts[t] || 0) + 1;
+        }
+      }
+
+      // Populate Year dropdown once
+      if (yearSelect.options.length <= 1) {
+        Array.from(years).sort((a, b) => b - a).forEach(yr => {
+          const opt = document.createElement('option');
+          opt.value = String(yr);
+          opt.textContent = `Year: ${yr}`;
+          yearSelect.appendChild(opt);
+        });
+      }
+
+      // Render Category Pills
+      const sortedCats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
+      categoryPillsEl.innerHTML = '';
+
+      const allPill = document.createElement('button');
+      allPill.type = 'button';
+      const isAll = selectedCategory === 'ALL';
+      allPill.className = `px-3 py-1 rounded-full text-xs font-medium transition ${
+        isAll
+          ? 'bg-sky-600 text-white shadow-xs'
+          : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+      }`;
+      allPill.textContent = `All (${allPapers.length})`;
+      allPill.onclick = () => { selectedCategory = 'ALL'; renderFilters(); renderPapers(); };
+      categoryPillsEl.appendChild(allPill);
+
+      for (const [cat, count] of sortedCats) {
+        const active = selectedCategory === cat;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `px-3 py-1 rounded-full text-xs font-medium transition ${
+          active
+            ? 'bg-sky-600 text-white shadow-xs'
+            : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+        }`;
+        btn.textContent = `${cat} (${count})`;
+        btn.onclick = () => {
+          selectedCategory = active ? 'ALL' : cat;
+          renderFilters();
+          renderPapers();
+        };
+        categoryPillsEl.appendChild(btn);
+      }
+
+      // Render Dynamic Tag Pills
+      const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+      const visibleLimit = 14;
+      const tagsToShow = showAllTags ? sortedTags : sortedTags.slice(0, visibleLimit);
+
+      if (sortedTags.length > visibleLimit) {
+        toggleAllTagsBtn.classList.remove('hidden');
+        toggleAllTagsBtn.textContent = showAllTags ? 'Show fewer tags' : `+ Show all ${sortedTags.length} tags`;
+      } else {
+        toggleAllTagsBtn.classList.add('hidden');
+      }
+
+      tagPillsEl.innerHTML = '';
+      for (const [tag, count] of tagsToShow) {
+        const active = selectedTags.has(tag);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `px-2.5 py-1 rounded-lg text-xs font-medium border transition ${
+          active
+            ? 'bg-indigo-600 border-indigo-500 text-white'
+            : 'bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-sky-500'
+        }`;
+        btn.textContent = `#${tag} (${count})`;
+        btn.onclick = () => {
+          if (selectedTags.has(tag)) selectedTags.delete(tag);
+          else selectedTags.add(tag);
+          renderFilters();
+          renderPapers();
+        };
+        tagPillsEl.appendChild(btn);
+      }
+    }
+
+    toggleAllTagsBtn.addEventListener('click', () => {
+      showAllTags = !showAllTags;
+      renderFilters();
+    });
+
+    window.toggleTagFilter = function(tag) {
+      if (selectedTags.has(tag)) selectedTags.delete(tag);
+      else selectedTags.add(tag);
+      renderFilters();
+      renderPapers();
+    };
+
+    window.openBibtex = openBibtexModal;
+
+    function renderPapers() {
+      const q = searchInput.value.trim().toLowerCase();
+      const yr = yearSelect.value;
+      const sortBy = sortSelect.value;
+      const codeOnly = codeOnlyCheckbox.checked;
+
+      let filtered = allPapers.filter(p => {
+        if (selectedCategory !== 'ALL') {
+          const cats = p.categories || [p.primary_category];
+          if (!cats.includes(selectedCategory)) return false;
+        }
+        if (selectedTags.size > 0) {
+          const pTags = new Set(p.tags || []);
+          for (const t of selectedTags) {
+            if (!pTags.has(t)) return false;
+          }
+        }
+        if (yr !== 'ALL' && String(p.year) !== yr) return false;
+        if (codeOnly && !p.code_url) return false;
+        if (q) {
+          const hay = `${p.title} ${(p.authors || []).join(' ')} ${p.abstract} ${p.tldr} ${p.venue || ''} ${p.id} ${(p.tags || []).join(' ')}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      filtered.sort((a, b) => {
+        if (sortBy === 'oldest') return (a.published_date || '').localeCompare(b.published_date || '');
+        if (sortBy === 'code') return (b.code_url ? 1 : 0) - (a.code_url ? 1 : 0) || (b.published_date || '').localeCompare(a.published_date || '');
+        if (sortBy === 'title') return (a.title || '').localeCompare(b.title || '');
+        return (b.published_date || '').localeCompare(a.published_date || '');
+      });
+
+      document.getElementById('statFiltered').textContent = filtered.length;
+
+      if (filtered.length === 0) {
+        papersContainer.innerHTML = `
+          <div class="p-12 text-center rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <p class="text-sm text-slate-500 dark:text-slate-400">No papers match your active filters.</p>
+          </div>`;
+        return;
+      }
+
+      papersContainer.innerHTML = filtered.map(p => {
+        const venueHtml = p.venue
+          ? `<span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">${escapeHtml(p.venue)}</span>`
+          : '';
+        const sourceBadge = p.arxiv_id
+          ? `<span class="mono text-xs text-slate-400">arXiv:${escapeHtml(p.arxiv_id)}</span>`
+          : `<span class="mono text-xs text-slate-400">${escapeHtml(p.source.toUpperCase())}</span>`;
+
+        const tagsHtml = (p.tags || []).map(t => `
+          <button type="button" onclick="toggleTagFilter('${escapeHtml(t)}')"
+                  class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-500/20 hover:text-indigo-400 transition">
+            #${escapeHtml(t)}
+          </button>`).join('');
+
+        return `
+          <article class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="mono text-xs font-medium text-sky-600 dark:text-sky-400">${escapeHtml(p.published_date)}</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+                  ${escapeHtml(p.primary_category)}
+                </span>
+                ${venueHtml}
+                ${sourceBadge}
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5">
+                ${p.paper_url ? `<a href="${escapeHtml(p.paper_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">Paper</a>` : ''}
+                ${p.pdf_url ? `<a href="${escapeHtml(p.pdf_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 hover:bg-rose-500/20 transition">PDF</a>` : ''}
+                ${p.code_url ? `<a href="${escapeHtml(p.code_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition">Code</a>` : ''}
+                ${p.project_url ? `<a href="${escapeHtml(p.project_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/20 transition">Project</a>` : ''}
+                <button type="button" onclick="openBibtex('${escapeHtml(p.id)}')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">BibTeX</button>
+              </div>
+            </div>
+
+            <h2 class="text-base sm:text-lg font-semibold leading-snug mb-1">
+              ${p.paper_url ? `<a href="${escapeHtml(p.paper_url)}" target="_blank" rel="noopener" class="hover:text-sky-500 transition">${escapeHtml(p.title)}</a>` : escapeHtml(p.title)}
+            </h2>
+
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-2.5">
+              ${escapeHtml((p.authors || []).join(', '))}
+            </p>
+
+            ${p.tldr ? `<p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950/70 p-2.5 rounded-xl border border-slate-200/70 dark:border-slate-800/80 mb-3"><strong class="text-sky-600 dark:text-sky-400">TL;DR:</strong> ${escapeHtml(p.tldr)}</p>` : ''}
+
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-1.5">${tagsHtml}</div>
+              ${p.abstract ? `
+                <details class="text-xs text-slate-500 dark:text-slate-400 w-full mt-1">
+                  <summary class="cursor-pointer hover:text-sky-500 select-none font-medium">Read full abstract</summary>
+                  <p class="mt-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 leading-relaxed text-slate-600 dark:text-slate-300">${escapeHtml(p.abstract)}</p>
+                </details>` : ''}
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    searchInput.addEventListener('input', renderPapers);
+    yearSelect.addEventListener('change', renderPapers);
+    sortSelect.addEventListener('change', renderPapers);
+    codeOnlyCheckbox.addEventListener('change', renderPapers);
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      searchInput.value = '';
+      yearSelect.value = 'ALL';
+      sortSelect.value = 'newest';
+      codeOnlyCheckbox.checked = false;
+      selectedCategory = 'ALL';
+      selectedTags.clear();
+      renderFilters();
+      renderPapers();
+    });
+
+    async function init() {
+      try {
+        const res = await fetch('./papers.json');
+        const data = await res.json();
+        allPapers = data.papers || [];
+        document.getElementById('statTotal').textContent = allPapers.length;
+        document.getElementById('statWithCode').textContent = allPapers.filter(p => p.code_url).length;
+        document.getElementById('statUpdated').textContent = (data.last_updated || '').slice(0, 10) || 'Today';
+        renderFilters();
+        renderPapers();
+      } catch (err) {
+        papersContainer.innerHTML = `<div class="p-8 text-center text-rose-500 text-sm">Failed to load papers.json: ${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
+

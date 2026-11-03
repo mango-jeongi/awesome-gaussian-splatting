@@ -1,0 +1,185 @@
+# Declarative Taxonomy & Tag Expansion Configuration
+# To add a new category or technical tag rule:
+# 1. Append an entry under `categories` or `technical_tags` below.
+# 2. Run `uv run python -m src.cli retag` to retroactively re-index all records in data/papers.json.
+
+default_category: "Foundations & Acceleration"
+emergent_tag_min_count: 2
+
+categories:
+  - name: "Foundations & Acceleration"
+    slug: "foundations"
+    description: "Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines."
+    keywords:
+      - "rasterization"
+      - "rasterizer"
+      - "anti-aliasing"
+      - "mip-splatting"
+      - "cuda"
+      - "real-time rendering"
+      - "level of detail"
+      - "lod"
+      - "ray tracing"
+      - "spherical harmonics"
+      - "densification"
+      - "pruning"
+      - "3dgs survey"
+      - "survey"
+
+  - name: "Dynamic & 4DGS"
+    slug: "dynamic-4dgs"
+    description: "4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video."
+    keywords:
+      - "4dgs"
+      - "4d gaussian"
+      - "dynamic scene"
+      - "dynamic gaussian"
+      - "deformable"
+      - "deformation"
+      - "spacetime"
+      - "spatio-temporal"
+      - "free-viewpoint video"
+      - "streaming"
+      - "temporal"
+      - "motion"
+
+  - name: "Active Perception, SLAM & Robotics"
+    slug: "slam-robotics"
+    description: "Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI."
+    keywords:
+      - "slam"
+      - "odometry"
+      - "active perception"
+      - "active mapping"
+      - "next-best-view"
+      - "view planning"
+      - "robotics"
+      - "robotic"
+      - "manipulation"
+      - "navigation"
+      - "autonomous exploration"
+      - "pose estimation"
+      - "camera tracking"
+
+  - name: "Human Avatars & VR"
+    slug: "avatars-vr"
+    description: "Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence."
+    keywords:
+      - "avatar"
+      - "avatars"
+      - "human body"
+      - "talking head"
+      - "facial"
+      - "face reconstruction"
+      - "smpl"
+      - "smpl-x"
+      - "garment"
+      - "hair"
+      - "hand avatar"
+      - "virtual reality"
+      - "telepresence"
+      - "animatable"
+
+  - name: "Generative Priors & 3D Reconstruction"
+    slug: "generative-3d"
+    description: "Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis."
+    keywords:
+      - "text-to-3d"
+      - "image-to-3d"
+      - "diffusion"
+      - "score distillation"
+      - "sds"
+      - "generative"
+      - "feed-forward"
+      - "generalizable"
+      - "sparse-view"
+      - "few-shot"
+      - "single-image"
+      - "inpainting"
+      - "editing"
+
+  - name: "Autonomous Driving & Urban Scenes"
+    slug: "autonomous-driving"
+    description: "Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping."
+    keywords:
+      - "autonomous driving"
+      - "driving scene"
+      - "street"
+      - "urban"
+      - "city-scale"
+      - "large-scale"
+      - "lidar"
+      - "uav"
+      - "drone"
+      - "aerial"
+      - "waymo"
+      - "nuscenes"
+      - "kitti"
+
+  - name: "Medical, Defense & Multimodal Sensors"
+    slug: "multimodal-medical-defense"
+    description: "Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR."
+    keywords:
+      - "medical"
+      - "ultrasound"
+      - "pocus"
+      - "mri"
+      - "ct reconstruction"
+      - "endoscopic"
+      - "endoscopy"
+      - "surgical"
+      - "clinical"
+      - "thermal"
+      - "infrared"
+      - "x-ray"
+      - "sar"
+      - "radar"
+      - "event camera"
+      - "hyperspectral"
+      - "underwater"
+      - "sonar"
+      - "reconnaissance"
+      - "defense"
+      - "military"
+
+  - name: "2D Gaussians, Geometry & Compression"
+    slug: "geometry-compression"
+    description: "2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression."
+    keywords:
+      - "2dgs"
+      - "2d gaussian"
+      - "surfel"
+      - "mesh extraction"
+      - "surface reconstruction"
+      - "sdf"
+      - "signed distance"
+      - "normal estimation"
+      - "compression"
+      - "quantization"
+      - "compact"
+      - "relighting"
+      - "inverse rendering"
+      - "brdf"
+
+technical_tags:
+  "3DGS": ["3d gaussian splatting", "3dgs", "gaussian splatting"]
+  "4DGS": ["4dgs", "4d gaussian", "dynamic gaussian"]
+  "2DGS": ["2dgs", "2d gaussian", "gaussian surfel"]
+  "SLAM": ["slam", "simultaneous localization and mapping", "visual odometry"]
+  "Diffusion": ["diffusion", "score distillation", "denoising"]
+  "Feed-Forward": ["feed-forward", "generalizable", "single-pass"]
+  "Sparse-View": ["sparse-view", "few-shot", "unposed", "colmap-free"]
+  "Compression": ["compression", "quantization", "pruning", "compactness", "codebook"]
+  "Mesh & Surface": ["mesh", "surface reconstruction", "sdf", "marching cubes", "poisson"]
+  "LiDAR-Fusion": ["lidar", "point cloud fusion", "radar"]
+  "Thermal & IR": ["thermal", "infrared", "lwir", "mwir", "radiometric"]
+  "Ultrasound & Medical": ["ultrasound", "mri", "ct", "endoscopic", "surgical", "x-ray"]
+  "Avatars": ["avatar", "smpl", "talking head", "human reconstruction"]
+  "Relighting & BRDF": ["relighting", "inverse rendering", "brdf", "pbr", "albedo"]
+  "Autonomous Driving": ["autonomous driving", "urban scene", "street view", "waymo", "nuscenes"]
+  "Active Perception": ["active perception", "next-best-view", "active mapping", "exploration"]
+  "Event Camera": ["event camera", "event-based", "neuromorphic"]
+  "Physics & Simulation": ["physics", "mpm", "elastoplastic", "simulation", "digital twin"]
+  "VR & XR": ["virtual reality", "vr", "xr", "headset", "foveated"]
+  "Ray Tracing": ["ray tracing", "path tracing", "optix"]
+

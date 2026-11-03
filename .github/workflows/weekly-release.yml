@@ -1,0 +1,87 @@
+name: Weekly Production Release & GitHub Pages Deploy
+
+on:
+  schedule:
+    # Runs Sunday at 00:00 UTC (70h after Thursday 02:00 UTC ingest -> strictly <72h TBD SLA)
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  release-and-build:
+    name: Merge feed -> main, Tag Release & Prepare Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Merge origin/feed, rebuild & validate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin feed main
+          git merge origin/feed --no-edit -m "chore(release): weekly merge from feed"
+          uv run python -m src.cli build
+          uv run ruff check .
+          uv run pytest -v
+          uv run python -m src.cli validate
+
+      - name: Commit, Tag Weekly Release (vYYYY.Www) & Reset feed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add data/papers.json docs/papers.json README.md
+          git diff --cached --quiet || git commit -m "chore(release): compile weekly OBT and README"
+          git push origin main
+          git checkout -B feed main
+          git push origin feed
+
+          TAG="v$(date -u +'%Y.W%V')"
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            git tag -a "$TAG" main -m "Weekly 3DGS Frontier Database Release $TAG"
+            git push origin "$TAG"
+            gh release create "$TAG" --title "Weekly 3DGS Paper Digest ($TAG)" --generate-notes || true
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site artifact (docs/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "docs"
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: release-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
