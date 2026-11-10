@@ -22,10 +22,12 @@ def main(argv=None):
     enqueue.add_argument("--max-pages", type=int, default=100)
     enqueue.add_argument("--max-bytes", type=int, default=50_000_000)
     enqueue.add_argument("--timeout", type=int, default=120)
+    enqueue.add_argument("--llama-config", type=Path)
     run = sub.add_parser("pass")
     run.add_argument("--queue", type=Path, required=True)
     run.add_argument("--cache", type=Path, required=True)
     run.add_argument("--max-jobs", type=int, default=1)
+    run.add_argument("--llama-config", type=Path)
     validate = sub.add_parser("validate-result")
     validate.add_argument("result", type=Path)
     review_parser = sub.add_parser("review-import")
@@ -52,17 +54,32 @@ def main(argv=None):
     if args.command == "enqueue":
         from src.workers.pdf_parser import extractor_version
 
+        if args.llama_config:
+            from src.workers.llama_parser import LlamaConfig
+            from src.workers.llama_parser import extractor_version as llama_version
+
+            config = LlamaConfig.model_validate_json(args.llama_config.read_bytes())
+            version = llama_version(config)
+        else:
+            version = extractor_version()
         limits = ExtractionLimits(
             max_pages=args.max_pages, max_bytes=args.max_bytes, timeout_seconds=args.timeout
         )
         digest = cache_pdf(args.pdf, args.cache, limits)
         job = ExtractionQueue(args.queue).enqueue(
-            args.paper_id, digest, extractor_version(), args.source_url, limits=limits
+            args.paper_id, digest, version, args.source_url, limits=limits
         )
         print(json.dumps({"job_key": job.key, "state": job.state, "pdf_sha256": digest}))
     elif args.command == "pass":
         print(
-            json.dumps(worker_pass(ExtractionQueue(args.queue), args.cache, max_jobs=args.max_jobs))
+            json.dumps(
+                worker_pass(
+                    ExtractionQueue(args.queue),
+                    args.cache,
+                    max_jobs=args.max_jobs,
+                    llama_config=args.llama_config,
+                )
+            )
         )
     elif args.command == "coverage":
         from src.schema import PaperDatabase
