@@ -1,0 +1,1659 @@
+{
+  "fetched_at": "2026-11-10T18:23:37.247618Z",
+  "published_at": {
+    "2505.21335": "2025-05-27T15:30:01Z",
+    "2505.21377": "2025-05-27T16:06:04Z",
+    "2505.21483": "2025-05-27T17:53:02Z",
+    "2505.21502": "2025-05-27T17:59:47Z",
+    "2505.21890": "2025-05-28T02:07:52Z",
+    "2505.22279": "2025-05-28T12:16:42Z",
+    "2505.22335": "2025-05-28T13:23:16Z",
+    "2505.22400": "2025-05-28T14:26:41Z",
+    "2505.22854": "2025-05-28T20:41:24Z",
+    "2505.22859": "2025-05-28T20:45:10Z",
+    "2505.22908": "2025-05-28T22:17:24Z",
+    "2505.22978": "2025-05-29T01:34:40Z",
+    "2505.23044": "2025-05-29T03:40:52Z",
+    "2505.23158": "2025-05-29T06:50:57Z",
+    "2505.23280": "2025-05-29T09:25:36Z",
+    "2505.23692": "2025-05-29T17:27:54Z",
+    "2505.23716": "2025-05-29T17:49:56Z",
+    "2505.23734": "2025-05-29T17:57:04Z",
+    "2505.24053": "2025-05-29T22:52:51Z",
+    "2505.24245": "2025-05-30T06:08:45Z",
+    "2505.24746": "2025-05-30T16:06:32Z",
+    "2505.24796": "2025-05-30T16:58:18Z",
+    "2505.24877": "2025-05-30T17:59:54Z",
+    "2506.00225": "2025-05-30T21:03:17Z",
+    "2506.00271": "2025-05-30T22:12:33Z",
+    "2506.00280": "2025-05-30T22:21:22Z"
+  },
+  "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+  "records": [
+    {
+      "abstract": "Recent advancements in neural 3D representations, such as neural radiance fields (NeRF) and 3D Gaussian splatting (3DGS), have enabled the accurate estimation of 3D structures from multiview images. However, this capability is limited to estimating the visible external structure, and identifying the invisible internal structure hidden behind the surface is difficult. To overcome this limitation, we address a new task called Structure from Collision (SfC), which aims to estimate the structure (including the invisible internal structure) of an object from appearance changes during collision. To solve this problem, we propose a novel model called SfC-NeRF that optimizes the invisible internal structure of an object through a video sequence under physical, appearance (i.e., visible external structure)-preserving, and keyframe constraints. In particular, to avoid falling into undesirable local optima owing to its ill-posed nature, we propose volume annealing; that is, searching for global optima by repeatedly reducing and expanding the volume. Extensive experiments on 115 objects involving diverse structures (i.e., various cavity shapes, locations, and sizes) and material properties revealed the properties of SfC and demonstrated the effectiveness of the proposed SfC-NeRF.",
+      "arxiv_doi": "10.48550/arxiv.2505.21335",
+      "arxiv_id": "2505.21335",
+      "authors": [
+        "Takuhiro Kaneko"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to CVPR 2025 (Highlight). Project page: https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kaneko",
+      "id": "2505.21335",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.21335v1",
+            "value": "2025-05-27"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.21335",
+      "pdf_url": "https://arxiv.org/pdf/2505.21335.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Structure from Collision",
+      "tldr": "To overcome this limitation, we address a new task called Structure from Collision (SfC), which aims to estimate the structure (including the invisible internal structure) of an object from appearance...",
+      "updated_date": "2025-05-27",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "This work presents a novel text-to-vector graphics generation approach, Dream3DVG, allowing for arbitrary viewpoint viewing, progressive detail optimization, and view-dependent occlusion awareness. Our approach is a dual-branch optimization framework, consisting of an auxiliary 3D Gaussian Splatting optimization branch and a 3D vector graphics optimization branch. The introduced 3DGS branch can bridge the domain gaps between text prompts and vector graphics with more consistent guidance. Moreover, 3DGS allows for progressive detail control by scheduling classifier-free guidance, facilitating guiding vector graphics with coarse shapes at the initial stages and finer details at later stages. We also improve the view-dependent occlusions by devising a visibility-awareness rendering module. Extensive results on 3D sketches and 3D iconographies, demonstrate the superiority of the method on different abstraction levels of details, cross-view consistency, and occlusion-aware stroke culling.",
+      "arxiv_doi": "10.48550/arxiv.2505.21377",
+      "arxiv_id": "2505.21377",
+      "authors": [
+        "Yidi Li",
+        "Jun Xiao",
+        "Zhengda Lu",
+        "Yiqun Wang",
+        "Haiyong Jiang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2025",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Li et al.",
+      "id": "2505.21377",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.21377v1",
+            "value": "2025-05-27"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.21377",
+      "pdf_url": "https://arxiv.org/pdf/2505.21377.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Empowering Vector Graphics with Consistently Arbitrary Viewing and View-dependent Visibility",
+      "tldr": "Presents text-to-vector graphics generation approach, Dream3DVG, allowing for arbitrary viewpoint viewing, progressive detail optimization, and view-dependent occlusion awareness.",
+      "updated_date": "2025-05-27",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Object compositing offers significant promise for augmented reality (AR) and embodied intelligence applications. Existing approaches predominantly focus on single-image scenarios or intrinsic decomposition techniques, facing challenges with multi-view consistency, complex scenes, and diverse lighting conditions. Recent inverse rendering advancements, such as 3D Gaussian and diffusion-based methods, have enhanced consistency but are limited by scalability, heavy data requirements, or prolonged reconstruction time per scene. To broaden its applicability, we introduce MV-CoLight, a two-stage framework for illumination-consistent object compositing in both 2D images and 3D scenes. Our novel feed-forward architecture models lighting and shadows directly, avoiding the iterative biases of diffusion-based methods. We employ a Hilbert curve-based mapping to align 2D image inputs with 3D Gaussian scene representations seamlessly. To facilitate training and evaluation, we further introduce a large-scale 3D compositing dataset. Experiments demonstrate state-of-the-art harmonized results across standard benchmarks and our dataset, as well as casually captured real-world scenes demonstrate the framework's robustness and wide generalization.",
+      "arxiv_doi": "10.48550/arxiv.2505.21483",
+      "arxiv_id": "2505.21483",
+      "authors": [
+        "Kerui Ren",
+        "Jiayang Bai",
+        "Linning Xu",
+        "Lihan Jiang",
+        "Jiangmiao Pang",
+        "Mulin Yu",
+        "Bo Dai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Ren et al.",
+      "id": "2505.21483",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.21483v1",
+            "value": "2025-05-27"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.21483",
+      "pdf_url": "https://arxiv.org/pdf/2505.21483.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "MV-CoLight: Efficient Object Compositing with Consistent Lighting and Shadow Generation",
+      "tldr": "To broaden its applicability, we introduce MV-CoLight, a two-stage framework for illumination-consistent object compositing in both 2D images and 3D scenes.",
+      "updated_date": "2025-05-27",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "We propose GRGS, a generalizable and relightable 3D Gaussian framework for high-fidelity human novel view synthesis under diverse lighting conditions. Unlike existing methods that rely on per-character optimization or ignore physical constraints, GRGS adopts a feed-forward, fully supervised strategy projecting geometry, material, and illumination cues from multi-view 2D observations into 3D Gaussian representations. To recover accurate geometry under diverse lighting conditions, we introduce a Lighting-robust Geometry Refinement (LGR) module trained on synthetically relit data to predict precise depth and surface normals. Based on the high-quality geometry, a Physically Grounded Neural Rendering (PGNR) module is further proposed to integrate neural prediction with physics-based shading, supporting editable relighting with shadows and indirect illumination. Moreover, we design a 2D-to-3D projection training scheme leveraging differentiable supervision from ambient occlusion, direct, and indirect lighting maps, alleviating the computational cost of ray tracing. Extensive experiments demonstrate that GRGS achieves superior visual quality, geometric consistency, and generalization across characters and lighting conditions.",
+      "arxiv_doi": "10.48550/arxiv.2505.21502",
+      "arxiv_id": "2505.21502",
+      "authors": [
+        "Yipengjing Sun",
+        "Shengping Zhang",
+        "Chenyang Wang",
+        "Shunyuan Zheng",
+        "Zonglin Li",
+        "Xiangyang Ji"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project Webpage: https://sypj-98.github.io/grgs/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Sun et al.",
+      "id": "2505.21502",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.21502v2",
+            "value": "2025-05-27"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.21502",
+      "pdf_url": "https://arxiv.org/pdf/2505.21502.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Generalizable and Relightable Gaussian Splatting for Human Novel View Synthesis",
+      "tldr": "Proposes GRGS, a generalizable and relightable 3D Gaussian framework for high-fidelity human novel view synthesis under diverse lighting conditions.",
+      "updated_date": "2025-11-21",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Hyperspectral imaging (HSI) has been widely used in agricultural applications for non-destructive estimation of plant nutrient composition and precise quantification of sample nutritional elements. Recently, 3D reconstruction methods, such as Neural Radiance Field (NeRF), have been used to create implicit neural representations of HSI scenes. This capability enables the rendering of hyperspectral channel compositions at every spatial location, thereby helping localize the target object's nutrient composition both spatially and spectrally. However, it faces limitations in training time and rendering speed. In this paper, we propose Diffusion-Denoised Hyperspectral Gaussian Splatting (DD-HGS), which enhances the state-of-the-art 3D Gaussian Splatting (3DGS) method with wavelength-aware spherical harmonics, a Kullback-Leibler divergence-based spectral loss, and a diffusion-based denoiser to enable 3D explicit reconstruction of the hyperspectral scenes for the entire spectral range. We present extensive evaluations on diverse real-world hyperspectral scenes from the Hyper-NeRF dataset to show the effectiveness of our DD-HGS. The results demonstrate that DD-HGS achieves the new state-of-the-art performance compared to all the previously published methods. Project page: https://dragonpg2000.github.io/DDHGS-website/",
+      "arxiv_doi": "10.48550/arxiv.2505.21890",
+      "arxiv_id": "2505.21890",
+      "authors": [
+        "Sunil Kumar Narayanan",
+        "Lingjun Zhao",
+        "Lu Gan",
+        "Yongsheng Chen"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to 3DV 2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Narayanan et al.",
+      "id": "2505.21890",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.21890v3",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.21890",
+      "pdf_url": "https://arxiv.org/pdf/2505.21890.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Diffusion-Denoised Hyperspectral Gaussian Splatting",
+      "tldr": "Proposes Diffusion-Denoised Hyperspectral Gaussian Splatting (DD-HGS), which enhances the state-of-the-art 3D Gaussian Splatting (3DGS) method with wavelength-aware spherical harmonics, a Kullback-Leibler...",
+      "updated_date": "2025-11-25",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Novel view synthesis is a fundamental task in 3D computer vision that aims to reconstruct photorealistic images from novel viewpoints given a set of posed images. However, reconstruction quality degrades sharply under sparse-view conditions due to insufficient geometric cues. Existing methods, including Neural Radiance Fields (NeRF) and more recent 3D Gaussian Splatting (3DGS), often exhibit blurred details and structural artifacts when trained from sparse observations. Recent works have identified rendered depth quality as a key factor in mitigating these artifacts, as it directly affects geometric accuracy and view consistency. However, effectively leveraging depth under sparse views remains challenging. Depth priors can be noisy or misaligned with rendered geometry, and single-scale supervision often fails to capture both global structure and fine details. To address these challenges, we introduce Hierarchical Depth-Guided Splatting (HDGS), a depth supervision framework that progressively refines geometry from coarse to fine levels. Central to HDGS is our novel Cascade Pearson Correlation Loss (CPCL), which enforces consistency between rendered and estimated depth priors across multiple spatial scales. By enforcing multi-scale depth consistency, our method improves structural fidelity in sparse-view reconstruction. Experiments on LLFF and DTU demonstrate state-of-the-art performance under sparse-view settings.",
+      "arxiv_doi": "10.48550/arxiv.2505.22279",
+      "arxiv_id": "2505.22279",
+      "authors": [
+        "Wenjun Lu",
+        "Haodong Chen",
+        "Anqi Yi",
+        "Guoxi Huang",
+        "Yuk Ying Chung",
+        "Kun Hu",
+        "Zhiyong Wang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lu et al.",
+      "id": "2505.22279",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22279v2",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22279",
+      "pdf_url": "https://arxiv.org/pdf/2505.22279.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Learning Fine-Grained Geometry for Sparse-View Splatting via Cascade Depth Loss",
+      "tldr": "To address these challenges, we introduce Hierarchical Depth-Guided Splatting (HDGS), a depth supervision framework that progressively refines geometry from coarse to fine levels.",
+      "updated_date": "2026-04-02",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Recent 3D Gaussian Splatting (3DGS) techniques for Visual Simultaneous Localization and Mapping (SLAM) have significantly progressed in tracking and high-fidelity mapping. However, their sequential optimization framework and sensitivity to dynamic objects limit real-time performance and robustness in real-world scenarios. We present UP-SLAM, a real-time RGB-D SLAM system for dynamic environments that decouples tracking and mapping through a parallelized framework. A probabilistic octree is employed to manage Gaussian primitives adaptively, enabling efficient initialization and pruning without hand-crafted thresholds. To robustly filter dynamic regions during tracking, we propose a training-free uncertainty estimator that fuses multi-modal residuals to estimate per-pixel motion uncertainty, achieving open-set dynamic object handling without reliance on semantic labels. Furthermore, a temporal encoder is designed to enhance rendering quality. Concurrently, low-dimensional features are efficiently transformed via a shallow multilayer perceptron to construct DINO features, which are then employed to enrich the Gaussian field and improve the robustness of uncertainty prediction. Extensive experiments on multiple challenging datasets suggest that UP-SLAM outperforms state-of-the-art methods in both localization accuracy (by 59.8%) and rendering quality (by 4.57 dB PSNR), while maintaining real-time performance and producing reusable, artifact-free static maps in dynamic environments.The project: https://aczheng-cai.github.io/up_slam.github.io/",
+      "arxiv_doi": "10.48550/arxiv.2505.22335",
+      "arxiv_id": "2505.22335",
+      "authors": [
+        "Wancai Zheng",
+        "Linlin Ou",
+        "Jiajie He",
+        "Libo Zhou",
+        "Xinyi Yu",
+        "Yan Wei"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zheng et al.",
+      "id": "2505.22335",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22335v1",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22335",
+      "pdf_url": "https://arxiv.org/pdf/2505.22335.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "UP-SLAM: Adaptively Structured Gaussian SLAM with Uncertainty Prediction in Dynamic Environments",
+      "tldr": "Presents UP-SLAM, a real-time RGB-D SLAM system for dynamic environments that decouples tracking and mapping through a parallelized framework.",
+      "updated_date": "2025-05-28",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Although dynamic scene reconstruction has long been a fundamental challenge in 3D vision, the recent emergence of 3D Gaussian Splatting (3DGS) offers a promising direction by enabling high-quality, real-time rendering through explicit Gaussian primitives. However, existing 3DGS-based methods for dynamic reconstruction often suffer from \\textit{spatio-temporal incoherence} during initialization, where canonical Gaussians are constructed by aggregating observations from multiple frames without temporal distinction. This results in spatio-temporally entangled representations, making it difficult to model dynamic motion accurately. To overcome this limitation, we propose \\textbf{STDR} (Spatio-Temporal Decoupling for Real-time rendering), a plug-and-play module that learns spatio-temporal probability distributions for each Gaussian. STDR introduces a spatio-temporal mask, a separated deformation field, and a consistency regularization to jointly disentangle spatial and temporal patterns. Extensive experiments demonstrate that incorporating our module into existing 3DGS-based dynamic scene reconstruction frameworks leads to notable improvements in both reconstruction quality and spatio-temporal consistency across synthetic and real-world benchmarks.",
+      "arxiv_doi": "10.48550/arxiv.2505.22400",
+      "arxiv_id": "2505.22400",
+      "authors": [
+        "Zehao Li",
+        "Hao Jiang",
+        "Yujun Cai",
+        "Jianing Chen",
+        "Baolong Bi",
+        "Shuqin Gao",
+        "Honglong Zhao",
+        "Yiwei Wang",
+        "Tianlu Mao",
+        "Zhaoqi Wang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Li et al.",
+      "id": "2505.22400",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22400v1",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22400",
+      "pdf_url": "https://arxiv.org/pdf/2505.22400.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "STDR: Spatio-Temporal Decoupling for Real-Time Dynamic Scene Rendering",
+      "tldr": "Proposes \\textbf{STDR} (Spatio-Temporal Decoupling for Real-time rendering), a plug-and-play module that learns spatio-temporal probability distributions for each Gaussian.",
+      "updated_date": "2025-05-28",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Gaussian Splatting (GS) has recently emerged as an efficient representation for rendering 3D scenes from 2D images and has been extended to images, videos, and dynamic 4D content. However, applying style transfer to GS-based representations, especially beyond simple color changes, remains challenging. In this work, we introduce CLIPGaussian, the first unified style transfer framework that supports text- and image-guided stylization across multiple modalities: 2D images, videos, 3D objects, and 4D scenes. Our method operates directly on Gaussian primitives and integrates into existing GS pipelines as a plug-in module, without requiring large generative models or retraining from scratch. The CLIPGaussian approach enables joint optimization of color and geometry in 3D and 4D settings, and achieves temporal coherence in videos, while preserving the model size. We demonstrate superior style fidelity and consistency across all tasks, validating CLIPGaussian as a universal and efficient solution for multimodal style transfer.",
+      "arxiv_doi": "10.48550/arxiv.2505.22854",
+      "arxiv_id": "2505.22854",
+      "authors": [
+        "Kornel Howil",
+        "Joanna Waczyńska",
+        "Piotr Borycki",
+        "Tadeusz Dziarmaga",
+        "Marcin Mazur",
+        "Przemysław Spurek"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to NeurIPS 2025",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": "10.52202/085713-3746",
+      "first_author": "Howil et al.",
+      "id": "2505.22854",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22854v2",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22854",
+      "pdf_url": "https://arxiv.org/pdf/2505.22854.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "CLIPGaussian: Universal and Multimodal Style Transfer Based on Gaussian Splatting",
+      "tldr": "Introduces CLIPGaussian, the first unified style transfer framework that supports text- and image-guided stylization across multiple modalities: 2D images, videos, 3D objects, and 4D scenes.",
+      "updated_date": "2025-10-24",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "We propose the first 4D tracking and mapping method that jointly performs camera localization and non-rigid surface reconstruction via differentiable rendering. Our approach captures 4D scenes from an online stream of color images with depth measurements or predictions by jointly optimizing scene geometry, appearance, dynamics, and camera ego-motion. Although natural environments exhibit complex non-rigid motions, 4D-SLAM remains relatively underexplored due to its inherent challenges; even with 2.5D signals, the problem is ill-posed because of the high dimensionality of the optimization space. To overcome these challenges, we first introduce a SLAM method based on Gaussian surface primitives that leverages depth signals more effectively than 3D Gaussians, thereby achieving accurate surface reconstruction. To further model non-rigid deformations, we employ a warp-field represented by a multi-layer perceptron (MLP) and introduce a novel camera pose estimation technique along with surface regularization terms that facilitate spatio-temporal reconstruction. In addition to these algorithmic challenges, a significant hurdle in 4D SLAM research is the lack of reliable ground truth and evaluation protocols, primarily due to the difficulty of 4D capture using commodity sensors. To address this, we present a novel open synthetic dataset of everyday objects with diverse motions, leveraging large-scale object models and animation modeling. In summary, we open up the modern 4D-SLAM research by introducing a novel method and evaluation protocols grounded in modern vision and rendering techniques.",
+      "arxiv_doi": "10.48550/arxiv.2505.22859",
+      "arxiv_id": "2505.22859",
+      "authors": [
+        "Hidenobu Matsuki",
+        "Gwangbin Bae",
+        "Andrew J. Davison"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2025. Project Page: https://muskie82.github.io/4dtam/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Matsuki et al.",
+      "id": "2505.22859",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22859v1",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22859",
+      "pdf_url": "https://arxiv.org/pdf/2505.22859.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "4DTAM: Non-Rigid Tracking and Mapping via Dynamic Surface Gaussians",
+      "tldr": "Proposes the first 4D tracking and mapping method that jointly performs camera localization and non-rigid surface reconstruction via differentiable rendering.",
+      "updated_date": "2025-05-28",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Current 3DGS compression methods largely forego the neural analysis-synthesis transform, which is a crucial component in learned signal compression systems. As a result, redundancy removal is left solely to the entropy coder, overburdening the entropy coding module and reducing rate-distortion (R-D) performance. To fix this critical omission, we propose a training-time transform coding (TTC) method that adds the analysis-synthesis transform and optimizes it jointly with the 3DGS representation and entropy model. Concretely, we adopt a hierarchical design: a channel-wise KLT for decorrelation and energy compaction, followed by a sparsity-aware neural transform that reconstructs the KLT residuals with minimal parameter and computational overhead. Experiments show that our method delivers strong R-D performance with fast decoding, offering a favorable BD-rate-decoding-time trade-off over SOTA 3DGS compressors.",
+      "arxiv_doi": "10.48550/arxiv.2505.22908",
+      "arxiv_id": "2505.22908",
+      "authors": [
+        "Hao Xu",
+        "Xiaolin Wu",
+        "Xi Zhang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Our code will be released at \\href{https://github.com/hxu160/SHTC_for_3DGS_compression}{here}",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xu et al.",
+      "id": "2505.22908",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22908v4",
+            "value": "2025-05-28"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22908",
+      "pdf_url": "https://arxiv.org/pdf/2505.22908.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Learning Hierarchical Sparse Transform Coding for 3DGS Compression",
+      "tldr": "To fix this critical omission, we propose a training-time transform coding (TTC) method that adds the analysis-synthesis transform and optimizes it jointly with the 3DGS representation and entropy model.",
+      "updated_date": "2026-02-24",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "While generalizable 3D Gaussian splatting enables efficient, high-quality rendering of unseen scenes, it heavily depends on precise camera poses for accurate geometry. In real-world scenarios, obtaining accurate poses is challenging, leading to noisy pose estimates and geometric misalignments. To address this, we introduce SHARE, a pose-free, feed-forward Gaussian splatting framework that overcomes these ambiguities by joint shape and camera rays estimation. Instead of relying on explicit 3D transformations, SHARE builds a pose-aware canonical volume representation that seamlessly integrates multi-view information, reducing misalignment caused by inaccurate pose estimates. Additionally, anchor-aligned Gaussian prediction enhances scene reconstruction by refining local geometry around coarse anchors, allowing for more precise Gaussian placement. Extensive experiments on diverse real-world datasets show that our method achieves robust performance in pose-free generalizable Gaussian splatting. Code is avilable at https://github.com/youngju-na/SHARE",
+      "arxiv_doi": "10.48550/arxiv.2505.22978",
+      "arxiv_id": "2505.22978",
+      "authors": [
+        "Youngju Na",
+        "Taeyeon Kim",
+        "Jumin Lee",
+        "Kyu Beom Han",
+        "Woo Jae Kim",
+        "Sung-eui Yoon"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "ICIP 2025 (Best Student Paper Award) Code available at: https://github.com/youngju-na/SHARE",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Na et al.",
+      "id": "2505.22978",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.22978v3",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.22978",
+      "pdf_url": "https://arxiv.org/pdf/2505.22978.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Pose-free 3D Gaussian splatting via shape-ray estimation",
+      "tldr": "To address this, we introduce SHARE, a pose-free, feed-forward Gaussian splatting framework that overcomes these ambiguities by joint shape and camera rays estimation.",
+      "updated_date": "2025-10-21",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "A major breakthrough in 3D reconstruction is the feedforward paradigm to generate pixel-wise 3D points or Gaussian primitives from sparse, unposed images. To further incorporate semantics while avoiding the significant memory and storage costs of high-dimensional semantic features, existing methods extend this paradigm by associating each primitive with a compressed semantic feature vector. However, these methods have two major limitations: (a) the naively compressed feature compromises expressiveness, affecting the model's ability to capture fine-grained semantics, and (b) the pixel-wise primitive prediction introduces redundancy in overlapping areas, causing unnecessary memory overhead. To this end, we introduce \\textbf{SpatialSplat}, a feedforward framework that produces redundancy-aware Gaussians and capitalizes on a dual-field semantic representation. Particularly, with the insight that primitives within the same instance exhibit high semantic consistency, we decompose the semantic representation into a coarse feature field that encodes uncompressed semantics with minimal primitives, and a fine-grained yet low-dimensional feature field that captures detailed inter-instance relationships. Moreover, we propose a selective Gaussian mechanism, which retains only essential Gaussians in the scene, effectively eliminating redundant primitives. Our proposed Spatialsplat learns accurate semantic information and detailed instances prior with more compact 3D Gaussians, making semantic 3D reconstruction more applicable. We conduct extensive experiments to evaluate our method, demonstrating a remarkable 60\\% reduction in scene representation parameters while achieving superior performance over state-of-the-art methods. The code is available at https://github.com/shengyuuu/SpatialSplat.git",
+      "arxiv_doi": "10.48550/arxiv.2505.23044",
+      "arxiv_id": "2505.23044",
+      "authors": [
+        "Yu Sheng",
+        "Jiajun Deng",
+        "Xinran Zhang",
+        "Yu Zhang",
+        "Bei Hua",
+        "Yanyong Zhang",
+        "Jianmin Ji"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "ICCV2025",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Sheng et al.",
+      "id": "2505.23044",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23044v2",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23044",
+      "pdf_url": "https://arxiv.org/pdf/2505.23044.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images",
+      "tldr": "To this end, we introduce \\textbf{SpatialSplat}, a feedforward framework that produces redundancy-aware Gaussians and capitalizes on a dual-field semantic representation.",
+      "updated_date": "2025-10-10",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "In this work, we present a novel level-of-detail (LOD) method for 3D Gaussian Splatting that enables real-time rendering of large-scale scenes on memory-constrained devices. Our approach introduces a hierarchical LOD representation that iteratively selects optimal subsets of Gaussians based on camera distance, thus largely reducing both rendering time and GPU memory usage. We construct each LOD level by applying a depth-aware 3D smoothing filter, followed by importance-based pruning and fine-tuning to maintain visual fidelity. To further reduce memory overhead, we partition the scene into spatial chunks and dynamically load only relevant Gaussians during rendering, employing an opacity-blending mechanism to avoid visual artifacts at chunk boundaries. Our method achieves state-of-the-art performance on both outdoor (Hierarchical 3DGS) and indoor (Zip-NeRF) datasets, delivering high-quality renderings with reduced latency and memory requirements.",
+      "arxiv_doi": "10.48550/arxiv.2505.23158",
+      "arxiv_id": "2505.23158",
+      "authors": [
+        "Jonas Kulhanek",
+        "Marie-Julie Rakotosaona",
+        "Fabian Manhardt",
+        "Christina Tsalicoglou",
+        "Michael Niemeyer",
+        "Torsten Sattler",
+        "Songyou Peng",
+        "Federico Tombari"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "NeurIPS 2025; Web: https://lodge-gs.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kulhanek et al.",
+      "id": "2505.23158",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23158v2",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23158",
+      "pdf_url": "https://arxiv.org/pdf/2505.23158.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering",
+      "tldr": "Presents level-of-detail (LOD) method for 3D Gaussian Splatting that enables real-time rendering of large-scale scenes on memory-constrained devices.",
+      "updated_date": "2025-10-29",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Recent advances in 3D Gaussian Splatting have shown remarkable potential for novel view synthesis. However, most existing large-scale scene reconstruction methods rely on the divide-and-conquer paradigm, which often leads to the loss of global scene information and requires complex parameter tuning due to scene partitioning and local optimization. To address these limitations, we propose MixGS, a novel holistic optimization framework for large-scale 3D scene reconstruction. MixGS models the entire scene holistically by integrating camera pose and Gaussian attributes into a view-aware representation, which is decoded into fine-detailed Gaussians. Furthermore, a novel mixing operation combines decoded and original Gaussians to jointly preserve global coherence and local fidelity. Extensive experiments on large-scale scenes demonstrate that MixGS achieves state-of-the-art rendering quality and competitive speed, while significantly reducing computational requirements, enabling large-scale scene reconstruction training on a single 24GB VRAM GPU. The code will be released at https://github.com/azhuantou/MixGS.",
+      "arxiv_doi": "10.48550/arxiv.2505.23280",
+      "arxiv_id": "2505.23280",
+      "authors": [
+        "Chuandong Liu",
+        "Huijiao Wang",
+        "Lei Yu",
+        "Gui-Song Xia"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liu et al.",
+      "id": "2505.23280",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23280v1",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23280",
+      "pdf_url": "https://arxiv.org/pdf/2505.23280.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Holistic Large-Scale Scene Reconstruction via Mixed Gaussian Splatting",
+      "tldr": "Proposes MixGS, a novel holistic optimization framework for large-scale 3D scene reconstruction.",
+      "updated_date": "2025-05-29",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Learned visuomotor policies are capable of performing increasingly complex manipulation tasks. However, most of these policies are trained on data collected from limited robot positions and camera viewpoints. This leads to poor generalization to novel robot positions, which limits the use of these policies on mobile platforms, especially for precise tasks like pressing buttons or turning faucets. In this work, we formulate the policy mobilization problem: find a mobile robot base pose in a novel environment that is in distribution with respect to a manipulation policy trained on a limited set of camera viewpoints. Compared to retraining the policy itself to be more robust to unseen robot base pose initializations, policy mobilization decouples navigation from manipulation and thus does not require additional demonstrations. Crucially, this problem formulation complements existing efforts to improve manipulation policy robustness to novel viewpoints and remains compatible with them. We propose a novel approach for policy mobilization that bridges navigation and manipulation by optimizing the robot's base pose to align with an in-distribution base pose for a learned policy. Our approach utilizes 3D Gaussian Splatting for novel view synthesis, a score function to evaluate pose suitability, and sampling-based optimization to identify optimal robot poses. To understand policy mobilization in more depth, we also introduce the Mobi-$π$ framework, which includes: (1) metrics that quantify the difficulty of mobilizing a given policy, (2) a suite of simulated mobile manipulation tasks based on RoboCasa to evaluate policy mobilization, and (3) visualization tools for analysis. In both our developed simulation task suite and the real world, we show that our approach outperforms baselines, demonstrating its effectiveness for policy mobilization.",
+      "arxiv_doi": "10.48550/arxiv.2505.23692",
+      "arxiv_id": "2505.23692",
+      "authors": [
+        "Jingyun Yang",
+        "Isabella Huang",
+        "Brandon Vu",
+        "Max Bajracharya",
+        "Rika Antonova",
+        "Jeannette Bohg"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CoRL 2025. Project website: https://mobipi.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yang et al.",
+      "id": "2505.23692",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23692v2",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23692",
+      "pdf_url": "https://arxiv.org/pdf/2505.23692.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Mobi-$π$: Mobilizing Your Robot Learning Policy",
+      "tldr": "Proposes approach for policy mobilization that bridges navigation and manipulation by optimizing the robot's base pose to align with an in-distribution base pose for a learned policy.",
+      "updated_date": "2025-09-26",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "We introduce AnySplat, a feed forward network for novel view synthesis from uncalibrated image collections. In contrast to traditional neural rendering pipelines that demand known camera poses and per scene optimization, or recent feed forward methods that buckle under the computational weight of dense views, our model predicts everything in one shot. A single forward pass yields a set of 3D Gaussian primitives encoding both scene geometry and appearance, and the corresponding camera intrinsics and extrinsics for each input image. This unified design scales effortlessly to casually captured, multi view datasets without any pose annotations. In extensive zero shot evaluations, AnySplat matches the quality of pose aware baselines in both sparse and dense view scenarios while surpassing existing pose free approaches. Moreover, it greatly reduce rendering latency compared to optimization based neural fields, bringing real time novel view synthesis within reach for unconstrained capture settings.Project page: https://city-super.github.io/anysplat/",
+      "arxiv_doi": "10.48550/arxiv.2505.23716",
+      "arxiv_id": "2505.23716",
+      "authors": [
+        "Lihan Jiang",
+        "Yucheng Mao",
+        "Linning Xu",
+        "Tao Lu",
+        "Kerui Ren",
+        "Yichen Jin",
+        "Xudong Xu",
+        "Mulin Yu",
+        "Jiangmiao Pang",
+        "Feng Zhao",
+        "Dahua Lin",
+        "Bo Dai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: https://city-super.github.io/anysplat/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jiang et al.",
+      "id": "2505.23716",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23716v2",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23716",
+      "pdf_url": "https://arxiv.org/pdf/2505.23716.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "AnySplat: Feed-forward 3D Gaussian Splatting from Unconstrained Views",
+      "tldr": "Introduces AnySplat, a feed forward network for novel view synthesis from uncalibrated image collections.",
+      "updated_date": "2025-09-15",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Feed-forward 3D Gaussian Splatting (3DGS) models have recently emerged as a promising solution for novel view synthesis, enabling one-pass inference without the need for per-scene 3DGS optimization. However, their scalability is fundamentally constrained by the limited capacity of their models, leading to degraded performance or excessive memory consumption as the number of input views increases. In this work, we analyze feed-forward 3DGS frameworks through the lens of the Information Bottleneck principle and introduce ZPressor, a lightweight architecture-agnostic module that enables efficient compression of multi-view inputs into a compact latent state $Z$ that retains essential scene information while discarding redundancy. Concretely, ZPressor enables existing feed-forward 3DGS models to scale to over 100 input views at 480P resolution on an 80GB GPU, by partitioning the views into anchor and support sets and using cross attention to compress the information from the support views into anchor views, forming the compressed latent state $Z$. We show that integrating ZPressor into several state-of-the-art feed-forward 3DGS models consistently improves performance under moderate input views and enhances robustness under dense view settings on two large-scale benchmarks DL3DV-10K and RealEstate10K. The video results, code and trained models are available on our project page: https://lhmd.top/zpressor.",
+      "arxiv_doi": "10.48550/arxiv.2505.23734",
+      "arxiv_id": "2505.23734",
+      "authors": [
+        "Weijie Wang",
+        "Donny Y. Chen",
+        "Zeyu Zhang",
+        "Duochao Shi",
+        "Akide Liu",
+        "Bohan Zhuang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "NeurIPS 2025, Project Page: https://lhmd.top/zpressor, Code: https://github.com/ziplab/ZPressor",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2505.23734",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.23734v4",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.23734",
+      "pdf_url": "https://arxiv.org/pdf/2505.23734.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS",
+      "tldr": "In this work, we analyze feed-forward 3DGS frameworks through the lens of the Information Bottleneck principle and introduce ZPressor, a lightweight architecture-agnostic module that enables efficient...",
+      "updated_date": "2025-11-17",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "3D Gaussian Splatting (3DGS) achieves an appealing balance between rendering quality and efficiency, but relies on approximating 3D Gaussians as 2D projections--an assumption that degrades accuracy, especially under generic large field-of-view (FoV) cameras. Despite recent extensions, no prior work has simultaneously achieved both projective exactness and real-time efficiency for general cameras. We introduce 3DGEER, a geometrically exact and efficient Gaussian rendering framework. From first principles, we derive a closed-form expression for integrating Gaussian density along a ray, enabling precise forward rendering and differentiable optimization under arbitrary camera models. To retain efficiency, we propose the Particle Bounding Frustum (PBF), which provides tight ray-Gaussian association without BVH traversal, and the Bipolar Equiangular Projection (BEAP), which unifies FoV representations, accelerates association, and improves reconstruction quality. Experiments on both pinhole and fisheye datasets show that 3DGEER outperforms prior methods across all metrics, runs 5x faster than existing projective exact ray-based baselines, and generalizes to wider FoVs unseen during training--establishing a new state of the art in real-time radiance field rendering.",
+      "arxiv_doi": "10.48550/arxiv.2505.24053",
+      "arxiv_id": "2505.24053",
+      "authors": [
+        "Zixun Huang",
+        "Cho-Ying Wu",
+        "Yuliang Guo",
+        "Xinyu Huang",
+        "Liu Ren"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Published at ICLR 2026. Code is available at: https://github.com/boschresearch/3dgeer",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Huang et al.",
+      "id": "2505.24053",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.24053v3",
+            "value": "2025-05-29"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.24053",
+      "pdf_url": "https://arxiv.org/pdf/2505.24053.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras",
+      "tldr": "Introduces 3DGEER, a geometrically exact and efficient Gaussian rendering framework.",
+      "updated_date": "2026-03-12",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "We present LTM3D, a Latent Token space Modeling framework for conditional 3D shape generation that integrates the strengths of diffusion and auto-regressive (AR) models. While diffusion-based methods effectively model continuous latent spaces and AR models excel at capturing inter-token dependencies, combining these paradigms for 3D shape generation remains a challenge. To address this, LTM3D features a Conditional Distribution Modeling backbone, leveraging a masked autoencoder and a diffusion model to enhance token dependency learning. Additionally, we introduce Prefix Learning, which aligns condition tokens with shape latent tokens during generation, improving flexibility across modalities. We further propose a Latent Token Reconstruction module with Reconstruction-Guided Sampling to reduce uncertainty and enhance structural fidelity in generated shapes. Our approach operates in token space, enabling support for multiple 3D representations, including signed distance fields, point clouds, meshes, and 3D Gaussian Splatting. Extensive experiments on image- and text-conditioned shape generation tasks demonstrate that LTM3D outperforms existing methods in prompt fidelity and structural accuracy while offering a generalizable framework for multi-modal, multi-representation 3D generation.",
+      "arxiv_doi": "10.48550/arxiv.2505.24245",
+      "arxiv_id": "2505.24245",
+      "authors": [
+        "Xin Kang",
+        "Zihan Zheng",
+        "Lei Chu",
+        "Yue Gao",
+        "Jiahao Li",
+        "Hao Pan",
+        "Xuejin Chen",
+        "Yan Lu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kang et al.",
+      "id": "2505.24245",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.24245v1",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.24245",
+      "pdf_url": "https://arxiv.org/pdf/2505.24245.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "LTM3D: Bridging Token Spaces for Conditional 3D Generation with Auto-Regressive Diffusion Framework",
+      "tldr": "Presents LTM3D, a Latent Token space Modeling framework for conditional 3D shape generation that integrates the strengths of diffusion and auto-regressive (AR) models.",
+      "updated_date": "2025-05-30",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Recent advancements in 3D Gaussian Splatting (3D-GS) enable high-quality 3D scene reconstruction from RGB images. Many studies extend this paradigm for language-driven open-vocabulary scene understanding. However, most of them simply project 2D semantic features onto 3D Gaussians and overlook a fundamental gap between 2D and 3D understanding: a 3D object may exhibit various semantics from different viewpoints--a phenomenon we term view-dependent semantics. To address this challenge, we propose LaGa (Language Gaussians), which establishes cross-view semantic connections by decomposing the 3D scene into objects. Then, it constructs view-aggregated semantic representations by clustering semantic descriptors and reweighting them based on multi-view semantics. Extensive experiments demonstrate that LaGa effectively captures key information from view-dependent semantics, enabling a more comprehensive understanding of 3D scenes. Notably, under the same settings, LaGa achieves a significant improvement of +18.7% mIoU over the previous SOTA on the LERF-OVS dataset. Our code is available at: https://github.com/SJTU-DeepVisionLab/LaGa.",
+      "arxiv_doi": "10.48550/arxiv.2505.24746",
+      "arxiv_id": "2505.24746",
+      "authors": [
+        "Jiazhong Cen",
+        "Xudong Zhou",
+        "Jiemin Fang",
+        "Changsong Wen",
+        "Lingxi Xie",
+        "Xiaopeng Zhang",
+        "Wei Shen",
+        "Qi Tian"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "ICML 2025 camera ready. Project Page: https://jumpat.github.io/laga-page/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Cen et al.",
+      "id": "2505.24746",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.24746v1",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.24746",
+      "pdf_url": "https://arxiv.org/pdf/2505.24746.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Tackling View-Dependent Semantics in 3D Language Gaussian Splatting",
+      "tldr": "To address this challenge, we propose LaGa (Language Gaussians), which establishes cross-view semantic connections by decomposing the 3D scene into objects.",
+      "updated_date": "2025-05-30",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "3D Gaussian Splatting (3DGS) renders pixels by rasterizing Gaussian primitives, where conditional alpha-blending dominates the computational cost in the rendering pipeline. This paper proposes TC-GS, an algorithm-independent universal module that expands the applicability of Tensor Core (TCU) for 3DGS, leading to substantial speedups and seamless integration into existing 3DGS optimization frameworks. The key innovation lies in mapping alpha computation to matrix multiplication, fully utilizing otherwise idle TCUs in existing 3DGS implementations. TC-GS provides plug-and-play acceleration for existing top-tier acceleration algorithms and integrates seamlessly with rendering pipeline designs, such as Gaussian compression and redundancy elimination algorithms. Additionally, we introduce a global-to-local coordinate transformation to mitigate rounding errors from quadratic terms of pixel coordinates caused by Tensor Core half-precision computation. Extensive experiments demonstrate that our method maintains rendering quality while providing an additional 2.18x speedup over existing Gaussian acceleration algorithms, thereby achieving a total acceleration of up to 5.6x.",
+      "arxiv_doi": "10.48550/arxiv.2505.24796",
+      "arxiv_id": "2505.24796",
+      "authors": [
+        "Zimu Liao",
+        "Jifeng Ding",
+        "Siwei Cui",
+        "Ruixuan Gong",
+        "Boni Hu",
+        "Yi Wang",
+        "Hengjie Li",
+        "XIngcheng Zhang",
+        "Hui Wang",
+        "Rong Fu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "15 pages, 6 figures",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liao et al.",
+      "id": "2505.24796",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.24796v2",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.24796",
+      "pdf_url": "https://arxiv.org/pdf/2505.24796.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "TC-GS: A Faster Gaussian Splatting Module Utilizing Tensor Cores",
+      "tldr": "Proposes TC-GS, an algorithm-independent universal module that expands the applicability of Tensor Core (TCU) for 3DGS, leading to substantial speedups and seamless integration into existing 3DGS...",
+      "updated_date": "2025-10-11",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Existing methods for image-to-3D avatar generation struggle to produce highly detailed, animation-ready avatars suitable for real-world applications. We introduce AdaHuman, a novel framework that generates high-fidelity animatable 3D avatars from a single in-the-wild image. AdaHuman incorporates two key innovations: (1) A pose-conditioned 3D joint diffusion model that synthesizes consistent multi-view images in arbitrary poses alongside corresponding 3D Gaussian Splats (3DGS) reconstruction at each diffusion step; (2) A compositional 3DGS refinement module that enhances the details of local body parts through image-to-image refinement and seamlessly integrates them using a novel crop-aware camera ray map, producing a cohesive detailed 3D avatar. These components allow AdaHuman to generate highly realistic standardized A-pose avatars with minimal self-occlusion, enabling rigging and animation with any input motion. Extensive evaluation on public benchmarks and in-the-wild images demonstrates that AdaHuman significantly outperforms state-of-the-art methods in both avatar reconstruction and reposing. Code and models will be publicly available for research purposes.",
+      "arxiv_doi": "10.48550/arxiv.2505.24877",
+      "arxiv_id": "2505.24877",
+      "authors": [
+        "Yangyi Huang",
+        "Ye Yuan",
+        "Xueting Li",
+        "Jan Kautz",
+        "Umar Iqbal"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Website: https://nvlabs.github.io/AdaHuman",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Huang et al.",
+      "id": "2505.24877",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2505.24877v1",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2505.24877",
+      "pdf_url": "https://arxiv.org/pdf/2505.24877.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion",
+      "tldr": "Introduces AdaHuman, a novel framework that generates high-fidelity animatable 3D avatars from a single in-the-wild image.",
+      "updated_date": "2025-05-30",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "Effective robotic autonomy in unknown environments demands proactive exploration and precise understanding of both geometry and semantics. In this paper, we propose ActiveSGM, an active semantic mapping framework designed to predict the informativeness of potential observations before execution. Built upon a 3D Gaussian Splatting (3DGS) mapping backbone, our approach employs semantic and geometric uncertainty quantification, coupled with a sparse semantic representation, to guide exploration. By enabling robots to strategically select the most beneficial viewpoints, ActiveSGM efficiently enhances mapping completeness, accuracy, and robustness to noisy semantic data, ultimately supporting more adaptive scene exploration. Our experiments on the Replica and Matterport3D datasets highlight the effectiveness of ActiveSGM in active semantic mapping tasks.",
+      "arxiv_doi": "10.48550/arxiv.2506.00225",
+      "arxiv_id": "2506.00225",
+      "authors": [
+        "Liyan Chen",
+        "Huangying Zhan",
+        "Hairong Yin",
+        "Yi Xu",
+        "Philippos Mordohai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Chen et al.",
+      "id": "2506.00225",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2506.00225v2",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2506.00225",
+      "pdf_url": "https://arxiv.org/pdf/2506.00225.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Understanding while Exploring: Semantics-driven Active Mapping",
+      "tldr": "Proposes ActiveSGM, an active semantic mapping framework designed to predict the informativeness of potential observations before execution.",
+      "updated_date": "2025-11-13",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "We present a novel compression framework for 3D Gaussian splatting (3DGS) data that leverages transform coding tools originally developed for point clouds. Contrary to existing 3DGS compression methods, our approach can produce compressed 3DGS models at multiple bitrates in a computationally efficient way. Point cloud voxelization is a discretization technique that point cloud codecs use to improve coding efficiency while enabling the use of fast transform coding algorithms. We propose an adaptive voxelization algorithm tailored to 3DGS data, to avoid the inefficiencies introduced by uniform voxelization used in point cloud codecs. We ensure the positions of larger volume Gaussians are represented at high resolution, as these significantly impact rendering quality. Meanwhile, a low-resolution representation is used for dense regions with smaller Gaussians, which have a relatively lower impact on rendering quality. This adaptive voxelization approach significantly reduces the number of Gaussians and the bitrate required to encode the 3DGS data. After voxelization, many Gaussians are moved or eliminated. Thus, we propose to fine-tune/recolor the remaining 3DGS attributes with an initialization that can reduce the amount of retraining required. Experimental results on pre-trained datasets show that our proposed compression framework outperforms existing methods.",
+      "arxiv_doi": "10.48550/arxiv.2506.00271",
+      "arxiv_id": "2506.00271",
+      "authors": [
+        "Chenjunjie Wang",
+        "Shashank N. Sridhara",
+        "Eduardo Pavez",
+        "Antonio Ortega",
+        "Cheng Chang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": "10.1109/ICIP55913.2025.11084522",
+      "first_author": "Wang et al.",
+      "id": "2506.00271",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2506.00271v1",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2506.00271",
+      "pdf_url": "https://arxiv.org/pdf/2506.00271.pdf",
+      "primary_arxiv_category": "eess.IV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Adaptive Voxelization for Transform coding of 3D Gaussian splatting data",
+      "tldr": "Presents compression framework for 3D Gaussian splatting (3DGS) data that leverages transform coding tools originally developed for point clouds.",
+      "updated_date": "2025-05-30",
+      "venue": null,
+      "year": 2025
+    },
+    {
+      "abstract": "With 3D Gaussian Splatting (3DGS) being increasingly used in safety-critical applications, how can an adversary manipulate the scene to cause harm? We introduce CLOAK, the first attack that leverages view-dependent Gaussian appearances - colors and textures that change with viewing angle - to embed adversarial content visible only from specific viewpoints. We further demonstrate DAGGER, a targeted adversarial attack directly perturbing 3D Gaussians without access to underlying training data, deceiving multi-stage object detectors e.g., Faster R-CNN, through established methods such as projected gradient descent. These attacks highlight underexplored vulnerabilities in 3DGS, introducing a new potential threat to robotic learning for autonomous navigation and other safety-critical 3DGS applications.",
+      "arxiv_doi": "10.48550/arxiv.2506.00280",
+      "arxiv_id": "2506.00280",
+      "authors": [
+        "Matthew Hull",
+        "Haoyang Yang",
+        "Pratham Mehta",
+        "Mansi Phute",
+        "Aeree Cho",
+        "Haoran Wang",
+        "Matthew Lau",
+        "Wenke Lee",
+        "Willian T. Lunardi",
+        "Martin Andreoni",
+        "Polo Chau"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "4 pages, 4 figures, CVPR '25 Workshop on Neural Fields Beyond Conventional Cameras",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hull et al.",
+      "id": "2506.00280",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2506.00280v1",
+            "value": "2025-05-30"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2506.00280",
+      "pdf_url": "https://arxiv.org/pdf/2506.00280.pdf",
+      "primary_arxiv_category": "cs.CR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-05-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "3D Gaussian Splat Vulnerabilities",
+      "tldr": "Introduces CLOAK, the first attack that leverages view-dependent Gaussian appearances - colors and textures that change with viewing angle - to embed adversarial content visible only from specific viewpoints.",
+      "updated_date": "2025-05-30",
+      "venue": null,
+      "year": 2025
+    }
+  ],
+  "slice_id": "af48672297efacd7",
+  "source_start": 100,
+  "source_total": 126,
+  "updated_at": {
+    "2505.21335": "2025-05-27T15:30:01Z",
+    "2505.21377": "2025-05-27T16:06:04Z",
+    "2505.21483": "2025-05-27T17:53:02Z",
+    "2505.21502": "2025-11-21T06:23:38Z",
+    "2505.21890": "2025-11-25T23:35:36Z",
+    "2505.22279": "2026-04-02T07:41:09Z",
+    "2505.22335": "2025-05-28T13:23:16Z",
+    "2505.22400": "2025-05-28T14:26:41Z",
+    "2505.22854": "2025-10-24T13:03:13Z",
+    "2505.22859": "2025-05-28T20:45:10Z",
+    "2505.22908": "2026-02-24T05:52:17Z",
+    "2505.22978": "2025-10-21T11:48:43Z",
+    "2505.23044": "2025-10-10T10:40:55Z",
+    "2505.23158": "2025-10-29T19:53:57Z",
+    "2505.23280": "2025-05-29T09:25:36Z",
+    "2505.23692": "2025-09-26T16:17:30Z",
+    "2505.23716": "2025-09-15T06:35:35Z",
+    "2505.23734": "2025-11-17T14:03:46Z",
+    "2505.24053": "2026-03-12T05:28:48Z",
+    "2505.24245": "2025-05-30T06:08:45Z",
+    "2505.24746": "2025-05-30T16:06:32Z",
+    "2505.24796": "2025-10-11T09:58:24Z",
+    "2505.24877": "2025-05-30T17:59:54Z",
+    "2506.00225": "2025-11-13T03:23:22Z",
+    "2506.00271": "2025-05-30T22:12:33Z",
+    "2506.00280": "2025-05-30T22:21:22Z"
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "fetched_at": "2026-11-10T18:24:41.802461Z",
+  "published_at": {
+    "2601.22729": "2026-01-30T09:05:30Z",
+    "2601.22808": "2026-01-30T10:37:20Z",
+    "2601.22988": "2026-01-30T13:53:53Z",
+    "2601.22990": "2026-01-30T13:56:44Z",
+    "2601.23065": "2026-01-30T15:16:37Z",
+    "2602.00395": "2026-01-30T23:14:09Z",
+    "2602.00463": "2026-01-31T02:34:46Z",
+    "2602.00618": "2026-01-31T09:17:26Z",
+    "2602.00671": "2026-01-31T11:35:02Z"
+  },
+  "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+  "records": [
+    {
+      "abstract": "3D semantic occupancy prediction is a pivotal task in autonomous driving, providing a dense and fine-grained understanding of the surrounding environment, yet single-modality methods face trade-offs between camera semantics and LiDAR geometry. Existing multi-modal frameworks often struggle with modality heterogeneity, spatial misalignment, and the representation crisis--where voxels are computationally heavy and BEV alternatives are lossy. We present GaussianOcc3D, a multi-modal framework bridging camera and LiDAR through a memory-efficient, continuous 3D Gaussian representation. We introduce four modules: (1) LiDAR Depth Feature Aggregation (LDFA), using depth-wise deformable sampling to lift sparse signals onto Gaussian primitives; (2) Entropy-Based Feature Smoothing (EBFS) to mitigate domain noise; (3) Adaptive Camera-LiDAR Fusion (ACLF) with uncertainty-aware reweighting for sensor reliability; and (4) a Gauss-Mamba Head leveraging Selective State Space Models for global context with linear complexity. Evaluations on Occ3D, SurroundOcc, and SemanticKITTI benchmarks demonstrate state-of-the-art performance, achieving mIoU scores of 49.4%, 28.9%, and 25.2% respectively. GaussianOcc3D exhibits superior robustness across challenging rainy and nighttime conditions.",
+      "arxiv_doi": "10.48550/arxiv.2601.22729",
+      "arxiv_id": "2601.22729",
+      "authors": [
+        "A. Enes Doruk",
+        "Hasan F. Ates"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Doruk et al.",
+      "id": "2601.22729",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2601.22729v1",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2601.22729",
+      "pdf_url": "https://arxiv.org/pdf/2601.22729.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianOcc3D: A Gaussian-Based Adaptive Multi-modal 3D Occupancy Prediction",
+      "tldr": "Presents GaussianOcc3D, a multi-modal framework bridging camera and LiDAR through a memory-efficient, continuous 3D Gaussian representation.",
+      "updated_date": "2026-01-30",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Recent advances in image-based satellite 3D reconstruction have progressed along two complementary directions. On one hand, multi-date approaches using NeRF or Gaussian-splatting jointly model appearance and geometry across many acquisitions, achieving accurate reconstructions on opportunistic imagery with numerous observations. On the other hand, classical stereoscopic reconstruction pipelines deliver robust and scalable results for simultaneous or quasi-simultaneous image pairs. However, when the two images are captured months apart, strong seasonal, illumination, and shadow changes violate standard stereoscopic assumptions, causing existing pipelines to fail. This work presents the first Diachronic Stereo Matching method for satellite imagery, enabling reliable 3D reconstruction from temporally distant pairs. Two advances make this possible: (1) fine-tuning a state-of-the-art deep stereo network that leverages monocular depth priors, and (2) exposing it to a dataset specifically curated to include a diverse set of diachronic image pairs. In particular, we start from a pretrained MonSter model, trained initially on a mix of synthetic and real datasets such as SceneFlow and KITTI, and fine-tune it on a set of stereo pairs derived from the DFC2019 remote sensing challenge. This dataset contains both synchronic and diachronic pairs under diverse seasonal and illumination conditions. Experiments on multi-date WorldView-3 imagery demonstrate that our approach consistently surpasses classical pipelines and unadapted deep stereo models on both synchronic and diachronic settings. Fine-tuning on temporally diverse images, together with monocular priors, proves essential for enabling 3D reconstruction from previously incompatible acquisition dates. Left image (winter) Right image (autumn) DSM geometry Ours (1.23 m) Zero-shot (3.99 m) LiDAR GT Figure 1. Output geometry for a winter-autumn image pair from Omaha (OMA 331 test scene). Our method recovers accurate geometry despite the diachronic nature of the pair, exhibiting strong appearance changes, which cause existing zero-shot methods to fail. Missing values due to perspective shown in black. Mean altitude error in parentheses; lower is better.",
+      "arxiv_doi": "10.48550/arxiv.2601.22808",
+      "arxiv_id": "2601.22808",
+      "authors": [
+        "Elías Masquil",
+        "Luca Savant Aira",
+        "Roger Marí",
+        "Thibaud Ehret",
+        "Pablo Musé",
+        "Gabriele Facciolo"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Masquil et al.",
+      "id": "2601.22808",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2601.22808v1",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2601.22808",
+      "pdf_url": "https://arxiv.org/pdf/2601.22808.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Diachronic Stereo Matching for Multi-Date Satellite Imagery",
+      "tldr": "Presents the first Diachronic Stereo Matching method for satellite imagery, enabling reliable 3D reconstruction from temporally distant pairs.",
+      "updated_date": "2026-01-30",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Real-world robotic manipulation requires visuomotor policies capable of robust 3D scene reasoning under varying camera viewpoints. While recent 3D-aware manipulation policies have shown promise, they still face several limitations: (i) reliance on multi-view observations during inference, which is impractical in camera-constrained deployments; (ii) insufficient geometric fidelity in learned representations, limiting precise and viewpoint-robust control; and (iii) the lack of effective mechanisms for transferring pretrained 3D representations to downstream visuomotor policies. To address these challenges, we present GEM3D (Geometrically-Grounded 3D Manipulation), a unified 3D representation and policy learning framework for view-generalizable robotic manipulation. GEM3D learns amodal 3D representations from single-view RGB-D observations by jointly enforcing point-cloud reconstruction and Gaussian-splatting-based novel-view consistency during pretraining. A multi-step distillation strategy then transfers the learned geometric understanding into a deployable single-view visuomotor policy for downstream manipulation control. Experiments on 12 RLBench tasks and three real-world tasks demonstrate strong manipulation performance. Further zero-shot evaluations on eight RLBench tasks and the real-world tasks show robust generalization to unseen camera poses and substantial gains over existing methods.",
+      "arxiv_doi": "10.48550/arxiv.2601.22988",
+      "arxiv_id": "2601.22988",
+      "authors": [
+        "Di Zhang",
+        "Weicheng Duan",
+        "Dasen Gu",
+        "Hongye Lu",
+        "Hai Zhang",
+        "Hang Yu",
+        "Guang Chen",
+        "Chuan Wen",
+        "Junqiao Zhao"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhang et al.",
+      "id": "2601.22988",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2601.22988v2",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2601.22988",
+      "pdf_url": "https://arxiv.org/pdf/2601.22988.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Learning Geometrically-Grounded Amodal 3D Representations for View-Generalizable Robotic Manipulation",
+      "tldr": "To address these challenges, we present GEM3D (Geometrically-Grounded 3D Manipulation), a unified 3D representation and policy learning framework for view-generalizable robotic manipulation.",
+      "updated_date": "2026-09-27",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Reconstructing 3D fetal MR volumes from motion-corrupted stacks of 2D slices is a crucial and challenging task. Conventional slice-to-volume reconstruction (SVR) methods are time-consuming and require multiple orthogonal stacks for reconstruction. While learning-based SVR approaches have significantly reduced the time required at the inference stage, they heavily rely on ground truth information for training, which is inaccessible in practice. To address these challenges, we propose GaussianSVR, a self-supervised framework for slice-to-volume reconstruction. GaussianSVR represents the target volume using 3D Gaussian representations to achieve high-fidelity reconstruction. It leverages a simulated forward slice acquisition model to enable self-supervised training, alleviating the need for ground-truth volumes. Furthermore, to enhance both accuracy and efficiency, we introduce a multi-resolution training strategy that jointly optimizes Gaussian parameters and spatial transformations across different resolution levels. Experiments show that GaussianSVR outperforms the baseline methods on fetal MR volumetric reconstruction. Code is available at https://github.com/Yinsong0510/GaussianSVR-Self-Supervised-Slice-to-Volume-Reconstruction-with-Gaussian-Representations.",
+      "arxiv_doi": "10.48550/arxiv.2601.22990",
+      "arxiv_id": "2601.22990",
+      "authors": [
+        "Yinsong Wang",
+        "Thomas Fletcher",
+        "Xinzhe Luo",
+        "Aine Travers Dineen",
+        "Rhodri Cusack",
+        "Chen Qin"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2601.22990",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2601.22990v2",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2601.22990",
+      "pdf_url": "https://arxiv.org/pdf/2601.22990.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Self-Supervised Slice-to-Volume Reconstruction with Gaussian Representations for Fetal MRI",
+      "tldr": "To address these challenges, we propose GaussianSVR, a self-supervised framework for slice-to-volume reconstruction.",
+      "updated_date": "2026-04-10",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Recent radiance-field-based reconstruction methods, such as NeRF and 3DGS, achieve high visual fidelity for indoor scenes, but often break down under scene editing due to baked illumination and the lack of explicit light transport. In contrast, inverse path tracing methods based on mesh representations enforce correct light transport but require highly accurate geometry, making them difficult to apply robustly to real indoor scenes. We present Emission-Aware Gaussians and Path Tracing (EAG-PT), a method for physically based reconstruction and rendering of indoor scenes using a unified 2D Gaussian representation, targeting editable diffuse global illumination. Our approach consists of three key ideas: (1) representing indoor scenes with 2D Gaussians as a transport-friendly geometric proxy that avoids explicit mesh reconstruction; (2) explicitly separating emissive and non-emissive components during reconstruction to support editing; and (3) decoupling reconstruction from final rendering by using efficient single-bounce optimization and high-quality multi-bounce path tracing, respectively. Experiments on synthetic and real indoor scenes show that EAG-PT produces more natural and physically consistent edited renderings than radiance-field reconstructions, while preserving finer geometric detail and avoiding mesh-induced artifacts compared with mesh-based inverse path tracing. These results highlight the potential of our approach for applications such as interior design, XR content creation, and embodied AI.",
+      "arxiv_doi": "10.48550/arxiv.2601.23065",
+      "arxiv_id": "2601.23065",
+      "authors": [
+        "Xijie Yang",
+        "Mulin Yu",
+        "Changjian Jiang",
+        "Kerui Ren",
+        "Tao Lu",
+        "Jiangmiao Pang",
+        "Dahua Lin",
+        "Bo Dai",
+        "Linning Xu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "SIGGRAPH 2026 Conference Paper; Project Page: https://eag-pt.github.io",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": "10.1145/3799902.3811054",
+      "first_author": "Yang et al.",
+      "id": "2601.23065",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2601.23065v2",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2601.23065",
+      "pdf_url": "https://arxiv.org/pdf/2601.23065.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "EAG-PT: Emission-Aware Gaussians and Path Tracing for Diffuse Indoor Scene Reconstruction and Editing",
+      "tldr": "Presents Emission-Aware Gaussians and Path Tracing (EAG-PT), a method for physically based reconstruction and rendering of indoor scenes using a unified 2D Gaussian representation, targeting editable...",
+      "updated_date": "2026-04-30",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "We propose 3DGS$^2$-TR,a second-order optimizer for accelerating the scene training problem in 3D Gaussian Splatting (3DGS). Unlike existing second-order approaches that rely on explicit or dense curvature representations, such as 3DGS-LM (Höllein et al., 2025) or 3DGS2 (Lan et al., 2025), our method approximates curvature using only the diagonal of the Hessian matrix, efficiently via Hutchinson's method. Our approach is fully matrix-free and has the same complexity as ADAM (Kingma, 2024), $O(n)$ in both computation and memory costs. To ensure stable optimization in the presence of strong nonlinearity in the 3DGS rasterization process, we introduce a parameter-wise trust-region technique based on the squared Hellinger distance, regularizing updates to Gaussian parameters. Under identical parameter initialization and without densification, 3DGS$^2$-TR is able to achieve better reconstruction quality on standard datasets, using 50% fewer training iterations compared to ADAM, while incurring less than 1GB of peak GPU memory overhead (17% more than ADAM and 85% less than 3DGS-LM), enabling scalability to very large scenes and potentially to distributed training settings.",
+      "arxiv_doi": "10.48550/arxiv.2602.00395",
+      "arxiv_id": "2602.00395",
+      "authors": [
+        "Roger Hsiao",
+        "Yuchen Fang",
+        "Xiangru Huang",
+        "Ruilong Li",
+        "Hesam Rabeti",
+        "Zan Gojcic",
+        "Javad Lavaei",
+        "James Demmel",
+        "Sophia Shao"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hsiao et al.",
+      "id": "2602.00395",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.00395v1",
+            "value": "2026-01-30"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.00395",
+      "pdf_url": "https://arxiv.org/pdf/2602.00395.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "3DGS$^2$-TR: Scalable Second-Order Trust-Region Method for 3D Gaussian Splatting",
+      "tldr": "Proposes 3DGS$^2$-TR,a second-order optimizer for accelerating the scene training problem in 3D Gaussian Splatting (3DGS).",
+      "updated_date": "2026-01-30",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Generating realistic 3D scenes from text is crucial for immersive applications like VR, AR, and gaming. While text-driven approaches promise efficiency, existing methods suffer from limited 3D-text data and inconsistent multi-view stitching, resulting in overly simplistic scenes. To address this, we propose PSGS, a two-stage framework for high-fidelity panoramic scene generation. First, a novel two-layer optimization architecture generates semantically coherent panoramas: a layout reasoning layer parses text into structured spatial relationships, while a self-optimization layer refines visual details via iterative MLLM feedback. Second, our panorama sliding mechanism initializes globally consistent 3D Gaussian Splatting point clouds by strategically sampling overlapping perspectives. By incorporating depth and semantic coherence losses during training, we greatly improve the quality and detail fidelity of rendered scenes. Our experiments demonstrate that PSGS outperforms existing methods in panorama generation and produces more appealing 3D scenes, offering a robust solution for scalable immersive content creation.",
+      "arxiv_doi": "10.48550/arxiv.2602.00463",
+      "arxiv_id": "2602.00463",
+      "authors": [
+        "Xin Zhang",
+        "Shen Chen",
+        "Jiale Zhou",
+        "Lei Li"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to ICASSP2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhang et al.",
+      "id": "2602.00463",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.00463v1",
+            "value": "2026-01-31"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.00463",
+      "pdf_url": "https://arxiv.org/pdf/2602.00463.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-31",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "PSGS: Text-driven Panorama Sliding Scene Generation via Gaussian Splatting",
+      "tldr": "To address this, we propose PSGS, a two-stage framework for high-fidelity panoramic scene generation.",
+      "updated_date": "2026-01-31",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "3D style transfer refers to the artistic stylization of 3D assets based on reference style images. Recently, 3DGS-based stylization methods have drawn considerable attention, primarily due to their markedly enhanced training and rendering speeds. However, a vital challenge for 3D style transfer is to strike a balance between the content and the patterns and colors of the style. Although the existing methods strive to achieve relatively balanced outcomes, the fixed-output paradigm struggles to adapt to the diverse content-style balance requirements from different users. In this work, we introduce a creative intensity-tunable 3D style transfer paradigm, dubbed \\textbf{Tune-Your-Style}, which allows users to flexibly adjust the style intensity injected into the scene to match their desired content-style balance, thus enhancing the customizability of 3D style transfer. To achieve this goal, we first introduce Gaussian neurons to explicitly model the style intensity and parameterize a learnable style tuner to achieve intensity-tunable style injection. To facilitate the learning of tunable stylization, we further propose the tunable stylization guidance, which obtains multi-view consistent stylized views from diffusion models through cross-view style alignment, and then employs a two-stage optimization strategy to provide stable and efficient guidance by modulating the balance between full-style guidance from the stylized views and zero-style guidance from the initial rendering. Extensive experiments demonstrate that our method not only delivers visually appealing results, but also exhibits flexible customizability for 3D style transfer. Project page is available at https://zhao-yian.github.io/TuneStyle.",
+      "arxiv_doi": "10.48550/arxiv.2602.00618",
+      "arxiv_id": "2602.00618",
+      "authors": [
+        "Yian Zhao",
+        "Rushi Ye",
+        "Ruochong Zheng",
+        "Zesen Cheng",
+        "Chaoran Feng",
+        "Jiashu Yang",
+        "Pengchong Qiao",
+        "Chang Liu",
+        "Jie Chen"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "ICCV 2025",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhao et al.",
+      "id": "2602.00618",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.00618v1",
+            "value": "2026-01-31"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.00618",
+      "pdf_url": "https://arxiv.org/pdf/2602.00618.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-31",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Tune-Your-Style: Intensity-tunable 3D Style Transfer with Gaussian Splatting",
+      "tldr": "Introduces a creative intensity-tunable 3D style transfer paradigm, dubbed \\textbf{Tune-Your-Style}, which allows users to flexibly adjust the style intensity injected into the scene to match their desired...",
+      "updated_date": "2026-01-31",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "While dynamic Gaussian Splatting has driven significant advances in free-viewpoint video, maintaining its rendering quality with a small memory footprint for efficient streaming transmission still presents an ongoing challenge. Existing streaming dynamic Gaussian Splatting compression methods typically leverage a latent representation to drive the neural network for predicting Gaussian residuals between frames. Their core latent representations can be categorized into structured grid-based and unstructured point-based paradigms. However, the former incurs significant parameter redundancy by inevitably modeling unoccupied space, while the latter suffers from limited compactness as it fails to exploit local correlations. To relieve these limitations, we propose HPC, a novel streaming dynamic Gaussian Splatting compression framework. It employs a hierarchical point-based latent representation that operates on a per-Gaussian basis to avoid parameter redundancy in unoccupied space. Guided by a tailored aggregation scheme, these latent points achieve high compactness with low spatial redundancy. To improve compression efficiency, we further undertake the first investigation to compress neural networks for streaming dynamic Gaussian Splatting through mining and exploiting the inter-frame correlation of parameters. Combined with latent compression, this forms a fully end-to-end compression framework. Comprehensive experimental evaluations demonstrate that HPC substantially outperforms state-of-the-art methods. It achieves a storage reduction of 67% against its baseline while maintaining high reconstruction fidelity.",
+      "arxiv_doi": "10.48550/arxiv.2602.00671",
+      "arxiv_id": "2602.00671",
+      "authors": [
+        "Yangzhi Ma",
+        "Bojun Liu",
+        "Wenting Liao",
+        "Dong Liu",
+        "Zhu Li",
+        "Li Li"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Ma et al.",
+      "id": "2602.00671",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.00671v1",
+            "value": "2026-01-31"
+          }
+        ]
+      },
+      "month": 1,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.00671",
+      "pdf_url": "https://arxiv.org/pdf/2602.00671.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-01-31",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "HPC: Hierarchical Point-based Latent Representation for Streaming Dynamic Gaussian Splatting Compression",
+      "tldr": "To relieve these limitations, we propose HPC, a novel streaming dynamic Gaussian Splatting compression framework.",
+      "updated_date": "2026-01-31",
+      "venue": null,
+      "year": 2026
+    }
+  ],
+  "slice_id": "675703c2904dc26a",
+  "source_start": 100,
+  "source_total": 109,
+  "updated_at": {
+    "2601.22729": "2026-01-30T09:05:30Z",
+    "2601.22808": "2026-01-30T10:37:20Z",
+    "2601.22988": "2026-09-27T04:59:44Z",
+    "2601.22990": "2026-04-10T16:27:44Z",
+    "2601.23065": "2026-04-30T05:35:29Z",
+    "2602.00395": "2026-01-30T23:14:09Z",
+    "2602.00463": "2026-01-31T02:34:46Z",
+    "2602.00618": "2026-01-31T09:17:26Z",
+    "2602.00671": "2026-01-31T11:35:02Z"
+  }
+}

@@ -1,0 +1,904 @@
+{
+  "fetched_at": "2026-11-10T18:24:49.549142Z",
+  "published_at": {
+    "2602.22731": "2026-02-26T08:13:47Z",
+    "2602.22800": "2026-02-26T09:37:27Z",
+    "2602.23040": "2026-02-26T14:24:48Z",
+    "2602.23172": "2026-02-26T16:34:49Z",
+    "2602.23559": "2026-02-27T00:05:02Z",
+    "2602.24020": "2026-02-27T13:45:22Z",
+    "2602.24096": "2026-02-27T15:35:30Z",
+    "2602.24136": "2026-02-27T16:12:58Z",
+    "2602.24161": "2026-02-27T16:41:21Z",
+    "2602.24290": "2026-02-27T18:59:54Z",
+    "2603.00418": "2026-02-28T02:35:18Z",
+    "2603.00492": "2026-02-28T06:22:40Z",
+    "2603.00500": "2026-02-28T06:48:05Z",
+    "2603.00697": "2026-02-28T15:13:13Z"
+  },
+  "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+  "records": [
+    {
+      "abstract": "Saplings are key indicators of forest regeneration and overall forest health. However, their fine-scale architectural traits are difficult to capture with existing 3D sensing methods, which make quantitative evaluation difficult. Terrestrial Laser Scanners (TLS), Mobile Laser Scanners (MLS), or traditional photogrammetry approaches poorly reconstruct thin branches, dense foliage, and lack the scale consistency needed for long-term monitoring. Implicit 3D reconstruction methods such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) are promising alternatives, but cannot recover the true scale of a scene and lack any means to be accurately geo-localised. In this paper, we present a pipeline which fuses NeRF, LiDAR SLAM, and GNSS to enable repeatable, geo-localised ecological monitoring of saplings. Our system proposes a three-level representation: (i) coarse Earth-frame localisation using GNSS, (ii) LiDAR-based SLAM for centimetre-accurate localisation and reconstruction, and (iii) NeRF-derived object-centric dense reconstruction of individual saplings. This approach enables repeatable quantitative evaluation and long-term monitoring of sapling traits. Our experiments in forest plots in Wytham Woods (Oxford, UK) and Evo (Finland) show that stem height, branching patterns, and leaf-to-wood ratios can be captured with increased accuracy as compared to TLS. We demonstrate that accurate stem skeletons and leaf distributions can be measured for saplings with heights between 0.5m and 2m in situ, giving ecologists access to richer structural and quantitative data for analysing forest dynamics.",
+      "arxiv_doi": "10.48550/arxiv.2602.22731",
+      "arxiv_id": "2602.22731",
+      "authors": [
+        "Miguel Ángel Muñoz-Bañón",
+        "Nived Chebrolu",
+        "Sruthi M. Krishna Moorthy",
+        "Yifu Tao",
+        "Fernando Torres",
+        "Roberto Salguero-Gómez",
+        "Maurice Fallon"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Muñoz-Bañón et al.",
+      "id": "2602.22731",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.22731v1",
+            "value": "2026-02-26"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.22731",
+      "pdf_url": "https://arxiv.org/pdf/2602.22731.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-26",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Sapling-NeRF: Geo-Localised Sapling Reconstruction in Forests for Ecological Monitoring",
+      "tldr": "Presents a pipeline which fuses NeRF, LiDAR SLAM, and GNSS to enable repeatable, geo-localised ecological monitoring of saplings.",
+      "updated_date": "2026-02-26",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Atmospheric turbulence causes significant image degradation due to pixel displacement (tilt) and blur, particularly in long-range imaging applications. In this paper, we propose a novel framework for atmospheric turbulence mitigation, GSTurb, which integrates optical flow-guided tilt correction and Gaussian splatting for modeling non-isoplanatic blur. The framework employs Gaussian parameters to represent tilt and blur, and optimizes them across multiple frames to enhance restoration. Experimental results on the ATSyn-static dataset demonstrate the effectiveness of our method, achieving a peak PSNR of 27.67 dB and SSIM of 0.8735. Compared to the state-of-the-art method, GSTurb improves PSNR by 1.3 dB (a 4.5% increase) and SSIM by 0.048 (a 5.8% increase). Additionally, on real datasets, including the TSRWGAN Real-World and CLEAR datasets, GSTurb outperforms existing methods, showing significant improvements in both qualitative and quantitative performance. These results highlight that combining optical flow-guided tilt correction with Gaussian splatting effectively enhances image restoration under both synthetic and real-world turbulence conditions. The code for this method will be available at https://github.com/DuhlLiamz/3DGS_turbulence/tree/main.",
+      "arxiv_doi": "10.48550/arxiv.2602.22800",
+      "arxiv_id": "2602.22800",
+      "authors": [
+        "Hanliang Du",
+        "Zhangji Lu",
+        "Zewei Cai",
+        "Qijian Tang",
+        "Qifeng Yu",
+        "Xiaoli Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Du et al.",
+      "id": "2602.22800",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.22800v1",
+            "value": "2026-02-26"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.22800",
+      "pdf_url": "https://arxiv.org/pdf/2602.22800.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-26",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GSTurb: Gaussian Splatting for Atmospheric Turbulence Mitigation",
+      "tldr": "Proposes framework for atmospheric turbulence mitigation, GSTurb, which integrates optical flow-guided tilt correction and Gaussian splatting for modeling non-isoplanatic blur.",
+      "updated_date": "2026-02-26",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Volumetric videos offer immersive 4D experiences, but remain difficult to reconstruct, store, and stream at scale. Existing Gaussian Splatting based methods achieve high-quality reconstruction but break down on long sequences, temporal inconsistency, and fail under large motions and disocclusions. Moreover, their outputs are typically incompatible with conventional video coding pipelines, preventing practical applications. We introduce PackUV, a novel 4D Gaussian representation that maps all Gaussian attributes into a sequence of structured, multi-scale UV atlas, enabling compact, image-native storage. To fit this representation from multi-view videos, we propose PackUV-GS, a temporally consistent fitting method that directly optimizes Gaussian parameters in the UV domain. A flow-guided Gaussian labeling and video keyframing module identifies dynamic Gaussians, stabilizes static regions, and preserves temporal coherence even under large motions and disocclusions. The resulting UV atlas format is the first unified volumetric video representation compatible with standard video codecs (e.g., FFV1) without losing quality, enabling efficient streaming within existing multimedia infrastructure. To evaluate long-duration volumetric capture, we present PackUV-2B, the largest multi-view video dataset to date, featuring more than 50 synchronized cameras, substantial motion, and frequent disocclusions across 100 sequences and 2B (billion) frames. Extensive experiments demonstrate that our method surpasses existing baselines in rendering fidelity while scaling to sequences up to 30 minutes with consistent quality.",
+      "arxiv_doi": "10.48550/arxiv.2602.23040",
+      "arxiv_id": "2602.23040",
+      "authors": [
+        "Aashish Rai",
+        "Angela Xing",
+        "Anushka Agarwal",
+        "Xiaoyan Cong",
+        "Zekun Li",
+        "Tao Lu",
+        "Aayush Prakash",
+        "Srinath Sridhar"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "https://ivl.cs.brown.edu/packuv",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Rai et al.",
+      "id": "2602.23040",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.23040v2",
+            "value": "2026-02-26"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.23040",
+      "pdf_url": "https://arxiv.org/pdf/2602.23040.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-26",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "PackUV: Packed Gaussian UV Maps for 4D Volumetric Video",
+      "tldr": "Introduces PackUV, a novel 4D Gaussian representation that maps all Gaussian attributes into a sequence of structured, multi-scale UV atlas, enabling compact, image-native storage.",
+      "updated_date": "2026-03-06",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Capturing 4D spatiotemporal scene structure is crucial for the safe and reliable operation of robots in dynamic environments. However, existing approaches typically address only part of the problem: they either provide coarse geometric tracking via bounding boxes or detailed 3D occupancy estimates that lack explicit temporal association and instance-level reasoning. In this work, we present Latent Gaussian Splatting (LaGS) for 4D Panoptic Occupancy Tracking (4D-POT). We revisit the underlying representation and model 3D features as a sparse set of feature-bearing Gaussians. These act as dynamic, volume-oriented keypoints that enable spatially continuous, distance-weighted aggregation of multi-view features before being splatted into a voxel grid for decoding. This point-centric formulation enables flexible, data-dependent receptive fields and long-range spatial interactions that are difficult to capture with local and dense voxel-based operators. A hierarchical Gaussian representation further enables multi-scale reasoning by combining global context from coarse super-points with fine-grained detail from higher-resolution streams. Extensive experiments on Occ3D nuScenes and Waymo demonstrate state-of-the-art performance for 4D-POT. We provide code and models at https://lags.cs.uni-freiburg.de/.",
+      "arxiv_doi": "10.48550/arxiv.2602.23172",
+      "arxiv_id": "2602.23172",
+      "authors": [
+        "Maximilian Luz",
+        "Rohit Mohan",
+        "Thomas Nürnberg",
+        "Yakov Miron",
+        "Daniele Cattaneo",
+        "Abhinav Valada"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to IEEE Robotics and Automation Letters (RA-L), 2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": "10.1109/LRA.2026.3703990",
+      "first_author": "Luz et al.",
+      "id": "2602.23172",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.23172v2",
+            "value": "2026-02-26"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.23172",
+      "pdf_url": "https://arxiv.org/pdf/2602.23172.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-26",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Latent Gaussian Splatting for 4D Panoptic Occupancy Tracking",
+      "tldr": "Presents Latent Gaussian Splatting (LaGS) for 4D Panoptic Occupancy Tracking (4D-POT).",
+      "updated_date": "2026-06-18",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "We present the first study of cross-sensor view synthesis across different modalities. We examine a practical, fundamental, yet widely overlooked problem: getting aligned RGB-X data, where most RGB-X prior work assumes such pairs exist and focuses on modality fusion, but it empirically requires huge engineering effort in calibration. We propose a match-densify-consolidate method. First, we perform RGB-X image matching followed by guided point densification. Using the proposed confidence-aware densification and self-matching filtering, we attain better view synthesis and later consolidate them in 3D Gaussian Splatting (3DGS). Our method uses no 3D priors for X-sensor and only assumes nearly no-cost COLMAP for RGB. We aim to remove the cumbersome calibration for various RGB-X sensors and advance the popularity of cross-sensor learning by a scalable solution that breaks through the bottleneck in large-scale real-world RGB-X data collection.",
+      "arxiv_doi": "10.48550/arxiv.2602.23559",
+      "arxiv_id": "2602.23559",
+      "authors": [
+        "Cho-Ying Wu",
+        "Zixun Huang",
+        "Xinyu Huang",
+        "Liu Ren"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2026 Main Conference. Project page: https://choyingw.github.io/3d-rgbx.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wu et al.",
+      "id": "2602.23559",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.23559v1",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.23559",
+      "pdf_url": "https://arxiv.org/pdf/2602.23559.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency",
+      "tldr": "Presents the first study of cross-sensor view synthesis across different modalities.",
+      "updated_date": "2026-02-27",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "3D super-resolution (3DSR) aims to reconstruct high-resolution (HR) 3D scenes from low-resolution (LR) multi-view images. Existing methods rely on dense LR inputs and per-scene optimization, which restricts the high-frequency priors for constructing HR 3D Gaussian Splatting (3DGS) to those inherited from pretrained 2D super-resolution (2DSR) models. This severely limits reconstruction fidelity, cross-scene generalization, and real-time usability. We propose to reformulate 3DSR as a direct feed-forward mapping from sparse LR views to HR 3DGS representations, enabling the model to autonomously learn 3D-specific high-frequency geometry and appearance from large-scale, multi-scene data. This fundamentally changes how 3DSR acquires high-frequency knowledge and enables robust generalization to unseen scenes. Specifically, we introduce SR3R, a feed-forward framework that directly predicts HR 3DGS representations from sparse LR views via the learned mapping network. To further enhance reconstruction fidelity, we introduce Gaussian offset learning and feature refinement, which stabilize reconstruction and sharpen high-frequency details. SR3R is plug-and-play and can be paired with any feed-forward 3DGS reconstruction backbone: the backbone provides an LR 3DGS scaffold, and SR3R upscales it to an HR 3DGS. Extensive experiments across three 3D benchmarks demonstrate that SR3R surpasses state-of-the-art (SOTA) 3DSR methods and achieves strong zero-shot generalization, even outperforming SOTA per-scene optimization methods on unseen scenes.",
+      "arxiv_doi": "10.48550/arxiv.2602.24020",
+      "arxiv_id": "2602.24020",
+      "authors": [
+        "Xiang Feng",
+        "Xiangbo Wang",
+        "Tieshi Zhong",
+        "Chengkai Wang",
+        "Yiting Zhao",
+        "Tianxiang Xu",
+        "Zhenzhong Kuang",
+        "Feiwei Qin",
+        "Xuefei Yin",
+        "Yanming Zhu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Feng et al.",
+      "id": "2602.24020",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.24020v1",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.24020",
+      "pdf_url": "https://arxiv.org/pdf/2602.24020.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting",
+      "tldr": "Proposes to reformulate 3DSR as a direct feed-forward mapping from sparse LR views to HR 3DGS representations, enabling the model to autonomously learn 3D-specific high-frequency geometry and appearance...",
+      "updated_date": "2026-02-27",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Simulation is essential to the development and evaluation of autonomous robots such as self-driving vehicles. Neural reconstruction is emerging as a promising solution as it enables simulating a wide variety of scenarios from real-world data alone in an automated and scalable way. However, while methods such as NeRF and 3D Gaussian Splatting can produce visually compelling results, they often exhibit artifacts particularly when rendering novel views, and fail to realistically integrate inserted dynamic objects, especially when they were captured from different scenes. To overcome these limitations, we introduce DiffusionHarmonizer, an online generative enhancement framework that transforms renderings from such imperfect scenes into temporally consistent outputs while improving their realism. At its core is a single-step temporally-conditioned enhancer that is converted from a pretrained multi-step image diffusion model, capable of running in online simulators on a single GPU. The key to training it effectively is a custom data curation pipeline that constructs synthetic-real pairs emphasizing appearance harmonization, artifact correction, and lighting realism. The result is a scalable system that significantly elevates simulation fidelity in both research and production environments.",
+      "arxiv_doi": "10.48550/arxiv.2602.24096",
+      "arxiv_id": "2602.24096",
+      "authors": [
+        "Yuxuan Zhang",
+        "Katarína Tóthová",
+        "Zian Wang",
+        "Kangxue Yin",
+        "Haithem Turki",
+        "Riccardo de Lutio",
+        "Yen-Yu Chang",
+        "Or Litany",
+        "Sanja Fidler",
+        "Zan Gojcic"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "For more details and updates, please visit our project website: https://research.nvidia.com/labs/sil/projects/diffusion-harmonizer",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhang et al.",
+      "id": "2602.24096",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.24096v2",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.24096",
+      "pdf_url": "https://arxiv.org/pdf/2602.24096.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer",
+      "tldr": "Proposes DiffusionHarmonizer, an online generative enhancement framework that transforms renderings from such imperfect scenes into temporally consistent outputs while improving their realism.",
+      "updated_date": "2026-03-05",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Recent significant advances in 3D scene representation have been driven by 3D Gaussian Splatting (3DGS), which has enabled real-time rendering with photorealistic quality. 3DGS often requires a large number of primitives to achieve high fidelity, leading to redundant representations and high resource consumption, thereby limiting its scalability for complex or large-scale scenes. Consequently, effective pruning strategies and more expressive primitives that can reduce redundancy while preserving visual quality are crucial for practical deployment. We propose an efficient, integrated reconstruction-aware pruning strategy that adaptively determines pruning timing and refining intervals based on reconstruction quality, thus reducing model size while enhancing rendering quality. Moreover, we introduce a 3D Difference-of-Gaussians primitive that jointly models both positive and negative densities in a single primitive, improving the expressiveness of Gaussians under compact configurations. Our method significantly improves model compactness, achieving up to 90\\% reduction in Gaussian-count while delivering visual quality that is similar to, or in some cases better than, that produced by state-of-the-art methods. Code will be made publicly available.",
+      "arxiv_doi": "10.48550/arxiv.2602.24136",
+      "arxiv_id": "2602.24136",
+      "authors": [
+        "Haoran Wang",
+        "Guoxi Huang",
+        "Fan Zhang",
+        "David Bull",
+        "Nantheera Anantrasirichai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2602.24136",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.24136v1",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.24136",
+      "pdf_url": "https://arxiv.org/pdf/2602.24136.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives",
+      "tldr": "Proposes an efficient, integrated reconstruction-aware pruning strategy that adaptively determines pruning timing and refining intervals based on reconstruction quality, thus reducing model size while...",
+      "updated_date": "2026-02-27",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Reconstructing photorealistic and animatable 4D head avatars from a single portrait image remains a fundamental challenge in computer vision. While diffusion models have enabled remarkable progress in image and video generation for avatar reconstruction, existing methods primarily rely on 2D priors and struggle to achieve consistent 3D geometry. We propose a novel framework that leverages geometry-aware diffusion to learn strong geometry priors for high-fidelity head avatar reconstruction. Our approach jointly synthesizes portrait images and corresponding surface normals, while a pose-free expression encoder captures implicit expression representations. Both synthesized images and expression latents are incorporated into 3D Gaussian-based avatars, enabling photorealistic rendering with accurate geometry. Extensive experiments demonstrate that our method substantially outperforms state-of-the-art approaches in visual quality, expression fidelity, and cross-identity generalization, while supporting real-time rendering.",
+      "arxiv_doi": "10.48550/arxiv.2602.24161",
+      "arxiv_id": "2602.24161",
+      "authors": [
+        "Chao Xu",
+        "Xiaochen Zhao",
+        "Xiang Deng",
+        "Jingxiang Sun",
+        "Donglin Di",
+        "Zhuo Su",
+        "Yebin Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "17 pages",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xu et al.",
+      "id": "2602.24161",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.24161v2",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.24161",
+      "pdf_url": "https://arxiv.org/pdf/2602.24161.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction",
+      "tldr": "Proposes framework that leverages geometry-aware diffusion to learn strong geometry priors for high-fidelity head avatar reconstruction.",
+      "updated_date": "2026-03-12",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Dense 4D reconstruction from unposed images remains a critical challenge, with current methods relying on slow test-time optimization or fragmented, task-specific feedforward models. We introduce UFO-4D, a unified feedforward framework to reconstruct a dense, explicit 4D representation from just a pair of unposed images. UFO-4D directly estimates dynamic 3D Gaussian Splats, enabling the joint and consistent estimation of 3D geometry, 3D motion, and camera pose in a feedforward manner. Our core insight is that differentiably rendering multiple signals from a single Dynamic 3D Gaussian representation offers major training advantages. This approach enables a self-supervised image synthesis loss while tightly coupling appearance, depth, and motion. Since all modalities share the same geometric primitives, supervising one inherently regularizes and improves the others. This synergy overcomes data scarcity, allowing UFO-4D to outperform prior work by up to 3 times in joint geometry, motion, and camera pose estimation. Our representation also enables high-fidelity 4D interpolation across novel views and time. Please visit our project page for visual results: https://ufo-4d.github.io/",
+      "arxiv_doi": "10.48550/arxiv.2602.24290",
+      "arxiv_id": "2602.24290",
+      "authors": [
+        "Junhwa Hur",
+        "Charles Herrmann",
+        "Songyou Peng",
+        "Philipp Henzler",
+        "Zeyu Ma",
+        "Todd Zickler",
+        "Deqing Sun"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "ICLR 2026, Project page: https://ufo-4d.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hur et al.",
+      "id": "2602.24290",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.24290v2",
+            "value": "2026-02-27"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2602.24290",
+      "pdf_url": "https://arxiv.org/pdf/2602.24290.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images",
+      "tldr": "Introduces UFO-4D, a unified feedforward framework to reconstruct a dense, explicit 4D representation from just a pair of unposed images.",
+      "updated_date": "2026-03-05",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Precipitation forecasting relies on heterogeneous data. Weather radar is accurate, but coverage is geographically limited and costly to maintain. Weather stations provide accurate but sparse point measurements, while satellites offer dense, high-resolution coverage without direct rainfall retrieval. To overcome these limitations, we propose Query-Conditioned Gaussian Splatting (QCGS), the first framework to fuse automatic weather station (AWS) observations with satellite imagery for generating precipitation fields. Unlike conventional 2D Gaussian splatting, which renders the entire image plane, QCGS selectively renders only queried precipitation regions, avoiding unnecessary computation in non-precipitating areas while preserving sharp precipitation structures. The framework combines a radar point proposal network that identifies rainfall-support locations with an implicit neural representation (INR) network that predicts Gaussian parameters for each point. QCGS enables efficient, resolution-flexible precipitation field generation in real time. Through extensive evaluation with benchmark precipitation products, QCGS demonstrates over 50\\% improvement in RMSE compared to conventional gridded precipitation products, and consistently maintains high performance across multiple spatiotemporal scales.",
+      "arxiv_doi": "10.48550/arxiv.2603.00418",
+      "arxiv_id": "2603.00418",
+      "authors": [
+        "Doyi Kim",
+        "Minseok Seo",
+        "Changick Kim"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "This paper was accepted to ICLR 2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kim et al.",
+      "id": "2603.00418",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2603.00418v1",
+            "value": "2026-02-28"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2603.00418",
+      "pdf_url": "https://arxiv.org/pdf/2603.00418.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Station2Radar: query conditioned gaussian splatting for precipitation field",
+      "tldr": "Proposes Query-Conditioned Gaussian Splatting (QCGS), the first framework to fuse automatic weather station (AWS) observations with satellite imagery for generating precipitation fields.",
+      "updated_date": "2026-02-28",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Per-scene optimization methods such as 3D Gaussian Splatting provide state-of-the-art novel view synthesis quality but extrapolate poorly to under-observed areas. Methods that leverage generative priors to correct artifacts in these areas hold promise but currently suffer from two shortcomings. The first is scalability, as existing methods use image diffusion models or bidirectional video models that are limited in the number of views they can generate in a single pass (and thus require a costly iterative distillation process for consistency). The second is quality itself, as generators used in prior work tend to produce outputs that are inconsistent with existing scene content and fail entirely in completely unobserved regions. To solve these, we propose a two-stage pipeline that leverages two key insights. First, we train a powerful bidirectional generative model with a novel opacity mixing strategy that encourages consistency with existing observations while retaining the model's ability to extrapolate novel content in unseen areas. Second, we distill it into a causal auto-regressive model that generates hundreds of frames in a single pass. This model can directly produce novel views or serve as pseudo-supervision to improve the underlying 3D representation in a simple and highly efficient manner. We evaluate our method extensively and demonstrate that it can generate plausible reconstructions in scenarios where existing approaches fail completely. When measured on commonly benchmarked datasets, we outperform all existing baselines by a wide margin, exceeding prior state-of-the-art methods by 1-3 dB PSNR.",
+      "arxiv_doi": "10.48550/arxiv.2603.00492",
+      "arxiv_id": "2603.00492",
+      "authors": [
+        "Riccardo de Lutio",
+        "Tobias Fischer",
+        "Yen-Yu Chang",
+        "Yuxuan Zhang",
+        "Jay Zhangjie Wu",
+        "Xuanchi Ren",
+        "Tianchang Shen",
+        "Katarina Tothova",
+        "Zan Gojcic",
+        "Haithem Turki"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Video results: https://research.nvidia.com/labs/sil/projects/artifixer/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lutio et al.",
+      "id": "2603.00492",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2603.00492v2",
+            "value": "2026-02-28"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2603.00492",
+      "pdf_url": "https://arxiv.org/pdf/2603.00492.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "ArtiFixer: Enhancing and Extending 3D Reconstruction with Auto-Regressive Diffusion Models",
+      "tldr": "To solve these, we propose a two-stage pipeline that leverages two key insights.",
+      "updated_date": "2026-05-05",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Existing end-to-end approaches of robotic manipulation often lack generalization to unseen objects or tasks due to limited data and poor interpretability. While recent Multimodal Large Language Models (MLLMs) demonstrate strong commonsense reasoning, they struggle with geometric and spatial understanding required for pose prediction. In this paper, we propose RobMRAG, a 3D Gaussian Splatting-Enhanced Multimodal Retrieval-Augmented Generation (MRAG) framework for zero-shot robotic manipulation. Specifically, we construct a multi-source manipulation knowledge base containing object contact frames, task completion frames, and pose parameters. During inference, a Hierarchical Multimodal Retrieval module first employs a three-priority hybrid retrieval strategy to find task-relevant object prototypes, then selects the geometrically closest reference example based on pixel-level similarity and Instance Matching Distance (IMD). We further introduce a 3D-Aware Pose Refinement module based on 3D Gaussian Splatting into the MRAG framework, which aligns the pose of the reference object to the target object in 3D space. The aligned results are reprojected onto the image plane and used as input to the MLLM to enhance the generation of the final pose parameters. Extensive experiments show that on a test set containing 30 categories of household objects, our method improves the success rate by 7.76% compared to the best-performing zero-shot baseline under the same setting, and by 6.54% compared to the state-of-the-art supervised baseline. Our results validate that RobMRAG effectively bridges the gap between high-level semantic reasoning and low-level geometric execution, enabling robotic systems that generalize to unseen objects while remaining inherently interpretable.",
+      "arxiv_doi": "10.48550/arxiv.2603.00500",
+      "arxiv_id": "2603.00500",
+      "authors": [
+        "Zilong Xie",
+        "Jingyu Gong",
+        "Xin Tan",
+        "Zhizhong Zhang",
+        "Yuan Xie"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "9 pages, 5 figures",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xie et al.",
+      "id": "2603.00500",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2603.00500v1",
+            "value": "2026-02-28"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2603.00500",
+      "pdf_url": "https://arxiv.org/pdf/2603.00500.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Zero-Shot Robotic Manipulation via 3D Gaussian Splatting-Enhanced Multimodal Retrieval-Augmented Generation",
+      "tldr": "Proposes RobMRAG, a 3D Gaussian Splatting-Enhanced Multimodal Retrieval-Augmented Generation (MRAG) framework for zero-shot robotic manipulation.",
+      "updated_date": "2026-02-28",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "We present TokenSplat, a feed-forward framework for joint 3D Gaussian reconstruction and camera pose estimation from unposed multi-view images. At its core, TokenSplat introduces a Token-aligned Gaussian Prediction module that aligns semantically corresponding information across views directly in the feature space. Guided by coarse token positions and fusion confidence, it aggregates multi-scale contextual features to enable long-range cross-view reasoning and reduce redundancy from overlapping Gaussians. To further enhance pose robustness and disentangle viewpoint cues from scene semantics, TokenSplat employs learnable camera tokens and an Asymmetric Dual-Flow Decoder (ADF-Decoder) that enforces directionally constrained communication between camera and image tokens. This maintains clean factorization within a feed-forward architecture, enabling coherent reconstruction and stable pose estimation without iterative refinement. Extensive experiments demonstrate that TokenSplat achieves higher reconstruction fidelity and novel-view synthesis quality in pose-free settings, and significantly improves pose estimation accuracy compared to prior pose-free methods. Project page: https://kidleyh.github.io/tokensplat/.",
+      "arxiv_doi": "10.48550/arxiv.2603.00697",
+      "arxiv_id": "2603.00697",
+      "authors": [
+        "Yihui Li",
+        "Chengxin Lv",
+        "Zichen Tang",
+        "Hongyu Yang",
+        "Di Huang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Li et al.",
+      "id": "2603.00697",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2603.00697v1",
+            "value": "2026-02-28"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2603.00697",
+      "pdf_url": "https://arxiv.org/pdf/2603.00697.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-02-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction",
+      "tldr": "Presents TokenSplat, a feed-forward framework for joint 3D Gaussian reconstruction and camera pose estimation from unposed multi-view images.",
+      "updated_date": "2026-02-28",
+      "venue": null,
+      "year": 2026
+    }
+  ],
+  "slice_id": "c3a372deb8024cf2",
+  "source_start": 100,
+  "source_total": 114,
+  "updated_at": {
+    "2602.22731": "2026-02-26T08:13:47Z",
+    "2602.22800": "2026-02-26T09:37:27Z",
+    "2602.23040": "2026-03-06T23:56:11Z",
+    "2602.23172": "2026-06-18T17:46:09Z",
+    "2602.23559": "2026-02-27T00:05:02Z",
+    "2602.24020": "2026-02-27T13:45:22Z",
+    "2602.24096": "2026-03-05T10:14:27Z",
+    "2602.24136": "2026-02-27T16:12:58Z",
+    "2602.24161": "2026-03-12T06:05:57Z",
+    "2602.24290": "2026-03-05T05:12:06Z",
+    "2603.00418": "2026-02-28T02:35:18Z",
+    "2603.00492": "2026-05-05T21:47:43Z",
+    "2603.00500": "2026-02-28T06:48:05Z",
+    "2603.00697": "2026-02-28T15:13:13Z"
+  }
+}
