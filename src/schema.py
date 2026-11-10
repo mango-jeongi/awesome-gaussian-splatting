@@ -538,7 +538,7 @@ class PaperRecord(BaseModel):
                 else self.abstract,
                 "tldr": incoming.tldr or self.tldr,
                 "categories": list(dict.fromkeys(incoming.categories + self.categories)),
-                "tags": list(dict.fromkeys(incoming.tags + self.tags)),
+                "tags": list(dict.fromkeys(self.tags + incoming.tags)),
             }
         )
         if incoming.publication_date_precision != "unknown":

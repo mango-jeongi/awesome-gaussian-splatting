@@ -96,3 +96,25 @@ def test_unknown_fields_and_invalid_dates_fail_closed():
         PaperRecord(title="Paper with unsupported data", unknown_metadata="would be lost")
     with pytest.raises(ValidationError):
         PaperRecord(title="Paper with invalid date", published_date="2025-02-30")
+
+
+def test_provider_tag_order_does_not_rewrite_canonical_metadata(tmp_path):
+    original = PaperRecord(
+        arxiv_id="2401.00001",
+        title="Gaussian splatting fixture",
+        published_date="2024-01-01",
+        tags=["CUDA", "Foundations"],
+    )
+    db = PaperDatabase(papers=[original], total_count=1, last_updated="2024-01-01T00:00:00Z")
+    # Materialize identity aliases before measuring a metadata-only replay.
+    db.upsert([original])
+    path = tmp_path / "papers.json"
+    db.save(path)
+    before = path.read_bytes(), path.stat().st_mtime_ns
+    for tags in (["Foundations", "CUDA"], ["CUDA", "Foundations"], ["Foundations"]):
+        db.upsert([original.model_copy(update={"tags": tags})])
+        db.save(path)
+        assert db.papers[0].tags == ["CUDA", "Foundations"]
+        assert (path.read_bytes(), path.stat().st_mtime_ns) == before
+    db.upsert([original.model_copy(update={"tags": ["Compression", "CUDA"]})])
+    assert db.papers[0].tags == ["CUDA", "Foundations", "Compression"]
