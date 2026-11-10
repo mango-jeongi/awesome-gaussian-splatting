@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import time
 
@@ -40,7 +41,8 @@ def parse_page(payload, first):
         if any(
             not isinstance(row, dict)
             or not isinstance(row.get("info"), dict)
-            or not row["info"].get("key")
+            or not isinstance(row["info"].get("key"), str)
+            or not row["info"]["key"].strip()
             for row in rows
         ):
             raise ValueError
@@ -64,9 +66,12 @@ class DBLPClient:
     def __exit__(self, *args):
         self.http.close()
 
-    def search(self, query, *, page_size=100):
+    def search(self, query, *, page_size=100, max_seconds=120, max_response_bytes=2_000_000):
         if not query.strip() or not 1 <= page_size <= 1000:
             raise ValueError("Invalid DBLP query/page size")
+        if not 0 < max_seconds <= 1800 or not 1 <= max_response_bytes <= 20_000_000:
+            raise ValueError("Invalid DBLP time/response budget")
+        started = self.clock()
         first = 0
         expected = None
         seen = set()
@@ -75,28 +80,37 @@ class DBLPClient:
             if self.requests >= self.max_requests:
                 raise DBLPFailure("DBLP request budget exhausted; query unresolved")
             delay = max(0, self.next_request - self.clock())
+            if self.clock() - started + delay >= max_seconds:
+                raise DBLPFailure("DBLP time budget exhausted; query unresolved")
             if delay:
                 self.sleep(delay)
             self.requests += 1
             try:
-                response = self.http.get(
+                with self.http.stream(
+                    "GET",
                     "https://dblp.org/search/publ/api",
                     params={"q": query, "format": "json", "h": page_size, "f": first, "c": 0},
-                )
+                ) as response:
+                    if response.status_code != 200:
+                        raise DBLPFailure(f"DBLP deferred HTTP {response.status_code}")
+                    raw = bytearray()
+                    for chunk in response.iter_bytes():
+                        raw.extend(chunk)
+                        if len(raw) > max_response_bytes:
+                            raise DBLPFailure("DBLP response byte budget exceeded")
+                        if self.clock() - started >= max_seconds:
+                            raise DBLPFailure("DBLP time budget exhausted; query unresolved")
             except httpx.HTTPError:
                 raise DBLPFailure("DBLP transport failure") from None
-            self.next_request = self.clock() + 1
-            if response.status_code != 200:
-                raise DBLPFailure(f"DBLP deferred HTTP {response.status_code}")
+            finally:
+                self.next_request = self.clock() + 1
             try:
-                payload = response.json()
-            except ValueError:
+                payload = json.loads(raw)
+            except (ValueError, UnicodeError):
                 raise DBLPFailure("DBLP non-JSON response") from None
             total, rows = parse_page(payload, first)
-            if total > 1000:
-                raise DBLPFailure(
-                    "DBLP query exceeds1000 search results; refine before reconciliation"
-                )
+            if len(rows) > page_size:
+                raise DBLPFailure("DBLP response exceeds requested page size")
             if expected is not None and total != expected:
                 raise DBLPFailure("DBLP source count drift")
             expected = total
