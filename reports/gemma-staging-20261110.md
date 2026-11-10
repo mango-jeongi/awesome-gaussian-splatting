@@ -59,3 +59,7 @@ See [operator instructions](../CONTRIBUTING.md#extraction-model-comparison-score
 All 431 tests passed in 127.02 seconds before the final unit-case regression was
 added; all six evaluator tests then passed with the final case-sensitive behavior.
 The 4,102-record canonical catalog is unchanged. No push or deployment occurred.
+
+The [subsequent authorized GPU canary](gemma-gpu-canary-20261110.md) has now run and
+stopped. This staging report remains the earlier download/binary-verification
+snapshot; use the canary report for the later runtime evidence.

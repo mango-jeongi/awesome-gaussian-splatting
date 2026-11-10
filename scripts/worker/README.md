@@ -68,3 +68,13 @@ verified and the two runtime archives extracted on `msi-raider`. The
 result. Qwen weights remain unstaged. No model service or inference was started.
 The prepared canary service/request files are review artifacts, not an installed
 service; startup remains a separate authorization step.
+
+## Approved GPU canary completed
+
+The subsequently approved 15-minute canary ran one synthetic request and was
+stopped. Its static unit is inactive, no port listener remains, and the existing
+extraction timer is still active. See the
+[canary evidence and limitations](../../reports/gemma-gpu-canary-20261110.md).
+A live 16K slot and exact source-word value were observed; full-length context,
+full-layer offload, real-table quality, warm performance and persistent daemon
+operation remain unverified. The canary is not a production model deployment.

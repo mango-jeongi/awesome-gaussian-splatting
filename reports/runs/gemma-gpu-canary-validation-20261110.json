@@ -1,0 +1,28 @@
+{
+  "receipt_sha256": "ac44ed29482a64ad6e964f1f43c803cb8f65747164c9e3d21397ab3afd0bd8d8",
+  "validated_at": "2026-11-10T22:57:18.207694+00:00",
+  "result": "synthetic_value_smoke_passed",
+  "selected_value": "32.15",
+  "physical_page": 1,
+  "word_index": 2,
+  "context_fields_populated": false,
+  "schema_and_source_indices_valid": true,
+  "review_required": true,
+  "slot_context_tokens": 16384,
+  "actual_prompt_tokens": 168,
+  "request_seconds": 39.1888,
+  "sampled_gpu_peak_mib": 3200,
+  "sampled_gpu_after_stop_mib": 101,
+  "full_layer_offload_verified": false,
+  "full_length_context_prompt_tested": false,
+  "model_quality_comparison_complete": false,
+  "extraction_timer_active_after_test": true,
+  "model_service_stopped": true,
+  "limitations": [
+    "Single cold synthetic request; no full paper or table-accuracy claim.",
+    "GPU peak is sampled total device memory, including the baseline; it is not a continuous high-water measurement.",
+    "Configured 16K slot is verified; a 16K input was not exercised.",
+    "Decode throughput excludes prompt processing; observed wall latency is 39.1888 seconds.",
+    "No Qwen comparison was run."
+  ]
+}

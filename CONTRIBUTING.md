@@ -334,3 +334,10 @@ checks deterministic-parser self-consistency: 22 matched/exact values, with
 729 additional numeric candidates outside the accepted reference subset left
 unscored. No population precision or model superiority follows from those values.
 Use the same scope, source digests and budgets before comparing Gemma and Qwen.
+
+A bounded [Gemma GPU smoke test](reports/gemma-gpu-canary-20261110.md) has now
+verified one source-grounded synthetic value. The optional configuration accepts
+`enable_thinking` (default false); it is sent to the chat template and bound into
+the extractor/job digest. Context fields were empty in this canary, and the
+updated adapter is not deployed into the active worker. Live real-table quality,
+full-length context, warm performance and persistent model operation remain open.
