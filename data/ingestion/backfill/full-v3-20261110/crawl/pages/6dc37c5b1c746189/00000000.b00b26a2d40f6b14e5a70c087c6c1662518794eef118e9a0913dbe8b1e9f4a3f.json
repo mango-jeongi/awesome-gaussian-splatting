@@ -1,0 +1,202 @@
+{
+  "fetched_at": "2026-11-10T18:21:18.607653Z",
+  "published_at": {
+    "2305.14668": "2023-05-24T03:20:09Z",
+    "2305.15171": "2023-05-24T14:00:32Z",
+    "2305.20082": "2023-05-31T17:55:28Z"
+  },
+  "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+  "records": [
+    {
+      "abstract": "Discriminative models for object classification typically learn image-based representations that do not capture the compositional and 3D nature of objects. In this work, we show that explicitly integrating 3D compositional object representations into deep networks for image classification leads to a largely enhanced generalization in out-of-distribution scenarios. In particular, we introduce a novel architecture, referred to as NOVUM, that consists of a feature extractor and a neural object volume for every target object class. Each neural object volume is a composition of 3D Gaussians that emit feature vectors. This compositional object representation allows for a highly robust and fast estimation of the object class by independently matching the features of the 3D Gaussians of each category to features extracted from an input image. Additionally, the object pose can be estimated via inverse rendering of the corresponding neural object volume. To enable the classification of objects, the neural features at each 3D Gaussian are trained discriminatively to be distinct from (i) the features of 3D Gaussians in other categories, (ii) features of other 3D Gaussians of the same object, and (iii) the background features. Our experiments show that NOVUM offers intriguing advantages over standard architectures due to the 3D compositional structure of the object representation, namely: (1) An exceptional robustness across a spectrum of real-world and synthetic out-of-distribution shifts and (2) an enhanced human interpretability compared to standard models, all while maintaining real-time inference and a competitive accuracy on in-distribution data.",
+      "arxiv_doi": "10.48550/arxiv.2305.14668",
+      "arxiv_id": "2305.14668",
+      "authors": [
+        "Artur Jesslen",
+        "Guofeng Zhang",
+        "Angtian Wang",
+        "Wufei Ma",
+        "Alan Yuille",
+        "Adam Kortylewski"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "14 pages, 4 figures, accepted at ECCV 2024, code is accessible at https://github.com/GenIntel/NOVUM",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jesslen et al.",
+      "id": "2305.14668",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2305.14668v4",
+            "value": "2023-05-24"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2305.14668",
+      "pdf_url": "https://arxiv.org/pdf/2305.14668.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-05-24",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "NOVUM: Neural Object Volumes for Robust Object Classification",
+      "tldr": "In particular, we introduce a novel architecture, referred to as NOVUM, that consists of a feature extractor and a neural object volume for every target object class.",
+      "updated_date": "2024-08-28",
+      "venue": null,
+      "year": 2023
+    },
+    {
+      "abstract": "Novel view synthesis via Neural Radiance Fields (NeRFs) or 3D Gaussian Splatting (3DGS) typically necessitates dense observations with hundreds of input images to circumvent artifacts. We introduce Deceptive-NeRF/3DGS to enhance sparse-view reconstruction with only a limited set of input images, by leveraging a diffusion model pre-trained from multiview datasets. Different from using diffusion priors to regularize representation optimization, our method directly uses diffusion-generated images to train NeRF/3DGS as if they were real input views. Specifically, we propose a deceptive diffusion model turning noisy images rendered from few-view reconstructions into high-quality photorealistic pseudo-observations. To resolve consistency among pseudo-observations and real input views, we develop an uncertainty measure to guide the diffusion model's generation. Our system progressively incorporates diffusion-generated pseudo-observations into the training image sets, ultimately densifying the sparse input observations by 5 to 10 times. Extensive experiments across diverse and challenging datasets validate that our approach outperforms existing state-of-the-art methods and is capable of synthesizing novel views with super-resolution in the few-view setting.",
+      "arxiv_doi": "10.48550/arxiv.2305.15171",
+      "arxiv_id": "2305.15171",
+      "authors": [
+        "Xinhang Liu",
+        "Jiaben Chen",
+        "Shiu-hong Kao",
+        "Yu-Wing Tai",
+        "Chi-Keung Tang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Paper accepted to ECCV 2024. Project page: https://xinhangliu.com/deceptive-nerf-3dgs",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liu et al.",
+      "id": "2305.15171",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2305.15171v4",
+            "value": "2023-05-24"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2305.15171",
+      "pdf_url": "https://arxiv.org/pdf/2305.15171.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-05-24",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Deceptive-NeRF/3DGS: Diffusion-Generated Pseudo-Observations for High-Quality Sparse-View Reconstruction",
+      "tldr": "Introduces Deceptive-NeRF/3DGS to enhance sparse-view reconstruction with only a limited set of input images, by leveraging a diffusion model pre-trained from multiview datasets.",
+      "updated_date": "2024-07-15",
+      "venue": null,
+      "year": 2023
+    },
+    {
+      "abstract": "We introduce Control4D, an innovative framework for editing dynamic 4D portraits using text instructions. Our method addresses the prevalent challenges in 4D editing, notably the inefficiencies of existing 4D representations and the inconsistent editing effect caused by diffusion-based editors. We first propose GaussianPlanes, a novel 4D representation that makes Gaussian Splatting more structured by applying plane-based decomposition in 3D space and time. This enhances both efficiency and robustness in 4D editing. Furthermore, we propose to leverage a 4D generator to learn a more continuous generation space from inconsistent edited images produced by the diffusion-based editor, which effectively improves the consistency and quality of 4D editing. Comprehensive evaluation demonstrates the superiority of Control4D, including significantly reduced training time, high-quality rendering, and spatial-temporal consistency in 4D portrait editing. The link to our project website is https://control4darxiv.github.io.",
+      "arxiv_doi": "10.48550/arxiv.2305.20082",
+      "arxiv_id": "2305.20082",
+      "authors": [
+        "Ruizhi Shao",
+        "Jingxiang Sun",
+        "Cheng Peng",
+        "Zerong Zheng",
+        "Boyao Zhou",
+        "Hongwen Zhang",
+        "Yebin Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "The link to our project website is https://control4darxiv.github.io",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Shao et al.",
+      "id": "2305.20082",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2305.20082v2",
+            "value": "2023-05-31"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2305.20082",
+      "pdf_url": "https://arxiv.org/pdf/2305.20082.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-05-31",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Control4D: Efficient 4D Portrait Editing with Text",
+      "tldr": "Introduces Control4D, an innovative framework for editing dynamic 4D portraits using text instructions.",
+      "updated_date": "2023-11-30",
+      "venue": null,
+      "year": 2023
+    }
+  ],
+  "slice_id": "6dc37c5b1c746189",
+  "source_start": 0,
+  "source_total": 3,
+  "updated_at": {
+    "2305.14668": "2024-08-28T07:28:15Z",
+    "2305.15171": "2024-07-15T03:01:55Z",
+    "2305.20082": "2023-11-30T03:46:37Z"
+  }
+}

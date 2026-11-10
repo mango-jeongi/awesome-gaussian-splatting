@@ -1,0 +1,194 @@
+{
+  "fetched_at": "2026-11-10T18:21:29.213530Z",
+  "published_at": {
+    "2308.04079": "2023-08-08T06:37:06Z",
+    "2308.09713": "2023-08-18T17:59:21Z",
+    "2308.14737": "2023-08-28T17:38:31Z"
+  },
+  "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+  "records": [
+    {
+      "abstract": "Radiance Field methods have recently revolutionized novel-view synthesis of scenes captured with multiple photos or videos. However, achieving high visual quality still requires neural networks that are costly to train and render, while recent faster methods inevitably trade off speed for quality. For unbounded and complete scenes (rather than isolated objects) and 1080p resolution rendering, no current method can achieve real-time display rates. We introduce three key elements that allow us to achieve state-of-the-art visual quality while maintaining competitive training times and importantly allow high-quality real-time (>= 30 fps) novel-view synthesis at 1080p resolution. First, starting from sparse points produced during camera calibration, we represent the scene with 3D Gaussians that preserve desirable properties of continuous volumetric radiance fields for scene optimization while avoiding unnecessary computation in empty space; Second, we perform interleaved optimization/density control of the 3D Gaussians, notably optimizing anisotropic covariance to achieve an accurate representation of the scene; Third, we develop a fast visibility-aware rendering algorithm that supports anisotropic splatting and both accelerates training and allows realtime rendering. We demonstrate state-of-the-art visual quality and real-time rendering on several established datasets.",
+      "arxiv_doi": "10.48550/arxiv.2308.04079",
+      "arxiv_id": "2308.04079",
+      "authors": [
+        "Bernhard Kerbl",
+        "Georgios Kopanas",
+        "Thomas Leimkühler",
+        "George Drettakis"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kerbl et al.",
+      "id": "2308.04079",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2308.04079v1",
+            "value": "2023-08-08"
+          }
+        ]
+      },
+      "month": 8,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2308.04079",
+      "pdf_url": "https://arxiv.org/pdf/2308.04079.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-08-08",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+      "tldr": "Introduces three key elements that allow us to achieve state-of-the-art visual quality while maintaining competitive training times and importantly allow high-quality real-time (>= 30 fps) novel-view...",
+      "updated_date": "2023-08-08",
+      "venue": null,
+      "year": 2023
+    },
+    {
+      "abstract": "We present a method that simultaneously addresses the tasks of dynamic scene novel-view synthesis and six degree-of-freedom (6-DOF) tracking of all dense scene elements. We follow an analysis-by-synthesis framework, inspired by recent work that models scenes as a collection of 3D Gaussians which are optimized to reconstruct input images via differentiable rendering. To model dynamic scenes, we allow Gaussians to move and rotate over time while enforcing that they have persistent color, opacity, and size. By regularizing Gaussians' motion and rotation with local-rigidity constraints, we show that our Dynamic 3D Gaussians correctly model the same area of physical space over time, including the rotation of that space. Dense 6-DOF tracking and dynamic reconstruction emerges naturally from persistent dynamic view synthesis, without requiring any correspondence or flow as input. We demonstrate a large number of downstream applications enabled by our representation, including first-person view synthesis, dynamic compositional scene synthesis, and 4D video editing.",
+      "arxiv_doi": "10.48550/arxiv.2308.09713",
+      "arxiv_id": "2308.09713",
+      "authors": [
+        "Jonathon Luiten",
+        "Georgios Kopanas",
+        "Bastian Leibe",
+        "Deva Ramanan"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Luiten et al.",
+      "id": "2308.09713",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2308.09713v1",
+            "value": "2023-08-18"
+          }
+        ]
+      },
+      "month": 8,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2308.09713",
+      "pdf_url": "https://arxiv.org/pdf/2308.09713.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-08-18",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis",
+      "tldr": "Presents a method that simultaneously addresses the tasks of dynamic scene novel-view synthesis and six degree-of-freedom (6-DOF) tracking of all dense scene elements.",
+      "updated_date": "2023-08-18",
+      "venue": null,
+      "year": 2023
+    },
+    {
+      "abstract": "Fast, reliable shape reconstruction is an essential ingredient in many computer vision applications. Neural Radiance Fields demonstrated that photorealistic novel view synthesis is within reach, but was gated by performance requirements for fast reconstruction of real scenes and objects. Several recent approaches have built on alternative shape representations, in particular, 3D Gaussians. We develop extensions to these renderers, such as integrating differentiable optical flow, exporting watertight meshes and rendering per-ray normals. Additionally, we show how two of the recent methods are interoperable with each other. These reconstructions are quick, robust, and easily performed on GPU or CPU. For code and visual examples, see https://leonidk.github.io/fmb-plus",
+      "arxiv_doi": "10.48550/arxiv.2308.14737",
+      "arxiv_id": "2308.14737",
+      "authors": [
+        "Leonid Keselman",
+        "Martial Hebert"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Keselman et al.",
+      "id": "2308.14737",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2308.14737v1",
+            "value": "2023-08-28"
+          }
+        ]
+      },
+      "month": 8,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2308.14737",
+      "pdf_url": "https://arxiv.org/pdf/2308.14737.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-08-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Flexible Techniques for Differentiable Rendering with 3D Gaussians",
+      "tldr": "Develops extensions to these renderers, such as integrating differentiable optical flow, exporting watertight meshes and rendering per-ray normals.",
+      "updated_date": "2023-08-28",
+      "venue": null,
+      "year": 2023
+    }
+  ],
+  "slice_id": "eb9f085611c283f0",
+  "source_start": 0,
+  "source_total": 3,
+  "updated_at": {
+    "2308.04079": "2023-08-08T06:37:06Z",
+    "2308.09713": "2023-08-18T17:59:21Z",
+    "2308.14737": "2023-08-28T17:38:31Z"
+  }
+}
