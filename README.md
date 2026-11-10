@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-10` | Total Papers: **4102** | With Official Code: **569***
+*Last updated: `2026-11-10` | Total Papers: **4102** | With Official Code: **570***
 
 ---
 
@@ -686,7 +686,7 @@ Showing 60 of 315 papers. [Browse the full category](https://mango-jeongi.github
 
 ## Manual Operations
 
-- Official CVF evidence capture: `uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10`. It resumes hash-validated metadata capture and does not import canonical papers; see [venue capture evidence](reports/cvpr2025-metadata-capture.md).
+- Official CVF evidence capture: `uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10`. It resumes hash-validated metadata capture and does not import canonical papers; see [CVPR 2025 evidence](reports/cvpr2025-metadata-capture.md) and [CVPR 2024 evidence](reports/cvpr2024-metadata-capture.md).
 - [Historical backfill dispatch](.github/workflows/manual-backfill.yml): choose preview/apply, a stable run key, identical frozen dates, and a request ceiling. Completed validated checkpoints are retained on `feed` for resume.
 - [Reviewed worker import dispatch](.github/workflows/manual-worker-import.yml): select committed review/result JSON inputs. The runner verifies the canonical public PDF digest and exact reviewed decisions; preview is the default.
 - Both definitions share the repository writer concurrency group, verify the feed parent before an ordinary push, and run build/schema/lint/format/tests. Source PDFs remain temporary. See [operator instructions](CONTRIBUTING.md#manual-backfill-and-reviewed-worker-imports) for exact commands and limits.
