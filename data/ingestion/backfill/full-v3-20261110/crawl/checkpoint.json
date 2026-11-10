@@ -1908,6 +1908,66 @@
       "start": 0,
       "started_at": "2026-11-10T16:38:30.399952Z",
       "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T16:40:47.266841Z",
+      "replay": false,
+      "rows": 0,
+      "slice_id": "34206eaf0f5721e5",
+      "start": 0,
+      "started_at": "2026-11-10T16:40:46.561605Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T16:40:50.716801Z",
+      "replay": false,
+      "rows": 0,
+      "slice_id": "ca62d8d45c3a036c",
+      "start": 0,
+      "started_at": "2026-11-10T16:40:47.582289Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T16:40:54.175042Z",
+      "replay": false,
+      "rows": 0,
+      "slice_id": "3ec9364475b5262e",
+      "start": 0,
+      "started_at": "2026-11-10T16:40:50.826393Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T16:40:57.695603Z",
+      "replay": false,
+      "rows": 0,
+      "slice_id": "87576e8d1511b5d5",
+      "start": 0,
+      "started_at": "2026-11-10T16:40:54.366638Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 3,
+      "error": "ArxivRequestFailure: arXiv transport failure; attempts=3",
+      "finished_at": "2026-11-10T18:08:32.123634Z",
+      "replay": false,
+      "rows": null,
+      "slice_id": "c73592ae260fec2e",
+      "start": 0,
+      "started_at": "2026-11-10T16:40:58.126534Z",
+      "status": "error"
     }
   ],
   "roots": [
@@ -3271,14 +3331,21 @@
     "34206eaf0f5721e5": {
       "children": [],
       "end": "2011-12-01T00:00:00Z",
-      "expected_total": null,
+      "expected_total": 0,
       "last_error": null,
       "offset": 0,
-      "pages": [],
+      "pages": [
+        {
+          "count": 0,
+          "path": "pages/34206eaf0f5721e5/00000000.aaf993a5c3322156b4d91eb5d45ff9258c2eac9ad0a9dde90fa6c39689500c67.json",
+          "sha256": "aaf993a5c3322156b4d91eb5d45ff9258c2eac9ad0a9dde90fa6c39689500c67",
+          "start": 0
+        }
+      ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[201111010000 TO 201112010000]",
       "start": "2011-11-01T00:00:00Z",
-      "status": "pending"
+      "status": "complete"
     },
     "346b2209180a4613": {
       "children": [],
@@ -3517,14 +3584,21 @@
     "3ec9364475b5262e": {
       "children": [],
       "end": "2012-02-01T00:00:00Z",
-      "expected_total": null,
+      "expected_total": 0,
       "last_error": null,
       "offset": 0,
-      "pages": [],
+      "pages": [
+        {
+          "count": 0,
+          "path": "pages/3ec9364475b5262e/00000000.a733f38e09f3a76b8d2fc21a7de6f5c4efe1c07e8a15c4535f01faf6e5b7dc93.json",
+          "sha256": "a733f38e09f3a76b8d2fc21a7de6f5c4efe1c07e8a15c4535f01faf6e5b7dc93",
+          "start": 0
+        }
+      ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[201201010000 TO 201202010000]",
       "start": "2012-01-01T00:00:00Z",
-      "status": "pending"
+      "status": "complete"
     },
     "3eea7862018db9ec": {
       "children": [],
@@ -5242,14 +5316,21 @@
     "87576e8d1511b5d5": {
       "children": [],
       "end": "2012-03-01T00:00:00Z",
-      "expected_total": null,
+      "expected_total": 0,
       "last_error": null,
       "offset": 0,
-      "pages": [],
+      "pages": [
+        {
+          "count": 0,
+          "path": "pages/87576e8d1511b5d5/00000000.30de1afbd0e1cdde755f2a4ee3427016a3a7fdb41d14b6bfd2727c3df50e8893.json",
+          "sha256": "30de1afbd0e1cdde755f2a4ee3427016a3a7fdb41d14b6bfd2727c3df50e8893",
+          "start": 0
+        }
+      ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[201202010000 TO 201203010000]",
       "start": "2012-02-01T00:00:00Z",
-      "status": "pending"
+      "status": "complete"
     },
     "87e184acbb05aa73": {
       "children": [],
@@ -6513,13 +6594,13 @@
       "children": [],
       "end": "2012-04-01T00:00:00Z",
       "expected_total": null,
-      "last_error": null,
+      "last_error": "ArxivRequestFailure: arXiv transport failure; attempts=3",
       "offset": 0,
       "pages": [],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[201203010000 TO 201204010000]",
       "start": "2012-03-01T00:00:00Z",
-      "status": "pending"
+      "status": "failed"
     },
     "c8f35cacf55ef069": {
       "children": [],
@@ -6567,14 +6648,21 @@
     "ca62d8d45c3a036c": {
       "children": [],
       "end": "2012-01-01T00:00:00Z",
-      "expected_total": null,
+      "expected_total": 0,
       "last_error": null,
       "offset": 0,
-      "pages": [],
+      "pages": [
+        {
+          "count": 0,
+          "path": "pages/ca62d8d45c3a036c/00000000.cf9e7229be70991bcb9448d6e943e652f91c999dc8eca4af2642046a2cf14821.json",
+          "sha256": "cf9e7229be70991bcb9448d6e943e652f91c999dc8eca4af2642046a2cf14821",
+          "start": 0
+        }
+      ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[201112010000 TO 201201010000]",
       "start": "2011-12-01T00:00:00Z",
-      "status": "pending"
+      "status": "complete"
     },
     "cd91eeaf143d0319": {
       "children": [],
@@ -7458,5 +7546,5 @@
     "since": "1998-08-01T00:00:00Z",
     "until": "2026-11-10T00:00:00Z"
   },
-  "status": "running"
+  "status": "failed"
 }
