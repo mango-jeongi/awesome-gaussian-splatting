@@ -36,3 +36,25 @@ staging therefore awaits explicit approval. No transfer or installation occurred
 Ten offline checks pass, covering exact pin inventory, unsafe names, unexpected
 URLs, invalid sizes/checksums, duplicates/missing artifacts and a no-network,
 no-output-directory preview. Ruff lint and formatting pass.
+
+## Gemma alternative (prepared, not installed)
+
+Following the model-choice review, `llama-gemma-pins.json` prepares the official
+`google/gemma-4-E4B-it-qat-q4_0-gguf` text-only inference weights at revision
+`4b4a2c1d584be7264f87aac328a1bc739ce81b6c`. The weight file is 5,154,941,280 bytes;
+with the same CUDA/runtime archives the download is 5,937,654,997 bytes. The
+991,552,256-byte multimodal projector is not included, because the current table
+adapter sends extracted words rather than page images. Image-input support would
+require a separately verified projector/runtime path and VRAM measurement.
+
+Neither model has been benchmarked on the extraction pilot. Qwen was the earlier
+plan's baseline, not a demonstrated winner. Gemma E4B is a plausible first test on
+the 8 GB GPU; actual peak VRAM, context fit, latency and row/column/metric/unit
+accuracy must be measured. Use the same source pages, schema, acceptance rules
+and output budget for a comparison, with one model resident at a time. General
+chat or reasoning benchmarks do not establish table-extraction superiority.
+
+The user's model question did not approve remote staging. Both pin sets remain
+local preparation only; no remote download or installation has run.
+Sources: [official Gemma GGUF](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf),
+[Google memory-planning notes](https://ai.google.dev/gemma/docs/core).
