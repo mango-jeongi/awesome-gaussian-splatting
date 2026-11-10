@@ -303,3 +303,34 @@ Model installation, CUDA compatibility, VRAM/context limits, live extraction
 quality and headless llama-server operation must be verified on the host before
 configuring its timer to use this backend. The existing timer continues to use the
 deterministic parser until that rollout is validated.
+
+## Extraction model comparison scorer
+
+Evaluate one or more extractor groups against an explicit positive subset of the
+source-reviewed numeric ledger:
+
+```sh
+uv run python -m src.workers.evaluation --reviewed data/extraction/reviewed.json --paper-id <id> --result <result.json> --report <new-report.json>
+```
+
+Repeat paper IDs and result paths for the same fixed comparison scope. Each result
+must match the reviewed paper/PDF digest. At most one result per extractor and
+paper is admitted. Missing paper results count as missed reference cells. Different
+PDF versions need separate scoped ledgers; source hashes cannot be mixed silently.
+The scorer records ledger/result hashes, review identities and per-cell outcomes.
+It does not invoke a model or modify the ledger, results or canonical corpus.
+
+Matching requires the same physical page and at least 80% of a prediction's box
+inside a reviewed cell. Ambiguous or duplicate coordinate matches receive no
+credit. Value comparison normalizes whitespace only and preserves case; it never converts
+numbers or units. Row, column, dataset, split, metric and unit strings are reported
+separately as exact, different or missing. Equivalent paraphrases can differ and
+need inspection. This is quality scoring only; measure runtime and VRAM separately.
+
+The current accepted subset has 22 cells across six papers, reviewed by Codex
+from rendered sources. It is not an independent human benchmark or all table
+cells. The [baseline receipt](reports/runs/extraction-reviewed-subset-baseline-20261110.json)
+checks deterministic-parser self-consistency: 22 matched/exact values, with
+729 additional numeric candidates outside the accepted reference subset left
+unscored. No population precision or model superiority follows from those values.
+Use the same scope, source digests and budgets before comparing Gemma and Qwen.
