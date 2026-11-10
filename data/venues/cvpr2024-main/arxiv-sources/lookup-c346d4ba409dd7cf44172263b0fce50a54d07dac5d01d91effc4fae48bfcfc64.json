@@ -1,0 +1,439 @@
+{
+  "captured_at": "2026-11-10T18:30:59.786454+00:00",
+  "records": {
+    "2404.02185": {
+      "abstract": "The emergence of Neural Radiance Fields (NeRF) has greatly impacted 3D scene modeling and novel-view synthesis. As a kind of visual media for 3D scene representation, compression with high rate-distortion performance is an eternal target. Motivated by advances in neural compression and neural field representation, we propose NeRFCodec, an end-to-end NeRF compression framework that integrates non-linear transform, quantization, and entropy coding for memory-efficient scene representation. Since training a non-linear transform directly on a large scale of NeRF feature planes is impractical, we discover that pre-trained neural 2D image codec can be utilized for compressing the features when adding content-specific parameters. Specifically, we reuse neural 2D image codec but modify its encoder and decoder heads, while keeping the other parts of the pre-trained decoder frozen. This allows us to train the full pipeline via supervision of rendering loss and entropy loss, yielding the rate-distortion balance by updating the content-specific parameters. At test time, the bitstreams containing latent code, feature decoder head, and other side information are transmitted for communication. Experimental results demonstrate our method outperforms existing NeRF compression methods, enabling high-quality novel view synthesis with a memory budget of 0.5 MB.",
+      "arxiv_doi": "10.48550/arxiv.2404.02185",
+      "arxiv_id": "2404.02185",
+      "authors": [
+        "Sicheng Li",
+        "Hao Li",
+        "Yiyi Liao",
+        "Lu Yu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted at CVPR2024. The source code will be released",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Li et al.",
+      "id": "2404.02185",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2404.02185v1",
+            "value": "2024-04-02"
+          }
+        ]
+      },
+      "month": 4,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2404.02185",
+      "pdf_url": "https://arxiv.org/pdf/2404.02185.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-04-02",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "NeRFCodec: Neural Feature Compression Meets Neural Radiance Fields for Memory-Efficient Scene Representation",
+      "tldr": "Motivated by advances in neural compression and neural field representation, we propose NeRFCodec, an end-to-end NeRF compression framework that integrates non-linear transform, quantization, and entropy...",
+      "updated_date": "2024-04-02",
+      "venue": null,
+      "year": 2024
+    },
+    "2404.06270": {
+      "abstract": "In this paper, we propose a 3D geometry-aware deformable Gaussian Splatting method for dynamic view synthesis. Existing neural radiance fields (NeRF) based solutions learn the deformation in an implicit manner, which cannot incorporate 3D scene geometry. Therefore, the learned deformation is not necessarily geometrically coherent, which results in unsatisfactory dynamic view synthesis and 3D dynamic reconstruction. Recently, 3D Gaussian Splatting provides a new representation of the 3D scene, building upon which the 3D geometry could be exploited in learning the complex 3D deformation. Specifically, the scenes are represented as a collection of 3D Gaussian, where each 3D Gaussian is optimized to move and rotate over time to model the deformation. To enforce the 3D scene geometry constraint during deformation, we explicitly extract 3D geometry features and integrate them in learning the 3D deformation. In this way, our solution achieves 3D geometry-aware deformation modeling, which enables improved dynamic view synthesis and 3D dynamic reconstruction. Extensive experimental results on both synthetic and real datasets prove the superiority of our solution, which achieves new state-of-the-art performance. The project is available at https://npucvr.github.io/GaGS/",
+      "arxiv_doi": "10.48550/arxiv.2404.06270",
+      "arxiv_id": "2404.06270",
+      "authors": [
+        "Zhicheng Lu",
+        "Xiang Guo",
+        "Le Hui",
+        "Tianrui Chen",
+        "Min Yang",
+        "Xiao Tang",
+        "Feng Zhu",
+        "Yuchao Dai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted by CVPR 2024. Project page: https://npucvr.github.io/GaGS/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lu et al.",
+      "id": "2404.06270",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2404.06270v2",
+            "value": "2024-04-09"
+          }
+        ]
+      },
+      "month": 4,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2404.06270",
+      "pdf_url": "https://arxiv.org/pdf/2404.06270.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-04-09",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis",
+      "tldr": "Proposes a 3D geometry-aware deformable Gaussian Splatting method for dynamic view synthesis.",
+      "updated_date": "2024-04-14",
+      "venue": null,
+      "year": 2024
+    },
+    "2404.13541": {
+      "abstract": "In this paper, we propose the first generalizable view synthesis approach that specifically targets multi-view stereo-camera images. Since recent stereo matching has demonstrated accurate geometry prediction, we introduce stereo matching into novel-view synthesis for high-quality geometry reconstruction. To this end, this paper proposes a novel framework, dubbed StereoNeRF, which integrates stereo matching into a NeRF-based generalizable view synthesis approach. StereoNeRF is equipped with three key components to effectively exploit stereo matching in novel-view synthesis: a stereo feature extractor, a depth-guided plane-sweeping, and a stereo depth loss. Moreover, we propose the StereoNVS dataset, the first multi-view dataset of stereo-camera images, encompassing a wide variety of both real and synthetic scenes. Our experimental results demonstrate that StereoNeRF surpasses previous approaches in generalizable view synthesis.",
+      "arxiv_doi": "10.48550/arxiv.2404.13541",
+      "arxiv_id": "2404.13541",
+      "authors": [
+        "Haechan Lee",
+        "Wonjoon Jin",
+        "Seung-Hwan Baek",
+        "Sunghyun Cho"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to CVPR 2024. Project page URL: https://jinwonjoon.github.io/stereonerf/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lee et al.",
+      "id": "2404.13541",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2404.13541v1",
+            "value": "2024-04-21"
+          }
+        ]
+      },
+      "month": 4,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2404.13541",
+      "pdf_url": "https://arxiv.org/pdf/2404.13541.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-04-21",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Generalizable Novel-View Synthesis using a Stereo Camera",
+      "tldr": "Proposes the first generalizable view synthesis approach that specifically targets multi-view stereo-camera images.",
+      "updated_date": "2024-04-21",
+      "venue": null,
+      "year": 2024
+    },
+    "2404.17528": {
+      "abstract": "Generalizable NeRF aims to synthesize novel views for unseen scenes. Common practices involve constructing variance-based cost volumes for geometry reconstruction and encoding 3D descriptors for decoding novel views. However, existing methods show limited generalization ability in challenging conditions due to inaccurate geometry, sub-optimal descriptors, and decoding strategies. We address these issues point by point. First, we find the variance-based cost volume exhibits failure patterns as the features of pixels corresponding to the same point can be inconsistent across different views due to occlusions or reflections. We introduce an Adaptive Cost Aggregation (ACA) approach to amplify the contribution of consistent pixel pairs and suppress inconsistent ones. Unlike previous methods that solely fuse 2D features into descriptors, our approach introduces a Spatial-View Aggregator (SVA) to incorporate 3D context into descriptors through spatial and inter-view interaction. When decoding the descriptors, we observe the two existing decoding strategies excel in different areas, which are complementary. A Consistency-Aware Fusion (CAF) strategy is proposed to leverage the advantages of both. We incorporate the above ACA, SVA, and CAF into a coarse-to-fine framework, termed Geometry-aware Reconstruction and Fusion-refined Rendering (GeFu). GeFu attains state-of-the-art performance across multiple datasets. Code is available at https://github.com/TQTQliu/GeFu .",
+      "arxiv_doi": "10.48550/arxiv.2404.17528",
+      "arxiv_id": "2404.17528",
+      "authors": [
+        "Tianqi Liu",
+        "Xinyi Ye",
+        "Min Shi",
+        "Zihao Huang",
+        "Zhiyu Pan",
+        "Zhan Peng",
+        "Zhiguo Cao"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted by CVPR 2024. Project page: https://gefucvpr24.github.io",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liu et al.",
+      "id": "2404.17528",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2404.17528v1",
+            "value": "2024-04-26"
+          }
+        ]
+      },
+      "month": 4,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2404.17528",
+      "pdf_url": "https://arxiv.org/pdf/2404.17528.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-04-26",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Geometry-aware Reconstruction and Fusion-refined Rendering for Generalizable Neural Radiance Fields",
+      "tldr": "Introduces an Adaptive Cost Aggregation (ACA) approach to amplify the contribution of consistent pixel pairs and suppress inconsistent ones.",
+      "updated_date": "2024-04-26",
+      "venue": null,
+      "year": 2024
+    },
+    "2405.00900": {
+      "abstract": "Photorealistic simulation plays a crucial role in applications such as autonomous driving, where advances in neural radiance fields (NeRFs) may allow better scalability through the automatic creation of digital 3D assets. However, reconstruction quality suffers on street scenes due to largely collinear camera motions and sparser samplings at higher speeds. On the other hand, the application often demands rendering from camera views that deviate from the inputs to accurately simulate behaviors like lane changes. In this paper, we propose several insights that allow a better utilization of Lidar data to improve NeRF quality on street scenes. First, our framework learns a geometric scene representation from Lidar, which is fused with the implicit grid-based representation for radiance decoding, thereby supplying stronger geometric information offered by explicit point cloud. Second, we put forth a robust occlusion-aware depth supervision scheme, which allows utilizing densified Lidar points by accumulation. Third, we generate augmented training views from Lidar points for further improvement. Our insights translate to largely improved novel view synthesis under real driving scenes.",
+      "arxiv_doi": "10.48550/arxiv.2405.00900",
+      "arxiv_id": "2405.00900",
+      "authors": [
+        "Shanlin Sun",
+        "Bingbing Zhuang",
+        "Ziyu Jiang",
+        "Buyu Liu",
+        "Xiaohui Xie",
+        "Manmohan Chandraker"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR2024 Highlights",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Sun et al.",
+      "id": "2405.00900",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2405.00900v2",
+            "value": "2024-05-01"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2405.00900",
+      "pdf_url": "https://arxiv.org/pdf/2405.00900.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-05-01",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "LidaRF: Delving into Lidar for Neural Radiance Field on Street Scenes",
+      "tldr": "Proposes several insights that allow a better utilization of Lidar data to improve NeRF quality on street scenes.",
+      "updated_date": "2024-05-04",
+      "venue": null,
+      "year": 2024
+    },
+    "2405.02066": {
+      "abstract": "The advances in the Neural Radiance Fields (NeRF) research offer extensive applications in diverse domains, but protecting their copyrights has not yet been researched in depth. Recently, NeRF watermarking has been considered one of the pivotal solutions for safely deploying NeRF-based 3D representations. However, existing methods are designed to apply only to implicit or explicit NeRF representations. In this work, we introduce an innovative watermarking method that can be employed in both representations of NeRF. This is achieved by fine-tuning NeRF to embed binary messages in the rendering process. In detail, we propose utilizing the discrete wavelet transform in the NeRF space for watermarking. Furthermore, we adopt a deferred back-propagation technique and introduce a combination with the patch-wise loss to improve rendering quality and bit accuracy with minimum trade-offs. We evaluate our method in three different aspects: capacity, invisibility, and robustness of the embedded watermarks in the 2D-rendered images. Our method achieves state-of-the-art performance with faster training speed over the compared state-of-the-art methods.",
+      "arxiv_doi": "10.48550/arxiv.2405.02066",
+      "arxiv_id": "2405.02066",
+      "authors": [
+        "Youngdong Jang",
+        "Dong In Lee",
+        "MinHyuk Jang",
+        "Jong Wook Kim",
+        "Feng Yang",
+        "Sangpil Kim"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jang et al.",
+      "id": "2405.02066",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2405.02066v4",
+            "value": "2024-05-03"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2405.02066",
+      "pdf_url": "https://arxiv.org/pdf/2405.02066.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-05-03",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights",
+      "tldr": "Introduces an innovative watermarking method that can be employed in both representations of NeRF.",
+      "updated_date": "2024-07-12",
+      "venue": null,
+      "year": 2024
+    },
+    "2405.04534": {
+      "abstract": "We present a scene representation, which we call a tactile-augmented radiance field (TaRF), that brings vision and touch into a shared 3D space. This representation can be used to estimate the visual and tactile signals for a given 3D position within a scene. We capture a scene's TaRF from a collection of photos and sparsely sampled touch probes. Our approach makes use of two insights: (i) common vision-based touch sensors are built on ordinary cameras and thus can be registered to images using methods from multi-view geometry, and (ii) visually and structurally similar regions of a scene share the same tactile features. We use these insights to register touch signals to a captured visual scene, and to train a conditional diffusion model that, provided with an RGB-D image rendered from a neural radiance field, generates its corresponding tactile signal. To evaluate our approach, we collect a dataset of TaRFs. This dataset contains more touch samples than previous real-world datasets, and it provides spatially aligned visual signals for each captured touch signal. We demonstrate the accuracy of our cross-modal generative model and the utility of the captured visual-tactile data on several downstream tasks. Project page: https://dou-yiming.github.io/TaRF",
+      "arxiv_doi": "10.48550/arxiv.2405.04534",
+      "arxiv_id": "2405.04534",
+      "authors": [
+        "Yiming Dou",
+        "Fengyu Yang",
+        "Yi Liu",
+        "Antonio Loquercio",
+        "Andrew Owens"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024, Project page: https://dou-yiming.github.io/TaRF, Code: https://github.com/Dou-Yiming/TaRF/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Dou et al.",
+      "id": "2405.04534",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2405.04534v1",
+            "value": "2024-05-07"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2405.04534",
+      "pdf_url": "https://arxiv.org/pdf/2405.04534.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-05-07",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Tactile-Augmented Radiance Fields",
+      "tldr": "Presents a scene representation, which we call a tactile-augmented radiance field (TaRF), that brings vision and touch into a shared 3D space.",
+      "updated_date": "2024-05-07",
+      "venue": null,
+      "year": 2024
+    }
+  },
+  "requested_ids": [
+    "2404.02185",
+    "2404.06270",
+    "2404.13541",
+    "2404.17528",
+    "2405.00900",
+    "2405.02066",
+    "2405.04534"
+  ]
+}

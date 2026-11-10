@@ -1,0 +1,2509 @@
+{
+  "captured_at": "2026-11-10T18:30:53.108832+00:00",
+  "records": {
+    "2305.15094": {
+      "abstract": "We propose InNeRF360, an automatic system that accurately removes text-specified objects from 360-degree Neural Radiance Fields (NeRF). The challenge is to effectively remove objects while inpainting perceptually consistent content for the missing regions, which is particularly demanding for existing NeRF models due to their implicit volumetric representation. Moreover, unbounded scenes are more prone to floater artifacts in the inpainted region than frontal-facing scenes, as the change of object appearance and background across views is more sensitive to inaccurate segmentations and inconsistent inpainting. With a trained NeRF and a text description, our method efficiently removes specified objects and inpaints visually consistent content without artifacts. We apply depth-space warping to enforce consistency across multiview text-encoded segmentations, and then refine the inpainted NeRF model using perceptual priors and 3D diffusion-based geometric priors to ensure visual plausibility. Through extensive experiments in segmentation and inpainting on 360-degree and frontal-facing NeRFs, we show that our approach is effective and enhances NeRF's editability. Project page: https://ivrl.github.io/InNeRF360.",
+      "arxiv_doi": "10.48550/arxiv.2305.15094",
+      "arxiv_id": "2305.15094",
+      "authors": [
+        "Dongqing Wang",
+        "Tong Zhang",
+        "Alaa Abboud",
+        "Sabine Süsstrunk"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2305.15094",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2305.15094v2",
+            "value": "2023-05-24"
+          }
+        ]
+      },
+      "month": 5,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2305.15094",
+      "pdf_url": "https://arxiv.org/pdf/2305.15094.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-05-24",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "InNeRF360: Text-Guided 3D-Consistent Object Inpainting on 360-degree Neural Radiance Fields",
+      "tldr": "Proposes InNeRF360, an automatic system that accurately removes text-specified objects from 360-degree Neural Radiance Fields (NeRF).",
+      "updated_date": "2024-03-26",
+      "venue": null,
+      "year": 2023
+    },
+    "2308.13223": {
+      "abstract": "While image diffusion models have made significant progress in text-driven 3D content creation, they often fail to accurately capture the intended meaning of text prompts, especially for view information. This limitation leads to the Janus problem, where multi-faced 3D models are generated under the guidance of such diffusion models. In this paper, we propose a robust high-quality 3D content generation pipeline by exploiting orthogonal-view image guidance. First, we introduce a novel 2D diffusion model that generates an image consisting of four orthogonal-view sub-images based on the given text prompt. Then, the 3D content is created using this diffusion model. Notably, the generated orthogonal-view image provides strong geometric structure priors and thus improves 3D consistency. As a result, it effectively resolves the Janus problem and significantly enhances the quality of 3D content creation. Additionally, we present a 3D synthesis fusion network that can further improve the details of the generated 3D contents. Both quantitative and qualitative evaluations demonstrate that our method surpasses previous text-to-3D techniques. Project page: https://efficientdreamer.github.io.",
+      "arxiv_doi": "10.48550/arxiv.2308.13223",
+      "arxiv_id": "2308.13223",
+      "authors": [
+        "Zhipeng Hu",
+        "Minda Zhao",
+        "Chaoyi Zhao",
+        "Xinyue Liang",
+        "Lincheng Li",
+        "Zeng Zhao",
+        "Changjie Fan",
+        "Xiaowei Zhou",
+        "Xin Yu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hu et al.",
+      "id": "2308.13223",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2308.13223v2",
+            "value": "2023-08-25"
+          }
+        ]
+      },
+      "month": 8,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2308.13223",
+      "pdf_url": "https://arxiv.org/pdf/2308.13223.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-08-25",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior",
+      "tldr": "Proposes a robust high-quality 3D content generation pipeline by exploiting orthogonal-view image guidance.",
+      "updated_date": "2024-03-21",
+      "venue": null,
+      "year": 2023
+    },
+    "2309.11281": {
+      "abstract": "Neural radiance field is an emerging rendering method that generates high-quality multi-view consistent images from a neural scene representation and volume rendering. Although neural radiance field-based techniques are robust for scene reconstruction, their ability to add or remove objects remains limited. This paper proposes a new language-driven approach for object manipulation with neural radiance fields through dataset updates. Specifically, to insert a new foreground object represented by a set of multi-view images into a background radiance field, we use a text-to-image diffusion model to learn and generate combined images that fuse the object of interest into the given background across views. These combined images are then used for refining the background radiance field so that we can render view-consistent images containing both the object and the background. To ensure view consistency, we propose a dataset updates strategy that prioritizes radiance field training with camera views close to the already-trained views prior to propagating the training to remaining views. We show that under the same dataset updates strategy, we can easily adapt our method for object insertion using data from text-to-3D models as well as object removal. Experimental results show that our method generates photorealistic images of the edited scenes, and outperforms state-of-the-art methods in 3D reconstruction and neural radiance field blending.",
+      "arxiv_doi": "10.48550/arxiv.2309.11281",
+      "arxiv_id": "2309.11281",
+      "authors": [
+        "Ka Chun Shum",
+        "Jaeyeon Kim",
+        "Binh-Son Hua",
+        "Duc Thanh Nguyen",
+        "Sai-Kit Yeung"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Shum et al.",
+      "id": "2309.11281",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2309.11281v3",
+            "value": "2023-09-20"
+          }
+        ]
+      },
+      "month": 9,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2309.11281",
+      "pdf_url": "https://arxiv.org/pdf/2309.11281.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-09-20",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Language-driven Object Fusion into Neural Radiance Fields with Pose-Conditioned Dataset Updates",
+      "tldr": "Proposes language-driven approach for object manipulation with neural radiance fields through dataset updates.",
+      "updated_date": "2024-03-31",
+      "venue": null,
+      "year": 2023
+    },
+    "2309.13101": {
+      "abstract": "Implicit neural representation has paved the way for new approaches to dynamic scene reconstruction and rendering. Nonetheless, cutting-edge dynamic neural rendering methods rely heavily on these implicit representations, which frequently struggle to capture the intricate details of objects in the scene. Furthermore, implicit methods have difficulty achieving real-time rendering in general dynamic scenes, limiting their use in a variety of tasks. To address the issues, we propose a deformable 3D Gaussians Splatting method that reconstructs scenes using 3D Gaussians and learns them in canonical space with a deformation field to model monocular dynamic scenes. We also introduce an annealing smoothing training mechanism with no extra overhead, which can mitigate the impact of inaccurate poses on the smoothness of time interpolation tasks in real-world datasets. Through a differential Gaussian rasterizer, the deformable 3D Gaussians not only achieve higher rendering quality but also real-time rendering speed. Experiments show that our method outperforms existing methods significantly in terms of both rendering quality and speed, making it well-suited for tasks such as novel-view synthesis, time interpolation, and real-time rendering.",
+      "arxiv_doi": "10.48550/arxiv.2309.13101",
+      "arxiv_id": "2309.13101",
+      "authors": [
+        "Ziyi Yang",
+        "Xinyu Gao",
+        "Wen Zhou",
+        "Shaohui Jiao",
+        "Yuqing Zhang",
+        "Xiaogang Jin"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yang et al.",
+      "id": "2309.13101",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2309.13101v2",
+            "value": "2023-09-22"
+          }
+        ]
+      },
+      "month": 9,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2309.13101",
+      "pdf_url": "https://arxiv.org/pdf/2309.13101.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-09-22",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction",
+      "tldr": "To address the issues, we propose a deformable 3D Gaussians Splatting method that reconstructs scenes using 3D Gaussians and learns them in canonical space with a deformation field to model monocular...",
+      "updated_date": "2023-11-19",
+      "venue": null,
+      "year": 2023
+    },
+    "2309.16585": {
+      "abstract": "Automatic text-to-3D generation that combines Score Distillation Sampling (SDS) with the optimization of volume rendering has achieved remarkable progress in synthesizing realistic 3D objects. Yet most existing text-to-3D methods by SDS and volume rendering suffer from inaccurate geometry, e.g., the Janus issue, since it is hard to explicitly integrate 3D priors into implicit 3D representations. Besides, it is usually time-consuming for them to generate elaborate 3D models with rich colors. In response, this paper proposes GSGEN, a novel method that adopts Gaussian Splatting, a recent state-of-the-art representation, to text-to-3D generation. GSGEN aims at generating high-quality 3D objects and addressing existing shortcomings by exploiting the explicit nature of Gaussian Splatting that enables the incorporation of 3D prior. Specifically, our method adopts a progressive optimization strategy, which includes a geometry optimization stage and an appearance refinement stage. In geometry optimization, a coarse representation is established under 3D point cloud diffusion prior along with the ordinary 2D SDS optimization, ensuring a sensible and 3D-consistent rough shape. Subsequently, the obtained Gaussians undergo an iterative appearance refinement to enrich texture details. In this stage, we increase the number of Gaussians by compactness-based densification to enhance continuity and improve fidelity. With these designs, our approach can generate 3D assets with delicate details and accurate geometry. Extensive evaluations demonstrate the effectiveness of our method, especially for capturing high-frequency components. Our code is available at https://github.com/gsgen3d/gsgen",
+      "arxiv_doi": "10.48550/arxiv.2309.16585",
+      "arxiv_id": "2309.16585",
+      "authors": [
+        "Zilong Chen",
+        "Feng Wang",
+        "Yikai Wang",
+        "Huaping Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "To appear at CVPR 2024. Project page: https://gsgen3d.github.io. Code: https://github.com/gsgen3d/gsgen",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Chen et al.",
+      "id": "2309.16585",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2309.16585v4",
+            "value": "2023-09-28"
+          }
+        ]
+      },
+      "month": 9,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2309.16585",
+      "pdf_url": "https://arxiv.org/pdf/2309.16585.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-09-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Text-to-3D using Gaussian Splatting",
+      "tldr": "In response, this paper proposes GSGEN, a novel method that adopts Gaussian Splatting, a recent state-of-the-art representation, to text-to-3D generation.",
+      "updated_date": "2024-04-02",
+      "venue": null,
+      "year": 2023
+    },
+    "2310.08528": {
+      "abstract": "Representing and rendering dynamic scenes has been an important but challenging task. Especially, to accurately model complex motions, high efficiency is usually hard to guarantee. To achieve real-time dynamic scene rendering while also enjoying high training and storage efficiency, we propose 4D Gaussian Splatting (4D-GS) as a holistic representation for dynamic scenes rather than applying 3D-GS for each individual frame. In 4D-GS, a novel explicit representation containing both 3D Gaussians and 4D neural voxels is proposed. A decomposed neural voxel encoding algorithm inspired by HexPlane is proposed to efficiently build Gaussian features from 4D neural voxels and then a lightweight MLP is applied to predict Gaussian deformations at novel timestamps. Our 4D-GS method achieves real-time rendering under high resolutions, 82 FPS at an 800$\\times$800 resolution on an RTX 3090 GPU while maintaining comparable or better quality than previous state-of-the-art methods. More demos and code are available at https://guanjunwu.github.io/4dgs/.",
+      "arxiv_doi": "10.48550/arxiv.2310.08528",
+      "arxiv_id": "2310.08528",
+      "authors": [
+        "Guanjun Wu",
+        "Taoran Yi",
+        "Jiemin Fang",
+        "Lingxi Xie",
+        "Xiaopeng Zhang",
+        "Wei Wei",
+        "Wenyu Liu",
+        "Qi Tian",
+        "Xinggang Wang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024. Project page: https://guanjunwu.github.io/4dgs/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wu et al.",
+      "id": "2310.08528",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2310.08528v3",
+            "value": "2023-10-12"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2310.08528",
+      "pdf_url": "https://arxiv.org/pdf/2310.08528.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-10-12",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "4D Gaussian Splatting for Real-Time Dynamic Scene Rendering",
+      "tldr": "To achieve real-time dynamic scene rendering while also enjoying high training and storage efficiency, we propose 4D Gaussian Splatting (4D-GS) as a holistic representation for dynamic scenes rather than...",
+      "updated_date": "2024-07-15",
+      "venue": null,
+      "year": 2023
+    },
+    "2310.08529": {
+      "abstract": "In recent times, the generation of 3D assets from text prompts has shown impressive results. Both 2D and 3D diffusion models can help generate decent 3D objects based on prompts. 3D diffusion models have good 3D consistency, but their quality and generalization are limited as trainable 3D data is expensive and hard to obtain. 2D diffusion models enjoy strong abilities of generalization and fine generation, but 3D consistency is hard to guarantee. This paper attempts to bridge the power from the two types of diffusion models via the recent explicit and efficient 3D Gaussian splatting representation. A fast 3D object generation framework, named as GaussianDreamer, is proposed, where the 3D diffusion model provides priors for initialization and the 2D diffusion model enriches the geometry and appearance. Operations of noisy point growing and color perturbation are introduced to enhance the initialized Gaussians. Our GaussianDreamer can generate a high-quality 3D instance or 3D avatar within 15 minutes on one GPU, much faster than previous methods, while the generated instances can be directly rendered in real time. Demos and code are available at https://taoranyi.com/gaussiandreamer/.",
+      "arxiv_doi": "10.48550/arxiv.2310.08529",
+      "arxiv_id": "2310.08529",
+      "authors": [
+        "Taoran Yi",
+        "Jiemin Fang",
+        "Junjie Wang",
+        "Guanjun Wu",
+        "Lingxi Xie",
+        "Xiaopeng Zhang",
+        "Wenyu Liu",
+        "Qi Tian",
+        "Xinggang Wang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024, Project page: https://taoranyi.com/gaussiandreamer/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yi et al.",
+      "id": "2310.08529",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2310.08529v3",
+            "value": "2023-10-12"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2310.08529",
+      "pdf_url": "https://arxiv.org/pdf/2310.08529.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-10-12",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianDreamer: Fast Generation from Text to 3D Gaussians by Bridging 2D and 3D Diffusion Models",
+      "tldr": "In recent times, the generation of 3D assets from text prompts has shown impressive results.",
+      "updated_date": "2024-05-13",
+      "venue": null,
+      "year": 2023
+    },
+    "2310.11448": {
+      "abstract": "This paper targets high-fidelity and real-time view synthesis of dynamic 3D scenes at 4K resolution. Recently, some methods on dynamic view synthesis have shown impressive rendering quality. However, their speed is still limited when rendering high-resolution images. To overcome this problem, we propose 4K4D, a 4D point cloud representation that supports hardware rasterization and enables unprecedented rendering speed. Our representation is built on a 4D feature grid so that the points are naturally regularized and can be robustly optimized. In addition, we design a novel hybrid appearance model that significantly boosts the rendering quality while preserving efficiency. Moreover, we develop a differentiable depth peeling algorithm to effectively learn the proposed model from RGB videos. Experiments show that our representation can be rendered at over 400 FPS on the DNA-Rendering dataset at 1080p resolution and 80 FPS on the ENeRF-Outdoor dataset at 4K resolution using an RTX 4090 GPU, which is 30x faster than previous methods and achieves the state-of-the-art rendering quality. Our project page is available at https://zju3dv.github.io/4k4d/.",
+      "arxiv_doi": "10.48550/arxiv.2310.11448",
+      "arxiv_id": "2310.11448",
+      "authors": [
+        "Zhen Xu",
+        "Sida Peng",
+        "Haotong Lin",
+        "Guangzhao He",
+        "Jiaming Sun",
+        "Yujun Shen",
+        "Hujun Bao",
+        "Xiaowei Zhou"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project Page: https://zju3dv.github.io/4k4d",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xu et al.",
+      "id": "2310.11448",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2310.11448v3",
+            "value": "2023-10-17"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2310.11448",
+      "pdf_url": "https://arxiv.org/pdf/2310.11448.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-10-17",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "4K4D: Real-Time 4D View Synthesis at 4K Resolution",
+      "tldr": "Proposes 4K4D, a 4D point cloud representation that supports hardware rasterization and enables unprecedented rendering speed.",
+      "updated_date": "2023-10-28",
+      "venue": null,
+      "year": 2023
+    },
+    "2310.17994": {
+      "abstract": "We introduce a 3D-aware diffusion model, ZeroNVS, for single-image novel view synthesis for in-the-wild scenes. While existing methods are designed for single objects with masked backgrounds, we propose new techniques to address challenges introduced by in-the-wild multi-object scenes with complex backgrounds. Specifically, we train a generative prior on a mixture of data sources that capture object-centric, indoor, and outdoor scenes. To address issues from data mixture such as depth-scale ambiguity, we propose a novel camera conditioning parameterization and normalization scheme. Further, we observe that Score Distillation Sampling (SDS) tends to truncate the distribution of complex backgrounds during distillation of 360-degree scenes, and propose \"SDS anchoring\" to improve the diversity of synthesized novel views. Our model sets a new state-of-the-art result in LPIPS on the DTU dataset in the zero-shot setting, even outperforming methods specifically trained on DTU. We further adapt the challenging Mip-NeRF 360 dataset as a new benchmark for single-image novel view synthesis, and demonstrate strong performance in this setting. Our code and data are at http://kylesargent.github.io/zeronvs/",
+      "arxiv_doi": "10.48550/arxiv.2310.17994",
+      "arxiv_id": "2310.17994",
+      "authors": [
+        "Kyle Sargent",
+        "Zizhang Li",
+        "Tanmay Shah",
+        "Charles Herrmann",
+        "Hong-Xing Yu",
+        "Yunzhi Zhang",
+        "Eric Ryan Chan",
+        "Dmitry Lagun",
+        "Li Fei-Fei",
+        "Deqing Sun",
+        "Jiajun Wu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to CVPR 2024. 12 pages",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Sargent et al.",
+      "id": "2310.17994",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2310.17994v2",
+            "value": "2023-10-27"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2310.17994",
+      "pdf_url": "https://arxiv.org/pdf/2310.17994.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-10-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "ZeroNVS: Zero-Shot 360-Degree View Synthesis from a Single Image",
+      "tldr": "Introduces a 3D-aware diffusion model, ZeroNVS, for single-image novel view synthesis for in-the-wild scenes.",
+      "updated_date": "2024-04-24",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.11845": {
+      "abstract": "Generalizable NeRF can directly synthesize novel views across new scenes, eliminating the need for scene-specific retraining in vanilla NeRF. A critical enabling factor in these approaches is the extraction of a generalizable 3D representation by aggregating source-view features. In this paper, we propose an Entangled View-Epipolar Information Aggregation method dubbed EVE-NeRF. Different from existing methods that consider cross-view and along-epipolar information independently, EVE-NeRF conducts the view-epipolar feature aggregation in an entangled manner by injecting the scene-invariant appearance continuity and geometry consistency priors to the aggregation process. Our approach effectively mitigates the potential lack of inherent geometric and appearance constraint resulting from one-dimensional interactions, thus further boosting the 3D representation generalizablity. EVE-NeRF attains state-of-the-art performance across various evaluation scenarios. Extensive experiments demonstate that, compared to prevailing single-dimensional aggregation, the entangled network excels in the accuracy of 3D scene geometry and appearance reconstruction. Our code is publicly available at https://github.com/tatakai1/EVENeRF.",
+      "arxiv_doi": "10.48550/arxiv.2311.11845",
+      "arxiv_id": "2311.11845",
+      "authors": [
+        "Zhiyuan Min",
+        "Yawei Luo",
+        "Wei Yang",
+        "Yuesong Wang",
+        "Yi Yang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted by CVPR-2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Min et al.",
+      "id": "2311.11845",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.11845v2",
+            "value": "2023-11-20"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.11845",
+      "pdf_url": "https://arxiv.org/pdf/2311.11845.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-20",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Entangled View-Epipolar Information Aggregation for Generalizable Neural Radiance Fields",
+      "tldr": "Proposes an Entangled View-Epipolar Information Aggregation method dubbed EVE-NeRF.",
+      "updated_date": "2024-03-12",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.12198": {
+      "abstract": "We introduce PhysGaussian, a new method that seamlessly integrates physically grounded Newtonian dynamics within 3D Gaussians to achieve high-quality novel motion synthesis. Employing a custom Material Point Method (MPM), our approach enriches 3D Gaussian kernels with physically meaningful kinematic deformation and mechanical stress attributes, all evolved in line with continuum mechanics principles. A defining characteristic of our method is the seamless integration between physical simulation and visual rendering: both components utilize the same 3D Gaussian kernels as their discrete representations. This negates the necessity for triangle/tetrahedron meshing, marching cubes, \"cage meshes,\" or any other geometry embedding, highlighting the principle of \"what you see is what you simulate (WS$^2$).\" Our method demonstrates exceptional versatility across a wide variety of materials--including elastic entities, metals, non-Newtonian fluids, and granular materials--showcasing its strong capabilities in creating diverse visual content with novel viewpoints and movements. Our project page is at: https://xpandora.github.io/PhysGaussian/",
+      "arxiv_doi": "10.48550/arxiv.2311.12198",
+      "arxiv_id": "2311.12198",
+      "authors": [
+        "Tianyi Xie",
+        "Zeshun Zong",
+        "Yuxing Qiu",
+        "Xuan Li",
+        "Yutao Feng",
+        "Yin Yang",
+        "Chenfanfu Jiang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted by CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xie et al.",
+      "id": "2311.12198",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.12198v3",
+            "value": "2023-11-20"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.12198",
+      "pdf_url": "https://arxiv.org/pdf/2311.12198.pdf",
+      "primary_arxiv_category": "cs.GR",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-20",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "PhysGaussian: Physics-Integrated 3D Gaussians for Generative Dynamics",
+      "tldr": "Introduces PhysGaussian, a new method that seamlessly integrates physically grounded Newtonian dynamics within 3D Gaussians to achieve high-quality novel motion synthesis.",
+      "updated_date": "2024-04-15",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.13681": {
+      "abstract": "Neural Radiance Fields (NeRFs) have demonstrated remarkable potential in capturing complex 3D scenes with high fidelity. However, one persistent challenge that hinders the widespread adoption of NeRFs is the computational bottleneck due to the volumetric rendering. On the other hand, 3D Gaussian splatting (3DGS) has recently emerged as an alternative representation that leverages a 3D Gaussisan-based representation and adopts the rasterization pipeline to render the images rather than volumetric rendering, achieving very fast rendering speed and promising image quality. However, a significant drawback arises as 3DGS entails a substantial number of 3D Gaussians to maintain the high fidelity of the rendered images, which requires a large amount of memory and storage. To address this critical issue, we place a specific emphasis on two key objectives: reducing the number of Gaussian points without sacrificing performance and compressing the Gaussian attributes, such as view-dependent color and covariance. To this end, we propose a learnable mask strategy that significantly reduces the number of Gaussians while preserving high performance. In addition, we propose a compact but effective representation of view-dependent color by employing a grid-based neural field rather than relying on spherical harmonics. Finally, we learn codebooks to compactly represent the geometric attributes of Gaussian by vector quantization. With model compression techniques such as quantization and entropy coding, we consistently show over 25$\\times$ reduced storage and enhanced rendering speed, while maintaining the quality of the scene representation, compared to 3DGS. Our work provides a comprehensive framework for 3D scene representation, achieving high performance, fast training, compactness, and real-time rendering. Our project page is available at https://maincold2.github.io/c3dgs/.",
+      "arxiv_doi": "10.48550/arxiv.2311.13681",
+      "arxiv_id": "2311.13681",
+      "authors": [
+        "Joo Chan Lee",
+        "Daniel Rho",
+        "Xiangyu Sun",
+        "Jong Hwan Ko",
+        "Eunbyung Park"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: http://maincold2.github.io/c3dgs/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lee et al.",
+      "id": "2311.13681",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.13681v2",
+            "value": "2023-11-22"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.13681",
+      "pdf_url": "https://arxiv.org/pdf/2311.13681.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-22",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Compact 3D Gaussian Representation for Radiance Field",
+      "tldr": "To address this critical issue, we place a specific emphasis on two key objectives: reducing the number of Gaussian points without sacrificing performance and compressing the Gaussian attributes, such as...",
+      "updated_date": "2024-02-15",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.14521": {
+      "abstract": "3D editing plays a crucial role in many areas such as gaming and virtual reality. Traditional 3D editing methods, which rely on representations like meshes and point clouds, often fall short in realistically depicting complex scenes. On the other hand, methods based on implicit 3D representations, like Neural Radiance Field (NeRF), render complex scenes effectively but suffer from slow processing speeds and limited control over specific scene areas. In response to these challenges, our paper presents GaussianEditor, an innovative and efficient 3D editing algorithm based on Gaussian Splatting (GS), a novel 3D representation. GaussianEditor enhances precision and control in editing through our proposed Gaussian semantic tracing, which traces the editing target throughout the training process. Additionally, we propose Hierarchical Gaussian splatting (HGS) to achieve stabilized and fine results under stochastic generative guidance from 2D diffusion models. We also develop editing strategies for efficient object removal and integration, a challenging task for existing methods. Our comprehensive experiments demonstrate GaussianEditor's superior control, efficacy, and rapid performance, marking a significant advancement in 3D editing. Project Page: https://buaacyw.github.io/gaussian-editor/",
+      "arxiv_doi": "10.48550/arxiv.2311.14521",
+      "arxiv_id": "2311.14521",
+      "authors": [
+        "Yiwen Chen",
+        "Zilong Chen",
+        "Chi Zhang",
+        "Feng Wang",
+        "Xiaofeng Yang",
+        "Yikai Wang",
+        "Zhongang Cai",
+        "Lei Yang",
+        "Huaping Liu",
+        "Guosheng Lin"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project Page: https://buaacyw.github.io/gaussian-editor/ Code: https://github.com/buaacyw/GaussianEditor",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Chen et al.",
+      "id": "2311.14521",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.14521v4",
+            "value": "2023-11-24"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.14521",
+      "pdf_url": "https://arxiv.org/pdf/2311.14521.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-24",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianEditor: Swift and Controllable 3D Editing with Gaussian Splatting",
+      "tldr": "Additionally, we propose Hierarchical Gaussian splatting (HGS) to achieve stabilized and fine results under stochastic generative guidance from 2D diffusion models.",
+      "updated_date": "2023-12-20",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.15803": {
+      "abstract": "In rapidly-evolving domains such as autonomous driving, the use of multiple sensors with different modalities is crucial to ensure high operational precision and stability. To correctly exploit the provided information by each sensor in a single common frame, it is essential for these sensors to be accurately calibrated. In this paper, we leverage the ability of Neural Radiance Fields (NeRF) to represent different sensors modalities in a common volumetric representation to achieve robust and accurate spatio-temporal sensor calibration. By designing a partitioning approach based on the visible part of the scene for each sensor, we formulate the calibration problem using only the overlapping areas. This strategy results in a more robust and accurate calibration that is less prone to failure. We demonstrate that our approach works on outdoor urban scenes by validating it on multiple established driving datasets. Results show that our method is able to get better accuracy and robustness compared to existing methods.",
+      "arxiv_doi": "10.48550/arxiv.2311.15803",
+      "arxiv_id": "2311.15803",
+      "authors": [
+        "Quentin Herau",
+        "Nathan Piasco",
+        "Moussab Bennehar",
+        "Luis Roldão",
+        "Dzmitry Tsishkou",
+        "Cyrille Migniot",
+        "Pascal Vasseur",
+        "Cédric Demonceaux"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted at CVPR 2024. Project page: https://qherau.github.io/SOAC/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Herau et al.",
+      "id": "2311.15803",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.15803v3",
+            "value": "2023-11-27"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.15803",
+      "pdf_url": "https://arxiv.org/pdf/2311.15803.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "SOAC: Spatio-Temporal Overlap-Aware Multi-Sensor Calibration using Neural Radiance Fields",
+      "tldr": "In rapidly-evolving domains such as autonomous driving, the use of multiple sensors with different modalities is crucial to ensure high operational precision and stability.",
+      "updated_date": "2024-03-27",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.16037": {
+      "abstract": "Recently, impressive results have been achieved in 3D scene editing with text instructions based on a 2D diffusion model. However, current diffusion models primarily generate images by predicting noise in the latent space, and the editing is usually applied to the whole image, which makes it challenging to perform delicate, especially localized, editing for 3D scenes. Inspired by recent 3D Gaussian splatting, we propose a systematic framework, named GaussianEditor, to edit 3D scenes delicately via 3D Gaussians with text instructions. Benefiting from the explicit property of 3D Gaussians, we design a series of techniques to achieve delicate editing. Specifically, we first extract the region of interest (RoI) corresponding to the text instruction, aligning it to 3D Gaussians. The Gaussian RoI is further used to control the editing process. Our framework can achieve more delicate and precise editing of 3D scenes than previous methods while enjoying much faster training speed, i.e. within 20 minutes on a single V100 GPU, more than twice as fast as Instruct-NeRF2NeRF (45 minutes -- 2 hours).",
+      "arxiv_doi": "10.48550/arxiv.2311.16037",
+      "arxiv_id": "2311.16037",
+      "authors": [
+        "Junjie Wang",
+        "Jiemin Fang",
+        "Xiaopeng Zhang",
+        "Lingxi Xie",
+        "Qi Tian"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024, Project page: https://GaussianEditor.github.io",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2311.16037",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.16037v2",
+            "value": "2023-11-27"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.16037",
+      "pdf_url": "https://arxiv.org/pdf/2311.16037.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianEditor: Editing 3D Gaussians Delicately with Text Instructions",
+      "tldr": "Inspired by recent 3D Gaussian splatting, we propose a systematic framework, named GaussianEditor, to edit 3D scenes delicately via 3D Gaussians with text instructions.",
+      "updated_date": "2024-07-24",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17061": {
+      "abstract": "Realistic 3D human generation from text prompts is a desirable yet challenging task. Existing methods optimize 3D representations like mesh or neural fields via score distillation sampling (SDS), which suffers from inadequate fine details or excessive training time. In this paper, we propose an efficient yet effective framework, HumanGaussian, that generates high-quality 3D humans with fine-grained geometry and realistic appearance. Our key insight is that 3D Gaussian Splatting is an efficient renderer with periodic Gaussian shrinkage or growing, where such adaptive density control can be naturally guided by intrinsic human structures. Specifically, 1) we first propose a Structure-Aware SDS that simultaneously optimizes human appearance and geometry. The multi-modal score function from both RGB and depth space is leveraged to distill the Gaussian densification and pruning process. 2) Moreover, we devise an Annealed Negative Prompt Guidance by decomposing SDS into a noisier generative score and a cleaner classifier score, which well addresses the over-saturation issue. The floating artifacts are further eliminated based on Gaussian size in a prune-only phase to enhance generation smoothness. Extensive experiments demonstrate the superior efficiency and competitive quality of our framework, rendering vivid 3D humans under diverse scenarios. Project Page: https://alvinliu0.github.io/projects/HumanGaussian",
+      "arxiv_doi": "10.48550/arxiv.2311.17061",
+      "arxiv_id": "2311.17061",
+      "authors": [
+        "Xian Liu",
+        "Xiaohang Zhan",
+        "Jiaxiang Tang",
+        "Ying Shan",
+        "Gang Zeng",
+        "Dahua Lin",
+        "Xihui Liu",
+        "Ziwei Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted by CVPR 2024, camera-ready version. Project Page: https://alvinliu0.github.io/projects/HumanGaussian",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liu et al.",
+      "id": "2311.17061",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17061v2",
+            "value": "2023-11-28"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17061",
+      "pdf_url": "https://arxiv.org/pdf/2311.17061.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "HumanGaussian: Text-Driven 3D Human Generation with Gaussian Splatting",
+      "tldr": "Proposes an efficient yet effective framework, HumanGaussian, that generates high-quality 3D humans with fine-grained geometry and realistic appearance.",
+      "updated_date": "2024-03-14",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17089": {
+      "abstract": "3D Gaussians have recently emerged as a highly efficient representation for 3D reconstruction and rendering. Despite its high rendering quality and speed at high resolutions, they both deteriorate drastically when rendered at lower resolutions or from far away camera position. During low resolution or far away rendering, the pixel size of the image can fall below the Nyquist frequency compared to the screen size of each splatted 3D Gaussian and leads to aliasing effect. The rendering is also drastically slowed down by the sequential alpha blending of more splatted Gaussians per pixel. To address these issues, we propose a multi-scale 3D Gaussian splatting algorithm, which maintains Gaussians at different scales to represent the same scene. Higher-resolution images are rendered with more small Gaussians, and lower-resolution images are rendered with fewer larger Gaussians. With similar training time, our algorithm can achieve 13\\%-66\\% PSNR and 160\\%-2400\\% rendering speed improvement at 4$\\times$-128$\\times$ scale rendering on Mip-NeRF360 dataset compared to the single scale 3D Gaussian splitting. Our code and more results are available on our project website https://jokeryan.github.io/projects/ms-gs/",
+      "arxiv_doi": "10.48550/arxiv.2311.17089",
+      "arxiv_id": "2311.17089",
+      "authors": [
+        "Zhiwen Yan",
+        "Weng Fei Low",
+        "Yu Chen",
+        "Gim Hee Lee"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yan et al.",
+      "id": "2311.17089",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17089v2",
+            "value": "2023-11-28"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17089",
+      "pdf_url": "https://arxiv.org/pdf/2311.17089.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Multi-Scale 3D Gaussian Splatting for Anti-Aliased Rendering",
+      "tldr": "Proposes a multi-scale 3D Gaussian splatting algorithm, which maintains Gaussians at different scales to represent the same scene.",
+      "updated_date": "2024-05-29",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17113": {
+      "abstract": "This work addresses the problem of real-time rendering of photorealistic human body avatars learned from multi-view videos. While the classical approaches to model and render virtual humans generally use a textured mesh, recent research has developed neural body representations that achieve impressive visual quality. However, these models are difficult to render in real-time and their quality degrades when the character is animated with body poses different than the training observations. We propose an animatable human model based on 3D Gaussian Splatting, that has recently emerged as a very efficient alternative to neural radiance fields. The body is represented by a set of gaussian primitives in a canonical space which is deformed with a coarse to fine approach that combines forward skinning and local non-rigid refinement. We describe how to learn our Human Gaussian Splatting (HuGS) model in an end-to-end fashion from multi-view observations, and evaluate it against the state-of-the-art approaches for novel pose synthesis of clothed body. Our method achieves 1.5 dB PSNR improvement over the state-of-the-art on THuman4 dataset while being able to render in real-time (80 fps for 512x512 resolution).",
+      "arxiv_doi": "10.48550/arxiv.2311.17113",
+      "arxiv_id": "2311.17113",
+      "authors": [
+        "Arthur Moreau",
+        "Jifei Song",
+        "Helisa Dhamo",
+        "Richard Shaw",
+        "Yiren Zhou",
+        "Eduardo Pérez-Pellitero"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted to CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Moreau et al.",
+      "id": "2311.17113",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17113v2",
+            "value": "2023-11-28"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17113",
+      "pdf_url": "https://arxiv.org/pdf/2311.17113.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Human Gaussian Splatting: Real-time Rendering of Animatable Avatars",
+      "tldr": "Proposes an animatable human model based on 3D Gaussian Splatting, that has recently emerged as a very efficient alternative to neural radiance fields.",
+      "updated_date": "2024-03-28",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17261": {
+      "abstract": "We propose SceneTex, a novel method for effectively generating high-quality and style-consistent textures for indoor scenes using depth-to-image diffusion priors. Unlike previous methods that either iteratively warp 2D views onto a mesh surface or distillate diffusion latent features without accurate geometric and style cues, SceneTex formulates the texture synthesis task as an optimization problem in the RGB space where style and geometry consistency are properly reflected. At its core, SceneTex proposes a multiresolution texture field to implicitly encode the mesh appearance. We optimize the target texture via a score-distillation-based objective function in respective RGB renderings. To further secure the style consistency across views, we introduce a cross-attention decoder to predict the RGB values by cross-attending to the pre-sampled reference locations in each instance. SceneTex enables various and accurate texture synthesis for 3D-FRONT scenes, demonstrating significant improvements in visual quality and prompt fidelity over the prior texture generation methods.",
+      "arxiv_doi": "10.48550/arxiv.2311.17261",
+      "arxiv_id": "2311.17261",
+      "authors": [
+        "Dave Zhenyu Chen",
+        "Haoxuan Li",
+        "Hsin-Ying Lee",
+        "Sergey Tulyakov",
+        "Matthias Nießner"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project website: https://daveredrum.github.io/SceneTex/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Chen et al.",
+      "id": "2311.17261",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17261v1",
+            "value": "2023-11-28"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17261",
+      "pdf_url": "https://arxiv.org/pdf/2311.17261.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-28",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "SceneTex: High-Quality Texture Synthesis for Indoor Scenes via Diffusion Priors",
+      "tldr": "Proposes SceneTex, a novel method for effectively generating high-quality and style-consistent textures for indoor scenes using depth-to-image diffusion priors.",
+      "updated_date": "2023-11-28",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17754": {
+      "abstract": "In the evolving landscape of digital media and video production, the precise manipulation and reproduction of visual elements like camera movements and character actions are highly desired. Existing SLAM methods face limitations in dynamic scenes and human pose estimation often focuses on 2D projections, neglecting 3D statuses. To address these issues, we first introduce a reverse filming behavior estimation technique. It optimizes camera trajectories by leveraging NeRF as a differentiable renderer and refining SMPL tracks. We then introduce a cinematic transfer pipeline that is able to transfer various shot types to a new 2D video or a 3D virtual environment. The incorporation of 3D engine workflow enables superior rendering and control abilities, which also achieves a higher rating in the user study.",
+      "arxiv_doi": "10.48550/arxiv.2311.17754",
+      "arxiv_id": "2311.17754",
+      "authors": [
+        "Xuekun Jiang",
+        "Anyi Rao",
+        "Jingbo Wang",
+        "Dahua Lin",
+        "Bo Dai"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project Page: https://virtualfilmstudio.github.io/projects/cinetransfer",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jiang et al.",
+      "id": "2311.17754",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17754v1",
+            "value": "2023-11-29"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17754",
+      "pdf_url": "https://arxiv.org/pdf/2311.17754.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Cinematic Behavior Transfer via NeRF-based Differentiable Filming",
+      "tldr": "The incorporation of 3D engine workflow enables superior rendering and control abilities, which also achieves a higher rating in the user study.",
+      "updated_date": "2023-11-29",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17910": {
+      "abstract": "Recent advances in neural rendering have improved both training and rendering times by orders of magnitude. While these methods demonstrate state-of-the-art quality and speed, they are designed for photogrammetry of static scenes and do not generalize well to freely moving humans in the environment. In this work, we introduce Human Gaussian Splats (HUGS) that represents an animatable human together with the scene using 3D Gaussian Splatting (3DGS). Our method takes only a monocular video with a small number of (50-100) frames, and it automatically learns to disentangle the static scene and a fully animatable human avatar within 30 minutes. We utilize the SMPL body model to initialize the human Gaussians. To capture details that are not modeled by SMPL (e.g. cloth, hairs), we allow the 3D Gaussians to deviate from the human body model. Utilizing 3D Gaussians for animated humans brings new challenges, including the artifacts created when articulating the Gaussians. We propose to jointly optimize the linear blend skinning weights to coordinate the movements of individual Gaussians during animation. Our approach enables novel-pose synthesis of human and novel view synthesis of both the human and the scene. We achieve state-of-the-art rendering quality with a rendering speed of 60 FPS while being ~100x faster to train over previous work. Our code will be announced here: https://github.com/apple/ml-hugs",
+      "arxiv_doi": "10.48550/arxiv.2311.17910",
+      "arxiv_id": "2311.17910",
+      "authors": [
+        "Muhammed Kocabas",
+        "Jen-Hao Rick Chang",
+        "James Gabriel",
+        "Oncel Tuzel",
+        "Anurag Ranjan"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Kocabas et al.",
+      "id": "2311.17910",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17910v1",
+            "value": "2023-11-29"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17910",
+      "pdf_url": "https://arxiv.org/pdf/2311.17910.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "HUGS: Human Gaussian Splats",
+      "tldr": "Introduces Human Gaussian Splats (HUGS) that represents an animatable human together with the scene using 3D Gaussian Splatting (3DGS).",
+      "updated_date": "2023-11-29",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.17977": {
+      "abstract": "The advent of neural 3D Gaussians has recently brought about a revolution in the field of neural rendering, facilitating the generation of high-quality renderings at real-time speeds. However, the explicit and discrete representation encounters challenges when applied to scenes featuring reflective surfaces. In this paper, we present GaussianShader, a novel method that applies a simplified shading function on 3D Gaussians to enhance the neural rendering in scenes with reflective surfaces while preserving the training and rendering efficiency. The main challenge in applying the shading function lies in the accurate normal estimation on discrete 3D Gaussians. Specifically, we proposed a novel normal estimation framework based on the shortest axis directions of 3D Gaussians with a delicately designed loss to make the consistency between the normals and the geometries of Gaussian spheres. Experiments show that GaussianShader strikes a commendable balance between efficiency and visual quality. Our method surpasses Gaussian Splatting in PSNR on specular object datasets, exhibiting an improvement of 1.57dB. When compared to prior works handling reflective surfaces, such as Ref-NeRF, our optimization time is significantly accelerated (23h vs. 0.58h). Please click on our project website to see more results.",
+      "arxiv_doi": "10.48550/arxiv.2311.17977",
+      "arxiv_id": "2311.17977",
+      "authors": [
+        "Yingwenqi Jiang",
+        "Jiadong Tu",
+        "Yuan Liu",
+        "Xifeng Gao",
+        "Xiaoxiao Long",
+        "Wenping Wang",
+        "Yuexin Ma"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "13 pages, 11 figures, refrences added",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jiang et al.",
+      "id": "2311.17977",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17977v1",
+            "value": "2023-11-29"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17977",
+      "pdf_url": "https://arxiv.org/pdf/2311.17977.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianShader: 3D Gaussian Splatting with Shading Functions for Reflective Surfaces",
+      "tldr": "Presents GaussianShader, a novel method that applies a simplified shading function on 3D Gaussians to enhance the neural rendering in scenes with reflective surfaces while preserving the training and...",
+      "updated_date": "2023-11-29",
+      "venue": null,
+      "year": 2023
+    },
+    "2311.18482": {
+      "abstract": "Open-vocabulary querying in 3D space is challenging but essential for scene understanding tasks such as object localization and segmentation. Language-embedded scene representations have made progress by incorporating language features into 3D spaces. However, their efficacy heavily depends on neural networks that are resource-intensive in training and rendering. Although recent 3D Gaussians offer efficient and high-quality novel view synthesis, directly embedding language features in them leads to prohibitive memory usage and decreased performance. In this work, we introduce Language Embedded 3D Gaussians, a novel scene representation for open-vocabulary query tasks. Instead of embedding high-dimensional raw semantic features on 3D Gaussians, we propose a dedicated quantization scheme that drastically alleviates the memory requirement, and a novel embedding procedure that achieves smoother yet high accuracy query, countering the multi-view feature inconsistencies and the high-frequency inductive bias in point-based representations. Our comprehensive experiments show that our representation achieves the best visual quality and language querying accuracy across current language-embedded representations, while maintaining real-time rendering frame rates on a single desktop GPU.",
+      "arxiv_doi": "10.48550/arxiv.2311.18482",
+      "arxiv_id": "2311.18482",
+      "authors": [
+        "Jin-Chuan Shi",
+        "Miao Wang",
+        "Hao-Bin Duan",
+        "Shao-Hua Guan"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Shi et al.",
+      "id": "2311.18482",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.18482v1",
+            "value": "2023-11-30"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.18482",
+      "pdf_url": "https://arxiv.org/pdf/2311.18482.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-30",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Language Embedded 3D Gaussians for Open-Vocabulary Scene Understanding",
+      "tldr": "Introduces Language Embedded 3D Gaussians, a novel scene representation for open-vocabulary query tasks.",
+      "updated_date": "2023-11-30",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.01407": {
+      "abstract": "Neural Radiance Fields (NeRFs) excel in photorealistically rendering static scenes. However, rendering dynamic, long-duration radiance fields on ubiquitous devices remains challenging, due to data storage and computational constraints. In this paper, we introduce VideoRF, the first approach to enable real-time streaming and rendering of dynamic radiance fields on mobile platforms. At the core is a serialized 2D feature image stream representing the 4D radiance field all in one. We introduce a tailored training scheme directly applied to this 2D domain to impose the temporal and spatial redundancy of the feature image stream. By leveraging the redundancy, we show that the feature image stream can be efficiently compressed by 2D video codecs, which allows us to exploit video hardware accelerators to achieve real-time decoding. On the other hand, based on the feature image stream, we propose a novel rendering pipeline for VideoRF, which has specialized space mappings to query radiance properties efficiently. Paired with a deferred shading model, VideoRF has the capability of real-time rendering on mobile devices thanks to its efficiency. We have developed a real-time interactive player that enables online streaming and rendering of dynamic scenes, offering a seamless and immersive free-viewpoint experience across a range of devices, from desktops to mobile phones.",
+      "arxiv_doi": "10.48550/arxiv.2312.01407",
+      "arxiv_id": "2312.01407",
+      "authors": [
+        "Liao Wang",
+        "Kaixin Yao",
+        "Chengcheng Guo",
+        "Zhirui Zhang",
+        "Qiang Hu",
+        "Jingyi Yu",
+        "Lan Xu",
+        "Minye Wu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page, see https://aoliao12138.github.io/VideoRF",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2312.01407",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.01407v1",
+            "value": "2023-12-03"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.01407",
+      "pdf_url": "https://arxiv.org/pdf/2312.01407.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-03",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "VideoRF: Rendering Dynamic Radiance Fields as 2D Feature Video Streams",
+      "tldr": "Introduces VideoRF, the first approach to enable real-time streaming and rendering of dynamic radiance fields on mobile platforms.",
+      "updated_date": "2023-12-03",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.01663": {
+      "abstract": "In this paper, we target the adaptive source driven 3D scene editing task by proposing a CustomNeRF model that unifies a text description or a reference image as the editing prompt. However, obtaining desired editing results conformed with the editing prompt is nontrivial since there exist two significant challenges, including accurate editing of only foreground regions and multi-view consistency given a single-view reference image. To tackle the first challenge, we propose a Local-Global Iterative Editing (LGIE) training scheme that alternates between foreground region editing and full-image editing, aimed at foreground-only manipulation while preserving the background. For the second challenge, we also design a class-guided regularization that exploits class priors within the generation model to alleviate the inconsistency problem among different views in image-driven editing. Extensive experiments show that our CustomNeRF produces precise editing results under various real scenes for both text- and image-driven settings.",
+      "arxiv_doi": "10.48550/arxiv.2312.01663",
+      "arxiv_id": "2312.01663",
+      "authors": [
+        "Runze He",
+        "Shaofei Huang",
+        "Xuecheng Nie",
+        "Tianrui Hui",
+        "Luoqi Liu",
+        "Jiao Dai",
+        "Jizhong Han",
+        "Guanbin Li",
+        "Si Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "14 pages, 13 figures, project website: https://customnerf.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "He et al.",
+      "id": "2312.01663",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.01663v1",
+            "value": "2023-12-04"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.01663",
+      "pdf_url": "https://arxiv.org/pdf/2312.01663.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-04",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Customize your NeRF: Adaptive Source Driven 3D Scene Editing via Local-Global Iterative Training",
+      "tldr": "To tackle the first challenge, we propose a Local-Global Iterative Editing (LGIE) training scheme that alternates between foreground region editing and full-image editing, aimed at foreground-only...",
+      "updated_date": "2023-12-04",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02069": {
+      "abstract": "We introduce GaussianAvatars, a new method to create photorealistic head avatars that are fully controllable in terms of expression, pose, and viewpoint. The core idea is a dynamic 3D representation based on 3D Gaussian splats that are rigged to a parametric morphable face model. This combination facilitates photorealistic rendering while allowing for precise animation control via the underlying parametric model, e.g., through expression transfer from a driving sequence or by manually changing the morphable model parameters. We parameterize each splat by a local coordinate frame of a triangle and optimize for explicit displacement offset to obtain a more accurate geometric representation. During avatar reconstruction, we jointly optimize for the morphable model parameters and Gaussian splat parameters in an end-to-end fashion. We demonstrate the animation capabilities of our photorealistic avatar in several challenging scenarios. For instance, we show reenactments from a driving video, where our method outperforms existing works by a significant margin.",
+      "arxiv_doi": "10.48550/arxiv.2312.02069",
+      "arxiv_id": "2312.02069",
+      "authors": [
+        "Shenhan Qian",
+        "Tobias Kirschstein",
+        "Liam Schoneveld",
+        "Davide Davoli",
+        "Simon Giebenhain",
+        "Matthias Nießner"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: https://shenhanqian.github.io/gaussian-avatars",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Qian et al.",
+      "id": "2312.02069",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02069v2",
+            "value": "2023-12-04"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02069",
+      "pdf_url": "https://arxiv.org/pdf/2312.02069.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-04",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianAvatars: Photorealistic Head Avatars with Rigged 3D Gaussians",
+      "tldr": "Introduces GaussianAvatars, a new method to create photorealistic head avatars that are fully controllable in terms of expression, pose, and viewpoint.",
+      "updated_date": "2024-03-28",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02134": {
+      "abstract": "We present GaussianAvatar, an efficient approach to creating realistic human avatars with dynamic 3D appearances from a single video. We start by introducing animatable 3D Gaussians to explicitly represent humans in various poses and clothing styles. Such an explicit and animatable representation can fuse 3D appearances more efficiently and consistently from 2D observations. Our representation is further augmented with dynamic properties to support pose-dependent appearance modeling, where a dynamic appearance network along with an optimizable feature tensor is designed to learn the motion-to-appearance mapping. Moreover, by leveraging the differentiable motion condition, our method enables a joint optimization of motions and appearances during avatar modeling, which helps to tackle the long-standing issue of inaccurate motion estimation in monocular settings. The efficacy of GaussianAvatar is validated on both the public dataset and our collected dataset, demonstrating its superior performances in terms of appearance quality and rendering efficiency.",
+      "arxiv_doi": "10.48550/arxiv.2312.02134",
+      "arxiv_id": "2312.02134",
+      "authors": [
+        "Liangxiao Hu",
+        "Hongwen Zhang",
+        "Yuxiang Zhang",
+        "Boyao Zhou",
+        "Boning Liu",
+        "Shengping Zhang",
+        "Liqiang Nie"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project Page: https://huliangxiao.github.io/GaussianAvatar",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hu et al.",
+      "id": "2312.02134",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02134v3",
+            "value": "2023-12-04"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02134",
+      "pdf_url": "https://arxiv.org/pdf/2312.02134.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-04",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GaussianAvatar: Towards Realistic Human Avatar Modeling from a Single Video via Animatable 3D Gaussians",
+      "tldr": "Presents GaussianAvatar, an efficient approach to creating realistic human avatars with dynamic 3D appearances from a single video.",
+      "updated_date": "2024-03-30",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02136": {
+      "abstract": "Generating large-scale 3D scenes cannot simply apply existing 3D object synthesis technique since 3D scenes usually hold complex spatial configurations and consist of a number of objects at varying scales. We thus propose a practical and efficient 3D representation that incorporates an equivariant radiance field with the guidance of a bird's-eye view (BEV) map. Concretely, objects of synthesized 3D scenes could be easily manipulated through steering the corresponding BEV maps. Moreover, by adequately incorporating positional encoding and low-pass filters into the generator, the representation becomes equivariant to the given BEV map. Such equivariance allows us to produce large-scale, even infinite-scale, 3D scenes via synthesizing local scenes and then stitching them with smooth consistency. Extensive experiments on 3D scene datasets demonstrate the effectiveness of our approach. Our project website is at https://zqh0253.github.io/BerfScene/.",
+      "arxiv_doi": "10.48550/arxiv.2312.02136",
+      "arxiv_id": "2312.02136",
+      "authors": [
+        "Qihang Zhang",
+        "Yinghao Xu",
+        "Yujun Shen",
+        "Bo Dai",
+        "Bolei Zhou",
+        "Ceyuan Yang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhang et al.",
+      "id": "2312.02136",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02136v1",
+            "value": "2023-12-04"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02136",
+      "pdf_url": "https://arxiv.org/pdf/2312.02136.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-04",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "BerfScene: Bev-conditioned Equivariant Radiance Fields for Infinite 3D Scene Generation",
+      "tldr": "Such equivariance allows us to produce large-scale, even infinite-scale, 3D scenes via synthesizing local scenes and then stitching them with smooth consistency.",
+      "updated_date": "2023-12-04",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02137": {
+      "abstract": "Understanding how we grasp objects with our hands has important applications in areas like robotics and mixed reality. However, this challenging problem requires accurate modeling of the contact between hands and objects. To capture grasps, existing methods use skeletons, meshes, or parametric models that does not represent hand shape accurately resulting in inaccurate contacts. We present MANUS, a method for Markerless Hand-Object Grasp Capture using Articulated 3D Gaussians. We build a novel articulated 3D Gaussians representation that extends 3D Gaussian splatting for high-fidelity representation of articulating hands. Since our representation uses Gaussian primitives, it enables us to efficiently and accurately estimate contacts between the hand and the object. For the most accurate results, our method requires tens of camera views that current datasets do not provide. We therefore build MANUS-Grasps, a new dataset that contains hand-object grasps viewed from 50+ cameras across 30+ scenes, 3 subjects, and comprising over 7M frames. In addition to extensive qualitative results, we also show that our method outperforms others on a quantitative contact evaluation method that uses paint transfer from the object to the hand.",
+      "arxiv_doi": "10.48550/arxiv.2312.02137",
+      "arxiv_id": "2312.02137",
+      "authors": [
+        "Chandradeep Pokhariya",
+        "Ishaan N Shah",
+        "Angela Xing",
+        "Zekun Li",
+        "Kefan Chen",
+        "Avinash Sharma",
+        "Srinath Sridhar"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR) 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Pokhariya et al.",
+      "id": "2312.02137",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02137v2",
+            "value": "2023-12-04"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02137",
+      "pdf_url": "https://arxiv.org/pdf/2312.02137.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-04",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "MANUS: Markerless Grasp Capture using Articulated 3D Gaussians",
+      "tldr": "Presents MANUS, a method for Markerless Hand-Object Grasp Capture using Articulated 3D Gaussians.",
+      "updated_date": "2024-03-28",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02973": {
+      "abstract": "We present, GauHuman, a 3D human model with Gaussian Splatting for both fast training (1 ~ 2 minutes) and real-time rendering (up to 189 FPS), compared with existing NeRF-based implicit representation modelling frameworks demanding hours of training and seconds of rendering per frame. Specifically, GauHuman encodes Gaussian Splatting in the canonical space and transforms 3D Gaussians from canonical space to posed space with linear blend skinning (LBS), in which effective pose and LBS refinement modules are designed to learn fine details of 3D humans under negligible computational cost. Moreover, to enable fast optimization of GauHuman, we initialize and prune 3D Gaussians with 3D human prior, while splitting/cloning via KL divergence guidance, along with a novel merge operation for further speeding up. Extensive experiments on ZJU_Mocap and MonoCap datasets demonstrate that GauHuman achieves state-of-the-art performance quantitatively and qualitatively with fast training and real-time rendering speed. Notably, without sacrificing rendering quality, GauHuman can fast model the 3D human performer with ~13k 3D Gaussians.",
+      "arxiv_doi": "10.48550/arxiv.2312.02973",
+      "arxiv_id": "2312.02973",
+      "authors": [
+        "Shoukang Hu",
+        "Ziwei Liu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "project page: https://skhu101.github.io/GauHuman/; code: https://github.com/skhu101/GauHuman",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Hu et al.",
+      "id": "2312.02973",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02973v1",
+            "value": "2023-12-05"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02973",
+      "pdf_url": "https://arxiv.org/pdf/2312.02973.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-05",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "GauHuman: Articulated Gaussian Splatting from Monocular Human Videos",
+      "tldr": "We present, GauHuman, a 3D human model with Gaussian Splatting for both fast training (1 ~ 2 minutes) and real-time rendering (up to 189 FPS), compared with existing NeRF-based implicit representation...",
+      "updated_date": "2023-12-05",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.02981": {
+      "abstract": "3D reconstruction methods such as Neural Radiance Fields (NeRFs) excel at rendering photorealistic novel views of complex scenes. However, recovering a high-quality NeRF typically requires tens to hundreds of input images, resulting in a time-consuming capture process. We present ReconFusion to reconstruct real-world scenes using only a few photos. Our approach leverages a diffusion prior for novel view synthesis, trained on synthetic and multiview datasets, which regularizes a NeRF-based 3D reconstruction pipeline at novel camera poses beyond those captured by the set of input images. Our method synthesizes realistic geometry and texture in underconstrained regions while preserving the appearance of observed regions. We perform an extensive evaluation across various real-world datasets, including forward-facing and 360-degree scenes, demonstrating significant performance improvements over previous few-view NeRF reconstruction approaches.",
+      "arxiv_doi": "10.48550/arxiv.2312.02981",
+      "arxiv_id": "2312.02981",
+      "authors": [
+        "Rundi Wu",
+        "Ben Mildenhall",
+        "Philipp Henzler",
+        "Keunhong Park",
+        "Ruiqi Gao",
+        "Daniel Watson",
+        "Pratul P. Srinivasan",
+        "Dor Verbin",
+        "Jonathan T. Barron",
+        "Ben Poole",
+        "Aleksander Holynski"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: https://reconfusion.github.io/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wu et al.",
+      "id": "2312.02981",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.02981v1",
+            "value": "2023-12-05"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.02981",
+      "pdf_url": "https://arxiv.org/pdf/2312.02981.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-05",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "ReconFusion: 3D Reconstruction with Diffusion Priors",
+      "tldr": "Presents ReconFusion to reconstruct real-world scenes using only a few photos.",
+      "updated_date": "2023-12-05",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.03203": {
+      "abstract": "3D scene representations have gained immense popularity in recent years. Methods that use Neural Radiance fields are versatile for traditional tasks such as novel view synthesis. In recent times, some work has emerged that aims to extend the functionality of NeRF beyond view synthesis, for semantically aware tasks such as editing and segmentation using 3D feature field distillation from 2D foundation models. However, these methods have two major limitations: (a) they are limited by the rendering speed of NeRF pipelines, and (b) implicitly represented feature fields suffer from continuity artifacts reducing feature quality. Recently, 3D Gaussian Splatting has shown state-of-the-art performance on real-time radiance field rendering. In this work, we go one step further: in addition to radiance field rendering, we enable 3D Gaussian splatting on arbitrary-dimension semantic features via 2D foundation model distillation. This translation is not straightforward: naively incorporating feature fields in the 3DGS framework encounters significant challenges, notably the disparities in spatial resolution and channel consistency between RGB images and feature maps. We propose architectural and training changes to efficiently avert this problem. Our proposed method is general, and our experiments showcase novel view semantic segmentation, language-guided editing and segment anything through learning feature fields from state-of-the-art 2D foundation models such as SAM and CLIP-LSeg. Across experiments, our distillation method is able to provide comparable or better results, while being significantly faster to both train and render. Additionally, to the best of our knowledge, we are the first method to enable point and bounding-box prompting for radiance field manipulation, by leveraging the SAM model. Project website at: https://feature-3dgs.github.io/",
+      "arxiv_doi": "10.48550/arxiv.2312.03203",
+      "arxiv_id": "2312.03203",
+      "authors": [
+        "Shijie Zhou",
+        "Haoran Chang",
+        "Sicheng Jiang",
+        "Zhiwen Fan",
+        "Zehao Zhu",
+        "Dejia Xu",
+        "Pradyumna Chari",
+        "Suya You",
+        "Zhangyang Wang",
+        "Achuta Kadambi"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zhou et al.",
+      "id": "2312.03203",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.03203v3",
+            "value": "2023-12-06"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.03203",
+      "pdf_url": "https://arxiv.org/pdf/2312.03203.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-06",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Feature 3DGS: Supercharging 3D Gaussian Splatting to Enable Distilled Feature Fields",
+      "tldr": "Proposes architectural and training changes to efficiently avert this problem.",
+      "updated_date": "2024-04-08",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.03461": {
+      "abstract": "We have recently seen tremendous progress in photo-real human modeling and rendering. Yet, efficiently rendering realistic human performance and integrating it into the rasterization pipeline remains challenging. In this paper, we present HiFi4G, an explicit and compact Gaussian-based approach for high-fidelity human performance rendering from dense footage. Our core intuition is to marry the 3D Gaussian representation with non-rigid tracking, achieving a compact and compression-friendly representation. We first propose a dual-graph mechanism to obtain motion priors, with a coarse deformation graph for effective initialization and a fine-grained Gaussian graph to enforce subsequent constraints. Then, we utilize a 4D Gaussian optimization scheme with adaptive spatial-temporal regularizers to effectively balance the non-rigid prior and Gaussian updating. We also present a companion compression scheme with residual compensation for immersive experiences on various platforms. It achieves a substantial compression rate of approximately 25 times, with less than 2MB of storage per frame. Extensive experiments demonstrate the effectiveness of our approach, which significantly outperforms existing approaches in terms of optimization speed, rendering quality, and storage overhead.",
+      "arxiv_doi": "10.48550/arxiv.2312.03461",
+      "arxiv_id": "2312.03461",
+      "authors": [
+        "Yuheng Jiang",
+        "Zhehao Shen",
+        "Penghao Wang",
+        "Zhuo Su",
+        "Yu Hong",
+        "Yingliang Zhang",
+        "Jingyi Yu",
+        "Lan Xu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jiang et al.",
+      "id": "2312.03461",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.03461v2",
+            "value": "2023-12-06"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.03461",
+      "pdf_url": "https://arxiv.org/pdf/2312.03461.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-06",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "HiFi4G: High-Fidelity Human Performance Rendering via Compact Gaussian Splatting",
+      "tldr": "Presents HiFi4G, an explicit and compact Gaussian-based approach for high-fidelity human performance rendering from dense footage.",
+      "updated_date": "2023-12-07",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.04551": {
+      "abstract": "We introduce Free3D, a simple accurate method for monocular open-set novel view synthesis (NVS). Similar to Zero-1-to-3, we start from a pre-trained 2D image generator for generalization, and fine-tune it for NVS. Compared to other works that took a similar approach, we obtain significant improvements without resorting to an explicit 3D representation, which is slow and memory-consuming, and without training an additional network for 3D reconstruction. Our key contribution is to improve the way the target camera pose is encoded in the network, which we do by introducing a new ray conditioning normalization (RCN) layer. The latter injects pose information in the underlying 2D image generator by telling each pixel its viewing direction. We further improve multi-view consistency by using light-weight multi-view attention layers and by sharing generation noise between the different views. We train Free3D on the Objaverse dataset and demonstrate excellent generalization to new categories in new datasets, including OmniObject3D and GSO. The project page is available at https://chuanxiaz.com/free3d/.",
+      "arxiv_doi": "10.48550/arxiv.2312.04551",
+      "arxiv_id": "2312.04551",
+      "authors": [
+        "Chuanxia Zheng",
+        "Andrea Vedaldi"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "webpage: https://chuanxiaz.com/free3d/, code: https://github.com/lyndonzheng/Free3D",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Zheng et al.",
+      "id": "2312.04551",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.04551v2",
+            "value": "2023-12-07"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.04551",
+      "pdf_url": "https://arxiv.org/pdf/2312.04551.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-07",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Free3D: Consistent Novel View Synthesis without 3D Representation",
+      "tldr": "Introduces Free3D, a simple accurate method for monocular open-set novel view synthesis (NVS).",
+      "updated_date": "2024-03-30",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.04565": {
+      "abstract": "We present Multi-Baseline Radiance Fields (MuRF), a general feed-forward approach to solving sparse view synthesis under multiple different baseline settings (small and large baselines, and different number of input views). To render a target novel view, we discretize the 3D space into planes parallel to the target image plane, and accordingly construct a target view frustum volume. Such a target volume representation is spatially aligned with the target view, which effectively aggregates relevant information from the input views for high-quality rendering. It also facilitates subsequent radiance field regression with a convolutional network thanks to its axis-aligned nature. The 3D context modeled by the convolutional network enables our method to synthesis sharper scene structures than prior works. Our MuRF achieves state-of-the-art performance across multiple different baseline settings and diverse scenarios ranging from simple objects (DTU) to complex indoor and outdoor scenes (RealEstate10K and LLFF). We also show promising zero-shot generalization abilities on the Mip-NeRF 360 dataset, demonstrating the general applicability of MuRF.",
+      "arxiv_doi": "10.48550/arxiv.2312.04565",
+      "arxiv_id": "2312.04565",
+      "authors": [
+        "Haofei Xu",
+        "Anpei Chen",
+        "Yuedong Chen",
+        "Christos Sakaridis",
+        "Yulun Zhang",
+        "Marc Pollefeys",
+        "Andreas Geiger",
+        "Fisher Yu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024, Project Page: https://haofeixu.github.io/murf/, Code: https://github.com/autonomousvision/murf",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Xu et al.",
+      "id": "2312.04565",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.04565v2",
+            "value": "2023-12-07"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.04565",
+      "pdf_url": "https://arxiv.org/pdf/2312.04565.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-07",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "MuRF: Multi-Baseline Radiance Fields",
+      "tldr": "Presents Multi-Baseline Radiance Fields (MuRF), a general feed-forward approach to solving sparse view synthesis under multiple different baseline settings (small and large baselines, and different number...",
+      "updated_date": "2024-06-09",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.05664": {
+      "abstract": "Capturing and re-animating the 3D structure of articulated objects present significant barriers. On one hand, methods requiring extensively calibrated multi-view setups are prohibitively complex and resource-intensive, limiting their practical applicability. On the other hand, while single-camera Neural Radiance Fields (NeRFs) offer a more streamlined approach, they have excessive training and rendering costs. 3D Gaussian Splatting would be a suitable alternative but for two reasons. Firstly, existing methods for 3D dynamic Gaussians require synchronized multi-view cameras, and secondly, the lack of controllability in dynamic scenarios. We present CoGS, a method for Controllable Gaussian Splatting, that enables the direct manipulation of scene elements, offering real-time control of dynamic scenes without the prerequisite of pre-computing control signals. We evaluated CoGS using both synthetic and real-world datasets that include dynamic objects that differ in degree of difficulty. In our evaluations, CoGS consistently outperformed existing dynamic and controllable neural representations in terms of visual fidelity.",
+      "arxiv_doi": "10.48550/arxiv.2312.05664",
+      "arxiv_id": "2312.05664",
+      "authors": [
+        "Heng Yu",
+        "Joel Julin",
+        "Zoltán Á. Milacski",
+        "Koichiro Niinuma",
+        "László A. Jeni"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2024",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yu et al.",
+      "id": "2312.05664",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.05664v2",
+            "value": "2023-12-09"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.05664",
+      "pdf_url": "https://arxiv.org/pdf/2312.05664.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-09",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "CoGS: Controllable Gaussian Splatting",
+      "tldr": "Presents CoGS, a method for Controllable Gaussian Splatting, that enables the direct manipulation of scene elements, offering real-time control of dynamic scenes without the prerequisite of pre-computing...",
+      "updated_date": "2024-04-22",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.05941": {
+      "abstract": "Real-time rendering of photorealistic and controllable human avatars stands as a cornerstone in Computer Vision and Graphics. While recent advances in neural implicit rendering have unlocked unprecedented photorealism for digital avatars, real-time performance has mostly been demonstrated for static scenes only. To address this, we propose ASH, an animatable Gaussian splatting approach for photorealistic rendering of dynamic humans in real-time. We parameterize the clothed human as animatable 3D Gaussians, which can be efficiently splatted into image space to generate the final rendering. However, naively learning the Gaussian parameters in 3D space poses a severe challenge in terms of compute. Instead, we attach the Gaussians onto a deformable character model, and learn their parameters in 2D texture space, which allows leveraging efficient 2D convolutional architectures that easily scale with the required number of Gaussians. We benchmark ASH with competing methods on pose-controllable avatars, demonstrating that our method outperforms existing real-time methods by a large margin and shows comparable or even better results than offline methods.",
+      "arxiv_doi": "10.48550/arxiv.2312.05941",
+      "arxiv_id": "2312.05941",
+      "authors": [
+        "Haokai Pang",
+        "Heming Zhu",
+        "Adam Kortylewski",
+        "Christian Theobalt",
+        "Marc Habermann"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "For project page, see https://vcai.mpi-inf.mpg.de/projects/ash/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Pang et al.",
+      "id": "2312.05941",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.05941v2",
+            "value": "2023-12-10"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.05941",
+      "pdf_url": "https://arxiv.org/pdf/2312.05941.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-10",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "ASH: Animatable Gaussian Splats for Efficient and Photoreal Human Rendering",
+      "tldr": "To address this, we propose ASH, an animatable Gaussian splatting approach for photorealistic rendering of dynamic humans in real-time.",
+      "updated_date": "2024-04-15",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.06713": {
+      "abstract": "Neural Radiance Fields (NeRF) revolutionize the realm of visual media by providing photorealistic Free-Viewpoint Video (FVV) experiences, offering viewers unparalleled immersion and interactivity. However, the technology's significant storage requirements and the computational complexity involved in generation and rendering currently limit its broader application. To close this gap, this paper presents Temporal Tri-Plane Radiance Fields (TeTriRF), a novel technology that significantly reduces the storage size for Free-Viewpoint Video (FVV) while maintaining low-cost generation and rendering. TeTriRF introduces a hybrid representation with tri-planes and voxel grids to support scaling up to long-duration sequences and scenes with complex motions or rapid changes. We propose a group training scheme tailored to achieving high training efficiency and yielding temporally consistent, low-entropy scene representations. Leveraging these properties of the representations, we introduce a compression pipeline with off-the-shelf video codecs, achieving an order of magnitude less storage size compared to the state-of-the-art. Our experiments demonstrate that TeTriRF can achieve competitive quality with a higher compression rate.",
+      "arxiv_doi": "10.48550/arxiv.2312.06713",
+      "arxiv_id": "2312.06713",
+      "authors": [
+        "Minye Wu",
+        "Zehao Wang",
+        "Georgios Kouros",
+        "Tinne Tuytelaars"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "13 pages, 11 figures",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wu et al.",
+      "id": "2312.06713",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.06713v1",
+            "value": "2023-12-10"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.06713",
+      "pdf_url": "https://arxiv.org/pdf/2312.06713.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-10",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "TeTriRF: Temporal Tri-Plane Radiance Fields for Efficient Free-Viewpoint Video",
+      "tldr": "To close this gap, this paper presents Temporal Tri-Plane Radiance Fields (TeTriRF), a novel technology that significantly reduces the storage size for Free-Viewpoint Video (FVV) while maintaining low-cost...",
+      "updated_date": "2023-12-10",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.06725": {
+      "abstract": "Generating multiview images from a single view facilitates the rapid generation of a 3D mesh conditioned on a single image. Recent methods that introduce 3D global representation into diffusion models have shown the potential to generate consistent multiviews, but they have reduced generation speed and face challenges in maintaining generalizability and quality. To address this issue, we propose EpiDiff, a localized interactive multiview diffusion model. At the core of the proposed approach is to insert a lightweight epipolar attention block into the frozen diffusion model, leveraging epipolar constraints to enable cross-view interaction among feature maps of neighboring views. The newly initialized 3D modeling module preserves the original feature distribution of the diffusion model, exhibiting compatibility with a variety of base diffusion models. Experiments show that EpiDiff generates 16 multiview images in just 12 seconds, and it surpasses previous methods in quality evaluation metrics, including PSNR, SSIM and LPIPS. Additionally, EpiDiff can generate a more diverse distribution of views, improving the reconstruction quality from generated multiviews. Please see our project page at https://huanngzh.github.io/EpiDiff/.",
+      "arxiv_doi": "10.48550/arxiv.2312.06725",
+      "arxiv_id": "2312.06725",
+      "authors": [
+        "Zehuan Huang",
+        "Hao Wen",
+        "Junting Dong",
+        "Yaohui Wang",
+        "Yangguang Li",
+        "Xinyuan Chen",
+        "Yan-Pei Cao",
+        "Ding Liang",
+        "Yu Qiao",
+        "Bo Dai",
+        "Lu Sheng"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: https://huanngzh.github.io/EpiDiff/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Huang et al.",
+      "id": "2312.06725",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.06725v3",
+            "value": "2023-12-11"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.06725",
+      "pdf_url": "https://arxiv.org/pdf/2312.06725.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-11",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "EpiDiff: Enhancing Multi-View Synthesis via Localized Epipolar-Constrained Diffusion",
+      "tldr": "Proposes EpiDiff, a localized interactive multiview diffusion model.",
+      "updated_date": "2024-04-02",
+      "venue": null,
+      "year": 2023
+    },
+    "2312.06741": {
+      "abstract": "We present the first application of 3D Gaussian Splatting in monocular SLAM, the most fundamental but the hardest setup for Visual SLAM. Our method, which runs live at 3fps, utilises Gaussians as the only 3D representation, unifying the required representation for accurate, efficient tracking, mapping, and high-quality rendering. Designed for challenging monocular settings, our approach is seamlessly extendable to RGB-D SLAM when an external depth sensor is available. Several innovations are required to continuously reconstruct 3D scenes with high fidelity from a live camera. First, to move beyond the original 3DGS algorithm, which requires accurate poses from an offline Structure from Motion (SfM) system, we formulate camera tracking for 3DGS using direct optimisation against the 3D Gaussians, and show that this enables fast and robust tracking with a wide basin of convergence. Second, by utilising the explicit nature of the Gaussians, we introduce geometric verification and regularisation to handle the ambiguities occurring in incremental 3D dense reconstruction. Finally, we introduce a full SLAM system which not only achieves state-of-the-art results in novel view synthesis and trajectory estimation but also reconstruction of tiny and even transparent objects.",
+      "arxiv_doi": "10.48550/arxiv.2312.06741",
+      "arxiv_id": "2312.06741",
+      "authors": [
+        "Hidenobu Matsuki",
+        "Riku Murai",
+        "Paul H. J. Kelly",
+        "Andrew J. Davison"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR2024 Highlight. First two authors contributed equally to this work. Project Page: https://rmurai.co.uk/projects/GaussianSplattingSLAM/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Matsuki et al.",
+      "id": "2312.06741",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2312.06741v2",
+            "value": "2023-12-11"
+          }
+        ]
+      },
+      "month": 12,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2312.06741",
+      "pdf_url": "https://arxiv.org/pdf/2312.06741.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-12-11",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Gaussian Splatting SLAM",
+      "tldr": "Presents the first application of 3D Gaussian Splatting in monocular SLAM, the most fundamental but the hardest setup for Visual SLAM.",
+      "updated_date": "2024-04-14",
+      "venue": null,
+      "year": 2023
+    }
+  },
+  "requested_ids": [
+    "2305.15094",
+    "2308.13223",
+    "2309.11281",
+    "2309.13101",
+    "2309.16585",
+    "2310.08528",
+    "2310.08529",
+    "2310.11448",
+    "2310.17994",
+    "2311.11845",
+    "2311.12198",
+    "2311.13681",
+    "2311.14521",
+    "2311.15803",
+    "2311.16037",
+    "2311.17061",
+    "2311.17089",
+    "2311.17113",
+    "2311.17261",
+    "2311.17754",
+    "2311.17910",
+    "2311.17977",
+    "2311.18482",
+    "2312.01407",
+    "2312.01663",
+    "2312.02069",
+    "2312.02134",
+    "2312.02136",
+    "2312.02137",
+    "2312.02973",
+    "2312.02981",
+    "2312.03203",
+    "2312.03461",
+    "2312.04551",
+    "2312.04565",
+    "2312.05664",
+    "2312.05941",
+    "2312.06713",
+    "2312.06725",
+    "2312.06741"
+  ]
+}
