@@ -1,16 +1,16 @@
 {
   "run_directory": "data\\ingestion\\backfill\\full-v3-20261110",
   "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
-  "source_complete": false,
+  "source_complete": true,
   "source": {
-    "status": "running",
+    "status": "complete",
     "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
-    "invocation_requests": 40,
-    "known_total_attempts": 366,
+    "invocation_requests": 3,
+    "known_total_attempts": 369,
     "interrupted_attempt_upper_bound": 0,
     "intervals": 340,
-    "completed_intervals": 338,
-    "unique_in_interval": null
+    "completed_intervals": 340,
+    "unique_in_interval": 4466
   },
   "setup_requests": 0,
   "corpus_written": false,
@@ -19,5 +19,22 @@
   "cutoff": "2026-11-10T00:00:00+00:00",
   "lower_bound_method": "earliest_matching_month",
   "global_matching_count_at_earliest_probe": 4466,
-  "budget_exhausted": true
+  "comparator_reported_count_inclusive_api_bounds": 3996,
+  "comparator_status": "observed",
+  "outcomes": {
+    "include": 4066,
+    "exclude": 41,
+    "review": 359
+  },
+  "operations": {
+    "inserted": 3823,
+    "updated": 211,
+    "unchanged": 0,
+    "merged": 32,
+    "none": 400
+  },
+  "inserted_canonical_records": 3823,
+  "relevance_review_pending": 359,
+  "import_plan": "data\\ingestion\\backfill\\full-v3-20261110\\imports\\85a8bcc9ee570c980f8cb5afcf50de480ad9cf55d1ae811c6bdc667469fd01a3.json",
+  "total_invocation_requests": 4
 }

@@ -4368,6 +4368,42 @@
       "start": 0,
       "started_at": "2026-11-10T18:25:54.237374Z",
       "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T18:28:49.251644Z",
+      "replay": true,
+      "rows": 100,
+      "slice_id": "f1da13dc760296bb",
+      "start": 0,
+      "started_at": "2026-11-10T18:28:48.317261Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T18:28:53.671329Z",
+      "replay": false,
+      "rows": 94,
+      "slice_id": "f1da13dc760296bb",
+      "start": 100,
+      "started_at": "2026-11-10T18:28:49.504315Z",
+      "status": "succeeded"
+    },
+    {
+      "attempt_budget": 3,
+      "attempts": 1,
+      "error": null,
+      "finished_at": "2026-11-10T18:28:57.222092Z",
+      "replay": false,
+      "rows": 47,
+      "slice_id": "4319c4d047e826f8",
+      "start": 0,
+      "started_at": "2026-11-10T18:28:53.987981Z",
+      "status": "succeeded"
     }
   ],
   "roots": [
@@ -6470,14 +6506,21 @@
     "4319c4d047e826f8": {
       "children": [],
       "end": "2026-11-10T00:00:00Z",
-      "expected_total": null,
+      "expected_total": 47,
       "last_error": null,
-      "offset": 0,
-      "pages": [],
+      "offset": 47,
+      "pages": [
+        {
+          "count": 47,
+          "path": "pages/4319c4d047e826f8/00000000.e54339cc40eec40eb6a3e903aecae2efd36a730b57cfe2a1566426a263a3a42d.json",
+          "sha256": "e54339cc40eec40eb6a3e903aecae2efd36a730b57cfe2a1566426a263a3a42d",
+          "start": 0
+        }
+      ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[202611010000 TO 202611100000]",
       "start": "2026-11-01T00:00:00Z",
-      "status": "pending"
+      "status": "complete"
     },
     "434c5a0eefb33b95": {
       "children": [],
@@ -11063,19 +11106,25 @@
       "end": "2026-11-01T00:00:00Z",
       "expected_total": 194,
       "last_error": null,
-      "offset": 100,
+      "offset": 194,
       "pages": [
         {
           "count": 100,
-          "path": "pages/f1da13dc760296bb/00000000.5303c16df178efaaf5b0fd1d77c18fc705e005c83e9af78853e1e65b75751446.json",
-          "sha256": "5303c16df178efaaf5b0fd1d77c18fc705e005c83e9af78853e1e65b75751446",
+          "path": "pages/f1da13dc760296bb/00000000.53fa9b10e68f21096285edda1d20671c333ee5896bb9d4c96a3584423cf7f502.json",
+          "sha256": "53fa9b10e68f21096285edda1d20671c333ee5896bb9d4c96a3584423cf7f502",
           "start": 0
+        },
+        {
+          "count": 94,
+          "path": "pages/f1da13dc760296bb/00000100.a6c342b29237a88f8722aef3c83fcfb20e22af2f35a9ac8fd791f748ab7c8464.json",
+          "sha256": "a6c342b29237a88f8722aef3c83fcfb20e22af2f35a9ac8fd791f748ab7c8464",
+          "start": 100
         }
       ],
       "probe": null,
       "query": "(all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\") AND submittedDate:[202610010000 TO 202611010000]",
       "start": "2026-10-01T00:00:00Z",
-      "status": "running"
+      "status": "complete"
     },
     "f20dd55f11b2fda5": {
       "children": [],
@@ -11316,5 +11365,5 @@
     "since": "1998-08-01T00:00:00Z",
     "until": "2026-11-10T00:00:00Z"
   },
-  "status": "running"
+  "status": "complete"
 }
