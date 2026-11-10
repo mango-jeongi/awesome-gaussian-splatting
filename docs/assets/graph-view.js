@@ -45,7 +45,7 @@
         wrapper.appendChild(select);controls.appendChild(wrapper);
       }
       panel.appendChild(controls);
-      const canvas=document.createElement('div');canvas.id='citationCanvas';canvas.style.height='480px';canvas.style.maxWidth='100%';canvas.setAttribute('aria-label','Citation graph; equivalent keyboard links follow');panel.appendChild(canvas);
+      const canvas=document.createElement('div');canvas.id='citationCanvas';canvas.style.height='480px';canvas.style.maxWidth='100%';canvas.style.overflow='hidden';canvas.setAttribute('aria-label','Citation graph; equivalent keyboard links follow');panel.appendChild(canvas);
       const list=document.createElement('details');list.open=true;
       const summary=document.createElement('summary');summary.textContent='Papers and directed relationships (keyboard accessible)';list.appendChild(summary);
       const ul=document.createElement('ul');

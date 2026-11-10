@@ -1,0 +1,11 @@
+{
+  "name": "awesome-gaussian-splatting-portal",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss --config tailwind.config.cjs --input config/portal.css --output docs/assets/portal.css --minify",
+    "check:css": "npm run build:css && git diff --exit-code -- docs/assets/portal.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

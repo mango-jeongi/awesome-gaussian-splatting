@@ -179,3 +179,15 @@ reports2,872; the one-paper aggregate discrepancy and remaining scope reviews
 are retained as unresolved. Source HTML, hashes, author-list differences and
 comparison evidence live under the capture directory. Canonical identity/date
 verification and any eventual import are separate steps.
+
+## Portal styling and browser acceptance
+
+The portal uses the committed `docs/assets/portal.css`, compiled with the pinned
+Tailwind version in `package-lock.json`. After editing utility classes in HTML or
+browser assets, run `npm ci --ignore-scripts --include=dev` and `npm run build:css`,
+then review and commit the generated CSS. CI runs `npm run check:css` to detect
+stale styles. Paper-only ingestion uses the committed stylesheet.
+
+The isolated 5,000-record fixture, project-path gzip preview server and real-browser
+acceptance recipes are documented in [scripts/qa](scripts/qa/README.md). Recorded
+measurements and their limits are in [the portal acceptance report](reports/portal-acceptance-20261110.md).

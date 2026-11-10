@@ -5,24 +5,7 @@
   <link rel="icon" href="data:," />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Awesome 3D Gaussian Splatting — Comprehensive Research Database</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0f9ff',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              600: '#0284c7',
-            }
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="./assets/portal.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
@@ -238,6 +221,7 @@
     let renderGeneration = 0;
     let modalGeneration = 0;
     let routeGeneration = 0;
+    let relationshipHeadingSequence = 0;
     let activeView = 'catalog';
     let restoredPage = null;
     const routePanel = document.getElementById('paperRoute');
@@ -252,6 +236,57 @@
       if (activeView === 'catalog') history.replaceState({scroll: scrollY}, '', catalogHash());
     }
     function paperLink(id) { return '#/paper/' + encodeURIComponent(id); }
+    function renderRelationships(container, paper, headingLevel = 'h2') {
+      const pageSize = 50;
+      container.replaceChildren();
+      for (const [key, label, shortLabel, ids] of [
+        ['references', 'References in this corpus', 'references', paper.db_references || []],
+        ['citations', 'Cited by in this corpus', 'citing papers', paper.db_citations || []],
+      ]) {
+        const section = document.createElement('section');
+        section.dataset.relationship = key;
+        const heading = document.createElement(headingLevel);
+        heading.id = 'relationship-' + (++relationshipHeadingSequence);
+        heading.textContent = label + ` (${ids.length})`;
+        section.setAttribute('aria-labelledby', heading.id);
+        section.appendChild(heading);
+        if (!ids.length) {
+          section.appendChild(document.createTextNode('No matched relationships in this build.'));
+          container.appendChild(section);
+          continue;
+        }
+        const rows = document.createElement('ul');
+        section.appendChild(rows);
+        const controls = document.createElement('nav');
+        controls.setAttribute('aria-label', label + ' pages');
+        controls.className = 'flex flex-wrap items-center gap-3 my-2';
+        const previous = document.createElement('button'), next = document.createElement('button');
+        previous.type = next.type = 'button';
+        previous.textContent = 'Previous'; next.textContent = 'Next';
+        previous.setAttribute('aria-label', 'Previous ' + shortLabel);
+        next.setAttribute('aria-label', 'Next ' + shortLabel);
+        previous.className = next.className = 'px-3 py-1 rounded border border-slate-400 disabled:opacity-40';
+        const status = document.createElement('span');
+        status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+        controls.append(previous, status, next);
+        let currentPage = 0;
+        const pageCount = Math.ceil(ids.length / pageSize);
+        const paint = () => {
+          rows.replaceChildren();
+          for (const target of ids.slice(currentPage * pageSize, (currentPage + 1) * pageSize)) {
+            const item = document.createElement('li'), link = document.createElement('a');
+            link.href = paperLink(target); link.textContent = paperById.get(target)?.title || target;
+            link.className = 'block underline my-1'; item.appendChild(link); rows.appendChild(item);
+          }
+          status.textContent = `Page ${currentPage + 1} of ${pageCount} · ${ids.length} papers`;
+          previous.disabled = currentPage === 0; next.disabled = currentPage + 1 === pageCount;
+        };
+        previous.addEventListener('click', () => { if (currentPage > 0) { currentPage--; paint(); } });
+        next.addEventListener('click', () => { if (currentPage + 1 < pageCount) { currentPage++; paint(); } });
+        if (pageCount > 1) section.appendChild(controls);
+        paint(); container.appendChild(section);
+      }
+    }
     async function handleRoute() {
       if (!publicManifest) return;
       const generation = ++routeGeneration;
@@ -330,19 +365,7 @@
           <div data-relationships></div></article>`;
         window.renderReviewedBenchmarks(routePanel.querySelector('[data-reviewed-benchmarks]'), paper);
         const relationships = routePanel.querySelector('[data-relationships]');
-        for (const [label, ids] of [['References in this corpus', paper.db_references || []], ['Cited by in this corpus', paper.db_citations || []]]) {
-          const section = document.createElement('section');
-          const heading = document.createElement('h2');
-          heading.textContent = label + ` (${ids.length})`;
-          section.appendChild(heading);
-          if (!ids.length) section.appendChild(document.createTextNode('No matched relationships in this build.'));
-          for (const target of ids) {
-            const link = document.createElement('a');
-            link.href = paperLink(target); link.textContent = paperById.get(target)?.title || target;
-            link.className = 'block underline my-1'; section.appendChild(link);
-          }
-          relationships.appendChild(section);
-        }
+        renderRelationships(relationships, paper);
         routePanel.querySelector('h1').focus({preventScroll:true});
         window.scrollTo(0, 0);
       } catch (error) {
@@ -368,6 +391,8 @@
     const paperById = new Map();
     const detailCache = new Map();
     const sortedCatalog = new Map();
+    const cardNodes = new Map();
+    const cardNodeLimit = pageSize * 2;
 
     async function fetchJson(url) {
       const response = await fetch(url);
@@ -751,7 +776,7 @@
         return;
       }
 
-      papersContainer.innerHTML = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(p => {
+      const cards = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(p => {
         const venueHtml = p.venue
           ? `<span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">${escapeHtml(p.venue)}</span>`
           : '';
@@ -765,7 +790,7 @@
             #${escapeHtml(t)}
           </button>`).join('');
 
-        return `
+        const markup = `
           <article class="paper-card p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition shadow-xs">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
               <div class="flex flex-wrap items-center gap-2">
@@ -810,7 +835,22 @@
               </details>
             </div>
           </article>`;
-      }).join('');
+        let cached = cardNodes.get(p.id);
+        if (!cached || cached.markup !== markup) {
+          const template = document.createElement('template');
+          template.innerHTML = markup.trim();
+          cached = {markup, node: template.content.firstElementChild};
+        }
+        cardNodes.delete(p.id); cardNodes.set(p.id, cached);
+        while (cardNodes.size > cardNodeLimit) cardNodes.delete(cardNodes.keys().next().value);
+        return cached.node;
+      });
+      let cursor = papersContainer.firstChild;
+      for (const card of cards) {
+        if (card === cursor) cursor = cursor.nextSibling;
+        else papersContainer.insertBefore(card, cursor);
+      }
+      while (cursor) { const next = cursor.nextSibling; cursor.remove(); cursor = next; }
       saveCatalog();
     }
 
@@ -852,23 +892,10 @@
         const paper = await loadPaper(element.dataset.paperId);
         if (!element.isConnected) return;
         content.innerHTML = `<p class="mb-2">${escapeHtml(paper.authors.join(', '))}</p><p>${escapeHtml(paper.abstract || 'Abstract unavailable.')}</p>`;
-        for (const [label, ids] of [['References in DB', paper.db_references || []], ['Cited by in DB', paper.db_citations || []]]) {
-          if (!ids.length) continue;
-          const section = document.createElement('div');
-          section.className = 'mt-3';
-          const heading = document.createElement('strong');
-          heading.textContent = `${label}: `;
-          section.appendChild(heading);
-          for (const id of ids) {
-            const button = document.createElement('button');
-            button.dataset.action = 'jump';
-            button.dataset.value = id;
-            button.textContent = paperById.get(id)?.title || id;
-            button.className = 'underline m-1';
-            section.appendChild(button);
-          }
-          content.appendChild(section);
-        }
+        const relationships = document.createElement('div');
+        relationships.className = 'mt-3';
+        content.appendChild(relationships);
+        renderRelationships(relationships, paper, 'h3');
       } catch (error) {
         if (element.isConnected) content.textContent = `Details failed: ${error.message}. Close and reopen to retry.`;
       }
@@ -885,6 +912,7 @@
         sortedCatalog.clear();
         paperById.clear();
         detailCache.clear();
+        cardNodes.clear();
         allPapers = index.papers.map(row => {
           const paper = Object.fromEntries(index.fields.map((field, position) => [field, row[position]]));
           paper.detail_path = index.detail_paths[paper.detail_path];

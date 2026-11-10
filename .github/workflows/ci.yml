@@ -38,6 +38,11 @@ jobs:
       - name: Verify Node for browser projection parity
         run: node --version
 
+      - name: Verify compiled portal CSS
+        run: |
+          npm ci --ignore-scripts --include=dev --no-audit --no-fund
+          npm run check:css
+
       - name: Run Pytest unit suite
         run: uv run pytest -v
 
