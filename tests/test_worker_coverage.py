@@ -75,3 +75,32 @@ def test_unsupported_input_and_local_source_review_task(tmp_path):
     assert report.summary == {"unsupported": 1, "queued": 1}
     assert "size_limit" in report.records["p"]["reason"]
     assert report.records["q"]["job_key"] is None
+
+
+@pytest.mark.parametrize("kind", ["queue_file", "missing", "empty_directory"])
+def test_coverage_cli_rejects_invalid_queue_without_writing_report(tmp_path, capsys, kind):
+    from src.workers.__main__ import main
+
+    queue = tmp_path / "queue"
+    if kind == "queue_file":
+        queue.write_text('{"schema_version":"1.0.0","jobs":{}}')
+    elif kind == "empty_directory":
+        queue.mkdir()
+    output = tmp_path / "coverage.json"
+    with pytest.raises(SystemExit) as error:
+        main(
+            [
+                "coverage",
+                "--data",
+                str(tmp_path / "not-read.json"),
+                "--queue",
+                str(queue),
+                "--extractor-version",
+                "v1",
+                "--output",
+                str(output),
+            ]
+        )
+    assert error.value.code == 2
+    assert "existing queue directory containing queue.json" in capsys.readouterr().err
+    assert not output.exists()

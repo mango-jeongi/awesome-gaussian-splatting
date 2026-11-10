@@ -37,7 +37,13 @@ def main(argv=None):
     review_parser.add_argument("--dry-run", action="store_true")
     coverage_parser = sub.add_parser("coverage")
     coverage_parser.add_argument("--data", type=Path, required=True)
-    coverage_parser.add_argument("--queue", type=Path, action="append", default=[])
+    coverage_parser.add_argument(
+        "--queue",
+        type=Path,
+        action="append",
+        default=[],
+        help="Existing queue directory containing queue.json; repeat for multiple queues",
+    )
     coverage_parser.add_argument("--reviewed", type=Path)
     coverage_parser.add_argument("--local-sources", type=Path)
     coverage_parser.add_argument("--extractor-version", required=True)
@@ -63,6 +69,11 @@ def main(argv=None):
         from src.workers.coverage import scan_coverage
         from src.workers.review import ReviewedExtractionStore
 
+        for path in args.queue:
+            if not path.is_dir() or not (path / "queue.json").is_file():
+                parser.error(
+                    f"--queue requires an existing queue directory containing queue.json: {path}"
+                )
         reviewed = (
             ReviewedExtractionStore.model_validate_json(args.reviewed.read_bytes())
             if args.reviewed
