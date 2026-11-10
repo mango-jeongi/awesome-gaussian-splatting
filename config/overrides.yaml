@@ -1,4 +1,3 @@
-# Explicit source-backed foundation scope; no generic NeRF inclusion.
 schema_version: 1.0.0
 relevance:
 - identifiers:
@@ -64,3 +63,51 @@ relevance:
     reviewed_at: '2026-11-09T17:39:20.959563Z'
   reviewed_by: Codex (source metadata and foundation scope review)
   reviewed_at: '2026-11-09T17:39:20.959563Z'
+- identifiers:
+  - '2503.18421'
+  action: include
+  reason: The official author abstract describes a proposed motion-aware dynamic Gaussian
+    representation and rate-aware compression of its Gaussian attributes for free-viewpoint
+    video. Gaussian primitives are the method representation, rather than a comparison-only
+    mention.
+  evidence:
+  - source: author-publication-scope-review
+    source_url: https://openaccess.thecvf.com/content/CVPR2025/html/Hu_4DGC_Rate-Aware_4D_Gaussian_Compression_for_Efficient_Streamable_Free-Viewpoint_Video_CVPR_2025_paper.html
+    value:
+      official_capture_sha256: 239267de2e40ef38af4a83fcaebfff9581a7ff304c51d07916120ce37a1908a2
+      scope_justification: The official author abstract describes a proposed motion-aware
+        dynamic Gaussian representation and rate-aware compression of its Gaussian
+        attributes for free-viewpoint video. Gaussian primitives are the method representation,
+        rather than a comparison-only mention.
+      title: '4DGC: Rate-Aware 4D Gaussian Compression for Efficient Streamable Free-Viewpoint
+        Video'
+    observed_at: '2026-11-10T04:37:02.204002Z'
+    reviewed_by: Codex source review (not independent human review)
+    reviewed_at: '2026-11-10T18:14:18.194967Z'
+  reviewed_by: Codex source review (not independent human review)
+  reviewed_at: '2026-11-10T18:14:18.194967Z'
+- identifiers:
+  - '2502.14454'
+  action: include
+  reason: The author manuscript explicitly implements the DeepDeblurRF-G variant with
+    3D Gaussian Splatting (Figure 1 and experimental implementation), establishing
+    a concrete GS application beyond the abstract compatibility statement.
+  evidence:
+  - source: author-publication-scope-review
+    source_url: https://arxiv.org/html/2502.14454v1
+    value:
+      fulltext_capture_sha256: 95f29e718ca10309f15373ec1bb93ea8073e0db2d921518448f05da70d32e8db
+      fulltext_source_url: https://arxiv.org/html/2502.14454v1
+      official_capture_sha256: dd474b127c6baf2e478ebe2a88a9a4a0a1ea8bdaf43ed38c15da4b7ff595f466
+      scope_justification: The author manuscript explicitly implements the DeepDeblurRF-G
+        variant with 3D Gaussian Splatting (Figure 1 and experimental implementation),
+        establishing a concrete GS application beyond the abstract compatibility statement.
+      section_evidence:
+      - 'Figure 1: DeepDeblurRF-G'
+      - 'Section 5: implementation details'
+      title: Exploiting Deblurring Networks for Radiance Fields
+    observed_at: '2026-11-10T18:14:18.194967Z'
+    reviewed_by: Codex source review (not independent human review)
+    reviewed_at: '2026-11-10T18:14:18.194967Z'
+  reviewed_by: Codex source review (not independent human review)
+  reviewed_at: '2026-11-10T18:14:18.194967Z'

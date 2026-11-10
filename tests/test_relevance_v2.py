@@ -102,6 +102,8 @@ def test_foundations_require_exact_reviewed_identity_and_keep_source_evidence():
     assert not policy.decide(unknown).override
     for override in policy.config.relevance:
         assert override.reviewed_at.utcoffset() is not None
+        if not set(override.identifiers) & {"2003.08934", "2103.13415", "2201.05989"}:
+            continue
         assert override.evidence[0].source_url.startswith("https://arxiv.org/abs/")
         assert override.evidence[0].value["source_capture_sha256"]
 
@@ -129,3 +131,20 @@ def test_frozen_development_and_challenge_are_identity_disjoint_and_meet_thresho
             keys.update(paper_keys(PaperRecord.model_validate(row["paper"])))
         inventories.append(keys)
     assert not inventories[0].intersection(inventories[1])
+
+
+def test_reviewed_cvpr_applications_require_exact_identity_and_captured_evidence():
+    root = Path(__file__).resolve().parents[1]
+    policy = RelevancePolicy.load(root / "config/overrides.yaml")
+    for identifier in ("2503.18421", "2502.14454"):
+        record = PaperRecord(arxiv_id=identifier, title="Source-reviewed application")
+        decision = policy.decide(record)
+        assert decision.outcome == "include" and decision.override
+        override = next(x for x in policy.config.relevance if identifier in x.identifiers)
+        evidence = override.evidence[0]
+        assert evidence.reviewed_by and evidence.reviewed_at >= evidence.observed_at
+        assert len(evidence.value["official_capture_sha256"]) == 64
+        assert evidence.source_url.startswith(
+            ("https://openaccess.thecvf.com/", "https://arxiv.org/html/")
+        )
+    assert not policy.decide(PaperRecord(title="DeepDeblurRF-G 4DGC")).override
