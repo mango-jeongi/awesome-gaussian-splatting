@@ -1,0 +1,116 @@
+name: Redeploy Retained Pages Candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Run retaining the approved release archive"
+        required: true
+        type: string
+      source_attempt:
+        description: "Source run attempt number"
+        required: true
+        type: string
+        default: "1"
+      release_id:
+        description: "Expected 64-character release ID from the original candidate receipt"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: repository-writer
+  cancel-in-progress: false
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout trusted archive verifier
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.3
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+
+      - name: Validate inputs and download the retained candidate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          SOURCE_ATTEMPT: ${{ inputs.source_attempt }}
+          EXPECTED_RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]{0,19}$ ]] || exit 1
+          [[ "$SOURCE_ATTEMPT" =~ ^[1-9][0-9]{0,4}$ ]] || exit 1
+          [[ "$EXPECTED_RELEASE_ID" =~ ^[a-f0-9]{64}$ ]] || exit 1
+          gh run download "$SOURCE_RUN_ID" --name "papers-release-$EXPECTED_RELEASE_ID-$SOURCE_ATTEMPT" --dir "$RUNNER_TEMP/retained-release"
+
+      - name: Verify archive digest and restore exact immutable bytes
+        id: restored
+        env:
+          EXPECTED_RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          uv run python -c 'import hashlib, json, os, pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"retained-release"; r=json.loads((p/"receipt.json").read_bytes()); assert r["release_id"]==os.environ["EXPECTED_RELEASE_ID"]; assert hashlib.sha256((p/"release.tar").read_bytes()).hexdigest()==r["archive_sha256"]'
+          uv run python -m src.releases restore --archive "$RUNNER_TEMP/retained-release/release.tar" --expected-release-id "$EXPECTED_RELEASE_ID" --output "$RUNNER_TEMP/restored-site"
+          uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"restored-site/release.json").read_bytes()); print("source_revision="+r["source_revision"]); print("release_tag="+(r.get("release_tag") or ""))' >> "$GITHUB_OUTPUT"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload restored Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          name: github-pages-redeploy-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/restored-site
+
+      - name: Deploy retained candidate without rebuilding data
+        id: deployment
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-redeploy-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Verify restored deployment
+        env:
+          DEPLOYED_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          uv run python -m src.releases verify-url --base-url "$DEPLOYED_BASE_URL" --expected-release-id "$EXPECTED_RELEASE_ID" --report "$RUNNER_TEMP/deployment-verification.json"
+          echo "- Redeployed and byte-verified retained candidate: $EXPECTED_RELEASE_ID" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain redeployment verification
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: redeployment-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/deployment-verification.json
+          retention-days: 90
+          if-no-files-found: warn
+
+      - name: Publish a matching weekly candidate only after verification
+        if: steps.restored.outputs.release_tag != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ steps.restored.outputs.release_tag }}
+          SOURCE_REVISION: ${{ steps.restored.outputs.source_revision }}
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]{4}\.W(0[1-9]|[1-4][0-9]|5[0-3])$ ]] || exit 1
+          git fetch origin tag "$RELEASE_TAG"
+          [[ "$(git rev-parse "$RELEASE_TAG^{commit}")" == "$SOURCE_REVISION" ]] || exit 1
+          gh release edit "$RELEASE_TAG" --draft=false

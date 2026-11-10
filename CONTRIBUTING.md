@@ -341,3 +341,70 @@ verified one source-grounded synthetic value. The optional configuration accepts
 the extractor/job digest. Context fields were empty in this canary, and the
 updated adapter is not deployed into the active worker. Live real-table quality,
 full-length context, warm performance and persistent model operation remain open.
+
+## Immutable release, retry and rollback
+
+The weekly workflow now prepares a GitHub draft release, commits its generated
+candidate, and packages a frozen site outside the working tree. The packer requires
+a clean checkout and committed code/data/site inputs, verifies the public manifest
+and every referenced artifact, and rebuilds the current data projection in isolation
+to refuse stale source or provider-cache output. Local coordination locks are not
+published. Unknown ignored/uncommitted site files are refused rather than copied.
+
+A release ID binds the source commit/tag, code/config/dependency and canonical/
+provider/review input hashes, public data build digest and every static file byte.
+The public payload includes canonical `release.json`; it contains hashes and
+relative input names, not raw private provider responses or credentials. Source
+fingerprints cover either legacy or active monthly-store components. An input
+change during packaging fails safely. The deterministic tar fixes path order,
+metadata, ownership and timestamps; identical input bytes produce identical tar
+bytes. Packaging fails rather than replacing an existing output directory.
+
+From a committed candidate in the prescribed SSD environment:
+
+```sh
+uv run python -m src.releases pack --output <new-staging-directory>
+uv run python -m src.releases restore --archive <release.tar> --expected-release-id <trusted-release-id> --output <new-restored-site>
+```
+
+For a tagged weekly candidate, add `--release-tag vYYYY.Www`; the CLI checks that
+the local tag points to the exact candidate commit. The pack output contains
+`site/`, `release.tar` and `receipt.json` with archive SHA-256 and source/release IDs.
+Archives are size/file-count bounded. Restore validates the expected release ID,
+all content hashes and public pointers before writing a new directory; absolute,
+traversing, link, duplicate and unsupported members are refused. It never rebuilds
+an old portal with current data. Retain the trusted release ID outside the archive;
+accepting an arbitrary ID read from an unknown archive would not authenticate it.
+
+The weekly workflow retains `papers-release-<release-id>-<source-attempt>` for
+90 days (subject to repository retention policy) using a verified pinned upload
+action. The Pages artifact is separately named by candidate and source attempt.
+Deploy-only job retries consume that exact artifact name. Candidate source code
+is checked out for deployed-byte verification. A GitHub release leaves draft state
+only after the expected deployed release ID, manifest and every candidate file
+are verified. Static-byte checks do not replace browser route/history/mobile QA.
+
+For retries after the short-lived Pages artifact expires, or deliberate rollback,
+manually dispatch `redeploy-pages.yml` with the original source run ID, its source
+attempt number, and the trusted release ID from that candidate receipt. The
+workflow downloads the retained archive, checks its receipt/hash, restores it,
+uploads those exact bytes and verifies the deployment. It does not merge feed,
+refresh signals, build artifacts, change canonical data or reuse current shards.
+A matching weekly draft may be published only after verification and a source-tag
+commit check. Existing data/migration reverts remain a separate reviewed Git step.
+
+Both deployment paths share `repository-writer` serialization. Dispatch inputs
+are validated and passed through environment variables. Verification has a
+five-minute admission/stream budget, 20-second network timeouts and a 200 MB
+decoded-byte ceiling; an in-flight request may finish its bounded transport timeout
+past admission. It refuses redirects and non-HTTPS deployment bases, detects a
+release changing between requests, and stores explicit success/failure diagnostics.
+The CLI writes new reports outside canonical data/deployed docs and never accepts
+partial verification as success.
+
+These workflow definitions are prepared locally. Remote dispatch, artifact
+retention/retrieval, Pages deployment, CDN behavior, workflow races and production
+rollback still need live evidence after an authorized rollout. No production
+release is claimed from local archive tests alone.
+Official contracts: [upload-artifact](https://github.com/actions/upload-artifact),
+[Pages artifact packaging](https://github.com/actions/upload-pages-artifact).

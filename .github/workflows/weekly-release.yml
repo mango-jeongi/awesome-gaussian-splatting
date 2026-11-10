@@ -18,6 +18,11 @@ concurrency:
 jobs:
   release-and-build:
     name: Merge feed -> main, Tag Release & Prepare Pages
+    outputs:
+      release_id: ${{ steps.candidate.outputs.release_id }}
+      source_revision: ${{ steps.candidate.outputs.source_revision }}
+      weekly_tag: ${{ steps.tag.outputs.weekly_tag }}
+      pages_artifact_name: ${{ steps.candidate.outputs.pages_artifact_name }}
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout main
@@ -68,6 +73,7 @@ jobs:
           uv run python -m src.cli validate
 
       - name: Commit, Tag Weekly Release (vYYYY.Www) & Reset feed
+        id: tag
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -90,25 +96,86 @@ jobs:
             git push origin "$TAG"
           fi
           if ! gh release view "$TAG" >/dev/null 2>&1; then
-            gh release create "$TAG" --title "Weekly 3DGS Paper Digest ($TAG)" --generate-notes
+            gh release create "$TAG" --draft --title "Weekly 3DGS Paper Digest ($TAG)" --generate-notes
           fi
+
+          echo "weekly_tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Freeze exact code/data/site release candidate
+        id: candidate
+        env:
+          WEEKLY_TAG: ${{ steps.tag.outputs.weekly_tag }}
+        run: |
+          uv run python -m src.releases pack --release-tag "$WEEKLY_TAG" --output "$RUNNER_TEMP/papers-release"
+          uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"papers-release/receipt.json").read_bytes()); print("release_id="+r["release_id"]); print("source_revision="+r["source_revision"]); print("pages_artifact_name=github-pages-"+r["release_id"]+"-"+os.environ["GITHUB_RUN_ATTEMPT"])' >> "$GITHUB_OUTPUT"
+
+      - name: Retain immutable release and rollback archive
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: papers-release-${{ steps.candidate.outputs.release_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/papers-release/release.tar
+            ${{ runner.temp }}/papers-release/receipt.json
+          retention-days: 90
+          if-no-files-found: error
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
-      - name: Upload static site artifact (docs/)
+      - name: Upload frozen candidate site
         uses: actions/upload-pages-artifact@v5
         with:
-          path: "docs"
+          name: ${{ steps.candidate.outputs.pages_artifact_name }}
+          path: ${{ runner.temp }}/papers-release/site
 
   deploy-pages:
-    name: Deploy to GitHub Pages
+    name: Deploy and verify immutable candidate
+    timeout-minutes: 10
     needs: release-and-build
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout the exact candidate verifier
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.release-and-build.outputs.source_revision }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.3
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ needs.release-and-build.outputs.pages_artifact_name }}
+
+      - name: Verify deployed manifest and every candidate file
+        env:
+          DEPLOYED_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_RELEASE_ID: ${{ needs.release-and-build.outputs.release_id }}
+        run: |
+          uv run python -m src.releases verify-url --base-url "$DEPLOYED_BASE_URL" --expected-release-id "$EXPECTED_RELEASE_ID" --report "$RUNNER_TEMP/deployment-verification.json"
+          echo "- Verified deployed release: $EXPECTED_RELEASE_ID" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain deployment verification result
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: deployment-verification-${{ needs.release-and-build.outputs.release_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/deployment-verification.json
+          retention-days: 90
+          if-no-files-found: warn
+
+      - name: Publish release only after deployment verification
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WEEKLY_TAG: ${{ needs.release-and-build.outputs.weekly_tag }}
+        run: gh release edit "$WEEKLY_TAG" --draft=false
