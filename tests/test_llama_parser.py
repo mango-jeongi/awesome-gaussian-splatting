@@ -99,6 +99,7 @@ def test_llama_schema_request_and_response_contract():
         assert request.url.host == "127.0.0.1"
         body = json.loads(request.content)
         assert body["max_tokens"] == 2048 and body["stream"] is False
+        assert body["chat_template_kwargs"] == {"enable_thinking": False}
         assert body["response_format"]["type"] == "json_schema"
         assert body["response_format"]["schema"] == PageSelections.model_json_schema()
         return httpx.Response(
@@ -170,3 +171,20 @@ def test_queue_routes_optional_parser_and_retains_fenced_result(tmp_path, monkey
     }
     assert queue.load().jobs[job.key].state == "review-required"
     assert worker_pass(queue, cache, llama_config=cfg)["claimed"] == 0
+
+
+def test_recorded_live_gemma_response_remains_grounded_and_unreviewed():
+    raw = (Path(__file__).parent / "fixtures/llama/gemma-e4b-synthetic-response.json").read_bytes()
+    cfg = config().model_copy(update={"model_alias": "gemma-e4b-qat-676c3507"})
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, content=raw))
+    ) as client:
+        candidates = parse_page(client, cfg, words(), 1)
+    assert len(candidates) == 1 and candidates[0].raw_value == "32.15"
+    assert candidates[0].bbox == (40, 10, 55, 20)
+    assert candidates[0].unit is None and candidates[0].metric is None
+    assert candidates[0].review_required is True
+
+
+def test_thinking_configuration_changes_the_fenced_job_identity():
+    assert extractor_version(config()) != extractor_version(config(enable_thinking=True))

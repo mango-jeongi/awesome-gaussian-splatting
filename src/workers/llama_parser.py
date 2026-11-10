@@ -29,6 +29,7 @@ class LlamaConfig(StrictModel):
     endpoint: str = "http://127.0.0.1:8080"
     model_alias: str = Field(min_length=1, max_length=200)
     declared_model_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    enable_thinking: bool = False
     max_page_requests: int = Field(default=4, ge=1, le=12)
     max_words_per_page: int = Field(default=1200, ge=100, le=2000)
     max_output_tokens: int = Field(default=2048, ge=256, le=4096)
@@ -123,6 +124,7 @@ def parse_page(client, config, words, page_number):
             "temperature": 0,
             "seed": 0,
             "stream": False,
+            "chat_template_kwargs": {"enable_thinking": config.enable_thinking},
             "max_tokens": config.max_output_tokens,
             "response_format": {
                 "type": "json_schema",
