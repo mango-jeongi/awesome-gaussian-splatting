@@ -82,6 +82,15 @@ editions:
     exact_title_author_differences: 14
     accepted_without_proceedings_counterpart: 6
     inventory_reconciled: false
+  - provider: dblp_probe
+    source_url: https://dblp.org/search/publ/api
+    query: 'venue:CVPR: year:2023:'
+    evidence_file: data/venues/dblp-cvpr2023-probe/probe.json
+    status: deferred
+    http_status: 202
+    usable_json: false
+    discovery_complete: false
+    watermark_advanced: false
   remaining:
   - One NeRFVS metadata capture has a transport failure and remains subject to its
     retry deadline.
