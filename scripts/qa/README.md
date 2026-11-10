@@ -39,3 +39,17 @@ uses 4× CPU slowdown and unthrottled loopback; only ego views have the specifie
 two-second post-resource target. Cross-origin transfer sizes may be unavailable
 without Timing-Allow-Origin. Five samples support a median and slowest result,
 not a robust p95 claim.
+
+## Full-corpus storage rehearsal
+
+```sh
+uv run python -m scripts.qa.storage_rehearsal --workdir <temporary-directory> --report <report-path>
+```
+
+This separate offline recipe clones the current legacy corpus and its provider
+and reviewed-extraction sidecars. It verifies v2 round-trip/order/alias/archive
+parity, byte-identical generated artifacts, no-op behavior, stale-writer fencing,
+rollback, missing/corrupt components and interrupted staging. All mutation and
+failure injection occurs in the isolated directory. It refuses work/report paths
+inside canonical data or deployed docs. Successful execution does not switch
+writer defaults or activate a remote store.

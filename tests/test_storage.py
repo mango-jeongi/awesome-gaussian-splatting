@@ -259,3 +259,31 @@ def test_manifest_advance_during_staging_is_not_lost(tmp_path, monkeypatch):
     with pytest.raises(storage.ConcurrentWriteError, match="during staging"):
         write_store(candidate, path)
     assert load_store(path).papers[0].title == "Concurrent accepted title"
+
+
+def test_builder_legacy_export_bytes_match_across_storage_formats(tmp_path):
+    from src.builder import build_artifacts
+    from src.contracts import FieldEvidence
+
+    db = sample()
+    db.aliases = {"z-last": db.papers[0].id, "a-first": db.papers[1].id}
+    db.papers[0].metadata_evidence = {
+        "venue": [FieldEvidence(source="fixture", value="Example Venue")],
+        "title": [FieldEvidence(source="fixture", value=db.papers[0].title)],
+    }
+    legacy = tmp_path / "legacy.json"
+    manifest = tmp_path / "v2/manifest.json"
+    db.save(legacy)
+    write_store(db, manifest)
+    taxonomy = Path(__file__).resolve().parents[1] / "config/taxonomy.yaml"
+    exports = []
+    for name, source in [("legacy", legacy), ("v2", manifest)]:
+        output = tmp_path / name / "public"
+        output.mkdir(parents=True)
+        target = output / "papers.json"
+        build_artifacts(source, taxonomy, output / "README.md", target)
+        exports.append(target.read_bytes())
+        before = target.read_bytes(), target.stat().st_mtime_ns
+        build_artifacts(source, taxonomy, output / "README.md", target)
+        assert (target.read_bytes(), target.stat().st_mtime_ns) == before
+    assert exports[0] == exports[1]

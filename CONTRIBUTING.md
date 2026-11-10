@@ -65,6 +65,13 @@ This checks exact record parity and reports the proposed snapshot digest without
 writing a store. To write a separate snapshot, use `migrate --manifest <path>`;
 validate it with `validate --manifest <path>`.
 
+The full-corpus [migration rehearsal](reports/storage-migration-4102.md) verifies
+record and generated-byte parity, rollback, no-op behavior and failure fencing.
+It can be reproduced with `uv run python -m scripts.qa.storage_rehearsal --workdir
+<isolated-directory> --report <report-path>`. Provider caches and reviewed extraction
+sidecars must remain alongside the active canonical store; metadata parity alone
+does not prove their preservation.
+
 This is an additive compatibility stage. All database callers accept either a
 legacy file or manifest through `--data`. Defaults and current remote workflows
 still use `data/papers.json`; the canonical cutover remains pending. The snapshot preserves legacy fields and record order.

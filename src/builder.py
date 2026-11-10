@@ -9,6 +9,7 @@ from urllib.parse import quote
 
 from src.public import build_public
 from src.schema import PaperDatabase, PaperRecord, TaxonomyConfig
+from src.storage import _encode
 
 REPO_URL = "https://github.com/mango-jeongi/awesome-gaussian-splatting"
 PAGES_URL = "https://mango-jeongi.github.io/awesome-gaussian-splatting/"
@@ -213,6 +214,10 @@ def build_artifacts(
     docs_target.parent.mkdir(parents=True, exist_ok=True)
     public_legacy = db.model_copy(deep=True)
     public_legacy.archive = {}
+    # Normalize dictionary ordering independently of the source storage format.
+    public_legacy = PaperDatabase.model_validate_json(
+        _encode(public_legacy.model_dump(mode="json"))
+    )
     public_legacy.save(docs_target)
     from src.workers.review import ReviewedExtractionStore
 
