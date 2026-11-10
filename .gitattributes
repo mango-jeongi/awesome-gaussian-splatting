@@ -1,4 +1,5 @@
 * text=auto
+.gitattributes text eol=lf
 *.py text eol=lf
 *.js text eol=lf
 *.yml text eol=lf
@@ -6,8 +7,8 @@
 *.md text eol=lf
 
 # Content-addressed evidence must retain exact bytes on every platform.
-data/** -text
-docs/data/** -text
-docs/papers.json -text
-tests/fixtures/** -text
-reports/relevance/** -text
+data/** -text -whitespace
+docs/data/** -text -whitespace
+docs/papers.json -text -whitespace
+tests/fixtures/** -text -whitespace
+reports/relevance/** -text -whitespace
