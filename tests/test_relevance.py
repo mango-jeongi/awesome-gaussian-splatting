@@ -122,3 +122,24 @@ def test_official_cvf_comparison_only_abstracts_require_review():
     for case in cases:
         paper = PaperRecord(id=case["source_url"], title=case["title"], abstract=case["abstract"])
         assert RelevancePolicy().decide(paper).outcome == case["expected"], case["title"]
+
+
+def test_source_backed_review_override_holds_otherwise_included_candidate():
+    from datetime import UTC, datetime
+
+    from src.contracts import FieldEvidence
+    from src.relevance import OverrideConfig, RelevanceOverride
+
+    paper = PaperRecord(arxiv_id="2501.00001", title="Gaussian Splatting comparison")
+    assert RelevancePolicy().decide(paper).outcome == "include"
+    now = datetime.now(UTC)
+    override = RelevanceOverride(
+        identifiers=[paper.arxiv_id],
+        action="review",
+        reason="Author abstract describes an alternative method; exact scope needs review",
+        evidence=[FieldEvidence(source="fixture author abstract", value=paper.title)],
+        reviewed_by="fixture reviewer",
+        reviewed_at=now,
+    )
+    decision = RelevancePolicy(OverrideConfig(relevance=[override])).decide(paper)
+    assert decision.outcome == "review" and decision.override

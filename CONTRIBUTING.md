@@ -121,6 +121,13 @@ failures are reported after a valid checkpoint/diagnostic commit. A runner lost
 before that commit can replay its uncommitted work from the last saved checkpoint;
 no uncommitted prefix is claimed durable.
 
+Source-backed relevance overrides may use `include`, `exclude`, or `review`.
+A `review` override holds an exact candidate identity out of automatic import
+without archiving an active record. Include the captured source hash, scope
+reason, reviewer and aware review time. Reclassification after a completed crawl
+uses a separate application ledger and policy snapshot; retain the original
+query, source pages and disposition epoch.
+
 For reviewed extraction, commit JSON inputs under
 `data/extraction/review-inputs/<key>.result.json` and `<key>.review.json`, then
 dispatch `manual-worker-import.yml` with that key. The result must validate against

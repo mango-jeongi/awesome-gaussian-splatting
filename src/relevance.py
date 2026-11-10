@@ -54,7 +54,7 @@ class RelevanceOverride(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     identifiers: list[str] = Field(min_length=1)
-    action: Literal["include", "exclude"]
+    action: Literal["include", "exclude", "review"]
     reason: str = Field(min_length=1)
     evidence: list[FieldEvidence] = Field(min_length=1)
     reviewed_by: str = Field(min_length=1)
