@@ -69,11 +69,29 @@ editions:
 - venue: CVPR
   year: 2024
   track: main
-  status: pending
-  coverage: unverified
-  discovery_provider: dblp
+  status: crawled
+  coverage: partial
+  discovery_provider: cvf
   official_inventory_locator: https://openaccess.thecvf.com/
-  evidence: []
+  evidence:
+  - provider: cvf_publication_pages
+    source_url: https://openaccess.thecvf.com/CVPR2024?day=all
+    evidence_file: data/venues/cvpr2024-main/latest-report.json
+    listing_sha256: 720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c
+    listing_records: 2716
+    title_dispositions:
+      exclude: 2583
+      include: 43
+      review: 90
+    selected_verified_pages: 133
+    metadata_outcomes:
+      review: 84
+      include: 49
+    arxiv_links: 87
+    canonical_modified: false
+    venue_inventory_reconciled: false
+    note: Selected publication metadata complete; excluded-title recall, independent
+      inventory reconciliation, identity resolution, and canonical import remain pending.
 - venue: CVPR
   year: 2024
   track: workshop
