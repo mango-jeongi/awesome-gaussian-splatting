@@ -1,0 +1,250 @@
+"""Deterministic topic dispositions; taxonomy membership never grants relevance."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import unicodedata
+from datetime import datetime
+from pathlib import Path
+from typing import Literal
+
+import yaml
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+from src.contracts import FieldEvidence
+from src.identity import identifier_key, paper_keys
+from src.schema import PaperRecord
+
+RULE_VERSION = "gs-topic-v1"
+STRONG = r"\bgaussian[\s-]*splat(?:ting|s)?\b"
+ACRONYM = r"\b[234]d-?gs\b"
+CONTEXT = r"\b(?:render\w*|radiance|novel views?|view synthesis|reconstruction|image compression|image representation|slam|gaussian primitives?|avatar\w*|point clouds?|tomograph\w*|ultrasound|thermal|infrared|sar|rasteriz\w*)\b"
+ACRONYM_CONTEXT = (
+    r"\b(?:splat\w*|radiance|novel views?|view synthesis|gaussian primitives?|rasteriz\w*)\b"
+)
+GAUSSIAN_REPRESENTATION = r"\b(?:[234]\s*d[\s-]+gaussians?|(?:anisotropic|differentiable|explicit)[\s-]+gaussian[\s-]+primitives?)\b"
+STATISTICAL_GAUSSIAN = (
+    r"\bgaussian[\s-]+(?:process(?:es)?|mixtures?|kernels?|noise|distributions?)\b"
+)
+ADJACENT = r"\b(?:nerf|(?:neural )?radiance fields?|[234]d gaussians?|neural rendering|photogrammetry|novel view synthesis|view synthesis|multi-view reconstruction|diffusion priors)\b"
+
+
+class RelevanceOverride(BaseModel):
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+
+    identifiers: list[str] = Field(min_length=1)
+    action: Literal["include", "exclude"]
+    reason: str = Field(min_length=1)
+    evidence: list[FieldEvidence] = Field(min_length=1)
+    reviewed_by: str = Field(min_length=1)
+    reviewed_at: datetime
+
+    @model_validator(mode="after")
+    def validate_review(self):
+        if self.reviewed_at.utcoffset() is None:
+            raise ValueError("Relevance review time requires a timezone")
+        if any(not value.strip() for value in self.identifiers):
+            raise ValueError("Relevance override identifier cannot be empty")
+        return self
+
+
+class OverrideConfig(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    schema_version: Literal["1.0.0"] = "1.0.0"
+    relevance: list[RelevanceOverride] = Field(default_factory=list)
+
+
+class RelevanceDecision(BaseModel):
+    outcome: Literal["include", "exclude", "review"]
+    reason: str
+    rule_version: str = RULE_VERSION
+    override: bool = False
+
+
+def normalize_text(value: str) -> str:
+    value = unicodedata.normalize("NFKC", value).casefold()
+    for hyphen in "‐‑‒–—−":
+        value = value.replace(hyphen, "-")
+    return re.sub(r"\s+", " ", value)
+
+
+class RelevancePolicy:
+    def __init__(self, overrides: OverrideConfig | None = None):
+        self.config = overrides or OverrideConfig()
+        self.by_identifier: dict[str, RelevanceOverride] = {}
+        for override in self.config.relevance:
+            for value in override.identifiers:
+                key = identifier_key(value)
+                if key in self.by_identifier and self.by_identifier[key] != override:
+                    raise ValueError(f"Conflicting relevance overrides: {key}")
+                self.by_identifier[key] = override
+        frozen = {
+            "rule_version": RULE_VERSION,
+            "implementation_sha256": hashlib.sha256(
+                Path(__file__).read_text(encoding="utf-8-sig").encode("utf-8")
+            ).hexdigest(),
+            "overrides": self.config.model_dump(mode="json"),
+        }
+        self.digest = hashlib.sha256(
+            json.dumps(frozen, sort_keys=True, separators=(",", ":")).encode()
+        ).hexdigest()
+
+    @classmethod
+    def load(cls, path: str | Path):
+        path = Path(path)
+        return cls(
+            OverrideConfig.model_validate(yaml.safe_load(path.read_text(encoding="utf-8")) or {})
+        )
+
+    def decide(self, paper: PaperRecord) -> RelevanceDecision:
+        overrides = [
+            self.by_identifier[key] for key in paper_keys(paper) if key in self.by_identifier
+        ]
+        actions = {override.action for override in overrides}
+        if len(actions) > 1:
+            raise ValueError(
+                f"Paper identifiers have contradictory relevance overrides: {paper.id}"
+            )
+        if overrides:
+            return RelevanceDecision(
+                outcome=overrides[0].action,
+                reason="Reviewed override: "
+                + "; ".join(sorted({override.reason for override in overrides})),
+                override=True,
+            )
+        title = normalize_text(paper.title)
+        abstract = normalize_text(paper.abstract)
+        text = f"{title} {abstract}"
+        if re.search(STRONG, title):
+            return RelevanceDecision(
+                outcome="include", reason="Explicit Gaussian splatting topic in title"
+            )
+        if re.search(STRONG, abstract):
+            if re.search(CONTEXT, text):
+                return RelevanceDecision(
+                    outcome="include",
+                    reason="Gaussian splatting abstract with representation/application context",
+                )
+            return RelevanceDecision(
+                outcome="review", reason="Isolated Gaussian splatting mention needs scope review"
+            )
+        if re.search(GAUSSIAN_REPRESENTATION, text) and re.search(CONTEXT, text):
+            if re.search(STATISTICAL_GAUSSIAN, text):
+                return RelevanceDecision(
+                    outcome="review",
+                    reason="Geometric and statistical Gaussian descriptions need disambiguation",
+                )
+            return RelevanceDecision(
+                outcome="include",
+                reason="Explicit low-dimensional Gaussian primitives with representation/application context",
+            )
+        if re.search(ACRONYM, text):
+            if re.search(ACRONYM_CONTEXT, text):
+                return RelevanceDecision(
+                    outcome="include",
+                    reason="GS acronym with radiance/splatting representation context",
+                )
+            return RelevanceDecision(
+                outcome="review", reason="GS acronym lacks disambiguating representation context"
+            )
+        if title.rstrip().endswith(("...", "…")):
+            return RelevanceDecision(
+                outcome="review", reason="Truncated title requires source evidence before exclusion"
+            )
+        if re.search(ADJACENT, text):
+            return RelevanceDecision(
+                outcome="review",
+                reason="Foundation/adjacent representation requires explicit scope justification",
+            )
+        return RelevanceDecision(
+            outcome="exclude",
+            reason="No Gaussian splatting or justified foundation evidence in title/abstract",
+        )
+
+
+def audit_relevance(db, policy: RelevancePolicy, baseline_ids: list[str] | None = None) -> dict:
+    """Build review material without applying exclusions, merges, or overrides."""
+    from src.curation import validate_archive
+    from src.identity import IdentityIndex
+    from src.storage import _digest, _encode
+
+    index = IdentityIndex(db.papers, db.aliases)
+    ledger = validate_archive(db)
+    archived_aliases = ledger.alias_targets(set(index.by_id))
+    rows = []
+    for paper in sorted(db.papers, key=lambda value: value.id):
+        decision = policy.decide(paper)
+        rows.append(
+            {
+                "canonical_id": paper.id,
+                "title": paper.title,
+                "authors": paper.authors,
+                "abstract": paper.abstract,
+                "arxiv_id": paper.arxiv_id,
+                "doi": paper.doi,
+                "openalex_id": paper.openalex_id,
+                "paper_url": paper.paper_url,
+                "policy_outcome": decision.outcome,
+                "reason": decision.reason,
+                "reviewed_override": decision.override,
+                "proposed_disposition": "retained"
+                if decision.outcome == "include"
+                else "unresolved_review",
+            }
+        )
+    by_id = {row["canonical_id"]: row for row in rows}
+    baseline = []
+    for identifier in baseline_ids or []:
+        target = index.aliases.get(identifier_key(identifier)) or archived_aliases.get(
+            identifier_key(identifier)
+        )
+        if identifier in ledger.entries:
+            entry = ledger.entries[identifier]
+            baseline.append(
+                {
+                    "old_id": identifier,
+                    "disposition": entry.disposition,
+                    "canonical_id": target,
+                    "reviewed": True,
+                    "reason": entry.reason,
+                }
+            )
+        elif target == identifier and target in by_id:
+            baseline.append(
+                {
+                    "old_id": identifier,
+                    "disposition": by_id[target]["proposed_disposition"],
+                    "canonical_id": target,
+                    "reviewed": by_id[target]["reviewed_override"],
+                    "reason": by_id[target]["reason"],
+                    "proposal": True,
+                }
+            )
+        else:
+            baseline.append(
+                {
+                    "old_id": identifier,
+                    "disposition": "unresolved_review",
+                    "canonical_id": target,
+                    "reviewed": False,
+                    "reason": "Baseline identity missing or changed without archival disposition",
+                }
+            )
+    return {
+        "schema_version": "1.0.0",
+        "scope": "existing corpus only; proposals do not modify records",
+        "source_content_sha256": _digest(_encode(db.model_dump(mode="json"))),
+        "policy_digest": policy.digest,
+        "rule_version": RULE_VERSION,
+        "active_records": len(db.papers),
+        "archived_records": len(db.archive),
+        "summary": {
+            outcome: sum(row["policy_outcome"] == outcome for row in rows)
+            for outcome in ("include", "exclude", "review")
+        },
+        "records": rows,
+        "baseline_dispositions": baseline,
+    }

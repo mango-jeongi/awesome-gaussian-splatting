@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="FlashGS: Efficient 3D Gaussian Splatting for Large-scale and High-resolution Rendering">
+<meta name="citation_author" content="Feng, Guofeng">
+<meta name="citation_author" content="Chen, Siyan">
+<meta name="citation_author" content="Fu, Rong">
+<meta name="citation_author" content="Liao, Zimu">
+<meta name="citation_author" content="Wang, Yi">
+<meta name="citation_author" content="Liu, Tao">
+<meta name="citation_author" content="Hu, Boni">
+<meta name="citation_author" content="Xu, Linning">
+<meta name="citation_author" content="Pei, Zhilin">
+<meta name="citation_author" content="Li, Hengjie">
+<meta name="citation_author" content="Li, Xiuhong">
+<meta name="citation_author" content="Sun, Ninghui">
+<meta name="citation_author" content="Zhang, Xingcheng">
+<meta name="citation_author" content="Dai, Bo">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="26652">
+<meta name="citation_lastpage" content="26662">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Feng_FlashGS_Efficient_3D_Gaussian_Splatting_for_Large-scale_and_High-resolution_Rendering_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        FlashGS: Efficient 3D Gaussian Splatting for Large-scale and High-resolution Rendering
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Guofeng Feng, Siyan Chen, Rong Fu, Zimu Liao, Yi Wang, Tao Liu, Boni Hu, Linning Xu, Zhilin Pei, Hengjie Li, Xiuhong Li, Ninghui Sun, Xingcheng Zhang, Bo Dai</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 26652-26662
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Recent advances in 3D Gaussian Splatting (3DGS) have demonstrated significant potential over traditional rendering techniques, attracting widespread attention from both industry and academia. However, real-time rendering with 3DGS remains a challenging problem, particularly in large-scale, high-resolution scenes due to the presence of numerous anisotropic Gaussian representations, and it has not been extensively explored. To address this challenge, we introduce FlashGS, an open-source CUDA library with Python bindings, featuring comprehensive algorithm design and optimizations, including redundancy elimination, adaptive scheduling, and efficient pipelining. First, we eliminate substantial redundant computations through precise Gaussian intersection tests, leveraging the intrinsic mechanism of the 3DGS rasterizer. During task partitioning, we propose an adaptive scheduling strategy that accounts for variations in Gaussian size and shape. Additionally, we design a multi-stage pipelining strategy for color computation in the rendering process, further accelerating performance. We conduct an extensive evaluation of FlashGS across a diverse range of synthetic and real-world 3D scenes, encompassing scene sizes of up to 2.7 km^2 cityscape and resolutions of up to over 4K. Our approach improves 3DGS rendering performance by an order of magnitude, achieving an average speedup of 7.2x, and rendering at a minimum of 125.9 FPS, setting a new state-of-the-art in real-time 3DGS rendering. https://github.com/InternLandMark/FlashGS.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Feng_FlashGS_Efficient_3D_Gaussian_Splatting_for_Large-scale_and_High-resolution_Rendering_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Feng_FlashGS_Efficient_3D_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2408.07967">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Feng_2025_CVPR,
+    author    = {Feng, Guofeng and Chen, Siyan and Fu, Rong and Liao, Zimu and Wang, Yi and Liu, Tao and Hu, Boni and Xu, Linning and Pei, Zhilin and Li, Hengjie and Li, Xiuhong and Sun, Ninghui and Zhang, Xingcheng and Dai, Bo},
+    title     = {FlashGS: Efficient 3D Gaussian Splatting for Large-scale and High-resolution Rendering},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {26652-26662}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

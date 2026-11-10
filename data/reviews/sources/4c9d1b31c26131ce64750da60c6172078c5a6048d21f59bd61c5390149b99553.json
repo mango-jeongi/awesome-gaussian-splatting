@@ -1,0 +1,187 @@
+{
+  "fetched_at": "2026-11-09T21:53:38.017340+00:00",
+  "query": "ti:FisherRF",
+  "records": [
+    {
+      "abstract": "We propose a framework for active next best view and touch selection for robotic manipulators using 3D Gaussian Splatting (3DGS). 3DGS is emerging as a useful explicit 3D scene representation for robotics, as it has the ability to represent scenes in a both photorealistic and geometrically accurate manner. However, in real-world, online robotic scenes where the number of views is limited given efficiency requirements, random view selection for 3DGS becomes impractical as views are often overlapping and redundant. We address this issue by proposing an end-to-end online training and active view selection pipeline, which enhances the performance of 3DGS in few-view robotics settings. We first elevate the performance of few-shot 3DGS with a novel semantic depth alignment method using Segment Anything Model 2 (SAM2) that we supplement with Pearson depth and surface normal loss to improve color and depth reconstruction of real-world scenes. We then extend FisherRF, a next-best-view selection method for 3DGS, to select views and touch poses based on depth uncertainty. We perform online view selection on a real robot system during live 3DGS training. We motivate our improvements to few-shot GS scenes, and extend depth-based FisherRF to them, where we demonstrate both qualitative and quantitative improvements on challenging robot scenes. For more information, please see our project page at https://arm.stanford.edu/next-best-sense.",
+      "arxiv_doi": "10.48550/arxiv.2410.04680",
+      "arxiv_id": "2410.04680",
+      "authors": [
+        "Matthew Strong",
+        "Boshu Lei",
+        "Aiden Swann",
+        "Wen Jiang",
+        "Kostas Daniilidis",
+        "Monroe Kennedy"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "To appear in International Conference on Robotics and Automation (ICRA) 2025",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Strong et al.",
+      "id": "2410.04680",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2410.04680v4",
+            "value": "2024-10-07"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2410.04680",
+      "pdf_url": "https://arxiv.org/pdf/2410.04680.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-10-07",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Next Best Sense: Guiding Vision and Touch with FisherRF for 3D Gaussian Splatting",
+      "tldr": "Proposes a framework for active next best view and touch selection for robotic manipulators using 3D Gaussian Splatting (3DGS).",
+      "updated_date": "2025-03-09",
+      "venue": null,
+      "year": 2024
+    },
+    {
+      "abstract": "The active view acquisition problem has been extensively studied in the context of robot navigation using NeRF and 3D Gaussian Splatting. To enhance scene reconstruction efficiency and ensure robot safety, we propose the Risk-aware Environment Masking (RaEM) framework. RaEM leverages coherent risk measures to dynamically prioritize safety-critical regions of the unknown environment, guiding active view acquisition algorithms toward identifying the next-best-view (NBV). Integrated with FisherRF, which selects the NBV by maximizing expected information gain, our framework achieves a dual objective: improving robot safety and increasing efficiency in risk-aware 3D scene reconstruction and understanding. Extensive high-fidelity experiments validate the effectiveness of our approach, demonstrating its ability to establish a robust and safety-focused framework for active robot exploration and 3D scene understanding.",
+      "arxiv_doi": "10.48550/arxiv.2403.11396",
+      "arxiv_id": "2403.11396",
+      "authors": [
+        "Guangyi Liu",
+        "Wen Jiang",
+        "Boshu Lei",
+        "Vivek Pandey",
+        "Kostas Daniilidis",
+        "Nader Motee"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Liu et al.",
+      "id": "2403.11396",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2403.11396v2",
+            "value": "2024-03-18"
+          }
+        ]
+      },
+      "month": 3,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2403.11396",
+      "pdf_url": "https://arxiv.org/pdf/2403.11396.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-03-18",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Beyond Uncertainty: Risk-Aware Active View Acquisition for Safe Robot Navigation and 3D Scene Understanding with FisherRF",
+      "tldr": "To enhance scene reconstruction efficiency and ensure robot safety, we propose the Risk-aware Environment Masking (RaEM) framework.",
+      "updated_date": "2025-01-17",
+      "venue": null,
+      "year": 2024
+    },
+    {
+      "abstract": "This study addresses the challenging problem of active view selection and uncertainty quantification within the domain of Radiance Fields. Neural Radiance Fields (NeRF) have greatly advanced image rendering and reconstruction, but the cost of acquiring images poses the need to select the most informative viewpoints efficiently. Existing approaches depend on modifying the model architecture or hypothetical perturbation field to indirectly approximate the model uncertainty. However, selecting views from indirect approximation does not guarantee optimal information gain for the model. By leveraging Fisher Information, we directly quantify observed information on the parameters of Radiance Fields and select candidate views by maximizing the Expected Information Gain(EIG). Our method achieves state-of-the-art results on multiple tasks, including view selection, active mapping, and uncertainty quantification, demonstrating its potential to advance the field of Radiance Fields.",
+      "arxiv_doi": "10.48550/arxiv.2311.17874",
+      "arxiv_id": "2311.17874",
+      "authors": [
+        "Wen Jiang",
+        "Boshu Lei",
+        "Kostas Daniilidis"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Project page: https://jiangwenpl.github.io/FisherRF/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Jiang et al.",
+      "id": "2311.17874",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2311.17874v2",
+            "value": "2023-11-29"
+          }
+        ]
+      },
+      "month": 11,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2311.17874",
+      "pdf_url": "https://arxiv.org/pdf/2311.17874.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2023-11-29",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "FisherRF: Active View Selection and Uncertainty Quantification for Radiance Fields using Fisher Information",
+      "tldr": "Our method achieves state-of-the-art results on multiple tasks, including view selection, active mapping, and uncertainty quantification, demonstrating its potential to advance the field of Radiance Fields.",
+      "updated_date": "2024-12-15",
+      "venue": null,
+      "year": 2023
+    }
+  ],
+  "total": 3
+}

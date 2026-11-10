@@ -1,0 +1,196 @@
+{
+  "fetched_at": "2026-11-09T21:43:37.617765+00:00",
+  "records": [
+    {
+      "abstract": "Driving-scene reconstruction via feed-forward Gaussian splatting from sparse multi-view images remains challenging due to two factors. First, cross-camera photometric inconsistency, caused by variations in exposure, ISP, and illumination, can be incorrectly absorbed into Gaussian geometry. Second, unreliable local geometric supervision arises from normal-based constraints near depth discontinuities. To address these issues, we present \\textbf{MCSplat}, a multi-view consistent feed-forward Gaussian splatting framework for driving scenes. MCSplat constructs a canonical appearance space from depth-guided multi-camera correspondences to decouple geometry learning from camera-specific appearance. A multi-scale Bilateral Grid Transformer restores raw camera appearance from canonical renderings, enabling photometric supervision without contaminating Gaussian geometry. To improve local geometric reliability, we estimate Fisher-information-based uncertainty from photometric sensitivity and use it to adaptively weight surface-oriented self-supervision. Extensive experiments demonstrate improved reconstruction quality and generalization across driving datasets. Geometry-oriented evaluations further reveal enhanced cross-view depth consistency and local surface-normal agreement, while qualitative results show fewer geometric artifacts and more coherent structures across overlapping views.",
+      "arxiv_doi": "10.48550/arxiv.2610.25345",
+      "arxiv_id": "2610.25345",
+      "authors": [
+        "Yifei Wang",
+        "Wei Tian",
+        "Wenhua Bao",
+        "Jia Zhou",
+        "Hanshi Wang",
+        "Fudong Ge",
+        "Jianhua Wu",
+        "Shuai Yuan",
+        "Zhipeng Zhang",
+        "Xingliang Liu",
+        "Xianming Zeng",
+        "Jianyun Xu",
+        "Bingzhao Gao"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "24 pages, 14 figures, 6 tables; Accepted to NeurIPS 2026",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Wang et al.",
+      "id": "2610.25345",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.25345v1",
+            "value": "2026-10-18"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2610.25345",
+      "pdf_url": "https://arxiv.org/pdf/2610.25345.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-10-18",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "MCSplat: Multi-View Photometric and Geometric Consistent Feed-Forward Gaussian Splatting for Driving Scenes",
+      "tldr": "Proposes \\textbf{MCSplat}, a multi-view consistent feed-forward Gaussian splatting framework for driving scenes.",
+      "updated_date": "2026-10-18",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "Existing high-speed navigation systems for micro aerial vehicles (MAVs) commonly rely on depth cameras, stereo vision, or LiDAR to obtain explicit geometric information, while monocular cameras offer a lighter and lower-cost alternative. However, monocular flight remains challenging because RGB images offer no direct metric cues and visual appearance varies considerably across environments. We propose a geometry-aware monocular visual planning framework that predicts trajectories from two image frames, their relative pose, and the MAV state. Without explicitly reconstructing depth, the proposed method complements the downstream planning objective with feature-level geometric supervision by transferring the planning-relevant representation learned by a privileged depth expert to the RGB planner through cross-modal distillation. The framework first trains a depth-based geometric expert, then distills its planning features into a monocular branch using paired RGB-D observations, and finally adapts the planner to the downstream trajectory planning objective. This design encourages the policy to learn planning-relevant geometric features, enabling collision avoidance. We further use a 3D Gaussian Splatting (3DGS) simulator to render visual observations for data collection, paired RGB-D supervision, and simulation evaluation. The planner trained in simulation is then deployed in real-world environments without real-world fine-tuning, achieving obstacle avoidance at speeds of up to 6.5 m/s.",
+      "arxiv_doi": "10.48550/arxiv.2610.26508",
+      "arxiv_id": "2610.26508",
+      "authors": [
+        "Wencan Feng",
+        "Bailing Tian",
+        "Yulin Hui",
+        "Zhiyu Li",
+        "Junjie Lu"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": null,
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Feng et al.",
+      "id": "2610.26508",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.26508v1",
+            "value": "2026-10-19"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2610.26508",
+      "pdf_url": "https://arxiv.org/pdf/2610.26508.pdf",
+      "primary_arxiv_category": "cs.RO",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-10-19",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Learning Geometry-Aware Planning Representations for Monocular Flight with Cross-Modal Supervision",
+      "tldr": "Proposes a geometry-aware monocular visual planning framework that predicts trajectories from two image frames, their relative pose, and the MAV state.",
+      "updated_date": "2026-10-19",
+      "venue": null,
+      "year": 2026
+    },
+    {
+      "abstract": "3D Gaussian Splatting grows a dense scene from a sparse initialization through adaptive density control (ADC), driven by per-Gaussian statistics gathered during rendering. These statistics pass a frustum-based visibility filter blind to occlusion: fully occluded Gaussians still count as observed, diluting the averaged gradient signal and suppressing densification precisely where geometry is occluded. We correct this with an occlusion-aware filter that restricts densification statistics to views in which a Gaussian actually contributes, and replace the criterion's raw view-count normalizer with an average-contribution one. Integrated into a StopThePop-based framework, the two together improve every image-quality metric over the occlusion-blind baseline on occlusion-heavy scenes (up to 6% lower LPIPS), at less than half the Gaussians a view-count normalizer requires. Under the longer schedules these large scenes require, the count stays bounded where most criteria diverge, and on smaller benchmarks our method stays competitive at a fraction of the competitors' count.",
+      "arxiv_doi": "10.48550/arxiv.2610.27108",
+      "arxiv_id": "2610.27108",
+      "authors": [
+        "Marcel Rogge",
+        "René Schuster",
+        "Didier Stricker"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "Accepted at ACCV 2026 (Oral). Includes the supplementary material as appendix. Code: https://github.com/MarcelRogge/occlusion-aware-3dgs",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Rogge et al.",
+      "id": "2610.27108",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.27108v1",
+            "value": "2026-10-19"
+          }
+        ]
+      },
+      "month": 10,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2610.27108",
+      "pdf_url": "https://arxiv.org/pdf/2610.27108.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2026-10-19",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Counting Contributions, Not Views: Occlusion-Aware Densification for 3D Gaussian Splatting",
+      "tldr": "3D Gaussian Splatting grows a dense scene from a sparse initialization through adaptive density control (ADC), driven by per-Gaussian statistics gathered during rendering.",
+      "updated_date": "2026-10-19",
+      "venue": null,
+      "year": 2026
+    }
+  ],
+  "requested_ids": [
+    "2610.25345",
+    "2610.26508",
+    "2610.27108"
+  ]
+}

@@ -1,0 +1,861 @@
+{
+  "body": {
+    "message": {
+      "DOI": "10.3390/rs17020335",
+      "ISSN": [
+        "2072-4292"
+      ],
+      "URL": "https://doi.org/10.3390/rs17020335",
+      "abstract": "<jats:p>Thermal infrared (TIR) images capture temperature in a non-invasive manner, making them valuable for generating 3D models that reflect the spatial distribution of thermal properties within a scene. Current TIR image-based 3D reconstruction methods primarily focus on static conditions, which only capture the spatial distribution of thermal radiation but lack the ability to represent its temporal dynamics. The absence of dedicated datasets and effective methods for dynamic 3D representation are two key challenges that hinder progress in this field. To address these challenges, we propose a novel dynamic thermal 3D reconstruction method, named ThermalGS, based on 3D Gaussian Splatting (3DGS). ThermalGS employs a data-driven approach to directly learn both scene structure and dynamic thermal representation, using RGB and TIR images as input. The position, orientation, and scale of Gaussian primitives are guided by the RGB mesh. We introduce feature encoding and embedding networks to integrate semantic and temporal information into the Gaussian primitives, allowing them to capture dynamic thermal radiation characteristics. Moreover, we construct the Thermal Scene Day-and-Night (TSDN) dataset, which includes multi-view, high-resolution aerial RGB reference images and TIR images captured at five different times throughout the day and night, providing a benchmark for dynamic thermal 3D reconstruction tasks. Experimental results demonstrate that the proposed method achieves state-of-the-art performance on the TSDN dataset, with an average absolute temperature error of 1 °C and the ability to predict surface temperature variations over time.</jats:p>",
+      "alternative-id": [
+        "rs17020335"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-5565-8297",
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "authenticated-orcid": false,
+          "family": "Liu",
+          "given": "Yuxiang",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "first"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "family": "Chen",
+          "given": "Xi",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "family": "Yan",
+          "given": "Shen",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "family": "Cui",
+          "given": "Zeyu",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "family": "Xiao",
+          "given": "Huaxin",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "family": "Liu",
+          "given": "Yu",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6748-0545",
+          "affiliation": [
+            {
+              "name": "College of Systems and Engineering, National University of Defense Technology, Changsha 410073, China"
+            }
+          ],
+          "authenticated-orcid": false,
+          "family": "Zhang",
+          "given": "Maojun",
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ],
+          "sequence": "additional"
+        }
+      ],
+      "container-title": [
+        "Remote Sensing"
+      ],
+      "content-domain": {
+        "crossmark-restriction": false,
+        "domain": []
+      },
+      "created": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            20
+          ]
+        ],
+        "date-time": "2025-01-20T09:11:13Z",
+        "timestamp": 1737364273000
+      },
+      "deposited": {
+        "date-parts": [
+          [
+            2025,
+            10,
+            8
+          ]
+        ],
+        "date-time": "2025-10-08T10:31:39Z",
+        "timestamp": 1759919499000
+      },
+      "funder": [
+        {
+          "DOI": "10.13039/501100001809",
+          "award": [
+            "62171451"
+          ],
+          "award-info": [
+            {
+              "award-number": [
+                "62171451"
+              ]
+            }
+          ],
+          "doi-asserted-by": "publisher",
+          "id": [
+            {
+              "asserted-by": "publisher",
+              "id": "10.13039/501100001809",
+              "id-type": "DOI"
+            }
+          ],
+          "name": "National Science Foundation of China"
+        }
+      ],
+      "indexed": {
+        "date-parts": [
+          [
+            2026,
+            11,
+            7
+          ]
+        ],
+        "date-time": "2026-11-07T07:31:07Z",
+        "timestamp": 1794036667246,
+        "version": "4.8.0"
+      },
+      "is-referenced-by-count": 15,
+      "issn-type": [
+        {
+          "type": "electronic",
+          "value": "2072-4292"
+        }
+      ],
+      "issue": "2",
+      "issued": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            19
+          ]
+        ]
+      },
+      "journal-issue": {
+        "issue": "2",
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              1
+            ]
+          ]
+        }
+      },
+      "language": "en",
+      "license": [
+        {
+          "URL": "https://creativecommons.org/licenses/by/4.0/",
+          "content-version": "vor",
+          "delay-in-days": 0,
+          "start": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                19
+              ]
+            ],
+            "date-time": "2025-01-19T00:00:00Z",
+            "timestamp": 1737244800000
+          }
+        }
+      ],
+      "link": [
+        {
+          "URL": "https://www.mdpi.com/2072-4292/17/2/335/pdf",
+          "content-type": "unspecified",
+          "content-version": "vor",
+          "intended-application": "similarity-checking"
+        }
+      ],
+      "member": "1968",
+      "original-title": [],
+      "page": "335",
+      "prefix": "10.3390",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            19
+          ]
+        ]
+      },
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            19
+          ]
+        ]
+      },
+      "publisher": "MDPI AG",
+      "reference": [
+        {
+          "DOI": "10.1016/j.enbuild.2022.112425",
+          "article-title": "Thermal point clouds of buildings: A review",
+          "author": "Castilla",
+          "doi-asserted-by": "crossref",
+          "first-page": "112425",
+          "journal-title": "Energy Build.",
+          "key": "ref_1",
+          "volume": "274",
+          "year": "2022"
+        },
+        {
+          "key": "ref_2",
+          "unstructured": "Garnier, C., Collorec, R., Flifla, J., Mouclier, C., and Rousee, F. (1999, January 12). Physically based infrared sensor effects modeling. Proceedings of the SPIE Proceedings, Infrared Imaging Systems: Design, Analysis, Modeling, and Testing X, Orlando, FL, USA."
+        },
+        {
+          "DOI": "10.26868/25222708.2021.30435",
+          "doi-asserted-by": "crossref",
+          "key": "ref_3",
+          "unstructured": "Pedro Aguerre, J., and Fernández, E. (2021, January 1–3). ThRend: A ray tracing module for infrared rendering of urban scenes. Proceedings of the Building Simulation 2021: 17th Conference of IBPSA, Bruges, Belgium."
+        },
+        {
+          "DOI": "10.1109/36.655331",
+          "article-title": "BRDF models to predict spectral reflectance and emissivity in the thermal infrared",
+          "author": "Snyder",
+          "doi-asserted-by": "crossref",
+          "first-page": "214",
+          "journal-title": "IEEE Trans. Geosci. Remote Sens.",
+          "key": "ref_4",
+          "volume": "36",
+          "year": "1998"
+        },
+        {
+          "DOI": "10.1016/j.infrared.2014.11.011",
+          "article-title": "Real-time mid-wavelength infrared scene rendering with a feasible BRDF model",
+          "author": "Wu",
+          "doi-asserted-by": "crossref",
+          "first-page": "124",
+          "journal-title": "Infrared Phys. Technol.",
+          "key": "ref_5",
+          "volume": "68",
+          "year": "2015"
+        },
+        {
+          "DOI": "10.1145/3209811.3209880",
+          "doi-asserted-by": "crossref",
+          "key": "ref_6",
+          "unstructured": "Bondi, E., Dey, D., Kapoor, A., Piavis, J., Shah, S., Fang, F., Dilkina, B., Hannaford, R., Iyer, A., and Joppa, L. (2018, January 20–22). AirSim-W: A Simulation Environment for Wildlife Conservation with UAVs. Proceedings of the 1st ACM SIGCAS Conference on Computing and Sustainable Societies, COMPASS ’18, New York, NY, USA."
+        },
+        {
+          "DOI": "10.1016/j.infrared.2016.07.009",
+          "article-title": "A real-time infrared imaging simulation method with physical effects modeling of infrared sensors",
+          "author": "Li",
+          "doi-asserted-by": "crossref",
+          "first-page": "45",
+          "journal-title": "Infrared Phys. Technol.",
+          "key": "ref_7",
+          "volume": "78",
+          "year": "2016"
+        },
+        {
+          "DOI": "10.1145/3592433",
+          "article-title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+          "author": "Kerbl",
+          "doi-asserted-by": "crossref",
+          "first-page": "1",
+          "journal-title": "ACM Trans. Graph.",
+          "key": "ref_8",
+          "volume": "42",
+          "year": "2023"
+        },
+        {
+          "DOI": "10.1109/CVPR52729.2023.01988",
+          "doi-asserted-by": "crossref",
+          "key": "ref_9",
+          "unstructured": "Lin, H., Wang, Q., Cai, R., Peng, S., Averbuch-Elor, H., Zhou, X., and Snavely, N. (2023, January 17–24). Neural Scene Chronology. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, Vancouver, BC, Canada."
+        },
+        {
+          "DOI": "10.1109/ICCV48922.2021.00566",
+          "doi-asserted-by": "crossref",
+          "key": "ref_10",
+          "unstructured": "Gao, C., Saraf, A., Kopf, J., and Huang, J.B. (2021, January 11–17). Dynamic View Synthesis from Dynamic Monocular Video. Proceedings of the IEEE International Conference on Computer Vision, Montreal, BC, Canada."
+        },
+        {
+          "DOI": "10.1145/3478513.3480487",
+          "article-title": "HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields",
+          "author": "Park",
+          "doi-asserted-by": "crossref",
+          "first-page": "1",
+          "journal-title": "ACM Trans. Graph.",
+          "key": "ref_11",
+          "volume": "40",
+          "year": "2021"
+        },
+        {
+          "DOI": "10.1109/CVPR52729.2023.00416",
+          "doi-asserted-by": "crossref",
+          "key": "ref_12",
+          "unstructured": "Li, Z., Wang, Q., Cole, F., Tucker, R., and Snavely, N. (2023, January 17–24). DynIBaR: Neural Dynamic Image-Based Rendering. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, Vancouver, BC, Canada."
+        },
+        {
+          "DOI": "10.1109/CVPR52733.2024.01920",
+          "doi-asserted-by": "crossref",
+          "key": "ref_13",
+          "unstructured": "Wu, G., Yi, T., Fang, J., Xie, L., Zhang, X., Wei, W., Liu, W., Tian, Q., and Wang, X. (2024, January 16–22). 4D Gaussian Splatting for Real-Time Dynamic Scene Rendering. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA."
+        },
+        {
+          "DOI": "10.1109/CVPR.2015.7298706",
+          "doi-asserted-by": "crossref",
+          "key": "ref_14",
+          "unstructured": "Hwang, S., Park, J., Kim, N., Choi, Y., and Kweon, I. (2015, January 7–12). Multispectral Pedestrian Detection: Benchmark Dataset and Baseline. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Boston, MA, USA."
+        },
+        {
+          "key": "ref_15",
+          "unstructured": "Farooq, M., Shariff, W., Khan, F., Corcoran, P., and Rotariu, C. (2023, November 01). C3I Thermal Automotive Dataset, 2022. Available online: https://ieee-dataport.org/documents/c3i-thermal-automotive-dataset."
+        },
+        {
+          "key": "ref_16",
+          "unstructured": "Teledyne FLIR (2023, November 01). FREE - FLIR Thermal Dataset for Algorithm Training. Available online: https://www.flir.com/oem/adas/adas-dataset-form/."
+        },
+        {
+          "key": "ref_17",
+          "unstructured": "Berg, A., Ahlberg, J., and Felsberg, M. (2015, January 15–17). A thermal infrared dataset for evaluation of short-term tracking methods. Proceedings of the Swedish Symposium on Image Analysis, Copenhagen, Denmark."
+        },
+        {
+          "DOI": "10.1109/ICRA48506.2021.9561906",
+          "doi-asserted-by": "crossref",
+          "key": "ref_18",
+          "unstructured": "Dai, W., Zhang, Y., Chen, S., Sun, D., and Kong, D. (2021). A Multi-spectral Dataset for Evaluating Motion Estimation Systems. arXiv."
+        },
+        {
+          "DOI": "10.1109/LRA.2021.3138527",
+          "article-title": "M2DGR: A Multi-sensor and Multi-scenario SLAM Dataset for Ground Robots",
+          "author": "Yin",
+          "doi-asserted-by": "crossref",
+          "first-page": "2266",
+          "journal-title": "IEEE Robot. Autom. Lett.",
+          "key": "ref_19",
+          "volume": "7",
+          "year": "2021"
+        },
+        {
+          "DOI": "10.1109/TITS.2018.2791533",
+          "article-title": "KAIST Multi-Spectral Day/Night Data Set for Autonomous and Assisted Driving",
+          "author": "Choi",
+          "doi-asserted-by": "crossref",
+          "first-page": "934",
+          "journal-title": "IEEE Trans. Intell. Transp. Syst.",
+          "key": "ref_20",
+          "volume": "19",
+          "year": "2018"
+        },
+        {
+          "DOI": "10.1109/LRA.2022.3168335",
+          "article-title": "ViViD++: Vision for visibility dataset",
+          "author": "Lee",
+          "doi-asserted-by": "crossref",
+          "first-page": "6282",
+          "journal-title": "IEEE Robot. Autom. Lett.",
+          "key": "ref_21",
+          "volume": "7",
+          "year": "2022"
+        },
+        {
+          "DOI": "10.1109/I2MTC.2018.8409768",
+          "doi-asserted-by": "crossref",
+          "key": "ref_22",
+          "unstructured": "Kopaczka, M., Kolk, R., and Merhof, D. (2018, January 14–17). A fully annotated thermal face database and its application for thermal facial expression recognition. Proceedings of the 2018 IEEE International Instrumentation and Measurement Technology Conference (I2MTC), Houston, TX, USA."
+        },
+        {
+          "DOI": "10.1145/3173574.3173576",
+          "doi-asserted-by": "crossref",
+          "key": "ref_23",
+          "unstructured": "Cho, Y., Bianchi-Berthouze, N., Marquardt, N., and Julier, S. (2018, January 21–27). Deep Thermal Imaging: Proximate Material Type Recognition in the Wild through Deep Learning of Spatial Surface Temperature Patterns. Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, Montreal, QC, Canada."
+        },
+        {
+          "DOI": "10.3390/rs15010174",
+          "doi-asserted-by": "crossref",
+          "key": "ref_24",
+          "unstructured": "Liu, Y., Liu, Y., Yan, S., Chen, C., Zhong, J., Peng, Y., and Zhang, M. (2022). A Multi-View Thermal–Visible Image Dataset for Cross-Spectral Matching. Remote Sens., 15."
+        },
+        {
+          "DOI": "10.3390/rs3091847",
+          "article-title": "Mapping infrared data on terrestrial laser scanning 3D models of buildings",
+          "author": "Alba",
+          "doi-asserted-by": "crossref",
+          "first-page": "1847",
+          "journal-title": "Remote Sens.",
+          "key": "ref_25",
+          "volume": "3",
+          "year": "2011"
+        },
+        {
+          "DOI": "10.1016/j.aei.2014.06.002",
+          "article-title": "A mobile robot based system for fully automated thermal 3D mapping",
+          "author": "Borrmann",
+          "doi-asserted-by": "crossref",
+          "first-page": "425",
+          "journal-title": "Adv. Eng. Inform.",
+          "key": "ref_26",
+          "volume": "28",
+          "year": "2014"
+        },
+        {
+          "DOI": "10.1016/j.enbuild.2012.07.023",
+          "article-title": "Novel approach to 3D thermography and energy efficiency evaluation",
+          "author": "Armesto",
+          "doi-asserted-by": "crossref",
+          "first-page": "436",
+          "journal-title": "Energy Build.",
+          "key": "ref_27",
+          "volume": "54",
+          "year": "2012"
+        },
+        {
+          "DOI": "10.1016/j.infrared.2020.103622",
+          "article-title": "Fusion of urban 3D point clouds with thermal attributes using MLS data and TIR image sequences",
+          "author": "Zhu",
+          "doi-asserted-by": "crossref",
+          "first-page": "103622",
+          "journal-title": "Infrared Phys. Technol.",
+          "key": "ref_28",
+          "volume": "113",
+          "year": "2021"
+        },
+        {
+          "article-title": "Generation of Thermal Point Clouds from Uncalibrated Thermal Infrared Image Sequences and Mobile Laser Scans",
+          "author": "Zhu",
+          "first-page": "1",
+          "journal-title": "IEEE Trans. Instrum. Meas.",
+          "key": "ref_29",
+          "volume": "72",
+          "year": "2023"
+        },
+        {
+          "DOI": "10.1016/j.aei.2013.03.005",
+          "article-title": "An automated vision-based method for rapid 3D energy performance modeling of existing buildings using thermal and digital imagery",
+          "author": "Ham",
+          "doi-asserted-by": "crossref",
+          "first-page": "395",
+          "journal-title": "Adv. Eng. Inform.",
+          "key": "ref_30",
+          "volume": "27",
+          "year": "2013"
+        },
+        {
+          "key": "ref_31",
+          "unstructured": "Javadnejad, F. (2017). Small Unmanned Aircraft Systems (UAS) for Engineering Inspections and Geospatial Mapping. [Ph.D. Thesis, Oregon State University]."
+        },
+        {
+          "DOI": "10.1016/j.enbuild.2013.07.030",
+          "article-title": "HeatWave: A handheld 3D thermography system for energy auditing",
+          "author": "Vidas",
+          "doi-asserted-by": "crossref",
+          "first-page": "445",
+          "journal-title": "Energy Build.",
+          "key": "ref_32",
+          "volume": "66",
+          "year": "2013"
+        },
+        {
+          "DOI": "10.1109/JSEN.2014.2360709",
+          "article-title": "Real-time mobile 3D temperature mapping",
+          "author": "Vidas",
+          "doi-asserted-by": "crossref",
+          "first-page": "1145",
+          "journal-title": "IEEE Sens. J.",
+          "key": "ref_33",
+          "volume": "15",
+          "year": "2014"
+        },
+        {
+          "article-title": "Mobile thermal mapping for matching of infrared images with 3D building models and 3D point clouds",
+          "author": "Hoegner",
+          "first-page": "252",
+          "journal-title": "Quant. Infrared Thermogr. J.",
+          "key": "ref_34",
+          "volume": "15",
+          "year": "2018"
+        },
+        {
+          "DOI": "10.20944/preprints201805.0225.v1",
+          "doi-asserted-by": "crossref",
+          "key": "ref_35",
+          "unstructured": "Yang, M.D., Su, T.C., and Lin, H.Y. (2018). Fusion of infrared thermal image and visible image for 3D thermal model reconstruction using smartphone sensors. Sensors, 18."
+        },
+        {
+          "DOI": "10.3390/rs12010112",
+          "doi-asserted-by": "crossref",
+          "key": "ref_36",
+          "unstructured": "Lin, D., Bannehr, L., Ulrich, C., and Maas, H.G. (2019). Evaluating thermal attribute mapping strategies for oblique airborne photogrammetric system AOS-Tx8. Remote Sens., 12."
+        },
+        {
+          "DOI": "10.3390/s21155061",
+          "doi-asserted-by": "crossref",
+          "key": "ref_37",
+          "unstructured": "Dlesk, A., Vach, K., and Pavelka, K. (2021). Transformations in the photogrammetric co-processing of thermal infrared images and RGB images. Sensors, 21."
+        },
+        {
+          "DOI": "10.3390/s22041655",
+          "doi-asserted-by": "crossref",
+          "key": "ref_38",
+          "unstructured": "Dlesk, A., Vach, K., and Pavelka, K. (2022). Photogrammetric co-processing of thermal infrared images and RGB images. Sensors, 22."
+        },
+        {
+          "article-title": "Photogrammetric 3D building reconstruction from thermal images",
+          "author": "Maset",
+          "first-page": "25",
+          "journal-title": "ISPRS Ann. Photogramm. Remote Sens. Spat. Inf. Sci.",
+          "key": "ref_39",
+          "volume": "4",
+          "year": "2017"
+        },
+        {
+          "DOI": "10.1080/01431161.2019.1641241",
+          "article-title": "A photogrammetric approach to fusing natural colour and thermal infrared UAS imagery in 3D point cloud generation",
+          "author": "Javadnejad",
+          "doi-asserted-by": "crossref",
+          "first-page": "211",
+          "journal-title": "Int. J. Remote Sens.",
+          "key": "ref_40",
+          "volume": "41",
+          "year": "2020"
+        },
+        {
+          "article-title": "Thermal 3D models enhancement based on integration with visible imagery",
+          "author": "Savadkouhi",
+          "first-page": "263",
+          "journal-title": "Int. Arch. Photogramm. Remote Sens. Spat. Inf. Sci.",
+          "key": "ref_41",
+          "volume": "42",
+          "year": "2019"
+        },
+        {
+          "DOI": "10.1080/01431161.2021.1951875",
+          "article-title": "Precise 3D extraction of building roofs by fusion of UAV-based thermal and visible images",
+          "author": "Dahaghin",
+          "doi-asserted-by": "crossref",
+          "first-page": "7002",
+          "journal-title": "Int. J. Remote Sens.",
+          "key": "ref_42",
+          "volume": "42",
+          "year": "2021"
+        },
+        {
+          "DOI": "10.1016/j.isprsjprs.2019.03.010",
+          "article-title": "Fusion of thermal imagery with point clouds for building façade thermal attribute mapping",
+          "author": "Lin",
+          "doi-asserted-by": "crossref",
+          "first-page": "162",
+          "journal-title": "ISPRS J. Photogramm. Remote Sens.",
+          "key": "ref_43",
+          "volume": "151",
+          "year": "2019"
+        },
+        {
+          "DOI": "10.1109/URS.2009.5137681",
+          "doi-asserted-by": "crossref",
+          "key": "ref_44",
+          "unstructured": "Hoegner, L., and Stilla, U. (2009, January 20–22). Thermal leakage detection on building facades using infrared textures generated by mobile mapping. Proceedings of the 2009 Joint Urban Remote Sensing Event, Shanghai, China."
+        },
+        {
+          "article-title": "Building facade object detection from terrestrial thermal infrared image sequences combining different views",
+          "author": "Hoegner",
+          "first-page": "55",
+          "journal-title": "ISPRS Ann. Photogramm. Remote Sens. Spat. Inf. Sci.",
+          "key": "ref_45",
+          "volume": "2",
+          "year": "2015"
+        },
+        {
+          "article-title": "Quality assessment of building textures extracted from oblique airborne thermal imagery",
+          "author": "Iwaszczuk",
+          "first-page": "3",
+          "journal-title": "ISPRS Ann. Photogramm. Remote Sens. Spat. Inf. Sci.",
+          "key": "ref_46",
+          "volume": "3",
+          "year": "2016"
+        },
+        {
+          "DOI": "10.1016/j.isprsjprs.2017.08.006",
+          "article-title": "Camera pose refinement by matching uncertain 3D building models with thermal infrared image sequences for high quality texture extraction",
+          "author": "Iwaszczuk",
+          "doi-asserted-by": "crossref",
+          "first-page": "33",
+          "journal-title": "ISPRS J. Photogramm. Remote Sens.",
+          "key": "ref_47",
+          "volume": "132",
+          "year": "2017"
+        },
+        {
+          "DOI": "10.1023/B:VISI.0000029664.99615.94",
+          "article-title": "Distinctive image features from scale-invariant keypoints",
+          "author": "Lowe",
+          "doi-asserted-by": "crossref",
+          "first-page": "91",
+          "journal-title": "Int. J. Comput. Vis.",
+          "key": "ref_48",
+          "volume": "60",
+          "year": "2004"
+        },
+        {
+          "DOI": "10.1109/ICCP61108.2024.10644336",
+          "doi-asserted-by": "crossref",
+          "key": "ref_49",
+          "unstructured": "Lin, Y.Y., Pan, X.Y., Fridovich-Keil, S., and Wetzstein, G. (2024, January 22–24). ThermalNeRF: Thermal Radiance Fields. Proceedings of the IEEE International Conference on Computational Photography (ICCP), Lausanne, Switzerland."
+        },
+        {
+          "key": "ref_50",
+          "unstructured": "Chen, Q., Shu, s., and Bai, X. (October, January 29). Thermal3D-GS: Physics-induced 3D Gaussians for Thermal Infrared Novel-view Synthesis. Proceedings of the European Conference on Computer Vision, Milan, Italy."
+        },
+        {
+          "key": "ref_51",
+          "unstructured": "Fischer, T., Kulhanek, J., Bulò, S.R., Porzi, L., Pollefeys, M., and Kontschieder, P. (2024, January 9–15). Dynamic 3D Gaussian Fields for Urban Areas. Proceedings of the Thirty-eighth Annual Conference on Neural Information Processing Systems, Vancouver, BC, Canada."
+        },
+        {
+          "key": "ref_52",
+          "unstructured": "Yan, Y., Lin, H., Zhou, C., Wang, W., Sun, H., Zhan, K., Lang, X., Zhou, X., and Peng, S. (October, January 29). Street Gaussians: Modeling Dynamic Urban Scenes with Gaussian Splatting. Proceedings of the ECCV, Milan, Italy."
+        },
+        {
+          "article-title": "Study of city real 3D modeling technology based on ContextCapture Center",
+          "author": "Wang",
+          "first-page": "126",
+          "journal-title": "Bull. Surv. Mapp.",
+          "key": "ref_53",
+          "volume": "S1",
+          "year": "2019"
+        },
+        {
+          "DOI": "10.1109/ICME55011.2023.00371",
+          "doi-asserted-by": "crossref",
+          "key": "ref_54",
+          "unstructured": "Yan, S., Cheng, X., Liu, Y., Zhu, J., Wu, R., Liu, Y., and Zhang, M. (2023, January 10–14). Render-and-Compare: Cross-view 6-DoF Localization from Noisy Prior. Proceedings of the 2023 IEEE International Conference on Multimedia and Expo (ICME), Brisbane, Australia."
+        },
+        {
+          "article-title": "ATLoc: Aerial Thermal Images Localization via View Synthesis",
+          "author": "Liu",
+          "first-page": "1",
+          "journal-title": "IEEE Trans. Geosci. Remote Sens.",
+          "key": "ref_55",
+          "volume": "62",
+          "year": "2024"
+        },
+        {
+          "DOI": "10.1145/358669.358692",
+          "article-title": "Random sample consensus: A paradigm for model fitting with applications to image analysis and automated cartography",
+          "author": "Fischler",
+          "doi-asserted-by": "crossref",
+          "first-page": "381",
+          "journal-title": "Commun. ACM",
+          "key": "ref_56",
+          "volume": "24",
+          "year": "1981"
+        },
+        {
+          "DOI": "10.1109/CVPR.2011.5995464",
+          "doi-asserted-by": "crossref",
+          "key": "ref_57",
+          "unstructured": "Kneip, L., Scaramuzza, D., and Siegwart, R. (2011, January 20–25). A novel parametrization of the perspective-three-point problem for a direct computation of absolute camera position and orientation. Proceedings of the 2011 IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2011), Colorado Springs, CO, USA."
+        },
+        {
+          "DOI": "10.1145/3503250",
+          "article-title": "NeRF: Representing scenes as neural radiance fields for view synthesis",
+          "author": "Mildenhall",
+          "doi-asserted-by": "crossref",
+          "first-page": "99",
+          "journal-title": "Commun. ACM",
+          "key": "ref_58",
+          "volume": "65",
+          "year": "2021"
+        },
+        {
+          "DOI": "10.1109/CVPR52688.2022.00542",
+          "doi-asserted-by": "crossref",
+          "key": "ref_59",
+          "unstructured": "Fridovich-Keil, S., Yu, A., Tancik, M., Chen, Q., Recht, B., and Kanazawa, A. (2022, January 18–24). Plenoxels: Radiance Fields without Neural Networks. Proceedings of the 2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), New Orleans, LA, USA."
+        },
+        {
+          "article-title": "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding",
+          "author": "Evans",
+          "first-page": "102",
+          "journal-title": "ACM Trans. Graph.",
+          "key": "ref_60",
+          "volume": "41",
+          "year": "2022"
+        },
+        {
+          "DOI": "10.1109/ICCV51070.2023.00371",
+          "doi-asserted-by": "crossref",
+          "key": "ref_61",
+          "unstructured": "Kirillov, A., Mintun, E., Ravi, N., Mao, H., Rolland, C., Gustafson, L., Xiao, T., Whitehead, S., Berg, A.C., and Lo, W.Y. (2023, January 1–6). Segment Anything. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), Paris, France."
+        },
+        {
+          "key": "ref_62",
+          "unstructured": "Bao, F., Jape, S., Schramka, A., Wang, J., McGraw, T.E., and Jacob, Z. (2023). Why is thermal imaging textureless. arXiv."
+        },
+        {
+          "key": "ref_63",
+          "unstructured": "Waczyńska, J., Borycki, P., Tadeja, S., Tabor, J., and Spurek, P. (2024). Games: Mesh-based adapting and modification of gaussian splatting. arXiv."
+        },
+        {
+          "DOI": "10.1109/CVPR52733.2024.02048",
+          "doi-asserted-by": "crossref",
+          "key": "ref_64",
+          "unstructured": "Zhou, S., Chang, H., Jiang, S., Fan, Z., Zhu, Z., Xu, D., Chari, P., You, S., Wang, Z., and Kadambi, A. (2024, January 16–22). Feature 3DGS: Supercharging 3D Gaussian Splatting to Enable Distilled Feature Fields. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA."
+        },
+        {
+          "key": "ref_65",
+          "unstructured": "Yang, Z., Yang, H., Pan, Z., and Zhang, L. (2024, January 7–11). Real-time Photorealistic Dynamic Scene Representation and Rendering with 4D Gaussian Splatting. Proceedings of the International Conference on Learning Representations (ICLR), Vienna, Austria."
+        },
+        {
+          "DOI": "10.1109/CVPR52733.2024.01922",
+          "doi-asserted-by": "crossref",
+          "key": "ref_66",
+          "unstructured": "Yang, Z., Gao, X., Zhou, W., Jiao, S., Zhang, Y., and Jin, X. (2023). Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction. arXiv."
+        },
+        {
+          "DOI": "10.1145/800224.806813",
+          "doi-asserted-by": "crossref",
+          "key": "ref_67",
+          "unstructured": "Wallace, B.A. (1981, January 3–7). Merging and Transformation of Raster Images for Cartoon Animation. Proceedings of the 8th Annual Conference on Computer Graphics and Interactive Techniques, New York, NY, USA."
+        },
+        {
+          "DOI": "10.1109/TIP.2003.819861",
+          "article-title": "Image quality assessment: From error visibility to structural similarity",
+          "author": "Wang",
+          "doi-asserted-by": "crossref",
+          "first-page": "600",
+          "journal-title": "IEEE Trans. Image Process.",
+          "key": "ref_68",
+          "volume": "13",
+          "year": "2004"
+        },
+        {
+          "DOI": "10.1109/ICPR.2010.579",
+          "doi-asserted-by": "crossref",
+          "key": "ref_69",
+          "unstructured": "Horé, A., and Ziou, D. (2010, January 23–26). Image Quality Metrics: PSNR vs. SSIM. Proceedings of the 2010 20th International Conference on Pattern Recognition, Istanbul, Turkey."
+        },
+        {
+          "DOI": "10.1109/CVPR.2018.00068",
+          "doi-asserted-by": "crossref",
+          "key": "ref_70",
+          "unstructured": "Zhang, R., Isola, P., Efros, A.A., Shechtman, E., and Wang, O. (2018, January 18–22). The unreasonable effectiveness of deep features as a perceptual metric. Proceedings of the2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2018), Salt Lake City, UT, USA."
+        },
+        {
+          "key": "ref_71",
+          "unstructured": "Simonyan, K., and Zisserman, A. (2014). Very Deep Convolutional Networks for Large-Scale Image Recognition. arXiv."
+        },
+        {
+          "DOI": "10.1109/CVPR52733.2024.00509",
+          "doi-asserted-by": "crossref",
+          "key": "ref_72",
+          "unstructured": "Jiang, Y., Tu, J., Liu, Y., Gao, X., Long, X., Wang, W., and Ma, Y. (2024, January 16–22). GaussianShader: 3D Gaussian Splatting with Shading Functions for Reflective Surfaces. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Seattle, WA, USA."
+        }
+      ],
+      "reference-count": 72,
+      "references-count": 72,
+      "relation": {},
+      "resource": {
+        "primary": {
+          "URL": "https://www.mdpi.com/2072-4292/17/2/335"
+        }
+      },
+      "score": 1,
+      "short-container-title": [
+        "Remote Sensing"
+      ],
+      "short-title": [],
+      "source": "Crossref",
+      "subject": [],
+      "subtitle": [],
+      "title": [
+        "ThermalGS: Dynamic 3D Thermal Reconstruction with Gaussian Splatting"
+      ],
+      "type": "journal-article",
+      "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+      "volume": "17"
+    },
+    "message-type": "work",
+    "message-version": "1.0.0",
+    "status": "ok"
+  },
+  "doi": "10.3390/rs17020335",
+  "fetched_at": "2026-11-09T21:33:03.341825+00:00",
+  "status_code": 200
+}
