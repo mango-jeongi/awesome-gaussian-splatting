@@ -58,3 +58,13 @@ The user's model question did not approve remote staging. Both pin sets remain
 local preparation only; no remote download or installation has run.
 Sources: [official Gemma GGUF](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf),
 [Google memory-planning notes](https://ai.google.dev/gemma/docs/core).
+
+## Approved Gemma staging completed
+
+The subsequent explicit Gemma staging approval supersedes the earlier hold for
+that manifest. All three files (5,937,654,997 bytes) were downloaded, size/hash
+verified and the two runtime archives extracted on `msi-raider`. The
+[receipt and binary check](../../reports/gemma-staging-20261110.md) record the
+result. Qwen weights remain unstaged. No model service or inference was started.
+The prepared canary service/request files are review artifacts, not an installed
+service; startup remains a separate authorization step.
