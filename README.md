@@ -672,6 +672,12 @@ Showing 60 of 315 papers. [Browse the full category](https://mango-jeongi.github
 
 ---
 
+## Optional Research Synthesis
+
+An explicit PDF-cluster command prepares source-hashed receipts and optional Gemini drafts with checked page quotations. Generated claims remain unreviewed and outside ingestion. See [setup, budgets and limitations](CONTRIBUTING.md#optional-pdf-cluster-synthesis). Local PDF preparation is verified; live Gemini generation and reviewed cluster synthesis remain pending.
+
+---
+
 ## Adding New Tags or Categories
 
 1. Edit [`config/taxonomy.yaml`](config/taxonomy.yaml) to add a new category or keyword trigger under `categories` or `technical_tags`.

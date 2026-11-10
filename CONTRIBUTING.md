@@ -198,3 +198,51 @@ stale styles. Paper-only ingestion uses the committed stylesheet.
 The isolated 5,000-record fixture, project-path gzip preview server and real-browser
 acceptance recipes are documented in [scripts/qa](scripts/qa/README.md). Recorded
 measurements and their limits are in [the portal acceptance report](reports/portal-acceptance-20261110.md).
+
+## Optional PDF-cluster synthesis
+
+Install the optional dependencies with `uv sync --frozen --group research` in the
+prescribed SSD environment. Prepare a new receipt without network access:
+
+```sh
+uv run --group research python -m src.deep_research --paper "<canonical-id>=<local-pdf>" --question "<research question>" --output <new-draft.json>
+```
+
+Repeat `--paper` for an explicitly selected cluster (1–30 active canonical IDs).
+The operator must verify each PDF's identity. A dry run hashes each PDF, extracts
+its physical pages and records provenance without sending documents or loading
+credentials. It does not estimate provider tokens or generate a synthesis.
+
+To generate a separate draft, configure `GEMINI_API_KEY` in the process or ignored
+`.env.local`, then use a **new** output path and add `--execute`. This sends the
+selected full PDFs and extracted page text to Gemini. The default model is the
+resumption plan's `gemini-2.5-flash`; `--model` explicitly selects another model
+when access or lifecycle changes. There is no automatic model fallback.
+
+Execution first counts input tokens and refuses generation when the configured
+budget is exceeded or unavailable. Defaults are 200,000 admitted input tokens
+(including a 1,024-token framing reserve) and 8,192 maximum output tokens. These
+are token limits, not a dollar-cost guarantee. Each SDK call has a 120-second
+network timeout and one attempt; there is no automatic generation retry. The
+aggregate raw PDF limit is 40 MB, with at most 200 pages per PDF. Scanned PDFs
+without extractable text are rejected; no OCR is performed by this command.
+
+The structured output separates reported claims from inference. Each claim must
+cite a selected ID, physical PDF page and an exact quote present in that page's
+extracted text. Every selected source must be cited or explicitly named in a
+coverage gap. Unknown sources, incorrect quotes/pages, truncated/blocked output
+and schema failures are refused. Existing drafts cannot be overwritten, and
+output under canonical data or deployed docs is refused. Receipts retain source,
+page-text, catalog and instruction hashes, model, parser version and token usage.
+
+All generated synthesis remains **unreviewed**. Quote presence does not prove
+that a claim follows from the quote, establish valid benchmark comparisons, or
+verify scientific correctness. A human must review the sources and claims before
+using the draft. No result enters canonical metadata, the public portal or an
+extraction review store automatically. Scheduled ingestion remains deterministic.
+
+The SDK calls follow the official [Google Gen AI SDK documentation](https://googleapis.github.io/python-genai/).
+The [RadSplat dry-run receipt](reports/runs/deep-research-radsplat-dryrun-20261110.json)
+proves local preparation of the 15,059,485-byte, 11-page PDF. A live generation and
+reviewed multi-paper synthesis remain unverified because no Gemini key was
+configured for that check.
