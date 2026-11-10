@@ -1,0 +1,13 @@
+* text=auto
+*.py text eol=lf
+*.js text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+
+# Content-addressed evidence must retain exact bytes on every platform.
+data/** -text
+docs/data/** -text
+docs/papers.json -text
+tests/fixtures/** -text
+reports/relevance/** -text
