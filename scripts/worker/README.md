@@ -1,0 +1,38 @@
+# Pinned local-model staging
+
+`llama-qwen-pins.json` freezes llama.cpp `b12259` CUDA 12.8 x86_64 binaries,
+the companion CUDA runtime, and the official Qwen Q5_K_M split GGUF at repository
+revision `bb5d59e06d9551d752d08b292a50eb208b07ab1f`. The four files total
+**6,227,545,077 bytes**; the model files account for 5,444,831,360 bytes.
+Checksums come from the GitHub release asset digests and Hugging Face LFS metadata.
+
+Preview locally without creating output directories or contacting providers:
+
+```sh
+uv run python scripts/worker/stage_llama.py --pins scripts/worker/llama-qwen-pins.json --root <dedicated-staging-directory> --dry-run
+```
+
+After remote staging is authorized, copy the script/pins to a dedicated directory
+and invoke it using the remote worker virtual environment's Python. Do not use
+system Python for workspace extraction/metadata operations. The script requires
+15 GB free, validates the entire pin inventory before traffic, admits at most
+8 GB of downloads, resumes `.part` files, limits curl to 25 MiB/s, and checks
+exact byte sizes and SHA-256 before publishing files. Each transfer has a
+30-minute curl timeout and at most two retries. A subprocess has a 5,500-second
+outer bound. Bad existing artifacts are refused, never silently replaced.
+
+Runtime archives are extracted only after checksum verification, using Python's
+`data` tar filter. No service definition, active runtime pointer, model symlink,
+worker queue or repository state is changed by this staging command. The receipt
+explicitly leaves model inference unverified. Staging is not a CUDA/VRAM or model
+quality test. Verify the receipt against current artifact hashes when resuming.
+
+Sources: [llama.cpp release](https://github.com/ggml-org/llama.cpp/releases/tag/b12259),
+[official Qwen model](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/tree/bb5d59e06d9551d752d08b292a50eb208b07ab1f).
+
+On 2026-11-10, automatic approval review rejected remote execution because prior
+approval covered only the 15 MB PDF transfer/extraction service. Remote model
+staging therefore awaits explicit approval. No transfer or installation occurred.
+Ten offline checks pass, covering exact pin inventory, unsafe names, unexpected
+URLs, invalid sizes/checksums, duplicates/missing artifacts and a no-network,
+no-output-directory preview. Ruff lint and formatting pass.
