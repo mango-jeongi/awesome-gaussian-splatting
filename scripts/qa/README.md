@@ -53,3 +53,18 @@ rollback, missing/corrupt components and interrupted staging. All mutation and
 failure injection occurs in the isolated directory. It refuses work/report paths
 inside canonical data or deployed docs. Successful execution does not switch
 writer defaults or activate a remote store.
+
+## Full offline CLI performance budget
+
+```sh
+uv run python -m scripts.qa.offline_cli_budget --workdir <temporary-directory> --report <report-path>
+```
+
+This builds an isolated 5,000-record fixture with 254,949 synthetic source
+references. It times separate CLI subprocesses for validate, graph, build and a
+final validation, including process startup and disk I/O. Fixture preparation
+and post-run edge assertions are excluded from timing. It verifies every outgoing
+and incoming edge and citation count, checks that the canonical source is unchanged,
+and exits unsuccessfully when the 60-second budget is exceeded. Output paths inside
+canonical data and deployed docs are refused. The receipt records source/code
+hashes, fixture hashes, operation timings and environment details.

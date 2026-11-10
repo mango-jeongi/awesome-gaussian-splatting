@@ -73,3 +73,29 @@ the isolated fixture builder, gzip preview server and Playwright CLI functions.
 This checkpoint does not prove remote writer coordination, deployed asset digests,
 release rollback, full source/venue completeness, provider coverage or genuine
 multi-day velocity; those broader pipeline gates remain open.
+
+## Full CLI build budget follow-up
+
+The [offline CLI receipt](runs/offline-cli-5000-20261110.json) closes the narrower
+measurement gap above: on the same Intel Core Ultra 9 285H (16 logical CPUs),
+Windows 11 and Python 3.14.0, a separately generated 5,000-record fixture with
+254,949 synthetic source references passed the complete offline sequence:
+
+| CLI operation | Seconds |
+| --- | ---: |
+| Validate input | 2.1899 |
+| Reconstruct and save citation graph | 5.7036 |
+| Build README, legacy export and public artifacts | 15.6691 |
+| Validate output | 2.0472 |
+| Total wall time | 25.6098 |
+
+The total is below the proposed 60-second budget and includes subprocess startup
+and disk I/O. Fixture preparation and post-run correctness assertions are excluded.
+Every outgoing edge, reverse edge and incoming count matched the expected fixture;
+the canonical source hash remained unchanged. This is one measured local run,
+with caches not forcibly cleared, rather than a remote CI or release duration.
+The fixture has source references so the CLI genuinely reconstructs the dense
+graph instead of retaining precomputed edges. Use the
+[CLI budget recipe](../scripts/qa/README.md#full-offline-cli-performance-budget)
+to reproduce it in an isolated directory. Deployment and other phase gates remain
+open as stated above.
