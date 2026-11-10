@@ -246,3 +246,60 @@ The [RadSplat dry-run receipt](reports/runs/deep-research-radsplat-dryrun-202611
 proves local preparation of the 15,059,485-byte, 11-page PDF. A live generation and
 reviewed multi-paper synthesis remain unverified because no Gemini key was
 configured for that check.
+
+## Optional local llama-server table candidates
+
+`src.workers.llama_parser` supplies an opt-in worker backend for structured
+numeric-table candidates. It uses the existing SSD cache, leased queue, bounded
+parser subprocess and snapshot-bound human review import. It does not replace
+the default deterministic ruled-table/figure parser.
+
+Create a private JSON configuration outside canonical data:
+
+```json
+{
+  "endpoint": "http://127.0.0.1:8080",
+  "model_alias": "qwen-local",
+  "declared_model_sha256": "<64 lowercase hex characters from the GGUF file>",
+  "max_page_requests": 4,
+  "max_words_per_page": 1200,
+  "max_output_tokens": 2048,
+  "request_timeout_seconds": 30
+}
+```
+
+The entire configuration and prompt are bound into the extractor/job identity.
+The model digest is operator-declared: verify the actual GGUF with `sha256sum`
+and start the server using that file and the configured alias. The adapter checks
+the returned alias but cannot cryptographically attest the loaded weights.
+
+Use a separate queue for this backend and pass the same config to both commands:
+
+```sh
+uv run --group extraction python -m src.workers enqueue --queue <llama-queue> --cache <ssd-cache> --pdf <pdf> --paper-id <canonical-id> --source-url <source-url> --timeout 300 --llama-config <config.json>
+uv run --group extraction python -m src.workers pass --queue <llama-queue> --cache <ssd-cache> --max-jobs 1 --llama-config <config.json>
+```
+
+Only literal loopback HTTP endpoints with explicit ports are accepted. Environment
+proxies and redirects are disabled. Each selected page has one request and no
+automatic retry; the normal job attempt budget still applies. The outer parser
+subprocess timeout bounds the complete pass for each job, including PDF parsing
+and local inference. Size/page/result limits and lease fencing continue to apply.
+
+The adapter selects at most the configured number of pages, ordered by numeric
+word density then physical page number. Pages above the word budget are skipped,
+not truncated. Selected and omitted pages are recorded in result warnings. The
+model returns word indices through llama-server's JSON-schema response format;
+each raw numeric value is exactly one source word. Labels, units and bounding
+boxes are reconstructed from source words. Multiword numeric expressions are
+not combined by this backend and need separate source review.
+Invalid indices/order, duplicates, model-alias mismatch and truncated output are
+refused. Missing context remains null. No figure candidates are produced by this
+backend. Word presence does not establish correct table semantics: all candidates
+remain `review-required`, including apparently complete rows and units.
+
+The adapter follows the official [llama-server API contract](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
+Model installation, CUDA compatibility, VRAM/context limits, live extraction
+quality and headless llama-server operation must be verified on the host before
+configuring its timer to use this backend. The existing timer continues to use the
+deterministic parser until that rollout is validated.
