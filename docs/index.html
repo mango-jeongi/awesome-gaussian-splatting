@@ -2,6 +2,7 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="data:," />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Awesome 3D Gaussian Splatting — Comprehensive Research Database</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -25,6 +26,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .paper-card { content-visibility: auto; contain-intrinsic-size: auto 300px; }
     code, pre, .mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
@@ -112,14 +114,29 @@
             <option value="ALL">All Years</option>
           </select>
 
+          <select id="providerSelect" aria-label="Citation Provider"
+                  class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <option value="openalex">Citations: OpenAlex</option>
+            <option value="semanticscholar">Citations: Semantic Scholar</option>
+          </select>
+
           <select id="sortSelect" aria-label="Sort Order"
                   class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
             <option value="newest">Sort: Newest First</option>
-            <option value="citations">Sort: Most Cited (OpenAlex)</option>
+            <option value="trending">Sort: Trending (discovery)</option>
+            <option value="citations">Sort: Most Cited (selected provider)</option>
             <option value="db_citations">Sort: Most Cited in DB</option>
             <option value="oldest">Sort: Oldest First</option>
             <option value="code">Sort: Has Code First</option>
             <option value="title">Sort: Title (A–Z)</option>
+          </select>
+
+          <select id="coverageSelect" aria-label="Trending Coverage"
+                  class="px-3 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <option value="all">Trending coverage: All</option>
+            <option value="complete">Trending: Complete only</option>
+            <option value="partial">Trending: Partial only</option>
+            <option value="unavailable">Trending: Unavailable only</option>
           </select>
 
           <label class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs font-medium cursor-pointer select-none">
@@ -156,8 +173,17 @@
       </div>
     </section>
 
+    <section id="paperRoute" hidden class="space-y-4 my-6" aria-live="polite"></section>
+    <nav class="my-3"><a href="#/graph" class="underline text-sm">Explore citation graph</a></nav>
     <!-- Paper Feed List -->
+    <p id="trendingInfo" hidden class="text-sm text-slate-500 my-3"></p>
+    <p id="loadStatus" role="status" aria-live="polite" class="text-sm text-slate-500 my-3"></p>
     <section id="papersContainer" class="space-y-3"></section>
+    <nav id="pagination" aria-label="Paper pages" class="flex items-center justify-center gap-4 my-6">
+      <button id="previousPage" type="button" class="px-3 py-2 rounded-lg border border-slate-400 disabled:opacity-40">Previous</button>
+      <span id="pageStatus" aria-live="polite"></span>
+      <button id="nextPage" type="button" class="px-3 py-2 rounded-lg border border-slate-400 disabled:opacity-40">Next</button>
+    </nav>
   </main>
 
   <!-- BibTeX Citation Modal -->
@@ -177,6 +203,12 @@
     </div>
   </div>
 
+  <script src="./assets/reviewed-benchmarks.js"></script>
+  <script src="./assets/route-identifiers.js"></script>
+  <script src="./assets/graph-projector.js"></script>
+  <script src="./assets/graph-view.js"></script>
+  <script src="./assets/provider-signals.js"></script>
+  <script src="./assets/trending-view.js"></script>
   <script>
     // Theme management (defaults to dark mode, persisted in localStorage)
     const htmlEl = document.documentElement;
@@ -193,6 +225,175 @@
 
     // Global State
     let allPapers = [];
+    let publicManifest;
+    let trendingPayload = null;
+    let trendingPromise = null;
+    let trendingExpiryTimer = null;
+    let providerPayload = null;
+    let providerPromise = null;
+    let searchCorpus = null;
+    let searchPromise = null;
+    let currentPage = 1;
+    let filterSignature = '';
+    let renderGeneration = 0;
+    let modalGeneration = 0;
+    let routeGeneration = 0;
+    let activeView = 'catalog';
+    let restoredPage = null;
+    const routePanel = document.getElementById('paperRoute');
+    function catalogHash() {
+      const params = new URLSearchParams({q: searchInput.value, year: yearSelect.value,
+        sort: sortSelect.value, provider: providerSelect.value, coverage: coverageSelect.value, code: codeOnlyCheckbox.checked ? '1' : '0',
+        category: selectedCategory, page: String(currentPage)});
+      for (const tag of [...selectedTags].sort()) params.append('tag', tag);
+      return '#/catalog?' + params;
+    }
+    function saveCatalog() {
+      if (activeView === 'catalog') history.replaceState({scroll: scrollY}, '', catalogHash());
+    }
+    function paperLink(id) { return '#/paper/' + encodeURIComponent(id); }
+    async function handleRoute() {
+      if (!publicManifest) return;
+      const generation = ++routeGeneration;
+      ++renderGeneration;
+      closeBibtexModal();
+      window.stopCitationGraph?.();
+      const hash = location.hash || '#/catalog';
+      const isPaper = hash.startsWith('#/paper/');
+      const isGraph = hash.startsWith('#/graph');
+      const isSpecial = isPaper || isGraph;
+      activeView = isGraph ? 'graph' : isPaper ? 'paper' : 'catalog';
+      routePanel.hidden = !isSpecial;
+      searchInput.closest('section').hidden = isSpecial;
+      papersContainer.hidden = isSpecial;
+      document.getElementById('pagination').hidden = isSpecial;
+      document.getElementById('loadStatus').textContent = '';
+      if (isGraph) {
+        await window.renderCitationGraph({panel: routePanel, manifest: publicManifest,
+          artifact, papers: allPapers, valid: () => generation === routeGeneration,
+          navigate: id => window.jumpToPaper(id)});
+        return;
+      }
+      if (!isPaper) {
+        const params = new URLSearchParams(hash.split('?')[1] || '');
+        searchInput.value = params.get('q') || '';
+        yearSelect.value = params.get('year') || 'ALL';
+        sortSelect.value = params.get('sort') || 'newest';
+        providerSelect.value = params.get('provider') === 'semanticscholar' ? 'semanticscholar' : 'openalex';
+        coverageSelect.value = ['complete','partial','unavailable'].includes(params.get('coverage')) ? params.get('coverage') : 'all';
+        codeOnlyCheckbox.checked = params.get('code') === '1';
+        selectedCategory = params.get('category') || 'ALL';
+        selectedTags = new Set(params.getAll('tag'));
+        restoredPage = Math.max(1, Number(params.get('page')) || 1);
+        const scroll = history.state?.scroll || 0;
+        renderFilters();
+        await renderPapers();
+        if (generation === routeGeneration) window.scrollTo(0, scroll);
+        return;
+      }
+      routePanel.innerHTML = '<a href="#/catalog" data-return class="underline">Back to catalog</a><p>Loading paper…</p>';
+      const returnLink = routePanel.querySelector('[data-return]');
+      returnLink.href = history.state?.catalog || '#/catalog';
+      try {
+        let id = decodeURIComponent(hash.slice('#/paper/'.length));
+        if (!paperById.has(id)) {
+          const aliases = await artifact(publicManifest.aliases.path);
+          id = window.ownAlias(aliases, id);
+        }
+        if (generation !== routeGeneration) return;
+        if (!paperById.has(id)) {
+          const archive = await artifact(publicManifest.archive.path);
+          const target = window.ownAlias(archive.aliases, id);
+          if (target && paperById.has(target)) {
+            history.replaceState(history.state, '', paperLink(target));
+            return handleRoute();
+          }
+          const entry = Object.hasOwn(archive.papers,id) ? archive.papers[id] : Object.hasOwn(archive.papers,target) ? archive.papers[target] : null;
+          if (generation !== routeGeneration) return;
+          const message = routePanel.lastElementChild;
+          message.textContent = entry ? `Archived paper: ${entry.disposition}. ${entry.reason} Reviewed ${entry.reviewed_at}.` : 'Unknown paper ID in this build.';
+          message.setAttribute('tabindex','-1'); message.focus({preventScroll:true});
+          return;
+        }
+        if (location.hash !== paperLink(id)) history.replaceState(history.state, '', paperLink(id));
+        const paper = await loadPaper(id);
+        if (generation !== routeGeneration) return;
+        routePanel.innerHTML = `<a href="${escapeHtml(history.state?.catalog || '#/catalog')}" class="underline">Back to catalog</a>
+          <article class="p-5 rounded-xl border border-slate-400 space-y-3">
+          <h1 tabindex="-1" class="text-xl font-semibold">${escapeHtml(paper.title)}</h1>
+          <p>${escapeHtml(paper.authors.join(', '))}</p><p>${escapeHtml(displayDate(paper))}</p>
+          <p class="whitespace-pre-line">${escapeHtml(paper.abstract || 'Abstract unavailable.')}</p>
+          <button data-action="bibtex" data-value="${escapeHtml(id)}" class="underline">BibTeX</button>
+          ${paper.paper_url ? `<a class="underline ml-3" href="${escapeHtml(paper.paper_url)}" target="_blank" rel="noopener">Source paper</a>` : ''}
+          <a class="underline ml-3" href="#/graph?paper=${encodeURIComponent(id)}">Citation neighborhood</a>
+          <section data-reviewed-benchmarks class="max-w-full min-w-0"></section>
+          <div data-relationships></div></article>`;
+        window.renderReviewedBenchmarks(routePanel.querySelector('[data-reviewed-benchmarks]'), paper);
+        const relationships = routePanel.querySelector('[data-relationships]');
+        for (const [label, ids] of [['References in this corpus', paper.db_references || []], ['Cited by in this corpus', paper.db_citations || []]]) {
+          const section = document.createElement('section');
+          const heading = document.createElement('h2');
+          heading.textContent = label + ` (${ids.length})`;
+          section.appendChild(heading);
+          if (!ids.length) section.appendChild(document.createTextNode('No matched relationships in this build.'));
+          for (const target of ids) {
+            const link = document.createElement('a');
+            link.href = paperLink(target); link.textContent = paperById.get(target)?.title || target;
+            link.className = 'block underline my-1'; section.appendChild(link);
+          }
+          relationships.appendChild(section);
+        }
+        routePanel.querySelector('h1').focus({preventScroll:true});
+        window.scrollTo(0, 0);
+      } catch (error) {
+        if (generation !== routeGeneration) return;
+        routePanel.innerHTML = '<a href="#/catalog" class="underline">Back to catalog</a><p>Paper could not be loaded.</p><button class="underline" data-retry-route>Retry paper</button>';
+        routePanel.querySelector('[data-retry-route]').onclick = handleRoute;
+      }
+    }
+    window.addEventListener('hashchange', handleRoute);
+    routePanel.addEventListener('click', event => {
+      const link = event.target.closest('a');
+      if (link && link.hash.startsWith('#/paper/')) {
+        event.preventDefault();
+        history.pushState({catalog: history.state?.catalog}, '', link.hash);
+        handleRoute();
+        return;
+      }
+      const button = event.target.closest('[data-action="bibtex"]');
+      if (button) openBibtexModal(button.dataset.value);
+    });
+    const pageSize = 50;
+    const artifactRequests = new Map();
+    const paperById = new Map();
+    const detailCache = new Map();
+    const sortedCatalog = new Map();
+
+    async function fetchJson(url) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }
+
+    function artifact(path) {
+      if (!artifactRequests.has(path)) {
+        artifactRequests.set(path, fetchJson(`./data/${path}`).catch(error => {
+          artifactRequests.delete(path);
+          throw error;
+        }));
+      }
+      return artifactRequests.get(path);
+    }
+
+    async function loadPaper(id) {
+      if (detailCache.has(id)) return detailCache.get(id);
+      const card = paperById.get(id);
+      if (!card) throw new Error('Paper is not in this build');
+      const records = await artifact(card.detail_path);
+      for (const [paperId, paper] of Object.entries(records)) detailCache.set(paperId, paper);
+      if (!detailCache.has(id)) throw new Error('Paper detail is missing');
+      return detailCache.get(id);
+    }
     let selectedCategory = 'ALL';
     let selectedTags = new Set();
     let showAllTags = false;
@@ -200,6 +401,8 @@
     const searchInput = document.getElementById('searchInput');
     const yearSelect = document.getElementById('yearSelect');
     const sortSelect = document.getElementById('sortSelect');
+    const providerSelect = document.getElementById('providerSelect');
+    const coverageSelect = document.getElementById('coverageSelect');
     const codeOnlyCheckbox = document.getElementById('codeOnlyCheckbox');
     const categoryPillsEl = document.getElementById('categoryPills');
     const tagPillsEl = document.getElementById('tagPills');
@@ -224,6 +427,13 @@
         .replace(/"/g, '&quot;');
     }
 
+    function displayDate(paper) {
+      if (paper.published_date_precision === 'day') return paper.published_date;
+      if (paper.published_date_precision === 'month') return paper.published_date.slice(0, 7);
+      if (paper.published_date_precision === 'year') return paper.published_date.slice(0, 4);
+      return `${paper.year} (date unverified)`;
+    }
+
     function generateBibtex(p) {
       const firstWord = (p.title || 'paper').split(/\s+/)[0].replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
       const authorSlug = (p.first_author || 'author').split(/\s+/)[0].replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
@@ -233,16 +443,27 @@
       return `@article{${key},\n  title={${p.title}},\n  author={${authors}},\n  journal={${journal}},\n  year={${p.year}}${p.paper_url ? `,\n  url={${p.paper_url}}` : ''}\n}`;
     }
 
-    function openBibtexModal(paperId) {
-      const p = allPapers.find(item => item.id === paperId);
-      if (!p) return;
-      document.getElementById('bibtexContent').textContent = generateBibtex(p);
+    async function openBibtexModal(paperId) {
+      const generation = ++modalGeneration;
+      const content = document.getElementById('bibtexContent');
+      content.textContent = 'Loading citation…';
+      document.getElementById('copyBibtexBtn').disabled = true;
       const modal = document.getElementById('bibtexModal');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
+      try {
+        const paper = await loadPaper(paperId);
+        if (generation === modalGeneration) {
+          content.textContent = generateBibtex(paper);
+          document.getElementById('copyBibtexBtn').disabled = false;
+        }
+      } catch (error) {
+        if (generation === modalGeneration) content.textContent = `Citation could not load: ${error.message}. Close and retry.`;
+      }
     }
 
     function closeBibtexModal() {
+      modalGeneration++;
       const modal = document.getElementById('bibtexModal');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
@@ -366,24 +587,134 @@
     window.openBibtex = openBibtexModal;
 
     window.jumpToPaper = function(paperId) {
-      searchInput.value = paperId;
-      selectedCategory = 'ALL';
-      selectedTags.clear();
-      renderFilters();
-      renderPapers();
-      const container = document.getElementById('papersContainer');
-      if (container) {
-        window.scrollTo({ top: container.offsetTop - 80, behavior: 'smooth' });
-      }
+      saveCatalog();
+      const catalog = activeView === 'catalog' ? catalogHash() : history.state?.catalog;
+      history.pushState({catalog}, '', paperLink(paperId));
+      handleRoute();
     };
 
-    function renderPapers() {
+    function paperSignal(paper) { return ProviderSignals.signal(paper, providerSelect.value, providerPayload); }
+    function signalBadge(paper) {
+      const value = paperSignal(paper);
+      const observed = value.observedAt ? `; fetched ${value.observedAt.slice(0,10)}` : '; fetch date unavailable';
+      const status = `${value.status}${value.stale ? ' / stale' : ''}`;
+      const influential = providerSelect.value === 'semanticscholar' ? `; influential: ${value.influential ?? 'unavailable'}` : '';
+      return `<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20" title="${escapeHtml(value.label + observed + '; ' + status + influential)}">${escapeHtml(value.label)}: ${value.count === null ? 'unavailable' : value.count.toLocaleString() + ' cites'}${value.stale ? ' (stale)' : ''}</span>`;
+    }
+    function paperTrend(paper) { return TrendingView.row(trendingPayload, paper.id, providerSelect.value); }
+    function trendingActive() { return sortSelect.value === 'trending' || coverageSelect.value !== 'all'; }
+    function trendBadge(paper) {
+      if (!trendingActive()) return '';
+      const row = paperTrend(paper);
+      const velocity = row.velocity;
+      const measured = velocity?.status === 'ok';
+      const velocityText = measured ? `${velocity.raw_velocity.toFixed(3)} citations/day over ${velocity.elapsed_days.toFixed(2)} actual days${velocity.provider_correction ? ' (provider correction; ranking momentum clamped to zero)' : ''}; ${velocity.baseline_at.slice(0,10)} to ${velocity.current_at.slice(0,10)}` : `unavailable (${velocity?.status || row.reason || 'no observations'})`;
+      const hfText = row.upvotes_observed_at ? row.upvotes_observed_at.slice(0,10) : 'unavailable';
+      const weights = Object.entries(row.weights_used || {}).map(([key,value]) => `${key}: ${value.toFixed(2)}`).join(', ') || 'none';
+      return `<div class="text-xs text-slate-500 my-2"><strong>Discovery trend: ${row.score === null ? 'unavailable' : row.score.toFixed(2)} · ${escapeHtml(row.coverage)}</strong><br>Velocity (${escapeHtml(providerSelect.value)}): ${escapeHtml(velocityText)}<br>HF observation: ${escapeHtml(hfText)}; weights used: ${escapeHtml(weights)}${row.reason ? '; ' + escapeHtml(row.reason) : ''}</div>`;
+    }
+    function orderedPapers(sortBy) {
+      const cacheKey = `${providerSelect.value}:${sortBy}:${trendingPayload ? Date.now() >= Date.parse(trendingPayload.valid_until) : false}`;
+      if (sortedCatalog.has(cacheKey)) return sortedCatalog.get(cacheKey);
+      const ordered = allPapers.slice();
+      ordered.sort((a, b) => {
+        if (sortBy === 'trending') return TrendingView.compare(paperTrend(a),paperTrend(b)) || (b.published_date || '').localeCompare(a.published_date || '') || a.id.localeCompare(b.id);
+        if (sortBy === 'citations') return ProviderSignals.compare(paperSignal(a), paperSignal(b)) || (b.published_date || '').localeCompare(a.published_date || '');
+        if (sortBy === 'db_citations') return (b.db_citation_count || 0) - (a.db_citation_count || 0) || (b.citation_count || 0) - (a.citation_count || 0) || (b.published_date || '').localeCompare(a.published_date || '');
+        if (sortBy === 'oldest') return (a.published_date || '').localeCompare(b.published_date || '');
+        if (sortBy === 'code') return (b.code_url ? 1 : 0) - (a.code_url ? 1 : 0) || (b.published_date || '').localeCompare(a.published_date || '');
+        if (sortBy === 'title') return (a.title || '').localeCompare(b.title || '');
+        return (b.published_date || '').localeCompare(a.published_date || '');
+      });
+      sortedCatalog.set(cacheKey, ordered);
+      return ordered;
+    }
+
+    async function renderPapers() {
+      if (activeView !== 'catalog') return;
+      const generation = ++renderGeneration;
       const q = searchInput.value.trim().toLowerCase();
       const yr = yearSelect.value;
       const sortBy = sortSelect.value;
       const codeOnly = codeOnlyCheckbox.checked;
 
-      let filtered = allPapers.filter(p => {
+      const signature = JSON.stringify([q, yr, sortBy, providerSelect.value, coverageSelect.value, codeOnly, selectedCategory, [...selectedTags].sort()]);
+      if (signature !== filterSignature) currentPage = restoredPage || 1;
+      if (restoredPage !== null) currentPage = restoredPage;
+      restoredPage = null;
+      filterSignature = signature;
+      const status = document.getElementById('loadStatus');
+      status.textContent = '';
+      const trendInfo = document.getElementById('trendingInfo');
+      trendInfo.hidden = !trendingActive();
+      if (trendingActive() && !trendingPayload && publicManifest.trending) {
+        status.textContent = 'Loading discovery scores…';
+        try {
+          if (!trendingPromise) trendingPromise = artifact(publicManifest.trending.path).catch(error => { trendingPromise = null; throw error; });
+          const payload = await trendingPromise;
+          if (generation !== renderGeneration) return;
+          trendingPayload = payload; sortedCatalog.clear(); status.textContent = '';
+        } catch (error) {
+          if (generation !== renderGeneration) return;
+          status.textContent = `Discovery scores failed: ${error.message}. `;
+          const retry = document.createElement('button'); retry.textContent = 'Retry discovery scores'; retry.className = 'underline'; retry.onclick = () => renderPapers(); status.appendChild(retry);
+          papersContainer.innerHTML = ''; document.getElementById('pagination').hidden = true; return;
+        }
+      }
+      if (trendingActive() && trendingPayload) {
+        clearTimeout(trendingExpiryTimer);
+        const now = Date.now();
+        const transition = now < Date.parse(trendingPayload.as_of) ? Date.parse(trendingPayload.as_of) : Date.parse(trendingPayload.valid_until);
+        if (transition > now) trendingExpiryTimer = setTimeout(() => {
+          sortedCatalog.clear();
+          if (activeView === 'catalog' && trendingActive()) renderPapers();
+        }, Math.min(transition - now + 20, 2147483647));
+      }
+      if (trendingActive()) {
+        const config = trendingPayload?.config;
+        trendInfo.textContent = config ? `Discovery ranking, not scientific quality. ${config.version}: ${config.weights.velocity} × velocity percentile + ${config.weights.upvotes} × HF upvote percentile; score = 100 × mix × 2^(-age/${config.half_life_days}); age ≤ ${config.max_age_days} days. Partial scores renormalize available weights; complete scores sort first. As of ${trendingPayload.as_of}; valid before ${trendingPayload.valid_until}.` : 'Discovery snapshot unavailable.';
+      }
+      if (providerSelect.value === 'semanticscholar' && !providerPayload && publicManifest.signals) {
+        status.textContent = 'Loading separate provider observations…';
+        try {
+          if (!providerPromise) providerPromise = artifact(publicManifest.signals.path).catch(error => { providerPromise = null; throw error; });
+          const payload = await providerPromise;
+          if (generation !== renderGeneration) return;
+          providerPayload = payload;
+          sortedCatalog.clear();
+          status.textContent = '';
+        } catch (error) {
+          if (generation !== renderGeneration) return;
+          status.textContent = `Provider observations failed: ${error.message}. `;
+          const retry = document.createElement('button'); retry.textContent = 'Retry provider observations';
+          retry.className = 'underline'; retry.onclick = () => renderPapers(); status.appendChild(retry);
+          papersContainer.innerHTML = ''; document.getElementById('pagination').hidden = true;
+          return;
+        }
+      }
+      if (q && !searchCorpus) {
+        status.textContent = 'Expanding search to full abstracts and authors…';
+        try {
+          if (!searchPromise) searchPromise = artifact(publicManifest.search.path).catch(error => { searchPromise = null; throw error; });
+          const complete = await searchPromise;
+          if (generation !== renderGeneration) return;
+          searchCorpus = complete;
+          status.textContent = '';
+        } catch (error) {
+          if (generation !== renderGeneration) return;
+          status.textContent = `Full search failed: ${error.message}.`;
+          const retry = document.createElement('button');
+          retry.textContent = 'Retry search';
+          retry.className = 'underline ml-2';
+          retry.onclick = () => renderPapers();
+          status.appendChild(retry);
+          papersContainer.innerHTML = '';
+          document.getElementById('pagination').hidden = true;
+          return;
+        }
+      }
+      const filtered = orderedPapers(sortBy).filter(p => {
+        if (coverageSelect.value !== 'all' && paperTrend(p).coverage !== coverageSelect.value) return false;
         if (selectedCategory !== 'ALL') {
           const cats = p.categories || [p.primary_category];
           if (!cats.includes(selectedCategory)) return false;
@@ -397,22 +728,20 @@
         if (yr !== 'ALL' && String(p.year) !== yr) return false;
         if (codeOnly && !p.code_url) return false;
         if (q) {
-          const hay = `${p.title} ${(p.authors || []).join(' ')} ${p.abstract} ${p.tldr} ${p.venue || ''} ${p.id} ${(p.tags || []).join(' ')}`.toLowerCase();
-          if (!hay.includes(q)) return false;
+          if (!(searchCorpus[p.id] || '').includes(q)) return false;
         }
         return true;
       });
 
-      filtered.sort((a, b) => {
-        if (sortBy === 'citations') return (b.citation_count || 0) - (a.citation_count || 0) || (b.published_date || '').localeCompare(a.published_date || '');
-        if (sortBy === 'db_citations') return (b.db_citation_count || 0) - (a.db_citation_count || 0) || (b.citation_count || 0) - (a.citation_count || 0) || (b.published_date || '').localeCompare(a.published_date || '');
-        if (sortBy === 'oldest') return (a.published_date || '').localeCompare(b.published_date || '');
-        if (sortBy === 'code') return (b.code_url ? 1 : 0) - (a.code_url ? 1 : 0) || (b.published_date || '').localeCompare(a.published_date || '');
-        if (sortBy === 'title') return (a.title || '').localeCompare(b.title || '');
-        return (b.published_date || '').localeCompare(a.published_date || '');
-      });
+
 
       document.getElementById('statFiltered').textContent = filtered.length;
+      const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+      currentPage = Math.min(currentPage, pageCount);
+      document.getElementById('pagination').hidden = filtered.length === 0;
+      document.getElementById('previousPage').disabled = currentPage <= 1;
+      document.getElementById('nextPage').disabled = currentPage >= pageCount;
+      document.getElementById('pageStatus').textContent = `Page ${currentPage} of ${pageCount} · ${filtered.length} papers`;
 
       if (filtered.length === 0) {
         papersContainer.innerHTML = `
@@ -422,7 +751,7 @@
         return;
       }
 
-      papersContainer.innerHTML = filtered.map(p => {
+      papersContainer.innerHTML = filtered.slice((currentPage - 1) * pageSize, currentPage * pageSize).map(p => {
         const venueHtml = p.venue
           ? `<span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">${escapeHtml(p.venue)}</span>`
           : '';
@@ -431,25 +760,23 @@
           : `<span class="mono text-xs text-slate-400">${escapeHtml(p.source.toUpperCase())}</span>`;
 
         const tagsHtml = (p.tags || []).map(t => `
-          <button type="button" onclick="toggleTagFilter('${escapeHtml(t)}')"
+          <button type="button" data-action="tag" data-value="${escapeHtml(t)}"
                   class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-500/20 hover:text-indigo-400 transition">
             #${escapeHtml(t)}
           </button>`).join('');
 
         return `
-          <article class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition shadow-xs">
+          <article class="paper-card p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-sky-500/50 transition shadow-xs">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="mono text-xs font-medium text-sky-600 dark:text-sky-400">${escapeHtml(p.published_date)}</span>
+                <span class="mono text-xs font-medium text-sky-600 dark:text-sky-400">${escapeHtml(displayDate(p))}</span>
                 <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
                   ${escapeHtml(p.primary_category)}
                 </span>
                 ${venueHtml}
                 ${sourceBadge}
-                ${(p.citation_count && p.citation_count > 0) ? `
-                  <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20" title="${p.citation_count.toLocaleString()} citations on OpenAlex">
-                    ★ ${p.citation_count.toLocaleString()} cites
-                  </span>` : ''}
+                ${signalBadge(p)}
+                ${trendBadge(p)}
                 ${(p.db_citation_count && p.db_citation_count > 0) ? `
                   <span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20" title="Cited by ${p.db_citation_count} other papers in this database">
                     🔗 ${p.db_citation_count} in DB
@@ -460,7 +787,8 @@
                 ${p.pdf_url ? `<a href="${escapeHtml(p.pdf_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 hover:bg-rose-500/20 transition">PDF</a>` : ''}
                 ${p.code_url ? `<a href="${escapeHtml(p.code_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition">Code</a>` : ''}
                 ${p.project_url ? `<a href="${escapeHtml(p.project_url)}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/20 transition">Project</a>` : ''}
-                <button type="button" onclick="openBibtex('${escapeHtml(p.id)}')" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">BibTeX</button>
+                <a href="${escapeHtml(paperLink(p.id))}" class="underline text-xs" data-paper-route>Details</a>
+                <button type="button" data-action="bibtex" data-value="${escapeHtml(p.id)}" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition">BibTeX</button>
               </div>
             </div>
 
@@ -469,47 +797,35 @@
             </h2>
 
             <p class="text-xs text-slate-500 dark:text-slate-400 mb-2.5">
-              ${escapeHtml((p.authors || []).join(', '))}
+              ${escapeHtml(p.first_author)}
             </p>
 
             ${p.tldr ? `<p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950/70 p-2.5 rounded-xl border border-slate-200/70 dark:border-slate-800/80 mb-3"><strong class="text-sky-600 dark:text-sky-400">TL;DR:</strong> ${escapeHtml(p.tldr)}</p>` : ''}
 
-            ${((p.db_references && p.db_references.length > 0) || (p.db_citations && p.db_citations.length > 0)) ? `
-              <div class="mb-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800/60 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs">
-                ${p.db_references && p.db_references.length > 0 ? `
-                  <div class="flex flex-wrap items-center gap-1.5">
-                    <span class="text-slate-500 dark:text-slate-400 font-medium">References in DB:</span>
-                    ${p.db_references.slice(0, 4).map(refId => `<button type="button" onclick="jumpToPaper('${escapeHtml(refId)}')" class="mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sky-600 dark:text-sky-400 hover:border-sky-500 text-[10px] transition">${escapeHtml(refId)}</button>`).join('')}
-                    ${p.db_references.length > 4 ? `<span class="text-[10px] text-slate-400">+${p.db_references.length - 4} more</span>` : ''}
-                  </div>` : ''}
-                ${p.db_citations && p.db_citations.length > 0 ? `
-                  <div class="flex flex-wrap items-center gap-1.5">
-                    <span class="text-slate-500 dark:text-slate-400 font-medium">Cited by in DB:</span>
-                    ${p.db_citations.slice(0, 4).map(citId => `<button type="button" onclick="jumpToPaper('${escapeHtml(citId)}')" class="mono px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 hover:border-indigo-500 text-[10px] transition">${escapeHtml(citId)}</button>`).join('')}
-                    ${p.db_citations.length > 4 ? `<span class="text-[10px] text-indigo-400">+${p.db_citations.length - 4} more</span>` : ''}
-                  </div>` : ''}
-              </div>` : ''}
-
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex flex-wrap gap-1.5">${tagsHtml}</div>
-              ${p.abstract ? `
-                <details class="text-xs text-slate-500 dark:text-slate-400 w-full mt-1">
-                  <summary class="cursor-pointer hover:text-sky-500 select-none font-medium">Read full abstract</summary>
-                  <p class="mt-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 leading-relaxed text-slate-600 dark:text-slate-300">${escapeHtml(p.abstract)}</p>
-                </details>` : ''}
+              <details data-paper-id="${escapeHtml(p.id)}" class="text-xs text-slate-500 dark:text-slate-400 w-full mt-1">
+                <summary class="cursor-pointer hover:text-sky-500 select-none font-medium">Read full abstract, authors, and relationships</summary>
+                <div data-detail-content class="mt-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-950 leading-relaxed text-slate-600 dark:text-slate-300">Open to load details.</div>
+              </details>
             </div>
           </article>`;
       }).join('');
+      saveCatalog();
     }
 
     searchInput.addEventListener('input', renderPapers);
     yearSelect.addEventListener('change', renderPapers);
     sortSelect.addEventListener('change', renderPapers);
+    providerSelect.addEventListener('change', renderPapers);
+    coverageSelect.addEventListener('change', renderPapers);
     codeOnlyCheckbox.addEventListener('change', renderPapers);
     document.getElementById('resetBtn').addEventListener('click', () => {
       searchInput.value = '';
       yearSelect.value = 'ALL';
       sortSelect.value = 'newest';
+      providerSelect.value = 'openalex';
+      coverageSelect.value = 'all';
       codeOnlyCheckbox.checked = false;
       selectedCategory = 'ALL';
       selectedTags.clear();
@@ -517,21 +833,81 @@
       renderPapers();
     });
 
-    async function init() {
+    papersContainer.addEventListener('click', event => {
+      const route = event.target.closest('[data-paper-route]');
+      if (route) { event.preventDefault(); window.jumpToPaper(decodeURIComponent(route.hash.slice('#/paper/'.length))); return; }
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      if (button.dataset.action === 'tag') window.toggleTagFilter(button.dataset.value);
+      if (button.dataset.action === 'bibtex') openBibtexModal(button.dataset.value);
+      if (button.dataset.action === 'jump') window.jumpToPaper(button.dataset.value);
+    });
+
+    papersContainer.addEventListener('toggle', async event => {
+      const element = event.target;
+      if (!element.matches('details[data-paper-id]') || !element.open) return;
+      const content = element.querySelector('[data-detail-content]');
+      content.textContent = 'Loading details…';
       try {
-        const res = await fetch('./papers.json');
-        const data = await res.json();
-        allPapers = data.papers || [];
+        const paper = await loadPaper(element.dataset.paperId);
+        if (!element.isConnected) return;
+        content.innerHTML = `<p class="mb-2">${escapeHtml(paper.authors.join(', '))}</p><p>${escapeHtml(paper.abstract || 'Abstract unavailable.')}</p>`;
+        for (const [label, ids] of [['References in DB', paper.db_references || []], ['Cited by in DB', paper.db_citations || []]]) {
+          if (!ids.length) continue;
+          const section = document.createElement('div');
+          section.className = 'mt-3';
+          const heading = document.createElement('strong');
+          heading.textContent = `${label}: `;
+          section.appendChild(heading);
+          for (const id of ids) {
+            const button = document.createElement('button');
+            button.dataset.action = 'jump';
+            button.dataset.value = id;
+            button.textContent = paperById.get(id)?.title || id;
+            button.className = 'underline m-1';
+            section.appendChild(button);
+          }
+          content.appendChild(section);
+        }
+      } catch (error) {
+        if (element.isConnected) content.textContent = `Details failed: ${error.message}. Close and reopen to retry.`;
+      }
+    }, true);
+
+    document.getElementById('previousPage').onclick = () => { currentPage--; renderPapers(); };
+    document.getElementById('nextPage').onclick = () => { currentPage++; renderPapers(); };
+
+    async function init() {
+      document.getElementById('loadStatus').textContent = 'Loading catalog…';
+      try {
+        publicManifest = await fetchJson('./data/manifest.json');
+        const index = await artifact(publicManifest.index.path);
+        sortedCatalog.clear();
+        paperById.clear();
+        detailCache.clear();
+        allPapers = index.papers.map(row => {
+          const paper = Object.fromEntries(index.fields.map((field, position) => [field, row[position]]));
+          paper.detail_path = index.detail_paths[paper.detail_path];
+          paper.published_date_precision = index.date_precisions[paper.published_date_precision];
+          paper.categories = paper.categories.map(position => index.categories[position]);
+          paper.tags = paper.tags.map(position => index.tags[position]);
+          paper.primary_category = paper.categories[0];
+          paper.year = Number(paper.published_date.slice(0, 4));
+          if (paper.arxiv_id) {
+            paper.paper_url ||= `https://arxiv.org/abs/${paper.arxiv_id}`;
+            paper.pdf_url ||= `https://arxiv.org/pdf/${paper.arxiv_id}.pdf`;
+          }
+          paperById.set(paper.id, paper);
+          return paper;
+        });
         document.getElementById('statTotal').textContent = allPapers.length;
         document.getElementById('statWithCode').textContent = allPapers.filter(p => p.code_url).length;
-        const totalEdges = allPapers.reduce((sum, p) => sum + (p.db_references ? p.db_references.length : 0), 0);
-        const edgesEl = document.getElementById('statEdges');
-        if (edgesEl) edgesEl.textContent = totalEdges;
-        document.getElementById('statUpdated').textContent = (data.last_updated || '').slice(0, 10) || 'Today';
-        renderFilters();
-        renderPapers();
-      } catch (err) {
-        papersContainer.innerHTML = `<div class="p-8 text-center text-rose-500 text-sm">Failed to load papers.json: ${escapeHtml(err.message)}</div>`;
+        document.getElementById('statEdges').textContent = publicManifest.total_edges;
+        document.getElementById('statUpdated').textContent = (publicManifest.last_updated || '').slice(0, 10) || 'Unavailable';
+        await handleRoute();
+      } catch (error) {
+        papersContainer.innerHTML = `<div class="p-8 text-center text-rose-500 text-sm">Failed to load catalog: ${escapeHtml(error.message)}. <button id="retryCatalog" class="underline">Retry</button></div>`;
+        document.getElementById('retryCatalog').onclick = init;
       }
     }
 

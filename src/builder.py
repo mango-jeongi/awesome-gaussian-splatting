@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import re
-import shutil
 from collections import Counter
 from pathlib import Path
+from urllib.parse import quote
 
+from src.public import build_public
 from src.schema import PaperDatabase, PaperRecord, TaxonomyConfig
 
 REPO_URL = "https://github.com/mango-jeongi/awesome-gaussian-splatting"
@@ -126,6 +127,11 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
                 f"| `{p.published_date[:7]}` | **{safe_title}**{venue_str}<br><sub>{safe_tldr}</sub> | {p.first_author} | {tag_pills} | {_format_links(p)} |"
             )
         lines.append("")
+        if len(cat_papers) > 60:
+            lines.append(
+                f"Showing 60 of {len(cat_papers)} papers. [Browse the full category]({PAGES_URL}#/catalog?category={quote(cat.name, safe='')})."
+            )
+            lines.append("")
         lines.append("</details>")
         lines.append("")
 
@@ -162,6 +168,15 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
             "",
             "---",
             "",
+            "## Manual Operations",
+            "",
+            "- Official CVF evidence capture: `uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10`. It resumes hash-validated metadata capture and does not import canonical papers; see [venue capture evidence](reports/cvpr2025-metadata-capture.md).",
+            "- [Historical backfill dispatch](.github/workflows/manual-backfill.yml): choose preview/apply, a stable run key, identical frozen dates, and a request ceiling. Completed validated checkpoints are retained on `feed` for resume.",
+            "- [Reviewed worker import dispatch](.github/workflows/manual-worker-import.yml): select committed review/result JSON inputs. The runner verifies the canonical public PDF digest and exact reviewed decisions; preview is the default.",
+            "- Both definitions share the repository writer concurrency group, verify the feed parent before an ordinary push, and run build/schema/lint/format/tests. Source PDFs remain temporary. See [operator instructions](CONTRIBUTING.md#manual-backfill-and-reviewed-worker-imports) for exact commands and limits.",
+            "",
+            "---",
+            "",
             "## Contributing",
             "",
             "- **Submit a Paper or Code**: Authors and researchers are encouraged to submit newly released papers, official repositories, or project demos via our [Paper Submission Form](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues/new?template=paper_submission.yml).",
@@ -186,6 +201,8 @@ def build_artifacts(
     docs_data_path: str | Path,
 ) -> None:
     """Compile README.md and copy data/papers.json to docs/papers.json for GitHub Pages."""
+    if Path(data_path).resolve() in {Path(readme_path).resolve(), Path(docs_data_path).resolve()}:
+        raise ValueError("Build outputs must not overwrite canonical input")
     db = PaperDatabase.load(data_path)
     taxonomy = TaxonomyConfig.from_yaml(taxonomy_path)
 
@@ -194,4 +211,25 @@ def build_artifacts(
 
     docs_target = Path(docs_data_path)
     docs_target.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(data_path, docs_target)
+    public_legacy = db.model_copy(deep=True)
+    public_legacy.archive = {}
+    public_legacy.save(docs_target)
+    from src.workers.review import ReviewedExtractionStore
+
+    reviewed_path = Path(data_path).parent / "extraction" / "reviewed.json"
+    reviewed = (
+        ReviewedExtractionStore.model_validate_json(reviewed_path.read_bytes())
+        if reviewed_path.exists()
+        else None
+    )
+    from src.public_signals import public_signals
+
+    signals = public_signals(db, Path(data_path).parent / "signals")
+    from src.public_trending import public_trending
+    from src.ranking import RankingConfig
+
+    config = RankingConfig.load(Path(__file__).resolve().parent.parent / "config/ranking.yaml")
+    trending = public_trending(db, Path(data_path).parent / "signals", config)
+    build_public(
+        db, docs_target.parent / "data", reviewed=reviewed, signals=signals, trending=trending
+    )

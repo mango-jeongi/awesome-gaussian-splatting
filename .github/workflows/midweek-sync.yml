@@ -2,13 +2,17 @@ name: Mid-Week Trunk Sync (No Deploy)
 
 on:
   schedule:
-    # Runs Wednesday at 14:00 UTC (60h after Monday 02:00 UTC ingest -> strictly <72h TBD SLA)
+    # Wednesday branch synchronization; public Pages publication remains weekly.
     - cron: "0 14 * * 3"
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
+
+concurrency:
+  group: repository-writer
+  cancel-in-progress: false
 
 jobs:
   midweek-trunk-sync:
@@ -30,23 +34,44 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync --all-groups
+        run: uv sync --frozen --all-groups
 
       - name: Merge origin/feed and verify OBT integrity
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin feed main
-          git merge origin/feed --no-edit -m "chore(sync): mid-week trunk sync from feed (<72h TBD SLA)"
+          git merge --ff-only origin/main
+          git merge origin/feed --no-edit -m "chore(sync): mid-week trunk sync from feed"
+          # Optional providers retain successful caches on failure. All three
+          # passes are independently budgeted; at most 15 requests / 270 seconds
+          # are admitted in total (in-flight requests may finish afterward).
+          mkdir -p reports/runs
+          for provider in openalex semanticscholar huggingface; do
+            set +e
+            uv run python -m src.cli refresh-signals --provider "$provider" --due --require-key --max-requests 5 --max-seconds 90 --limit 100 --summary-file "$GITHUB_STEP_SUMMARY" > "reports/runs/signals-${provider}-latest.json" 2> "reports/runs/signals-${provider}-latest.error.txt"
+            signal_status=$?
+            set -e
+            if (( signal_status != 0 )); then
+              echo "::warning::${provider} refresh failed; retained cache will be used."
+              echo "- ${provider}: refresh command failed (exit ${signal_status}); inspect reports/runs diagnostics. Cached publication may proceed." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
           uv run python -m src.cli build
           uv run ruff check .
+          uv run ruff format --check .
           uv run pytest -v
           uv run python -m src.cli validate
 
       - name: Push synced main and align feed branch
         run: |
-          git add data/papers.json docs/papers.json README.md
+          for generated_path in data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
+            if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
+              git add --all -- "$generated_path"
+            fi
+          done
           git diff --cached --quiet || git commit -m "chore(sync): rebuild mid-week artifacts"
-          git push origin main
-          git checkout -B feed main
-          git push origin feed
+          git push --atomic origin HEAD:main HEAD:feed

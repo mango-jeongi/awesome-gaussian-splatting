@@ -4,10 +4,13 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import date
 from pathlib import Path
 
+from src.contracts import FieldEvidence
 from src.enricher import MultiProviderEnricher
 from src.extractors.arxiv import ArxivExtractor
+from src.identity import normalize_arxiv
 from src.schema import PaperDatabase, PaperRecord
 
 ARXIV_FILENAME_RE = re.compile(r"\b(\d{4}\.\d{4,5})\b")
@@ -50,15 +53,34 @@ def load_local_papers(
         if not is_relevant:
             continue
 
-        year_str = str(item.get("year") or "2024")
-        month_str = str(item.get("month") or "01")
-        year = int(year_str) if year_str.isdigit() else 2024
-        month = int(month_str) if month_str.isdigit() and 1 <= int(month_str) <= 12 else 1
-
-        # Determine source (arXiv vs non-arXiv schema-on-read test)
-        arxiv_match = ARXIV_FILENAME_RE.search(f"{item.get('file', '')} {abstract}")
-        arxiv_id = arxiv_match.group(1) if arxiv_match else None
-        source = "arxiv" if arxiv_id else "manual"
+        supplied_date = item.get("published_date")
+        if supplied_date:
+            parsed_date = date.fromisoformat(str(supplied_date))
+            year, month = parsed_date.year, parsed_date.month
+            publication_date = parsed_date.isoformat()
+            precision = "day"
+        else:
+            year_str = str(item.get("year") or "")
+            if not year_str.isdigit() or not 1990 <= int(year_str) <= 2100:
+                raise ValueError(f"Seed requires reviewed publication year: {title}")
+            year = int(year_str)
+            supplied_month = item.get("month")
+            if supplied_month is None or supplied_month == "":
+                month, precision = 1, "year"
+            else:
+                month_str = str(supplied_month)
+                if not month_str.isdigit() or not 1 <= int(month_str) <= 12:
+                    raise ValueError(f"Seed requires reviewed publication month: {title}")
+                month, precision = int(month_str), "month"
+            publication_date = f"{year:04d}-{month:02d}-01"
+        # Identifier hints from the filename never establish publication day precision.
+        arxiv_match = ARXIV_FILENAME_RE.search(str(item.get("file") or ""))
+        arxiv_id = (
+            normalize_arxiv(str(item["arxiv_id"]))
+            if item.get("arxiv_id")
+            else (arxiv_match.group(1) if arxiv_match else None)
+        )
+        source = "manual"  # The local cache is the source; an arXiv ID is identifier evidence.
 
         subcat = item.get("subcategory")
         initial_cats = [subcat] if subcat else []
@@ -68,7 +90,17 @@ def load_local_papers(
             source=source,
             title=title,
             authors=item.get("authors") or ["Unknown"],
-            published_date=f"{year:04d}-{month:02d}-01",
+            published_date=publication_date,
+            published_date_precision=precision,
+            metadata_evidence={
+                "published_date": [
+                    FieldEvidence(
+                        source="local_seed_metadata",
+                        source_url=f"local-seed:{path.name}",
+                        value=publication_date,
+                    )
+                ]
+            },
             year=year,
             month=month,
             abstract=abstract,
@@ -86,7 +118,7 @@ def seed_database(
     fetch_arxiv_count: int = 100,
 ) -> int:
     """Seed `data/papers.json` from local curated papers and live arXiv backfill."""
-    db = PaperDatabase.load(data_path)
+    db = PaperDatabase.load(data_path) if Path(data_path).exists() else PaperDatabase()
     enricher = MultiProviderEnricher(taxonomy_path)
 
     all_records: list[PaperRecord] = []

@@ -86,3 +86,13 @@ def test_taxonomy_yaml_loads() -> None:
     assert "4DGS" in tax.technical_tags
     assert "SLAM" in tax.technical_tags
     assert "CUDA & Rasterization" in tax.technical_tags
+
+
+def test_unknown_fields_and_invalid_dates_fail_closed():
+    import pytest
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError):
+        PaperRecord(title="Paper with unsupported data", unknown_metadata="would be lost")
+    with pytest.raises(ValidationError):
+        PaperRecord(title="Paper with invalid date", published_date="2025-02-30")

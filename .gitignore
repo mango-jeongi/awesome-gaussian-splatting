@@ -26,3 +26,10 @@ desktop.ini
 .env
 .env.local
 
+
+# Local coordination and interrupted staging files (uv.lock remains tracked).
+*.writer.lock
+*.run.lock
+.staging-*
+.candidate-*
+data/ingestion/**/*.lock

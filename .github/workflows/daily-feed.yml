@@ -6,14 +6,18 @@ on:
     - cron: "0 2 * * 1-5"
   workflow_dispatch:
     inputs:
-      max_results:
-        description: "Maximum recent arXiv entries to query"
+      max_requests:
+        description: "Maximum arXiv requests this pass; unfinished scans resume next run"
         required: false
-        default: "60"
+        default: "20"
 
 permissions:
   contents: write
   models: read
+
+concurrency:
+  group: repository-writer
+  cancel-in-progress: false
 
 jobs:
   ingest-feed:
@@ -35,28 +39,85 @@ jobs:
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync --all-groups
+        run: uv sync --frozen --all-groups
 
-      - name: Run arXiv Ingestion & Multi-Provider Enrichment
+      - name: Resume arXiv updated-window ingestion
+        id: daily
         env:
+          MAX_REQUESTS: ${{ inputs.max_requests || '20' }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ENABLE_GH_MODELS: "true"
+          ENABLE_GH_MODELS: "false"
           ENABLE_GEMINI: "false"
         run: |
-          MAX_RES="${{ github.event.inputs.max_results || '60' }}"
-          uv run python -m src.cli ingest --max-results "$MAX_RES"
+          if [[ ! "$MAX_REQUESTS" =~ ^[0-9]{1,4}$ ]] || (( 10#$MAX_REQUESTS < 1 || 10#$MAX_REQUESTS > 1000 )); then
+            echo "max_requests must be an integer in [1, 1000]" >&2
+            exit 1
+          fi
+          git fetch origin feed
+          git merge --ff-only origin/feed
+          # Bootstrap only the recent update window. Historical coverage is a
+          # separate backfill; never infer it from papers.json.last_updated.
+          initial=()
+          if [[ ! -e data/ingestion/daily/active.json && ! -e data/ingestion/daily/watermark.json ]]; then
+            initial=(--since "$(date -u -d '7 days ago' +%Y-%m-%d)")
+          fi
+          mkdir -p reports/runs
+          set +e
+          uv run python -m src.cli daily "${initial[@]}" --max-requests "$MAX_REQUESTS" > reports/runs/daily-latest.json 2> reports/runs/daily-latest.error.txt
+          daily_status=$?
+          set -e
+          echo "status=$daily_status" >> "$GITHUB_OUTPUT"
+          echo "Daily ingestion exit status: $daily_status. Partial scans retain their cursor and do not advance the watermark. See reports/runs/daily-latest.json." >> "$GITHUB_STEP_SUMMARY"
+          # Frozen daily evidence resumes across UTC-day changes. This prepares
+          # a reviewable HF proposal without writing canonical papers.
+          mkdir -p reports/runs
+          set +e
+          uv run python -m src.cli discover-huggingface --max-results 100 --lookback 7 --max-requests 10 --max-seconds 120 --preview-report reports/runs/hf-import-proposal.json --summary-file "$GITHUB_STEP_SUMMARY" > reports/runs/hf-discovery-latest.json 2> reports/runs/hf-discovery-latest.error.txt
+          hf_status=$?
+          set -e
+          if (( hf_status != 0 )); then
+            echo "::warning::HF discovery failed; frozen checkpoint retained."
+            echo "- HF discovery: command failed (exit ${hf_status}); inspect retained diagnostics. Canonical import was not applied." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          # Optional providers retain successful caches on failure. All three
+          # passes are independently budgeted; at most 15 requests / 270 seconds
+          # are admitted in total (in-flight requests may finish afterward).
+          mkdir -p reports/runs
+          for provider in openalex semanticscholar huggingface; do
+            set +e
+            uv run python -m src.cli refresh-signals --provider "$provider" --due --require-key --max-requests 5 --max-seconds 90 --limit 100 --summary-file "$GITHUB_STEP_SUMMARY" > "reports/runs/signals-${provider}-latest.json" 2> "reports/runs/signals-${provider}-latest.error.txt"
+            signal_status=$?
+            set -e
+            if (( signal_status != 0 )); then
+              echo "::warning::${provider} refresh failed; retained cache will be used."
+              echo "- ${provider}: refresh command failed (exit ${signal_status}); inspect reports/runs diagnostics. Cached publication may proceed." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
           uv run python -m src.cli build
           uv run python -m src.cli validate
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run pytest -v
 
       - name: Commit and push delta to feed branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/papers.json docs/papers.json README.md
+          for generated_path in data/ingestion/huggingface data/ingestion/daily data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
+            if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
+              git add --all -- "$generated_path"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "No new papers found today."
           else
             DATE_UTC=$(date -u +"%Y-%m-%d")
-            git commit -m "chore(feed): daily arXiv 3DGS ingestion ($DATE_UTC) [skip ci]"
+            git commit -m "chore(feed): daily arXiv 3DGS ingestion ($DATE_UTC)"
             git push origin feed
           fi
+
+      - name: Report required-source failure after persisting checkpoint
+        if: steps.daily.outputs.status != '0'
+        run: exit 1

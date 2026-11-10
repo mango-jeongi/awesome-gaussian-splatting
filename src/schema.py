@@ -3,13 +3,18 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
-from datetime import UTC, datetime
+from collections.abc import Callable
+from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Literal
 
 import yaml
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, PrivateAttr, field_validator, model_validator
+
+from src.contracts import DatePlacement, DatePrecision, FieldEvidence
+from src.identity import IdentityIndex, normalize_arxiv, normalize_doi, paper_keys
 
 PaperSource = Literal["arxiv", "ieee", "cvf", "acm", "manual", "huggingface"]
 
@@ -199,6 +204,8 @@ class PaperRecord(BaseModel):
     non-arXiv publications (IEEE, CVF, ACM, manual curations).
     """
 
+    model_config = ConfigDict(extra="forbid")
+
     id: str = Field(
         default="",
         description="Canonical unique identifier (arXiv ID if available, else DOI or deterministic title hash).",
@@ -238,6 +245,14 @@ class PaperRecord(BaseModel):
         default=None,
         description="Conference or journal venue (e.g., 'SIGGRAPH 2023', 'CVPR 2025').",
     )
+
+    published_date_precision: DatePrecision = "unknown"
+    date_placement: DatePlacement = "legacy_unknown"
+    publication_date: str | None = None
+    publication_year: int | None = Field(default=None, ge=1990, le=2100)
+    publication_date_precision: DatePrecision = "unknown"
+    arxiv_doi: str | None = None
+    metadata_evidence: dict[str, list[FieldEvidence]] = Field(default_factory=dict)
 
     # Action URLs
     paper_url: str = Field(
@@ -330,11 +345,16 @@ class PaperRecord(BaseModel):
     def normalize_arxiv_id(cls, v: object) -> str | None:
         if not v:
             return None
-        s = str(v).strip()
-        s = re.sub(r"^https?://arxiv\.org/(abs|pdf)/", "", s)
-        s = re.sub(r"\.pdf$", "", s)
-        s = re.sub(r"v\d+$", "", s)
-        return s or None
+        return normalize_arxiv(str(v))
+
+    @field_validator("updated_date", "publication_date")
+    @classmethod
+    def validate_optional_dates(cls, value: str | None) -> str | None:
+        if value is not None:
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+                raise ValueError("Date must be ISO YYYY-MM-DD")
+            date.fromisoformat(value)
+        return value
 
     @model_validator(mode="after")
     def populate_derived_fields(self) -> PaperRecord:
@@ -343,7 +363,7 @@ class PaperRecord(BaseModel):
             if self.arxiv_id:
                 self.id = self.arxiv_id
             elif self.doi:
-                self.id = f"doi:{self.doi.lower().strip()}"
+                self.id = f"doi:{normalize_doi(self.doi)}"
             else:
                 norm_title = re.sub(r"[^a-z0-9]+", "", self.title.lower())
                 digest = hashlib.sha1(norm_title.encode("utf-8")).hexdigest()[:10]
@@ -369,9 +389,14 @@ class PaperRecord(BaseModel):
 
         # Ensure published_date aligns with year/month
         if self.published_date and re.match(r"^\d{4}-\d{2}-\d{2}$", self.published_date):
+            date.fromisoformat(self.published_date)
+            if not 1990 <= int(self.published_date[:4]) <= 2100:
+                raise ValueError("Original publication year outside supported range")
             self.year = int(self.published_date[:4])
             self.month = int(self.published_date[5:7])
         else:
+            if self.published_date:
+                raise ValueError("Original publication date must be ISO YYYY-MM-DD")
             self.published_date = f"{self.year:04d}-{self.month:02d}-01"
 
         # Ensure categories & tags are deduplicated and non-empty
@@ -402,6 +427,146 @@ class PaperRecord(BaseModel):
 
         return self
 
+    @model_validator(mode="after")
+    def validate_metadata_evidence(self) -> PaperRecord:
+        original = date.fromisoformat(self.published_date)
+        if self.published_date_precision == "month" and original.day != 1:
+            raise ValueError("Month-precision placement must use the first day")
+        if self.published_date_precision == "year" and (original.month, original.day) != (1, 1):
+            raise ValueError("Year-precision placement must use January 1")
+        expected = {
+            "day": "observed",
+            "month": "month_start",
+            "year": "year_start",
+            "unknown": "legacy_unknown",
+        }[self.published_date_precision]
+        if self.date_placement == "legacy_unknown":
+            self.date_placement = expected
+        elif self.date_placement != expected:
+            raise ValueError("Date placement disagrees with precision")
+        if self.publication_date:
+            published = date.fromisoformat(self.publication_date)
+            if self.publication_year is not None and self.publication_year != published.year:
+                raise ValueError("Proceedings date and year disagree")
+            if not 1990 <= published.year <= 2100:
+                raise ValueError("Proceedings year outside supported range")
+            self.publication_year = published.year
+            if self.publication_date_precision == "month" and published.day != 1:
+                raise ValueError("Month-precision proceedings date must use the first day")
+            if self.publication_date_precision == "year" and (published.month, published.day) != (
+                1,
+                1,
+            ):
+                raise ValueError("Year-precision proceedings date must use January 1")
+        elif self.publication_date_precision not in ("unknown", "year") or (
+            self.publication_date_precision == "year" and self.publication_year is None
+        ):
+            raise ValueError("Proceedings precision requires date/year evidence")
+        for field, entries in self.metadata_evidence.items():
+            if field not in type(self).model_fields or field == "metadata_evidence":
+                raise ValueError(f"Unknown evidence field: {field}")
+            reviewed = [entry for entry in entries if entry.reviewed_at is not None]
+            if reviewed:
+                latest = max(entry.reviewed_at for entry in reviewed)
+                approved = [entry.value for entry in reviewed if entry.reviewed_at == latest]
+                if any(value != getattr(self, field) for value in approved):
+                    raise ValueError(f"Reviewed evidence disagrees with current field: {field}")
+        return self
+
+    def reviewed_fields(self) -> set[str]:
+        return {
+            field
+            for field, entries in self.metadata_evidence.items()
+            if any(entry.reviewed_at for entry in entries)
+        }
+
+    def protected_fields(self) -> set[str]:
+        locked = self.reviewed_fields()
+        for group in (
+            {"published_date", "year", "month", "published_date_precision", "date_placement"},
+            {"publication_date", "publication_year", "publication_date_precision"},
+            {"categories", "primary_category"},
+            {"authors", "first_author"},
+        ):
+            if locked & group:
+                locked |= group
+        return locked
+
+    def with_provider_updates(self, *, update: dict) -> PaperRecord:
+        locked = self.protected_fields()
+        changes = {field: value for field, value in update.items() if field not in locked}
+        return PaperRecord.model_validate(self.model_copy(update=changes).model_dump())
+
+    def merge_metadata(self, incoming: PaperRecord) -> PaperRecord:
+        """Provider updates preserve reviewed fields and independent date identities."""
+        update = {
+            field: getattr(incoming, field) or getattr(self, field)
+            for field in (
+                "arxiv_id",
+                "doi",
+                "arxiv_doi",
+                "venue",
+                "code_url",
+                "project_url",
+                "pdf_url",
+                "paper_url",
+                "publication_date",
+                "publication_year",
+            )
+        }
+        update.update(
+            {
+                "abstract": incoming.abstract
+                if len(incoming.abstract) > len(self.abstract)
+                else self.abstract,
+                "tldr": incoming.tldr or self.tldr,
+                "categories": list(dict.fromkeys(incoming.categories + self.categories)),
+                "tags": list(dict.fromkeys(incoming.tags + self.tags)),
+            }
+        )
+        if incoming.publication_date_precision != "unknown":
+            update["publication_date_precision"] = incoming.publication_date_precision
+        if incoming.updated_date and (
+            not self.updated_date or incoming.updated_date > self.updated_date
+        ):
+            update["updated_date"] = incoming.updated_date
+        if self.authors == ["Unknown"] and incoming.authors != ["Unknown"]:
+            update["authors"] = incoming.authors
+            update["first_author"] = incoming.first_author
+        if incoming.published_date_precision != "unknown" and (
+            (incoming.source == "arxiv" and incoming.published_date_precision == "day")
+            or (
+                self.published_date_precision == "unknown"
+                and self.published_date == incoming.published_date
+            )
+        ):
+            for field in (
+                "published_date",
+                "published_date_precision",
+                "date_placement",
+                "year",
+                "month",
+            ):
+                update[field] = getattr(incoming, field)
+        locked = self.protected_fields()
+        update = {field: value for field, value in update.items() if field not in locked}
+        evidence = {field: list(entries) for field, entries in self.metadata_evidence.items()}
+        for field, entries in incoming.metadata_evidence.items():
+            for entry in entries:
+                if entry not in evidence.setdefault(field, []):
+                    # Reviewed metadata is changed only through an explicit override operation.
+                    if (
+                        field in locked
+                        and entry.reviewed_at is not None
+                        and entry.value != getattr(self, field)
+                    ):
+                        raise ValueError(
+                            f"Conflicting reviewed override requires adjudication: {field}"
+                        )
+                    evidence[field].append(entry)
+        update["metadata_evidence"] = evidence
+        return PaperRecord.model_validate(self.model_copy(update=update).model_dump())
+
     def to_bibtex(self) -> str:
         """Generate a clean BibTeX citation entry for this paper."""
         first_word = (
@@ -429,48 +594,63 @@ class PaperRecord(BaseModel):
 class PaperDatabase(BaseModel):
     """Top-level container for `data/papers.json` One Big Table."""
 
+    model_config = ConfigDict(extra="forbid")
+
     schema_version: str = "1.0.0"
     last_updated: str = Field(
         default_factory=lambda: datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     )
     total_count: int = 0
     papers: list[PaperRecord] = Field(default_factory=list)
+    aliases: dict[str, str] = Field(default_factory=dict)
+    archive: dict[str, dict] = Field(default_factory=dict)
+    _signal_stores: dict = PrivateAttr(default_factory=dict)
+    _loaded_path: Path | None = PrivateAttr(default=None)
+    _loaded_sha256: str | None = PrivateAttr(default=None)
 
-    def upsert(self, records: list[PaperRecord]) -> int:
-        """Idempotently upsert records by canonical ID or normalized title, returning number of new records added."""
-        by_id: dict[str, PaperRecord] = {p.id: p for p in self.papers}
-        by_norm_title: dict[str, str] = {
-            re.sub(r"[^a-z0-9]+", "", p.title.lower()): p.id for p in self.papers
-        }
+    def upsert(
+        self,
+        records: list[PaperRecord],
+        *,
+        on_conflict: Callable[[PaperRecord, ValueError], None] | None = None,
+    ) -> int:
+        """Merge evidence-matched records transactionally, preserving stable IDs."""
+        before = [paper.model_dump() for paper in self.papers]
+        from src.curation import validate_archive
+        from src.identity import IdentityConflict
+
+        ledger = validate_archive(self)
+        index = IdentityIndex(self.papers, self.aliases)
+        archived_aliases = ledger.alias_targets(set(index.by_id))
+        by_id = dict(index.by_id)
         added = 0
+        accepted = 0
         for rec in records:
-            norm_t = re.sub(r"[^a-z0-9]+", "", rec.title.lower())
-            existing_id = rec.id if rec.id in by_id else by_norm_title.get(norm_t)
-            if existing_id and existing_id in by_id:
-                existing = by_id[existing_id]
-                # Prefer record with arxiv_id or richer metadata
-                merged = existing.model_copy(
-                    update={
-                        "arxiv_id": rec.arxiv_id or existing.arxiv_id,
-                        "doi": rec.doi or existing.doi,
-                        "venue": rec.venue or existing.venue,
-                        "code_url": rec.code_url or existing.code_url,
-                        "project_url": rec.project_url or existing.project_url,
-                        "pdf_url": rec.pdf_url or existing.pdf_url,
-                        "paper_url": rec.paper_url or existing.paper_url,
-                        "abstract": rec.abstract
-                        if len(rec.abstract) > len(existing.abstract)
-                        else existing.abstract,
-                        "tldr": rec.tldr or existing.tldr,
-                        "categories": list(dict.fromkeys(rec.categories + existing.categories)),
-                        "tags": list(dict.fromkeys(rec.tags + existing.tags)),
-                    }
-                )
-                by_id[existing_id] = PaperRecord.model_validate(merged.model_dump())
-            else:
-                by_id[rec.id] = rec
-                by_norm_title[norm_t] = rec.id
-                added += 1
+            try:
+                if any(
+                    key in archived_aliases and archived_aliases[key] not in index.by_id
+                    for key in paper_keys(rec)
+                ):
+                    raise IdentityConflict(f"Archived candidate requires explicit review: {rec.id}")
+                existing_id = index.match(rec)
+                if existing_id and existing_id in by_id:
+                    existing = by_id[existing_id]
+                    merged = existing.merge_metadata(rec)
+                    index.bind_many(paper_keys(rec), existing_id)
+                    by_id[existing_id] = merged
+                    index.by_id[existing_id] = merged
+                else:
+                    index.add(rec)
+                    by_id[rec.id] = rec
+                    added += 1
+                accepted += 1
+            except ValueError as error:
+                if on_conflict is None:
+                    raise
+                on_conflict(rec, error)
+
+        if not accepted:
+            return 0
 
         # Sort newest first, then alphabetically by title
         self.papers = sorted(
@@ -479,32 +659,62 @@ class PaperDatabase(BaseModel):
             reverse=True,
         )
         self.total_count = len(self.papers)
-        self.last_updated = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+        self.aliases = dict(sorted(index.aliases.items()))
+        if before != [paper.model_dump() for paper in self.papers]:
+            self.last_updated = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
         return added
 
     def get(self, paper_id: str) -> PaperRecord | None:
         """Lookup a paper by canonical ID, arXiv ID, or clean DOI."""
-        norm_id = paper_id.lower().strip()
-        for p in self.papers:
-            if p.id.lower() == norm_id:
-                return p
-            if p.arxiv_id and p.arxiv_id.lower() == norm_id:
-                return p
-            if p.doi and p.doi.lower().strip().replace("https://doi.org/", "") == norm_id:
-                return p
-        return None
+        from src.identity import identifier_key
+
+        index = IdentityIndex(self.papers, self.aliases)
+        target = index.aliases.get(identifier_key(paper_id))
+        return index.by_id.get(target) if target is not None else None
 
     @classmethod
     def load(cls, path: str | Path) -> PaperDatabase:
         p = Path(path)
-        if not p.exists():
-            return cls()
-        with open(p, encoding="utf-8") as f:
-            return cls.model_validate_json(f.read())
+        payload = p.read_bytes()
+        raw = json.loads(payload)
+        if raw.get("schema_version") == "2.0.0":
+            from src.storage import load_store
+
+            return load_store(p)
+        if raw.get("schema_version") != "1.0.0":
+            raise ValueError("Unsupported database schema")
+        db = cls.model_validate(raw)
+        from src.curation import validate_archive
+
+        validate_archive(db)
+        IdentityIndex(db.papers, db.aliases)
+        if db.total_count != len(db.papers):
+            raise ValueError("Database count mismatch")
+        db._loaded_path = p.resolve()
+        db._loaded_sha256 = hashlib.sha256(payload).hexdigest()
+        return db
 
     def save(self, path: str | Path) -> None:
+        from src.file_lock import exclusive_file
+        from src.storage import ConcurrentWriteError, _atomic_write, _inventory, write_store
+
         p = Path(path)
-        p.parent.mkdir(parents=True, exist_ok=True)
         self.total_count = len(self.papers)
-        with open(p, "w", encoding="utf-8") as f:
-            f.write(self.model_dump_json(indent=2) + "\n")
+        _inventory(self)
+        expected = self._loaded_sha256 if self._loaded_path == p.resolve() else None
+        is_manifest = p.name == "manifest.json"
+        if p.exists():
+            is_manifest = is_manifest or json.loads(p.read_bytes()).get("schema_version") == "2.0.0"
+        if is_manifest:
+            write_store(self, p, expected_sha256=expected)
+        else:
+            payload = (self.model_dump_json(indent=2) + "\n").encode("utf-8")
+            with exclusive_file(str(p) + ".writer.lock"):
+                current = p.read_bytes() if p.exists() else None
+                actual = hashlib.sha256(current).hexdigest() if current is not None else None
+                if expected is not None and actual != expected:
+                    raise ConcurrentWriteError("Database changed since load; reload and retry")
+                if current != payload:
+                    _atomic_write(p, payload)
+            self._loaded_path = p.resolve()
+            self._loaded_sha256 = hashlib.sha256(payload).hexdigest()

@@ -1,0 +1,11 @@
+[Unit]
+Description=Resume bounded papers extraction every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=5min
+AccuracySec=10s
+Unit=papers-extraction.service
+
+[Install]
+WantedBy=timers.target

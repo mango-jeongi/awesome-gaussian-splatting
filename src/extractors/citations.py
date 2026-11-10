@@ -2,141 +2,60 @@
 
 from __future__ import annotations
 
-import json
-import logging
+import os
 import re
 import time
-import urllib.parse
-import urllib.request
+from pathlib import Path
 from typing import Any
 
-from src.schema import PaperDatabase, PaperRecord
-
-logger = logging.getLogger(__name__)
-
-OPENALEX_WORKS_URL = "https://api.openalex.org/works"
-DEFAULT_USER_AGENT = (
-    "AwesomeGaussianSplatting/1.0 (https://github.com/mango-jeongi/awesome-gaussian-splatting; "
-    "mailto:academic-research@nps.edu)"
+from src.environment import load_local_environment
+from src.extractors.openalex import OpenAlexClient
+from src.identity import (
+    IdentityIndex,
+    identifier_key,
+    normalize_arxiv,
+    normalize_doi,
+    normalize_openalex,
 )
-
-
-def _norm_str(s: str) -> str:
-    return re.sub(r"[^\w\s]", "", s.lower()).strip()
+from src.openalex_cache import OpenAlexCache, paper_dois, refresh_openalex
+from src.schema import PaperDatabase, PaperRecord
 
 
 def _is_title_similar(t1: str, t2: str) -> bool:
-    n1 = _norm_str(t1)
-    n2 = _norm_str(t2)
-    if not n1 or not n2:
-        return False
-    return (
-        n1 in n2
-        or n2 in n1
-        or (len(set(n1.split()) & set(n2.split())) / max(len(n1.split()), 1) > 0.6)
-    )
+    # Candidate-review hint only: never authorizes a provider identity assignment.
+    def normalize(value):
+        return re.sub(r"[^\w\s]", "", value.lower()).strip()
+
+    left, right = normalize(t1), normalize(t2)
+    return bool(left and right and (left in right or right in left))
 
 
-class OpenAlexCitationClient:
-    """Client for querying citation metrics and reference networks from OpenAlex."""
-
-    def __init__(self, user_agent: str = DEFAULT_USER_AGENT, timeout: float = 10.0) -> None:
-        self.user_agent = user_agent
-        self.timeout = timeout
-
-    def _make_request(self, url: str) -> dict[str, Any] | None:
-        req = urllib.request.Request(url, headers={"User-Agent": self.user_agent})
-        for attempt in range(2):
-            try:
-                with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                    data: dict[str, Any] = json.loads(resp.read().decode("utf-8"))
-                    return data
-            except urllib.error.HTTPError as err:
-                if err.code == 429 and attempt == 0:
-                    time.sleep(1.5)
-                    continue
-                logger.warning("OpenAlex HTTP error %s for %s", err.code, url)
-                return None
-            except Exception as exc:
-                logger.warning("OpenAlex request failed for %s: %s", url, exc)
-                return None
-        return None
+class OpenAlexCitationClient(OpenAlexClient):
+    """Compatibility surface backed by the same bounded, exact-ID transport."""
 
     def fetch_batch_by_doi(self, papers: list[PaperRecord]) -> dict[str, dict[str, Any]]:
-        """Fetch citation count and referenced works for a batch of papers via DOI filter.
-
-        Returns a mapping of paper_id -> {citation_count, openalex_id, referenced_works, doi}.
-        """
-        results: dict[str, dict[str, Any]] = {}
-        doi_to_paper_id: dict[str, str] = {}
-
-        for p in papers:
-            if p.arxiv_id:
-                canonical_doi = f"10.48550/arxiv.{p.arxiv_id.lower()}"
-                doi_to_paper_id[canonical_doi] = p.id
-            elif p.doi:
-                norm_doi = p.doi.lower().strip().replace("https://doi.org/", "")
-                doi_to_paper_id[norm_doi] = p.id
-
-        if not doi_to_paper_id:
-            return results
-
-        filter_dois = "|".join(doi_to_paper_id.keys())
-        query_params = urllib.parse.urlencode({"filter": f"doi:{filter_dois}", "per-page": "50"})
-        url = f"{OPENALEX_WORKS_URL}?{query_params}"
-
-        payload = self._make_request(url)
-        if not payload:
-            return results
-
-        for work in payload.get("results", []):
-            work_doi = (work.get("doi") or "").lower().replace("https://doi.org/", "").strip()
-            paper_id = doi_to_paper_id.get(work_doi)
-
-            if not paper_id:
-                for d, pid in doi_to_paper_id.items():
-                    if d in work_doi:
-                        paper_id = pid
-                        break
-
-            if paper_id:
-                results[paper_id] = {
-                    "citation_count": int(work.get("cited_by_count", 0)),
-                    "openalex_id": work.get("id"),
-                    "referenced_works": work.get("referenced_works", []),
-                    "doi": work_doi or None,
-                }
-
+        found = self.by_dois([doi for paper in papers for doi in paper_dois(paper)])
+        results = {}
+        for paper in papers:
+            matches = {work.id: work for doi in paper_dois(paper) for work in found.get(doi, [])}
+            if len(matches) != 1:
+                continue
+            work = next(iter(matches.values()))
+            if paper.openalex_id and normalize_openalex(paper.openalex_id) != normalize_openalex(
+                work.id
+            ):
+                continue
+            results[paper.id] = {
+                "citation_count": work.cited_by_count,
+                "openalex_id": work.id,
+                "referenced_works": work.referenced_works,
+                "doi": normalize_doi(work.doi),
+            }
         return results
 
-    def fetch_single_by_title(self, paper: PaperRecord) -> dict[str, Any] | None:
-        """Fallback lookup by paper title when no DOI or arXiv ID is present."""
-        clean_title = re.sub(r"[^\w\s]", " ", paper.title).strip()
-        query_params = urllib.parse.urlencode(
-            {"filter": f"title.search:{clean_title}", "per-page": "1"}
-        )
-        url = f"{OPENALEX_WORKS_URL}?{query_params}"
-
-        payload = self._make_request(url)
-        if not payload:
-            return None
-
-        results = payload.get("results", [])
-        if not results:
-            return None
-
-        work = results[0]
-        work_title = work.get("title") or ""
-        if not _is_title_similar(paper.title, work_title):
-            return None
-
-        work_doi = (work.get("doi") or "").lower().replace("https://doi.org/", "").strip()
-        return {
-            "citation_count": int(work.get("cited_by_count", 0)),
-            "openalex_id": work.get("id"),
-            "referenced_works": work.get("referenced_works", []),
-            "doi": work_doi or None,
-        }
+    def fetch_single_by_title(self, paper: PaperRecord) -> None:
+        # Title-only identities remain review-required in the shared cache.
+        return None
 
 
 def build_citation_knowledge_graph(db: PaperDatabase) -> dict[str, int]:
@@ -147,59 +66,51 @@ def build_citation_knowledge_graph(db: PaperDatabase) -> dict[str, int]:
     - `p.db_citations`: list of paper IDs in this database that cite `p`.
     - `p.db_citation_count`: number of incoming citations from within this database.
     """
-    openalex_map: dict[str, str] = {}
-    doi_map: dict[str, str] = {}
-    arxiv_map: dict[str, str] = {}
-
-    for p in db.papers:
-        if p.openalex_id:
-            openalex_map[p.openalex_id] = p.id
-            short_id = p.openalex_id.rstrip("/").split("/")[-1]
-            openalex_map[short_id] = p.id
-
-        if p.arxiv_id:
-            arxiv_map[p.arxiv_id.lower()] = p.id
-            doi_map[f"10.48550/arxiv.{p.arxiv_id.lower()}"] = p.id
-        if p.doi:
-            doi_map[p.doi.lower().strip().replace("https://doi.org/", "")] = p.id
-
-    # Reset internal edges
-    for p in db.papers:
-        p.db_references = []
-        p.db_citations = []
-        p.db_citation_count = 0
-
-    total_edges = 0
-    for p in db.papers:
-        for ref in p.referenced_works:
-            target_id = openalex_map.get(ref)
-            if not target_id:
-                short_ref = ref.rstrip("/").split("/")[-1]
-                target_id = openalex_map.get(short_ref)
-
-            if target_id and target_id != p.id and target_id not in p.db_references:
-                p.db_references.append(target_id)
-                total_edges += 1
-
-    # Invert outgoing references to populate incoming citations
-    for p in db.papers:
-        for target_id in p.db_references:
-            target_paper = db.get(target_id)
-            if target_paper and p.id not in target_paper.db_citations:
-                target_paper.db_citations.append(p.id)
-
-    # Compute incoming counts and count connected nodes
-    connected_papers = 0
-    for p in db.papers:
-        p.db_citation_count = len(p.db_citations)
-        if p.db_citation_count > 0 or len(p.db_references) > 0:
-            connected_papers += 1
-
+    index = IdentityIndex(db.papers, db.aliases)
+    for paper in db.papers:
+        if paper.arxiv_id:
+            index.bind(f"doi:10.48550/arxiv.{normalize_arxiv(paper.arxiv_id)}", paper.id)
+    outgoing: dict[str, set[str]] = {paper.id: set() for paper in db.papers}
+    incoming: dict[str, set[str]] = {paper.id: set() for paper in db.papers}
+    unmatched = 0
+    self_references = 0
+    for paper in db.papers:
+        for reference in {identifier_key(ref) for ref in paper.referenced_works}:
+            target = index.aliases.get(reference)
+            if target is None:
+                unmatched += 1
+            elif target == paper.id:
+                self_references += 1
+            else:
+                outgoing[paper.id].add(target)
+                incoming[target].add(paper.id)
+    for paper in db.papers:
+        paper.db_references = sorted(outgoing[paper.id])
+        paper.db_citations = sorted(incoming[paper.id])
+        paper.db_citation_count = len(incoming[paper.id])
     return {
         "total_nodes": len(db.papers),
-        "total_edges": total_edges,
-        "connected_papers": connected_papers,
+        "total_edges": sum(len(edges) for edges in outgoing.values()),
+        "connected_papers": sum(
+            bool(outgoing[paper.id] or incoming[paper.id]) for paper in db.papers
+        ),
+        "unmatched_references": unmatched,
+        "self_references_omitted": self_references,
     }
+
+
+def _assign_provider_doi(paper: PaperRecord, value: str | None) -> None:
+    """Keep arXiv DataCite identifiers separate from proceedings DOI metadata."""
+    normalized = normalize_doi(value)
+    if not normalized:
+        return
+    field = "arxiv_doi" if normalized.startswith("10.48550/arxiv.") else "doi"
+    if field == "arxiv_doi" and paper.arxiv_id:
+        expected = f"10.48550/arxiv.{normalize_arxiv(paper.arxiv_id)}"
+        if normalized != expected:
+            raise ValueError("Provider DOI contradicts the paper's arXiv identity")
+    if field not in paper.protected_fields() and not getattr(paper, field):
+        setattr(paper, field, normalized)
 
 
 def enrich_database_citations(
@@ -207,9 +118,75 @@ def enrich_database_citations(
     batch_size: int = 40,
     max_papers: int | None = None,
     client: OpenAlexCitationClient | None = None,
+    cache_path: Path | None = None,
+    cache_only: bool = False,
+    max_requests: int = 100,
+    max_seconds: float = 300,
 ) -> dict[str, int]:
     """Fetch global citation metrics from OpenAlex and build internal knowledge graph."""
-    client = client or OpenAlexCitationClient()
+    if not 1 <= batch_size <= 40:
+        raise ValueError("Citation batch size must be between 1 and 40")
+    if client is None:
+        root = Path(__file__).resolve().parents[2]
+        load_local_environment(root)
+        cache_path = cache_path or root / "data/signals/openalex-cache.json"
+        with OpenAlexClient(
+            api_key=os.environ.get("OPENALEX_API_KEY"),
+            max_requests=max_requests,
+            max_seconds=max_seconds,
+        ) as shared:
+            report = refresh_openalex(
+                db.papers,
+                cache_path,
+                shared,
+                cache_only=cache_only,
+                limit=len(db.papers) if max_papers is None else max_papers,
+            )
+        cache = OpenAlexCache.load(cache_path)
+        active = {paper.id for paper in db.papers}
+        from src.observations import SignalStore
+
+        signals = db._signal_stores.get("openalex", SignalStore(provider="openalex")).model_copy(
+            deep=True
+        )
+        for key, observation in cache.signals.observations.items():
+            if key not in active:
+                continue
+            previous = signals.observations.get(key)
+            if previous:
+                if (
+                    previous.provider_id
+                    and observation.provider_id
+                    and normalize_openalex(previous.provider_id)
+                    != normalize_openalex(observation.provider_id)
+                ):
+                    continue
+                if previous.last_attempt_at and (
+                    not observation.last_attempt_at
+                    or previous.last_attempt_at > observation.last_attempt_at
+                ):
+                    continue
+            signals.observations[key] = observation
+        db._signal_stores["openalex"] = signals
+        for index, paper in enumerate(db.papers):
+            observation = signals.observations.get(paper.id)
+            if observation is None or observation.fetched_at is None:
+                continue
+            if paper.openalex_id and normalize_openalex(paper.openalex_id) != normalize_openalex(
+                observation.provider_id
+            ):
+                continue
+            updates = {
+                key: observation.values[key]
+                for key in ("citation_count", "referenced_works")
+                if key in observation.values
+            }
+            updates["openalex_id"] = observation.provider_id
+            updated = paper.with_provider_updates(update=updates)
+            _assign_provider_doi(updated, observation.values.get("doi"))
+            db.papers[index] = updated
+        stats = build_citation_knowledge_graph(db)
+        return {**stats, "enriched_papers": report["ok"], "provider_refresh": report}
 
     # Split into papers with DOI/arXiv vs. seed papers needing title search
     papers_with_doi = [p for p in db.papers if p.arxiv_id or p.doi]
@@ -232,10 +209,9 @@ def enrich_database_citations(
                 p.citation_count = data["citation_count"]
                 if data["openalex_id"]:
                     p.openalex_id = data["openalex_id"]
-                if data["referenced_works"]:
+                if "referenced_works" in data and "referenced_works" not in p.protected_fields():
                     p.referenced_works = data["referenced_works"]
-                if not p.doi and data.get("doi"):
-                    p.doi = data["doi"]
+                _assign_provider_doi(p, data.get("doi"))
                 total_enriched += 1
 
         time.sleep(0.1)
@@ -247,10 +223,12 @@ def enrich_database_citations(
             p.citation_count = single_result["citation_count"]
             if single_result["openalex_id"]:
                 p.openalex_id = single_result["openalex_id"]
-            if single_result["referenced_works"]:
+            if (
+                "referenced_works" in single_result
+                and "referenced_works" not in p.protected_fields()
+            ):
                 p.referenced_works = single_result["referenced_works"]
-            if not p.doi and single_result.get("doi"):
-                p.doi = single_result["doi"]
+            _assign_provider_doi(p, single_result.get("doi"))
             total_enriched += 1
         time.sleep(0.3)
 

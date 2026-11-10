@@ -1,0 +1,87 @@
+name: Daily Provider Observations
+
+on:
+  schedule:
+    # Includes weekends so citation observations can mature independently of announcements.
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repository-writer
+  cancel-in-progress: false
+
+jobs:
+  refresh-observations:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout feed branch
+        uses: actions/checkout@v7
+        with:
+          ref: feed
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+
+      - name: Refresh due observations and validate cached publication
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: |
+          git fetch origin feed
+          git merge --ff-only origin/feed
+          # Frozen daily evidence resumes across UTC-day changes. This prepares
+          # a reviewable HF proposal without writing canonical papers.
+          mkdir -p reports/runs
+          set +e
+          uv run python -m src.cli discover-huggingface --max-results 100 --lookback 7 --max-requests 10 --max-seconds 120 --preview-report reports/runs/hf-import-proposal.json --summary-file "$GITHUB_STEP_SUMMARY" > reports/runs/hf-discovery-latest.json 2> reports/runs/hf-discovery-latest.error.txt
+          hf_status=$?
+          set -e
+          if (( hf_status != 0 )); then
+            echo "::warning::HF discovery failed; frozen checkpoint retained."
+            echo "- HF discovery: command failed (exit ${hf_status}); inspect retained diagnostics. Canonical import was not applied." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          # Optional providers retain successful caches on failure. All three
+          # passes are independently budgeted; at most 15 requests / 270 seconds
+          # are admitted in total (in-flight requests may finish afterward).
+          mkdir -p reports/runs
+          for provider in openalex semanticscholar huggingface; do
+            set +e
+            uv run python -m src.cli refresh-signals --provider "$provider" --due --require-key --max-requests 5 --max-seconds 90 --limit 100 --summary-file "$GITHUB_STEP_SUMMARY" > "reports/runs/signals-${provider}-latest.json" 2> "reports/runs/signals-${provider}-latest.error.txt"
+            signal_status=$?
+            set -e
+            if (( signal_status != 0 )); then
+              echo "::warning::${provider} refresh failed; retained cache will be used."
+              echo "- ${provider}: refresh command failed (exit ${signal_status}); inspect reports/runs diagnostics. Cached publication may proceed." >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+          uv run python -m src.cli build
+          uv run python -m src.cli validate
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run pytest -v
+
+      - name: Persist observations and generated reports on feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for generated_path in data/ingestion/huggingface data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
+            if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
+              git add --all -- "$generated_path"
+            fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(signals): refresh due provider observations"
+            git push origin feed
+          fi

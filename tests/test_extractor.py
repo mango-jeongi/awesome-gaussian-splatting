@@ -29,3 +29,24 @@ def test_parse_atom_xml() -> None:
     assert r.authors == ["Bernhard Kerbl", "Georgios Kopanas"]
     assert r.primary_arxiv_category == "cs.GR"
     assert "SIGGRAPH 2023" in (r.comment or "")
+
+
+def test_arxiv_dates_have_evidence_and_no_fallback():
+    import pytest
+
+    record = ArxivExtractor.parse_atom_xml(SAMPLE_ARXIV_ATOM_XML)[0]
+    assert record.published_date_precision == "day"
+    assert record.date_placement == "observed"
+    assert record.arxiv_doi == "10.48550/arxiv.2308.04079"
+    assert record.metadata_evidence["published_date"][0].value == record.published_date
+    missing = SAMPLE_ARXIV_ATOM_XML.replace("<published>2023-08-08T17:59:00Z</published>", "")
+    with pytest.raises(ValueError, match="lacks original"):
+        ArxivExtractor.parse_atom_xml(missing)
+    malformed = SAMPLE_ARXIV_ATOM_XML.replace("2023-08-08T17:59:00Z", "not-a-date")
+    with pytest.raises(ValueError):
+        ArxivExtractor.parse_atom_xml(malformed)
+    error = SAMPLE_ARXIV_ATOM_XML.replace(
+        "http://arxiv.org/abs/2308.04079v2", "http://arxiv.org/api/errors#bad_query"
+    )
+    with pytest.raises(ValueError, match="API error"):
+        ArxivExtractor.parse_atom_xml(error)

@@ -1,0 +1,100 @@
+name: Manual Historical Backfill
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_key:
+        description: "Stable frozen-run key; reuse with identical query policy and dates to resume"
+        required: true
+      until:
+        description: "Exclusive UTC YYYY-MM-DD cutoff"
+        required: true
+      since:
+        description: "Optional initial UTC YYYY-MM-DD boundary; keep identical on resume"
+        required: false
+      mode:
+        type: choice
+        options: [preview, apply]
+        default: preview
+      max_requests:
+        description: "Maximum arXiv requests this pass (1..100)"
+        default: "20"
+
+permissions:
+  contents: write
+concurrency:
+  group: repository-writer
+  cancel-in-progress: false
+jobs:
+  backfill:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout feed branch
+        uses: actions/checkout@v7
+        with:
+          ref: feed
+          fetch-depth: 0
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+      - name: Set up Python 3.12
+        run: uv python install 3.12
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+      - name: Resume frozen historical operation and validate
+        id: operation
+        env:
+          RUN_KEY: ${{ inputs.run_key }}
+          UNTIL: ${{ inputs.until }}
+          SINCE: ${{ inputs.since }}
+          MODE: ${{ inputs.mode }}
+          MAX_REQUESTS: ${{ inputs.max_requests }}
+          ENABLE_GH_MODELS: "false"
+          ENABLE_GEMINI: "false"
+        run: |
+          [[ "$RUN_KEY" =~ ^[a-z0-9][a-z0-9_-]{0,63}$ ]] || exit 1
+          [[ "$UNTIL" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || exit 1
+          [[ -z "$SINCE" || "$SINCE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || exit 1
+          [[ "$MODE" == preview || "$MODE" == apply ]] || exit 1
+          if [[ ! "$MAX_REQUESTS" =~ ^[0-9]{1,3}$ ]] || (( 10#$MAX_REQUESTS < 1 || 10#$MAX_REQUESTS > 100 )); then exit 1; fi
+          git fetch origin feed
+          git merge --ff-only origin/feed
+          echo "EXPECTED_FEED=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          arguments=(--until "$UNTIL" --run-dir "data/ingestion/backfill/$RUN_KEY" --max-requests "$MAX_REQUESTS" --resume)
+          if [[ -n "$SINCE" ]]; then arguments+=(--since "$SINCE"); fi
+          if [[ "$MODE" == preview ]]; then arguments+=(--dry-run); fi
+          mkdir -p reports/runs
+          set +e
+          uv run python -m src.cli backfill "${arguments[@]}" > "reports/runs/backfill-${RUN_KEY}-latest.json" 2> "reports/runs/backfill-${RUN_KEY}-latest.error.txt"
+          operation_status=$?
+          set -e
+          echo "status=$operation_status" >> "$GITHUB_OUTPUT"
+          echo "- Manual backfill ${RUN_KEY}: mode=${MODE}; exit=${operation_status}; request ceiling=${MAX_REQUESTS}; inspect retained run report for completeness. Checkpoints never imply completed coverage." >> "$GITHUB_STEP_SUMMARY"
+          uv run python -m src.cli build
+          uv run python -m src.cli validate
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run pytest -v
+      - name: Persist validated generated changes on feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for generated_path in data/ingestion/backfill data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction/reviewed.json docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
+            if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
+              git add --all -- "$generated_path"
+            fi
+          done
+          git fetch origin feed
+          if [[ "$(git rev-parse origin/feed)" != "$EXPECTED_FEED" ]]; then
+            echo "Feed advanced unexpectedly; refusing to overwrite." >&2
+            exit 1
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(manual): persist validated operation checkpoint"
+            git push origin HEAD:feed
+          fi
+      - name: Report operation failure after persisting diagnostics
+        if: steps.operation.outputs.status != '0'
+        run: exit 1

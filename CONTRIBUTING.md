@@ -57,3 +57,118 @@ If a new subdomain is emerging in Gaussian Splatting (e.g., *Optical Flow Splatt
 - Maintain accurate venue attribution and code links.
 - Keep the database neutral, factual, and comprehensive.
 
+
+### Storage migration preview (M0 foundation)
+
+Use the SSD environment above, then run `uv run python -m src.cli migrate --dry-run`.
+This checks exact record parity and reports the proposed snapshot digest without
+writing a store. To write a separate snapshot, use `migrate --manifest <path>`;
+validate it with `validate --manifest <path>`.
+
+This is an additive compatibility stage. All database callers accept either a
+legacy file or manifest through `--data`. Defaults and current remote workflows
+still use `data/papers.json`; the canonical cutover remains pending. The snapshot preserves legacy fields and record order.
+Legacy citation values have unknown observation freshness, including zero counts.
+
+Monthly shards have immutable SHA-256 filenames. A validated manifest is replaced
+only after every referenced shard exists and passes parity validation. Prior
+shards remain available after a month correction or interrupted write. Do not
+remove previous generations while a manifest can still reference them. Rollback
+of an activated snapshot requires restoring its matching previous manifest and
+retained shards; the legacy store remains the current operational rollback path.
+
+Identity aliases, typed observations, compatible database adapters, local workflow
+coordination changes, and compact browser artifacts are implemented. Remaining M0
+work includes provenance/date-precision/archive contracts, remote writer rollout,
+canonical cutover, and remaining browser acceptance cases. Migration preview alone does not
+satisfy the M0 exit gate.
+
+The builder also writes `docs/data/manifest.json`, a compact index, bounded detail
+shards, a complete lazy search corpus, and aliases. Existing public artifact
+generations are retained. The portal mounts at most 50 cards; abstracts, full
+authors, relationships, and BibTeX load on demand. A failed full-search download
+shows a retry state rather than silently searching an incomplete corpus.
+
+Use `migrate --dry-run --report <path>` to save all source IDs, the raw source
+SHA-256, legacy-zero count, edge count, and parity result. Unknown input fields or
+normalization that changes existing raw field values block migration for review.
+Provider failures preserve successful values and their original fetch time.
+
+## Manual backfill and reviewed worker imports
+
+The manual workflow definitions use the same `repository-writer` concurrency
+group as scheduled writers. They operate on `feed`, re-fetch after acquiring the
+job slot, remember the expected parent, and refuse to push if the branch advances
+unexpectedly. Both run build, schema validation, Ruff lint/format and the full
+fixture suite before persisting changes. Preview is the default; an operator
+must explicitly choose apply. No manual workflow deploys Pages.
+
+For historical ingestion, use `manual-backfill.yml` with a stable lowercase run
+key, an exclusive UTC cutoff, the same optional lower boundary on every resume,
+and1–100 requests per pass. Query, policy and date changes require a new run key.
+The equivalent bounded preview is:
+
+```sh
+uv run python -m src.cli backfill --since 2026-11-01 --until 2026-11-09 --run-dir data/ingestion/backfill/example --resume --dry-run --max-requests 20
+```
+
+Choose the intended interval instead of treating these example dates as a
+coverage target. Removing `--dry-run` permits deterministic canonical import
+through existing identity, relevance, archive and storage validation. A request
+ceiling or saved checkpoint is not completed historical coverage: inspect source
+and comparator status, unresolved dispositions and import receipts. Source
+failures are reported after a valid checkpoint/diagnostic commit. A runner lost
+before that commit can replay its uncommitted work from the last saved checkpoint;
+no uncommitted prefix is claimed durable.
+
+For reviewed extraction, commit JSON inputs under
+`data/extraction/review-inputs/<key>.result.json` and `<key>.review.json`, then
+dispatch `manual-worker-import.yml` with that key. The result must validate against
+the extraction schema; the review must identify its exact bytes, original PDF
+digest, canonical snapshot, reviewer/time and accepted cell context. Unreviewed
+results are never inferred to be accepted. The runner materializes only the
+active paper's canonical public PDF from arxiv.org, export.arxiv.org, or official
+CVF HTTPS URLs. It allows at most four requests/three approved-host redirects,
+50 MB and120 seconds, then checks PDF signature and exact SHA-256. Unsupported
+sources or revised PDF bytes fail; update source evidence/review explicitly.
+
+The PDF lives in runner temporary storage and is excluded from generated commit
+paths. Preparation changes no canonical records or review ledger. The subsequent
+`uv run python -m src.workers review-import` command uses the existing source/
+result/canonical guards and accepted-context/reuse rules. Preview validates
+without writing; apply writes only the reviewed ledger and checked public output.
+Existing identical decisions replay without duplication. Figure asset publication
+requires its separate review/materialization path; this dispatch does not copy
+source PDFs or unreviewed crops into public assets.
+
+These definitions must be rolled out with compatible code on both branches.
+Live GitHub dispatch, branch-race rehearsal and deployment evidence are separate
+release gates; local fixture/YAML/Bash checks do not establish a successful live
+workflow. No extra private-file transfer or secret setup is performed by adding
+these definitions.
+
+## Official CVF metadata capture
+
+`uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10 --max-seconds 120` resumes a
+frozen official listing/policy/edition under `data/venues/cvpr2025-main` by default.
+`--track workshop`, `--cache PATH`, `--overrides PATH`, and `--report PATH` are
+explicit options. `--max-requests 0` validates retained page hashes without
+network traffic. Listing inputs are bounded to20 MB, individual responses to2 MB,
+and metadata requests are paced at least one second after the previous response.
+
+Only title-screened include/review candidates are prioritized. Each verified
+publication must match the official listing's title, authors, edition, track and
+PDF URL; linked arXiv IDs and official author abstracts are retained separately
+with source evidence. A publication year is not an invented original preprint
+day. Missing author abstracts remain missing. Incomplete/duplicate abstracts,
+source conflicts and corrupted hashes fail verification. Per-page checkpoints
+and retry deadlines survive budget stops; a changed listing/policy needs a
+separate explicit capture directory. This command writes evidence, not canonical
+papers, and selected metadata completion is not full venue reconciliation.
+
+For CVPR2025 the current accepted table and proceedings listing each contain
+2,871 records after ten reviewed title variants. A separate conference announcement
+reports2,872; the one-paper aggregate discrepancy and remaining scope reviews
+are retained as unresolved. Source HTML, hashes, author-list differences and
+comparison evidence live under the capture directory. Canonical identity/date
+verification and any eventual import are separate steps.

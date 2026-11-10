@@ -1,0 +1,26 @@
+{
+  "provenance": "Source-backed development regressions selected after observing false inclusions; not an independent holdout.",
+  "cases": [
+    {
+      "title": "3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes",
+      "abstract": "Recent advances in radiance field reconstruction, such as 3D Gaussian Splatting (3DGS), have achieved high-quality novel view synthesis and fast rendering by representing scenes with compositions of Gaussian primitives. However, 3D Gaussians present several limitations for scene reconstruction. Accurately capturing hard edges is challenging without significantly increasing the number of Gaussians, creating a large memory footprint. Moreover, they struggle to represent flat surfaces, as they are diffused in space. Without hand-crafted regularizers, they tend to disperse irregularly around the actual surface. To circumvent these issues, we introduce a novel method, named 3D Convex Splatting (3DCS), which leverages 3D smooth convexes as primitives for modeling geometrically-meaningful radiance fields from multi-view images. Smooth convex shapes offer greater flexibility than Gaussians, allowing for a better representation of 3D scenes with hard edges and dense volumes using fewer primitives. Powered by our efficient CUDA-based rasterizer, 3DCS achieves superior performance over 3DGS on benchmarks such as Mip-NeRF360, Tanks and Temples, and Deep Blending. Specifically, our method attains an improvement of up to 0.81 in PSNR and 0.026 in LPIPS compared to 3DGS while maintaining high rendering speeds and reducing the number of required primitives. Our results highlight the potential of 3D Convex Splatting to become the new standard for high-quality scene reconstruction and novel view synthesis. The project page is https://convexsplatting.github.io/ .",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Held_3D_Convex_Splatting_Radiance_Field_Rendering_with_3D_Smooth_Convexes_CVPR_2025_paper.html",
+      "source_sha256": "e6a23e0a6162cf1693344284071b5e896e528da1e60c0f65c4a6fcbc0756669b",
+      "expected": "review"
+    },
+    {
+      "title": "Sparse Voxels Rasterization: Real-time High-fidelity Radiance Field Rendering",
+      "abstract": "We propose an efficient radiance field rendering algorithm that incorporates a rasterization process on adaptive sparse voxels without neural networks or 3D Gaussians. There are two key contributions coupled with the proposed system. The first is to adaptively and explicitly allocate sparse voxels to different levels of detail within scenes, faithfully reproducing scene details with 65536^3 grid resolution while achieving high rendering frame rates. Second, we customize a rasterizer for efficient adaptive sparse voxels rendering. We render voxels in the correct depth order by using ray direction-dependent Morton ordering, which avoids the well-known popping artifact found in Gaussian splatting. Our method improves the previous neural-free voxel model by over 4db PSNR and more than 10x FPS speedup, achieving state-of-the-art comparable novel-view synthesis results. Additionally, our voxel representation is seamlessly compatible with grid-based 3D processing techniques such as Volume Fusion, Voxel Pooling, and Marching Cubes, enabling a wide range of future extensions and applications. Code at https://github.com/NVlabs/svraster",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Sun_Sparse_Voxels_Rasterization_Real-time_High-fidelity_Radiance_Field_Rendering_CVPR_2025_paper.html",
+      "source_sha256": "1dcccbcff9e0cbd2055ac0f44317571c1430187fadb5327f097c8c79a59ec311",
+      "expected": "review"
+    },
+    {
+      "title": "PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields",
+      "abstract": "We tackle the ill-posed inverse rendering problem in 3D reconstruction with a Neural Radiance Field (NeRF) approach informed by Physics-Based Rendering (PBR) theory, named PBR-NeRF. Our method addresses a key limitation in most NeRF and 3D Gaussian Splatting approaches: they estimate view-dependent appearance without modeling scene materials and illumination. To address this limitation, we present an inverse rendering (IR) model capable of jointly estimating scene geometry, materials, and illumination. Our model builds upon recent NeRF-based IR approaches, but crucially introduces two novel physics-based priors that better constrain the IR estimation. Our priors are rigorously formulated as intuitive loss terms and achieve state-of-the-art material estimation without compromising novel view synthesis quality. Our method is easily adaptable to other inverse rendering and 3D reconstruction frameworks that require material estimation. We demonstrate the importance of extending current neural rendering approaches to fully model scene properties beyond geometry and view-dependent appearance. Code is publicly available at: https://github.com/s3anwu/pbrnerf.",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wu_PBR-NeRF_Inverse_Rendering_with_Physics-Based_Neural_Fields_CVPR_2025_paper.html",
+      "source_sha256": "061d345848dfc2ea77667f4de52d1fde8a97e4ca71d3ceff24885f5c68c23563",
+      "expected": "review"
+    }
+  ]
+}

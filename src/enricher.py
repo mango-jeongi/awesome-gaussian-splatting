@@ -63,7 +63,7 @@ def extract_urls_and_venue(record: PaperRecord) -> PaperRecord:
                 yr = str(record.year)
             venue = f"{conf} {yr}".strip()
 
-    return record.model_copy(
+    return record.with_provider_updates(
         update={
             "code_url": code_url,
             "project_url": project_url,
@@ -289,7 +289,7 @@ class DeterministicEnricher:
             tldr = synthesize_tldr(record.title, record.abstract)
 
         return PaperRecord.model_validate(
-            record.model_copy(
+            record.with_provider_updates(
                 update={
                     "primary_category": categories[0],
                     "categories": categories,
@@ -380,7 +380,7 @@ class GitHubModelsEnricher:
 
                 base = extract_urls_and_venue(record)
                 return PaperRecord.model_validate(
-                    base.model_copy(
+                    base.with_provider_updates(
                         update={
                             "primary_category": cats[0],
                             "categories": cats[:2],
@@ -415,7 +415,7 @@ class MultiProviderEnricher:
             if llm_res is not None:
                 # Merge deterministic tags with LLM emergent tags
                 merged_tags = list(dict.fromkeys(llm_res.tags + enriched.tags))[:8]
-                return llm_res.model_copy(update={"tags": merged_tags})
+                return llm_res.with_provider_updates(update={"tags": merged_tags})
 
         # Priority 2: Google Gemini Flash (Placeholder / skipped by default)
         if self.gemini.is_available():

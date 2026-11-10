@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from unittest.mock import MagicMock
+import httpx
 
 from src.extractors.citations import (
     OpenAlexCitationClient,
@@ -78,8 +78,8 @@ def test_internal_citation_knowledge_graph():
 
 def test_openalex_client_batch_parsing():
     """Verify batch DOI querying and response mapping."""
-    client = OpenAlexCitationClient()
     mock_payload = {
+        "meta": {"count": 1},
         "results": [
             {
                 "id": "https://openalex.org/W4385318467",
@@ -87,9 +87,11 @@ def test_openalex_client_batch_parsing():
                 "cited_by_count": 6071,
                 "referenced_works": ["https://openalex.org/W100", "https://openalex.org/W101"],
             }
-        ]
+        ],
     }
-    client._make_request = MagicMock(return_value=mock_payload)
+    client = OpenAlexCitationClient(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=mock_payload))
+    )
 
     paper = PaperRecord(
         id="2308.04079",
@@ -99,7 +101,84 @@ def test_openalex_client_batch_parsing():
 
     results = client.fetch_batch_by_doi([paper])
     assert "2308.04079" in results
+    client.close()
     res = results["2308.04079"]
     assert res["citation_count"] == 6071
     assert res["openalex_id"] == "https://openalex.org/W4385318467"
     assert len(res["referenced_works"]) == 2
+
+
+def test_graph_mixed_identifiers_and_indexed_inversion(monkeypatch):
+    first = PaperRecord(
+        id="stable/one",
+        title="The first foundational method",
+        arxiv_id="2308.04079",
+        doi="10.1000/ONE",
+        openalex_id="https://openalex.org/W123",
+    )
+    second = PaperRecord(
+        id="stable/two",
+        title="The second citing method",
+        referenced_works=[
+            "W123",
+            "https://openalex.org/W123",
+            "https://doi.org/10.1000/one",
+            "https://arxiv.org/abs/2308.04079v2",
+            "10.48550/arxiv.2308.04079",
+            "stable/two",
+            "W999",
+        ],
+    )
+    db = PaperDatabase(papers=[first, second], total_count=2)
+
+    def forbid_linear_lookup(*args):
+        raise AssertionError("Graph inversion must not call db.get")
+
+    monkeypatch.setattr(PaperDatabase, "get", forbid_linear_lookup)
+    stats = build_citation_knowledge_graph(db)
+    assert first.db_citations == [second.id]
+    assert second.db_references == [first.id]
+    assert first.db_citation_count == 1
+    assert stats["total_edges"] == 1
+    assert stats["unmatched_references"] == 1
+    assert stats["self_references_omitted"] == 1
+    before = db.model_dump()
+    assert build_citation_knowledge_graph(db) == stats
+    assert db.model_dump() == before
+
+
+def test_citation_doi_ownership_and_successful_empty_references(monkeypatch):
+    import src.extractors.citations as citations
+    from src.extractors.citations import enrich_database_citations
+
+    arxiv = PaperRecord(
+        arxiv_id="2308.04079", title="A source identified method", referenced_works=["W99"]
+    )
+    publisher = PaperRecord(id="publisher", title="A proceedings identified method")
+
+    class FixtureClient:
+        def fetch_batch_by_doi(self, papers):
+            return {
+                arxiv.id: {
+                    "citation_count": 0,
+                    "openalex_id": "W1",
+                    "referenced_works": [],
+                    "doi": "https://doi.org/10.48550/arxiv.2308.04079",
+                }
+            }
+
+        def fetch_single_by_title(self, paper):
+            return {
+                "citation_count": 1,
+                "openalex_id": "W2",
+                "referenced_works": [],
+                "doi": "https://doi.org/10.1000/PUBLISHED",
+            }
+
+    monkeypatch.setattr(citations.time, "sleep", lambda seconds: None)
+    db = PaperDatabase(papers=[arxiv, publisher], total_count=2)
+    enrich_database_citations(db, client=FixtureClient())
+    assert arxiv.doi is None
+    assert arxiv.arxiv_doi == "10.48550/arxiv.2308.04079"
+    assert arxiv.referenced_works == []
+    assert publisher.doi == "10.1000/published"
