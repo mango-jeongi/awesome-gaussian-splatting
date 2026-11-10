@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-189-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-203-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-09` | Total Papers: **189** | With Official Code: **15***
+*Last updated: `2026-11-10` | Total Papers: **203** | With Official Code: **18***
 
 ---
 
@@ -16,14 +16,14 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 | Category | Papers | Description |
 | :--- | :---: | :--- |
-| **[Foundations & Acceleration](#foundations--acceleration)** | `42` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
-| **[Dynamic & 4DGS](#dynamic--4dgs)** | `34` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
-| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `24` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
-| **[Human Avatars & VR](#human-avatars--vr)** | `8` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
-| **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `31` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
-| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `17` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
+| **[Foundations & Acceleration](#foundations--acceleration)** | `45` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
+| **[Dynamic & 4DGS](#dynamic--4dgs)** | `35` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
+| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `26` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
+| **[Human Avatars & VR](#human-avatars--vr)** | `11` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
+| **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `34` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
+| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `18` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
 | **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `17` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
-| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `14` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
+| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `15` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
 ---
 
@@ -31,8 +31,21 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 | Date | Title | First Author | Category | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11-09` | **UltraVoxelGS: Voxel-First Feed-Forward Gaussian Splatting for 3D Ultrasound Reconstruction** | Wang et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.11951]](https://arxiv.org/abs/2611.11951) [[PDF]](https://arxiv.org/pdf/2611.11951.pdf) [[Code]](https://github.com/YuebyYue/UltraVoxelGS-camera-ready) |
+| `2026-11-09` | **Spaghetti Splatting: Differentiating Curvilinear Dirac Masses via Convolution** | Shramko et al. | `Foundations & Acceleration` | [[arXiv:2611.12716]](https://arxiv.org/abs/2611.12716) [[PDF]](https://arxiv.org/pdf/2611.12716.pdf) |
+| `2026-11-09` | **Plant Orbiter: 3D Plant Reconstruction and Generation with Video Diffusion Orbit Cameras and 3D Gaussian Splatting** | Hartley et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.12739]](https://arxiv.org/abs/2611.12739) [[PDF]](https://arxiv.org/pdf/2611.12739.pdf) |
+| `2026-11-09` | **Mitigating SM-Level Load Imbalance in 3D Gaussian Splatting on GPUs** | Ryu et al. | `Autonomous Driving & Urban Scenes` | [[arXiv:2611.12319]](https://arxiv.org/abs/2611.12319) [[PDF]](https://arxiv.org/pdf/2611.12319.pdf) |
+| `2026-11-09` | **DPGS-SLAM: Diffusion-Prior and Provenance-Aware Monocular Gaussian Splatting SLAM for Dynamic Visual Sensing** | Luo et al. | `Active Perception, SLAM & Robotics` | [[arXiv:2611.12038]](https://arxiv.org/abs/2611.12038) [[PDF]](https://arxiv.org/pdf/2611.12038.pdf) |
+| `2026-11-08` | **Martine: Benchmarking Multi-View 3D Surface Reconstruction Across Viewpoint Coverage, Resolution, and Lighting** *(NEURIPS 2026)* | Bruneau et al. | `Human Avatars & VR` | [[arXiv:2611.11602]](https://arxiv.org/abs/2611.11602) [[PDF]](https://arxiv.org/pdf/2611.11602.pdf) [[Project]](https://martine-benchmark.github.io/) |
+| `2026-11-08` | **FastGRT: Accelerating Training of 3D Gaussian Ray Tracing** | Banthia et al. | `Foundations & Acceleration` | [[arXiv:2611.11586]](https://arxiv.org/abs/2611.11586) [[PDF]](https://arxiv.org/pdf/2611.11586.pdf) |
+| `2026-11-07` | **ZARA: Zero-shot Animatable and Relightable 3D Avatar reconstruction from a single image** | Chen et al. | `Human Avatars & VR` | [[arXiv:2611.10562]](https://arxiv.org/abs/2611.10562) [[PDF]](https://arxiv.org/pdf/2611.10562.pdf) |
+| `2026-11-07` | **SHIN: Scalable Hierarchy for INcremental 3D Gaussian Splatting** | Koo et al. | `2D Gaussians, Geometry & Compression` | [[arXiv:2611.10652]](https://arxiv.org/abs/2611.10652) [[PDF]](https://arxiv.org/pdf/2611.10652.pdf) |
+| `2026-11-07` | **RefineSplat: Reconstruction-Guided Object-Centric Gaussian Splatting for Open-Vocabulary Querying** | Lu et al. | `Dynamic & 4DGS` | [[arXiv:2611.10379]](https://arxiv.org/abs/2611.10379) [[PDF]](https://arxiv.org/pdf/2611.10379.pdf) |
+| `2026-11-07` | **PLS-GS: Probabilistic Lidar Scaffolds for Compact, Surface-Aligned Gaussian Splatting** *(WACV 2027)* | Harikumar et al. | `Active Perception, SLAM & Robotics` | [[arXiv:2611.10699]](https://arxiv.org/abs/2611.10699) [[PDF]](https://arxiv.org/pdf/2611.10699.pdf) [[Code]](https://github.com/k-harikumar/PLS-GS) |
+| `2026-11-07` | **ClearForm: Shared-Surface Gaussian Splatting for Transparent and Opaque Scenes** | Lee et al. | `Human Avatars & VR` | [[arXiv:2611.10370]](https://arxiv.org/abs/2611.10370) [[PDF]](https://arxiv.org/pdf/2611.10370.pdf) [[Project]](https://hajeongx.github.io/clearform/) |
+| `2026-11-06` | **RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting** *(WACV 2027)* | Gyreyiri et al. | `Foundations & Acceleration` | [[arXiv:2611.10199]](https://arxiv.org/abs/2611.10199) [[PDF]](https://arxiv.org/pdf/2611.10199.pdf) [[Project]](https://gyreyirisansah.github.io/rigidgs) |
 | `2026-11-05` | **XM4D: 4D Reconstruction through Certifiable Geometric Optimization** | Han et al. | `Dynamic & 4DGS` | [[arXiv:2611.07902]](https://arxiv.org/abs/2611.07902) [[PDF]](https://arxiv.org/pdf/2611.07902.pdf) |
-| `2026-11-05` | **SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes** | Yu et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.08264]](https://arxiv.org/abs/2611.08264) [[PDF]](https://arxiv.org/pdf/2611.08264.pdf) |
+| `2026-11-05` | **SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes** | Yu et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.08264]](https://arxiv.org/abs/2611.08264) [[PDF]](https://arxiv.org/pdf/2611.08264.pdf) [[Project]](https://zju3dv.github.io/SplatAnything) |
 | `2026-11-05` | **Perception Over Geometry: Rethinking Gaussian Allocation in Mesh-based Splatting** | Wang et al. | `Dynamic & 4DGS` | [[arXiv:2611.07979]](https://arxiv.org/abs/2611.07979) [[PDF]](https://arxiv.org/pdf/2611.07979.pdf) |
 | `2026-11-05` | **MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation** | Kumar et al. | `Active Perception, SLAM & Robotics` | [[arXiv:2611.08372]](https://arxiv.org/abs/2611.08372) [[PDF]](https://arxiv.org/pdf/2611.08372.pdf) |
 | `2026-11-05` | **InstantHand: Feed-Forward 3D Gaussian Splatting for Animatable Hand Avatar Reconstruction from a Single Image** *(NEURIPS 2026)* | Kim et al. | `Human Avatars & VR` | [[arXiv:2611.08330]](https://arxiv.org/abs/2611.08330) [[PDF]](https://arxiv.org/pdf/2611.08330.pdf) [[Project]](https://coolho1129.github.io/InstantHand-page/) |
@@ -43,19 +56,6 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | `2026-11-04` | **TwinBridge: Digital Twin-Driven Policy and Reward Transfer for Real-World Reinforcement Learning in Laboratory Robotics** | Sun et al. | `Active Perception, SLAM & Robotics` | [[arXiv:2611.06442]](https://arxiv.org/abs/2611.06442) [[PDF]](https://arxiv.org/pdf/2611.06442.pdf) |
 | `2026-11-04` | **Quo Vadis, Driving Scene Reconstruction? Occlusion-Aware Gaussian Densification** | Tien et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.06273]](https://arxiv.org/abs/2611.06273) [[PDF]](https://arxiv.org/pdf/2611.06273.pdf) |
 | `2026-11-04` | **METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting** | Yang et al. | `Dynamic & 4DGS` | [[arXiv:2611.06020]](https://arxiv.org/abs/2611.06020) [[PDF]](https://arxiv.org/pdf/2611.06020.pdf) |
-| `2026-11-04` | **Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering** *(WACV 2027)* | Wang et al. | `2D Gaussians, Geometry & Compression` | [[arXiv:2611.07049]](https://arxiv.org/abs/2611.07049) [[PDF]](https://arxiv.org/pdf/2611.07049.pdf) [[Project]](https://ooosn.github.io/gaussians-can-subtract/) |
-| `2026-11-04` | **CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting** *(WACV 2027)* | Hu et al. | `2D Gaussians, Geometry & Compression` | [[arXiv:2611.06258]](https://arxiv.org/abs/2611.06258) [[PDF]](https://arxiv.org/pdf/2611.06258.pdf) [[Project]](https://yuhsihu.github.io/CrossPressor) |
-| `2026-11-04` | **BudgetSplat: Budget-Controllable Generalizable Gaussian Splatting** | Hu et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.06593]](https://arxiv.org/abs/2611.06593) [[PDF]](https://arxiv.org/pdf/2611.06593.pdf) |
-| `2026-11-03` | **SettleSplat: Monocular Gaussian Mapping under In-View Scene Changes** *(WACV 2027)* | Tran et al. | `Active Perception, SLAM & Robotics` | [[arXiv:2611.04195]](https://arxiv.org/abs/2611.04195) [[PDF]](https://arxiv.org/pdf/2611.04195.pdf) |
-| `2026-11-03` | **Physical Diffusion Policy via MPM-Guided 3D Gaussian Simulation** | Wang et al. | `Dynamic & 4DGS` | [[arXiv:2611.04493]](https://arxiv.org/abs/2611.04493) [[PDF]](https://arxiv.org/pdf/2611.04493.pdf) |
-| `2026-11-03` | **Phase-DGS: Phase-guided Dynamic Gaussian Splatting from Unsynchronized Multi-view Video** *(NEURIPS 2026)* | Jeon et al. | `Dynamic & 4DGS` | [[arXiv:2611.04666]](https://arxiv.org/abs/2611.04666) [[PDF]](https://arxiv.org/pdf/2611.04666.pdf) [[Project]](https://oc-dev74.github.io/Phase-DGS/) |
-| `2026-11-03` | **IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting** | Wang et al. | `Autonomous Driving & Urban Scenes` | [[arXiv:2611.04374]](https://arxiv.org/abs/2611.04374) [[PDF]](https://arxiv.org/pdf/2611.04374.pdf) [[Project]](https://akaxi6.github.io/IGSW/) |
-| `2026-11-03` | **GSPIM: A Temporal-Locality-Aware 4DGS Accelerator for PIM-Enabled Edge Devices** | Ma et al. | `Dynamic & 4DGS` | [[arXiv:2611.04804]](https://arxiv.org/abs/2611.04804) [[PDF]](https://arxiv.org/pdf/2611.04804.pdf) [[Code]](https://github.com/MAdrid1011/GSPIM) |
-| `2026-11-03` | **GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs** | Yang et al. | `2D Gaussians, Geometry & Compression` | [[arXiv:2611.05359]](https://arxiv.org/abs/2611.05359) [[PDF]](https://arxiv.org/pdf/2611.05359.pdf) |
-| `2026-11-03` | **GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats** | Levy et al. | `Foundations & Acceleration` | [[arXiv:2611.05593]](https://arxiv.org/abs/2611.05593) [[PDF]](https://arxiv.org/pdf/2611.05593.pdf) [[Project]](https://svlwoof.github.io/gaussianrenderformer) |
-| `2026-11-03` | **EndoS3:Endoscopic Semantic Splatting SLAM** | Zeinoddin et al. | `Dynamic & 4DGS` | [[arXiv:2611.04358]](https://arxiv.org/abs/2611.04358) [[PDF]](https://arxiv.org/pdf/2611.04358.pdf) |
-| `2026-11-03` | **3DGS-VBench+ and 3DGSV-Assessor: A Multi-Dimensional Subjective Benchmark and a Reference-Flexible Objective Model for 3D Gaussian Splatting Video Quality Assessment** | Xing et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.04498]](https://arxiv.org/abs/2611.04498) [[PDF]](https://arxiv.org/pdf/2611.04498.pdf) [[Code]](https://github.com/YukeXing/3DGSV-Assessor) |
-| `2026-11-02` | **SCARF: A Scene-Adaptive Depth-Guided G-3DGS Encoder Accelerator with Semantic Reuse and Fused Dataflow** | Ma et al. | `Generative Priors & 3D Reconstruction` | [[arXiv:2611.02365]](https://arxiv.org/abs/2611.02365) [[PDF]](https://arxiv.org/pdf/2611.02365.pdf) [[Code]](https://github.com/MAdrid1011/SCARF) |
 
 ---
 
@@ -63,13 +63,16 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Foundations & Acceleration
 
-*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (42 papers)
+*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (45 papers)
 
 <details>
-<summary><strong>View 42 papers in Foundations & Acceleration</strong></summary>
+<summary><strong>View 45 papers in Foundations & Acceleration</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **Spaghetti Splatting: Differentiating Curvilinear Dirac Masses via Convolution**<br><sub>It remains competitive with the state-of-the-art on general scenes, outperforms methods specialized to line-like geometry, natively supports anti-aliasing, and produces long connected strands that are...</sub> | Shramko et al. | `Anti-Aliasing`, `Mesh & Surface`, `Physics & Simulation`, `Foundations` | [[arXiv:2611.12716]](https://arxiv.org/abs/2611.12716) [[PDF]](https://arxiv.org/pdf/2611.12716.pdf) |
+| `2026-11` | **FastGRT: Accelerating Training of 3D Gaussian Ray Tracing**<br><sub>Develops FastGRT, which decouples ray traversal from blending and reuses work done in the forward pass for the backward pass.</sub> | Banthia et al. | `CUDA & Rasterization`, `Ray Tracing`, `Foundations` | [[arXiv:2611.11586]](https://arxiv.org/abs/2611.11586) [[PDF]](https://arxiv.org/pdf/2611.11586.pdf) |
+| `2026-11` | **RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting** **[WACV 2027]**<br><sub>Introduces RigidGS, an end-to-end pipeline that decouples geometric learning from object identity.</sub> | Gyreyiri et al. | `Mesh & Surface`, `VR & XR`, `Foundations` | [[arXiv:2611.10199]](https://arxiv.org/abs/2611.10199) [[PDF]](https://arxiv.org/pdf/2611.10199.pdf) [[Project]](https://gyreyirisansah.github.io/rigidgs) |
 | `2026-11` | **Hierarchical Incremental Beta Splatting for Online Reconstruction** **[WACV 2027]**<br><sub>Presents Hierarchical Incremental Beta Splatting (HIBS), which brings beta kernels to incremental reconstruction.</sub> | Franke | `CUDA & Rasterization`, `Densification & Pruning`, `2DGS`, `Foundations` | [[arXiv:2611.08288]](https://arxiv.org/abs/2611.08288) [[PDF]](https://arxiv.org/pdf/2611.08288.pdf) |
 | `2026-11` | **AffineGS: Unlocking Accurate Geometry in 3DGS via Spatially Varying Affine Rectification** **[NEURIPS 2026]**<br><sub>To address this, we introduce a spatially varying affine rectification model that corrects monocular disparity into consistent metric depth using regionally smooth, edge-aware fields.</sub> | Tse et al. | `Foundations` | [[arXiv:2611.07709]](https://arxiv.org/abs/2611.07709) [[PDF]](https://arxiv.org/pdf/2611.07709.pdf) [[Project]](https://eldentse.github.io/AffineGS/) |
 | `2026-11` | **GaussianRenderFormer: Transformer-based Rendering of 3D Gaussian Splats**<br><sub>Presents GaussianRenderFormer, a transformer that takes a set of Gaussians and a camera and outputs the image directly.</sub> | Levy et al. | `CUDA & Rasterization`, `Foundations` | [[arXiv:2611.05593]](https://arxiv.org/abs/2611.05593) [[PDF]](https://arxiv.org/pdf/2611.05593.pdf) [[Project]](https://svlwoof.github.io/gaussianrenderformer) |
@@ -117,13 +120,14 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Dynamic & 4DGS
 
-*4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video.* (34 papers)
+*4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video.* (35 papers)
 
 <details>
-<summary><strong>View 34 papers in Dynamic & 4DGS</strong></summary>
+<summary><strong>View 35 papers in Dynamic & 4DGS</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **RefineSplat: Reconstruction-Guided Object-Centric Gaussian Splatting for Open-Vocabulary Querying**<br><sub>Building on our prior Segment-then-Splat framework, we present RefineSplat, a reconstruction-guided extension that retains its object-centric paradigm: it first tracks objects in 2D and then reconstructs...</sub> | Lu et al. | `Foundations` | [[arXiv:2611.10379]](https://arxiv.org/abs/2611.10379) [[PDF]](https://arxiv.org/pdf/2611.10379.pdf) |
 | `2026-11` | **XM4D: 4D Reconstruction through Certifiable Geometric Optimization**<br><sub>Presents XM4D, a framework for accurate and efficient 4D reconstruction built upon certifiably globally optimal geometric optimization.</sub> | Han et al. | `4DGS`, `Foundations` | [[arXiv:2611.07902]](https://arxiv.org/abs/2611.07902) [[PDF]](https://arxiv.org/pdf/2611.07902.pdf) |
 | `2026-11` | **Perception Over Geometry: Rethinking Gaussian Allocation in Mesh-based Splatting**<br><sub>Proposes P-MGS, a framework that separates appearance modeling from geometric control to achieve high quality rendering, compact representation, and flexible mesh editing.</sub> | Wang et al. | `Foundations` | [[arXiv:2611.07979]](https://arxiv.org/abs/2611.07979) [[PDF]](https://arxiv.org/pdf/2611.07979.pdf) |
 | `2026-11` | **METRIC-GS: Selective Metric-Scale Estimation for 3D Gaussian Splatting**<br><sub>Presents METRIC-GS, a selective scale estimator for real indoor photographs: it reads the scale off the reconstruction's own semantic content and, just as importantly, refuses when the evidence is thin.</sub> | Yang et al. | `Feed-Forward`, `Foundations` | [[arXiv:2611.06020]](https://arxiv.org/abs/2611.06020) [[PDF]](https://arxiv.org/pdf/2611.06020.pdf) |
@@ -163,13 +167,15 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Active Perception, SLAM & Robotics
 
-*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (24 papers)
+*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (26 papers)
 
 <details>
-<summary><strong>View 24 papers in Active Perception, SLAM & Robotics</strong></summary>
+<summary><strong>View 26 papers in Active Perception, SLAM & Robotics</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **DPGS-SLAM: Diffusion-Prior and Provenance-Aware Monocular Gaussian Splatting SLAM for Dynamic Visual Sensing**<br><sub>Presents DPGS-SLAM (Diffusion-Prior and Provenance-Aware Monocular Gaussian Splatting SLAM) for dense mapping in environments containing dynamic objects.</sub> | Luo et al. | `SLAM`, `Diffusion`, `Foundations` | [[arXiv:2611.12038]](https://arxiv.org/abs/2611.12038) [[PDF]](https://arxiv.org/pdf/2611.12038.pdf) |
+| `2026-11` | **PLS-GS: Probabilistic Lidar Scaffolds for Compact, Surface-Aligned Gaussian Splatting** **[WACV 2027]**<br><sub>Introduces PLS-GS, a probabilistic LiDAR scaffold for Gaussian Splatting that exploits this complementary sensing setting to construct a compact 3DGS representation aligned to the measured surface.</sub> | Harikumar et al. | `LiDAR-Fusion`, `Foundations` | [[arXiv:2611.10699]](https://arxiv.org/abs/2611.10699) [[PDF]](https://arxiv.org/pdf/2611.10699.pdf) [[Code]](https://github.com/k-harikumar/PLS-GS) |
 | `2026-11` | **MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation**<br><sub>Presents MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions.</sub> | Kumar et al. | `Feed-Forward`, `Physics & Simulation`, `Foundations` | [[arXiv:2611.08372]](https://arxiv.org/abs/2611.08372) [[PDF]](https://arxiv.org/pdf/2611.08372.pdf) |
 | `2026-11` | **TwinBridge: Digital Twin-Driven Policy and Reward Transfer for Real-World Reinforcement Learning in Laboratory Robotics**<br><sub>Presents TwinBridge, a digital twin-driven framework that supplies policy initialization and dense visual rewards for real-world online learning.</sub> | Sun et al. | `Physics & Simulation`, `Foundations` | [[arXiv:2611.06442]](https://arxiv.org/abs/2611.06442) [[PDF]](https://arxiv.org/pdf/2611.06442.pdf) |
 | `2026-11` | **SettleSplat: Monocular Gaussian Mapping under In-View Scene Changes** **[WACV 2027]**<br><sub>To resolve this, we present SettleSplat, a monocular mapping system that maintains up-to-date 3D Gaussian maps under such changes.</sub> | Tran et al. | `Foundations` | [[arXiv:2611.04195]](https://arxiv.org/abs/2611.04195) [[PDF]](https://arxiv.org/pdf/2611.04195.pdf) |
@@ -199,13 +205,16 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Human Avatars & VR
 
-*Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence.* (8 papers)
+*Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence.* (11 papers)
 
 <details>
-<summary><strong>View 8 papers in Human Avatars & VR</strong></summary>
+<summary><strong>View 11 papers in Human Avatars & VR</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **Martine: Benchmarking Multi-View 3D Surface Reconstruction Across Viewpoint Coverage, Resolution, and Lighting** **[NEURIPS 2026]**<br><sub>Introduces Martine, a benchmark for controlled 3D object surface reconstruction.</sub> | Bruneau et al. | `Mesh & Surface`, `Foundations` | [[arXiv:2611.11602]](https://arxiv.org/abs/2611.11602) [[PDF]](https://arxiv.org/pdf/2611.11602.pdf) [[Project]](https://martine-benchmark.github.io/) |
+| `2026-11` | **ZARA: Zero-shot Animatable and Relightable 3D Avatar reconstruction from a single image**<br><sub>Presents ZARA, a zero-shot feed-forward framework that reconstructs an animatable 3D Gaussian avatar together with its intrinsic attributes from a single image.</sub> | Chen et al. | `Anti-Aliasing`, `Feed-Forward`, `Avatars`, `Relighting & BRDF` | [[arXiv:2611.10562]](https://arxiv.org/abs/2611.10562) [[PDF]](https://arxiv.org/pdf/2611.10562.pdf) |
+| `2026-11` | **ClearForm: Shared-Surface Gaussian Splatting for Transparent and Opaque Scenes**<br><sub>Presents ClearForm, a shared-planar-Gaussian method for jointly reconstructing transparent interfaces and the appearance seen through them.</sub> | Lee et al. | `Mesh & Surface`, `Foundations` | [[arXiv:2611.10370]](https://arxiv.org/abs/2611.10370) [[PDF]](https://arxiv.org/pdf/2611.10370.pdf) [[Project]](https://hajeongx.github.io/clearform/) |
 | `2026-11` | **InstantHand: Feed-Forward 3D Gaussian Splatting for Animatable Hand Avatar Reconstruction from a Single Image** **[NEURIPS 2026]**<br><sub>Introduces InstantHand, a feed-forward framework that constructs an animatable 3D Gaussian hand avatar from a single image using off-the-shelf MANO, camera, and mask estimates, without test-time optimization.</sub> | Kim et al. | `Feed-Forward`, `Avatars`, `Foundations` | [[arXiv:2611.08330]](https://arxiv.org/abs/2611.08330) [[PDF]](https://arxiv.org/pdf/2611.08330.pdf) [[Project]](https://coolho1129.github.io/InstantHand-page/) |
 | `2026-11` | **EDGAR: Efficient Diffusion-Driven Gaussian Avatar Refinement via Synthetic Failure**<br><sub>Presents EDGAR (Efficient Diffusion-Driven Gaussian Avatar Refinement), a conditional diffusion framework designed to enhance the quality of Gaussian avatars by correcting artifacts while preserving...</sub> | Yun et al. | `Diffusion`, `Avatars`, `Foundations` | [[arXiv:2611.07909]](https://arxiv.org/abs/2611.07909) [[PDF]](https://arxiv.org/pdf/2611.07909.pdf) [[Project]](https://kwanyun.github.io/edgar/) |
 | `2026-10` | **DomeGS: Perceptually Consistent Background Completion for Unbounded 3D Gaussian Splatting in Virtual Reality**<br><sub>Proposes the DomeGS framework, which incorporates the skydome concept not as a flat background shell, but as a part of the reconstructed Gaussian Splatting 3D scene.</sub> | Pechko et al. | `VR & XR`, `Foundations` | [[arXiv:2610.37172]](https://arxiv.org/abs/2610.37172) [[PDF]](https://arxiv.org/pdf/2610.37172.pdf) |
@@ -219,15 +228,18 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Generative Priors & 3D Reconstruction
 
-*Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis.* (31 papers)
+*Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis.* (34 papers)
 
 <details>
-<summary><strong>View 31 papers in Generative Priors & 3D Reconstruction</strong></summary>
+<summary><strong>View 34 papers in Generative Priors & 3D Reconstruction</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
-| `2026-11` | **SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes**<br><sub>To address this, we propose SplatAnything with Gaussian Spacing Normalization (GSNorm), which canonicalizes a robust scene-level statistic of Gaussian spacing to provide a more consistent spatial reference...</sub> | Yu et al. | `Feed-Forward`, `Foundations` | [[arXiv:2611.08264]](https://arxiv.org/abs/2611.08264) [[PDF]](https://arxiv.org/pdf/2611.08264.pdf) |
+| `2026-11` | **UltraVoxelGS: Voxel-First Feed-Forward Gaussian Splatting for 3D Ultrasound Reconstruction**<br><sub>Presents UltraVoxelGS, a 3D ultrasound reconstruction method that achieves both fast reconstruction and physically faithful rendering for the first time, bringing live spatial feedback during 2D ultrasound...</sub> | Wang et al. | `Feed-Forward`, `Medical & Healthcare`, `Foundations` | [[arXiv:2611.11951]](https://arxiv.org/abs/2611.11951) [[PDF]](https://arxiv.org/pdf/2611.11951.pdf) [[Code]](https://github.com/YuebyYue/UltraVoxelGS-camera-ready) |
+| `2026-11` | **Plant Orbiter: 3D Plant Reconstruction and Generation with Video Diffusion Orbit Cameras and 3D Gaussian Splatting**<br><sub>Presents Plant Orbiter, a new approach to generating 3D plants that leverages recent advances in video diffusion to produce high quality 3D Gaussian Splats of plants from a single image.</sub> | Hartley et al. | `Diffusion`, `Foundations` | [[arXiv:2611.12739]](https://arxiv.org/abs/2611.12739) [[PDF]](https://arxiv.org/pdf/2611.12739.pdf) |
+| `2026-11` | **SplatAnything: Gaussian Spacing Normalization for Feed-forward 3DGS across Arbitrary Scenes**<br><sub>To address this, we propose SplatAnything with Gaussian Spacing Normalization (GSNorm), which canonicalizes a robust scene-level statistic of Gaussian spacing to provide a more consistent spatial reference...</sub> | Yu et al. | `Feed-Forward`, `Foundations` | [[arXiv:2611.08264]](https://arxiv.org/abs/2611.08264) [[PDF]](https://arxiv.org/pdf/2611.08264.pdf) [[Project]](https://zju3dv.github.io/SplatAnything) |
 | `2026-11` | **Quo Vadis, Driving Scene Reconstruction? Occlusion-Aware Gaussian Densification**<br><sub>Moving beyond image-space inpainting for rendered views, we introduce OccSplat, a feed-forward framework whose core contribution is Occlusion-Aware Gaussian Densification, explicitly targeting missing scene...</sub> | Tien et al. | `Densification & Pruning`, `Feed-Forward`, `Autonomous Driving`, `Foundations` | [[arXiv:2611.06273]](https://arxiv.org/abs/2611.06273) [[PDF]](https://arxiv.org/pdf/2611.06273.pdf) |
+| `2026-11` | **From Video to Digital Twin: An Exploratory Study of World Models and Gaussian Splatting on In-the-Wild Video**<br><sub>Generative world models and 3D Gaussian Splatting promise to turn ordinary video into explorable 3D scenes, but little is reported on how they behave on uncurated, in-the-wild footage.</sub> | Mohapatra | `Physics & Simulation`, `Foundations` | [[arXiv:2611.10013]](https://arxiv.org/abs/2611.10013) [[PDF]](https://arxiv.org/pdf/2611.10013.pdf) [[Code]](https://github.com/pikulsomesh/foodbank-spatial-twin) |
 | `2026-11` | **BudgetSplat: Budget-Controllable Generalizable Gaussian Splatting**<br><sub>Proposes BudgetSplat, a budget-controllable feed-forward framework that adapts the final Gaussian representation to a user-specified preservation ratio.</sub> | Hu et al. | `Feed-Forward`, `Compression`, `Foundations` | [[arXiv:2611.06593]](https://arxiv.org/abs/2611.06593) [[PDF]](https://arxiv.org/pdf/2611.06593.pdf) |
 | `2026-11` | **3DGS-VBench+ and 3DGSV-Assessor: A Multi-Dimensional Subjective Benchmark and a Reference-Flexible Objective Model for 3D Gaussian Splatting Video Quality Assessment**<br><sub>Based on 3DGS-VBench+, we propose 3DGSV-Assessor, a reference-flexible, large multimodal framework that scores all three dimensions in one generation pass and fuses a ranking-based reference cue into the...</sub> | Xing et al. | `Compression`, `Foundations` | [[arXiv:2611.04498]](https://arxiv.org/abs/2611.04498) [[PDF]](https://arxiv.org/pdf/2611.04498.pdf) [[Code]](https://github.com/YukeXing/3DGSV-Assessor) |
 | `2026-11` | **SCARF: A Scene-Adaptive Depth-Guided G-3DGS Encoder Accelerator with Semantic Reuse and Fused Dataflow**<br><sub>Introduces SCARF, a dataflow-co-designed accelerator that aligns each bottleneck with a corresponding scene-level regularity.</sub> | Ma et al. | `Feed-Forward`, `Foundations` | [[arXiv:2611.02365]](https://arxiv.org/abs/2611.02365) [[PDF]](https://arxiv.org/pdf/2611.02365.pdf) [[Code]](https://github.com/MAdrid1011/SCARF) |
@@ -262,13 +274,14 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Autonomous Driving & Urban Scenes
 
-*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (17 papers)
+*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (18 papers)
 
 <details>
-<summary><strong>View 17 papers in Autonomous Driving & Urban Scenes</strong></summary>
+<summary><strong>View 18 papers in Autonomous Driving & Urban Scenes</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **Mitigating SM-Level Load Imbalance in 3D Gaussian Splatting on GPUs**<br><sub>To address this, we present a software-defined GPU scheduling approach that mitigates the execution tail.</sub> | Ryu et al. | `CUDA & Rasterization`, `Autonomous Driving`, `Foundations` | [[arXiv:2611.12319]](https://arxiv.org/abs/2611.12319) [[PDF]](https://arxiv.org/pdf/2611.12319.pdf) |
 | `2026-11` | **Wide View Synthesis from Overlapping Perspective Cameras in Autonomous Driving**<br><sub>To address these challenges, we propose **Wide-View Gaussian Splatting (WV-GS)**, a feed-forward Gaussian-splatting framework that synthesizes wide views without per-scene optimization.</sub> | Zhang et al. | `Feed-Forward`, `LiDAR-Fusion`, `Autonomous Driving`, `Foundations` | [[arXiv:2611.07081]](https://arxiv.org/abs/2611.07081) [[PDF]](https://arxiv.org/pdf/2611.07081.pdf) |
 | `2026-11` | **IGSW: Multi-Weather Urban Scene Reconstruction with Intrinsic-Decoupled Gaussian Splatting**<br><sub>To address these challenges, we propose IGSW, a two-stage framework that combines intrinsic-decoupled 4D Gaussian scene modeling with structure-preserving weather refinement.</sub> | Wang et al. | `4DGS`, `Diffusion`, `Relighting & BRDF`, `Autonomous Driving` | [[arXiv:2611.04374]](https://arxiv.org/abs/2611.04374) [[PDF]](https://arxiv.org/pdf/2611.04374.pdf) [[Project]](https://akaxi6.github.io/IGSW/) |
 | `2026-10` | **COGS: A Diagnostic Benchmark for Attribute-Aware Object-Level 3D Gaussian Splatting Perception** **[WACV 2027]**<br><sub>Introduces COGS, a large-scale 3DGS dataset with 15,675 artifact-filtered and appearance-rich objects across 40 categories.</sub> | Xiao et al. | `Foundations` | [[arXiv:2610.39201]](https://arxiv.org/abs/2610.39201) [[PDF]](https://arxiv.org/pdf/2610.39201.pdf) |
@@ -320,13 +333,14 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### 2D Gaussians, Geometry & Compression
 
-*2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression.* (14 papers)
+*2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression.* (15 papers)
 
 <details>
-<summary><strong>View 14 papers in 2D Gaussians, Geometry & Compression</strong></summary>
+<summary><strong>View 15 papers in 2D Gaussians, Geometry & Compression</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
+| `2026-11` | **SHIN: Scalable Hierarchy for INcremental 3D Gaussian Splatting**<br><sub>Across three benchmarks, SHIN progressively improves one cumulative representation and achieves the best PSNR-size efficiency in every overlapping comparison with the multi-rate and progressive baselines.</sub> | Koo et al. | `Anti-Aliasing`, `Densification & Pruning`, `Foundations` | [[arXiv:2611.10652]](https://arxiv.org/abs/2611.10652) [[PDF]](https://arxiv.org/pdf/2611.10652.pdf) |
 | `2026-11` | **Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering** **[WACV 2027]**<br><sub>Introduces a lightweight Neural Dissolve Field, parameterized by scalar spherical-harmonic Gaussians, to learn where and from which viewing directions mesh content should be dissolved.</sub> | Wang et al. | `Foundations` | [[arXiv:2611.07049]](https://arxiv.org/abs/2611.07049) [[PDF]](https://arxiv.org/pdf/2611.07049.pdf) [[Project]](https://ooosn.github.io/gaussians-can-subtract/) |
 | `2026-11` | **CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting** **[WACV 2027]**<br><sub>Feed-forward 3D Gaussian Splatting (3D-GS) becomes increasingly difficult to scale to long multi-view sequences.</sub> | Hu et al. | `Feed-Forward`, `Compression`, `Foundations` | [[arXiv:2611.06258]](https://arxiv.org/abs/2611.06258) [[PDF]](https://arxiv.org/pdf/2611.06258.pdf) [[Project]](https://yuhsihu.github.io/CrossPressor) |
 | `2026-11` | **GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs**<br><sub>Presents GSCV++, a lightweight pipeline for 3D {G}aussian {S}platting (GS) sequences {C}ompression with standard {V}ideo codecs.</sub> | Yang et al. | `Compression`, `Foundations` | [[arXiv:2611.05359]](https://arxiv.org/abs/2611.05359) [[PDF]](https://arxiv.org/pdf/2611.05359.pdf) |
