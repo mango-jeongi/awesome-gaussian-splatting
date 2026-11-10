@@ -236,3 +236,51 @@ def test_retag_preserves_reviewed_categories_tags_and_explicit_missing_code():
     assert updated.primary_category == paper.primary_category
     assert updated.tags == paper.tags
     assert updated.code_url is None
+
+
+@pytest.mark.parametrize("source", ["cvf", "arxiv"])
+def test_arxiv_doi_cannot_claim_unverified_conference_publication_identity(source):
+    original = PaperRecord(
+        id="conference",
+        arxiv_id="2501.00001",
+        source=source,
+        title="Gaussian Splatting conference method",
+        venue="CVPR 2025",
+        publication_year=2025,
+        publication_date_precision="year",
+        metadata_evidence={
+            "venue": [
+                FieldEvidence(
+                    source="cvf_official_proceedings",
+                    value="CVPR 2025",
+                    source_url="https://openaccess.thecvf.com/content/CVPR2025/html/fixture.html",
+                    observed_at=NOW,
+                )
+            ]
+        },
+    )
+    incoming = PaperRecord(
+        arxiv_id="2501.00001",
+        source="arxiv",
+        title=original.title,
+        doi="10.1000/later-journal",
+        updated_date="2026-11-08",
+    )
+    with pytest.raises(ValueError, match="conference DOI.*source verification"):
+        original.merge_metadata(incoming)
+    assert original.doi is None
+    from src.ingestion import prepare_ingestion
+    from src.relevance import RelevancePolicy
+
+    db = PaperDatabase(papers=[original], total_count=1)
+    candidate, report = prepare_ingestion(
+        db,
+        [incoming],
+        RelevancePolicy(),
+        MultiProviderEnricher(Path(__file__).resolve().parents[1] / "config/taxonomy.yaml"),
+    )
+    assert candidate.model_dump() == db.model_dump()
+    assert report["outcomes"] == {"include": 0, "exclude": 0, "review": 1}
+    assert "publication source verification" in report["dispositions"][0]["reason"]
+    confirmed = original.model_copy(update={"doi": incoming.doi})
+    assert confirmed.merge_metadata(incoming).doi == incoming.doi

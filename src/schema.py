@@ -499,6 +499,18 @@ class PaperRecord(BaseModel):
 
     def merge_metadata(self, incoming: PaperRecord) -> PaperRecord:
         """Provider updates preserve reviewed fields and independent date identities."""
+        conference_publication = self.source == "cvf" or any(
+            entry.source == "cvf_official_proceedings"
+            for entries in self.metadata_evidence.values()
+            for entry in entries
+        )
+        if (
+            conference_publication
+            and incoming.source == "arxiv"
+            and incoming.doi
+            and incoming.doi != self.doi
+        ):
+            raise ValueError("Unverified conference DOI requires publication source verification")
         update = {
             field: getattr(incoming, field) or getattr(self, field)
             for field in (
