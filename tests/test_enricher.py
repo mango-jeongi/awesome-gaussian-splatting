@@ -37,3 +37,18 @@ def test_deterministic_enricher_categorization_and_tags() -> None:
     assert "Medical & Healthcare" not in res.tags
     # Verify TL;DR is distilled from the contribution rather than the generic first sentence
     assert res.tldr.startswith("Proposes ThermalGaussian to reconstruct 3D thermal infrared")
+
+
+def test_venue_requires_author_comment_and_never_invents_edition_year():
+    record = PaperRecord(
+        arxiv_id="2412.00001",
+        title="Gaussian Splatting fixture",
+        published_date="2024-12-01",
+        comment="Accepted to CVPR",
+        abstract="We compare against an ICCV 2023 method.",
+    )
+    enriched = extract_urls_and_venue(record)
+    assert enriched.venue == "CVPR"
+    assert enriched.metadata_evidence["venue"][0].source == "author_comment"
+    abstract_only = record.model_copy(update={"comment": None})
+    assert extract_urls_and_venue(abstract_only).venue is None

@@ -482,6 +482,11 @@ class PaperRecord(BaseModel):
 
     def protected_fields(self) -> set[str]:
         locked = self.reviewed_fields()
+        if any(
+            entry.source == "cvf_official_proceedings" and entry.value == self.venue
+            for entry in self.metadata_evidence.get("venue", [])
+        ):
+            locked.add("venue")
         for group in (
             {"published_date", "year", "month", "published_date_precision", "date_placement"},
             {"publication_date", "publication_year", "publication_date_precision"},

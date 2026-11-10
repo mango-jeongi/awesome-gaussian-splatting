@@ -284,3 +284,35 @@ def test_arxiv_doi_cannot_claim_unverified_conference_publication_identity(sourc
     assert "publication source verification" in report["dispositions"][0]["reason"]
     confirmed = original.model_copy(update={"doi": incoming.doi})
     assert confirmed.merge_metadata(incoming).doi == incoming.doi
+
+
+def test_official_proceedings_venue_survives_provider_guess_without_review_stamp():
+    original = PaperRecord(
+        id="cvf:guard",
+        arxiv_id="2412.00001",
+        title="Guard Gaussian Splatting",
+        venue="CVPR 2025",
+        source="cvf",
+        publication_year=2025,
+        publication_date_precision="year",
+        metadata_evidence={
+            "venue": [
+                FieldEvidence(
+                    source="cvf_official_proceedings",
+                    value="CVPR 2025",
+                    observed_at=NOW,
+                )
+            ]
+        },
+    )
+    incoming = PaperRecord(
+        arxiv_id=original.arxiv_id,
+        title=original.title,
+        source="arxiv",
+        venue="CVPR 2024",
+        updated_date="2026-11-08",
+    )
+    merged = original.merge_metadata(incoming)
+    assert merged.venue == "CVPR 2025"
+    assert merged.publication_year == 2025
+    assert merged.updated_date == incoming.updated_date

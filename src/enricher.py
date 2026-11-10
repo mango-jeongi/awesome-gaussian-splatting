@@ -16,6 +16,7 @@ from pathlib import Path
 
 import httpx
 
+from src.contracts import FieldEvidence
 from src.schema import PaperRecord, TaxonomyConfig
 
 GITHUB_REPO_RE = re.compile(
@@ -51,7 +52,7 @@ def extract_urls_and_venue(record: PaperRecord) -> PaperRecord:
 
     venue = record.venue
     if not venue:
-        venue_match = VENUE_RE.search(blob)
+        venue_match = VENUE_RE.search(record.comment or "")
         if venue_match:
             conf = venue_match.group(1).upper()
             if conf == "RAL":
@@ -59,15 +60,25 @@ def extract_urls_and_venue(record: PaperRecord) -> PaperRecord:
             yr = venue_match.group(2)
             if yr and len(yr) == 2:
                 yr = f"20{yr}"
-            elif not yr:
-                yr = str(record.year)
-            venue = f"{conf} {yr}".strip()
+            venue = f"{conf} {yr}" if yr else conf
 
+    evidence = {field: list(entries) for field, entries in record.metadata_evidence.items()}
+    if venue and not record.venue:
+        evidence.setdefault("venue", []).append(
+            FieldEvidence(
+                source="author_comment",
+                source_url=f"https://arxiv.org/abs/{record.arxiv_id}"
+                if record.arxiv_id
+                else record.paper_url,
+                value=venue,
+            )
+        )
     return record.with_provider_updates(
         update={
             "code_url": code_url,
             "project_url": project_url,
             "venue": venue,
+            "metadata_evidence": evidence,
         }
     )
 
