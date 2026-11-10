@@ -692,7 +692,7 @@ An explicit PDF-cluster command prepares source-hashed receipts and optional Gem
 
 ## Manual Operations
 
-- Official CVF evidence capture: `uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10`. It resumes hash-validated metadata capture and does not import canonical papers; see [CVPR 2025 evidence](reports/cvpr2025-metadata-capture.md) and [CVPR 2024 evidence](reports/cvpr2024-metadata-capture.md).
+- Official CVF evidence capture: `uv run python -m src.cli discover-cvf --listing <saved-official-listing.html> --venue CVPR --year 2025 --max-requests 10`. It resumes hash-validated metadata capture and does not import canonical papers; see [CVPR 2025 evidence](reports/cvpr2025-metadata-capture.md), [CVPR 2024 evidence](reports/cvpr2024-metadata-capture.md), and [CVPR 2023 evidence](reports/cvpr2023-metadata-capture.md).
 - [Historical backfill dispatch](.github/workflows/manual-backfill.yml): choose preview/apply, a stable run key, identical frozen dates, and a request ceiling. Completed validated checkpoints are retained on `feed` for resume.
 - [Reviewed worker import dispatch](.github/workflows/manual-worker-import.yml): select committed review/result JSON inputs. The runner verifies the canonical public PDF digest and exact reviewed decisions; preview is the default.
 - Both definitions share the repository writer concurrency group, verify the feed parent before an ordinary push, and run build/schema/lint/format/tests. Source PDFs remain temporary. See [operator instructions](CONTRIBUTING.md#manual-backfill-and-reviewed-worker-imports) for exact commands and limits.
