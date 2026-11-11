@@ -52,3 +52,16 @@ health. Timeout, context rejection or failed validation is a diagnostic result;
 it must not silently trigger another model, context reduction or cropped input.
 
 Execution requires approval beyond the completed single-synthetic-request canary.
+
+## Offline reference representability audit
+
+All four accepted numeric values occur as exact source words. However, none of
+24 contextual reference fields can be reconstructed exactly from whole source
+words on this page: table headers carry arrows, method names carry citations,
+and reviewed dataset/split/unit descriptions are editorial phrases. The
+[availability audit](runs/gemma-radsplat-reference-representability-20261111.json)
+records the necessary ordered-token checks. Exact context scores must therefore
+be accompanied by source-based semantic inspection; a low exact label score
+alone cannot demonstrate model failure. Do not alter gold decisions to favor the
+model. This baseline also diagnoses limitations in the current adapter/evaluator
+contract, which a later separately reviewed change may address.
