@@ -1,0 +1,19 @@
+[Unit]
+Description=Bounded Gemma RadSplat real-page diagnostic
+StartLimitIntervalSec=900
+StartLimitBurst=1
+
+[Service]
+Type=simple
+Environment="LD_LIBRARY_PATH=%h/.local/share/papers-llama/staging-gemma-b12259/cudart-llama-b12259-bin-ubuntu-cuda-12.8-x64/cudart-llama-b12259-bin-ubuntu-cuda-12.8-x64:%h/.local/share/papers-llama/staging-gemma-b12259/llama-b12259-bin-ubuntu-cuda-12.8-x64/llama-b12259"
+ExecStart=%h/.local/share/papers-llama/staging-gemma-b12259/llama-b12259-bin-ubuntu-cuda-12.8-x64/llama-b12259/llama-server --model %h/.local/share/papers-llama/staging-gemma-b12259/gemma-4-E4B_q4_0-it.gguf --alias gemma-e4b-qat-676c3507 --host 127.0.0.1 --port 8791 --ctx-size 16384 --parallel 1 --gpu-layers 99 --threads 4 --batch-size 256 --ubatch-size 128 --flash-attn on --cache-type-k q8_0 --cache-type-v q8_0 --no-context-shift --no-webui --jinja
+Restart=no
+RuntimeMaxSec=35min
+TimeoutStopSec=20
+KillMode=control-group
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0077
+Nice=10
+MemoryMax=10G
+CPUQuota=300%
