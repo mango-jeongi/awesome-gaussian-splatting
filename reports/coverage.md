@@ -79,3 +79,16 @@ The next ICCV pass also completed and reverified 1,303/2,701 metadata pages, wit
 are 150 include, 51 review and 1,102 exclude; 26 title-excluded policy leads still
 require source scope review. This supersedes the initial 806-page count above.
 Other corpus, seed, extraction and provider denominators remain unchanged.
+
+## Reviewed identity follow-up — 2026-11-11
+
+The [SAR-GS merge](sargs-identity-merge-20261111.md) resolves the shared-identity
+collision while preserving the original seed ID and exact archived source record.
+Current denominators are **4,101 active, six archived, 4,070 with an arXiv ID and
+31 without**. The original seed dispositions stay 141 retained/19 unresolved/five
+archived. Active OpenAlex statuses are now 3,792 matches, 277 misses and 32
+ambiguities; the removed ID's provider history remains preserved outside the
+active denominator. Extraction is 11 processed/4,080 queued/nine unavailable/one
+unsupported, with the same 22 accepted cells and eight rejected cells. The
+source-bound merge/application receipt supersedes earlier corpus counts. Public
+graph projection/rebuild remains the next gate.
