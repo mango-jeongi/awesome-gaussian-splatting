@@ -162,3 +162,59 @@ def test_cli_zero_budget_writes_replayable_report_without_network(tmp_path, caps
     saved = json.loads(report.read_bytes())
     assert saved["pending_records"] == 1 and saved["invocation_requests"] == 0
     assert json.loads(capsys.readouterr().out)["corpus_modified"] is False
+
+
+def test_all_metadata_can_review_gaussian_methods_with_opaque_titles(tmp_path):
+    listing = LISTING.replace("Gaussian Splatting &amp; Methods", "Opaque Method")
+    paper = PAPER.replace("Gaussian Splatting &amp; Methods", "Opaque Method")
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda r: httpx.Response(200, text=paper))
+    ) as client:
+        before = capture_cvf(
+            listing.encode(),
+            tmp_path / "title",
+            venue="CVPR",
+            year=2025,
+            track="main",
+            policy=RelevancePolicy(),
+            max_requests=0,
+            client=client,
+        )
+        assert before["selected_records"] == 0
+        after = capture_cvf(
+            listing.encode(),
+            tmp_path / "all",
+            venue="CVPR",
+            year=2025,
+            track="main",
+            policy=RelevancePolicy(),
+            max_requests=1,
+            all_metadata=True,
+            client=client,
+        )
+    assert after["selection_mode"] == "all_metadata"
+    assert after["selected_records"] == after["verified_records"] == 1
+    assert after["records"][0]["metadata_outcome"] == "include"
+    inventory = json.loads((tmp_path / "all/inventory.json").read_bytes())
+    assert inventory["title_screening_only"] is True
+    assert inventory["records"][0]["title_outcome"] == "exclude"
+
+
+@pytest.mark.parametrize("first_mode", [False, True])
+def test_selection_mode_cannot_change_in_an_existing_epoch(tmp_path, first_mode):
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda r: pytest.fail("Unexpected traffic"))
+    ) as client:
+        run(tmp_path, client, max_requests=0, all_metadata=first_mode)
+        with pytest.raises(ValueError, match="selection mode|listing/policy"):
+            run(tmp_path, client, max_requests=0, all_metadata=not first_mode)
+
+
+def test_legacy_zero_request_inventory_still_fences_selection_mode(tmp_path):
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda r: pytest.fail("Unexpected traffic"))
+    ) as client:
+        run(tmp_path, client, max_requests=0)
+        (tmp_path / "state.json").unlink()
+        with pytest.raises(ValueError, match="selection mode"):
+            run(tmp_path, client, max_requests=0, all_metadata=True)

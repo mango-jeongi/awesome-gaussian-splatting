@@ -25,6 +25,7 @@ def capture_cvf(
     policy,
     max_requests=10,
     max_seconds=120,
+    all_metadata=False,
     client=None,
     clock=time.monotonic,
     sleep=time.sleep,
@@ -57,7 +58,7 @@ def capture_cvf(
     selected = {
         row.source_url: row
         for row, item in zip(listing, dispositions, strict=True)
-        if item["title_outcome"] in ("include", "review")
+        if all_metadata or item["title_outcome"] in ("include", "review")
     }
     expected = {
         "schema_version": 1,
@@ -67,6 +68,8 @@ def capture_cvf(
         "year": year,
         "track": track,
     }
+    if all_metadata:
+        expected["selection_mode"] = "all_metadata"
     state_path = root / "state.json"
     started = clock()
     requests = 0
@@ -74,11 +77,32 @@ def capture_cvf(
     client = client or httpx.Client(timeout=20, follow_redirects=False)
     try:
         with exclusive_file(root / "capture.run.lock", resource="CVF metadata capture"):
-            state = (
-                json.loads(state_path.read_bytes())
-                if state_path.exists()
-                else {**expected, "captures": {}, "failures": {}}
+            inventory_path = root / "inventory.json"
+            legacy_inventory = (
+                json.loads(inventory_path.read_bytes())
+                if not state_path.exists() and inventory_path.exists()
+                else None
             )
+            initial = {**expected, "captures": {}, "failures": {}}
+            if legacy_inventory is not None:
+                initial = {
+                    key: legacy_inventory[key]
+                    for key in (
+                        "schema_version",
+                        "listing_sha256",
+                        "policy_digest",
+                        "venue",
+                        "year",
+                        "track",
+                    )
+                }
+                if "selection_mode" in legacy_inventory:
+                    initial["selection_mode"] = legacy_inventory["selection_mode"]
+                initial.update(captures={}, failures={})
+            state = json.loads(state_path.read_bytes()) if state_path.exists() else initial
+            selection_mode = "all_metadata" if all_metadata else "title_priority"
+            if state.get("selection_mode", "title_priority") != selection_mode:
+                raise ValueError("Frozen CVF selection mode changed; use a separate epoch")
             if any(state.get(key) != value for key, value in expected.items()):
                 raise ValueError("Frozen CVF listing/policy/edition changed")
             if set(state["captures"]) - set(selected) or set(state["failures"]) - set(selected):
@@ -108,6 +132,8 @@ def capture_cvf(
             ):
                 raise ValueError("Frozen CVF listing hash mismatch")
             _atomic_write(listing_path, listing_bytes)
+            if not state_path.exists():
+                _atomic_write(state_path, _encode(state))
             _atomic_write(
                 root / "inventory.json",
                 _encode({**expected, "title_screening_only": True, "records": dispositions}),

@@ -408,3 +408,29 @@ rollback still need live evidence after an authorized rollout. No production
 release is claimed from local archive tests alone.
 Official contracts: [upload-artifact](https://github.com/actions/upload-artifact),
 [Pages artifact packaging](https://github.com/actions/upload-pages-artifact).
+
+### Full-metadata CVF epochs
+
+Title screening is a prioritization mode, not a completeness boundary. For an
+abstract-based venue inventory, use `--all-metadata` and a separate `--cache` epoch:
+
+```sh
+uv run python -m src.cli discover-cvf --listing <frozen-listing.html> --venue ICCV --year 2025 --cache <all-metadata-epoch> --all-metadata --max-requests 100 --max-seconds 240
+```
+
+The explicit mode selects every listed publication within the same per-pass
+request/time, pacing, response-size and retry limits. It freezes `selection_mode`
+in the checkpoint. Switching an existing epoch between title-priority and full
+metadata is refused before traffic, including an epoch created with zero requests
+and older inventory-only checkpoints. Old title-priority epochs remain resumable.
+The inventory's title decisions are still title-only; metadata dispositions are
+separate and may recover topic evidence missing from titles. No scope decision
+or canonical import follows automatically from completing metadata fetches.
+
+Verified response bodies can seed a separate epoch when their listing/policy/
+edition hashes agree. Preserve exact raw hashes and original observation times,
+record the seed provenance, and validate the seeded state before further traffic.
+Do not reset retry deadlines, edit the old epoch in place or copy a completion
+flag without accounting for every new selected URL. A full-metadata epoch still
+needs independent source reconciliation, source identity/date checks and reviewed
+scope decisions before an import or completion claim.

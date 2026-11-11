@@ -268,6 +268,7 @@ def cmd_discover_cvf(args: argparse.Namespace) -> int:
         policy=RelevancePolicy.load(args.overrides),
         max_requests=args.max_requests,
         max_seconds=args.max_seconds,
+        all_metadata=args.all_metadata,
     )
     if args.report:
         _atomic_write(args.report, _encode(report))
@@ -791,6 +792,11 @@ def main(argv: list[str] | None = None) -> int:
     p_cvf.add_argument("--overrides", type=Path, default=ROOT_DIR / "config/overrides.yaml")
     p_cvf.add_argument("--max-requests", type=int, default=10)
     p_cvf.add_argument("--max-seconds", type=float, default=120)
+    p_cvf.add_argument(
+        "--all-metadata",
+        action="store_true",
+        help="Capture every listed publication for abstract review in a separately frozen epoch",
+    )
     p_cvf.add_argument("--report", type=Path)
     p_cvf.set_defaults(func=cmd_discover_cvf)
 
