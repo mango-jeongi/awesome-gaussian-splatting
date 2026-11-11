@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4102-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4101-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-10` | Total Papers: **4102** | With Official Code: **570***
+*Last updated: `2026-11-11` | Total Papers: **4101** | With Official Code: **570***
 
 ---
 
@@ -16,7 +16,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 | Category | Papers | Description |
 | :--- | :---: | :--- |
-| **[Foundations & Acceleration](#foundations--acceleration)** | `1004` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
+| **[Foundations & Acceleration](#foundations--acceleration)** | `1003` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
 | **[Dynamic & 4DGS](#dynamic--4dgs)** | `848` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
 | **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `550` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
 | **[Human Avatars & VR](#human-avatars--vr)** | `283` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
@@ -63,10 +63,10 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Foundations & Acceleration
 
-*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1004 papers)
+*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1003 papers)
 
 <details>
-<summary><strong>View 1004 papers in Foundations & Acceleration</strong></summary>
+<summary><strong>View 1003 papers in Foundations & Acceleration</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -131,7 +131,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | `2026-10` | **FactorSplat: Appearance-Controllable Gaussian Proxies for Medical Volume Rendering**<br><sub>Presents FactorSplat, a per-scene N-dimensional Gaussian splatting (N-DGS) proxy that accepts region-specific intensity-to-RGBA curves at inference.</sub> | Gao et al. | `Densification & Pruning`, `Compression`, `Foundations` | [[arXiv:2610.02382]](https://arxiv.org/abs/2610.02382) [[PDF]](https://arxiv.org/pdf/2610.02382.pdf) [[Project]](https://gaozhongpai.github.io/FactorSplat/) |
 | `2026-10` | **EvenSplat: Coupled 2D-3D Decomposition for Gaussian Splatting under Exposure and Illumination Variation**<br><sub>Presents EvenSplat, a framework that separates the two.</sub> | Wu et al. | `Relighting & BRDF`, `Foundations` | [[arXiv:2610.01876]](https://arxiv.org/abs/2610.01876) [[PDF]](https://arxiv.org/pdf/2610.01876.pdf) |
 
-Showing 60 of 1004 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
+Showing 60 of 1003 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
 
 </details>
 
@@ -568,7 +568,7 @@ Showing 60 of 315 papers. [Browse the full category](https://mango-jeongi.github
 | `2025-07` | **ClipGS: Clippable Gaussian Splatting for Interactive Cinematic Visualization of Volumetric Medical Data** **[MICCAI 2025]**<br><sub>Introduces ClipGS, an innovative Gaussian splatting framework with the clipping plane supported, for interactive cinematic visualization of volumetric medical data.</sub> | Li et al. | `Medical & Healthcare`, `Foundations` | [[arXiv:2507.06647]](https://arxiv.org/abs/2507.06647) [[PDF]](https://arxiv.org/pdf/2507.06647.pdf) [[Project]](https://med-air.github.io/ClipGS) |
 | `2025-06` | **Endo-4DGX: Robust Endoscopic Scene Reconstruction and Illumination Correction with Gaussian Splatting** **[MICCAI 2025]**<br><sub>To address these challenges, we present Endo-4DGX, a novel reconstruction method with illumination-adaptive Gaussian Splatting designed specifically for endoscopic scenes with uneven lighting.</sub> | Huang et al. | `4DGS`, `Medical & Healthcare`, `Foundations` | [[arXiv:2506.23308]](https://arxiv.org/abs/2506.23308) [[PDF]](https://arxiv.org/pdf/2506.23308.pdf) [[Code]](https://github.com/lastbasket/Endo-4DGX) [[Project]](https://lastbasket.github.io/MICCAI-2025-Endo-4DGX/) |
 | `2025-06` | **EndoFlow-SLAM: Real-Time Endoscopic SLAM with Flow-Constrained Gaussian Splatting** **[MICCAI 2025]**<br><sub>Furthermore, we propose a depth regularisation strategy to mitigate the problem of photometric inconsistencies and ensure the validity of 3DGS depth rendering in endoscopic scenes.</sub> | Wu et al. | `SLAM`, `Medical & Healthcare`, `Foundations` | [[arXiv:2506.21420]](https://arxiv.org/abs/2506.21420) [[PDF]](https://arxiv.org/pdf/2506.21420.pdf) |
-| `2025-06` | **SAR-GS: Gaussian Splatting-Based SAR Image Rendering and Target Reconstruction**<br><sub>SAR-GS adapts Gaussian Splatting to simulate electromagnetic scattering and render Synthetic Aperture Radar (SAR) views of target objects.</sub> | Li et al. | `LiDAR-Fusion` | — |
+| `2025-06` | **SAR-GS: Gaussian Splatting-Based SAR Image Rendering and Target Reconstruction**<br><sub>SAR-GS adapts Gaussian Splatting to simulate electromagnetic scattering and render Synthetic Aperture Radar (SAR) views of target objects.</sub> | Li et al. | `LiDAR-Fusion` | [[arXiv:2506.21633]](https://arxiv.org/abs/2506.21633) [[PDF]](https://arxiv.org/pdf/2506.21633.pdf) |
 | `2025-05` | **Render-FM: Feedforward Model for Real-time Photorealistic Volumetric Rendering** **[ECCV 2026]**<br><sub>Proposes Render-FM, a feedforward model that eliminates this bottleneck by directly regressing 6D Gaussian Splatting (6DGS) parameters from a CT volume in a single 2.8-second forward pass, a 500x speedup...</sub> | Gao et al. | `Medical & Healthcare`, `Foundations` | [[arXiv:2505.17338]](https://arxiv.org/abs/2505.17338) [[PDF]](https://arxiv.org/pdf/2505.17338.pdf) [[Project]](https://gaozhongpai.github.io/renderfm/) |
 | `2025-05` | **X-GRM: Large Gaussian Reconstruction Model for Sparse-view X-rays to Computed Tomography**<br><sub>Presents X-GRM (X-ray Gaussian Reconstruction Model), a large feedforward model for reconstructing 3D CT volumes from sparse-view 2D X-ray projections.</sub> | Liu et al. | `Sparse-View`, `Medical & Healthcare`, `Foundations` | [[arXiv:2505.15235]](https://arxiv.org/abs/2505.15235) [[PDF]](https://arxiv.org/pdf/2505.15235.pdf) [[Code]](https://github.com/CUHK-AIM-Group/X-GRM) |
 | `2025-04` | **IXGS-Intraoperative 3D Reconstruction from Sparse, Arbitrarily Posed Real X-rays**<br><sub>Introduces an anatomy-guided radiographic standardization step using style transfer, improving visual consistency across views, and enhancing reconstruction quality.</sub> | Jecklin et al. | `Sparse-View`, `Medical & Healthcare`, `Foundations` | [[arXiv:2504.14699]](https://arxiv.org/abs/2504.14699) [[PDF]](https://arxiv.org/pdf/2504.14699.pdf) |
