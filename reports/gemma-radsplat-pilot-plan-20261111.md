@@ -55,9 +55,9 @@ Execution requires approval beyond the completed single-synthetic-request canary
 
 ## Offline reference representability audit
 
-All four accepted numeric values occur as exact source words. However, none of
-24 contextual reference fields can be reconstructed exactly from whole source
-words on this page: table headers carry arrows, method names carry citations,
+All four accepted numeric values occur as exact source words. However, only six of
+24 contextual reference fields pass the ordered whole-source-word availability
+check on this page: table headers carry arrows, method names carry citations,
 and reviewed dataset/split/unit descriptions are editorial phrases. The
 [availability audit](runs/gemma-radsplat-reference-representability-20261111.json)
 records the necessary ordered-token checks. Exact context scores must therefore
