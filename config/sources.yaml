@@ -64,13 +64,14 @@ editions:
     listing_sha256: 8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5
     listing_records: 2353
     selected_metadata_records: 90
-    verified_metadata_records: 89
-    pending_records: 1
-    failed_records: 1
+    verified_metadata_records: 90
+    pending_records: 0
+    failed_records: 0
     metadata_dispositions:
       include: 0
-      review: 89
+      review: 90
       exclude: 0
+    selected_metadata_complete: true
   - provider: cvpr_official_accepted_table
     source_url: https://cvpr2023.thecvf.com/Conferences/2023/AcceptedPapers
     evidence_file: data/venues/cvpr2023-main/independent-reconciliation.json
@@ -91,11 +92,18 @@ editions:
     usable_json: false
     discovery_complete: false
     watermark_advanced: false
+  - provider: cvf_arxiv_identity_resolution
+    evidence_file: data/venues/cvpr2023-main/identity-resolution.json
+    linked_ids_pending_exact_source: 66
+    unlinked_publication_year_only: 24
+    original_dates_verified: 0
+    lookup_status: deferred_http_429
+    failure_evidence: data/venues/cvpr2023-main/arxiv-lookup-deferred.json
   remaining:
-  - One NeRFVS metadata capture has a transport failure and remains subject to its
-    retry deadline.
-  - All 89 captured adjacent/foundation candidates require scope justification; no
+  - All 90 captured adjacent/foundation candidates require scope justification; no
     automatic inclusions.
+  - Exact linked arXiv identity/original-date lookup deferred after HTTP 429; 66 linked
+    and 24 unlinked records remain distinct states.
   - Six accepted-only titles have no mapped proceedings counterpart; do not infer
     withdrawals.
   - Fourteen exact-title author differences remain source-quality evidence, not automatic

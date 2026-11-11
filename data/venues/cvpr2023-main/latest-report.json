@@ -1,10 +1,10 @@
 {
   "corpus_modified": false,
-  "failed_records": 1,
+  "failed_records": 0,
   "invocation_requests": 0,
   "listing_records": 2353,
   "listing_sha256": "8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5",
-  "pending_records": 1,
+  "pending_records": 0,
   "policy_digest": "388dfe1507123d4bfb7e4bfac474e94afa84321eb5067d8a5db8f4622d8b4d0f",
   "records": [
     {
@@ -2144,6 +2144,37 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T04:06:19.465896+00:00",
+        "sha256": "6c1a05d72ca326620f7a8841094ccc481ca100eb6ea7e5ab285e9db18b08ae17"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "We present NeRFVS, a novel neural radiance fields (NeRF) based method to enable free navigation in a room. NeRF achieves impressive performance in rendering images for novel views similar to the input views while suffering for novel views that are significantly different from the training views. To address this issue, we utilize the holistic priors, including pseudo depth maps and view coverage information, from neural reconstruction to guide the learning of implicit neural representations of 3D indoor scenes. Concretely, an off-the-shelf neural reconstruction method is leveraged to generate a geometry scaffold. Then, two loss functions based on the holistic priors are proposed to improve the learning of NeRF: 1) A robust depth loss that can tolerate the error of the pseudo depth map to guide the geometry learning of NeRF; 2) A variance loss to regularize the variance of implicit neural representations to reduce the geometry and color ambiguity in the learning procedure. These two loss functions are modulated during NeRF optimization according to the view coverage information to reduce the negative influence brought by the view coverage imbalance. Extensive results demonstrate that our NeRFVS outperforms state-of-the-art view synthesis methods quantitatively and qualitatively on indoor scenes, achieving high-fidelity free navigation results.",
+        "arxiv_id": "2304.06287",
+        "authors": [
+          "Chen Yang",
+          "Peihao Li",
+          "Zanwei Zhou",
+          "Shanxin Yuan",
+          "Bingbing Liu",
+          "Xiaokang Yang",
+          "Weichao Qiu",
+          "Wei Shen"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Yang_NeRFVS_Neural_Radiance_Fields_for_Free_View_Synthesis_via_Geometry_CVPR_2023_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Yang_NeRFVS_Neural_Radiance_Fields_for_Free_View_Synthesis_via_Geometry_CVPR_2023_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "NeRFVS: Neural Radiance Fields for Free View Synthesis via Geometry Scaffolds",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2023
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-10T22:31:03.140165+00:00",
         "sha256": "6f11a515bad684e39715e554a790a17a0337fbf21827ee7006fe8ad2c0bd35e0"
       },
@@ -2538,7 +2569,7 @@
     }
   ],
   "schema_version": 1,
-  "selected_metadata_complete": false,
+  "selected_metadata_complete": true,
   "selected_records": 90,
   "title_dispositions": {
     "exclude": 2263,
@@ -2548,6 +2579,6 @@
   "track": "main",
   "venue": "CVPR",
   "venue_inventory_reconciled": false,
-  "verified_records": 89,
+  "verified_records": 90,
   "year": 2023
 }

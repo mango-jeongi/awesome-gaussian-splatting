@@ -70,3 +70,32 @@ Validation: all 420 tests passed in 113.88 seconds. Canonical schema validation,
 artifact build, Ruff lint/format and source-inventory count assertions pass. The
 canonical raw digest is unchanged. The new CVPR 2023 source link is generated from
 the README builder.
+
+## Capture completion follow-up (2026-11-11 UTC / November 10 Pacific)
+
+The recorded NeRFVS retry deadline had passed. A one-request resumed capture
+succeeded: all 90 selected publication pages are now verified, with zero pending
+or failed fetches. The earlier 89/90 result above is preserved as the first-pass
+history, not the current metadata-capture status. All 90 scope decisions remain
+review; no paper was automatically included or archived. A subsequent zero-request
+replay verifies the completed source cache without further traffic.
+
+Official pages link 66 unique arXiv IDs; 24 have no arXiv link. An exact-ID lookup
+was attempted with a bounded single-attempt batch and returned HTTP 429 on its
+first request. No immediate retry or alternate executor was used; the shared
+arXiv gate and backoff were preserved. The
+[deferred lookup receipt](../data/venues/cvpr2023-main/arxiv-lookup-deferred.json)
+retains the literal linked-ID inventory and failure status. The
+[identity audit](../data/venues/cvpr2023-main/identity-resolution.json) distinguishes
+66 records awaiting exact arXiv metadata from 24 publication-year-only records.
+No original preprint day has been verified for this capture. Missing source links
+do not establish that a paper has no arXiv preprint.
+
+The venue cell stays partial: capture completion does not resolve scope decisions,
+the six accepted-only proceedings discrepancies, 14 author-list differences,
+DBLP access, original dates, exclusion recall or actual reviewed non-arXiv imports.
+Canonical 4,102 active/five archived and its raw digest remain unchanged.
+
+Follow-up validation: all 16 venue capture/identity tests pass. A zero-request
+replay revalidates all 90 source pages, schema validation passes for the unchanged
+4,102-record catalog, and the canonical raw SHA-256 remains unchanged.
