@@ -57,3 +57,25 @@ The approved Gemma test was one synthetic request followed by cleanup. The [real
 Canonical storage is still v1; full-corpus v2 migration/rollback rehearsals passed locally, but cutover and compatible remote writer rollout remain open. Local portal performance and immutable release-artifact rehearsals have dedicated reports; they do not prove public deployment. No push, remote workflow dispatch, production Pages deployment or production rollback has occurred. Live writer-race/dispatch evidence, provider rollout, source review/completeness, reviewed figure publication, full worker coverage and real citation observation windows remain outstanding.
 
 This snapshot does not advance any source watermark, modify canonical/provider data or declare a phase complete. Later reports must recompute denominators and observation ages against their own bound inputs.
+
+## Latest follow-up — 2026-11-11T04:52Z
+
+The tables above retain the initial 04:44Z snapshot. A subsequent authenticated
+OpenAlex refresh completed the active due queue: 4,102/4,102 cache statuses,
+3,793 successful mappings (all fresh), 277 misses and 32 ambiguities; a zero-request
+replay has zero due and leaves bytes unchanged. There are 1,086 observed zeros,
+3,690 single snapshots and 103 histories without an eligible 7–45-day window;
+velocity remains unavailable. See the
+[bound verification](runs/openalex-full-active-verification-20261111.json) and
+[refresh report](openalex-full-active-20261111.md).
+
+One cross-canonical SAR-GS identity collision needs reviewed deduplication; the
+3,793 cache mappings are not a count of distinct publications. The attempted
+in-memory graph projection failed closed and did not modify canonical data.
+Refreshed reference evidence has not reached the public graph yet.
+
+The next ICCV pass also completed and reverified 1,303/2,701 metadata pages, with
+1,398 pending (including six retry-deferred failures). Automatic dispositions
+are 150 include, 51 review and 1,102 exclude; 26 title-excluded policy leads still
+require source scope review. This supersedes the initial 806-page count above.
+Other corpus, seed, extraction and provider denominators remain unchanged.
