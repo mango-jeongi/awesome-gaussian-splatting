@@ -1,7 +1,263 @@
 {
-  "scope": "Observed title-screen exclusions whose official full abstract passes frozen policy; not independent population recall",
-  "count": 1,
+  "canonical_modified": false,
+  "count": 13,
   "records": [
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:27:12.401412+00:00",
+        "sha256": "bfd6131b1813556a3e86b67a92c3661d40f0e469853fb45b841b4dd669e93fac"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We introduce HouseTour, a method for spatially-aware 3D camera trajectory and natural language summary generation from a collection of images depicting an existing 3D space. Unlike existing vision-language models (VLMs), which struggle with geometric reasoning, our approach generates smooth video trajectories via a diffusion process constrained by known camera poses and integrates this information into the VLM for 3D-grounded descriptions. We synthesize the final video using 3D Gaussian splatting to render novel views along the trajectory. To support this task, we present the HouseTour dataset, which includes over 1,200 house-tour videos with camera poses, 3D reconstructions, and real estate descriptions. Experiments demonstrate that incorporating 3D camera trajectories into the text generation process improves performance over methods handling each task independently. We evaluate both individual and end-to-end performance, introducing a new joint metric. Our work enables automated, professional-quality video creation for real estate and touristic applications without requiring specialized expertise or equipment.",
+        "arxiv_id": null,
+        "authors": [
+          "Ata Çelen",
+          "Marc Pollefeys",
+          "Daniel Barath",
+          "Iro Armeni"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Celen_HouseTour_A_Virtual_Real_Estate_AIgent_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Celen_HouseTour_A_Virtual_Real_Estate_AIgent_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "HouseTour: A Virtual Real Estate A(I)gent",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:31:08.244269+00:00",
+        "sha256": "2eae0b5921899a313546575ad4702df3f58d30783ac6f0645ced56a6ddc1b9c6"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We propose 3D Super Resolution (3DSR), a novel 3D Gaussian-splatting-based super-resolution framework that leverages off-the-shelf diffusion-based 2D super-resolution models. 3DSR encourages 3D consistency across views via the use of an explicit 3D Gaussian-splatting-based scene representation. This makes the proposed 3DSR different from prior work, such as image upsampling or the use of video super-resolution, which either don't consider 3D consistency or aim to incorporate 3D consistency implicitly. Notably, our method enhances visual quality without additional fine-tuning, ensuring spatial coherence within the reconstructed scene. We evaluate 3DSR on MipNeRF360 and LLFF data, demonstrating that it produces high-resolution results that are visually compelling, while maintaining structural consistency in 3D reconstructions. Code will be released.",
+        "arxiv_id": "2508.04090",
+        "authors": [
+          "Yi-Ting Chen",
+          "Ting-Hsuan Liao",
+          "Pengsheng Guo",
+          "Alexander Schwing",
+          "Jia-Bin Huang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Chen_Bridging_Diffusion_Models_and_3D_Representations_A_3D_Consistent_Super-Resolution_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Chen_Bridging_Diffusion_Models_and_3D_Representations_A_3D_Consistent_Super-Resolution_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:28:14.165387+00:00",
+        "sha256": "6a31ba756d18783ea90269b930fa85d1188e7b94c845704dd4d9729e798e13af"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "We present MoGA, a novel method to reconstruct high-fidelity 3D Gaussian avatars from a single-view image. The main challenge lies in inferring unseen appearance and geometric details while ensuring 3D consistency and realism. Most previous methods rely on 2D diffusion models to synthesize unseen views; however, these generated views are sparse and inconsistent, resulting in unrealistic 3D artifacts and blurred appearance. To address these limitations, we leverage a generative avatar model, that can generate diverse 3D avatars by sampling deformed Gaussians from a learned prior distribution. Due to limited 3D training data, such a 3D model alone cannot capture all image details of unseen identities. Consequently, we integrate it as a prior, ensuring 3D consistency by projecting input images into its latent space and enforcing additional 3D appearance and geometric constraints. Our novel approach formulates Gaussian avatar creation as model inversion by fitting the generative avatar to synthetic views from 2D diffusion models. The generative avatar provides an initialization for model fitting, enforces 3D regularization, and helps in refining pose. Experiments show that our method surpasses state-of-the-art techniques and generalizes well to real-world scenarios. Our Gaussian avatars are also inherently animatable. For code, see https:// zj-dong.github.io/ MoGA/",
+        "arxiv_id": "2507.23597",
+        "authors": [
+          "Zijian Dong",
+          "Longteng Duan",
+          "Jie Song",
+          "Michael J. Black",
+          "Andreas Geiger"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Dong_MoGA_3D_Generative_Avatar_Prior_for_Monocular_Gaussian_Avatar_Reconstruction_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Dong_MoGA_3D_Generative_Avatar_Prior_for_Monocular_Gaussian_Avatar_Reconstruction_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:33:28.336178+00:00",
+        "sha256": "74c2145fc1db16503929f84acff6d011976b8e657bf6acc82ebe7ffbcf70a63b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "End-to-end (E2E) autonomous driving (AD) models require diverse, high-quality data to perform well across various driving scenarios. However, collecting large-scale real-world data is expensive and time-consuming, making high-fidelity synthetic data essential for enhancing data diversity and model robustness. Existing driving simulators for synthetic data generation have significant limitations: game-engine-based simulators struggle to produce realistic sensor data, while NeRF-based and diffusion-based methods face efficiency challenges. Additionally, recent simulators designed for closed-loop evaluation provide limited interaction with other vehicles, failing to simulate complex real-world traffic dynamics. To address these issues, we introduce SceneCrafter, a realistic, interactive, and efficient AD simulator based on 3D Gaussian Splatting (3DGS). SceneCrafter not only efficiently generates realistic driving logs across diverse traffic scenarios but also enables robust closed-loop evaluation of end-to-end models. Experimental results demonstrate that SceneCrafter serves as both a reliable evaluation platform and a efficient data generator that significantly improves end-to-end model generalization.",
+        "arxiv_id": "2503.18108",
+        "authors": [
+          "Junhao Ge",
+          "Zuhong Liu",
+          "Longteng Fan",
+          "Yifan Jiang",
+          "Jiaqi Su",
+          "Yiming Li",
+          "Zhejun Zhang",
+          "Siheng Chen"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ge_Unraveling_the_Effects_of_Synthetic_Data_on_End-to-End_Autonomous_Driving_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ge_Unraveling_the_Effects_of_Synthetic_Data_on_End-to-End_Autonomous_Driving_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:26:33.493237+00:00",
+        "sha256": "35ff19450b39fff2c4819f5f7f6b6633f0dd2ec46f8de04b80345458b8f49f36"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Research on differentiable scene representations is consistently moving towards more efficient, real-time models. Recently, this has led to the popularization of splatting methods, which eschew the traditional ray-based rendering of radiance fields in favor of rasterization. This has yielded a significant improvement in rendering speeds due to the efficiency of rasterization algorithms and hardware, but has come at a cost: the approximations that make rasterization efficient also make implementation of light transport phenomena like reflection and refraction much more difficult. We propose a novel scene representation which avoids these approximations, but keeps the efficiency and reconstruction quality of splatting by leveraging a decades-old efficient volumetric mesh ray tracing algorithm which has been largely overlooked in recent computer vision research. The resulting model, which we name Radiant Foam, achieves rendering speed and quality comparable to Gaussian Splatting, without the constraints of rasterization. Unlike ray traced Gaussian models that use hardware ray tracing acceleration, our method requires no special hardware or APIs beyond the standard features of a programmable GPU.",
+        "arxiv_id": "2502.01157",
+        "authors": [
+          "Shrisudhan Govindarajan",
+          "Daniel Rebain",
+          "Kwang Moo Yi",
+          "Andrea Tagliasacchi"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Govindarajan_Radiant_Foam_Real-Time_Differentiable_Ray_Tracing_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Govindarajan_Radiant_Foam_Real-Time_Differentiable_Ray_Tracing_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Radiant Foam: Real-Time Differentiable Ray Tracing",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:35:00.991412+00:00",
+        "sha256": "026dd0976bb85814c227d3d7fac03cd9beb2de238cfcc2d252f5b43f1747ae18"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Existing methods for image-to-3D avatar generation struggle to produce highly detailed, animation-ready avatars suitable for real-world applications. We introduce AdaHuman, a novel framework that generates high-fidelity animatable 3D avatars from a single in-the-wild image. AdaHuman incorporates two key innovations: (1) A pose-conditioned 3D joint diffusion model that synthesizes consistent multi-view images in arbitrary poses alongside corresponding 3D Gaussian Splats (3DGS) reconstruction at each diffusion step; (2) A compositional 3DGS refinement module that enhances the details of local body parts through image-to-image refinement and seamlessly integrates them using a novel crop-aware camera ray map, producing a cohesive detailed 3D avatar. These components allow AdaHuman to generate highly realistic standardized A-pose avatars with minimal self-occlusion, enabling rigging and animation with any input motion. Extensive evaluation on public benchmarks and in-the-wild images demonstrates that AdaHuman significantly outperforms state-of-the-art methods in both avatar reconstruction and reposing. Code and models will be publicly available for research purposes.",
+        "arxiv_id": "2505.24877",
+        "authors": [
+          "Yangyi Huang",
+          "Ye Yuan",
+          "Xueting Li",
+          "Jan Kautz",
+          "Umar Iqbal"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Huang_AdaHuman_Animatable_Detailed_3D_Human_Generation_with_Compositional_Multiview_Diffusion_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Huang_AdaHuman_Animatable_Detailed_3D_Human_Generation_with_Compositional_Multiview_Diffusion_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:33:54.636609+00:00",
+        "sha256": "cbd97072bd57ca354fc59e516fe97b4628a280100709c5f6f36168e8c0d1d6ae"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Creating a physical digital twin of a real-world object has immense potential in robotics, content creation, and XR. In this paper, we present PhysTwin, a novel framework that uses sparse videos of dynamic objects in interaction to produce a photo- and physically realistic, real-time interactive virtual replica.Our approach centers on two key components: (1) a physics-informed representation that combines spring-mass models for realistic physical simulation, generative shape models for geometry, and Gaussian splats for rendering, and (2) a novel multi-stage optimization-based inverse modeling framework that reconstructs complete geometry, infers dense physical properties, and replicates realistic appearance from videos. Our method integrates an inverse physics framework with visual perception cues, enabling high-fidelity reconstruction even from partial, occluded, and limited viewpoints.PhysTwin supports modeling various deformable objects, including ropes, stuffed animals, cloth, and delivery packages. Experiments show that PhysTwin outperforms competing methods in reconstruction, rendering, future prediction, and simulation under novel interactions. We further demonstrate its applications in interactive real-time simulation and model-based robotic motion planning. Project Page: https://jianghanxiao.github.io/phystwin-web/",
+        "arxiv_id": "2503.17973",
+        "authors": [
+          "Hanxiao Jiang",
+          "Hao-Yu Hsu",
+          "Kaifeng Zhang",
+          "Hsin-Ni Yu",
+          "Shenlong Wang",
+          "Yunzhu Li"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:25:44.736963+00:00",
+        "sha256": "e1eeea5eb9c9f583123fd52839bcd73ec2111b66b1167d61e325fae2e44f5d2f"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Visual localization, which estimates a camera's pose within a known scene, is a fundamental capability for autonomous systems. While absolute pose regression (APR) methods have shown promise for efficient inference, they often struggle with generalization. Recent approaches attempt to address this through data augmentation with varied viewpoints, yet they overlook a critical factor: appearance diversity.In this work, we identify appearance variation as the key to robust localization. Specifically, we first lift real 2D images into 3D Gaussian Splats with varying appearance and deblurring capabilities, enabling the synthesis of diverse training data that varies not just in poses but also in environmental conditions such as lighting and weather. To fully unleash the potential of the appearance-diverse data, we build a two-branch joint training pipeline with an adversarial discriminator to bridge the syn-to-real gap.Extensive experiments demonstrate that our approach significantly outperforms state-of-the-art methods, reducing translation and rotation errors by 50% and 22% on indoor datasets, and 37% and 42% on outdoor datasets. Most notably, our method shows remarkable robustness in dynamic driving scenarios under varying weather conditions and in day-to-night scenarios, where previous APR methods fail.",
+        "arxiv_id": null,
+        "authors": [
+          "Sihang Li",
+          "Siqi Tan",
+          "Bowen Chang",
+          "Jing Zhang",
+          "Chen Feng",
+          "Yiming Li"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Li_Adversarial_Exploitation_of_Data_Diversity_Improves_Visual_Localization_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Li_Adversarial_Exploitation_of_Data_Diversity_Improves_Visual_Localization_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Adversarial Exploitation of Data Diversity Improves Visual Localization",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:26:54.301763+00:00",
+        "sha256": "0c1ed113c6999cf4f2ac54b29023d291525643a2768e0a1719e59ebd533e5c91"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "In this work, we investigate the generation of high-fidelity, audio-driven 3D Gaussian talking heads from monocular videos. We present DGTalker, an innovative framework designed for real-time, high-fidelity, and 3D-aware talking head synthesis. By leveraging Gaussian generative priors and treating the task as a latent space navigation problem, our method effectively alleviates the lack of 3D information and the low-quality detail reconstruction caused by the absence of structure priors in monocular videos, which is a longstanding challenge in existing 3DGS-based approaches. To ensure precise lip synchronization and nuanced expression control, we propose a disentangled latent space navigation method that independently models lip motion and talking expressions. Additionally, we introduce an effective masked cross-view supervision strategy to enable robust learning within the disentangled framework. We conduct extensive experiments and demonstrate that DGTalker surpasses current state-of-the-art methods in visual quality, motion accuracy, and controllability.",
+        "arxiv_id": null,
+        "authors": [
+          "Xiaoxi Liang",
+          "Yanbo Fan",
+          "Qiya Yang",
+          "Xuan Wang",
+          "Wei Gao",
+          "Ge Li"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liang_DGTalker_Disentangled_Generative_Latent_Space_Learning_for_Audio-Driven_Gaussian_Talking_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liang_DGTalker_Disentangled_Generative_Latent_Space_Learning_for_Audio-Driven_Gaussian_Talking_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "DGTalker: Disentangled Generative Latent Space Learning for Audio-Driven Gaussian Talking Heads",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
     {
       "capture": {
         "observed_at": "2026-11-11T04:20:49.159493+00:00",
@@ -31,7 +287,93 @@
         "venue": "ICCV",
         "venue_year": 2025
       }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:30:51.129026+00:00",
+        "sha256": "45776b225830dc5264320b2a0c3f8b03ffb8db9f97318f2bd7d98da399011848"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "Creating high-fidelity and editable head avatars is a pivotal challenge in computer vision and graphics, boosting many AR/VR applications. While recent advancements have achieved photorealistic renderings and plausible animation, head editing, especially real-time appearance editing, remains challenging due to the implicit representation and entangled modeling of the geometry and global appearance. To address this, we propose Surface-Volumetric Gaussian Head Avatar (SVG-Head), a novel hybrid representation that explicitly models the geometry with 3D Gaussians bound on a FLAME mesh and leverages disentangled texture images to capture the global appearance. Technically, it contains two types of Gaussians, in which surface Gaussians explicitly model the appearance of head avatars using learnable texture images, facilitating real-time texture editing, while volumetric Gaussians enhance the reconstruction quality of non-Lambertian regions (e.g., lips and hair). To model the correspondence between 3D world and texture space, we provide a mesh-aware Gaussian UV mapping method, which leverages UV coordinates given by the FLAME mesh to obtain sharp texture images and real-time rendering speed. A hierarchical optimization strategy is further designed to pursue the optimal performance in both reconstruction quality and editing flexibility. Experiments on the NeRSemble dataset show that SVG-Head not only generates high-fidelity rendering results, but also is the first method to obtain explicit texture images for Gaussian head avatars and support real-time appearance editing.",
+        "arxiv_id": null,
+        "authors": [
+          "Heyi Sun",
+          "Cong Wang",
+          "Tian-Xing Xu",
+          "Jingwei Huang",
+          "Di Kang",
+          "Chunchao Guo",
+          "Song-Hai Zhang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_SVG-Head_Hybrid_Surface-Volumetric_Gaussians_for_High-Fidelity_Head_Reconstruction_and_Real-Time_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sun_SVG-Head_Hybrid_Surface-Volumetric_Gaussians_for_High-Fidelity_Head_Reconstruction_and_Real-Time_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:33:37.409603+00:00",
+        "sha256": "5f46389929a93ec020d863a9138e080a99ba440c6320f87da2a17bcab7e60f36"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Recently, 3D Gaussian Splatting (3DGS) has reshaped the field of photorealistic 3D reconstruction, achieving impressive rendering quality and speed. However, when applied to large-scale street scenes, existing methods suffer from rapidly escalating per-viewpoint reconstruction costs as scene size increases, leading to significant computational overhead.After revisiting the conventional pipeline, we identify three key factors accounting for this issue: unnecessary local-to-global transformations, excessive 3D-to-2D projections, and inefficient rendering of distant content. To address these challenges, we propose S3R-GS, a 3DGS framework that Streamlines the pipeline for large-scale Street Scene Reconstruction, effectively mitigating these limitations. Moreover, most existing street 3DGS methods rely on ground-truth 3D bounding boxes to separate dynamic and static components, but 3D bounding boxes are difficult to obtain, limiting real-world applicability. To address this, we propose an alternative solution with 2D boxes, which are easier to annotate or can be predicted by off-the-shelf vision foundation models. Such designs together make S3R-GS readily adapt to large, in-the-wild scenarios.Extensive experiments demonstrate that S3R-GS enhances rendering quality and significantly accelerates reconstruction. Remarkably, when applied to videos from the challenging Argoverse2 dataset, it achieves state-of-the-art PSNR and SSIM, reducing reconstruction time to below 50%--and even 20%--of competing methods. Code is available at https://github.com/Tom-zgt/S3R-GS.",
+        "arxiv_id": null,
+        "authors": [
+          "Guangting Zheng",
+          "Jiajun Deng",
+          "Xiaomeng Chu",
+          "Yu Yuan",
+          "Houqiang Li",
+          "Yanyong Zhang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_S3R-GS_Streamlining_the_Pipeline_for_Large-Scale_Street_Scene_Reconstruction_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_S3R-GS_Streamlining_the_Pipeline_for_Large-Scale_Street_Scene_Reconstruction_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T04:31:28.430841+00:00",
+        "sha256": "46bdb86760a2c6d9b348494b7a4378af255a1e20bab326d99e6d22b29f8d13ed"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Accurately analyzing the motion parts and their motion attributes in dynamic environments is crucial for advancing key areas such as embodied intelligence. Addressing the limitations of existing methods that rely on dense multi-view images or detailed part-level annotations, we propose an innovative framework that can analyze 3D mobility from monocular videos in a zero-shot manner. This framework can precisely parse motion parts and motion attributes only using a monocular video, completely eliminating the need for annotated training data. Specifically, our method first constructs the scene geometry and roughly analyzes the motion parts and their initial motion attributes combining depth estimation, optical flow analysis and point cloud registration method, then employs 2D Gaussian splatting for scene representation. Building on this, we introduce an end-to-end dynamic scene optimization algorithm specifically designed for articulated objects, refining the initial analysis results to ensure the system can handle 'rotation', 'translation', and even complex movements ('rotation+translation'), demonstrating high flexibility and versatility. To validate the robustness and wide applicability of our method, we created a comprehensive dataset comprising both simulated and real-world scenarios. Experimental results show that our framework can effectively analyze articulated object motions in an annotation-free manner, showcasing its significant potential in future embodied intelligence applications.",
+        "arxiv_id": "2505.11868",
+        "authors": [
+          "Hongyi Zhou",
+          "Yulan Guo",
+          "Xiaogang Wang",
+          "Kai Xu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhou_MonoMobility_Zero-Shot_3D_Mobility_Analysis_from_Monocular_Videos_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_MonoMobility_Zero-Shot_3D_Mobility_Analysis_from_Monocular_Videos_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
     }
   ],
-  "canonical_modified": false
+  "scope": "Observed title-screen exclusions whose official full abstract passes frozen policy; not independent population recall"
 }

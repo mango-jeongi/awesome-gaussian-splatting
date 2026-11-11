@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="OphCLIP: Hierarchical Retrieval-Augmented Learning for Ophthalmic Surgical Video-Language Pretraining">
+<meta name="citation_author" content="Hu, Ming">
+<meta name="citation_author" content="Yuan, Kun">
+<meta name="citation_author" content="Shen, Yaling">
+<meta name="citation_author" content="Tang, Feilong">
+<meta name="citation_author" content="Xu, Xiaohao">
+<meta name="citation_author" content="Zhou, Lin">
+<meta name="citation_author" content="Li, Wei">
+<meta name="citation_author" content="Chen, Ying">
+<meta name="citation_author" content="Xu, Zhongxing">
+<meta name="citation_author" content="Peng, Zelin">
+<meta name="citation_author" content="Yan, Siyuan">
+<meta name="citation_author" content="Srivastav, Vinkle">
+<meta name="citation_author" content="Song, Diping">
+<meta name="citation_author" content="Li, Tianbin">
+<meta name="citation_author" content="Shi, Danli">
+<meta name="citation_author" content="Ye, Jin">
+<meta name="citation_author" content="Padoy, Nicolas">
+<meta name="citation_author" content="Navab, Nassir">
+<meta name="citation_author" content="He, Junjun">
+<meta name="citation_author" content="Ge, Zongyuan">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="19838">
+<meta name="citation_lastpage" content="19849">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Hu_OphCLIP_Hierarchical_Retrieval-Augmented_Learning_for_Ophthalmic_Surgical_Video-Language_Pretraining_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        OphCLIP: Hierarchical Retrieval-Augmented Learning for Ophthalmic Surgical Video-Language Pretraining
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Ming Hu, Kun Yuan, Yaling Shen, Feilong Tang, Xiaohao Xu, Lin Zhou, Wei Li, Ying Chen, Zhongxing Xu, Zelin Peng, Siyuan Yan, Vinkle Srivastav, Diping Song, Tianbin Li, Danli Shi, Jin Ye, Nicolas Padoy, Nassir Navab, Junjun He, Zongyuan Ge</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 19838-19849
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Vision-language pretraining (VLP) enables open-world generalization beyond predefined labels, a critical capability in surgery due to the diversity of procedures, instruments, and patient anatomies. However, applying VLP to ophthalmic surgery presents unique challenges, including limited vision-language data, intricate procedural workflows, and the need for hierarchical understanding, ranging from fine-grained surgical actions to global clinical reasoning. To address these, we introduce OphVL, a large-scale, hierarchically structured dataset containing over 375K video-text pairs, making it 15x larger than existing surgical VLP datasets. OphVL captures a diverse range of ophthalmic surgical attributes, including surgical phases, operations, actions, instruments, medications, disease causes, surgical objectives, and postoperative care recommendations. By aligning short clips with detailed narratives and full-length videos with structured titles, OphVL provides both fine-grained surgical details and high-level procedural context. Building on OphVL, we propose OphCLIP, a hierarchical retrieval-augmented VLP framework. OphCLIP leverages silent surgical videos as a knowledge base, retrieving semantically relevant content to enhance narrated procedure learning. This enables OphCLIP to integrate explicit linguistic supervision with implicit visual knowledge, improving ophthalmic workflow modeling. Evaluations across 11 benchmark datasets for surgical phase recognition and multi-instrument identification demonstrate OphCLIP&#x27;s robust generalization and superior performance, establishing it as a foundation model for ophthalmic surgery.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Hu_OphCLIP_Hierarchical_Retrieval-Augmented_Learning_for_Ophthalmic_Surgical_Video-Language_Pretraining_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Hu_OphCLIP_Hierarchical_Retrieval-Augmented_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2411.15421">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Hu_2025_ICCV,
+    author    = {Hu, Ming and Yuan, Kun and Shen, Yaling and Tang, Feilong and Xu, Xiaohao and Zhou, Lin and Li, Wei and Chen, Ying and Xu, Zhongxing and Peng, Zelin and Yan, Siyuan and Srivastav, Vinkle and Song, Diping and Li, Tianbin and Shi, Danli and Ye, Jin and Padoy, Nicolas and Navab, Nassir and He, Junjun and Ge, Zongyuan},
+    title     = {OphCLIP: Hierarchical Retrieval-Augmented Learning for Ophthalmic Surgical Video-Language Pretraining},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {19838-19849}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

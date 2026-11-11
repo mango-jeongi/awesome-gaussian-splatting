@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Chimera: Improving Generalist Model with Domain-Specific Experts">
+<meta name="citation_author" content="Peng, Tianshuo">
+<meta name="citation_author" content="Li, Mingsheng">
+<meta name="citation_author" content="Yuan, Jiakang">
+<meta name="citation_author" content="Zhou, Hongbin">
+<meta name="citation_author" content="Xia, Renqiu">
+<meta name="citation_author" content="Zhang, Renrui">
+<meta name="citation_author" content="Bai, Lei">
+<meta name="citation_author" content="Mao, Song">
+<meta name="citation_author" content="Wang, Bin">
+<meta name="citation_author" content="Zhou, Aojun">
+<meta name="citation_author" content="Shi, Botian">
+<meta name="citation_author" content="Chen, Tao">
+<meta name="citation_author" content="Zhang, Bo">
+<meta name="citation_author" content="Yue, Xiangyu">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="3011">
+<meta name="citation_lastpage" content="3022">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Peng_Chimera_Improving_Generalist_Model_with_Domain-Specific_Experts_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Chimera: Improving Generalist Model with Domain-Specific Experts
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Tianshuo Peng, Mingsheng Li, Jiakang Yuan, Hongbin Zhou, Renqiu Xia, Renrui Zhang, Lei Bai, Song Mao, Bin Wang, Aojun Zhou, Botian Shi, Tao Chen, Bo Zhang, Xiangyu Yue</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 3011-3022
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Large Multi-modal Models (LMMs), trained on web-scale datasets predominantly composed of natural images, have demonstrated remarkable performance on general tasks. However, these models often exhibit limited specialized capabilities for domain-specific tasks that require extensive domain prior knowledge. An intuitive solution is to post-train LMMs on a specific domain, but often suffers from the labor-intensive annotating process and the inaccessibility of private training data. Directly integrating expert models tailored for those tasks is also challenging due to representational gaps and imbalanced optimization. To address these challenges, we introduce Chimera, a scalable and low-cost multi-modal pipeline designed to boost the ability of existing LMMs with domain-specific experts. Specifically, we design a progressive training strategy to integrate features from expert models into the input of a generalist LMM. To address the imbalanced optimization caused by the well-aligned general visual encoder, we introduce a novel Generalist-Specialist Collaboration Masking (GSCM) mechanism. This results in a versatile model that excels across the chart, table, math, and document domains, achieving state-of-the-art performance on multi-modal reasoning and visual content extraction tasks, both of which are challenging tasks for assessing existing LMMs. We will release model weights, along with the data used for training and evaluation, to facilitate future research on LMMs.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Peng_Chimera_Improving_Generalist_Model_with_Domain-Specific_Experts_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Peng_Chimera_Improving_Generalist_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2412.05983">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Peng_2025_ICCV,
+    author    = {Peng, Tianshuo and Li, Mingsheng and Yuan, Jiakang and Zhou, Hongbin and Xia, Renqiu and Zhang, Renrui and Bai, Lei and Mao, Song and Wang, Bin and Zhou, Aojun and Shi, Botian and Chen, Tao and Zhang, Bo and Yue, Xiangyu},
+    title     = {Chimera: Improving Generalist Model with Domain-Specific Experts},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {3011-3022}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

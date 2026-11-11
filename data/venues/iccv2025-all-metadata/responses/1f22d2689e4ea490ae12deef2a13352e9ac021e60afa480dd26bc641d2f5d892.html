@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling">
+<meta name="citation_author" content="Wang, Fengxiang">
+<meta name="citation_author" content="Wang, Hongzhen">
+<meta name="citation_author" content="Wang, Di">
+<meta name="citation_author" content="Guo, Zonghao">
+<meta name="citation_author" content="Zhong, Zhenyu">
+<meta name="citation_author" content="Lan, Long">
+<meta name="citation_author" content="Yang, Wenjing">
+<meta name="citation_author" content="Zhang, Jing">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="6935">
+<meta name="citation_lastpage" content="6947">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Harnessing_Massive_Satellite_Imagery_with_Efficient_Masked_Image_Modeling_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Fengxiang Wang, Hongzhen Wang, Di Wang, Zonghao Guo, Zhenyu Zhong, Long Lan, Wenjing Yang, Jing Zhang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 6935-6947
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Masked Image Modeling (MIM) has become an essential method for building foundational visual models in remote sensing (RS). However, the limitations in size and diversity of existing RS datasets restrict the ability of MIM methods to learn generalizable representations. Additionally, conventional MIM techniques, which require reconstructing all tokens, introduce unnecessary computational overhead. To address these issues, we present a new pre-training pipeline for RS models, featuring the creation of a large-scale RS dataset and an efficient MIM approach. We curated a high-quality dataset named **OpticalRS-13M** by collecting publicly available RS datasets and processing them through exclusion, slicing, and deduplication. OpticalRS-13M comprises 13 million optical images covering various RS tasks, such as object detection and pixel segmentation. To enhance efficiency, we propose SelectiveMAE, a pre-training method that dynamically encodes and reconstructs semantically rich patch tokens, thereby reducing the inefficiencies of traditional MIM models caused by redundant background pixels in RS images. Extensive experiments show that OpticalRS-13M significantly improves classification, detection, and segmentation performance, while SelectiveMAE increases training efficiency over 2xtimes. This highlights the effectiveness and scalability of our pipeline in developing RS foundational models.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Wang_Harnessing_Massive_Satellite_Imagery_with_Efficient_Masked_Image_Modeling_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="http://arxiv.org/abs/2406.11933">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wang_2025_ICCV,
+    author    = {Wang, Fengxiang and Wang, Hongzhen and Wang, Di and Guo, Zonghao and Zhong, Zhenyu and Lan, Long and Yang, Wenjing and Zhang, Jing},
+    title     = {Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {6935-6947}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

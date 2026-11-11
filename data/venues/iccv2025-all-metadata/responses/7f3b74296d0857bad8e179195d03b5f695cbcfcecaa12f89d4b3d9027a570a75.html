@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning">
+<meta name="citation_author" content="Wei, Zhengxuan">
+<meta name="citation_author" content="Tang, Jiajin">
+<meta name="citation_author" content="Yang, Sibei">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="3401">
+<meta name="citation_lastpage" content="3412">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Wei_Augmenting_Moment_Retrieval_Zero-Dependency_Two-Stage_Learning_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Zhengxuan Wei, Jiajin Tang, Sibei Yang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 3401-3412
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Existing Moment Retrieval methods face three critical bottlenecks: (1) data scarcity forces models into shallow keyword-feature associations; (2) boundary ambiguity in transition regions between adjacent events; (3) insufficient discrimination of fine-grained semantics (e.g., distinguishing &quot;kicking&quot; vs. &quot;throwing&quot; a ball). In this paper, we propose a zero-external-dependency Augmented Moment Retrieval framework, AMR, designed to overcome local optima caused by insufficient data annotations and the lack of robust boundary and semantic discrimination capabilities. AMR is built upon two key insights: (1) it resolves ambiguous boundary information and semantic confusion in existing annotations without additional data (avoiding costly manual labeling), and (2) it preserves boundary and semantic discriminative capabilities enhanced by training while generalizing to real-world scenarios, significantly improving performance. Furthermore, we propose a two-stage training framework with cold-start and distillation adaptation. The cold-start stage employs curriculum learning on augmented data to build foundational boundary/semantic awareness. The distillation stage introduces dual query sets: Original Queries maintain DETR-based localization using frozen Base Queries from the cold-start model, while Active Queries dynamically adapt to real-data distributions. A cross-stage distillation loss enforces consistency between Original and Base Queries, preventing knowledge forgetting while enabling real-world generalization. Experiments on multiple benchmarks show that AMR achieves improved performance over prior state-of-the-art approaches.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Wei_Augmenting_Moment_Retrieval_Zero-Dependency_Two-Stage_Learning_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Wei_Augmenting_Moment_Retrieval_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wei_2025_ICCV,
+    author    = {Wei, Zhengxuan and Tang, Jiajin and Yang, Sibei},
+    title     = {Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {3401-3412}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

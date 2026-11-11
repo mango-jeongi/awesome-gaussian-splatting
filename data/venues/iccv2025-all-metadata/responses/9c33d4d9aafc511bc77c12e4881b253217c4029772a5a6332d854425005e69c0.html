@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="XTrack: Multimodal Training Boosts RGB-X Video Object Trackers">
+<meta name="citation_author" content="Tan, Yuedong">
+<meta name="citation_author" content="Wu, Zongwei">
+<meta name="citation_author" content="Fu, Yuqian">
+<meta name="citation_author" content="Zhou, Zhuyun">
+<meta name="citation_author" content="Sun, Guolei">
+<meta name="citation_author" content="Zamfir, Eduard">
+<meta name="citation_author" content="Ma, Chao">
+<meta name="citation_author" content="Paudel, Danda">
+<meta name="citation_author" content="Van Gool, Luc">
+<meta name="citation_author" content="Timofte, Radu">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="5734">
+<meta name="citation_lastpage" content="5744">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Tan_XTrack_Multimodal_Training_Boosts_RGB-X_Video_Object_Trackers_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        XTrack: Multimodal Training Boosts RGB-X Video Object Trackers
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yuedong Tan, Zongwei Wu, Yuqian Fu, Zhuyun Zhou, Guolei Sun, Eduard Zamfir, Chao Ma, Danda Paudel, Luc Van Gool, Radu Timofte</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 5734-5744
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Multimodal sensing has proven valuable for visual tracking, as different sensor types offer unique strengths in handling one specific challenging scene where object appearance varies. While a generalist model capable of leveraging all modalities would be ideal, development is hindered by data sparsity, typically in practice, only one modality is available at a time. Therefore, it is crucial to ensure and achieve that knowledge gained from multimodal sensing -- such as identifying relevant features and regions -- is effectively shared, even when certain modalities are unavailable at inference. We venture with a simple assumption: similar samples across different modalities have more knowledge to share than otherwise. To implement this, we employ a classifier with weak loss tasked with distinguishing between modalities. More specifically, if the classifier &quot;fails&quot; to accurately identify the modality of the given sample, this signals an opportunity for cross-modal knowledge sharing. Intuitively, knowledge transfer is facilitated whenever a sample from one modality is sufficiently close and aligned with another. Technically, we achieve this by routing samples from one modality to the expert of the others, within a mixture-of-experts framework designed for multimodal video object tracking. During the inference, the expert of the respective modality is chosen, which we show to benefit from the multimodal knowledge available during training, thanks to the proposed method. Through the exhaustive experiments that use only paired RGB-E, RGB-D, and RGB-T during training, we showcase the benefit of the proposed method for RGB-X tracker during inference, with an average +3% precision improvement over the current SOTA. The source code is publicly available at https://github.com/supertyd/XTrack.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Tan_XTrack_Multimodal_Training_Boosts_RGB-X_Video_Object_Trackers_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Tan_XTrack_Multimodal_Training_ICCV_2025_supplemental.zip">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Tan_2025_ICCV,
+    author    = {Tan, Yuedong and Wu, Zongwei and Fu, Yuqian and Zhou, Zhuyun and Sun, Guolei and Zamfir, Eduard and Ma, Chao and Paudel, Danda and Van Gool, Luc and Timofte, Radu},
+    title     = {XTrack: Multimodal Training Boosts RGB-X Video Object Trackers},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {5734-5744}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

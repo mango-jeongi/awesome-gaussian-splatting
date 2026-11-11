@@ -76,3 +76,28 @@ verify identities/original dates, review scope and actual new proceedings
 candidates, and obtain DBLP source evidence. A page without an arXiv link is not
 proof of a paper without a preprint. No model service, push or deployment was
 performed by this work.
+
+## Follow-up full-metadata checkpoint — 2026-11-11
+
+A further invocation capped at 500 requests added 497 verified responses. The
+completed epoch now has **806 verified pages, 1,895 pending, and three failed
+fetches** (the failures are included in pending). Each transport failure has a
+one-hour retry deadline in state; none was retried immediately. A subsequent CLI
+replay used zero requests and reverified every retained body against its hash.
+The original invocation's terminal output was unavailable; the retained
+[checkpoint receipt](runs/iccv2025-full-metadata-pass-20261111.json) explicitly
+records that limitation rather than presenting the cap as a measured request log.
+
+Current automatic full-metadata dispositions are 137 include, 41 review and 628
+exclude. Thirteen title-excluded records now pass the full-text policy. These
+are **policy rescue leads**, not thirteen adjudicated GS papers: papers can
+mention GS as a baseline, and Radiant Foam in particular requires review of its
+competing representation. Their full abstracts and response hashes remain in
+the rescue evidence. No policy relaxation, identity assertion or canonical import
+was performed. The 309-page figures above describe the previous checkpoint.
+
+The configured source inventory now points to this partial 806-page checkpoint.
+Canonical 4,102 active/five archived remains byte-identical. The remaining
+1,895 pages, retry-deferred failures, independent inventory discrepancies,
+identity/original-date resolution, source scope review and DBLP evidence remain
+open. The prepared Gemma real-page diagnostic is a separate, unexecuted activity.

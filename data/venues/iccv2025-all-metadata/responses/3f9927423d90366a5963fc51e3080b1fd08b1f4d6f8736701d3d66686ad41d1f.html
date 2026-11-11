@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting">
+<meta name="citation_author" content="Ying, Haiyang">
+<meta name="citation_author" content="Zwicker, Matthias">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="25649">
+<meta name="citation_lastpage" content="25659">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Ying_SketchSplat_3D_Edge_Reconstruction_via_Differentiable_Multi-view_Sketch_Splatting_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Haiyang Ying, Matthias Zwicker</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 25649-25659
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Edges are one of the most basic parametric primitives to describe structural information in 3D. In this paper, we study parametric 3D edge reconstruction from calibrated multi-view images. Previous methods usually reconstruct a 3D edge point set from multi-view 2D edge images, and then fit 3D edges to the point set. However, noise in the point set may cause gaps among fitted edges, and the recovered edges may not align with input multi-view images since the edge fitting depends only on the reconstructed 3D point set. To mitigate these problems, we propose SketchSplat, a method to reconstruct accurate, complete, and compact 3D edges via differentiable multi-view sketch splatting. We represent 3D edges as sketches, which are parametric lines and curves defined by attributes including control points, scales, and opacity. During reconstruction, we iteratively sample Gaussian points from a set of sketches and rasterize the Gaussians onto 2D edge images. Then the gradient of the image loss can be back-propagated to optimize the sketch attributes. Our method bridges 2D edge images and 3D edges in a differentiable manner, which ensures that 3D edges align well with 2D images and leads to accurate and complete results. We also propose a series of adaptive topological operations to reduce redundant edges and apply them along with the sketch optimization, yielding a more compact reconstruction. Finally, we contribute an accurate 2D edge detector that improves the performance of both ours and existing methods. Experiments show that our method achieves state-of-the-art accuracy, completeness, and compactness on a benchmark CAD dataset.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Ying_SketchSplat_3D_Edge_Reconstruction_via_Differentiable_Multi-view_Sketch_Splatting_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Ying_SketchSplat_3D_Edge_ICCV_2025_supplemental.zip">supp</a>]
+[<a href="http://arxiv.org/abs/2503.14786">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Ying_2025_ICCV,
+    author    = {Ying, Haiyang and Zwicker, Matthias},
+    title     = {SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {25649-25659}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

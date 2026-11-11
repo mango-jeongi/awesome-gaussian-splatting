@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Learnable Feature Patches and Vectors for Boosting Low-light Image Enhancement without External Knowledge">
+<meta name="citation_author" content="Xu, Xiaogang">
+<meta name="citation_author" content="Wu, Jiafei">
+<meta name="citation_author" content="Yan, Qingsen">
+<meta name="citation_author" content="Cui, Jiequan">
+<meta name="citation_author" content="Hong, Richang">
+<meta name="citation_author" content="Yu, Bei">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="7761">
+<meta name="citation_lastpage" content="7770">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Xu_Learnable_Feature_Patches_and_Vectors_for_Boosting_Low-light_Image_Enhancement_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Learnable Feature Patches and Vectors for Boosting Low-light Image Enhancement without External Knowledge
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Xiaogang Xu, Jiafei Wu, Qingsen Yan, Jiequan Cui, Richang Hong, Bei Yu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 7761-7770
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    A major challenge in Low-Light Image Enhancement (LLIE) is its ill-posed nature: low-light images often lack sufficient information to align with normal-light ones (e.g., not all training data can be fully fitted to the ground truth). Numerous studies have attempted to bridge the gap between low- and normal-light data by introducing effective additional information, which is called &quot;references&quot; in this paper. However, existing methods overlook the valuable references hidden within the training dataset itself. In this work, we propose a novel LLIE strategy that simultaneously learns image-specific features by neural networks while formulating effective common features from the training data as the reference. These common features are correlated with the samples that are not fully fitted by the LLIE network itself, and they are represented as a set of Learnable Feature Patches and Vectors (LFPVs) in the hidden feature space. LFPVs are updated through two mechanisms: the sample-updater, which extracts useful features from training samples to refine LFPVs, and the mutual-updater, which propagates information across LFPVs to mutually update them. LFPVs can be adaptively aligned with image-specific features via our designed query-and-fusion procedure, boosting the LLIE performance. Our proposed method can be integrated into any LLIE framework, improving both enhancement quality and downstream task performance. Extensive experiments on various benchmarks demonstrate the effectiveness of our approach.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Xu_Learnable_Feature_Patches_and_Vectors_for_Boosting_Low-light_Image_Enhancement_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Xu_Learnable_Feature_Patches_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Xu_2025_ICCV,
+    author    = {Xu, Xiaogang and Wu, Jiafei and Yan, Qingsen and Cui, Jiequan and Hong, Richang and Yu, Bei},
+    title     = {Learnable Feature Patches and Vectors for Boosting Low-light Image Enhancement without External Knowledge},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {7761-7770}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

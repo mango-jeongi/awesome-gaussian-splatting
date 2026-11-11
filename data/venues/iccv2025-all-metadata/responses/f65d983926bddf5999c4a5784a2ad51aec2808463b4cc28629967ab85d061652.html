@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="GMMamba: Group Masking Mamba for Whole Slide Image Classification">
+<meta name="citation_author" content="Zheng, Tingting">
+<meta name="citation_author" content="Yao, Hongxun">
+<meta name="citation_author" content="Jiang, Kui">
+<meta name="citation_author" content="Xiao, Yi">
+<meta name="citation_author" content="Zhao, Sicheng">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="9935">
+<meta name="citation_lastpage" content="9944">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_GMMamba_Group_Masking_Mamba_for_Whole_Slide_Image_Classification_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        GMMamba: Group Masking Mamba for Whole Slide Image Classification
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Tingting Zheng, Hongxun Yao, Kui Jiang, Yi Xiao, Sicheng Zhao</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 9935-9944
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Recent advances in selective state space models (Mamba) have shown great promise in whole slide image (WSI) classification. Despite this, WSIs contain explicit local redundancy (similar patches) and irrelevant regions (uninformative instances), posing significant challenges for Mamba-based multi-instance learning (MIL) methods in capturing global representations. Furthermore, bag-level approaches struggle to extract critical features from all instances, while group-level methods fail to adequately account for tumor dispersion and intrinsic correlations across groups, leading to suboptimal global representations. To address these issues, we propose group masking Mamba (GMMamba), a novel framework that combines two elaborate modules: (1) intra-group masking Mamba (IMM) for selective instance exploration within groups, and (2) cross-group super-feature sampling (CSS) to ameliorate long-range relation learning. Specifically, IMM adaptively predicts sparse masks to filter out features with low attention scores (i.e., uninformative patterns) during bidirectional Mamba modeling, facilitating the removal of instance redundancies for compact local representation. For improved bag prediction, the CSS module further aggregates sparse group representations into discriminative features, effectively grasping comprehensive dependencies among dispersed and sparse tumor regions inherent in large-scale WSIs. Extensive experiments on four datasets demonstrate that GMMamba outperforms the state-of-the-art ACMIL by 2.2% and 6.4% in accuracy on the TCGA-BRCA and TCGA-ESCA datasets, respectively.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zheng_GMMamba_Group_Masking_Mamba_for_Whole_Slide_Image_Classification_ICCV_2025_paper.pdf">pdf</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zheng_2025_ICCV,
+    author    = {Zheng, Tingting and Yao, Hongxun and Jiang, Kui and Xiao, Yi and Zhao, Sicheng},
+    title     = {GMMamba: Group Masking Mamba for Whole Slide Image Classification},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {9935-9944}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

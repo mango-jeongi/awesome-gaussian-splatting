@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="A Framework for Double-Blind Federated Adaptation of Foundation Models">
+<meta name="citation_author" content="Tastan, Nurbek">
+<meta name="citation_author" content="Nandakumar, Karthik">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="923">
+<meta name="citation_lastpage" content="933">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Tastan_A_Framework_for_Double-Blind_Federated_Adaptation_of_Foundation_Models_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        A Framework for Double-Blind Federated Adaptation of Foundation Models
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Nurbek Tastan, Karthik Nandakumar</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 923-933
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Foundation models (FMs) excel in zero-shot tasks but benefit from task-specific adaptation. However, privacy concerns prevent data sharing among multiple data owners, and proprietary restrictions prevent the learning service provider (LSP) from sharing the FM. In this work, we propose BlindFed, a framework enabling collaborative FM adaptation while protecting both parties: data owners do not access the FM or each other&#x27;s data, and the LSP does not see sensitive task data. BlindFed relies on fully homomorphic encryption (FHE) and consists of three key innovations: (i) FHE-friendly architectural modifications via polynomial approximations and low-rank adapters, (ii) a two-stage split learning approach combining offline knowledge distillation and online encrypted inference for adapter training without backpropagation through the FM, and (iii) a privacy-boosting scheme using sample permutations and stochastic block sampling to mitigate model extraction attacks. Empirical results on four image classification datasets demonstrate the practical feasibility of the BlindFed framework, albeit at a high communication cost and large computational complexity for the LSP. The code can be found at https://github.com/tnurbek/blindfed.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Tastan_A_Framework_for_Double-Blind_Federated_Adaptation_of_Foundation_Models_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Tastan_A_Framework_for_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2502.01289">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Tastan_2025_ICCV,
+    author    = {Tastan, Nurbek and Nandakumar, Karthik},
+    title     = {A Framework for Double-Blind Federated Adaptation of Foundation Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {923-933}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
