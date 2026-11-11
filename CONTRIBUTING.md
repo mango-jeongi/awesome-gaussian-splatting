@@ -396,7 +396,7 @@ commit check. Existing data/migration reverts remain a separate reviewed Git ste
 Both deployment paths share `repository-writer` serialization. Dispatch inputs
 are validated and passed through environment variables. Verification has a
 five-minute admission/stream budget, 20-second network timeouts and a 200 MB
-decoded-byte ceiling; an in-flight request may finish its bounded transport timeout
+site-byte ceiling plus up to 2 MB for the repeated metadata fence; an in-flight request may finish its bounded transport timeout
 past admission. It refuses redirects and non-HTTPS deployment bases, detects a
 release changing between requests, and stores explicit success/failure diagnostics.
 The CLI writes new reports outside canonical data/deployed docs and never accepts

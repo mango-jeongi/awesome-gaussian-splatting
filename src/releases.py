@@ -149,6 +149,8 @@ def input_identity(root, data):
 
 
 def verify_files(files, expected_id=None):
+    if len(files) > MAX_FILES or sum(map(len, files.values())) > MAX_BYTES:
+        raise ValueError("Release payload budget exceeded")
     release = json.loads(files["release.json"])
     if not re.fullmatch(REVISION, release.get("source_revision", "")):
         raise ValueError("Invalid release source revision")
@@ -306,7 +308,11 @@ def verify_url(base_url, expected_id, *, client=None, max_seconds=300, clock=tim
             for chunk in response.iter_bytes():
                 raw.extend(chunk)
                 received += len(chunk)
-                if len(raw) > limit or received > MAX_BYTES or clock() - started >= max_seconds:
+                if (
+                    len(raw) > limit
+                    or received > MAX_BYTES + 2_000_000
+                    or clock() - started >= max_seconds
+                ):
                     raise ValueError("Deployment verification response budget exceeded")
         return bytes(raw)
 

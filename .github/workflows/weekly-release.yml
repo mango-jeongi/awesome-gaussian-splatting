@@ -72,6 +72,11 @@ jobs:
           uv run pytest -v
           uv run python -m src.cli validate
 
+      - name: Verify compiled portal CSS before publishing
+        run: |
+          npm ci --ignore-scripts --include=dev --no-audit --no-fund
+          npm run check:css
+
       - name: Commit, Tag Weekly Release (vYYYY.Www) & Reset feed
         id: tag
         env:

@@ -234,3 +234,25 @@ def test_ignored_site_files_cannot_enter_committed_candidate(tmp_path):
     (root / "docs/.env").write_text("fixture-only-ignored-file")
     with pytest.raises(ValueError, match="ignored files"):
         check_committed_inputs(root, root / "data/papers.json", root / "docs")
+
+
+def test_network_fence_metadata_does_not_reduce_the_site_payload_budget(tmp_path, monkeypatch):
+    import httpx
+
+    import src.releases as releases
+
+    root = tmp_path / "repo"
+    fixture(root)
+    receipt = create(root, tmp_path / "candidate")
+    files, _ = load_archive(tmp_path / "candidate/release.tar", receipt["release_id"])
+    payload_bytes = sum(map(len, files.values()))
+    monkeypatch.setattr(releases, "MAX_BYTES", payload_bytes)
+    with httpx.Client(
+        transport=httpx.MockTransport(
+            lambda req: httpx.Response(200, content=files[req.url.path.removeprefix("/project/")])
+        )
+    ) as client:
+        report = releases.verify_url(
+            "https://fixture.example/project/", receipt["release_id"], client=client
+        )
+    assert report["decoded_bytes"] == payload_bytes + len(files["release.json"])
