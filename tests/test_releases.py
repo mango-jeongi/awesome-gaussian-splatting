@@ -256,3 +256,56 @@ def test_network_fence_metadata_does_not_reduce_the_site_payload_budget(tmp_path
             "https://fixture.example/project/", receipt["release_id"], client=client
         )
     assert report["decoded_bytes"] == payload_bytes + len(files["release.json"])
+
+
+def cached_fixture(root):
+    from datetime import UTC, datetime
+
+    from src.extractors.openalex import OpenAlexWork
+    from src.openalex_cache import OpenAlexCache
+
+    fixture(root)
+    cache = OpenAlexCache()
+    cache.record(
+        "paper",
+        OpenAlexWork(id="https://openalex.org/W1", cited_by_count=7, referenced_works=[]),
+        datetime(2026, 11, 11, tzinfo=UTC),
+    )
+    cache.save(root / "data/signals/openalex-cache.json")
+    build_artifacts(
+        root / "data/papers.json",
+        root / "config/taxonomy.yaml",
+        root / "README.md",
+        root / "docs/papers.json",
+    )
+    return cache
+
+
+def test_release_binds_cached_projection_and_separate_canonical_model(tmp_path):
+    root = tmp_path / "repo"
+    cached_fixture(root)
+    canonical = (root / "data/papers.json").read_bytes()
+    receipt = pack(root, root / "data/papers.json", root / "docs", tmp_path / "release", "a" * 40)
+    files, release = load_archive(tmp_path / "release/release.tar", receipt["release_id"])
+    manifest = json.loads(files["data/manifest.json"])
+    assert release["data_model_sha256"] == manifest["source_sha256"]
+    assert release["canonical_data_model_sha256"] != release["data_model_sha256"]
+    assert (root / "data/papers.json").read_bytes() == canonical
+
+
+def test_release_refuses_cache_change_since_public_build(tmp_path):
+    from datetime import UTC, datetime, timedelta
+
+    from src.extractors.openalex import OpenAlexWork
+
+    root = tmp_path / "repo"
+    cache = cached_fixture(root)
+    cache.record(
+        "paper",
+        OpenAlexWork(id="https://openalex.org/W1", cited_by_count=8, referenced_works=[]),
+        datetime(2026, 11, 11, tzinfo=UTC) + timedelta(minutes=1),
+    )
+    cache.save(root / "data/signals/openalex-cache.json")
+    with pytest.raises(ValueError):
+        pack(root, root / "data/papers.json", root / "docs", tmp_path / "release", "a" * 40)
+    assert not (tmp_path / "release").exists()

@@ -201,15 +201,8 @@ def generate_readme(db: PaperDatabase, taxonomy: TaxonomyConfig) -> str:
     return "\n".join(lines).strip() + "\n"
 
 
-def build_artifacts(
-    data_path: str | Path,
-    taxonomy_path: str | Path,
-    readme_path: str | Path,
-    docs_data_path: str | Path,
-) -> None:
-    """Compile README.md and copy data/papers.json to docs/papers.json for GitHub Pages."""
-    if Path(data_path).resolve() in {Path(readme_path).resolve(), Path(docs_data_path).resolve()}:
-        raise ValueError("Build outputs must not overwrite canonical input")
+def load_build_database(data_path: str | Path) -> PaperDatabase:
+    """Load the owned, cache-enriched model used by builds and release identity checks."""
     db = PaperDatabase.load(data_path)
     cache_path = Path(data_path).parent / "signals" / "openalex-cache.json"
     if cache_path.exists():
@@ -219,6 +212,19 @@ def build_artifacts(
         # Project changing provider evidence only into this build-owned copy.
         # Identity conflicts fail before any public output is written.
         apply_cached_citations(db, OpenAlexCache.load(cache_path))
+    return db
+
+
+def build_artifacts(
+    data_path: str | Path,
+    taxonomy_path: str | Path,
+    readme_path: str | Path,
+    docs_data_path: str | Path,
+) -> None:
+    """Compile README.md and copy data/papers.json to docs/papers.json for GitHub Pages."""
+    if Path(data_path).resolve() in {Path(readme_path).resolve(), Path(docs_data_path).resolve()}:
+        raise ValueError("Build outputs must not overwrite canonical input")
+    db = load_build_database(data_path)
     taxonomy = TaxonomyConfig.from_yaml(taxonomy_path)
 
     readme_md = generate_readme(db, taxonomy)

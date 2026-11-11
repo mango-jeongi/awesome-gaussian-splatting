@@ -109,7 +109,10 @@ def read_site(site):
 
 
 def input_identity(root, data):
+    from src.builder import load_build_database
+
     db = PaperDatabase.load(data)
+    projected = load_build_database(data)
     paths = {data.resolve()}
     metadata = json.loads(data.read_bytes())
     if metadata["schema_version"] == "2.0.0":
@@ -144,7 +147,8 @@ def input_identity(root, data):
     return {
         "inputs": inputs,
         "input_digest": sha(compact(inputs)),
-        "data_model_sha256": sha(compact(db.model_dump(mode="json"))),
+        "canonical_data_model_sha256": sha(compact(db.model_dump(mode="json"))),
+        "data_model_sha256": sha(compact(projected.model_dump(mode="json"))),
     }
 
 
@@ -163,6 +167,11 @@ def verify_files(files, expected_id=None):
         raise ValueError("Invalid release identity")
     if expected_id is not None and expected_id != release["release_id"]:
         raise ValueError("Release differs from expected candidate")
+    canonical_digest = release.get("canonical_data_model_sha256")
+    if "canonical_data_model_sha256" in release and (
+        not isinstance(canonical_digest, str) or not re.fullmatch(r"[a-f0-9]{64}", canonical_digest)
+    ):
+        raise ValueError("Invalid canonical data model digest")
     actual = inventory({k: v for k, v in files.items() if k != "release.json"})
     if release["files"] != actual:
         raise ValueError("Release file inventory differs")
@@ -241,7 +250,7 @@ def pack(root, data, site, output, revision, release_tag=None):
     manifest = check_public(files)
     check_projection(root, data, files)
     if manifest["source_sha256"] != before["data_model_sha256"]:
-        raise ValueError("Portal was built from a different canonical model")
+        raise ValueError("Portal was built from a different projected data model")
     release = {
         "schema_version": 1,
         "source_revision": revision,
