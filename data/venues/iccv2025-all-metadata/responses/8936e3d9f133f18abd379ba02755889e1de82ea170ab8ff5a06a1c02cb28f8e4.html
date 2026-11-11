@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Text2Outfit: Controllable Outfit Generation with Multimodal Language Models">
+<meta name="citation_author" content="Zhai, Yuanhao">
+<meta name="citation_author" content="Lin, Yen-Liang">
+<meta name="citation_author" content="Peng, Minxu">
+<meta name="citation_author" content="Davis, Larry S.">
+<meta name="citation_author" content="Chandramouli, Ashwin">
+<meta name="citation_author" content="Yuan, Junsong">
+<meta name="citation_author" content="Doermann, David">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="16165">
+<meta name="citation_lastpage" content="16174">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhai_Text2Outfit_Controllable_Outfit_Generation_with_Multimodal_Language_Models_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Text2Outfit: Controllable Outfit Generation with Multimodal Language Models
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yuanhao Zhai, Yen-Liang Lin, Minxu Peng, Larry S. Davis, Ashwin Chandramouli, Junsong Yuan, David Doermann</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 16165-16174
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Existing outfit recommendation frameworks focus on outfit compatibility prediction and complementary item retrieval. We present a text-driven outfit generation framework, Text2Outfit, which generates outfits controlled by text prompts. Our framework supports two forms of outfit recommendation: 1) Text-to-outfit generation, where the prompt includes the specification for each outfit item (e.g., product features), and the model retrieves items that match the prompt and are stylistically compatible. 2) Seed-to-outfit generation, where the prompt includes the specification for a seed item, and the model both predicts which product types the outfit should include (referred to as composition generation) and retrieves the remaining items to build an outfit. We develop a large language model (LLM) framework that learns the cross-modal mapping between text and image set, and predicts a set of embeddings and compositions to retrieve outfit items. We devise an attention masking mechanism in LLM to handle the alignment between text descriptions and image tokens from different categories. We conduct experiments on the Polyvore dataset and evaluate the quality of the generated outfits from two perspectives: 1) feature matching for outfit items, and 2) outfit visual compatibility. The results demonstrate that our approach significantly outperforms the baseline methods in text to outfit generation.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zhai_Text2Outfit_Controllable_Outfit_Generation_with_Multimodal_Language_Models_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zhai_Text2Outfit_Controllable_Outfit_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhai_2025_ICCV,
+    author    = {Zhai, Yuanhao and Lin, Yen-Liang and Peng, Minxu and Davis, Larry S. and Chandramouli, Ashwin and Yuan, Junsong and Doermann, David},
+    title     = {Text2Outfit: Controllable Outfit Generation with Multimodal Language Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {16165-16174}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

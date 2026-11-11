@@ -1,6 +1,6 @@
 {
   "canonical_modified": false,
-  "count": 26,
+  "count": 36,
   "records": [
     {
       "capture": {
@@ -172,6 +172,35 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:13:07.017082+00:00",
+        "sha256": "ca4f8ce1eb8d5fb7bf93eadf80c1de02e90b77a8b884b86f4a367606b3b94e9b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Inserting 3D objects into videos is a longstanding challenge in computer graphics with applications in augmented reality, virtual try-on, and video composition. Achieving both temporal consistency, or realistic lighting remains difficult, particularly in dynamic scenarios with complex object motion, perspective changes, and varying illumination. While 2D diffusion models have shown promise for producing photorealistic edits, they often struggle with maintaining temporal coherence across frames. Conversely, traditional 3D rendering methods excel in spatial and temporal consistency but fall short in achieving photorealistic lighting. In this work, we propose a hybrid object insertion pipeline that combines the strengths of both paradigms. Specifically, we focus on inserting bracelets into dynamic wrist scenes, leveraging the high temporal consistency of 3D Gaussian Splatting (3DGS) for initial rendering and refining the results using a 2D diffusion-based enhancement model to ensure realistic lighting interactions. Our method introduces a shading-driven pipeline that separates intrinsic object properties (albedo, shading, reflectance) and refines both shading and sRGB images for photorealism. To maintain temporal coherence, we optimize the 3DGS model with multi-frame weighted adjustments. This is the first approach to synergize 3D rendering and 2D diffusion for video object insertion, offering a robust solution for realistic and consistent video editing.",
+        "arxiv_id": "2507.20331",
+        "authors": [
+          "Chenjian Gao",
+          "Lihe Ding",
+          "Rui Han",
+          "Zhanpeng Huang",
+          "Zibin Wang",
+          "Tianfan Xue"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Gao_From_Gallery_to_Wrist_Realistic_3D_Bracelet_Insertion_in_Videos_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Gao_From_Gallery_to_Wrist_Realistic_3D_Bracelet_Insertion_in_Videos_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:33:28.336178+00:00",
         "sha256": "74c2145fc1db16503929f84acff6d011976b8e657bf6acc82ebe7ffbcf70a63b"
       },
@@ -258,6 +287,34 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:09:18.546494+00:00",
+        "sha256": "be3367f0530549764a26a27238e7baff9f02d6eb7f597728bb2103c05c7d629d"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We propose a splat-based 3D scene reconstruction method from RGB-D input that effectively handles extreme motion blur, a frequent challenge in low-light environments. Under dim illumination, RGB frames often suffer from severe motion blur due to extended exposure times, causing traditional camera pose estimation methods, such as COLMAP, to fail. This results in inaccurate camera pose and blurry color input, compromising the quality of 3D reconstructions. Although recent 3D reconstruction techniques like Neural Radiance Fields and Gaussian Splatting have demonstrated impressive results, they rely on accurate camera trajectory estimation, which becomes challenging under fast motion or poor lighting conditions. Furthermore, rapid camera movement and the limited field of view of depth sensors reduce point cloud overlap, limiting the effectiveness of pose estimation with the ICP algorithm. To address these issues, we introduce a method that combines camera pose estimation and image deblurring using a Gaussian Splatting framework, leveraging both 3D Gaussian splats and depth inputs for enhanced scene representation. Our method first aligns consecutive RGB-D frames through optical flow and ICP, then refines camera poses and 3D geometry by adjusting Gaussian positions for optimal depth alignment. To handle motion blur, we model camera movement during exposure and deblur images by comparing the input with a series of sharp, rendered frames. Experiments on a new RGB-D dataset with extreme motion blur show that our method outperforms existing approaches, enabling high-quality reconstructions even in challenging conditions. This approach has broad implications for 3D mapping applications in robotics, autonomous navigation, and augmented reality. Both code and dataset are publicly available on https://github.com/KAISTVCLAB/ gs-extreme-motion-blur.",
+        "arxiv_id": null,
+        "authors": [
+          "Hyeonjoong Jang",
+          "Dongyoung Choi",
+          "Donggun Kim",
+          "Woohyun Kang",
+          "Min H. Kim"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jang_Splat-based_3D_Scene_Reconstruction_with_Extreme_Motion-blur_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jang_Splat-based_3D_Scene_Reconstruction_with_Extreme_Motion-blur_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Splat-based 3D Scene Reconstruction with Extreme Motion-blur",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:42:53.655286+00:00",
         "sha256": "77bb352b33807b36b4c53bfa8d24d4db2bb78281d3625a271aedc3a2d9f28aab"
       },
@@ -307,6 +364,35 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_PhysTwin_Physics-Informed_Reconstruction_and_Simulation_of_Deformable_Objects_from_Videos_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:13:23.123326+00:00",
+        "sha256": "a09cdf72d4d3880ff6d34f2d8ec6fd702e32f1bb4b2e0e0b80b62513f549295b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "To enable AI agents to interact seamlessly with both humans and 3D environments, they must not only perceive the 3D world accurately but also align human language with 3D spatial representations. While prior work has made significant progress by integrating language features into geometrically detailed 3D scene representations using 3D Gaussian Splatting (GS), these approaches rely on computationally intensive offline preprocessing of language features for each input image, limiting adaptability to new environments. In this work, we introduce Online Language Splatting, the first framework to achieve online, near real-time, open-vocabulary language mapping within a 3DGS-SLAM system without requiring pre-generated language features. The key challenge lies in efficiently fusing high-dimensional language features into 3D representations while balancing the computation speed, memory usage, rendering quality and open-vocabulary capability. To this end, we innovatively design: (1) a high-resolution CLIP embedding module capable of generating detailed language feature maps in 18ms per frame, (2) a two-stage online auto-encoder that compresses 768-dimensional CLIP features to 15 dimensions while preserving open-vocabulary capabilities, and (3) a color-language disentangled optimization approach to improve rendering quality. Experimental results show that our online method not only surpasses the state-of-the-art offline methods in accuracy but also achieves more than 40x efficiency boost, demonstrating the potential for dynamic and interactive AI applications.",
+        "arxiv_id": "2503.09447",
+        "authors": [
+          "Saimouli Katragadda",
+          "Cho-Ying Wu",
+          "Yuliang Guo",
+          "Xinyu Huang",
+          "Guoquan Huang",
+          "Liu Ren"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Katragadda_Online_Language_Splatting_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Katragadda_Online_Language_Splatting_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Online Language Splatting",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
@@ -637,6 +723,64 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:06:42.854209+00:00",
+        "sha256": "ca02f821d2bb4e2cc8ac0120194ec2cb08309104d9d3140126bac37fdfbfb894"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Dynamic scene rendering and reconstruction play a crucial role in computer vision and augmented reality. Recent methods based on 3D Gaussian Splatting (3DGS), have enabled accurate modeling of dynamic urban scenes, but for urban scenes they require both camera and LiDAR data, ground-truth 3D segmentations and motion data in the form of tracklets or pre-defined object templates such as SMPL. In this work, we explore whether a combination of 2D object agnostic priors in the form of depth and point tracking coupled with a signed distance function (SDF) representation for dynamic objects can be used to relax some of these requirements. We present a novel approach that integrates Signed Distance Functions (SDFs) with 3D Gaussian Splatting (3DGS) to create a more robust object representation by harnessing the strengths of both methods. Our unified optimization framework enhances the geometric accuracy of 3D Gaussian splatting and improves deformation modeling within the SDF, resulting in a more adaptable and precise representation. We demonstrate that our method achieves near state-of-the-art performance in rendering metrics even without LiDAR data on urban scenes. Furthermore, when incorporating LiDAR, our approach surpasses existing methods in reconstructing and generating novel views across diverse object categories, without ground-truth 3D motion annotation. Additionally, our method enables various scene editing tasks including scene decomposition, and scene composition.",
+        "arxiv_id": null,
+        "authors": [
+          "Siddharth Tourani",
+          "Jayaram Reddy",
+          "Akash Kumbar",
+          "Satyajit Tourani",
+          "Nishant Goyal",
+          "Madhava Krishna",
+          "N Dinesh Reddy",
+          "Muhammad Haris Khan"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Tourani_Leveraging_2D_Priors_and_SDF_Guidance_for_Urban_Scene_Rendering_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Tourani_Leveraging_2D_Priors_and_SDF_Guidance_for_Urban_Scene_Rendering_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Leveraging 2D Priors and SDF Guidance for Urban Scene Rendering",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:14:51.668712+00:00",
+        "sha256": "ddfc9541963773ec06c1a68edab270f04db5fafefc80fc9c6d062c076eb531d8"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "3D Gaussian Splatting (3DGS) has emerged as a powerful technique for novel view synthesis, demonstrating remarkable capability in high-fidelity scene reconstruction through its Gaussian primitive representations. However, the computational overhead induced by the massive number of primitives poses a significant bottleneck to training efficiency. To overcome this challenge, we propose Group Training, a simple yet effective strategy that organizes Gaussian primitives into manageable groups, optimizing training efficiency and improving rendering quality. This approach shows universal compatibility with existing 3DGS frameworks, including vanilla 3DGS and Mip-Splatting, consistently achieving accelerated training while maintaining superior synthesis quality. Extensive experiments reveal that our straightforward Group Training strategy achieves up to 30% faster convergence and improved rendering quality across diverse scenarios. Project Website: https://chengbo-wang.github.io/3DGS-with-Group-Training/.",
+        "arxiv_id": "2412.07608",
+        "authors": [
+          "Chengbo Wang",
+          "Guozheng Ma",
+          "Yifei Xue",
+          "Yizhen Lao"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Faster_and_Better_3D_Splatting_via_Group_Training_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wang_Faster_and_Better_3D_Splatting_via_Group_Training_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Faster and Better 3D Splatting via Group Training",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:45:40.698377+00:00",
         "sha256": "458d6ca9d525a7b7369c8c78701ea96f62a6823664f34c5eb4e66c02104fce6f"
       },
@@ -700,6 +844,124 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:10:40.639623+00:00",
+        "sha256": "f184282236e0d31695ddc7f3bfbd04f8060285145cd82ac7c61b6209063e66f6"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Due to the complex and highly dynamic motions in the real world, synthesizing dynamic videos from multi-view inputs for arbitrary viewpoints is challenging. Previous works based on neural radiance field or 3D Gaussian splatting are limited to modeling fine-scale motion, greatly restricting their application. In this paper, we introduce \\ourname, which consists of two parts to adapt our method to both large-scale and fine-scale motion scenes:1) We decompose a complex dynamic scene into streamlined local spaces defined by seeds, enabling global modeling by capturing motion within each local space.2) We decouple static and dynamic features for local space motion modeling. A static feature shared across time steps captures static information, while a dynamic residual field provides time-specific features. These are combined and decoded to generate Temporal Gaussians, modeling motion within each local space.As a result, we propose a novel dynamic scene reconstruction framework to model highly dynamic real-world scenes more realistically. Our method not only demonstrates competitive performance on various fine-scale datasets compared to state-of-the-art (SOTA) methods, but also represents the first attempt to model larger and more complex highly dynamic scenes. Code and models will be made publicly available.",
+        "arxiv_id": "2507.02363",
+        "authors": [
+          "Jiahao Wu",
+          "Rui Peng",
+          "Jianbo Jiao",
+          "Jiayu Yang",
+          "Luyang Tang",
+          "Kaiqiang Xiong",
+          "Jie Liang",
+          "Jinbo Yan",
+          "Runling Liu",
+          "Ronggang Wang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Wu_LocalDyGS_Multi-view_Global_Dynamic_Scene_Modeling_via_Adaptive_Local_Implicit_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Wu_LocalDyGS_Multi-view_Global_Dynamic_Scene_Modeling_via_Adaptive_Local_Implicit_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:13:43.358654+00:00",
+        "sha256": "8d2b9930dde7b84533bf7d9a5323dba67dba93f860337e6ba38ac1e388071bed"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "Single-view 3D reconstruction is a fundamental problem in computer vision, having a significant impact on downstream tasks such as autonomous driving, virtual reality and augmented reality. However, existing single-view reconstruction methods are unable to reconstruct the regions outside the input field-of-view or the areas occluded by visible parts. In this paper, we propose Hi-Gaussian, which employs feed-forward 3D Gaussians for efficient and generalizable single-view 3D reconstruction. A Normalized Spherical Projection module is introduced following an Encoder-Decoder network in our model, assigning a larger range to the transformed spherical coordinates, which can enlarge the field of view during scene reconstruction. Besides, to reconstruct occluded regions behind the visible part, we introduce a novel Hierarchical Gaussian Sampling strategy, utilizing two layers of Gaussians to hierarchically represent 3D scenes. We first use a pre-trained monocular depth estimation model to provide depth initialization for leader Gaussians, and then leverage the leader Gaussians to estimate the distribution followed by follower Gaussians, which can flexibly move into occluded areas. Extensive experiments show that our method outperforms other methods for scene reconstruction and novel view synthesis, on both outdoor and indoor datasets.",
+        "arxiv_id": null,
+        "authors": [
+          "Binjian Xie",
+          "Pengju Zhang",
+          "Hao Wei",
+          "Yihong Wu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Xie_Hi-Gaussian_Hierarchical_Gaussians_under_Normalized_Spherical_Projection_for_Single-View_3D_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xie_Hi-Gaussian_Hierarchical_Gaussians_under_Normalized_Spherical_Projection_for_Single-View_3D_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Hi-Gaussian: Hierarchical Gaussians under Normalized Spherical Projection for Single-View 3D Reconstruction",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:10:31.471272+00:00",
+        "sha256": "88c7ec3c822a2fcc8ae2426907497bdf91cd8e9bf3705399ca5e2de694010787"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "3D Gaussian Splatting (3DGS) has demonstrated its advantages in achieving fast and high-quality rendering. As point clouds serve as a widely-used and easily accessible form of 3D representation, bridging the gap between point clouds and Gaussians becomes increasingly important. Recent studies have explored how to convert the colored points into Gaussians, but directly generating Gaussians from colorless 3D point clouds remains an unsolved challenge. In this paper, we propose GAP, a novel approach that gaussianizes raw point clouds into high-fidelity 3D Gaussians with text guidance. Our key idea is to design a multi-view optimization framework that leverages a depth-aware image diffusion model to synthesize consistent appearances across different viewpoints. To ensure geometric accuracy, we introduce a surface-anchoring mechanism that effectively constrains Gaussians to lie on the surfaces of 3D shapes during optimization. Furthermore, GAP incorporates a diffuse-based inpainting strategy that specifically targets at completing hard-to-observe regions. We evaluate GAP on the Point-to-Gaussian generation task across varying complexity levels, from synthetic point clouds to challenging real-world scans, and even large-scale scenes. Project Page: https://weiqi-zhang.github.io/GAP.",
+        "arxiv_id": "2508.05631",
+        "authors": [
+          "Weiqi Zhang",
+          "Junsheng Zhou",
+          "Haotian Geng",
+          "Wenyuan Zhang",
+          "Yu-Shen Liu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_GAP_Gaussianize_Any_Point_Clouds_with_Text_Guidance_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_GAP_Gaussianize_Any_Point_Clouds_with_Text_Guidance_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "GAP: Gaussianize Any Point Clouds with Text Guidance",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:09:46.076164+00:00",
+        "sha256": "aba266fd5061a1b5fd89bb1267037abd814641fa730cd501b5891b1b3c4a63f2"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Current state-of-the-art 3D reconstruction models face limitations in building extra-large scale outdoor scenes, primarily due to the lack of sufficiently large-scale and detailed datasets. In this paper, we present a extra-large fine-grained dataset with 10 billion points composed of 41,006 drone-captured high-resolution aerial images, covering 20 diverse and culturally significant scenes from worldwide locations such as Cambridge campus, the Pyramids, and the Forbidden City. Compared to existing datasets, ours offers significantly larger scale and higher detail, uniquely suited for fine-grained 3D applications. Each scene contains an accurate spatial layout and comprehensive structural information, supporting detailed 3D reconstruction tasks. By reconstructing environments using these detailed images, our dataset supports multiple applications, including outputs in the widely adopted COLMAP format, establishing a novel benchmark for evaluating state-of-the-art large-scale Gaussian Splatting methods.The dataset's flexibility encourages innovations and supports model plug-ins, paving the way for future 3D breakthroughs. All datasets and code will be open-sourced for community use.",
+        "arxiv_id": "2501.06927",
+        "authors": [
+          "Xinyi Zheng",
+          "Steve Zhang",
+          "Weizhe Lin",
+          "Aaron Zhang",
+          "Walterio W. Mayol-Cuevas",
+          "Yunze Liu",
+          "Junxiao Shen"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_CULTURE3D_A_Large-Scale_and_Diverse_Dataset_of_Cultural_Landmarks_and_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zheng_CULTURE3D_A_Large-Scale_and_Diverse_Dataset_of_Cultural_Landmarks_and_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "CULTURE3D: A Large-Scale and Diverse Dataset of Cultural Landmarks and Terrains for Gaussian-Based Scene Rendering",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:33:37.409603+00:00",
         "sha256": "5f46389929a93ec020d863a9138e080a99ba440c6320f87da2a17bcab7e60f36"
       },
@@ -749,6 +1011,34 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_MonoMobility_Zero-Shot_3D_Mobility_Analysis_from_Monocular_Videos_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:15:13.819727+00:00",
+        "sha256": "02a119f2500b2b60ccfd75a797c42398abdd20fe4dcefaa602796f2bffdac41d"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Recent advancements in text-to-3D generation improve the visual quality of Score Distillation Sampling (SDS) and its variants by directly connecting Consistency Distillation (CD) to score distillation.However, due to the imbalance between self-consistency and cross-consistency, these CD-based methods inherently suffer from improper conditional guidance, leading to sub-optimal generation results.To address this issue, we present SegmentDreamer, a novel framework designed to fully unleash the potential of consistency models for high-fidelity text-to-3D generation.Specifically, we reformulate SDS through the proposed Segmented Consistency Trajectory Distillation (SCTD), effectively mitigating the imbalance issues by explicitly defining the relationship between self- and cross-consistency.Moreover, SCTD partitions the Probability Flow Ordinary Differential Equation (PF-ODE) trajectory into multiple sub-trajectories and ensures consistency within each segment, which can theoretically provide a significantly tighter upper bound on distillation error.Additionally, we propose a distillation pipeline for a more swift and stable generation.Extensive experiments demonstrate that our SegmentDreamer outperforms state-of-the-art methods in visual quality, enabling high-fidelity 3D asset creation through 3D Gaussian Splatting (3DGS).",
+        "arxiv_id": "2507.05256",
+        "authors": [
+          "Jiahao Zhu",
+          "Zixuan Chen",
+          "Guangcong Wang",
+          "Xiaohua Xie",
+          "Yi Zhou"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhu_SegmentDreamer_Towards_High-fidelity_Text-to-3D_Synthesis_with_Segmented_Consistency_Trajectory_Distillation_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhu_SegmentDreamer_Towards_High-fidelity_Text-to-3D_Synthesis_with_Segmented_Consistency_Trajectory_Distillation_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "SegmentDreamer: Towards High-fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025

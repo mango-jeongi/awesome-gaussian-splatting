@@ -122,3 +122,15 @@ epoch retains digest `388dfe1507123d4bfb7e4bfac474e94afa84321eb5067d8a5db8f4622d
 resumption must pass its recorded frozen override file explicitly. The final
 zero-request replay proved that frozen policy still matches the epoch. No source
 coverage watermark, corpus import, push or deployment advanced.
+
+## Third capped follow-up — 2026-11-11
+
+The next invocation completed 500 requests with **500 additional verified
+responses and no new failures**. The zero-request frozen-policy replay verified
+**1,803/2,701 pages**; **898 remain pending**, including the six prior
+retry-deferred failures. Automatic dispositions are 160 include, 59 review and
+1,584 exclude; 36 title-excluded records are policy review leads, not automatic
+canonical inclusions. The [third-pass receipt](runs/iccv2025-full-metadata-pass3-20261111.json)
+retains the original invocation summary and final state/report hashes. Canonical
+identity changed independently through the separately reviewed SAR-GS merge; this
+source capture imported no papers and changed no policy or retry deadline.

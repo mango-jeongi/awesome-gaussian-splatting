@@ -92,3 +92,18 @@ active denominator. Extraction is 11 processed/4,080 queued/nine unavailable/one
 unsupported, with the same 22 accepted cells and eight rejected cells. The
 source-bound merge/application receipt supersedes earlier corpus counts. Public
 graph projection/rebuild remains the next gate.
+
+## Cache-backed graph follow-up — 2026-11-11
+
+The [verified public projection](cache-backed-public-graph-20261111.md) now
+contains 27,329 directed internal edges, connecting 3,462/4,101 active records;
+639 remain isolated in the observed graph. Source-reference provenance is
+observed for 3,792 nodes and legacy/unverified for 309; 69,453 references have no
+active-corpus match. This supersedes the earlier 28-edge public graph count.
+The canonical v1 materialization remains 28 edges; refreshed evidence is projected
+from the cache offline. The old SAR-GS route, graph caps, real ego timing, mobile
+bounds and v1/v2 parity pass. No deployment is claimed.
+
+ICCV metadata is now verified for 1,803/2,701 pages, with 898 pending (including
+six retry-deferred failures). Automatic policy outcomes are 160 include, 59 review
+and 1,584 exclude. The 36 title-excluded policy leads remain unadjudicated.

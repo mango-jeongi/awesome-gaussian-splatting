@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models">
+<meta name="citation_author" content="Cheng, Xianfu">
+<meta name="citation_author" content="Zhang, Wei">
+<meta name="citation_author" content="Zhang, Shiwei">
+<meta name="citation_author" content="Yang, Jian">
+<meta name="citation_author" content="Guan, Xiangyuan">
+<meta name="citation_author" content="Wu, Xianjie">
+<meta name="citation_author" content="Li, Xiang">
+<meta name="citation_author" content="Zhang, Ge">
+<meta name="citation_author" content="Liu, Jiaheng">
+<meta name="citation_author" content="Mai, Yuying">
+<meta name="citation_author" content="Zeng, Yutao">
+<meta name="citation_author" content="Wen, Zhoufutu">
+<meta name="citation_author" content="Jin, Ke">
+<meta name="citation_author" content="Wang, Baorui">
+<meta name="citation_author" content="Zhou, Weixiao">
+<meta name="citation_author" content="Lu, Yunhong">
+<meta name="citation_author" content="Ji, Hangyuan">
+<meta name="citation_author" content="Li, Tongliang">
+<meta name="citation_author" content="Huang, Wenhao">
+<meta name="citation_author" content="Li, Zhoujun">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="4637">
+<meta name="citation_lastpage" content="4646">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Cheng_SimpleVQA_Multimodal_Factuality_Evaluation_for_Multimodal_Large_Language_Models_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Xianfu Cheng, Wei Zhang, Shiwei Zhang, Jian Yang, Xiangyuan Guan, Xianjie Wu, Xiang Li, Ge Zhang, Jiaheng Liu, Yuying Mai, Yutao Zeng, Zhoufutu Wen, Ke Jin, Baorui Wang, Weixiao Zhou, Yunhong Lu, Hangyuan Ji, Tongliang Li, Wenhao Huang, Zhoujun Li</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 4637-4646
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The increasing application of multi-modal large language models (MLLMs) across various sectors has spotlighted the essence of their output reliability and accuracy, particularly their ability to produce content grounded in factual information (e.g. common and domain-specific knowledge). In this work, we introduce SimpleVQA, the first comprehensive multi-modal benchmark to evaluate the factuality ability of MLLMs to answer natural language short questions. SimpleVQA is characterized by 7 key features: it is based on bilingual, it covers multiple tasks and multiple scenarios, ensures high quality and challenging queries, maintains static and timeless reference answers, and is straightforward to evaluate. Our approach involves categorizing visual question-answering items into 9 different tasks around objective events or common knowledge and situating these within 9 scenario domains. Rigorous quality control processes are implemented to guarantee high-quality, concise, and clear answers, facilitating evaluation with minimal variance via an LLM-as-a-judge scoring system. Using SimpleVQA, we perform a comprehensive assessment of leading 18 MLLMs and 8 text-only LLMs, delving into their image comprehension and text generation abilities by identifying and analyzing error cases.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Cheng_SimpleVQA_Multimodal_Factuality_Evaluation_for_Multimodal_Large_Language_Models_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Cheng_SimpleVQA_Multimodal_Factuality_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2502.13059">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Cheng_2025_ICCV,
+    author    = {Cheng, Xianfu and Zhang, Wei and Zhang, Shiwei and Yang, Jian and Guan, Xiangyuan and Wu, Xianjie and Li, Xiang and Zhang, Ge and Liu, Jiaheng and Mai, Yuying and Zeng, Yutao and Wen, Zhoufutu and Jin, Ke and Wang, Baorui and Zhou, Weixiao and Lu, Yunhong and Ji, Hangyuan and Li, Tongliang and Huang, Wenhao and Li, Zhoujun},
+    title     = {SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {4637-4646}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

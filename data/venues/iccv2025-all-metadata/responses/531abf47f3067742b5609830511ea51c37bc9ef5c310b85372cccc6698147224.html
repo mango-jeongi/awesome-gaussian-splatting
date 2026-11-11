@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding">
+<meta name="citation_author" content="Zheng, Minghang">
+<meta name="citation_author" content="Peng, Yuxin">
+<meta name="citation_author" content="Sun, Benyuan">
+<meta name="citation_author" content="Yang, Yi">
+<meta name="citation_author" content="Liu, Yang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="21589">
+<meta name="citation_lastpage" content="21599">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zheng_Hierarchical_Event_Memory_for_Accurate_and_Low-latency_Online_Video_Temporal_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Minghang Zheng, Yuxin Peng, Benyuan Sun, Yi Yang, Yang Liu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 21589-21599
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    In this paper, we tackle the task of online video temporal grounding (OnVTG), which requires the model to locate events related to a given text query within a video stream. Unlike regular video temporal grounding, OnVTG requires the model to make predictions without observing future frames. As online videos are streaming inputs and can go on indefinitely, it is impractical and inefficient to store all historical inputs. The existing OnVTG models employ memory to store recent historical video frame features and predict scores indicating whether the current frame corresponds to the start or end time of the target event. However, these methods lack effective event modeling and cannot retain long-term historical information, leading to low performance. To tackle these challenges, we propose a hierarchical event memory for OnVTG. We propose an event-based OnVTG framework that makes predictions based on event proposals that model event-level information with various durations. To preserve historically valuable event information, we introduce a hierarchical event memory that retains historical events, allowing the model to access both recent and long-term information. To enable the real-time prediction, we further propose a future prediction branch that predicts whether the target event will occur shortly and further regresses the start time of the event. We achieve state-of-the-art performance on the TACoS, ActivityNet Captions, and MAD datasets. Code is available at https://github.com/minghangz/OnVTG.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zheng_Hierarchical_Event_Memory_for_Accurate_and_Low-latency_Online_Video_Temporal_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zheng_Hierarchical_Event_Memory_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2508.04546">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zheng_2025_ICCV,
+    author    = {Zheng, Minghang and Peng, Yuxin and Sun, Benyuan and Yang, Yi and Liu, Yang},
+    title     = {Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {21589-21599}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

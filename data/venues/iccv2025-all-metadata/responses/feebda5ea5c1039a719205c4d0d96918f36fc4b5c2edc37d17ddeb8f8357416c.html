@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Ph-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data">
+<meta name="citation_author" content="Zhang, Xidan">
+<meta name="citation_author" content="Zhuang, Yihan">
+<meta name="citation_author" content="Guo, Qian">
+<meta name="citation_author" content="Yang, Haodong">
+<meta name="citation_author" content="Qian, Xuelin">
+<meta name="citation_author" content="Cheng, Gong">
+<meta name="citation_author" content="Han, Junwei">
+<meta name="citation_author" content="Huang, Zhongling">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="29075">
+<meta name="citation_lastpage" content="29085">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Ph-GAN_Physics-Inspired_GAN_for_Generating_SAR_Images_Under_Limited_Data_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Ph-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Xidan Zhang, Yihan Zhuang, Qian Guo, Haodong Yang, Xuelin Qian, Gong Cheng, Junwei Han, Zhongling Huang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 29075-29085
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Approaches for improving generative adversarial networks (GANs) training under a few samples have been explored for natural images. However, these methods have limited effectiveness for synthetic aperture radar (SAR) images, as they do not account for the unique electromagnetic scattering properties of SAR. To remedy this, we propose a physics-inspired regularization method dubbed Phi-GAN, which incorporates the ideal point scattering center (PSC) model of SAR with two physical consistency losses. The PSC model approximates SAR targets using physical parameters, ensuring that Phi-GAN generates SAR images consistent with real physical properties while preventing discriminator overfitting by focusing on PSC-based decision cues. To embed the PSC model into GANs for end-to-end training, we introduce a physics-inspired neural module capable of estimating the physical parameters of SAR targets efficiently. This module retains the interpretability of the physical model and can be trained with limited data. We propose two physical loss functions: one for the generator, guiding it to produce SAR images with physical parameters consistent with real ones, and one for the discriminator, enhancing its robustness by basing decisions on PSC attributes. We evaluate Phi-GAN across several conditional GAN (cGAN) models, demonstrating state-of-the-art performance in data-scarce scenarios on three SAR image datasets.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zhang_Ph-GAN_Physics-Inspired_GAN_for_Generating_SAR_Images_Under_Limited_Data_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zhang_Ph-GAN_Physics-Inspired_GAN_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhang_2025_ICCV,
+    author    = {Zhang, Xidan and Zhuang, Yihan and Guo, Qian and Yang, Haodong and Qian, Xuelin and Cheng, Gong and Han, Junwei and Huang, Zhongling},
+    title     = {Ph-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {29075-29085}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

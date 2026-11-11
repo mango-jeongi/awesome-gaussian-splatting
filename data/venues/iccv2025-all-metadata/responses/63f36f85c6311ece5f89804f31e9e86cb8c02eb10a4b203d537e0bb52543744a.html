@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models">
+<meta name="citation_author" content="Tao, Zerui">
+<meta name="citation_author" content="Takida, Yuhta">
+<meta name="citation_author" content="Murata, Naoki">
+<meta name="citation_author" content="Zhao, Qibin">
+<meta name="citation_author" content="Mitsufuji, Yuki">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="16333">
+<meta name="citation_lastpage" content="16344">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Tao_Transformed_Low-rank_Adaptation_via_Tensor_Decomposition_and_Its_Applications_to_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Zerui Tao, Yuhta Takida, Naoki Murata, Qibin Zhao, Yuki Mitsufuji</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 16333-16344
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Parameter-Efficient Fine-Tuning (PEFT) of text-to-image models has become an increasingly popular technique with many applications. Among the various PEFT methods, Low-Rank Adaptation (LoRA) and its variants have gained significant attention due to their effectiveness, enabling users to fine-tune models with limited computational resources. However, the approximation gap between the low-rank assumption and desired fine-tuning weights prevents the simultaneous acquisition of ultra-parameter-efficiency and better performance. To reduce this gap and further improve the power of LoRA, we propose a new PEFT method that combines two classes of adaptations, namely, transform and residual adaptations. In specific, we first apply a full-rank and dense transform to the pre-trained weight. This learnable transform is expected to align the pre-trained weight as closely as possible to the desired weight, thereby reducing the rank of the residual weight. Then, the residual part can be effectively approximated by more compact and parameter-efficient structures, with a smaller approximation error. To achieve ultra-parameter-efficiency in practice, we design highly flexible and effective tensor decompositions for both the transform and residual adaptations. Additionally, popular PEFT methods such as DoRA can be summarized under this transform plus residual adaptation scheme. Experiments are conducted on fine-tuning Stable Diffusion models in subject-driven and controllable generation. The results manifest that our method can achieve better performances and parameter efficiency compared to LoRA and several baselines.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Tao_Transformed_Low-rank_Adaptation_via_Tensor_Decomposition_and_Its_Applications_to_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Tao_Transformed_Low-rank_Adaptation_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2501.08727">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Tao_2025_ICCV,
+    author    = {Tao, Zerui and Takida, Yuhta and Murata, Naoki and Zhao, Qibin and Mitsufuji, Yuki},
+    title     = {Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {16333-16344}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

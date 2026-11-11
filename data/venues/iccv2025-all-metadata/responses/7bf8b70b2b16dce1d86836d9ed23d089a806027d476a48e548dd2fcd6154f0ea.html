@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Towards Robustness of Person Search against Corruptions">
+<meta name="citation_author" content="Son, Woojung">
+<meta name="citation_author" content="Cho, Yoonki">
+<meta name="citation_author" content="An, Guoyuan">
+<meta name="citation_author" content="Lee, Chanmi">
+<meta name="citation_author" content="Yoon, Sung-Eui">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="23408">
+<meta name="citation_lastpage" content="23418">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Son_Towards_Robustness_of_Person_Search_against_Corruptions_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Towards Robustness of Person Search against Corruptions
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Woojung Son, Yoonki Cho, Guoyuan An, Chanmi Lee, Sung-Eui Yoon</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 23408-23418
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Person search aims to simultaneously detect and re-identify a query person within an entire scene. While existing studies have made significant progress in achieving superior performance on clean datasets, the challenge of robustness under various corruptions remains largely unexplored. However, the lack of proper testing environments for corrupted conditions persists as a challenge, since extensive collection of new person images attempting to cover numerous corruption scenarios inevitably introduces privacy concerns. In this context, we establish an evaluation framework for analyzing corruption robustness using existing publicly available data, and introduce two new benchmarks: CUHK-SYSU-C and PRW-C. Based on this framework incorporating 18 corruptions with 5 severity levels each, we conduct an extensive robustness evaluation of popular person search methods. Moreover, we explore a straightforward solution that naturally arises: integrating corruption-robust detection and re-identification models. Our experiments reveal that existing person search models remain highly vulnerable to corruption, and this issue is not resolved by the simple integration approach. To analyze the underlying reasons, we further investigate the vulnerability of the detection and representation stages to corruption and explore its impact on both foreground and background areas. Based on these analyses, we propose a foreground-aware augmentation and corresponding robust proposal regularizer to enhance the robustness of person search models. Supported by our comprehensive robustness analysis and evaluation framework our benchmarks provide, our proposed technique substantially improves the robustness of existing person search models.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Son_Towards_Robustness_of_Person_Search_against_Corruptions_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Son_Towards_Robustness_of_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Son_2025_ICCV,
+    author    = {Son, Woojung and Cho, Yoonki and An, Guoyuan and Lee, Chanmi and Yoon, Sung-Eui},
+    title     = {Towards Robustness of Person Search against Corruptions},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {23408-23418}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
