@@ -1,0 +1,624 @@
+{
+  "canonical": {
+    "active": 4102,
+    "archived": 5,
+    "legacy_canonical_zero_citations": 4064,
+    "with_arxiv_id": 4070,
+    "without_arxiv_id": 32
+  },
+  "extraction": {
+    "accepted_figure_records": 0,
+    "accepted_numeric_cells": 22,
+    "active_denominator": 4102,
+    "coverage_scope": "Configured local inventory; queued source-materialization tasks are not downloaded PDFs or completed parser jobs",
+    "papers_with_accepted_numeric_cells": 6,
+    "review_basis": "Prior agent rendered-source inspection; not independent human benchmark",
+    "states": {
+      "processed": 11,
+      "queued": 4081,
+      "unavailable": 9,
+      "unsupported": 1
+    }
+  },
+  "graph": {
+    "connected_active_records": 23,
+    "directed_edges": 28,
+    "isolated_active_records": 4079,
+    "scope": "Materialized internal db_references with both active endpoints; not external provider graph recall"
+  },
+  "historical_discovery": {
+    "caveat": "Application outcomes refer to their frozen policy, not a rerun under the later foundation override; review is unresolved, not exclusion.",
+    "query_digest": "fe40f6c4c1b08b0f3bfc3e9edc6d4f537de212992db88c97687028fd046637a5",
+    "reviewed_application_outcomes": {
+      "exclude": 41,
+      "include": 4045,
+      "review": 380
+    },
+    "slice_statuses": {
+      "complete": 340
+    },
+    "spec": {
+      "comparator_query": "all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\"",
+      "max_slice_results": 1000,
+      "page_size": 100,
+      "policy_digest": "9bea7caba5af387bfb80eb51b7dae1578aa87b9018a945c8732d8ec9ac9e6237",
+      "query": "all:\"Gaussian Splatting\" OR all:\"3DGS\" OR all:\"4DGS\" OR all:\"2DGS\" OR ti:\"Gaussian Splat\" OR abs:\"3D Gaussian\"",
+      "query_version": "gs-query-v1",
+      "since": "1998-08-01T00:00:00Z",
+      "until": "2026-11-10T00:00:00Z"
+    },
+    "status": "complete",
+    "unique_candidates": 4466
+  },
+  "input_sha256": {
+    "config/sources.yaml": "2a60a271697a64f1505a4f2324647447e77123343004dbd53b67a8b195ea1665",
+    "data/extraction/coverage.json": "4566c7f4bbdf2b4a814508b427d43e5edfdc2aede71a290d179f8676a86585e1",
+    "data/extraction/reviewed.json": "252c9d1dfaea28c3f10452629488efc92a71a9c5abac9f6ef9271c195c2be58b",
+    "data/ingestion/applications/historical-v3-reviewed-20261110/proposal.json": "31c91c2166184cd56929b1e8487fc4fa77188001dc0c0f203b67e086cf89bd3b",
+    "data/ingestion/backfill/full-v3-20261110/crawl/checkpoint.json": "f3f2a7782b4373c950b0d2813744474ce177f166576c4907c0b2fa1ad3fa693a",
+    "data/papers.json": "9e0da7759d593cfa4d95f50dc30383a059b32392de22f9595cfc9a638c60daca",
+    "data/reviews/seed-reconciliation.json": "063624d727e73bee8aa171536dee70f25a4163bc2f7770fa643a5f062e5e68c0",
+    "data/signals/huggingface.json": "35a322ad8133b3fda24fd3c60ddbe2407679a86564c2f5aee54280e08eca7608",
+    "data/signals/openalex-cache.json": "d728fad5425641e85fb698b17e706011dc124f7981423d33c75d95f55c1479a4",
+    "data/signals/semanticscholar.json": "401253a3cdec221ee764b17d68ea9083e50507d511a3e54fedc1446e052741e6"
+  },
+  "missing_optional_inputs": [
+    "data/signals/semanticscholar-history.json"
+  ],
+  "observed_at": "2026-11-11T04:44:29.927040+00:00",
+  "providers": {
+    "huggingface": {
+      "active_denominator": 4102,
+      "fresh_successful_values": 1,
+      "latest_attempt_statuses": {
+        "not_found": 3,
+        "ok": 2
+      },
+      "observations": 5,
+      "outside_active_cache_entries": 0,
+      "retained_successful_values": 2,
+      "stale_successful_values": 1,
+      "successful_age_days": {
+        "maximum": 1.5082190789120369,
+        "minimum": 1.2511018226157407
+      },
+      "unobserved": 4097,
+      "velocity_statuses": {},
+      "verified_observed_zero_citations": 0
+    },
+    "openalex": {
+      "active_denominator": 4102,
+      "fresh_successful_values": 155,
+      "latest_attempt_statuses": {
+        "ambiguous": 17,
+        "not_found": 3,
+        "ok": 170
+      },
+      "observations": 190,
+      "outside_active_cache_entries": 5,
+      "retained_successful_values": 170,
+      "stale_successful_values": 15,
+      "successful_age_days": {
+        "maximum": 1.9743217789004628,
+        "minimum": 1.2511374955208334
+      },
+      "unobserved": 3912,
+      "velocity_statuses": {
+        "no_observations": 3932,
+        "single_snapshot": 155,
+        "stale": 15
+      },
+      "verified_observed_zero_citations": 108
+    },
+    "semanticscholar": {
+      "active_denominator": 4102,
+      "fresh_successful_values": 0,
+      "latest_attempt_statuses": {
+        "rate_limited": 1
+      },
+      "observations": 1,
+      "outside_active_cache_entries": 0,
+      "retained_successful_values": 0,
+      "stale_successful_values": 0,
+      "successful_age_days": null,
+      "unobserved": 4101,
+      "velocity_statuses": {
+        "no_observations": 4102
+      },
+      "verified_observed_zero_citations": 0
+    }
+  },
+  "schema_version": "1.0.0",
+  "scope": "Read-only repository snapshot; no external provider refresh or full-phase completion claim",
+  "seed": {
+    "summary": {
+      "archived": 5,
+      "retained": 141,
+      "unresolved_review": 19
+    },
+    "total": 165,
+    "unresolved": [
+      {
+        "old_id": "2610.37668",
+        "title": "Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction"
+      },
+      {
+        "old_id": "2610.35347",
+        "title": "CVTSplat: Multi-view Reconstruction Using an Adaptive Centroidal Voronoi Tessellation"
+      },
+      {
+        "old_id": "2610.29517",
+        "title": "AutoPhyX: Automatic Text-Condition Physics Property Generation"
+      },
+      {
+        "old_id": "2610.28131",
+        "title": "OV-Foam: How 3D Representations Shape Semantic Feature Lifting"
+      },
+      {
+        "old_id": "paper:2026-180e983364",
+        "title": "Geometry aware neural radiance fields for freehand ultrasound reconstruction"
+      },
+      {
+        "old_id": "paper:2026-b2e6dfab1b",
+        "title": "VGGT-$Ω$"
+      },
+      {
+        "old_id": "paper:2026-19507d524a",
+        "title": "Digital Twin-Driven Trajectory and Resource Optimization for UAV Swarms in Low-Altitude Urban Log..."
+      },
+      {
+        "old_id": "paper:2026-931a7ec2c7",
+        "title": "LiTo Surface Light Field Tokenization"
+      },
+      {
+        "old_id": "paper:2026-3995de4f15",
+        "title": "Event-Aided Sharp Radiance Field Reconstruction for Fast-Flying Drones"
+      },
+      {
+        "old_id": "paper:2026-c81378d9c5",
+        "title": "Digital Twin AI Opportunities and Challenges from Large Language Models to World Models"
+      },
+      {
+        "old_id": "paper:2025-f13a7b00a2",
+        "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time"
+      },
+      {
+        "old_id": "paper:2025-f1a8163fc0",
+        "title": "Reliable Multi-view 3D Reconstruction for `Just-in-time' Edge Environments"
+      },
+      {
+        "old_id": "paper:2025-9bdb3043c5",
+        "title": "Cooperative Digital Twins for UAV-Based Scenarios"
+      },
+      {
+        "old_id": "paper:2025-51c7d8fe35",
+        "title": "Matrix3D Large Photogrammetry Model All-in-One"
+      },
+      {
+        "old_id": "paper:2024-414f15abe3",
+        "title": "fVDB A Deep-Learning Framework for Sparse, Large-Scale, and High-Performance Spatial Intelligence"
+      },
+      {
+        "old_id": "paper:2024-be14b98be1",
+        "title": "Bayes Rays Uncertainty Quantification for Neural Radiance Fields"
+      },
+      {
+        "old_id": "paper:2023-f602368a87",
+        "title": "SyncDreamer Generating Multiview-consistent Images from a Single-view Image"
+      },
+      {
+        "old_id": "paper:2023-49bc7a3f60",
+        "title": "Zero-1-to-3 Zero-shot One Image to 3D Object"
+      },
+      {
+        "old_id": "paper:2017-b2f76bd1a5",
+        "title": "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World"
+      }
+    ]
+  },
+  "venues": {
+    "cells": 56,
+    "cells_inventory": [
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2022
+      },
+      {
+        "coverage": "partial",
+        "status": "crawled",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2023
+      },
+      {
+        "coverage": "partial",
+        "status": "crawled",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2024
+      },
+      {
+        "coverage": "partial",
+        "status": "crawled",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "CVPR",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "CVPR",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ICCV",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ICCV",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ICCV",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ICCV",
+        "year": 2023
+      },
+      {
+        "coverage": "partial",
+        "status": "crawled",
+        "track": "main",
+        "venue": "ICCV",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ICCV",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ECCV",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ECCV",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ECCV",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ECCV",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ECCV",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ECCV",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "ECCV",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "ECCV",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "SIGGRAPH",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "SIGGRAPH",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2020
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2021
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2022
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2023
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2024
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2025
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "main",
+        "venue": "NeurIPS",
+        "year": 2026
+      },
+      {
+        "coverage": "unverified",
+        "status": "pending",
+        "track": "workshop",
+        "venue": "NeurIPS",
+        "year": 2026
+      }
+    ],
+    "coverage_counts": {
+      "partial": 4,
+      "unverified": 52
+    },
+    "status_counts": {
+      "crawled": 4,
+      "pending": 52
+    }
+  }
+}
