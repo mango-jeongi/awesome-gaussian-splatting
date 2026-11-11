@@ -79,8 +79,21 @@ def _details(
 def build_public(
     db: PaperDatabase, root: str | Path, *, reviewed=None, signals=None, trending=None
 ) -> dict:
-    """Publish artifacts first and switch one manifest last; retain old generations."""
+    """Publish under the same lock used by manifest-based artifact cleanup."""
+    from src.file_lock import exclusive_file
+
     root = Path(root)
+    if any(
+        path.is_symlink() or getattr(path, "is_junction", lambda: False)()
+        for path in (root, root / "public.run.lock")
+    ):
+        raise ValueError("Public artifact root/writer lock cannot be a link")
+    with exclusive_file(root / "public.run.lock", resource="public artifact writer"):
+        return _build_public(db, root, reviewed=reviewed, signals=signals, trending=trending)
+
+
+def _build_public(db, root, *, reviewed=None, signals=None, trending=None):
+    """Publish artifacts first and switch one manifest last; retain old generations."""
     from src.reviewed_public import reviewed_cells
 
     cells = reviewed_cells(db, reviewed) if reviewed is not None else {}

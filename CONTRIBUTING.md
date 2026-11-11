@@ -434,3 +434,45 @@ Do not reset retry deadlines, edit the old epoch in place or copy a completion
 flag without accounting for every new selected URL. A full-metadata epoch still
 needs independent source reconciliation, source identity/date checks and reviewed
 scope decisions before an import or completion claim.
+
+## Retaining and pruning immutable public artifacts
+
+Builds and cleanup share the `docs/data/public.run.lock` filesystem lock. Keep
+explicit manifest snapshots for the generations still needed by cached clients
+and for the prior verified release. Store those snapshots outside `docs/data`;
+keep immutable Pages archives separately for exact deployment rollback.
+
+The checked-in selection is recorded in
+`reports/runs/public-retention-selected-manifests-20261111.json`. It includes the
+prior cache-backed generation and the earlier local release-rehearsal generation;
+it does not assert which build is deployed in production. Select the appropriate
+retained generations for the deployment being operated.
+
+Preview with one to five retained snapshots, using the mandated SSD environment:
+
+```bash
+uv run python -m src.public_cleanup plan --root docs/data --retain reports/public-manifests/ac4e0b920b14a7d660b9735b470f1ce8dc0b82c0491d2f2bd9b930a022a06f24.json --retain reports/public-manifests/ca6f62226f48ed5ce627ebf449fc44a5afb6c2ded9183ed808d26976d738bdee.json --output reports/runs/public-cleanup-plan.json
+```
+
+Inspect the plan's absolute root, generation identities, file list and byte/file
+budgets. Apply that exact plan after review:
+
+```bash
+uv run python -m src.public_cleanup apply --root docs/data --plan reports/runs/public-cleanup-plan.json --receipt reports/runs/public-cleanup-receipt.json
+```
+
+The default deletion ceilings are 500 files/100 MB; scan and retained-input
+ceilings are 5,000 entries/200 MB. All current and retained descriptors, hashes,
+byte sizes and transitive detail/adjacency pointers are checked before removal.
+Only unreferenced files in the builder's exact content-addressed JSON namespaces
+are eligible. Unknown files and directories are preserved. Linked trees, corrupt
+artifacts, changed manifests, unexpected new candidates or exceeded budgets fail
+closed. A changed build requires a new plan. Plan/receipt outputs cannot overwrite
+retained manifests or the approved plan.
+
+Removal uses individual verified files under the resolved artifact root. A
+partially interrupted cleanup preserves current/retained generations; replaying
+the same plan safely handles already-absent candidates. Commit the generated
+artifact deletions together with retained manifests and the receipt. Retention
+cleanup does not activate v2 storage, deploy Pages or change canonical/provider
+records.
