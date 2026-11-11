@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="PUMPS: Skeleton-Agnostic Point-based Universal Motion Pre-Training for Synthesis in Human Motion Tasks">
+<meta name="citation_author" content="Mo, Clinton Ansun">
+<meta name="citation_author" content="Hu, Kun">
+<meta name="citation_author" content="Long, Chengjiang">
+<meta name="citation_author" content="Yuan, Dong">
+<meta name="citation_author" content="Siu, Wan-Chi">
+<meta name="citation_author" content="Wang, Zhiyong">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="14496">
+<meta name="citation_lastpage" content="14506">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Mo_PUMPS_Skeleton-Agnostic_Point-based_Universal_Motion_Pre-Training_for_Synthesis_in_Human_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        PUMPS: Skeleton-Agnostic Point-based Universal Motion Pre-Training for Synthesis in Human Motion Tasks
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Clinton Ansun Mo, Kun Hu, Chengjiang Long, Dong Yuan, Wan-Chi Siu, Zhiyong Wang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 14496-14506
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Motion skeletons drive 3D character animation by transforming bone hierarchies, but differences in proportions or structure make motion data hard to transfer across skeletons, posing challenges for data-driven motion synthesis. Temporal Point Clouds (TPCs) offer an unstructured, cross-compatible motion representation. Though reversible with skeletons, TPCs mainly serve for compatibility, not for direct motion task learning. Doing so would require data synthesis capabilities for the TPC format, which presents unexplored challenges regarding its unique temporal consistency and point identifiability. Therefore, we propose PUMPS, the primordial autoencoder architecture for TPC data. PUMPS independently reduces frame-wise point clouds into sampleable feature vectors, from which a decoder extracts distinct temporal points using latent Gaussian noise vectors as sampling identifiers. We introduce linear assignment-based point pairing to optimise the TPC reconstruction process, and negate the use of expensive point-wise attention mechanisms in the architecture. Using these latent features, we pre-train a motion synthesis model capable of performing motion prediction, transition generation, and keyframe interpolation. For these pre-training tasks, PUMPS performs remarkably well even without native dataset supervision, matching state-of-the-art performance. When fine-tuned for motion denoising or estimation, PUMPS outperforms many respective methods without deviating from its generalist architecture.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Mo_PUMPS_Skeleton-Agnostic_Point-based_Universal_Motion_Pre-Training_for_Synthesis_in_Human_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Mo_PUMPS_Skeleton-Agnostic_Point-based_ICCV_2025_supplemental.zip">supp</a>]
+[<a href="http://arxiv.org/abs/2507.20170">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Mo_2025_ICCV,
+    author    = {Mo, Clinton Ansun and Hu, Kun and Long, Chengjiang and Yuan, Dong and Siu, Wan-Chi and Wang, Zhiyong},
+    title     = {PUMPS: Skeleton-Agnostic Point-based Universal Motion Pre-Training for Synthesis in Human Motion Tasks},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {14496-14506}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

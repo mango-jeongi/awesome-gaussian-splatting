@@ -107,3 +107,10 @@ bounds and v1/v2 parity pass. No deployment is claimed.
 ICCV metadata is now verified for 1,803/2,701 pages, with 898 pending (including
 six retry-deferred failures). Automatic policy outcomes are 160 include, 59 review
 and 1,584 exclude. The 36 title-excluded policy leads remain unadjudicated.
+
+## Fourth ICCV checkpoint — 2026-11-11
+
+The frozen-policy metadata epoch has verified 2,303/2,701 pages; 398 remain pending,
+including six prior failures whose retry deadlines remain enforced. The 43
+previously title-excluded automatic inclusion leads still need source review.
+See the [bound pass receipt](runs/iccv2025-full-metadata-pass4-20261111.json).

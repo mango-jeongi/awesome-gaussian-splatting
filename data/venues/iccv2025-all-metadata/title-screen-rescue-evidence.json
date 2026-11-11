@@ -1,6 +1,6 @@
 {
   "canonical_modified": false,
-  "count": 36,
+  "count": 43,
   "records": [
     {
       "capture": {
@@ -116,6 +116,34 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:31:05.489172+00:00",
+        "sha256": "a99721923a29e441895fa0cc1390c9babdef211b3f5fc2061d0b28f97604547d"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Time-of-Flight (ToF) sensors provide efficient active depth sensing at relatively low power budgets; among such designs, only very sparse measurements from low-resolution sensors are considered to meet the increasingly limited power constraints of mobile and AR/VR devices. However, such extreme sparsity levels limit the seamless usage of ToF depth in SLAM. In this work, we propose ToF-Splatting, the first 3D Gaussian Splatting-based SLAM pipeline tailored for using effectively very sparse ToF input data. Our approach improves upon the state of the art by introducing a multi-frame integration module, which produces dense depth maps by merging cues from extremely sparse ToF depth, monocular color, and multi-view geometry. Extensive experiments on both synthetic and real sparse ToF datasets demonstrate the viability of our approach, as it achieves state-of-the-art tracking and mapping performances on reference datasets.",
+        "arxiv_id": null,
+        "authors": [
+          "Andrea Conti",
+          "Matteo Poggi",
+          "Valerio Cambareri",
+          "Martin R. Oswald",
+          "Stefano Mattoccia"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Conti_ToF-Splatting_Dense_SLAM_using_Sparse_Time-of-Flight_Depth_and_Multi-Frame_Integration_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Conti_ToF-Splatting_Dense_SLAM_using_Sparse_Time-of-Flight_Depth_and_Multi-Frame_Integration_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "ToF-Splatting: Dense SLAM using Sparse Time-of-Flight Depth and Multi-Frame Integration",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:28:14.165387+00:00",
         "sha256": "6a31ba756d18783ea90269b930fa85d1188e7b94c845704dd4d9729e798e13af"
       },
@@ -165,6 +193,70 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Fan_Momentum-GS_Momentum_Gaussian_Self-Distillation_for_High-Quality_Large_Scene_Reconstruction_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:24:33.924722+00:00",
+        "sha256": "c93cf427e19d6ad3d030409096b1312eaf5c2fe95c0725537f340f64dc0a209b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "3D Gaussian splatting enables high-quality novel view synthesis (NVS) at real-time frame rates. However, its quality drops sharply as we depart from the training views. Thus, dense captures are needed to match the high-quality expectations of applications like Virtual Reality (VR). However, such dense captures are very laborious and expensive to obtain. Existing works have explored using 2D generative models to alleviate this requirement by distillation or generating additional training views. These models typically rely on a noise-to-data generative process conditioned only on a handful of reference input views, leading to hallucinations, inconsistent generation results, and subsequent reconstruction artifacts. Instead, we propose a multi-view, flow matching model that learns a flow to directly connect novel view renderings from possibly sparse reconstructions to renderings that we expect from dense reconstructions. This enables augmenting scene captures with consistent, generated views to improve reconstruction quality. Our model is trained on a novel dataset of 3.6M image pairs and can process up to 45 views at 540x960 resolution (91K tokens) on one H100 GPU in a single forward pass. Our pipeline consistently improves NVS in sparse- and dense-view scenarios, leading to higher-quality reconstructions than prior works across multiple, widely-used NVS benchmarks.",
+        "arxiv_id": null,
+        "authors": [
+          "Tobias Fischer",
+          "Samuel Rota Bulò",
+          "Yung-Hsu Yang",
+          "Nikhil Keetha",
+          "Lorenzo Porzi",
+          "Norman Müller",
+          "Katja Schwarz",
+          "Jonathon Luiten",
+          "Marc Pollefeys",
+          "Peter Kontschieder"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Fischer_FlowR_Flowing_from_Sparse_to_Dense_3D_Reconstructions_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Fischer_FlowR_Flowing_from_Sparse_to_Dense_3D_Reconstructions_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "FlowR: Flowing from Sparse to Dense 3D Reconstructions",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:32:46.471077+00:00",
+        "sha256": "4f6a8781631d8b047e1d4ffd5de14d0a1de8e18c8b30b4c556b9ab9ee53bf01c"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Despite its significant achievements in large-scale scene reconstruction, 3D Gaussian Splatting still faces substantial challenges, including slow processing, high computational costs, and limited geometric accuracy. These core issues arise from its inherently unstructured design and the absence of efficient parallelization. To overcome these challenges simultaneously, we introduce CityGS-X, a scalable architecture built on a novel parallelized hybrid hierarchical 3D representation (PH2-3D). As an early attempt, CityGS-X abandons the cumbersome merge-and-partition process and instead adopts a newly designed batch-level multi-task rendering process. This architecture enables efficient multi-GPU rendering through dynamic Level-of-Detail voxel allocations, significantly improving scalability and performance. Through extensive experiments, CityGS-X consistently outperforms existing methods in terms of faster training times, larger rendering capacities, and more accurate geometric details in large-scale scenes. To further enhance both overall quality and geometric accuracy, CityGS-X presents a progressive RGB-Depth-Normal training strategy. This approach enhances 3D consistency by jointly optimizing appearance and geometry representation through multi-view constraints and off-the-shelf depth priors within batch-level training. Notably, CityGS-X can train and render a scene with more than 5000 images in just five hours using only four 4090 GPUs, a task that would make other alternative methods encounter out-of-memory issues and fail completely. This implies that CityGS-X is far beyond the capacity of other existing methods.",
+        "arxiv_id": null,
+        "authors": [
+          "Yuanyuan Gao",
+          "Hao Li",
+          "Jiaqi Chen",
+          "Zhengyu Zou",
+          "Zhihang Zhong",
+          "Dingwen Zhang",
+          "Xiao Sun",
+          "Junwei Han"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Gao_CityGS-X_A_Scalable_Architecture_for_Efficient_and_Geometrically_Accurate_Large-Scale_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Gao_CityGS-X_A_Scalable_Architecture_for_Efficient_and_Geometrically_Accurate_Large-Scale_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "CityGS-X: A Scalable Architecture for Efficient and Geometrically Accurate Large-Scale Scene Reconstruction",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
@@ -371,6 +463,33 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:27:26.581883+00:00",
+        "sha256": "e33e902c294056ab0d3bbbdbfbe61c5cbf3690edb31d5c01a3708bd366d5c4a2"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Existing approaches to drone visual geo-localization predominantly adopt the image-based setting, where a single drone-view snapshot is matched with images from other platforms. Such task formulation, however, underutilizes the inherent video output of the drone and is sensitive to occlusions and viewpoint disparity. To address these limitations, we formulate a new video-based drone geo-localization task and propose the Video2BEV paradigm. This paradigm transforms the video into a Bird's Eye View (BEV), simplifying the subsequent inter-platform matching process. In particular, we employ Gaussian Splatting to reconstruct a 3D scene and obtain the BEV projection. Different from the existing transform methods, e.g., polar transform, our BEVs preserve more fine-grained details without significant distortion. To facilitate the discriminative intra-platform representation learning, our Video2BEV paradigm also incorporates a diffusion-based module for generating hard negative samples. To validate our approach, we introduce UniV, a new video-based geo-localization dataset that extends the image-based University-1652 dataset. UniV features flight paths at 30^\\circ and 45^\\circ elevation angles with increased frame rates of up to 10 frames per second (FPS). Extensive experiments on the UniV dataset show that our Video2BEV paradigm achieves competitive recall rates and outperforms conventional video-based methods. Compared to other competitive methods, our proposed approach exhibits robustness at lower elevations with more occlusions. The code is available at: https://github.com/HaoDot/Video2BEV-Open.",
+        "arxiv_id": "2411.13610",
+        "authors": [
+          "Hao Ju",
+          "Shaofei Huang",
+          "Si Liu",
+          "Zhedong Zheng"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Ju_Video2BEV_Transforming_Drone_Videos_to_BEVs_for_Video-based_Geo-localization_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Ju_Video2BEV_Transforming_Drone_Videos_to_BEVs_for_Video-based_Geo-localization_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Video2BEV: Transforming Drone Videos to BEVs for Video-based Geo-localization",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T05:13:23.123326+00:00",
         "sha256": "a09cdf72d4d3880ff6d34f2d8ec6fd702e32f1bb4b2e0e0b80b62513f549295b"
       },
@@ -505,6 +624,36 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Lowens_PseudoMapTrainer_Learning_Online_Mapping_without_HD_Maps_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "PseudoMapTrainer: Learning Online Mapping without HD Maps",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:28:46.244957+00:00",
+        "sha256": "1adb6005923a0380438cad76effdde79288d0000de468cab6b39c65e97a90d1d"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Training robot policies within a learned world model is trending due to the inefficiency of real-world interactions. The established image-based world models and policies have shown prior success, but lack robust geometric information that requires consistent spatial and physical understanding of the three-dimensional world, even pre-trained on internet-scale video sources. To this end, we propose a novel branch of world model named Gaussian World Model (GWM) for robotic manipulation, which reconstructs the future state by inferring the propagation of Gaussian primitives under the effect of robot actions. At its core is a latent Diffusion Transformer (DiT) combined with a 3D variational autoencoder, enabling fine-grained scene-level future state reconstruction with Gaussian Splatting. GWM can not only enhance the visual representation for imitation learning agent by self-supervised future prediction training, but can serve as a neural simulator that supports model-based reinforcement learning. Both simulated and real-world experiments depict that GWM can precisely predict future scenes conditioned on diverse robot actions, and can be further utilized to train policies that outperform the state-of-the-art by impressive margins, showcasing the initial data scaling potential of 3D world model.",
+        "arxiv_id": "2508.17600",
+        "authors": [
+          "Guanxing Lu",
+          "Baoxiong Jia",
+          "Puhao Li",
+          "Yixin Chen",
+          "Ziwei Wang",
+          "Yansong Tang",
+          "Siyuan Huang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Lu_GWM_Towards_Scalable_Gaussian_World_Models_for_Robotic_Manipulation_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Lu_GWM_Towards_Scalable_Gaussian_World_Models_for_Robotic_Manipulation_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "GWM: Towards Scalable Gaussian World Models for Robotic Manipulation",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
@@ -651,6 +800,35 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Simonelli_Easy3D_A_Simple_Yet_Effective_Method_for_3D_Interactive_Segmentation_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:30:13.172939+00:00",
+        "sha256": "65e614408b038fe20cdc2763ce06a914ceef5023cb08bbb7aea5c2705f5ca11b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We present a novel approach for 3D hair reconstruction from single photographs based on a global hair prior combined with local optimization. Capturing strand-based hair geometry from single photographs is challenging due to the variety and geometric complexity of hairstyles and the lack of ground truth training data. Classical reconstruction methods like multi-view stereo only reconstruct the visible hair strands, missing the inner structure of hairstyles and hampering realistic hair simulation. To address this, existing methods leverage hairstyle priors trained on synthetic data. Such data, however, is limited in both quantity and quality since it requires manual work from skilled artists to model the 3D hairstyles and create near-photorealistic renderings. To address this, we propose a novel approach that uses both, real and synthetic data to learn an effective hairstyle prior. Specifically, we train a transformer-based prior model on synthetic data to obtain knowledge of the internal hairstyle geometry and introduce real data in the learning process to model the outer structure. This training scheme is able to model the visible hair strands depicted in an input image, while preserving the general 3D structure of hairstyles. We exploit this prior to create a Gaussian-splatting-based reconstruction method that creates hairstyles from one or more images. Qualitative and quantitative comparisons with existing reconstruction pipelines demonstrate the effectiveness and superior performance of our method for capturing detailed hair orientation, overall silhouette, and backside consistency. For additional results and code, please refer to https://im2haircut.is.tue.mpg.de.",
+        "arxiv_id": "2509.01469",
+        "authors": [
+          "Vanessa Sklyarova",
+          "Egor Zakharov",
+          "Malte Prinzler",
+          "Giorgio Becherini",
+          "Michael J. Black",
+          "Justus Thies"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Sklyarova_Im2Haircut_Single-view_Strand-based_Hair_Reconstruction_for_Human_Avatars_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Sklyarova_Im2Haircut_Single-view_Strand-based_Hair_Reconstruction_for_Human_Avatars_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Im2Haircut: Single-view Strand-based Hair Reconstruction for Human Avatars",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
@@ -925,6 +1103,35 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_GAP_Gaussianize_Any_Point_Clouds_with_Text_Guidance_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "GAP: Gaussianize Any Point Clouds with Text Guidance",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:27:07.973186+00:00",
+        "sha256": "d257417fa870c20aa1f5f7d899d1c44c790657a61b8596416d137d622d7e8078"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Gaussian splatting techniques have shown promising results in novel view synthesis, achieving high fidelity and efficiency. However, their high reconstruction quality comes at the cost of requiring a large number of primitives. We identify this issue as stemming from the entanglement of geometry and appearance in Gaussian Splatting. To address this, we introduce a neural shell texture, a global representation that encodes texture information around the surface. We use Gaussian primitives as both a geometric representation and texture field samplers, efficiently splatting texture features into image space. Our evaluation demonstrates that this disentanglement enables high parameter efficiency, fine texture detail reconstruction, and easy textured mesh extraction, all while using significantly fewer primitives.",
+        "arxiv_id": "2507.20200",
+        "authors": [
+          "Xin Zhang",
+          "Anpei Chen",
+          "Jincheng Xiong",
+          "Pinxuan Dai",
+          "Yujun Shen",
+          "Weiwei Xu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Neural_Shell_Texture_Splatting_More_Details_and_Fewer_Primitives_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Neural_Shell_Texture_Splatting_More_Details_and_Fewer_Primitives_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Neural Shell Texture Splatting: More Details and Fewer Primitives",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025

@@ -134,3 +134,14 @@ canonical inclusions. The [third-pass receipt](runs/iccv2025-full-metadata-pass3
 retains the original invocation summary and final state/report hashes. Canonical
 identity changed independently through the separately reviewed SAR-GS merge; this
 source capture imported no papers and changed no policy or retry deadline.
+
+## Fourth capped follow-up — 2026-11-11
+
+Another 500-request invocation added 500 verified responses with no new failures.
+Its original JSON summary was retained directly on completion, and a zero-request
+replay verified **2,303/2,701 pages**. The remaining **398** include six existing
+retry-deferred failures. Automatic outcomes are 167 include, 75 review and 2,061
+exclude; 43 title-excluded policy leads remain unadjudicated. The
+[fourth-pass receipt](runs/iccv2025-full-metadata-pass4-20261111.json) binds the
+checkpoint and original invocation. Frozen policy and retry deadlines are intact;
+no canonical import or source watermark advanced.

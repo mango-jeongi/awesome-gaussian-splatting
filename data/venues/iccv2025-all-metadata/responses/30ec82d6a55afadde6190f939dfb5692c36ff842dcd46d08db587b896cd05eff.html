@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Leveraging Local Patch Alignment to Seam-cutting for Large Parallax Image Stitching">
+<meta name="citation_author" content="Liao, Tianli">
+<meta name="citation_author" content="Zhao, Chenyang">
+<meta name="citation_author" content="Li, Lei">
+<meta name="citation_author" content="Cao, Heling">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="27262">
+<meta name="citation_lastpage" content="27271">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Liao_Leveraging_Local_Patch_Alignment_to_Seam-cutting_for_Large_Parallax_Image_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Leveraging Local Patch Alignment to Seam-cutting for Large Parallax Image Stitching
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Tianli Liao, Chenyang Zhao, Lei Li, Heling Cao</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 27262-27271
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Seam cutting has shown significant effectiveness in the composition phase of image stitching, particularly for scenarios involving parallax. However, conventional implementations typically position seam-cutting as a downstream process contingent upon successful image alignment. This approach inherently assumes the existence of locally aligned regions where visually plausible seams can be established. Current alignment methods frequently fail to satisfy this prerequisite in large parallax scenarios despite considerable research efforts dedicated to improving alignment accuracy. In this paper, we propose an alignment-compensation paradigm that dissociates seam quality from initial alignment accuracy by integrating a Local Patch Alignment Module (LPAM) into the seam-cutting pipeline. Concretely, given the aligned images with an estimated initial seam, our method first identifies low-quality pixels along the seam through a seam quality assessment, then performs localized SIFT-flow alignment on the critical patches enclosing these pixels. Finally, we recomposite the aligned patches using adaptive seam-cutting and merge them into the original aligned images to generate the final mosaic. Comprehensive experiments on large parallax stitching datasets demonstrate that LPAM significantly enhances stitching quality while maintaining computational efficiency. The code is available at https://github.com/tlliao/LPAM_seam-cutting.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Liao_Leveraging_Local_Patch_Alignment_to_Seam-cutting_for_Large_Parallax_Image_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Liao_Leveraging_Local_Patch_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2311.18564">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Liao_2025_ICCV,
+    author    = {Liao, Tianli and Zhao, Chenyang and Li, Lei and Cao, Heling},
+    title     = {Leveraging Local Patch Alignment to Seam-cutting for Large Parallax Image Stitching},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {27262-27271}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
