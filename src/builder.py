@@ -211,6 +211,14 @@ def build_artifacts(
     if Path(data_path).resolve() in {Path(readme_path).resolve(), Path(docs_data_path).resolve()}:
         raise ValueError("Build outputs must not overwrite canonical input")
     db = PaperDatabase.load(data_path)
+    cache_path = Path(data_path).parent / "signals" / "openalex-cache.json"
+    if cache_path.exists():
+        from src.extractors.citations import apply_cached_citations
+        from src.openalex_cache import OpenAlexCache
+
+        # Project changing provider evidence only into this build-owned copy.
+        # Identity conflicts fail before any public output is written.
+        apply_cached_citations(db, OpenAlexCache.load(cache_path))
     taxonomy = TaxonomyConfig.from_yaml(taxonomy_path)
 
     readme_md = generate_readme(db, taxonomy)

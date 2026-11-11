@@ -58,7 +58,9 @@ class OpenAlexCitationClient(OpenAlexClient):
         return None
 
 
-def build_citation_knowledge_graph(db: PaperDatabase) -> dict[str, int]:
+def build_citation_knowledge_graph(
+    db: PaperDatabase, *, preserve_materialized_for: set[str] | None = None
+) -> dict[str, int]:
     """Construct internal directed citation and reference edges across papers in the database.
 
     Populates:
@@ -72,6 +74,18 @@ def build_citation_knowledge_graph(db: PaperDatabase) -> dict[str, int]:
             index.bind(f"doi:10.48550/arxiv.{normalize_arxiv(paper.arxiv_id)}", paper.id)
     outgoing: dict[str, set[str]] = {paper.id: set() for paper in db.papers}
     incoming: dict[str, set[str]] = {paper.id: set() for paper in db.papers}
+    # A cache-backed build can retain unobserved legacy lineage. A successful
+    # observed reference list (including []) is authoritative for its source.
+    for paper in db.papers:
+        if preserve_materialized_for and paper.id in preserve_materialized_for:
+            targets = paper.db_references
+            if len(set(targets)) != len(targets) or any(
+                target == paper.id or target not in incoming for target in targets
+            ):
+                raise ValueError("Invalid legacy materialized graph endpoint")
+            outgoing[paper.id].update(targets)
+            for target in targets:
+                incoming[target].add(paper.id)
     unmatched = 0
     self_references = 0
     for paper in db.papers:
@@ -113,6 +127,65 @@ def _assign_provider_doi(paper: PaperRecord, value: str | None) -> None:
         setattr(paper, field, normalized)
 
 
+def apply_cached_citations(db: PaperDatabase, cache: OpenAlexCache) -> dict[str, int]:
+    """Project validated cached observations into an owned database, without I/O.
+
+    This mutates the supplied database for compatibility callers. Builders load
+    their own in-memory copy and never save it over the canonical source.
+    """
+    active = {paper.id for paper in db.papers}
+    from src.observations import SignalStore
+
+    signals = db._signal_stores.get("openalex", SignalStore(provider="openalex")).model_copy(
+        deep=True
+    )
+    for key, observation in cache.signals.observations.items():
+        if key not in active:
+            continue
+        previous = signals.observations.get(key)
+        if previous:
+            if (
+                previous.provider_id
+                and observation.provider_id
+                and normalize_openalex(previous.provider_id)
+                != normalize_openalex(observation.provider_id)
+            ):
+                continue
+            if previous.last_attempt_at and (
+                not observation.last_attempt_at
+                or previous.last_attempt_at > observation.last_attempt_at
+            ):
+                continue
+        signals.observations[key] = observation
+    db._signal_stores["openalex"] = signals
+    references_observed = set()
+    for index, paper in enumerate(db.papers):
+        observation = signals.observations.get(paper.id)
+        if observation is None or observation.fetched_at is None:
+            continue
+        if paper.openalex_id and normalize_openalex(paper.openalex_id) != normalize_openalex(
+            observation.provider_id
+        ):
+            continue
+        updates = {
+            key: observation.values[key]
+            for key in ("citation_count", "referenced_works")
+            if key in observation.values
+        }
+        updates["openalex_id"] = observation.provider_id
+        updated = paper.with_provider_updates(update=updates)
+        _assign_provider_doi(updated, observation.values.get("doi"))
+        db.papers[index] = updated
+        if (
+            "referenced_works" in updates
+            and updated.referenced_works == observation.values["referenced_works"]
+        ):
+            references_observed.add(paper.id)
+    return build_citation_knowledge_graph(
+        db, preserve_materialized_for=active - references_observed
+    )
+
+
 def enrich_database_citations(
     db: PaperDatabase,
     batch_size: int = 40,
@@ -143,49 +216,7 @@ def enrich_database_citations(
                 limit=len(db.papers) if max_papers is None else max_papers,
             )
         cache = OpenAlexCache.load(cache_path)
-        active = {paper.id for paper in db.papers}
-        from src.observations import SignalStore
-
-        signals = db._signal_stores.get("openalex", SignalStore(provider="openalex")).model_copy(
-            deep=True
-        )
-        for key, observation in cache.signals.observations.items():
-            if key not in active:
-                continue
-            previous = signals.observations.get(key)
-            if previous:
-                if (
-                    previous.provider_id
-                    and observation.provider_id
-                    and normalize_openalex(previous.provider_id)
-                    != normalize_openalex(observation.provider_id)
-                ):
-                    continue
-                if previous.last_attempt_at and (
-                    not observation.last_attempt_at
-                    or previous.last_attempt_at > observation.last_attempt_at
-                ):
-                    continue
-            signals.observations[key] = observation
-        db._signal_stores["openalex"] = signals
-        for index, paper in enumerate(db.papers):
-            observation = signals.observations.get(paper.id)
-            if observation is None or observation.fetched_at is None:
-                continue
-            if paper.openalex_id and normalize_openalex(paper.openalex_id) != normalize_openalex(
-                observation.provider_id
-            ):
-                continue
-            updates = {
-                key: observation.values[key]
-                for key in ("citation_count", "referenced_works")
-                if key in observation.values
-            }
-            updates["openalex_id"] = observation.provider_id
-            updated = paper.with_provider_updates(update=updates)
-            _assign_provider_doi(updated, observation.values.get("doi"))
-            db.papers[index] = updated
-        stats = build_citation_knowledge_graph(db)
+        stats = apply_cached_citations(db, cache)
         return {**stats, "enriched_papers": report["ok"], "provider_refresh": report}
 
     # Split into papers with DOI/arXiv vs. seed papers needing title search
