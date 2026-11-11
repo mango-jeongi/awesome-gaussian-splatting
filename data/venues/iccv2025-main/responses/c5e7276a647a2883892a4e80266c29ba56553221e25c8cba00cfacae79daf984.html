@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="MiDSummer: Multi-Guidance Diffusion for Controllable Zero-Shot Immersive Gaussian Splatting Scene Generation">
+<meta name="citation_author" content="Hu, Anjun">
+<meta name="citation_author" content="Tomsett, Richard">
+<meta name="citation_author" content="Gourmet, Valentin">
+<meta name="citation_author" content="Camplani, Massimo">
+<meta name="citation_author" content="Kandola, Jas">
+<meta name="citation_author" content="Xie, Hanting">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="26793">
+<meta name="citation_lastpage" content="26805">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Hu_MiDSummer_Multi-Guidance_Diffusion_for_Controllable_Zero-Shot_Immersive_Gaussian_Splatting_Scene_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        MiDSummer: Multi-Guidance Diffusion for Controllable Zero-Shot Immersive Gaussian Splatting Scene Generation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Anjun Hu, Richard Tomsett, Valentin Gourmet, Massimo Camplani, Jas Kandola, Hanting Xie</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 26793-26805
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    We present MiDSummer, a two-stage framework for generating immersive Gaussian Splatting scenes that leverages multiple diffusion guidance signals to enable structured layout control, enhanced physical realism, and improved visual quality.While 3D scene generation has seen significant recent advances, current approaches could benefit from: (1) achieving precise, reliable layout control while preserving open-world generalization and physical plausibility, (2) balancing high-level semantic reasoning with low-level, directly controllable geometric constraints, and (3) effectively utilizing layout knowledge for visual refinement. Our work addresses these challenges through a structured two-stage planning-assembly framework. For planning, we introduce a dual layout diffusion guidance approach to bridge semantic reasoning and geometric controllability. Our approach uniquely integrates LLMs&#x27; open-vocabulary reasoning with Graph Diffusion Models&#x27; (GDM) geometric precision by incorporating multi-level self-consistency scores over scene graph structures and layout bounding box parameters. This fusion enables fine-grained control over scene composition while ensuring physical plausibility and faithful prompt interpretation. For assembly, we propose a layout-guided optimization technique for scene refinement. We effectively incorporate layout priors obtained during the planning stage into a Stable Diffusion (SD)-based refinement process that jointly optimizes camera trajectories and scene splats. This layout-aware joint optimization, constrained by multi-view consistency, produces visually compelling immersive scenes that are structurally coherent and controllable.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Hu_MiDSummer_Multi-Guidance_Diffusion_for_Controllable_Zero-Shot_Immersive_Gaussian_Splatting_Scene_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Hu_MiDSummer_Multi-Guidance_Diffusion_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Hu_2025_ICCV,
+    author    = {Hu, Anjun and Tomsett, Richard and Gourmet, Valentin and Camplani, Massimo and Kandola, Jas and Xie, Hanting},
+    title     = {MiDSummer: Multi-Guidance Diffusion for Controllable Zero-Shot Immersive Gaussian Splatting Scene Generation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {26793-26805}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

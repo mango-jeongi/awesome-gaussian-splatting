@@ -295,11 +295,54 @@ editions:
 - venue: ICCV
   year: 2025
   track: main
-  status: pending
-  coverage: unverified
-  discovery_provider: dblp
+  status: crawled
+  coverage: partial
+  discovery_provider: cvf
   official_inventory_locator: https://openaccess.thecvf.com/
-  evidence: []
+  evidence:
+  - provider: cvf_title_priority_capture
+    source_url: https://openaccess.thecvf.com/ICCV2025?day=all
+    evidence_file: data/venues/iccv2025-main/latest-report.json
+    listing_sha256: e684fe760c417a35c2f1e9a5acb3015a192fce10e566086e2d4bf7f78cbb97fe
+    listing_records: 2701
+    selected_records: 149
+    verified_records: 149
+    selected_metadata_complete: true
+    metadata_dispositions:
+      include: 124
+      review: 25
+  - provider: iccv_official_accepted_table
+    source_url: https://iccv.thecvf.com/Conferences/2025/AcceptedPapers
+    evidence_file: data/venues/iccv2025-main/independent-reconciliation.json
+    accepted_rows: 2701
+    proceedings_rows: 2701
+    normalized_title_matches: 2677
+    reviewed_typography_pairs: 7
+    unresolved_title_rows_per_source: 17
+    exact_title_author_differences: 504
+    inventory_reconciled: false
+  - provider: cvf_all_metadata_capture
+    evidence_file: data/venues/iccv2025-all-metadata/latest-report.json
+    selection_mode: all_metadata
+    selected_records: 2701
+    reused_verified_captures: 149
+    verified_records: 309
+    pending_records: 2392
+    failed_records: 0
+    metadata_dispositions:
+      include: 125
+      exclude: 155
+      review: 29
+    source_screen_rescue_evidence: data/venues/iccv2025-all-metadata/title-screen-rescue-evidence.json
+  remaining:
+  - Complete the all-metadata backlog without treating title-priority completion as
+    full coverage.
+  - Review 17 unmatched titles on each source and 504 author-list differences without
+    automatic alias assertions.
+  - Identity/original-date resolution, reviewed GS scope decisions and publication
+    imports remain pending.
+  - Full-metadata policy decisions are not independently measured human precision/recall.
+  - DBLP discovery/access and verified non-arXiv insertions remain open.
 - venue: ICCV
   year: 2025
   track: workshop

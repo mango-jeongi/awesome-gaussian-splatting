@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="MoFRR: Mixture of Diffusion Models for Face Retouching Restoration">
+<meta name="citation_author" content="Liu, Jiaxin">
+<meta name="citation_author" content="Ying, Qichao">
+<meta name="citation_author" content="Qian, Zhenxing">
+<meta name="citation_author" content="Li, Sheng">
+<meta name="citation_author" content="Zhang, Runqi">
+<meta name="citation_author" content="Liu, Jian">
+<meta name="citation_author" content="Zhang, Xinpeng">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="12842">
+<meta name="citation_lastpage" content="12851">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_MoFRR_Mixture_of_Diffusion_Models_for_Face_Retouching_Restoration_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        MoFRR: Mixture of Diffusion Models for Face Retouching Restoration
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Jiaxin Liu, Qichao Ying, Zhenxing Qian, Sheng Li, Runqi Zhang, Jian Liu, Xinpeng Zhang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 12842-12851
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The widespread use of face retouching on social media platforms raises concerns about the authenticity of face images. While existing methods focus on detecting face retouching, how to accurately recover the original faces from the retouched ones has yet to be answered. This paper introduces Face Retouching Restoration (FRR), a novel computer vision task aimed at restoring original faces from their retouched counterparts. FRR differs from traditional image restoration tasks by addressing the complex retouching operations with various types and degrees, which focuses more on the restoration of the low-frequency information of the faces. To tackle this challenge, we propose MoFRR, Mixture of Diffusion Models for FRR. Inspired by DeepSeek&#x27;s expert isolation strategy, the MoFRR uses sparse activation of specialized experts handling distinct retouching types and the engagement of a shared expert dealing with universal retouching traces. Each specialized expert follows a dual-branch structure with a DDIM-based low-frequency branch guided by an Iterative Distortion Evaluation Module (IDEM) and a Cross-Attention-based High-Frequency branch (HFCAM) for detail refinement. Extensive experiments on a newly constructed face retouching dataset, RetouchingFFHQ++, demonstrate the effectiveness of MoFRR for FRR.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Liu_MoFRR_Mixture_of_Diffusion_Models_for_Face_Retouching_Restoration_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="http://arxiv.org/abs/2507.19770">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Liu_2025_ICCV,
+    author    = {Liu, Jiaxin and Ying, Qichao and Qian, Zhenxing and Li, Sheng and Zhang, Runqi and Liu, Jian and Zhang, Xinpeng},
+    title     = {MoFRR: Mixture of Diffusion Models for Face Retouching Restoration},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {12842-12851}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
