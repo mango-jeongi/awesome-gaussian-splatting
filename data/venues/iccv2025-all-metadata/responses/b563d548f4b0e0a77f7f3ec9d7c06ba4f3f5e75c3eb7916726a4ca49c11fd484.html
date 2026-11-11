@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Neural Architecture Search Driven by Locally Guided Diffusion for Personalized Federated Learning">
+<meta name="citation_author" content="Liao, Peng">
+<meta name="citation_author" content="Wang, Xilu">
+<meta name="citation_author" content="Jin, Yaochu">
+<meta name="citation_author" content="Du, Wenli">
+<meta name="citation_author" content="Hu, Han">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="4222">
+<meta name="citation_lastpage" content="4231">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Liao_Neural_Architecture_Search_Driven_by_Locally_Guided_Diffusion_for_Personalized_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Neural Architecture Search Driven by Locally Guided Diffusion for Personalized Federated Learning
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Peng Liao, Xilu Wang, Yaochu Jin, Wenli Du, Han Hu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 4222-4231
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Neural Architecture Search (NAS) has gained significant attention in personalized federated learning (PFL) due to its ability to automatically design tailored models for individual clients. While most existing NAS approaches for PFL perform architecture search on the server side, client-side NAS--where architectures are optimized locally on clients--offers stronger privacy protection by eliminating the need to transmit sensitive model information. However, this paradigm remains underexplored and often suffers from suboptimal average client performance, primarily due to two limitations: (1) Inefficient client-side search strategies caused by data isolation and restricted access to local architectures across clients, and (2) slow supernet convergence arising from server aggregation and local supernet training. To address these challenges, we propose a Personalized Federated Stochastic Differential Equation-based NAS (PerFedSDE-NAS). To achieve effective local search, each client employs a guided diffusion model to generate promising personalized architectures tailored to local data characteristics, while a performance predictor based on radial basis functions is used to select only the most promising subset of architectures for evaluation. To accelerate supernet convergence, each client maintains a supernet with an archive-driven training mechanism, and a novel model aggregation strategy is proposed to further enhance weight convergence during FL rounds. We validate PerFedSDE-NAS across three NAS search spaces, including convolutional neural networks and transformers, demonstrating its broad applicability. Compared to traditional fixed-model and NAS-based PFL approaches, our method achieves the state-of-the-art performance.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Liao_Neural_Architecture_Search_Driven_by_Locally_Guided_Diffusion_for_Personalized_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Liao_Neural_Architecture_Search_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Liao_2025_ICCV,
+    author    = {Liao, Peng and Wang, Xilu and Jin, Yaochu and Du, Wenli and Hu, Han},
+    title     = {Neural Architecture Search Driven by Locally Guided Diffusion for Personalized Federated Learning},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {4222-4231}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

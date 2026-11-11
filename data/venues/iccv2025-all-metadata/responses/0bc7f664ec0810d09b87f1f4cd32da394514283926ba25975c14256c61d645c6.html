@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Wave-MambaAD: Wavelet-driven State Space Model for Multi-class Unsupervised Anomaly Detection">
+<meta name="citation_author" content="Zhang, Qiao">
+<meta name="citation_author" content="Shao, Mingwen">
+<meta name="citation_author" content="Chen, Xinyuan">
+<meta name="citation_author" content="Lv, Xiang">
+<meta name="citation_author" content="Xu, Kai">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="20868">
+<meta name="citation_lastpage" content="20877">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Wave-MambaAD_Wavelet-driven_State_Space_Model_for_Multi-class_Unsupervised_Anomaly_Detection_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Wave-MambaAD: Wavelet-driven State Space Model for Multi-class Unsupervised Anomaly Detection
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Qiao Zhang, Mingwen Shao, Xinyuan Chen, Xiang Lv, Kai Xu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 20868-20877
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The Mamba model excels in anomaly detection through efficient long-range dependency modeling and linear complexity. However, Mamba-based anomaly detectors still face two critical challenges: (1) insufficient modeling of diverse local features leading to inaccurate detection of subtle anomalies; (2) spatial-wise scanning mechanism disrupting the spatial continuity of large-scale anomalies, resulting in incomplete localization. To address these challenges, we propose Wave-MambaAD, a wavelet-driven state space model for unified subtle and large-scale anomaly detection. Firstly, to capture subtle anomalies, we design a high-frequency state space model that employs horizontal, vertical, and diagonal scanning mechanisms for processing directionally aligned high-frequency components, enabling precise anomaly detection through multidimensional feature extraction. Secondly, for comprehensive localization of large-scale anomalies, we propose a low-frequency state space model implementing channel-adaptive dynamic scanning mechanisms to maintain structural coherence in global contexts, which facilitates large-scale anomaly detection via adaptive feature integration. Finally, we develop a dynamic spatial enhancement block to improve anomalous feature representation by enhancing feature diversity through coordinated inter-channel communication and adaptive gating mechanisms. Comprehensive experiments on benchmark anomaly detection datasets show that Wave-MambaAD achieves competitive performance at lower parameters and computational costs.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zhang_Wave-MambaAD_Wavelet-driven_State_Space_Model_for_Multi-class_Unsupervised_Anomaly_Detection_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zhang_Wave-MambaAD_Wavelet-driven_State_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhang_2025_ICCV,
+    author    = {Zhang, Qiao and Shao, Mingwen and Chen, Xinyuan and Lv, Xiang and Xu, Kai},
+    title     = {Wave-MambaAD: Wavelet-driven State Space Model for Multi-class Unsupervised Anomaly Detection},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {20868-20877}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

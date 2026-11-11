@@ -101,3 +101,24 @@ Canonical 4,102 active/five archived remains byte-identical. The remaining
 1,895 pages, retry-deferred failures, independent inventory discrepancies,
 identity/original-date resolution, source scope review and DBLP evidence remain
 open. The prepared Gemma real-page diagnostic is a separate, unexecuted activity.
+
+## Second capped follow-up — 2026-11-11
+
+The next live invocation completed all 500 permitted requests: 497 additional
+responses verified and three additional transport failures deferred. Its original
+invocation summary is retained this time. A zero-request replay using the frozen
+policy file verified **1,303/2,701 pages**, with **1,398 pending** (including six
+retry-deferred failures). No retry deadline was bypassed.
+
+The [second-pass receipt](runs/iccv2025-full-metadata-pass2-20261111.json) binds the
+state/report hashes, complete invocation summary and retry deadlines. Current
+automatic dispositions are 150 include, 51 review and 1,102 exclude; 26
+previously title-excluded records pass the abstract policy. They remain scope
+review leads, not 26 newly accepted papers. The canonical catalog stays unchanged.
+The earlier 806-page figures describe the preceding checkpoint.
+
+A later MASt3R foundation adjudication changed the root policy. The existing ICCV
+epoch retains digest `388dfe1507123d4bfb7e4bfac474e94afa84321eb5067d8a5db8f4622d8b4d0f`;
+resumption must pass its recorded frozen override file explicitly. The final
+zero-request replay proved that frozen policy still matches the epoch. No source
+coverage watermark, corpus import, push or deployment advanced.

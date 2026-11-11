@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference">
+<meta name="citation_author" content="Luo, Jiajun">
+<meta name="citation_author" content="Luo, Lizhuo">
+<meta name="citation_author" content="Xu, Jianru">
+<meta name="citation_author" content="Song, Jiajun">
+<meta name="citation_author" content="Lu, Rongwei">
+<meta name="citation_author" content="Tang, Chen">
+<meta name="citation_author" content="Wang, Zhi">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="15481">
+<meta name="citation_lastpage" content="15490">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Luo_DICE_Staleness-Centric_Optimizations_for_Parallel_Diffusion_MoE_Inference_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Jiajun Luo, Lizhuo Luo, Jianru Xu, Jiajun Song, Rongwei Lu, Chen Tang, Zhi Wang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 15481-15490
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Mixture-of-Experts-based (MoE-based) diffusion models demonstrate remarkable scalability in high-fidelity image generation, yet their reliance on expert parallelism introduces critical communication bottlenecks. State-of-the-art methods alleviate such overhead in parallel diffusion inference through computation-communication overlapping, termed displaced parallelism. However, we identify that these techniques induce severe staleness --- the usage of outdated activations from previous timesteps that significantly degrades quality, especially in expert-parallel scenarios. We tackle this fundamental tension and propose DICE, a staleness-centric optimization framework with a three-fold approach: (1) Interweaved Parallelism introduces staggered pipelines, effectively halving step-level staleness for free; (2) Selective Synchronization operates at layer-level and protects layers vulnerable to staled activations; and (3) Conditional Communication, a token-level, training-free method that dynamically adjusts communication frequency based on token importance. Together, these strategies effectively reduce staleness, achieving 1.26x speedup with minimal quality degradation. Empirical results establish DICE as an effective and scalable solution. Our code is available at https://github.com/Cobalt-27/DICE
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Luo_DICE_Staleness-Centric_Optimizations_for_Parallel_Diffusion_MoE_Inference_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Luo_DICE_Staleness-Centric_Optimizations_ICCV_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Luo_2025_ICCV,
+    author    = {Luo, Jiajun and Luo, Lizhuo and Xu, Jianru and Song, Jiajun and Lu, Rongwei and Tang, Chen and Wang, Zhi},
+    title     = {DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {15481-15490}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

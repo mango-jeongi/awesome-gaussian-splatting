@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Split-and-Combine: Enhancing Style Augmentation for Single Domain Generalization">
+<meta name="citation_author" content="Zhang, Zhen">
+<meta name="citation_author" content="Yang, Shuai">
+<meta name="citation_author" content="Dang, Qianlong">
+<meta name="citation_author" content="Wu, Zhize">
+<meta name="citation_author" content="Gu, Lichuan">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="15616">
+<meta name="citation_lastpage" content="15625">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_Split-and-Combine_Enhancing_Style_Augmentation_for_Single_Domain_Generalization_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Split-and-Combine: Enhancing Style Augmentation for Single Domain Generalization
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Zhen Zhang, Shuai Yang, Qianlong Dang, Zhize Wu, Lichuan Gu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 15616-15625
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Single domain generalization aims to learn a model with good generalization ability from a single source domain. Recent advances in this field have focused on increasing the diversity of the training data through style (e.g., color and texture) augmentation. However, most existing methods apply uniform perturbations to the entire image, failing to simulate complex images with multiple distinct stylistic regions. To address this, we propose a &quot;Split-And-Combine&quot; (SAC) strategy to enhance style diversity. Specifically, SAC first performs patch-aware augmentation, which splits an image into multiple patches and applies style augmentation independently to each patch, enabling distinct color variations across regions. Then, SAC combines these patches to reconstruct a complete image and applies adaptive random convolutions, which utilizes a deformable convolution layer with random and Gaussian filters to enhance texture diversity while preserving object integrity. Notably, SAC leverages entropy as a risk assessment criterion to adaptively determine whether a sample should undergo augmentation within the iterative process of random convolutions, preventing excessive augmentation. Furthermore, SAC introduces an energy-based distribution discrepancy score to quantify out-of-distribution likelihood, systematically expanding the augmented data&#x27;s distribution. SAC can serve as a plug-and-play component to improve the performance of recent methods. Extensive experiments on four datasets demonstrate the effectiveness of SAC.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zhang_Split-and-Combine_Enhancing_Style_Augmentation_for_Single_Domain_Generalization_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zhang_Split-and-Combine_Enhancing_Style_ICCV_2025_supplemental.zip">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhang_2025_ICCV,
+    author    = {Zhang, Zhen and Yang, Shuai and Dang, Qianlong and Wu, Zhize and Gu, Lichuan},
+    title     = {Split-and-Combine: Enhancing Style Augmentation for Single Domain Generalization},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {15616-15625}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

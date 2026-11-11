@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation">
+<meta name="citation_author" content="Bourigault, Emmanuelle">
+<meta name="citation_author" content="Jamaludin, Amir">
+<meta name="citation_author" content="Hamdi, Abdullah">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="21600">
+<meta name="citation_lastpage" content="21611">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Bourigault_UKBOB_One_Billion_MRI_Labeled_Masks_for_Generalizable_3D_Medical_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Emmanuelle Bourigault, Amir Jamaludin, Abdullah Hamdi</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 21600-21611
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    In the medical imaging domain, it is a fundamental challenge to collect large-scale labeled data due to privacy, involved logistics, and the high cost of labeling medical images. In this work, we present the UK Biobank Organs and Bones (UKBOB), the largest labeled dataset of body organs of 51,761 MRI 3D samples (17.9 M 2D images) and a total of more than 1.37 billion 2D segmentation masks of 72 organs based on the UK Biobank MRI dataset. We utilize automatic labeling, filter the labels with organ-specific filters, and manually annotate a subset of 300 MRIs with 11 abdominal classes to validate the quality (UKBOB-manual). This approach allows for scaling up the dataset collection while maintaining confidence in the labels. We further confirm the validity of the labels by the zero-shot generalization of trained models on the filtered UKBOB to other small labeled datasets from a similar domain ( _E.g._ abdominal MRI). To further elevate the effect of the noisy labels, we propose a novel Entropy Test-time Adaptation (ETTA) to refine the segmentation output. We use UKBOB to train a foundation model (_Swin-BOB_) for 3D medical image segmentation based on Swin-UNetr, achieving state-of-the-art results in several benchmarks in 3D medical imaging, including BRATS brain MRI tumour challenge (+0.4% improvement), and BTCV abdominal CT scan benchmark (+1.3% improvement). Pre-trained model and our filtered labels will be made available with the UK Biobank.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Bourigault_UKBOB_One_Billion_MRI_Labeled_Masks_for_Generalizable_3D_Medical_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Bourigault_UKBOB_One_Billion_ICCV_2025_supplemental.zip">supp</a>]
+[<a href="http://arxiv.org/abs/2504.06908">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Bourigault_2025_ICCV,
+    author    = {Bourigault, Emmanuelle and Jamaludin, Amir and Hamdi, Abdullah},
+    title     = {UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {21600-21611}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
