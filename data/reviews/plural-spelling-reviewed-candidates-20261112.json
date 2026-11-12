@@ -1,0 +1,276 @@
+[
+  {
+    "abstract": "How can one efficiently generate high-quality, wide-scope 3D scenes from arbitrary single images? Existing methods suffer several drawbacks, such as requiring multi-view data, time-consuming per-scene optimization, distorted geometry in occluded areas, and low visual quality in backgrounds. Our novel 3D scene reconstruction pipeline overcomes these limitations to tackle the aforesaid challenge. Specifically, we introduce a large-scale reconstruction model that leverages latents from a video diffusion model to predict 3D Gaussian Splattings of scenes in a feed-forward manner. The video diffusion model is designed to create videos precisely following specified camera trajectories, allowing it to generate compressed video latents that encode multi-view information while maintaining 3D consistency. We train the 3D reconstruction model to operate on the video latent space with a progressive learning strategy, enabling the efficient generation of high-quality, wide-scope, and generic 3D scenes. Extensive evaluations across various datasets affirm that our model significantly outperforms existing single-view 3D scene generation methods, especially with out-of-domain images. Thus, we demonstrate for the first time that a 3D reconstruction model can effectively be built upon the latent space of a diffusion model in order to realize efficient 3D scene generation.",
+    "arxiv_doi": "10.48550/arxiv.2412.12091",
+    "arxiv_id": "2412.12091",
+    "authors": [
+      "Hanwen Liang",
+      "Junli Cao",
+      "Vidit Goel",
+      "Guocheng Qian",
+      "Sergei Korolev",
+      "Demetri Terzopoulos",
+      "Konstantinos N. Plataniotis",
+      "Sergey Tulyakov",
+      "Jian Ren"
+    ],
+    "categories": [
+      "Generative Priors & 3D Reconstruction"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": "Project page: https://snap-research.github.io/wonderland/",
+    "date_placement": "observed",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": null,
+    "first_author": "Liang et al.",
+    "id": "2412.12091",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "authors": [
+        {
+          "observed_at": "2026-11-10T18:22:47.561503Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2412.12091",
+          "value": [
+            "Hanwen Liang",
+            "Junli Cao",
+            "Vidit Goel",
+            "Guocheng Qian",
+            "Sergei Korolev",
+            "Demetri Terzopoulos",
+            "Konstantinos N. Plataniotis",
+            "Sergey Tulyakov",
+            "Jian Ren"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-10T18:22:47.561503Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2412.12091",
+          "value": [
+            "Generative Priors & 3D Reconstruction"
+          ]
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-12T17:32:50.243421Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_CVF_exact_arxiv_link_title_ordered_authors",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper.html",
+          "value": "year"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T17:32:50.243421Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_CVF_exact_arxiv_link_title_ordered_authors",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper.html",
+          "value": 2025
+        }
+      ],
+      "published_date": [
+        {
+          "observed_at": null,
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "arxiv",
+          "source_url": "http://arxiv.org/abs/2412.12091v2",
+          "value": "2024-12-16"
+        },
+        {
+          "observed_at": "2026-11-10T18:22:47.561503Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2412.12091",
+          "value": "2024-12-16"
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-10T18:22:47.561503Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2412.12091",
+          "value": [
+            "Diffusion",
+            "Feed-Forward"
+          ]
+        }
+      ],
+      "title": [
+        {
+          "observed_at": "2026-11-10T18:22:47.561503Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2412.12091",
+          "value": "Wonderland: Navigating 3D Scenes from a Single Image"
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T17:32:50.243421Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_CVF_exact_arxiv_link_title_ordered_authors",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 12,
+    "openalex_id": null,
+    "paper_url": "https://arxiv.org/abs/2412.12091",
+    "pdf_url": "https://arxiv.org/pdf/2412.12091.pdf",
+    "primary_arxiv_category": "cs.CV",
+    "primary_category": "Generative Priors & 3D Reconstruction",
+    "project_url": null,
+    "publication_date": null,
+    "publication_date_precision": "year",
+    "publication_year": 2025,
+    "published_date": "2024-12-16",
+    "published_date_precision": "day",
+    "referenced_works": [],
+    "source": "arxiv",
+    "tags": [
+      "Diffusion",
+      "Feed-Forward"
+    ],
+    "title": "Wonderland: Navigating 3D Scenes from a Single Image",
+    "tldr": "Specifically, we introduce a large-scale reconstruction model that leverages latents from a video diffusion model to predict 3D Gaussian Splattings of scenes in a feed-forward manner.",
+    "updated_date": "2025-04-26",
+    "venue": "CVPR 2025",
+    "year": 2024
+  },
+  {
+    "abstract": "Modeling the dynamics of deformable objects is challenging due to their diverse physical properties and the difficulty of estimating states from limited visual information. We address these challenges with a neural dynamics framework that combines object particles and spatial grids in a hybrid representation. Our particle-grid model captures global shape and motion information while predicting dense particle movements, enabling the modeling of objects with varied shapes and materials. Particles represent object shapes, while the spatial grid discretizes the 3D space to ensure spatial continuity and enhance learning efficiency. Coupled with Gaussian Splattings for visual rendering, our framework achieves a fully learning-based digital twin of deformable objects and generates 3D action-conditioned videos. Through experiments, we demonstrate that our model learns the dynamics of diverse objects -- such as ropes, cloths, stuffed animals, and paper bags -- from sparse-view RGB-D recordings of robot-object interactions, while also generalizing at the category level to unseen instances. Our approach outperforms state-of-the-art learning-based and physics-based simulators, particularly in scenarios with limited camera views. Furthermore, we showcase the utility of our learned models in model-based planning, enabling goal-conditioned object manipulation across a range of tasks. The project page is available at https://kywind.github.io/pgnd .",
+    "arxiv_doi": "10.48550/arxiv.2506.15680",
+    "arxiv_id": "2506.15680",
+    "authors": [
+      "Kaifeng Zhang",
+      "Baoyu Li",
+      "Kris Hauser",
+      "Yunzhu Li"
+    ],
+    "categories": [
+      "Dynamic & 4DGS"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": "Project page: https://kywind.github.io/pgnd",
+    "date_placement": "observed",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": null,
+    "first_author": "Zhang et al.",
+    "id": "2506.15680",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "authors": [
+        {
+          "observed_at": "2026-11-10T18:23:41.542653Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2506.15680",
+          "value": [
+            "Kaifeng Zhang",
+            "Baoyu Li",
+            "Kris Hauser",
+            "Yunzhu Li"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-10T18:23:41.542653Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2506.15680",
+          "value": [
+            "Dynamic & 4DGS"
+          ]
+        }
+      ],
+      "published_date": [
+        {
+          "observed_at": null,
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "arxiv",
+          "source_url": "http://arxiv.org/abs/2506.15680v2",
+          "value": "2025-06-18"
+        },
+        {
+          "observed_at": "2026-11-10T18:23:41.542653Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2506.15680",
+          "value": "2025-06-18"
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-10T18:23:41.542653Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2506.15680",
+          "value": [
+            "Physics & Simulation"
+          ]
+        }
+      ],
+      "title": [
+        {
+          "observed_at": "2026-11-10T18:23:41.542653Z",
+          "reviewed_at": "2026-11-12T22:43:44.895088Z",
+          "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+          "source": "reviewed_retained_primary_arxiv_metadata",
+          "source_url": "https://arxiv.org/abs/2506.15680",
+          "value": "Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos"
+        }
+      ]
+    },
+    "month": 6,
+    "openalex_id": null,
+    "paper_url": "https://arxiv.org/abs/2506.15680",
+    "pdf_url": "https://arxiv.org/pdf/2506.15680.pdf",
+    "primary_arxiv_category": "cs.RO",
+    "primary_category": "Dynamic & 4DGS",
+    "project_url": null,
+    "publication_date": null,
+    "publication_date_precision": "unknown",
+    "publication_year": null,
+    "published_date": "2025-06-18",
+    "published_date_precision": "day",
+    "referenced_works": [],
+    "source": "arxiv",
+    "tags": [
+      "Physics & Simulation"
+    ],
+    "title": "Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos",
+    "tldr": "Coupled with Gaussian Splattings for visual rendering, our framework achieves a fully learning-based digital twin of deformable objects and generates 3D action-conditioned videos.",
+    "updated_date": "2025-11-06",
+    "venue": null,
+    "year": 2025
+  }
+]

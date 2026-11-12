@@ -1,0 +1,110 @@
+{
+  "CVF_report": "data/venues/cvpr2025-all-metadata/latest-report.json",
+  "CVF_report_sha256": "b4fd7362a7255e649d9109b544677477068db1138050dc89319d3b23a3258a84",
+  "HTTP_requests": 0,
+  "baseline_git_revision": "3cd434b80ca8e15da113c0e9f073dfcc6bb6064b",
+  "candidates": "data/reviews/plural-spelling-reviewed-candidates-20261112.json",
+  "candidates_sha256": "23279c0d7ed1bcfef0e46f91e080dc699815c474ac95b65b55ff6e6f6032b54c",
+  "canonical_model_sha256": "687543002e3ef589e620c2d54e12d42fdf4be7b99f8400ec54ac2b3e59b84135",
+  "canonical_modified": false,
+  "canonical_raw_sha256": "f9edd177168f189e4580666024437d24ec9fd947dca88f4cb21ed97782361e91",
+  "policy_digest": "ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9",
+  "remaining": "Apply prepared records with compare-and-swap guard; refresh source-bound seed/extraction aggregates and add two queued source tasks; obtain genuine provider observations and rebuild/verify public artifacts. No provider evidence or completed extraction is claimed.",
+  "review_decisions": [
+    {
+      "CVF": {
+        "observed_at": "2026-11-12T17:32:50.243421+00:00",
+        "publication": {
+          "abstract": "This paper addresses a challenging question: how can we efficiently create high-quality, wide-scope 3D scenes from a single arbitrary image?Existing methods face several constraints, such as requiring multi-view data, time-consuming per-scene optimization, low visual quality, and distorted reconstructions for unseen areas. We propose a novel pipeline to overcome these limitations.Specifically, we introduce a large-scale reconstruction model that uses latents from a video diffusion model to predict 3D Gaussian Splatting, even from a single-condition image, in a feed-forward manner. The video diffusion model is designed to precisely follow a specified camera trajectory, allowing it to generate compressed latents that contain multi-view information while maintaining 3D consistency.We further train the 3D reconstruction model to operate on the video latent space with a progressive training strategy, enabling the generation of high-quality, wide-scope, and generic 3D scenes.Extensive evaluations on various datasets show that our model significantly outperforms existing methods for single-view 3D rendering, particularly with out-of-domain images. For the first time, we demonstrate that a 3D reconstruction model can be effectively built upon the latent space of a diffusion model to realize efficient 3D scene generation.",
+          "arxiv_id": "2412.12091",
+          "authors": [
+            "Hanwen Liang",
+            "Junli Cao",
+            "Vidit Goel",
+            "Guocheng Qian",
+            "Sergei Korolev",
+            "Demetri Terzopoulos",
+            "Konstantinos N. Plataniotis",
+            "Sergey Tulyakov",
+            "Jian Ren"
+          ],
+          "doi": null,
+          "match_method": "official_listing_and_citation_metadata",
+          "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper.pdf",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper.html",
+          "status": "official_publication_metadata_verified",
+          "title": "Wonderland: Navigating 3D Scenes from a Single Image",
+          "track": "main",
+          "venue": "CVPR",
+          "venue_year": 2025
+        },
+        "source_file": "data/venues/cvpr2025-all-metadata/responses/a24ac9eee53b88f56baeb8f254752370f0037bf966b5a3f7e5b4d8a684f538f8.html",
+        "source_sha256": "a24ac9eee53b88f56baeb8f254752370f0037bf966b5a3f7e5b4d8a684f538f8"
+      },
+      "canonical_id": "2412.12091",
+      "current_policy_outcome": "include",
+      "original_date": "2024-12-16",
+      "original_date_precision": "day",
+      "original_frozen_disposition": {
+        "canonical_id": null,
+        "operation": "none",
+        "outcome": "review",
+        "reason": "Gaussian functions in the abstract need explicit splatting or curated-foundation evidence",
+        "source_id": "2412.12091"
+      },
+      "primary_arxiv": {
+        "observed_at": "2026-11-10T18:22:47.561503Z",
+        "record_sha256": "6899ca377d697e0520fdd22ef11780917f8073754c446bc62f274adef0520047",
+        "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/91109b12e6d7e906/00000100.644b75b1f7996b835d34edc21c4cbf0e6c0a51450c0e71e9dabdd8e3dfbb39a7.json",
+        "source_sha256": "644b75b1f7996b835d34edc21c4cbf0e6c0a51450c0e71e9dabdd8e3dfbb39a7"
+      },
+      "publication_day_and_DOI_established": false,
+      "publication_precision": "year",
+      "publication_year": 2025,
+      "reason": "Own feed-forward reconstruction model predicts Gaussian scene representations from video-diffusion latents.",
+      "scope_decision": "include",
+      "title": "Wonderland: Navigating 3D Scenes from a Single Image"
+    },
+    {
+      "CVF": null,
+      "canonical_id": "2506.15680",
+      "current_policy_outcome": "include",
+      "original_date": "2025-06-18",
+      "original_date_precision": "day",
+      "original_frozen_disposition": {
+        "canonical_id": null,
+        "operation": "none",
+        "outcome": "exclude",
+        "reason": "No Gaussian splatting or justified foundation evidence in title/abstract",
+        "source_id": "2506.15680"
+      },
+      "primary_arxiv": {
+        "observed_at": "2026-11-10T18:23:41.542653Z",
+        "record_sha256": "a29a9662839304b26606819c1a68f2ba0fd45669a1563421ad3c1d464579bb27",
+        "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/14a676960315e1d0/00000000.4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e.json",
+        "source_sha256": "4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e"
+      },
+      "publication_day_and_DOI_established": false,
+      "publication_precision": "unknown",
+      "publication_year": null,
+      "reason": "Own particle-grid dynamics framework uses Gaussian splatting visual rendering for deformable-object digital twins and action-conditioned videos; not merely a statistical Gaussian model.",
+      "scope_decision": "include",
+      "title": "Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos"
+    }
+  ],
+  "reviewed_at": "2026-11-12T22:43:44.895088+00:00",
+  "reviewed_by": "Codex primary-source direct GS scope review; not independent human validation",
+  "simulation": {
+    "active_after": 4108,
+    "all_4106_existing_records_unchanged": true,
+    "all_prior_alias_targets_and_seven_archives_preserved": true,
+    "insertions": 2,
+    "replay_insertions": 0,
+    "replay_model_bytes_identical": true
+  },
+  "source_aliases_to_add": {
+    "cvf:Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper": "2412.12091"
+  },
+  "source_audit": "data/reviews/frozen-noninclude-candidate-audit-20261112.json",
+  "source_audit_sha256": "3e201fb3958880f9d0cf79e432f5551b92d81040a79584e04ba866724511cf3b"
+}
