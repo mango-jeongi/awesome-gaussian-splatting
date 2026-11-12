@@ -230,6 +230,9 @@ def capture_cvf(
                 "reviewed_title_variant_records": sum(
                     "title_review" in state["captures"][url] for url in verified
                 ),
+                "reviewed_author_variant_records": sum(
+                    "author_review" in state["captures"][url] for url in verified
+                ),
                 "pending_records": len(selected) - len(verified),
                 "failed_records": len(state["failures"]),
                 "invocation_requests": requests,

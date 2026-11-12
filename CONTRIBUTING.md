@@ -476,3 +476,33 @@ the same plan safely handles already-absent candidates. Commit the generated
 artifact deletions together with retained manifests and the receipt. Retention
 cleanup does not activate v2 storage, deploy Pages or change canonical/provider
 records.
+
+### Source-bound CVF metadata corrections
+
+The ordinary listing/page parser requires matching titles, complete ordered
+names, edition/year and exact PDF path. Do not fix malformed source rows by
+relaxing that matcher or editing the frozen listing.
+
+For an inspected title variant, apply a `TitleReview` with:
+
+```sh
+uv run python -m src.venue_reviews --cache <epoch> --review <review.json> --receipt <new-report.json>
+```
+
+For an inspected author spelling/encoding variant, add `--field authors` and
+supply an `AuthorReview` with the complete `listing_authors` and
+`approved_authors` arrays. Both types require source URL, frozen listing and
+retained HTTP-200 body SHA-256, dated reviewer/reason and source evidence.
+Review the actual source and independent evidence before preparing either form.
+
+Application is offline and holds the capture lock. It only replaces the reviewed
+field in the expected in-memory row; raw listing/body bytes and the original
+capture timestamp remain unchanged. All other title/author/year/edition/PDF
+checks still apply. A response failing another check cannot be promoted. Changed
+sources, tampered or combined title/author reviews fail closed. Reapplication of
+an identical review is a no-op; changing an accepted adjudication requires a
+new epoch. Receipts must be outside the source capture and review input.
+
+Capture reports count reviewed title and author variants separately. A verified
+source correction is not a relevance decision, a canonical alias or permission
+to merge publications. It does not bypass retry deadlines by making traffic.
