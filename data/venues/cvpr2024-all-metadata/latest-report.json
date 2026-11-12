@@ -1,10 +1,10 @@
 {
   "corpus_modified": false,
-  "failed_records": 3,
-  "invocation_requests": 0,
+  "failed_records": 1,
+  "invocation_requests": 1,
   "listing_records": 2716,
   "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
-  "pending_records": 3,
+  "pending_records": 1,
   "policy_digest": "2b923581760ff0f808a58128eeb8d805f9e40788b3a1380a512d26ec75016bcf",
   "records": [
     {
@@ -49638,6 +49638,78 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-12T16:22:08.073480+00:00",
+        "original_failure": {
+          "attempted_at": "2026-11-12T07:47:55.343311+00:00",
+          "reason": "metadata_or_response_invalid",
+          "response_http_status": 404,
+          "retry_at": "2026-11-12T08:47:55.343311+00:00"
+        },
+        "sha256": "2f39aa95a8e456371310336efd4aae600cedf16bc8f6edcd36fdd1195000c485",
+        "url_review": {
+          "approved_source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Souek_GenHowTo_Learning_to_Generate_Actions_and_State_Transformations_from_Instructional_CVPR_2024_paper.html",
+          "evidence": [
+            {
+              "observed_at": "2026-11-12T16:22:08.073480Z",
+              "reviewed_at": null,
+              "reviewed_by": null,
+              "source": "retained_official_CVF_alternate_HTTP200_capture",
+              "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Souek_GenHowTo_Learning_to_Generate_Actions_and_State_Transformations_from_Instructional_CVPR_2024_paper.html",
+              "value": {
+                "candidate_packet_file": "data/reviews/cvpr2024-alternate-url-candidates-20261112.json",
+                "candidate_packet_sha256": "a0f65da01ac381aed35bbe45a886d354c00641351fded9ad4b1fb8ac2df3e655",
+                "original_failure_sha256": "99c53b8dfd3125f10c080d60c2c18911aad8d6eb77b40be79d63fdc1c5920611",
+                "source_capture_file": "data/reviews/sources/2f39aa95a8e456371310336efd4aae600cedf16bc8f6edcd36fdd1195000c485.html",
+                "source_capture_sha256": "2f39aa95a8e456371310336efd4aae600cedf16bc8f6edcd36fdd1195000c485"
+              }
+            }
+          ],
+          "listing_authors": [
+            "Tomáš Souček",
+            "Dima Damen",
+            "Michael Wray",
+            "Ivan Laptev",
+            "Josef Sivic"
+          ],
+          "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+          "listing_title": "GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos",
+          "observed_at": "2026-11-12T16:22:08.073480Z",
+          "original_failure_sha256": "99c53b8dfd3125f10c080d60c2c18911aad8d6eb77b40be79d63fdc1c5920611",
+          "reason": "The frozen official listing URL returns 404, while this inspected alternate official URL supplies the same exact normalized title, complete ordered authors, edition/year/track and matching PDF. Only the source URL is adjudicated; no title, author, relevance or canonical identity correction is implied.",
+          "response_bytes": 6116,
+          "response_http_status": 200,
+          "response_sha256": "2f39aa95a8e456371310336efd4aae600cedf16bc8f6edcd36fdd1195000c485",
+          "reviewed_at": "2026-11-12T16:46:20.936804Z",
+          "reviewed_by": "Codex frozen-listing and official-page URL adjudication; not independent human review",
+          "schema_version": "1.0.0",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Soucek_GenHowTo_Learning_to_Generate_Actions_and_State_Transformations_from_Instructional_CVPR_2024_paper.html"
+        }
+      },
+      "metadata_outcome": "exclude",
+      "metadata_reason": "No Gaussian splatting or justified foundation evidence in title/abstract",
+      "publication": {
+        "abstract": "We address the task of generating temporally consistent and physically plausible images of actions and object state transformations. Given an input image and a text prompt describing the targeted transformation our generated images preserve the environment and transform objects in the initial image. Our contributions are threefold. First we leverage a large body of instructional videos and automatically mine a dataset of triplets of consecutive frames corresponding to initial object states actions and resulting object transformations. Second equipped with this data we develop and train a conditioned diffusion model dubbed GenHowTo. Third we evaluate GenHowTo on a variety of objects and actions and show superior performance compared to existing methods. In particular we introduce a quantitative evaluation where GenHowTo achieves 88% and 74% on seen and unseen interaction categories respectively outperforming prior work by a large margin.",
+        "arxiv_id": null,
+        "authors": [
+          "Tomáš Souček",
+          "Dima Damen",
+          "Michael Wray",
+          "Ivan Laptev",
+          "Josef Sivic"
+        ],
+        "doi": null,
+        "match_method": "reviewed_source_url_exact_title_authors_edition_pdf",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Souek_GenHowTo_Learning_to_Generate_Actions_and_State_Transformations_from_Instructional_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Souek_GenHowTo_Learning_to_Generate_Actions_and_State_Transformations_from_Instructional_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "GenHowTo: Learning to Generate Actions and State Transformations from Instructional Videos",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-12T02:23:59.934693+00:00",
         "sha256": "150715cdc7769b9a485a4b1de484597895ca4855f116cf35e375a72447eb047a"
       },
@@ -70114,6 +70186,78 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-12T16:22:09.180042+00:00",
+        "original_failure": {
+          "attempted_at": "2026-11-12T07:48:01.744241+00:00",
+          "reason": "metadata_or_response_invalid",
+          "response_http_status": 404,
+          "retry_at": "2026-11-12T08:48:01.744241+00:00"
+        },
+        "sha256": "844e8e386ad0d65179eef8081d4a70c48777624bf59002ce6753312c4cd3a878",
+        "url_review": {
+          "approved_source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_DePT_Decoupled_Prompt_Tuning_CVPR_2024_paper.html",
+          "evidence": [
+            {
+              "observed_at": "2026-11-12T16:22:09.180042Z",
+              "reviewed_at": null,
+              "reviewed_by": null,
+              "source": "retained_official_CVF_alternate_HTTP200_capture",
+              "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_DePT_Decoupled_Prompt_Tuning_CVPR_2024_paper.html",
+              "value": {
+                "candidate_packet_file": "data/reviews/cvpr2024-alternate-url-candidates-20261112.json",
+                "candidate_packet_sha256": "a0f65da01ac381aed35bbe45a886d354c00641351fded9ad4b1fb8ac2df3e655",
+                "original_failure_sha256": "6fabfae7be03e345310941e230bae16381dc40e3d8294cdd499c276d6b06b2d6",
+                "source_capture_file": "data/reviews/sources/844e8e386ad0d65179eef8081d4a70c48777624bf59002ce6753312c4cd3a878.html",
+                "source_capture_sha256": "844e8e386ad0d65179eef8081d4a70c48777624bf59002ce6753312c4cd3a878"
+              }
+            }
+          ],
+          "listing_authors": [
+            "Ji Zhang",
+            "Shihan Wu",
+            "Lianli Gao",
+            "Heng Tao Shen",
+            "Jingkuan Song"
+          ],
+          "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+          "listing_title": "DePT: Decoupled Prompt Tuning",
+          "observed_at": "2026-11-12T16:22:09.180042Z",
+          "original_failure_sha256": "6fabfae7be03e345310941e230bae16381dc40e3d8294cdd499c276d6b06b2d6",
+          "reason": "The frozen official listing URL returns 404, while this inspected alternate official URL supplies the same exact normalized title, complete ordered authors, edition/year/track and matching PDF. Only the source URL is adjudicated; no title, author, relevance or canonical identity correction is implied.",
+          "response_bytes": 5858,
+          "response_http_status": 200,
+          "response_sha256": "844e8e386ad0d65179eef8081d4a70c48777624bf59002ce6753312c4cd3a878",
+          "reviewed_at": "2026-11-12T16:46:22.963607Z",
+          "reviewed_by": "Codex frozen-listing and official-page URL adjudication; not independent human review",
+          "schema_version": "1.0.0",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_DePT_Decoupled_Prompt_Tuning_CVPR_2024_paperOriginal.html"
+        }
+      },
+      "metadata_outcome": "exclude",
+      "metadata_reason": "No Gaussian splatting or justified foundation evidence in title/abstract",
+      "publication": {
+        "abstract": "This work breaks through the Base-New Tradeoff (BNT) dilemma in prompt tuning i.e. the better the tuned model generalizes to the base (or target) task the worse it generalizes to new tasks and vice versa. Specifically through an in-depth analysis of the learned features of the base and new tasks we observe that the BNT stems from a channel bias issue--the vast majority of feature channels are occupied by base-specific knowledge leading to the collapse of task-shared knowledge important to new tasks. To address this we propose the Decoupled Prompt Tuning (DePT) framework which decouples base-specific knowledge from feature channels into an isolated feature space during prompt tuning so as to maximally preserve task-shared knowledge in the original feature space for achieving better zero-shot generalization on new tasks. Importantly our DePT is orthogonal to existing prompt tuning approaches and can enhance them with negligible additional computational cost. Extensive experiments on several datasets show the flexibility and effectiveness of DePT.",
+        "arxiv_id": "2309.07439",
+        "authors": [
+          "Ji Zhang",
+          "Shihan Wu",
+          "Lianli Gao",
+          "Heng Tao Shen",
+          "Jingkuan Song"
+        ],
+        "doi": null,
+        "match_method": "reviewed_source_url_exact_title_authors_edition_pdf",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_DePT_Decoupled_Prompt_Tuning_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_DePT_Decoupled_Prompt_Tuning_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "DePT: Decoupled Prompt Tuning",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-12T02:35:35.638096+00:00",
         "sha256": "5188dee9fa83a8f41e37422551fb7d572040ddd44339b0bb617622e5ceb85072"
       },
@@ -77976,6 +78120,7 @@
     }
   ],
   "reviewed_author_variant_records": 3,
+  "reviewed_source_url_records": 2,
   "reviewed_title_variant_records": 1,
   "schema_version": 1,
   "selected_metadata_complete": false,
@@ -77989,6 +78134,6 @@
   "track": "main",
   "venue": "CVPR",
   "venue_inventory_reconciled": false,
-  "verified_records": 2713,
+  "verified_records": 2715,
   "year": 2024
 }

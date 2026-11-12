@@ -1,0 +1,11 @@
+# CVPR 2024 source URL corrections — 2026-11-12
+
+Applied two source-bound URL reviews for GenHowTo and DePT. CVPR 2024 now has **2,715/2,716** verified official publication pages; 1 remains pending. [Application and identical replays](runs/cvpr2024-two-url-reviews-20261112.json); [final validation](runs/cvpr2024-url-review-checkpoint-validation-20261112.json).
+
+The frozen GenHowTo URL uses `Soucek_`; its working official page uses `Souek_`. DePT's working official page uses `_paper.html` rather than `_paperOriginal.html`. The retained alternate HTTP-200 responses satisfy the ordinary title, complete ordered authors, year, edition/track and PDF-path checks against the approved URLs. No ordinary matching rule was loosened. The listing bytes remain unchanged, and the capture remains keyed by its original listing URL while the verified publication cites the actual response URL.
+
+Application and identical replay made **zero network requests**. Both original response observation times and complete original 404 failure records, including retry deadlines, remain bound by hashes in the approved captures. All 2,713 previously verified captures remain identical. The subsequent full cache replay preserved state bytes and revalidated all body hashes/parser contracts. The final bounded retry command made 1 request(s); its raw command receipt and remaining source failure are retained separately.
+
+The new contract rejects cross-edition/host URLs, redirects or query/fragment/encoded URL forms, wrong titles/authors/PDFs, tampered source/failure hashes, duplicate publication URLs, oversized bodies and combined reviews. Identical application is a no-op; accepted decision changes require a new epoch. Full validation passed **531 tests with one skip**, plus lint and format checks. The validation receipt binds tested source bytes to code commit `6660296`.
+
+The remaining accepted-table cross-edition title conflict and announcement count gap are unchanged; successful metadata capture does not establish reconciled edition coverage. Canonical data remains 4,103 active papers and six archives, byte-identical. No provider values, public assets or services changed. Nothing was pushed or deployed.
