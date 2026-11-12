@@ -218,3 +218,30 @@ def test_legacy_zero_request_inventory_still_fences_selection_mode(tmp_path):
         (tmp_path / "state.json").unlink()
         with pytest.raises(ValueError, match="selection mode"):
             run(tmp_path, client, max_requests=0, all_metadata=True)
+
+
+@pytest.mark.parametrize("oversized", [False, True])
+def test_invalid_response_diagnostics_are_bounded_and_not_verified(tmp_path, oversized):
+    import hashlib
+
+    raw = b"x" * 2_000_001 if oversized else b"<html>Missing citation metadata</html>"
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, content=raw))
+    ) as client:
+        report = run(tmp_path, client, max_requests=1)
+    assert report["verified_records"] == 0 and report["failed_records"] == 1
+    state = json.loads((tmp_path / "state.json").read_bytes())
+    failure = next(iter(state["failures"].values()))
+    assert failure["response_http_status"] == 200
+    if oversized:
+        assert "response_path" not in failure
+        assert not (tmp_path / "diagnostics").exists()
+    else:
+        assert failure["response_bytes"] == len(raw)
+        assert failure["response_sha256"] == hashlib.sha256(raw).hexdigest()
+        assert (tmp_path / failure["response_path"]).read_bytes() == raw
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda request: pytest.fail("Retry deadline bypassed"))
+    ) as client:
+        replay = run(tmp_path, client, max_requests=1)
+    assert replay["invocation_requests"] == 0 and replay["verified_records"] == 0

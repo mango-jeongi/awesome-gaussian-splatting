@@ -124,7 +124,9 @@ def capture_cvf(
                 stamp = datetime.fromisoformat(capture["observed_at"])
                 if stamp.utcoffset() is None or stamp > datetime.now(UTC):
                     raise ValueError("Invalid CVF capture time")
-                verified[url] = parse_publication(raw.decode("utf-8"), selected[url])
+                from src.venue_reviews import parse_reviewed_capture
+
+                verified[url] = parse_reviewed_capture(raw, selected[url], capture, digest)
             listing_path = root / f"listing.{digest}.html"
             if (
                 listing_path.exists()
@@ -154,8 +156,11 @@ def capture_cvf(
                 now = datetime.now(UTC)
                 retry = 3600
                 stop = False
+                raw = None
+                response_status = None
                 try:
                     with client.stream("GET", url, follow_redirects=False) as response:
+                        response_status = response.status_code
                         if response.status_code != 200:
                             if response.status_code in (429, 503):
                                 retry = max(retry, OpenAlexClient._retry_delay(response, 60))
@@ -179,10 +184,24 @@ def capture_cvf(
                         if isinstance(failure, httpx.HTTPError)
                         else "metadata_or_response_invalid"
                     )
-                    state["failures"][url] = {
+                    failure_record = {
                         "reason": reason,
                         "retry_at": (now + timedelta(seconds=retry)).isoformat(),
+                        "response_http_status": response_status,
+                        "attempted_at": now.isoformat(),
                     }
+                    if raw is not None:
+                        # Preserve complete bounded public responses for diagnosis;
+                        # invalid metadata is never registered as a verified capture.
+                        diagnostic_sha = hashlib.sha256(raw).hexdigest()
+                        diagnostic = f"diagnostics/{diagnostic_sha}.html"
+                        _atomic_write(root / diagnostic, raw)
+                        failure_record.update(
+                            response_sha256=diagnostic_sha,
+                            response_bytes=len(raw),
+                            response_path=diagnostic,
+                        )
+                    state["failures"][url] = failure_record
                 _atomic_write(state_path, _encode(state))
                 next_request = clock() + 1
                 if stop:
@@ -208,6 +227,9 @@ def capture_cvf(
                 },
                 "selected_records": len(selected),
                 "verified_records": len(verified),
+                "reviewed_title_variant_records": sum(
+                    "title_review" in state["captures"][url] for url in verified
+                ),
                 "pending_records": len(selected) - len(verified),
                 "failed_records": len(state["failures"]),
                 "invocation_requests": requests,
