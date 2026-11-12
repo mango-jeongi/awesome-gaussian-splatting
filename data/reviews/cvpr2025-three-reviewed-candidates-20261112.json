@@ -1,0 +1,490 @@
+[
+  {
+    "abstract": "Current 3D Gaussian Splatting methods often overlook structured information, leading to disorganized 3D Gaussians that compromise memory and structure efficiency, particularly in Level-of-Detail (LOD) management. This inefficiency results in excessive memory use, limiting their application in resource-sensitive environments like virtual reality and interactive simulations. To overcome these challenges, we introduce a scalable Gaussian Soup that enables high-performance LOD management with progressively reduced memory usage. Our method utilizes triangle primitives with Gaussian splats embedded and adaptive pruning/growing strategies to ensure high-quality scene rendering with significantly reduced memory demands. By embedding neural Gaussians within the triangle primitives through the triangle-MLP, we achieve further memory savings while maintaining rendering fidelity. Experimental results demonstrate that our approach achieves consistently superior performance than recent leading techniques across various LOD while progressively reducing memory usage.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Jianxiong Shen",
+      "Yue Qian",
+      "Xiaohang Zhan"
+    ],
+    "categories": [
+      "Foundations & Acceleration"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.00071",
+    "first_author": "Shen et al.",
+    "id": "doi:10.1109/cvpr52734.2025.00071",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": "Current 3D Gaussian Splatting methods often overlook structured information, leading to disorganized 3D Gaussians that compromise memory and structure efficiency, particularly in Level-of-Detail (LOD) management. This inefficiency results in excessive memory use, limiting their application in resource-sensitive environments like virtual reality and interactive simulations. To overcome these challenges, we introduce a scalable Gaussian Soup that enables high-performance LOD management with progressively reduced memory usage. Our method utilizes triangle primitives with Gaussian splats embedded and adaptive pruning/growing strategies to ensure high-quality scene rendering with significantly reduced memory demands. By embedding neural Gaussians within the triangle primitives through the triangle-MLP, we achieve further memory savings while maintaining rendering fidelity. Experimental results demonstrate that our approach achieves consistently superior performance than recent leading techniques across various LOD while progressively reducing memory usage."
+        }
+      ],
+      "authors": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_CVF_and_registry_complete_ordered_author_agreement",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": [
+            "Jianxiong Shen",
+            "Yue Qian",
+            "Xiaohang Zhan"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": [
+            "Foundations & Acceleration"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-12T21:40:38.557901Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=LOD-GS%3A+Achieving+Levels+of+Detail+using+Scalable+Gaussian+Soup&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "10.1109/cvpr52734.2025.00071"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-12T21:40:38.557901Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=LOD-GS%3A+Achieving+Levels+of+Detail+using+Scalable+Gaussian+Soup&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-12T21:40:38.557901Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=LOD-GS%3A+Achieving+Levels+of+Detail+using+Scalable+Gaussian+Soup&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-12T21:40:38.557901Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=LOD-GS%3A+Achieving+Levels+of+Detail+using+Scalable+Gaussian+Soup&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": [
+            "Compression",
+            "Densification & Pruning"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T18:59:14.080151Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Foundations & Acceleration",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "Compression",
+      "Densification & Pruning"
+    ],
+    "title": "LOD-GS: Achieving Levels of Detail using Scalable Gaussian Soup",
+    "tldr": "To overcome these challenges, we introduce a scalable Gaussian Soup that enables high-performance LOD management with progressively reduced memory usage.",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  },
+  {
+    "abstract": "Multi-person avatar reconstruction from sparse multi-view videos is challenging. The independent avatar reconstruction of each person often fails to reconstruct the geometric relationship among multiple instances, resulting in inter-penetrations among avatars. Some researchers resolve this issue via neural volumetric rendering techniques but they suffer from huge computational costs for rendering and training. In this paper, we propose a multi-person avatar reconstruction method that reconstructs a 3D avatar of each person while keeping the geometric relations among people. Our 2D Gaussian Splatting (2DGS)-based avatar representation allows us to represent geometrically-accurate surfaces of multiple instances that support sharp inside-outside tests. We utilize the monocular prior to alleviate the inter-penetration via surface ordering and to enhance the geometry in less-observed and textureless surfaces. We demonstrate the efficiency and performance of our method quantitatively and qualitatively on a multi-person dataset containing close interactions.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Soohyun Lee",
+      "Seoyeon Kim",
+      "HeeKyung Lee",
+      "Won-Sik Jeong",
+      "Joo Ho Lee"
+    ],
+    "categories": [
+      "Human Avatars & VR"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.01969",
+    "first_author": "Lee et al.",
+    "id": "doi:10.1109/cvpr52734.2025.01969",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": "Multi-person avatar reconstruction from sparse multi-view videos is challenging. The independent avatar reconstruction of each person often fails to reconstruct the geometric relationship among multiple instances, resulting in inter-penetrations among avatars. Some researchers resolve this issue via neural volumetric rendering techniques but they suffer from huge computational costs for rendering and training. In this paper, we propose a multi-person avatar reconstruction method that reconstructs a 3D avatar of each person while keeping the geometric relations among people. Our 2D Gaussian Splatting (2DGS)-based avatar representation allows us to represent geometrically-accurate surfaces of multiple instances that support sharp inside-outside tests. We utilize the monocular prior to alleviate the inter-penetration via surface ordering and to enhance the geometry in less-observed and textureless surfaces. We demonstrate the efficiency and performance of our method quantitatively and qualitatively on a multi-person dataset containing close interactions."
+        }
+      ],
+      "authors": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_CVF_and_registry_complete_ordered_author_agreement",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": [
+            "Soohyun Lee",
+            "Seoyeon Kim",
+            "HeeKyung Lee",
+            "Won-Sik Jeong",
+            "Joo Ho Lee"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": [
+            "Human Avatars & VR"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-12T21:40:36.735358Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GeoAvatar%3A+Geometrically-Consistent+Multi-Person+Avatar+Reconstruction+from+Sparse+Multi-View+Videos&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "10.1109/cvpr52734.2025.01969"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-12T21:40:36.735358Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GeoAvatar%3A+Geometrically-Consistent+Multi-Person+Avatar+Reconstruction+from+Sparse+Multi-View+Videos&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-12T21:40:36.735358Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GeoAvatar%3A+Geometrically-Consistent+Multi-Person+Avatar+Reconstruction+from+Sparse+Multi-View+Videos&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-12T21:40:36.735358Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GeoAvatar%3A+Geometrically-Consistent+Multi-Person+Avatar+Reconstruction+from+Sparse+Multi-View+Videos&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": [
+            "2DGS",
+            "Avatars",
+            "Sparse-View"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T17:39:49.076045Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Human Avatars & VR",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "2DGS",
+      "Avatars",
+      "Sparse-View"
+    ],
+    "title": "GeoAvatar: Geometrically-Consistent Multi-Person Avatar Reconstruction from Sparse Multi-View Videos",
+    "tldr": "Proposes a multi-person avatar reconstruction method that reconstructs a 3D avatar of each person while keeping the geometric relations among people.",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  },
+  {
+    "abstract": "We present an efficient approach for generalizable clothed human digitalization, termed GBC-Splat. Unlike previous methods that necessitate per-subject optimizations or discount watertight geometry, the proposed method is dedicated to reconstructing complete human shapes and Gaussian Splatting via sparse view RGB inputs in a feed-forward manner. We first extract a fine-grained mesh using a combination of implicit occupancy field regression and explicit disparity estimation between views. Gaussian primitives anchored on the mesh allow 6-DoF photorealistic view synthesis. The reconstructed high-quality geometry allows us to easily anchor Gaussian primitives to mesh surface according to surface normal and texture, which allows 6-DoF photorealistic novel view synthesis. In addition, we introduce a simple yet effective algorithm to subdivide Gaussian primitives in high-frequency areas to further enhance the visual quality. Without the assistance of human parametric models, our method can tackle loose garments, such as dresses and costumes. Our method outperforms state-of-the-art methods in terms of novel view synthesis while keeping high efficiency, enabling the potential of deployment in real-time applications.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Hanzhang Tu",
+      "Zhanfeng Liao",
+      "Boyao Zhou",
+      "Shunyuan Zheng",
+      "Xilong Zhou",
+      "Liuxin Zhang",
+      "QianYing Wang",
+      "Yebin Liu"
+    ],
+    "categories": [
+      "Human Avatars & VR"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.02456",
+    "first_author": "Tu et al.",
+    "id": "doi:10.1109/cvpr52734.2025.02456",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": "We present an efficient approach for generalizable clothed human digitalization, termed GBC-Splat. Unlike previous methods that necessitate per-subject optimizations or discount watertight geometry, the proposed method is dedicated to reconstructing complete human shapes and Gaussian Splatting via sparse view RGB inputs in a feed-forward manner. We first extract a fine-grained mesh using a combination of implicit occupancy field regression and explicit disparity estimation between views. Gaussian primitives anchored on the mesh allow 6-DoF photorealistic view synthesis. The reconstructed high-quality geometry allows us to easily anchor Gaussian primitives to mesh surface according to surface normal and texture, which allows 6-DoF photorealistic novel view synthesis. In addition, we introduce a simple yet effective algorithm to subdivide Gaussian primitives in high-frequency areas to further enhance the visual quality. Without the assistance of human parametric models, our method can tackle loose garments, such as dresses and costumes. Our method outperforms state-of-the-art methods in terms of novel view synthesis while keeping high efficiency, enabling the potential of deployment in real-time applications."
+        }
+      ],
+      "authors": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_CVF_and_registry_complete_ordered_author_agreement",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": [
+            "Hanzhang Tu",
+            "Zhanfeng Liao",
+            "Boyao Zhou",
+            "Shunyuan Zheng",
+            "Xilong Zhou",
+            "Liuxin Zhang",
+            "QianYing Wang",
+            "Yebin Liu"
+          ]
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": [
+            "Human Avatars & VR"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-12T21:40:39.937027Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GBC-Splat%3A+Generalizable+Gaussian-Based+Clothed+Human+Digitalization+under+Sparse+RGB+Cameras&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "10.1109/cvpr52734.2025.02456"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-12T21:40:39.937027Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GBC-Splat%3A+Generalizable+Gaussian-Based+Clothed+Human+Digitalization+under+Sparse+RGB+Cameras&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-12T21:40:39.937027Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GBC-Splat%3A+Generalizable+Gaussian-Based+Clothed+Human+Digitalization+under+Sparse+RGB+Cameras&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-12T21:40:39.937027Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "primary_crossref_exact_title_ordered_authors_and_venue_review",
+          "source_url": "https://api.crossref.org/works?query.title=GBC-Splat%3A+Generalizable+Gaussian-Based+Clothed+Human+Digitalization+under+Sparse+RGB+Cameras&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": "2026-11-12T21:48:19.638734Z",
+          "reviewed_by": "Codex primary-source proceedings/identity adjudication; not independent human review",
+          "source": "reviewed_primary_method_taxonomy",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": [
+            "Avatars",
+            "Feed-Forward",
+            "Mesh & Surface",
+            "Sparse-View"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T17:37:09.963343Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Human Avatars & VR",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "Avatars",
+      "Feed-Forward",
+      "Mesh & Surface",
+      "Sparse-View"
+    ],
+    "title": "GBC-Splat: Generalizable Gaussian-Based Clothed Human Digitalization under Sparse RGB Cameras",
+    "tldr": "Presents an efficient approach for generalizable clothed human digitalization, termed GBC-Splat.",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  }
+]

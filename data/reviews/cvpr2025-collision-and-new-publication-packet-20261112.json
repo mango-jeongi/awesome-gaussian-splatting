@@ -1,0 +1,404 @@
+{
+  "canonical_modified": false,
+  "canonical_source_model_sha256": "1d579479e4c4244c32ae9a77d755b8299d84ef7f928d5ce178a977c988f723e5",
+  "freetimegs_primary_metadata": {
+    "authors": [
+      "Yifan Wang",
+      "Peishan Yang",
+      "Zhen Xu",
+      "Jiaming Sun",
+      "Zhanhua Zhang",
+      "Yong Chen",
+      "Hujun Bao",
+      "Sida Peng",
+      "Xiaowei Zhou"
+    ],
+    "original_date": "2025-06-05",
+    "source": {
+      "arxiv_record": {
+        "abstract": "This paper addresses the challenge of reconstructing dynamic 3D scenes with complex motions. Some recent works define 3D Gaussian primitives in the canonical space and use deformation fields to map canonical primitives to observation spaces, achieving real-time dynamic view synthesis. However, these methods often struggle to handle scenes with complex motions due to the difficulty of optimizing deformation fields. To overcome this problem, we propose FreeTimeGS, a novel 4D representation that allows Gaussian primitives to appear at arbitrary time and locations. In contrast to canonical Gaussian primitives, our representation possesses the strong flexibility, thus improving the ability to model dynamic 3D scenes. In addition, we endow each Gaussian primitive with an motion function, allowing it to move to neighboring regions over time, which reduces the temporal redundancy. Experiments results on several datasets show that the rendering quality of our method outperforms recent methods by a large margin. Project page: https://zju3dv.github.io/freetimegs/ .",
+        "arxiv_doi": "10.48550/arxiv.2506.05348",
+        "arxiv_id": "2506.05348",
+        "authors": [
+          "Yifan Wang",
+          "Peishan Yang",
+          "Zhen Xu",
+          "Jiaming Sun",
+          "Zhanhua Zhang",
+          "Yong Chen",
+          "Hujun Bao",
+          "Sida Peng",
+          "Xiaowei Zhou"
+        ],
+        "categories": [
+          "Foundations & Acceleration"
+        ],
+        "citation_count": 0,
+        "code_url": null,
+        "comment": "CVPR 2025; Project page: https://zju3dv.github.io/freetimegs/",
+        "date_placement": "observed",
+        "db_citation_count": 0,
+        "db_citations": [],
+        "db_references": [],
+        "doi": null,
+        "first_author": "Wang et al.",
+        "id": "2506.05348",
+        "influential_citation_count": 0,
+        "metadata_evidence": {
+          "published_date": [
+            {
+              "observed_at": null,
+              "reviewed_at": null,
+              "reviewed_by": null,
+              "source": "arxiv",
+              "source_url": "http://arxiv.org/abs/2506.05348v2",
+              "value": "2025-06-05"
+            }
+          ]
+        },
+        "month": 6,
+        "openalex_id": null,
+        "paper_url": "https://arxiv.org/abs/2506.05348",
+        "pdf_url": "https://arxiv.org/pdf/2506.05348.pdf",
+        "primary_arxiv_category": "cs.CV",
+        "primary_category": "Foundations & Acceleration",
+        "project_url": null,
+        "publication_date": null,
+        "publication_date_precision": "unknown",
+        "publication_year": null,
+        "published_date": "2025-06-05",
+        "published_date_precision": "day",
+        "referenced_works": [],
+        "source": "arxiv",
+        "tags": [
+          "Foundations"
+        ],
+        "title": "FreeTimeGS: Free Gaussian Primitives at Anytime and Anywhere for Dynamic Scene Reconstruction",
+        "tldr": "Proposes FreeTimeGS, a novel 4D representation that allows Gaussian primitives to appear at arbitrary time and locations.",
+        "updated_date": "2025-06-06",
+        "venue": null,
+        "year": 2025
+      },
+      "failure_observed_at": "2026-11-12T21:39:56.754531+00:00",
+      "live_request_attempted": true,
+      "live_request_failure": "ConnectTimeout",
+      "new_primary_response_fabricated": false,
+      "observed_at": "2026-11-10T18:23:41.542653Z",
+      "record_sha256": "58566fcb792ba33ab1d35290149c27520a9218fb0be2a0f9c4dcef2b37eff7a9",
+      "sha256": "4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e",
+      "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/14a676960315e1d0/00000000.4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e.json",
+      "source_kind": "retained_exact_id_arxiv_api_record",
+      "url": "https://arxiv.org/abs/2506.05348"
+    },
+    "title": "FreeTimeGS: Free Gaussian Primitives at Anytime and Anywhere for Dynamic Scene Reconstruction"
+  },
+  "limitations": "Unapplied packet. Same-acronym papers remain distinct; no global assertion of arXiv absence or precise original/proceedings day for unlinked publications.",
+  "selected": [
+    {
+      "author_discrepancy_review": "Published CVF and primary registry agree on every ordered author. Preserve the accepted-table Cheong spelling as source discrepancy; do not create a Cheong/Jeong person alias.",
+      "independent_accepted_file": "data/venues/cvpr2025-main/accepted.e74d37f9f26dba88099eced2cd6969cdb301ef64577826039469d1983e50b6da.html",
+      "independent_accepted_row": {
+        "authors": [
+          "Soohyun Lee",
+          "SeoYeon Kim",
+          "HeeKyung Lee",
+          "Won-Sik Cheong",
+          "Joo Ho Lee"
+        ],
+        "title": "GeoAvatar: Geometrically-Consistent Multi-Person Avatar Reconstruction from Sparse Multi-View Videos"
+      },
+      "publication": {
+        "abstract": "Multi-person avatar reconstruction from sparse multi-view videos is challenging. The independent avatar reconstruction of each person often fails to reconstruct the geometric relationship among multiple instances, resulting in inter-penetrations among avatars. Some researchers resolve this issue via neural volumetric rendering techniques but they suffer from huge computational costs for rendering and training. In this paper, we propose a multi-person avatar reconstruction method that reconstructs a 3D avatar of each person while keeping the geometric relations among people. Our 2D Gaussian Splatting (2DGS)-based avatar representation allows us to represent geometrically-accurate surfaces of multiple instances that support sharp inside-outside tests. We utilize the monocular prior to alleviate the inter-penetration via surface ordering and to enhance the geometry in less-observed and textureless surfaces. We demonstrate the efficiency and performance of our method quantitatively and qualitatively on a multi-person dataset containing close interactions.",
+        "arxiv_id": null,
+        "authors": [
+          "Soohyun Lee",
+          "Seoyeon Kim",
+          "HeeKyung Lee",
+          "Won-Sik Jeong",
+          "Joo Ho Lee"
+        ],
+        "canonical_id": null,
+        "canonical_title": null,
+        "canonical_venue": null,
+        "current_policy_outcome": "include",
+        "current_policy_reason": "Gaussian splatting abstract with representation/application context",
+        "doi": null,
+        "frozen_capture_outcome": "include",
+        "identity_conflict": null,
+        "identity_status": "unmatched",
+        "independent_author_differences": [
+          {
+            "accepted": "Won-Sik Cheong",
+            "published": "Won-Sik Jeong"
+          }
+        ],
+        "independent_author_sequence_exact": false,
+        "normalized_title_exact": null,
+        "ordered_authors_exact": null,
+        "publication_metadata_differs": null,
+        "source_capture_file": "data/venues/cvpr2025-all-metadata/responses/98b7420bab1bc9ff0966f0d9bb92348fc1d033dfc35f5b5c60fb040c65682c75.html",
+        "source_capture_sha256": "98b7420bab1bc9ff0966f0d9bb92348fc1d033dfc35f5b5c60fb040c65682c75",
+        "source_observed_at": "2026-11-12T17:39:49.076045+00:00",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_GeoAvatar_Geometrically-Consistent_Multi-Person_Avatar_Reconstruction_from_Sparse_Multi-View_Videos_CVPR_2025_paper.html",
+        "title": "GeoAvatar: Geometrically-Consistent Multi-Person Avatar Reconstruction from Sparse Multi-View Videos"
+      },
+      "registry": {
+        "DOI": "10.1109/cvpr52734.2025.01969",
+        "authors": [
+          "Soohyun Lee",
+          "Seoyeon Kim",
+          "HeeKyung Lee",
+          "Won-Sik Jeong",
+          "Joo Ho Lee"
+        ],
+        "capture": {
+          "bytes": 16471,
+          "http_status": 200,
+          "observed_at": "2026-11-12T21:40:36.735358+00:00",
+          "query_title": "GeoAvatar: Geometrically-Consistent Multi-Person Avatar Reconstruction from Sparse Multi-View Videos",
+          "sha256": "d404d04597867bc3e7679d8eb81157e6db9622cee87b2acc959e7da6826257e4",
+          "source_file": "data/reviews/sources/d404d04597867bc3e7679d8eb81157e6db9622cee87b2acc959e7da6826257e4.json",
+          "url": "https://api.crossref.org/works?query.title=GeoAvatar%3A+Geometrically-Consistent+Multi-Person+Avatar+Reconstruction+from+Sparse+Multi-View+Videos&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article"
+        },
+        "container_title": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "published_date_parts": [
+          2025,
+          6,
+          10
+        ],
+        "record_sha256": "5682be5efaa8eab9299888dce407461d433d63b216e5f46f3ffacf6c6426abb5",
+        "title": "GeoAvatar: Geometrically-Consistent Multi-Person Avatar Reconstruction from Sparse Multi-View Videos"
+      },
+      "review_action": "review_new_source_publication",
+      "same_acronym_distinct_paper": {
+        "authors": [
+          "SeungJun Moon",
+          "Hah Min Lew",
+          "Seungeun Lee",
+          "Ji-Su Kang",
+          "Gyeong-Moon Park"
+        ],
+        "full_author_name_intersection": [],
+        "id": "2507.18155",
+        "title": "GeoAvatar: Adaptive Geometrical Gaussian Splatting for 3D Head Avatar"
+      }
+    },
+    {
+      "author_discrepancy_review": "Accepted table, published CVF and primary registry agree on every ordered author after typography normalization.",
+      "independent_accepted_file": "data/venues/cvpr2025-main/accepted.e74d37f9f26dba88099eced2cd6969cdb301ef64577826039469d1983e50b6da.html",
+      "independent_accepted_row": {
+        "authors": [
+          "Jianxiong Shen",
+          "Yue Qian",
+          "Xiaohang Zhan"
+        ],
+        "title": "LOD-GS: Achieving Levels of Detail using Scalable Gaussian Soup"
+      },
+      "publication": {
+        "abstract": "Current 3D Gaussian Splatting methods often overlook structured information, leading to disorganized 3D Gaussians that compromise memory and structure efficiency, particularly in Level-of-Detail (LOD) management. This inefficiency results in excessive memory use, limiting their application in resource-sensitive environments like virtual reality and interactive simulations. To overcome these challenges, we introduce a scalable Gaussian Soup that enables high-performance LOD management with progressively reduced memory usage. Our method utilizes triangle primitives with Gaussian splats embedded and adaptive pruning/growing strategies to ensure high-quality scene rendering with significantly reduced memory demands. By embedding neural Gaussians within the triangle primitives through the triangle-MLP, we achieve further memory savings while maintaining rendering fidelity. Experimental results demonstrate that our approach achieves consistently superior performance than recent leading techniques across various LOD while progressively reducing memory usage.",
+        "arxiv_id": null,
+        "authors": [
+          "Jianxiong Shen",
+          "Yue Qian",
+          "Xiaohang Zhan"
+        ],
+        "canonical_id": null,
+        "canonical_title": null,
+        "canonical_venue": null,
+        "current_policy_outcome": "include",
+        "current_policy_reason": "Gaussian splatting abstract with representation/application context",
+        "doi": null,
+        "frozen_capture_outcome": "include",
+        "identity_conflict": null,
+        "identity_status": "unmatched",
+        "independent_author_differences": [],
+        "independent_author_sequence_exact": true,
+        "normalized_title_exact": null,
+        "ordered_authors_exact": null,
+        "publication_metadata_differs": null,
+        "source_capture_file": "data/venues/cvpr2025-all-metadata/responses/9d266790d0d7b5e7ebcb3125ae83f55e0555b68a61c6cb8a7c9bdbe6d5177551.html",
+        "source_capture_sha256": "9d266790d0d7b5e7ebcb3125ae83f55e0555b68a61c6cb8a7c9bdbe6d5177551",
+        "source_observed_at": "2026-11-12T18:59:14.080151+00:00",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper.html",
+        "title": "LOD-GS: Achieving Levels of Detail using Scalable Gaussian Soup"
+      },
+      "registry": {
+        "DOI": "10.1109/cvpr52734.2025.00071",
+        "authors": [
+          "Jianxiong Shen",
+          "Yue Qian",
+          "Xiaohang Zhan"
+        ],
+        "capture": {
+          "bytes": 11952,
+          "http_status": 200,
+          "observed_at": "2026-11-12T21:40:38.557901+00:00",
+          "query_title": "LOD-GS: Achieving Levels of Detail using Scalable Gaussian Soup",
+          "sha256": "7466b29996de68ec457a1788af374ca5d1f25401a7493ee21d3eac7807b91e2a",
+          "source_file": "data/reviews/sources/7466b29996de68ec457a1788af374ca5d1f25401a7493ee21d3eac7807b91e2a.json",
+          "url": "https://api.crossref.org/works?query.title=LOD-GS%3A+Achieving+Levels+of+Detail+using+Scalable+Gaussian+Soup&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article"
+        },
+        "container_title": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "published_date_parts": [
+          2025,
+          6,
+          10
+        ],
+        "record_sha256": "7c25f4b26a241650377ec54be3848116cd6f97a4ec5e992d2e9b07159be89b14",
+        "title": "LOD-GS: Achieving Levels of Detail using Scalable Gaussian Soup"
+      },
+      "review_action": "review_new_source_publication",
+      "same_acronym_distinct_paper": {
+        "authors": [
+          "Zhenya Yang",
+          "Bingchen Gong",
+          "Kai Chen"
+        ],
+        "full_author_name_intersection": [],
+        "id": "2507.00554",
+        "title": "LOD-GS: Level-of-Detail-Sensitive 3D Gaussian Splatting for Detail Conserved Anti-Aliasing"
+      }
+    },
+    {
+      "author_discrepancy_review": "Accepted table, published CVF and primary registry agree on every ordered author after typography normalization.",
+      "independent_accepted_file": "data/venues/cvpr2025-main/accepted.e74d37f9f26dba88099eced2cd6969cdb301ef64577826039469d1983e50b6da.html",
+      "independent_accepted_row": {
+        "authors": [
+          "Hanzhang Tu",
+          "Zhanfeng Liao",
+          "Boyao Zhou",
+          "Shunyuan Zheng",
+          "Xilong Zhou",
+          "Liuxin ZHANG",
+          "QianYing Wang",
+          "Yebin Liu"
+        ],
+        "title": "GBC-Splat: Generalizable Gaussian-Based Clothed Human Digitalization under Sparse RGB Cameras"
+      },
+      "publication": {
+        "abstract": "We present an efficient approach for generalizable clothed human digitalization, termed GBC-Splat. Unlike previous methods that necessitate per-subject optimizations or discount watertight geometry, the proposed method is dedicated to reconstructing complete human shapes and Gaussian Splatting via sparse view RGB inputs in a feed-forward manner. We first extract a fine-grained mesh using a combination of implicit occupancy field regression and explicit disparity estimation between views. Gaussian primitives anchored on the mesh allow 6-DoF photorealistic view synthesis. The reconstructed high-quality geometry allows us to easily anchor Gaussian primitives to mesh surface according to surface normal and texture, which allows 6-DoF photorealistic novel view synthesis. In addition, we introduce a simple yet effective algorithm to subdivide Gaussian primitives in high-frequency areas to further enhance the visual quality. Without the assistance of human parametric models, our method can tackle loose garments, such as dresses and costumes. Our method outperforms state-of-the-art methods in terms of novel view synthesis while keeping high efficiency, enabling the potential of deployment in real-time applications.",
+        "arxiv_id": null,
+        "authors": [
+          "Hanzhang Tu",
+          "Zhanfeng Liao",
+          "Boyao Zhou",
+          "Shunyuan Zheng",
+          "Xilong Zhou",
+          "Liuxin Zhang",
+          "QianYing Wang",
+          "Yebin Liu"
+        ],
+        "canonical_id": null,
+        "canonical_title": null,
+        "canonical_venue": null,
+        "current_policy_outcome": "include",
+        "current_policy_reason": "Gaussian splatting abstract with representation/application context",
+        "doi": null,
+        "frozen_capture_outcome": "include",
+        "identity_conflict": null,
+        "identity_status": "unmatched",
+        "independent_author_differences": [],
+        "independent_author_sequence_exact": true,
+        "normalized_title_exact": null,
+        "ordered_authors_exact": null,
+        "publication_metadata_differs": null,
+        "source_capture_file": "data/venues/cvpr2025-all-metadata/responses/68048bec2d4ffd46a710a3a54c260737ba3eba51949a0cac21964cdd41e65c64.html",
+        "source_capture_sha256": "68048bec2d4ffd46a710a3a54c260737ba3eba51949a0cac21964cdd41e65c64",
+        "source_observed_at": "2026-11-12T17:37:09.963343+00:00",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tu_GBC-Splat_Generalizable_Gaussian-Based_Clothed_Human_Digitalization_under_Sparse_RGB_Cameras_CVPR_2025_paper.html",
+        "title": "GBC-Splat: Generalizable Gaussian-Based Clothed Human Digitalization under Sparse RGB Cameras"
+      },
+      "registry": {
+        "DOI": "10.1109/cvpr52734.2025.02456",
+        "authors": [
+          "Hanzhang Tu",
+          "Zhanfeng Liao",
+          "Boyao Zhou",
+          "Shunyuan Zheng",
+          "Xilong Zhou",
+          "Liuxin Zhang",
+          "QianYing Wang",
+          "Yebin Liu"
+        ],
+        "capture": {
+          "bytes": 13375,
+          "http_status": 200,
+          "observed_at": "2026-11-12T21:40:39.937027+00:00",
+          "query_title": "GBC-Splat: Generalizable Gaussian-Based Clothed Human Digitalization under Sparse RGB Cameras",
+          "sha256": "24a3d76959b4e5479a5a17ac15fc4a58241272c315c50b6f09e83794cd123805",
+          "source_file": "data/reviews/sources/24a3d76959b4e5479a5a17ac15fc4a58241272c315c50b6f09e83794cd123805.json",
+          "url": "https://api.crossref.org/works?query.title=GBC-Splat%3A+Generalizable+Gaussian-Based+Clothed+Human+Digitalization+under+Sparse+RGB+Cameras&rows=3&filter=from-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31%2Ctype%3Aproceedings-article"
+        },
+        "container_title": "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+        "published_date_parts": [
+          2025,
+          6,
+          10
+        ],
+        "record_sha256": "d7e3ea11bab531443f87fca30f23a983b844fe808a03ac55fe9eb9113c8823b6",
+        "title": "GBC-Splat: Generalizable Gaussian-Based Clothed Human Digitalization under Sparse RGB Cameras"
+      },
+      "review_action": "review_new_source_publication",
+      "same_acronym_distinct_paper": null
+    },
+    {
+      "author_discrepancy_review": "Published CVF and retained primary arXiv API record agree on all nine ordered authors. Preserve accepted-table chen yong spelling as source discrepancy; no global author-order heuristic or person alias is introduced.",
+      "independent_accepted_file": "data/venues/cvpr2025-main/accepted.e74d37f9f26dba88099eced2cd6969cdb301ef64577826039469d1983e50b6da.html",
+      "independent_accepted_row": {
+        "authors": [
+          "Yifan Wang",
+          "Peishan Yang",
+          "Zhen Xu",
+          "Jiaming Sun",
+          "Zhanhua Zhang",
+          "chen yong",
+          "Hujun Bao",
+          "Sida Peng",
+          "Xiaowei Zhou"
+        ],
+        "title": "FreeTimeGS: Free Gaussian Primitives at Anytime Anywhere for Dynamic Scene Reconstruction"
+      },
+      "publication": {
+        "abstract": "This paper addresses the challenge of reconstructing dynamic 3D scenes with complex motions. Some recent works define 3D Gaussian primitives in the canonical space and use deformation fields to map canonical primitives to observation spaces, achieving real-time dynamic view synthesis. However, these methods often struggle to handle scenes with complex motions due to the difficulty of optimizing deformation fields. To overcome this problem, we propose FreeTimeGS, a novel 4D representation that allows Gaussian primitives to appear at arbitrary time and locations. In contrast to canonical Gaussian primitives, our representation possesses the strong flexibility, thus improving the ability to model dynamic 3D scenes. In addition, we endow each Gaussian primitive with an motion function, allowing it to move to neighboring regions over time, which reduces the temporal redundancy. Experiments results on several datasets show that the rendering quality of our method outperforms recent methods by a large margin. The code will be released for reproducibility.",
+        "arxiv_id": null,
+        "authors": [
+          "Yifan Wang",
+          "Peishan Yang",
+          "Zhen Xu",
+          "Jiaming Sun",
+          "Zhanhua Zhang",
+          "Yong Chen",
+          "Hujun Bao",
+          "Sida Peng",
+          "Xiaowei Zhou"
+        ],
+        "canonical_id": null,
+        "canonical_title": null,
+        "canonical_venue": null,
+        "current_policy_outcome": "include",
+        "current_policy_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+        "doi": null,
+        "frozen_capture_outcome": "include",
+        "identity_conflict": null,
+        "identity_status": "unmatched",
+        "independent_author_differences": [
+          {
+            "accepted": "chen yong",
+            "published": "Yong Chen"
+          }
+        ],
+        "independent_author_sequence_exact": false,
+        "normalized_title_exact": null,
+        "ordered_authors_exact": null,
+        "publication_metadata_differs": null,
+        "source_capture_file": "data/venues/cvpr2025-all-metadata/responses/a145f57a77db374982b860239f3298e3c98a7bb60cf4fec478e248d4226b8769.html",
+        "source_capture_sha256": "a145f57a77db374982b860239f3298e3c98a7bb60cf4fec478e248d4226b8769",
+        "source_observed_at": "2026-11-12T21:14:02.689276+00:00",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_FreeTimeGS_Free_Gaussian_Primitives_at_Anytime_Anywhere_for_Dynamic_Scene_CVPR_2025_paper.html",
+        "title": "FreeTimeGS: Free Gaussian Primitives at Anytime Anywhere for Dynamic Scene Reconstruction"
+      },
+      "review_action": "review_title_variant_existing_id",
+      "same_acronym_distinct_paper": null
+    }
+  ]
+}
