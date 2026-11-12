@@ -125,3 +125,14 @@ This produced no valid extraction result or accepted/published measurement; the
 four-cell positive subset is unscored for this invalid generation. See the
 [actual evidence and limitations](gemma-radsplat-real-page-20261111.md). The
 existing reviewed ledger and canonical corpus are unchanged by the diagnostic.
+
+## Retention and provider-access follow-up — 2026-11-11
+
+[Bounded retention cleanup](public-artifact-retention-20261111.md) removed 316
+unreferenced artifacts (22.27 MB), retained current plus two verified prior
+generations, and verified replay and source integrity. The independent immutable
+rollback archive remains unchanged. [One anonymous Semantic Scholar batch](semanticscholar-access-20261111.md)
+still encountered rate limiting: 41 active cached failures, no successful counts,
+and 4,060 unobserved active IDs. No provider absence or zero influence is inferred.
+The public status/trending artifacts were rebuilt offline; graph artifacts stayed
+identical. Neither activity deployed or pushed changes.
