@@ -1,0 +1,11 @@
+# SyncDreamer foundation review — 2026-11-12
+
+Retained SyncDreamer as a concrete GS generation foundation. The original 165-seed ledger now has **147 retained, 13 unresolved and five archived** seeds. All 164 other ledger rows remain identical, and all 147 retained canonical record hashes verify. The catalog remains 4,103 active records and six archives; canonical bytes are unchanged. [Decision receipt](runs/syncdreamer-foundation-review-20261112.json).
+
+The primary method in 4DGen (`2312.17225v2`), Section 3.2, uses SyncDreamer multiview samples to optimize static 3D Gaussians. Section 3.3 also uses SyncDreamer predictions as anchor-frame pseudo-labels for its dynamic Gaussian representation. Reference 41 names SyncDreamer and its arXiv identifier `2309.03453`. These explicit method dependencies establish a GS role beyond comparison or generic multiview adjacency.
+
+Two bounded official arXiv responses are retained in the [source manifest](../data/reviews/syncdreamer-foundation-primary-sources-20261112.json), with body hashes, sizes and original observation times. The primary SyncDreamer title agrees with the legacy title after punctuation normalization, and the first author agrees with the abbreviated legacy author display. This review retains scope only: no arXiv identifier, full author list or original date was written into canonical bibliographic data. Those remain a separate metadata review. Source inspection is by the agent, not an independent human benchmark, and upstream performance was not reproduced.
+
+The previous ledger and policy are preserved. Root policy is now `2fc225eac91cdbe7044faaa0ae7d9625e16f999010bb420477e8e21a88dccf69`; the running CVPR 2025 epoch continues to use its explicit frozen `cb275...` document. No capture or application epoch was retrospectively reclassified.
+
+Both unchanged 100-record benchmark packets keep identical predictions. Primary precision/recall remain 0.9608/0.98, and challenge precision/recall remain 1.00/1.00. The challenge sample-composition gate remains false. The 49 policy/curation/coverage tests, lint and format checks pass. [Comparison and checks](runs/syncdreamer-policy-comparison-20261112.json). Nothing was pushed or deployed.

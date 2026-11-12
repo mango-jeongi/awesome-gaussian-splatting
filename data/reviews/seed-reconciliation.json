@@ -5567,15 +5567,46 @@
       "arxiv_id": null,
       "cached_signal_status": "ambiguous",
       "canonical_id": "paper:2023-f602368a87",
-      "disposition": "unresolved_review",
+      "disposition": "retained",
+      "evidence_basis": "primary_method_explicit_GS_dependency",
+      "foundation_use_evidence": [
+        {
+          "observed_at": "2026-11-12T16:23:31.128220+00:00",
+          "reviewed_at": "2026-11-12T16:24:26.305169+00:00",
+          "reviewed_by": "Codex primary-method foundation adjudication; not independent human review",
+          "source": "frozen_primary_full_method_foundation_review",
+          "source_url": "https://arxiv.org/html/2312.17225v2",
+          "value": {
+            "scope_justification": "Curated multiview-generation foundation: 4DGen (2312.17225v2), Sections 3.2 and 3.3, explicitly uses DDIM samples from SyncDreamer to optimize static 3D Gaussians and constructs anchor-frame multiview pseudo-labels for the dynamic Gaussian representation. Its reference 41 identifies SyncDreamer (2309.03453). This is a concrete Gaussian-pipeline dependency, not a comparison-only or generic multiview-generation claim.",
+            "source_capture_file": "data/reviews/sources/0e9300bda219145e1451dfc57d731e4717ffedb83f376d2344c882e676589251.html",
+            "source_capture_sha256": "0e9300bda219145e1451dfc57d731e4717ffedb83f376d2344c882e676589251"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T16:23:32.186103+00:00",
+          "reviewed_at": "2026-11-12T16:24:26.305169+00:00",
+          "reviewed_by": "Codex primary-method foundation adjudication; not independent human review",
+          "source": "frozen_primary_full_method_foundation_review",
+          "source_url": "https://arxiv.org/abs/2309.03453v2",
+          "value": {
+            "scope_justification": "Curated multiview-generation foundation: 4DGen (2312.17225v2), Sections 3.2 and 3.3, explicitly uses DDIM samples from SyncDreamer to optimize static 3D Gaussians and constructs anchor-frame multiview pseudo-labels for the dynamic Gaussian representation. Its reference 41 identifies SyncDreamer (2309.03453). This is a concrete Gaussian-pipeline dependency, not a comparison-only or generic multiview-generation claim.",
+            "source_capture_file": "data/reviews/sources/9a22fd90a3dc66c24a7533e687bbaa0828f38a73138e18336addfaf9ac9557dd.html",
+            "source_capture_sha256": "9a22fd90a3dc66c24a7533e687bbaa0828f38a73138e18336addfaf9ac9557dd"
+          }
+        }
+      ],
       "local_pdf_source_capture_path": "data/reviews/local-pdf-evidence/3688f1485b0e9d7e30cf8fa99f341b04423e59d157b7922fd45baeeda77ae16d.json",
       "local_pdf_source_capture_sha256": "3726089a44b3ed84307630878bd95effe90efe87f4a165c42a6facf2f5f7675f",
       "local_source_locator": "local-inventory:72b683cbf174574dd7c6dfe34c9851f9c87df50b22b0fc3de51353e3853ab656",
+      "metadata_limitations": "Scope retention only. Existing legacy author display, absent canonical arXiv identifier, publication fields and earlier review history are unchanged. Source identity is supported by the exact primary title and matching first-author name; identifier enrichment still requires the separate canonical metadata review.",
       "next_source_action": "Inspect methods or establish specific primary GS foundation/application evidence",
       "old_id": "paper:2023-f602368a87",
       "provider_title_match": "unavailable",
-      "reason": "Active identity mapped; final source-backed retention, merge or archival adjudication remains pending.",
-      "reviewed": false,
+      "reason": "Curated multiview-generation foundation: 4DGen (2312.17225v2), Sections 3.2 and 3.3, explicitly uses DDIM samples from SyncDreamer to optimize static 3D Gaussians and constructs anchor-frame multiview pseudo-labels for the dynamic Gaussian representation. Its reference 41 identifies SyncDreamer (2309.03453). This is a concrete Gaussian-pipeline dependency, not a comparison-only or generic multiview-generation claim.",
+      "reviewed": true,
+      "reviewed_at": "2026-11-12T16:24:26.305169+00:00",
+      "reviewed_by": "Codex primary-method foundation adjudication; not independent human review",
+      "reviewed_canonical_record_sha256": "7158c370e4b73a78d9850625ba9da85ee7da3b37fe330e6b2dc6d0b4fad69aa2",
       "source_pdf_sha256": "3688f1485b0e9d7e30cf8fa99f341b04423e59d157b7922fd45baeeda77ae16d",
       "source_scope_review_reason": "The first-page abstract describes synchronized multiview diffusion; a specific GS prior or curated foundational use needs supporting primary evidence.",
       "source_scope_reviewed_at": "2026-11-09T22:26:36.553645+00:00",
@@ -5733,7 +5764,7 @@
   ],
   "summary": {
     "archived": 5,
-    "retained": 146,
-    "unresolved_review": 14
+    "retained": 147,
+    "unresolved_review": 13
   }
 }
