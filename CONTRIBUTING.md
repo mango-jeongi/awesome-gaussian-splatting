@@ -540,3 +540,28 @@ successful values, genuine observed zeros and unavailable velocity are separate.
 Stale seed/extraction bindings are visible rather than declared complete. The
 graph is an owned cache-backed projection; public manifest metadata is labelled
 separately and is not a replacement for release artifact or deployed-site checks.
+
+
+### Source-bound CVF URL corrections
+
+An official frozen-listing URL returning HTTP 404 may be corrected through
+`src.venue_reviews --field url`, using an explicitly inspected `URLReview`.
+The default publication matcher remains strict. The alternate must be a distinct
+plain HTTPS paper-page URL on `openaccess.thecvf.com`, in the same edition/track,
+and must not belong to another listing or reviewed capture. Redirects, query
+strings, fragments, encoded paths and combined title/author/URL reviews are refused.
+
+The review binds the exact original title and complete ordered author list,
+listing SHA, retained alternate HTTP-200 body SHA/size, source observation time,
+and SHA of the original 404 failure object encoded with `storage._encode`.
+Retain the inspected bounded alternate body under
+`<epoch>/diagnostics/<response_sha256>.html` before applying. Application makes
+zero requests, holds the capture lock, validates every normal metadata/PDF check
+against the approved URL, and preserves the complete original failure (including
+its retry deadline) in the capture. The verified publication uses the actual
+alternate source URL; the capture remains keyed by its frozen listing URL.
+
+An identical replay is a no-op. Changing an accepted decision requires another
+epoch. Capture reports expose `reviewed_source_url_records` separately. Neither
+this correction nor successful metadata capture establishes canonical identity,
+topic inclusion, independent inventory reconciliation or provider recall.
