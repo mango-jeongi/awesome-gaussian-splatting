@@ -77,7 +77,13 @@ def _details(
 
 
 def build_public(
-    db: PaperDatabase, root: str | Path, *, reviewed=None, signals=None, trending=None
+    db: PaperDatabase,
+    root: str | Path,
+    *,
+    reviewed=None,
+    signals=None,
+    trending=None,
+    community=None,
 ) -> dict:
     """Publish under the same lock used by manifest-based artifact cleanup."""
     from src.file_lock import exclusive_file
@@ -89,10 +95,12 @@ def build_public(
     ):
         raise ValueError("Public artifact root/writer lock cannot be a link")
     with exclusive_file(root / "public.run.lock", resource="public artifact writer"):
-        return _build_public(db, root, reviewed=reviewed, signals=signals, trending=trending)
+        return _build_public(
+            db, root, reviewed=reviewed, signals=signals, trending=trending, community=community
+        )
 
 
-def _build_public(db, root, *, reviewed=None, signals=None, trending=None):
+def _build_public(db, root, *, reviewed=None, signals=None, trending=None, community=None):
     """Publish artifacts first and switch one manifest last; retain old generations."""
     from src.reviewed_public import reviewed_cells
 
@@ -108,6 +116,8 @@ def _build_public(db, root, *, reviewed=None, signals=None, trending=None):
     citation_values = {}
     for paper in sorted(db.papers, key=lambda paper: paper.id):
         record = paper.model_dump(mode="json")
+        if community is not None and paper.id in community:
+            record["huggingface"] = community[paper.id]
         observation = signal_store.observations.get(paper.id) if signal_store else None
         status = observation.status if observation else "unknown"
         record["citation_status"] = status

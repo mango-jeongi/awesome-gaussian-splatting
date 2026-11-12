@@ -255,6 +255,14 @@ def build_artifacts(
 
     config = RankingConfig.load(Path(__file__).resolve().parent.parent / "config/ranking.yaml")
     trending = public_trending(db, Path(data_path).parent / "signals", config)
+    from src.public_huggingface import public_huggingface
+
+    community = public_huggingface(db, Path(data_path).parent / "signals")
     build_public(
-        db, docs_target.parent / "data", reviewed=reviewed, signals=signals, trending=trending
+        db,
+        docs_target.parent / "data",
+        reviewed=reviewed,
+        signals=signals,
+        trending=trending,
+        community=community,
     )

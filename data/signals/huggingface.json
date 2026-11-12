@@ -65,6 +65,16 @@
         "upvotes": 2
       }
     },
+    "2008.09544": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": "2026-11-19T19:03:05.123471Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2103.13415": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T22:42:54.729566Z",
@@ -74,6 +84,222 @@
       "response_schema_version": "1",
       "status": "not_found",
       "values": {}
+    },
+    "2201.05989": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": "2026-11-19T19:03:05.123471Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2305.15171": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": "2026-11-19T19:03:05.123471Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2305.20082": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2305.20082",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2305.20082",
+          "text": "Control4D uses a 2D diffusion-based editor within a 4D GAN framework to achieve high-fidelity and temporally consistent 4D portrait editing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2305.20082",
+          "text": "Recent years have witnessed considerable achievements in editing images with\ntext instructions. When applying these editors to dynamic scene editing, the\nnew-style scene tends to be temporally inconsistent due to the frame-by-frame\nnature of these 2D editors. To tackle this issue, we propose Control4D, a novel\napproach for high-fidelity and temporally consistent 4D portrait editing.\nControl4D is built upon an efficient 4D representation with a 2D\ndiffusion-based editor. Instead of using direct supervisions from the editor,\nour method learns a 4D GAN from it and avoids the inconsistent supervision\nsignals. Specifically, we employ a discriminator to learn the generation\ndistribution based on the edited images and then update the generator with the\ndiscrimination signals. For more stable training, multi-level information is\nextracted from the edited images and used to facilitate the learning of the\ngenerator. Experimental results show that Control4D surpasses previous\napproaches and achieves more photo-realistic and consistent 4D editing\nperformances. The link to our project website is\nhttps://control4darxiv.github.io."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2305.20082",
+        "submitted_on_daily_at": "2023-06-01T00:00:00.000Z",
+        "upvotes": 2
+      }
+    },
+    "2307.10206": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2307.10206",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2307.10206",
+          "text": "The paper introduces NEAT Fields and a GJP module to compute 3D wireframes from multi-view images without explicit feature correspondences, achieving high-fidelity 3D wireframe parsing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2307.10206",
+          "text": "The primal sketch is a fundamental representation in Marr's vision theory,\nwhich allows for parsimonious image-level processing from 2D to 2.5D\nperception. This paper takes a further step by computing 3D primal sketch of\nwireframes from a set of images with known camera poses, in which we take the\n2D wireframes in multi-view images as the basis to compute 3D wireframes in a\nvolumetric rendering formulation. In our method, we first propose a NEural\nAttraction (NEAT) Fields that parameterizes the 3D line segments with\ncoordinate Multi-Layer Perceptrons (MLPs), enabling us to learn the 3D line\nsegments from 2D observation without incurring any explicit feature\ncorrespondences across views. We then present a novel Global Junction\nPerceiving (GJP) module to perceive meaningful 3D junctions from the NEAT\nFields of 3D line segments by optimizing a randomly initialized\nhigh-dimensional latent array and a lightweight decoding MLP. Benefitting from\nour explicit modeling of 3D junctions, we finally compute the primal sketch of\n3D wireframes by attracting the queried 3D line segments to the 3D junctions,\nsignificantly simplifying the computation paradigm of 3D wireframe parsing. In\nexperiments, we evaluate our approach on the DTU and BlendedMVS datasets with\npromising performance obtained. As far as we know, our method is the first\napproach to achieve high-fidelity 3D wireframe parsing without requiring\nexplicit matching."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/cherubicxn/neat"
+        },
+        "source_url": "https://huggingface.co/papers/2307.10206",
+        "stars": 76,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2308.09713": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2308.09713",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2308.09713",
+          "text": "A method is presented for dynamic scene novel-view synthesis and 6-DOF tracking using 3D Gaussians with differentiable rendering and local-rigidity constraints, enabling various applications such as first-person view synthesis and 4D video editing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2308.09713",
+          "text": "We present a method that simultaneously addresses the tasks of dynamic scene\nnovel-view synthesis and six degree-of-freedom (6-DOF) tracking of all dense\nscene elements. We follow an analysis-by-synthesis framework, inspired by\nrecent work that models scenes as a collection of 3D Gaussians which are\noptimized to reconstruct input images via differentiable rendering. To model\ndynamic scenes, we allow Gaussians to move and rotate over time while enforcing\nthat they have persistent color, opacity, and size. By regularizing Gaussians'\nmotion and rotation with local-rigidity constraints, we show that our Dynamic\n3D Gaussians correctly model the same area of physical space over time,\nincluding the rotation of that space. Dense 6-DOF tracking and dynamic\nreconstruction emerges naturally from persistent dynamic view synthesis,\nwithout requiring any correspondence or flow as input. We demonstrate a large\nnumber of downstream applications enabled by our representation, including\nfirst-person view synthesis, dynamic compositional scene synthesis, and 4D\nvideo editing."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/JonathonLuiten/Dynamic3DGaussians"
+        },
+        "source_url": "https://huggingface.co/papers/2308.09713",
+        "stars": 2307,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2308.14737": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2308.14737",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2308.14737",
+          "text": "Neural radiance fields and 3D Gaussian representations enable fast, reliable shape reconstruction with improved rendering capabilities and cross-method compatibility."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2308.14737",
+          "text": "Fast, reliable shape reconstruction is an essential ingredient in many computer vision applications. Neural Radiance Fields demonstrated that photorealistic novel view synthesis is within reach, but was gated by performance requirements for fast reconstruction of real scenes and objects. Several recent approaches have built on alternative shape representations, in particular, 3D Gaussians. We develop extensions to these renderers, such as integrating differentiable optical flow, exporting watertight meshes and rendering per-ray normals. Additionally, we show how two of the recent methods are interoperable with each other. These reconstructions are quick, robust, and easily performed on GPU or CPU. For code and visual examples, see https://leonidk.github.io/fmb-plus"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2308.14737",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2309.07668": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": "2026-11-19T19:03:05.123471Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2309.13101": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2309.13101",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2309.13101",
+          "text": "A deformable 3D Gaussians Splatting method enhances rendering quality and real-time performance in dynamic scenes through canonical space learning and annealing smoothing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2309.13101",
+          "text": "Implicit neural representation has paved the way for new approaches to\ndynamic scene reconstruction and rendering. Nonetheless, cutting-edge dynamic\nneural rendering methods rely heavily on these implicit representations, which\nfrequently struggle to capture the intricate details of objects in the scene.\nFurthermore, implicit methods have difficulty achieving real-time rendering in\ngeneral dynamic scenes, limiting their use in a variety of tasks. To address\nthe issues, we propose a deformable 3D Gaussians Splatting method that\nreconstructs scenes using 3D Gaussians and learns them in canonical space with\na deformation field to model monocular dynamic scenes. We also introduce an\nannealing smoothing training mechanism with no extra overhead, which can\nmitigate the impact of inaccurate poses on the smoothness of time interpolation\ntasks in real-world datasets. Through a differential Gaussian rasterizer, the\ndeformable 3D Gaussians not only achieve higher rendering quality but also\nreal-time rendering speed. Experiments show that our method outperforms\nexisting methods significantly in terms of both rendering quality and speed,\nmaking it well-suited for tasks such as novel-view synthesis, time\ninterpolation, and real-time rendering."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2309.13101",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2309.16585": {
+      "fetched_at": "2026-11-12T19:03:05.123471Z",
+      "last_attempt_at": "2026-11-12T19:03:05.123471Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2309.16585",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2309.16585",
+          "text": "Gaussian Splatting based text-to-3D generation improves geometry accuracy and fidelity through progressive optimization, including geometry optimization and appearance refinement."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2309.16585",
+          "text": "In this paper, we present Gaussian Splatting based text-to-3D generation\n(GSGEN), a novel approach for generating high-quality 3D objects. Previous\nmethods suffer from inaccurate geometry and limited fidelity due to the absence\nof 3D prior and proper representation. We leverage 3D Gaussian Splatting, a\nrecent state-of-the-art representation, to address existing shortcomings by\nexploiting the explicit nature that enables the incorporation of 3D prior.\nSpecifically, our method adopts a progressive optimization strategy, which\nincludes a geometry optimization stage and an appearance refinement stage. In\ngeometry optimization, a coarse representation is established under a 3D\ngeometry prior along with the ordinary 2D SDS loss, ensuring a sensible and\n3D-consistent rough shape. Subsequently, the obtained Gaussians undergo an\niterative refinement to enrich details. In this stage, we increase the number\nof Gaussians by compactness-based densification to enhance continuity and\nimprove fidelity. With these designs, our approach can generate 3D content with\ndelicate details and more accurate geometry. Extensive evaluations demonstrate\nthe effectiveness of our method, especially for capturing high-frequency\ncomponents. Video results are provided at https://gsgen3d.github.io. Our code\nis available at https://github.com/gsgen3d/gsgen"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/gsgen3d/gsgen"
+        },
+        "source_url": "https://huggingface.co/papers/2309.16585",
+        "stars": 846,
+        "submitted_on_daily_at": "2023-09-29T00:00:00.000Z",
+        "upvotes": 32
+      }
     },
     "2611.07902": {
       "fetched_at": null,

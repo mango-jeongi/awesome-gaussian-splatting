@@ -187,6 +187,7 @@
   </div>
 
   <script src="./assets/reviewed-benchmarks.js"></script>
+  <script src="./assets/huggingface-view.js"></script>
   <script src="./assets/route-identifiers.js"></script>
   <script src="./assets/graph-projector.js"></script>
   <script src="./assets/graph-view.js"></script>
@@ -361,8 +362,10 @@
           <button data-action="bibtex" data-value="${escapeHtml(id)}" class="underline">BibTeX</button>
           ${paper.paper_url ? `<a class="underline ml-3" href="${escapeHtml(paper.paper_url)}" target="_blank" rel="noopener">Source paper</a>` : ''}
           <a class="underline ml-3" href="#/graph?paper=${encodeURIComponent(id)}">Citation neighborhood</a>
+          <section data-huggingface class="max-w-full min-w-0"></section>
           <section data-reviewed-benchmarks class="max-w-full min-w-0"></section>
           <div data-relationships></div></article>`;
+        HuggingFaceView.render(routePanel.querySelector('[data-huggingface]'), paper.huggingface);
         window.renderReviewedBenchmarks(routePanel.querySelector('[data-reviewed-benchmarks]'), paper);
         const relationships = routePanel.querySelector('[data-relationships]');
         renderRelationships(relationships, paper);

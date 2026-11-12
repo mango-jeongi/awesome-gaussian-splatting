@@ -1,0 +1,134 @@
+{
+  "observations": {
+    "2003.08934": {
+      "fetched_at": "2026-11-09T22:42:54.729566Z",
+      "last_attempt_at": "2026-11-09T22:42:54.729566Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2003.08934",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "keras-io/NeRF",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/keras-io/NeRF"
+          },
+          {
+            "id": "Alesteba/NeRF_ficus-pxl",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Alesteba/NeRF_ficus-pxl"
+          },
+          {
+            "id": "Pooya-sh1998/acoustic-nerf",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Pooya-sh1998/acoustic-nerf"
+          },
+          {
+            "id": "Alesteba/NeRF-ficus-pxl",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Alesteba/NeRF-ficus-pxl"
+          },
+          {
+            "id": "Jackoabaad/Myspace",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Jackoabaad/Myspace"
+          },
+          {
+            "id": "Tohru127/3d-nerf",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Tohru127/3d-nerf"
+          },
+          {
+            "id": "Nirav-Madhani/WorldRepresentation",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Nirav-Madhani/WorldRepresentation"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 7,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2003.08934",
+          "text": "A method synthesizes novel views of complex scenes using a deep network to represent a volumetric scene function, achieving state-of-the-art results in view synthesis."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2003.08934",
+          "text": "We present a method that achieves state-of-the-art results for synthesizing\nnovel views of complex scenes by optimizing an underlying continuous volumetric\nscene function using a sparse set of input views. Our algorithm represents a\nscene using a fully-connected (non-convolutional) deep network, whose input is\na single continuous 5D coordinate (spatial location (x,y,z) and viewing\ndirection (theta, phi)) and whose output is the volume density and\nview-dependent emitted radiance at that spatial location. We synthesize views\nby querying 5D coordinates along camera rays and use classic volume rendering\ntechniques to project the output colors and densities into an image. Because\nvolume rendering is naturally differentiable, the only input required to\noptimize our representation is a set of images with known camera poses. We\ndescribe how to effectively optimize neural radiance fields to render\nphotorealistic novel views of scenes with complicated geometry and appearance,\nand demonstrate results that outperform prior work on neural rendering and view\nsynthesis. View synthesis results are best viewed as videos, so we urge readers\nto view our supplementary video for convincing comparisons."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2003.08934",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2103.13415": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-09T22:42:54.729566Z",
+      "next_retry_at": "2026-11-16T22:42:54.729566Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2611.07902": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-09T16:21:42.441841Z",
+      "next_retry_at": "2026-11-16T16:21:42.441841Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2611.07979": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-09T16:21:42.441841Z",
+      "next_retry_at": "2026-11-16T16:21:42.441841Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2611.08264": {
+      "fetched_at": "2026-11-09T16:32:39.798622Z",
+      "last_attempt_at": "2026-11-09T16:32:39.798622Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2611.08264",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://zju3dv.github.io/SplatAnything/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2611.08264",
+          "text": "SplatAnything applies Gaussian Spacing Normalization to canonicalize scene-level Gaussian spacing, yielding more consistent supervision and improved feed-forward 3D Gaussian Splatting under varying scene scales and viewpoints."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2611.08264",
+          "text": "We identify a key limitation of existing feed-forward 3DGS methods: Gaussian attributes are typically predicted in a radial-distance-normalized space that canonicalizes a global radial statistic of the reconstructed geometry, while the spacing between neighboring Gaussian centers can still vary substantially across scene scales and camera configurations. This mismatch induces systematic shifts in Gaussian-scale targets, leading to ambiguous supervision. To address this, we propose SplatAnything with Gaussian Spacing Normalization (GSNorm), which canonicalizes a robust scene-level statistic of Gaussian spacing to provide a more consistent spatial reference for Gaussian prediction. To rigorously assess our method, we further establish a systematic benchmark spanning diverse datasets, input sparsity levels, and challenging extrapolated viewpoints. Extensive experiments demonstrate that SplatAnything achieves state-of-the-art performance, with particularly strong gains under substantial variations in scene scale and viewpoint."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/zju3dv/SplatAnything"
+        },
+        "source_url": "https://huggingface.co/papers/2611.08264",
+        "stars": 34,
+        "submitted_on_daily_at": "2026-11-09T00:00:00.000Z",
+        "upvotes": 59
+      }
+    }
+  },
+  "provider": "huggingface",
+  "schema_version": "1.0.0"
+}
