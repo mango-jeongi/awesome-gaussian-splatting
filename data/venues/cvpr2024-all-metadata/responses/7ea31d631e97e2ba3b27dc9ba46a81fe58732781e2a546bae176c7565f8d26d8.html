@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="FocSAM: Delving Deeply into Focused Objects in Segmenting Anything">
+<meta name="citation_author" content="Huang, You">
+<meta name="citation_author" content="Lan, Zongyu">
+<meta name="citation_author" content="Cao, Liujuan">
+<meta name="citation_author" content="Lin, Xianming">
+<meta name="citation_author" content="Zhang, Shengchuan">
+<meta name="citation_author" content="Jiang, Guannan">
+<meta name="citation_author" content="Ji, Rongrong">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="3120">
+<meta name="citation_lastpage" content="3130">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_FocSAM_Delving_Deeply_into_Focused_Objects_in_Segmenting_Anything_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        FocSAM: Delving Deeply into Focused Objects in Segmenting Anything
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>You Huang, Zongyu Lan, Liujuan Cao, Xianming Lin, Shengchuan Zhang, Guannan Jiang, Rongrong Ji</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 3120-3130
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The Segment Anything Model (SAM) marks a notable milestone in segmentation models highlighted by its robust zero-shot capabilities and ability to handle diverse prompts. SAM follows a pipeline that separates interactive segmentation into image preprocessing through a large encoder and interactive inference via a lightweight decoder ensuring efficient real-time performance. However SAM faces stability issues in challenging samples upon this pipeline. These issues arise from two main factors. Firstly the image preprocessing disables SAM to dynamically use image-level zoom-in strategies to refocus on the target object during interaction. Secondly the lightweight decoder struggles to sufficiently integrate interactive information with image embeddings. To address these two limitations we propose FocSAM with a pipeline redesigned on two pivotal aspects. First we propose Dynamic Window Multi-head Self-Attention (Dwin-MSA) to dynamically refocus SAM&#x27;s image embeddings on the target object. Dwin-MSA localizes attention computations around the target object enhancing object-related embeddings with minimal computational overhead. Second we propose Pixel-wise Dynamic ReLU (P-DyReLU) to enable sufficient integration of interactive information from a few initial clicks that have significant impacts on the overall segmentation results. Experimentally FocSAM augments SAM&#x27;s interactive segmentation performance to match the existing state-of-the-art method in segmentation quality requiring only about 5.6% of this method&#x27;s inference time on CPUs. Code is available at https://github.com/YouHuang67/focsam.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Huang_FocSAM_Delving_Deeply_into_Focused_Objects_in_Segmenting_Anything_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Huang_FocSAM_Delving_Deeply_CVPR_2024_supplemental.zip">supp</a>]
+[<a href="http://arxiv.org/abs/2405.18706">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Huang_2024_CVPR,
+    author    = {Huang, You and Lan, Zongyu and Cao, Liujuan and Lin, Xianming and Zhang, Shengchuan and Jiang, Guannan and Ji, Rongrong},
+    title     = {FocSAM: Delving Deeply into Focused Objects in Segmenting Anything},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {3120-3130}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

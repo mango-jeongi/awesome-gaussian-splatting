@@ -144,6 +144,16 @@ editions:
     venue_inventory_reconciled: false
     note: Selected publication metadata complete; excluded-title recall, independent
       inventory reconciliation, identity resolution, and canonical import remain pending.
+  - provider: cvf_all_metadata_capture
+    evidence_file: data/venues/cvpr2024-all-metadata/latest-report.json
+    listing_records: 2716
+    verified_records: 233
+    pending_records: 2483
+    failed_records: 0
+    selected_metadata_complete: false
+    canonical_modified: false
+    venue_inventory_reconciled: false
+    note: Separate frozen full-abstract epoch; 133 reused verified pages plus 100 new pages.
   - provider: cvf_exact_arxiv_identity_resolution
     evidence_file: data/venues/cvpr2024-main/identity-resolution.json
     exact_original_dates_verified: 87
@@ -342,10 +352,17 @@ editions:
       exclude: 2441
       review: 87
     source_screen_rescue_evidence: data/venues/iccv2025-all-metadata/title-screen-rescue-evidence.json
+  - provider: source_reviewed_inventory_title_pairs
+    evidence_file: data/reviews/iccv2025-eight-inventory-title-pairs-20261111.json
+    additional_reviewed_pairs: 8
+    remaining_unadjudicated_titles_per_source: 8
+    exact_title_author_differences_unadjudicated: 504
+    canonical_modified: false
+    reconciled: false
   remaining:
   - Full metadata capture is complete; source scope, identity and original-date review
     remain open.
-  - Review 16 remaining unmatched titles on each source and 504 author-list differences without
+  - Review eight remaining unmatched titles on each source and 504 author-list differences without
     automatic alias assertions.
   - Identity/original-date resolution, reviewed GS scope decisions and publication
     imports remain pending.

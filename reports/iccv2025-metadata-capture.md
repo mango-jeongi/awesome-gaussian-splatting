@@ -78,7 +78,7 @@ retains 2,677 normalized-title matches, seven reviewed typography pairs and 17
 unmatched rows on each source. Its evidence is preserved unchanged.
 
 The new [review overlay](../data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json)
-resolves the RoboTron pair and leaves **16 unadjudicated titles on each source**.
+resolves the RoboTron pair. A subsequent [explicit eight-pair review](../data/reviews/iccv2025-eight-inventory-title-pairs-20261111.json) binds exact ordered author lists and retained official publication bodies for eight further title variants, leaving **eight unadjudicated titles on each source**. These are source-inventory correspondences, not canonical merge instructions.
 The 504 exact-title author-list differences and the ambiguous typography/author
 case are not silently repaired. Equal aggregate counts do not establish identity
 reconciliation. Source-record matching is distinct from canonical deduplication.

@@ -1,0 +1,11 @@
+# CVPR 2024 full-metadata capture checkpoint — 2026-11-11
+
+A separate all-metadata epoch now selects all 2,716 papers in the frozen official main-proceedings listing. It reuses the 133 previously verified official publication responses with their original observation timestamps and adds 100 paced live requests, all successful. A zero-request replay verified all 233 retained body hashes and publication matches without changing state. There are 2,483 pending pages and no failed pages; edition coverage remains partial.
+
+The listing SHA-256 is `720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c`. The separately frozen current policy is `2b923581760ff0f808a58128eeb8d805f9e40788b3a1380a512d26ec75016bcf`; it is intentionally distinct from the older title-priority epoch. Its 233 metadata outcomes are 48 include, 90 review and 95 exclude. These current-policy results do not rewrite the older epoch's policy decisions.
+
+Five of the 100 newly fetched title-excluded papers enter metadata review. They are review leads, not accepted corpus additions or a population recall estimate. Source bodies, abstracts, response hashes and original capture times are retained under `data/venues/cvpr2024-all-metadata`. [Machine checkpoint](runs/cvpr2024-full-metadata-pass1-20261111.json); [review-lead evidence](../data/venues/cvpr2024-all-metadata/title-screen-rescue-evidence.json).
+
+Resume this epoch with `--all-metadata` and the frozen override document under `data/venues/policies/2b923581760ff0f808a58128eeb8d805f9e40788b3a1380a512d26ec75016bcf.yaml`. The prior `cvpr2024-main` epoch remains unchanged. The preparatory workspace copy is a historical checkpoint; future captures should use the committed repository epoch to avoid divergent progress.
+
+No canonical records, provider signals or public portal artifacts changed. The catalog remains 4,101 active papers and six archived records. Independent inventory discrepancies, author/identifier/original-date verification, scope adjudication and further metadata requests remain open. Nothing was pushed or deployed.
