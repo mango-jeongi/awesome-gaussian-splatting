@@ -1,0 +1,15 @@
+# Matrix3D and fVDB baseline scope reviews — 2026-11-11
+
+Retained two named GS enablers, reducing the original 165-seed ledger to **144 retained, 16 unresolved and five archived**. The [decision receipt](runs/matrix3d-fvdb-seed-foundation-reviews-20261111.json) preserves the prior ledger and policy, exact canonical hashes, source captures and per-record reasons. All 163 other ledger rows remain identical. The catalog remains 4,103 active papers and six archives; bibliographic fields, provider observations, local PDFs and publication assets are unchanged.
+
+Matrix3D (`paper:2025-51c7d8fe35`, arXiv `2502.07685`) qualifies as a concrete GS reconstruction enabler. Its primary full method describes using predicted geometry and camera information for 3DGS initialization and optimization; the reconstruction appendix documents the Gaussian initialization step. This resolves the earlier abstract-only uncertainty. It is not merely a GS comparison mention.
+
+fVDB (`paper:2024-414f15abe3`, arXiv `2407.01781`) is retained as an explicitly curated software foundation. Commit-pinned official fVDB-Reality-Capture files describe Gaussian splatting APIs and compiled-kernel dependencies on fVDB-core, while the core README identifies the 2024 paper and DOI `10.1145/3658226`. This is current software evidence tied to the foundational paper's identity; it does not claim the original 2024 paper evaluated GS. No software was installed or executed, and upstream performance claims were not validated or adopted.
+
+The [software capture manifest](../data/reviews/fvdb-pinned-software-sources-20261111.json) records exact repository commits and Git blob hashes. Four file contents passed independent Git blob hash checks. The [primary arXiv capture manifest](../data/reviews/matrix3d-fvdb-primary-sources-20261111.json) binds three bounded source responses. Raw sources remain retained by content hash. These are agent source reviews, not independent human adjudication. Existing abbreviated author displays and bibliographic precision remain separate metadata debts.
+
+Root policy is now `e4a5c607eddacdaf36c1852c34220744fee5a9d8da43bdbd3b547bc2909a0e7d`. The earlier `874351...` document and the active CVPR epoch's `2b923...` document remain frozen and unchanged. No capture/application epoch was retrospectively reclassified.
+
+The two frozen 100-record gold packets were not relabelled. Current primary-packet inclusion precision is **0.9608** and recall **0.98**, meeting its declared 0.95 thresholds. Matrix3D changes from review to include against an older review gold label; that is counted conservatively as a nonconfirmed include. The challenge packet remains 1.00/1.00 but does not satisfy the primary composition gate on its own. These purposive agent-labelled samples are not population or independent-human accuracy. [Comparison receipt](runs/matrix3d-fvdb-policy-comparison-20261111.json). All 69 relevant policy/curation tests pass.
+
+Nothing was pushed, dispatched or deployed. The remaining 16 seed decisions and broader Phase 2/3 gates remain open.

@@ -4696,11 +4696,42 @@
       "arxiv_id": "2502.07685",
       "cached_signal_status": "ok",
       "canonical_id": "paper:2025-51c7d8fe35",
-      "disposition": "unresolved_review",
+      "disposition": "retained",
+      "evidence_basis": "primary_method_or_official_software_GS_dependency",
+      "foundation_use_evidence": [
+        {
+          "observed_at": "2026-11-12T03:21:37.743256+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://arxiv.org/html/2502.07685v2",
+          "value": {
+            "scope_justification": "Curated GS reconstruction enabler: Matrix3D uses predicted camera, image and depth information to initialize and optimize a 3D Gaussian Splatting reconstruction. Its method and reconstruction appendix describe this concrete downstream pipeline, rather than a GS comparison-only mention.",
+            "source_capture_file": "data/reviews/sources/78fe82c66b5c55e39edfe1ecbd558b8a971327e9dc73512e41d31b5d8f65d13b.html",
+            "source_capture_sha256": "78fe82c66b5c55e39edfe1ecbd558b8a971327e9dc73512e41d31b5d8f65d13b"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T03:21:40.881733+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://arxiv.org/abs/2502.07685",
+          "value": {
+            "scope_justification": "Curated GS reconstruction enabler: Matrix3D uses predicted camera, image and depth information to initialize and optimize a 3D Gaussian Splatting reconstruction. Its method and reconstruction appendix describe this concrete downstream pipeline, rather than a GS comparison-only mention.",
+            "source_capture_file": "data/reviews/sources/d2829ebc5590139193953c1828f6ec5e617bd9fb098b8a9eaf0fec09a279afd5.html",
+            "source_capture_sha256": "d2829ebc5590139193953c1828f6ec5e617bd9fb098b8a9eaf0fec09a279afd5"
+          }
+        }
+      ],
+      "metadata_limitations": "Scope adjudication only; existing legacy bibliographic fields and abbreviated author display are unchanged. No performance or independent human validation claim.",
       "old_id": "paper:2025-51c7d8fe35",
       "provider_title_match": "exact",
-      "reason": "Active identity mapped; final source-backed retention, merge or archival adjudication remains pending.",
-      "reviewed": false,
+      "reason": "Curated GS reconstruction enabler: Matrix3D uses predicted camera, image and depth information to initialize and optimize a 3D Gaussian Splatting reconstruction. Its method and reconstruction appendix describe this concrete downstream pipeline, rather than a GS comparison-only mention.",
+      "reviewed": true,
+      "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+      "reviewed_by": "Codex primary-source adjudication; not independent human review",
+      "reviewed_canonical_record_sha256": "25f43b3dcb44e3e8262828e02811d54b9768f5bc83e4fa4d572e8cc432ecaee9",
       "source_scope_review_capture_sha256": "e661aaf3bed04a404b1cb423769b97679c011ad834966a6190ddd17e9c005272",
       "source_scope_review_reason": "Unified photogrammetry and view synthesis; no Gaussian primitive method or specific GS role is established by the abstract.",
       "source_scope_reviewed_at": "2026-11-09T21:51:43.473821+00:00",
@@ -4973,11 +5004,94 @@
       "arxiv_id": "2407.01781",
       "cached_signal_status": "ok",
       "canonical_id": "paper:2024-414f15abe3",
-      "disposition": "unresolved_review",
+      "disposition": "retained",
+      "evidence_basis": "primary_method_or_official_software_GS_dependency",
+      "foundation_use_evidence": [
+        {
+          "observed_at": "2026-11-12T03:21:43.988298+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://arxiv.org/abs/2407.01781",
+          "value": {
+            "scope_justification": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+            "source_capture_file": "data/reviews/sources/2ddfa580b6f35f1192525e38b6f989b750ab8c09b27934cfba7d8f9223f0d0d0.html",
+            "source_capture_sha256": "2ddfa580b6f35f1192525e38b6f989b750ab8c09b27934cfba7d8f9223f0d0d0"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T03:21:37.335804+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://github.com/openvdb/fvdb-core/blob/7449fd40a09d90b9695e606949af17103889d935/README.md",
+          "value": {
+            "commit": "7449fd40a09d90b9695e606949af17103889d935",
+            "git_blob_sha": "c8b85d7e15932ac21741755006581b864ce18bec",
+            "path": "README.md",
+            "repository": "fvdb-core",
+            "scope_justification": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+            "source_capture_file": "data/reviews/sources/47fa10bf5652819c9ced31e87a4e4eb069b0088dfdd9e268e9df8cd4155d890f.md",
+            "source_capture_sha256": "47fa10bf5652819c9ced31e87a4e4eb069b0088dfdd9e268e9df8cd4155d890f"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T03:21:37.344289+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://github.com/openvdb/fvdb-reality-capture/blob/1201e50a97ac9f52c43ab88863f31b34f2236de1/README.md",
+          "value": {
+            "commit": "1201e50a97ac9f52c43ab88863f31b34f2236de1",
+            "git_blob_sha": "7b66808e5c1eaf0fe59594ad46ed02f2722347be",
+            "path": "README.md",
+            "repository": "fvdb-reality-capture",
+            "scope_justification": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+            "source_capture_file": "data/reviews/sources/099d1bd546fcd2d85332bb5b09069fbf5da02fa78a00af4147a5ef8810a3f672.md",
+            "source_capture_sha256": "099d1bd546fcd2d85332bb5b09069fbf5da02fa78a00af4147a5ef8810a3f672"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T03:21:37.352402+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://github.com/openvdb/fvdb-reality-capture/blob/1201e50a97ac9f52c43ab88863f31b34f2236de1/CHANGES.md",
+          "value": {
+            "commit": "1201e50a97ac9f52c43ab88863f31b34f2236de1",
+            "git_blob_sha": "2f6fcf8b3e800d9951f85c4c46d10722d9c7ccff",
+            "path": "CHANGES.md",
+            "repository": "fvdb-reality-capture",
+            "scope_justification": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+            "source_capture_file": "data/reviews/sources/ec1790088f1a3d5835082fcd5bae94b344c8a9acb0f64c74cf986abd217faf73.md",
+            "source_capture_sha256": "ec1790088f1a3d5835082fcd5bae94b344c8a9acb0f64c74cf986abd217faf73"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T03:21:37.361627+00:00",
+          "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+          "reviewed_by": "Codex primary-source adjudication; not independent human review",
+          "source": "frozen_primary_fulltext_or_commit_pinned_software_scope_review",
+          "source_url": "https://github.com/openvdb/fvdb-reality-capture/blob/1201e50a97ac9f52c43ab88863f31b34f2236de1/pyproject.toml",
+          "value": {
+            "commit": "1201e50a97ac9f52c43ab88863f31b34f2236de1",
+            "git_blob_sha": "01f63526b2cd92d672251465a6491a94a5675558",
+            "path": "pyproject.toml",
+            "repository": "fvdb-reality-capture",
+            "scope_justification": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+            "source_capture_file": "data/reviews/sources/797a9cd87804cfe14c02d9e67360217573013c79c84d093be3b671e363cd5eb3.toml",
+            "source_capture_sha256": "797a9cd87804cfe14c02d9e67360217573013c79c84d093be3b671e363cd5eb3"
+          }
+        }
+      ],
+      "metadata_limitations": "Scope adjudication only; existing legacy bibliographic fields and abbreviated author display are unchanged. No performance or independent human validation claim.",
       "old_id": "paper:2024-414f15abe3",
       "provider_title_match": "exact",
-      "reason": "Active identity mapped; final source-backed retention, merge or archival adjudication remains pending.",
-      "reviewed": false,
+      "reason": "Curated software foundation: the current official fVDB-Reality-Capture project depends on fVDB-core for Gaussian splatting kernels and supporting data structures; the core project explicitly identifies the 2024 fVDB paper and DOI 10.1145/3658226. This decision uses the commit-pinned current software dependency chain, not an assertion that the original paper evaluated Gaussian splatting.",
+      "reviewed": true,
+      "reviewed_at": "2026-11-12T03:24:57.516843+00:00",
+      "reviewed_by": "Codex primary-source adjudication; not independent human review",
+      "reviewed_canonical_record_sha256": "c8646647d96bdd8ab8e20d04bc6bd43df20c3ec3bc44e6c794ca54d493cc7d26",
       "source_scope_review_capture_sha256": "e661aaf3bed04a404b1cb423769b97679c011ad834966a6190ddd17e9c005272",
       "source_scope_review_reason": "Sparse VDB learning and neural-field infrastructure; a concrete GS application is not established by the abstract.",
       "source_scope_reviewed_at": "2026-11-09T21:51:43.473821+00:00",
@@ -5557,7 +5671,7 @@
   ],
   "summary": {
     "archived": 5,
-    "retained": 142,
-    "unresolved_review": 18
+    "retained": 144,
+    "unresolved_review": 16
   }
 }
