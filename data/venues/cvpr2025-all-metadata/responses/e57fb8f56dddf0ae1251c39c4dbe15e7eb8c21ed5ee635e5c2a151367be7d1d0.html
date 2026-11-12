@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs">
+<meta name="citation_author" content="Yang, Zhantao">
+<meta name="citation_author" content="Feng, Ruili">
+<meta name="citation_author" content="Yan, Keyu">
+<meta name="citation_author" content="Wang, Huangji">
+<meta name="citation_author" content="Wang, Zhicai">
+<meta name="citation_author" content="Zhu, Shangwen">
+<meta name="citation_author" content="Zhang, Han">
+<meta name="citation_author" content="Xiao, Jie">
+<meta name="citation_author" content="Wu, Pingyu">
+<meta name="citation_author" content="Zhu, Kai">
+<meta name="citation_author" content="Chen, Jixuan">
+<meta name="citation_author" content="Xie, Chen-Wei">
+<meta name="citation_author" content="Yang, Yue">
+<meta name="citation_author" content="Zhang, Hongyang">
+<meta name="citation_author" content="Liu, Yu">
+<meta name="citation_author" content="Cheng, Fan">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="14380">
+<meta name="citation_lastpage" content="14389">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_BACON_Improving_Clarity_of_Image_Captions_via_Bag-of-Concept_Graphs_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Zhantao Yang, Ruili Feng, Keyu Yan, Huangji Wang, Zhicai Wang, Shangwen Zhu, Han Zhang, Jie Xiao, Pingyu Wu, Kai Zhu, Jixuan Chen, Chen-Wei Xie, Yue Yang, Hongyang Zhang, Yu Liu, Fan Cheng</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 14380-14389
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Advancements in large Vision-Language Models have brought precise, accurate image captioning, vital for advancing multi-modal image understanding and processing. Yet these captions often carry lengthy, intertwined contexts that are difficult to parse and frequently overlook essential cues, posing a great barrier for models like GroundingDINO and SDXL, which lack the strong text encoding and syntax analysis needed to fully leverage dense captions.To address this, we propose BACON, a prompting method that breaks down VLM-generated captions into disentangled, structured elements such as objects, relationships, styles, and themes. This approach not only minimizes confusion from handling complex contexts but also allows for efficient transfer into a JSON dictionary, enabling models without linguistic processing capabilities to easily access key information.We annotated 100,000 image-caption pairs using BACON with GPT-4V and trained an LLaVA captioner on this dataset, enabling it to produce BACON-style captions without relying on costly GPT-4V resources. Evaluations of overall quality, precision, and recall--as well as user studies--demonstrate that the resulting caption model consistently outperforms other state-of-the-art VLM models in generating high-quality captions.Additionally, we show that BACON-style captions exhibit better clarity when applied to various models, enabling them to accomplish previously unattainable tasks or surpass existing SOTA solutions without training. For example, BACON-style captions help groundingDINO achieve 1.51 times higher recall scores on open-vocabulary object detection tasks compared to leading methods.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Yang_BACON_Improving_Clarity_of_Image_Captions_via_Bag-of-Concept_Graphs_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Yang_BACON_Improving_Clarity_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2407.03314">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Yang_2025_CVPR,
+    author    = {Yang, Zhantao and Feng, Ruili and Yan, Keyu and Wang, Huangji and Wang, Zhicai and Zhu, Shangwen and Zhang, Han and Xiao, Jie and Wu, Pingyu and Zhu, Kai and Chen, Jixuan and Xie, Chen-Wei and Yang, Yue and Zhang, Hongyang and Liu, Yu and Cheng, Fan},
+    title     = {BACON: Improving Clarity of Image Captions via Bag-of-Concept Graphs},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {14380-14389}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

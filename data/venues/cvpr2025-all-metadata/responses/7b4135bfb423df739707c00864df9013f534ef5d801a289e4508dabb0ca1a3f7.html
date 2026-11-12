@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="AutoLUT: LUT-Based Image Super-Resolution with Automatic Sampling and Adaptive Residual Learning">
+<meta name="citation_author" content="Xu, Yuheng">
+<meta name="citation_author" content="Yang, Shijie">
+<meta name="citation_author" content="Liu, Xin">
+<meta name="citation_author" content="Liu, Jie">
+<meta name="citation_author" content="Tang, Jie">
+<meta name="citation_author" content="Wu, Gangshan">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="23131">
+<meta name="citation_lastpage" content="23140">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_AutoLUT_LUT-Based_Image_Super-Resolution_with_Automatic_Sampling_and_Adaptive_Residual_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        AutoLUT: LUT-Based Image Super-Resolution with Automatic Sampling and Adaptive Residual Learning
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yuheng Xu, Shijie Yang, Xin Liu, Jie Liu, Jie Tang, Gangshan Wu</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 23131-23140
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    In recent years, the increasing popularity of Hi-DPI screens has driven a rising demand for high-resolution images. However, the limited computational power of edge devices poses a challenge in deploying complex super-resolution neural networks, highlighting the need for efficient methods. While prior works have made significant progress, they have not fully exploited pixel-level information. Moreover, their reliance on fixed sampling patterns limits both accuracy and the ability to capture fine details in low-resolution images. To address these challenges, we introduce two plug-and-play modules designed to capture and leverage pixel information effectively in Look-Up Table (LUT) based super-resolution networks. Our method introduces Automatic Sampling (AutoSample), a flexible LUT sampling approach where sampling weights are dynamically learned during training to adapt to pixel variations and expand the receptive field without added inference cost. We also incorporate Adaptive Residual Learning (AdaRL) to enhance inter-layer connections, enabling detailed information flow and improving the network&#x27;s ability to reconstruct fine details. Our method achieves significant performance improvements on both MuLUT and SPF-LUT while maintaining similar storage sizes. Specifically, for MuLUT, we achieve a PSNR improvement of approximately +0.20 dB improvement on average across five datasets . For SPF-LUT, with more than a 50% reduction in storage space and about a 2/3 reduction in inference time, our method still maintains performance comparable to the original.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Xu_AutoLUT_LUT-Based_Image_Super-Resolution_with_Automatic_Sampling_and_Adaptive_Residual_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="http://arxiv.org/abs/2503.01565">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Xu_2025_CVPR,
+    author    = {Xu, Yuheng and Yang, Shijie and Liu, Xin and Liu, Jie and Tang, Jie and Wu, Gangshan},
+    title     = {AutoLUT: LUT-Based Image Super-Resolution with Automatic Sampling and Adaptive Residual Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {23131-23140}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

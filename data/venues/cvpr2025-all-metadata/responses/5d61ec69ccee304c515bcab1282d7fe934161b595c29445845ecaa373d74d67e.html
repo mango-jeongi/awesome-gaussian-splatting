@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Integral Fast Fourier Color Constancy">
+<meta name="citation_author" content="Wei, Wenjun">
+<meta name="citation_author" content="Qian, Yanlin">
+<meta name="citation_author" content="Chen, Huaian">
+<meta name="citation_author" content="Dai, Junkang">
+<meta name="citation_author" content="Jin, Yi">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="26420">
+<meta name="citation_lastpage" content="26429">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Wei_Integral_Fast_Fourier_Color_Constancy_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Integral Fast Fourier Color Constancy
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Wenjun Wei, Yanlin Qian, Huaian Chen, Junkang Dai, Yi Jin</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 26420-26429
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Traditional auto white balance (AWB) algorithms typically assume a single global illuminant source, which leads to color distortions in multi-illuminant scenes. While recent neural network-based methods have shown excellent accuracy in such scenarios, their high parameter count and computational demands limit their practicality for real-time video applications. The Fast Fourier Color Constancy (FFCC) algorithm was proposed for single-illuminant-source scenes, predicting a global illuminant source with high efficiency. However, it cannot be directly applied to multi-illuminant scenarios unless specifically modified. To address this, we propose Integral Fast Fourier Color Constancy (IFFCC), an extension of FFCC tailored for multi-illuminant scenes. IFFCC leverages the proposed integral UV histogram to accelerate histogram computations across all possible regions in Cartesian space and parallelizes Fourier-based convolution operations, resulting in a spatially-smooth illumination map. This approach enables high-accuracy, real-time AWB in multi-illuminant scenes. Extensive experiments show that IFFCC achieves accuracy that is on par with or surpasses that of pixel-level neural networks, while reducing the parameter count by over 400x and processing speed by 20 - 100x faster than network-based approaches.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Wei_Integral_Fast_Fourier_Color_Constancy_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Wei_Integral_Fast_Fourier_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2502.03494">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wei_2025_CVPR,
+    author    = {Wei, Wenjun and Qian, Yanlin and Chen, Huaian and Dai, Junkang and Jin, Yi},
+    title     = {Integral Fast Fourier Color Constancy},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {26420-26429}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

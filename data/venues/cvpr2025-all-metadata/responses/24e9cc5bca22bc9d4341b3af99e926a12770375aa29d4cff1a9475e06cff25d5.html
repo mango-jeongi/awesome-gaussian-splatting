@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Mitigating Object Hallucinations in Large Vision-Language Models with Assembly of Global and Local Attention">
+<meta name="citation_author" content="An, Wenbin">
+<meta name="citation_author" content="Tian, Feng">
+<meta name="citation_author" content="Leng, Sicong">
+<meta name="citation_author" content="Nie, Jiahao">
+<meta name="citation_author" content="Lin, Haonan">
+<meta name="citation_author" content="Wang, Qianying">
+<meta name="citation_author" content="Chen, Ping">
+<meta name="citation_author" content="Zhang, Xiaoqin">
+<meta name="citation_author" content="Lu, Shijian">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="29915">
+<meta name="citation_lastpage" content="29926">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/An_Mitigating_Object_Hallucinations_in_Large_Vision-Language_Models_with_Assembly_of_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Mitigating Object Hallucinations in Large Vision-Language Models with Assembly of Global and Local Attention
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Wenbin An, Feng Tian, Sicong Leng, Jiahao Nie, Haonan Lin, Qianying Wang, Ping Chen, Xiaoqin Zhang, Shijian Lu</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 29915-29926
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Despite great success across various multimodal tasks, Large Vision-Language Models (LVLMs) often encounter object hallucinations with generated textual responses being inconsistent with the actual objects in images. We examine different LVLMs and pinpoint that one root cause of object hallucinations lies with deficient attention on discriminative image features. Specifically, LVLMs often predominantly attend to prompt-irrelevant global features instead of prompt-relevant local features, undermining their visual grounding capacity and leading to object hallucinations. We propose Assembly of Global and Local Attention (AGLA) , a training-free and plug-and-play approach that mitigates hallucinations by assembling global features for response generation and local features for visual discrimination simultaneously.  Specifically, we introduce an image-prompt matching scheme that captures prompt-relevant local features from images, leading to an augmented view of the input image where prompt-relevant content is highlighted while irrelevant distractions are suppressed.  Hallucinations can thus be mitigated with a calibrated logit distribution that is from generative global features of the original image and discriminative local features of the augmented image. Extensive experiments show the superiority of AGLA in LVLM hallucination mitigation, demonstrating its wide applicability across both discriminative and generative tasks. Our code is available at https://github.com/Lackel/AGLA.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/An_Mitigating_Object_Hallucinations_in_Large_Vision-Language_Models_with_Assembly_of_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/An_Mitigating_Object_Hallucinations_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2406.12718">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{An_2025_CVPR,
+    author    = {An, Wenbin and Tian, Feng and Leng, Sicong and Nie, Jiahao and Lin, Haonan and Wang, Qianying and Chen, Ping and Zhang, Xiaoqin and Lu, Shijian},
+    title     = {Mitigating Object Hallucinations in Large Vision-Language Models with Assembly of Global and Local Attention},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {29915-29926}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
