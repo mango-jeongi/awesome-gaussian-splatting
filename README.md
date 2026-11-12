@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4107-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4106-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-12` | Total Papers: **4107** | With Official Code: **570***
+*Last updated: `2026-11-12` | Total Papers: **4106** | With Official Code: **570***
 
 ---
 
@@ -21,7 +21,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `550` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
 | **[Human Avatars & VR](#human-avatars--vr)** | `285` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
 | **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `694` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
-| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `315` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
+| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `314` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
 | **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `93` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
 | **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `315` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
@@ -433,10 +433,10 @@ Showing 60 of 694 papers. [Browse the full category](https://mango-jeongi.github
 
 ### Autonomous Driving & Urban Scenes
 
-*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (315 papers)
+*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (314 papers)
 
 <details>
-<summary><strong>View 315 papers in Autonomous Driving & Urban Scenes</strong></summary>
+<summary><strong>View 314 papers in Autonomous Driving & Urban Scenes</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -501,7 +501,7 @@ Showing 60 of 694 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-06` | **UnsOcc: 3D Semantic Occupancy Prediction in Unstructured Scene via Rendering Fusion**<br><sub>Based on this, we propose UnsOcc, a multi-modal 3D semantic occupancy prediction framework that improves robustness in unstructured environments.</sub> | Wu et al. | `Autonomous Driving`, `Foundations` | [[arXiv:2606.03581]](https://arxiv.org/abs/2606.03581) [[PDF]](https://arxiv.org/pdf/2606.03581.pdf) |
 | `2026-06` | **SparseStreet: Sparse Gaussian Splatting for Real-Time Street Scene Simulation**<br><sub>Motivated by this, we propose SparseStreet, a general compression framework specifically designed for street scenes.</sub> | Wuwu et al. | `Densification & Pruning`, `Compression`, `Autonomous Driving`, `Physics & Simulation` | [[arXiv:2606.03909]](https://arxiv.org/abs/2606.03909) [[PDF]](https://arxiv.org/pdf/2606.03909.pdf) [[Project]](https://sparsestreet.github.io/) |
 
-Showing 60 of 315 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
+Showing 60 of 314 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
 
 </details>
 
