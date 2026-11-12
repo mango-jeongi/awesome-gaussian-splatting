@@ -188,3 +188,19 @@ def test_recorded_live_gemma_response_remains_grounded_and_unreviewed():
 
 def test_thinking_configuration_changes_the_fenced_job_identity():
     assert extractor_version(config()) != extractor_version(config(enable_thinking=True))
+
+
+def test_captured_real_page_gemma_response_rejects_duplicate_context_indices():
+    response = json.loads(
+        Path("tests/fixtures/llama/gemma-radsplat-invalid-response.json").read_bytes()
+    )
+    payload = json.loads(Path("scripts/worker/gemma-radsplat-page6-request.json").read_bytes())
+    source = json.loads(payload["messages"][1]["content"])["words"]
+    page_words = [
+        {**word, "x0": float(i), "x1": float(i + 1), "top": 0.0, "bottom": 1.0}
+        for i, word in enumerate(source)
+    ]
+    parsed = PageSelections.model_validate_json(response["choices"][0]["message"]["content"])
+    assert len(parsed.cells) == 1
+    with pytest.raises(ValueError, match="reordered source-word indices"):
+        candidates_from_selection(parsed, page_words, 6)

@@ -114,3 +114,14 @@ The frozen-policy metadata epoch has verified 2,303/2,701 pages; 398 remain pend
 including six prior failures whose retry deadlines remain enforced. The 43
 previously title-excluded automatic inclusion leads still need source review.
 See the [bound pass receipt](runs/iccv2025-full-metadata-pass4-20261111.json).
+
+## Approved real-page Gemma diagnostic — 2026-11-11
+
+One approved RadSplat page-6 generation completed in 12.54 seconds with an 8,278-token
+prompt, but duplicate/reordered context indices caused rejection by both the
+harness and existing worker adapter. The warm repeat was omitted. The dedicated
+service stopped cleanly, port 8791 closed, and the extraction timer remains healthy.
+This produced no valid extraction result or accepted/published measurement; the
+four-cell positive subset is unscored for this invalid generation. See the
+[actual evidence and limitations](gemma-radsplat-real-page-20261111.md). The
+existing reviewed ledger and canonical corpus are unchanged by the diagnostic.

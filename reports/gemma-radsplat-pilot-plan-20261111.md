@@ -1,6 +1,6 @@
 # Prepared RadSplat real-page Gemma pilot — 2026-11-11
 
-Status: prepared locally; no additional inference or service startup authorized or executed.
+Status: completed after user approval. One request was rejected for invalid indices; the warm repeat was omitted and the service stopped. See [actual results](gemma-radsplat-real-page-20261111.md).
 
 The approved synthetic canary completed and stopped. This follow-up reuses the
 already staged weights/runtime and already transferred RadSplat PDF. It proposes
@@ -51,7 +51,7 @@ finally/cleanup path, verify no listener remains, and check extraction timer
 health. Timeout, context rejection or failed validation is a diagnostic result;
 it must not silently trigger another model, context reduction or cropped input.
 
-Execution requires approval beyond the completed single-synthetic-request canary.
+The user explicitly approved this bounded execution scope after the completed synthetic canary.
 
 ## Offline reference representability audit
 

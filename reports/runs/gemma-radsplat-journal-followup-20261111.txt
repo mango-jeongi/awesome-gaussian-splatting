@@ -1,0 +1,28 @@
+2026-11-11T17:28:01-08:00 msi-raider systemd[5689]: Started papers-llama-table-pilot.service - Bounded Gemma RadSplat real-page diagnostic.
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.172.725 I srv  llama_server: initializing ...
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.172.734 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.173.389 I srv  init_listene: The UI is disabled
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.173.390 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.173.493 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+2026-11-11T17:28:01-08:00 msi-raider llama-server[354719]: 0.00.175.404 I srv    load_model: loading model '/home/mingu/.local/share/papers-llama/staging-gemma-b12259/gemma-4-E4B_q4_0-it.gguf'
+2026-11-11T17:28:02-08:00 msi-raider llama-server[354719]: 0.01.002.548 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-11-11T17:28:02-08:00 msi-raider llama-server[354719]: 0.01.002.630 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-11-11T17:28:02-08:00 msi-raider llama-server[354719]: 0.01.008.602 W load: '</s>' is a normal token here, removing it from EOG list
+2026-11-11T17:28:03-08:00 msi-raider llama-server[354719]: 0.01.926.134 I cmn          init: llama threadpool init, n_threads = 4
+2026-11-11T17:28:03-08:00 msi-raider llama-server[354719]: 0.02.153.244 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+2026-11-11T17:28:03-08:00 msi-raider llama-server[354719]: 0.02.164.118 I srv  server_run_i: model loaded
+2026-11-11T17:28:03-08:00 msi-raider llama-server[354719]: 0.02.164.123 I srv  server_on_li: listening on http://127.0.0.1:8791
+2026-11-11T17:28:04-08:00 msi-raider llama-server[354719]: 0.03.106.549 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+2026-11-11T17:28:04-08:00 msi-raider llama-server[354719]: 0.03.106.859 I slot launch_slot_: id  0 | task 1 | processing task, is_child = 0
+2026-11-11T17:28:12-08:00 msi-raider llama-server[354719]: 0.11.094.771 I slot print_timing: id  0 | task 1 | n_gen =    149, tg =  49.09 t/s, tg_3s =  49.42 t/s
+2026-11-11T17:28:15-08:00 msi-raider llama-server[354719]: 0.14.100.371 I slot print_timing: id  0 | task 1 | n_gen =    327, tg =  54.15 t/s, tg_3s =  59.22 t/s
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.060 I slot print_timing: id  0 | task 1 | prompt eval time =    4972.73 ms /  8278 tokens (    0.60 ms per token,  1664.68 tokens per second)
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.064 I slot print_timing: id  0 | task 1 |        eval time =    7546.45 ms /   404 tokens (   18.73 ms per token,    53.40 tokens per second)
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.065 I slot print_timing: id  0 | task 1 |       total time =   12519.18 ms /  8682 tokens
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.068 I slot print_timing: id  0 | task 1 |    graphs reused =        432
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.068 I slot print_timing: id  0 | task 1 |   graph reallocs =         36    /     0        (same size) / (changed size)
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.626.355 I slot      release: id  0 | task 1 | stop processing: n_tokens = 8681, truncated = 0
+2026-11-11T17:28:17-08:00 msi-raider systemd[5689]: Stopping papers-llama-table-pilot.service - Bounded Gemma RadSplat real-page diagnostic...
+2026-11-11T17:28:17-08:00 msi-raider llama-server[354719]: 0.15.641.468 I srv    operator(): operator(): cleaning up before exit...
+2026-11-11T17:28:17-08:00 msi-raider systemd[5689]: Stopped papers-llama-table-pilot.service - Bounded Gemma RadSplat real-page diagnostic.
+2026-11-11T17:28:17-08:00 msi-raider systemd[5689]: papers-llama-table-pilot.service: Consumed 14.519s CPU time over 15.897s wall clock time, 904.3M memory peak.
