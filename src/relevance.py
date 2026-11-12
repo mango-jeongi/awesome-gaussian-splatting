@@ -18,7 +18,7 @@ from src.identity import identifier_key, paper_keys
 from src.schema import PaperRecord
 
 RULE_VERSION = "gs-topic-v3"
-STRONG = r"\bgaussian[\s-]*splat(?:ting|s)?\b"
+STRONG = r"\bgaussian[\s-]*splat(?:tings?|s)?\b"
 ACRONYM = r"\b[234]d-?gs\b"
 CONTEXT = r"\b(?:render\w*|radiance|novel views?|view synthesis|reconstruction|image compression|image representation|slam|gaussian primitives?|avatar\w*|point clouds?|tomograph\w*|ultrasound|thermal|infrared|sar|rasteriz\w*|scene\w*|edit\w*|segment\w*|simulat\w*|robot\w*|digital twins?)\b"
 ACRONYM_CONTEXT = (

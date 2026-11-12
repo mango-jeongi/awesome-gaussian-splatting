@@ -1,0 +1,23 @@
+{
+  "scope": "Primary-source false-negative regression examples, not an independent benchmark",
+  "cases": [
+    {
+      "source_id": "2412.12091",
+      "title": "Wonderland: Navigating 3D Scenes from a Single Image",
+      "abstract": "How can one efficiently generate high-quality, wide-scope 3D scenes from arbitrary single images? Existing methods suffer several drawbacks, such as requiring multi-view data, time-consuming per-scene optimization, distorted geometry in occluded areas, and low visual quality in backgrounds. Our novel 3D scene reconstruction pipeline overcomes these limitations to tackle the aforesaid challenge. Specifically, we introduce a large-scale reconstruction model that leverages latents from a video diffusion model to predict 3D Gaussian Splattings of scenes in a feed-forward manner. The video diffusion model is designed to create videos precisely following specified camera trajectories, allowing it to generate compressed video latents that encode multi-view information while maintaining 3D consistency. We train the 3D reconstruction model to operate on the video latent space with a progressive learning strategy, enabling the efficient generation of high-quality, wide-scope, and generic 3D scenes. Extensive evaluations across various datasets affirm that our model significantly outperforms existing single-view 3D scene generation methods, especially with out-of-domain images. Thus, we demonstrate for the first time that a 3D reconstruction model can effectively be built upon the latent space of a diffusion model in order to realize efficient 3D scene generation.",
+      "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/91109b12e6d7e906/00000100.644b75b1f7996b835d34edc21c4cbf0e6c0a51450c0e71e9dabdd8e3dfbb39a7.json",
+      "source_sha256": "644b75b1f7996b835d34edc21c4cbf0e6c0a51450c0e71e9dabdd8e3dfbb39a7",
+      "source_observed_at": "2026-11-10T18:22:47.561503Z",
+      "record_sha256": "6899ca377d697e0520fdd22ef11780917f8073754c446bc62f274adef0520047"
+    },
+    {
+      "source_id": "2506.15680",
+      "title": "Particle-Grid Neural Dynamics for Learning Deformable Object Models from RGB-D Videos",
+      "abstract": "Modeling the dynamics of deformable objects is challenging due to their diverse physical properties and the difficulty of estimating states from limited visual information. We address these challenges with a neural dynamics framework that combines object particles and spatial grids in a hybrid representation. Our particle-grid model captures global shape and motion information while predicting dense particle movements, enabling the modeling of objects with varied shapes and materials. Particles represent object shapes, while the spatial grid discretizes the 3D space to ensure spatial continuity and enhance learning efficiency. Coupled with Gaussian Splattings for visual rendering, our framework achieves a fully learning-based digital twin of deformable objects and generates 3D action-conditioned videos. Through experiments, we demonstrate that our model learns the dynamics of diverse objects -- such as ropes, cloths, stuffed animals, and paper bags -- from sparse-view RGB-D recordings of robot-object interactions, while also generalizing at the category level to unseen instances. Our approach outperforms state-of-the-art learning-based and physics-based simulators, particularly in scenarios with limited camera views. Furthermore, we showcase the utility of our learned models in model-based planning, enabling goal-conditioned object manipulation across a range of tasks. The project page is available at https://kywind.github.io/pgnd .",
+      "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/14a676960315e1d0/00000000.4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e.json",
+      "source_sha256": "4b0d8eac13b5444b46a6a11c013b647a268dda9e2326ed58bf8916078c81784e",
+      "source_observed_at": "2026-11-10T18:23:41.542653Z",
+      "record_sha256": "a29a9662839304b26606819c1a68f2ba0fd45669a1563421ad3c1d464579bb27"
+    }
+  ]
+}

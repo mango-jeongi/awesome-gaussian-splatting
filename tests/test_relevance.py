@@ -143,3 +143,35 @@ def test_source_backed_review_override_holds_otherwise_included_candidate():
     )
     decision = RelevancePolicy(OverrideConfig(relevance=[override])).decide(paper)
     assert decision.outcome == "review" and decision.override
+
+
+def test_primary_gaussian_splattings_methods_are_recognized():
+    import json
+    from pathlib import Path
+
+    cases = json.loads(
+        (Path(__file__).parent / "fixtures/gaussian-splattings-regressions.json").read_text(
+            encoding="utf-8"
+        )
+    )["cases"]
+    for case in cases:
+        paper = PaperRecord(
+            arxiv_id=case["source_id"], title=case["title"], abstract=case["abstract"]
+        )
+        assert RelevancePolicy().decide(paper).outcome == "include", case["source_id"]
+
+
+@pytest.mark.parametrize(
+    "title,abstract",
+    [
+        ("A brief comparison", "Related work mentions Gaussian Splattings."),
+        (
+            "A NeRF reconstruction method",
+            "Previous Gaussian Splattings approaches render scenes; we use NeRF instead.",
+        ),
+        ("Scene reconstruction", "We discuss Gaussian splattingsomething for rendering."),
+    ],
+)
+def test_plural_spelling_preserves_scope_and_word_boundaries(title, abstract):
+    paper = PaperRecord(id="plural-boundary-fixture", title=title, abstract=abstract)
+    assert RelevancePolicy().decide(paper).outcome != "include"
