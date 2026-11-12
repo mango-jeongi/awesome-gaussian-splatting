@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Weakly Supervised Semantic Segmentation via Progressive Confidence Region Expansion">
+<meta name="citation_author" content="Xu, Xiangfeng">
+<meta name="citation_author" content="Zhang, Pinyi">
+<meta name="citation_author" content="Huang, Wenxuan">
+<meta name="citation_author" content="Shen, Yunhang">
+<meta name="citation_author" content="Chen, Haosheng">
+<meta name="citation_author" content="Lin, Jingzhong">
+<meta name="citation_author" content="Li, Wei">
+<meta name="citation_author" content="He, Gaoqi">
+<meta name="citation_author" content="Xie, Jiao">
+<meta name="citation_author" content="Lin, Shaohui">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="9829">
+<meta name="citation_lastpage" content="9838">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Weakly_Supervised_Semantic_Segmentation_via_Progressive_Confidence_Region_Expansion_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Weakly Supervised Semantic Segmentation via Progressive Confidence Region Expansion
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Xiangfeng Xu, Pinyi Zhang, Wenxuan Huang, Yunhang Shen, Haosheng Chen, Jingzhong Lin, Wei Li, Gaoqi He, Jiao Xie, Shaohui Lin</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 9829-9838
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Weakly supervised semantic segmentation (WSSS) has garnered considerable attention due to its effective reduction of annotation costs. Most approaches utilize Class Activation Maps (CAM) to produce pseudo-labels, thereby localizing target regions using only image-level annotations. However, the prevalent methods relying on vision transformers (ViT) encounter an &quot;over-expansion&quot; issue, i.e., CAM incorrectly expands high activation value from the target object to the background regions, as it is difficult to learn pixel-level local intrinsic inductive bias in ViT from weak supervisions. To solve this problem, we propose a Progressive Confidence Region Expansion (PCRE) framework for WSSS, it gradually learns a faithful mask over the target region and utilizes this mask to correct the confusion in CAM. PCRE has two key components: Confidence Region Mask Expansion (CRME) and Class-Prototype Enhancement (CPE). CRME progressively expands the mask in the small region with the highest confidence, eventually encompassing the entire target, thereby avoiding unintended CPE aims to enhance mask generation in CRME by leveraging the similarity between the learned, dataset-level class prototypes and patch features as supervision to optimize the mask output from CRME. Extensive experiments demonstrate that our method outperforms the existing single-stage and multi-stage approaches on the PASCAL VOC and MS COCO benchmark datasets. Our code is available at https://github.com/xxf011/WSSS-PCRE .
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Xu_Weakly_Supervised_Semantic_Segmentation_via_Progressive_Confidence_Region_Expansion_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Xu_Weakly_Supervised_Semantic_CVPR_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Xu_2025_CVPR,
+    author    = {Xu, Xiangfeng and Zhang, Pinyi and Huang, Wenxuan and Shen, Yunhang and Chen, Haosheng and Lin, Jingzhong and Li, Wei and He, Gaoqi and Xie, Jiao and Lin, Shaohui},
+    title     = {Weakly Supervised Semantic Segmentation via Progressive Confidence Region Expansion},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {9829-9838}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

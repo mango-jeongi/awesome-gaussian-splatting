@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="VisionArena: 230k Real World User-VLM Conversations with Preference Labels">
+<meta name="citation_author" content="Chou, Christopher">
+<meta name="citation_author" content="Dunlap, Lisa">
+<meta name="citation_author" content="Mashita, Koki">
+<meta name="citation_author" content="Mandal, Krishna">
+<meta name="citation_author" content="Darrell, Trevor">
+<meta name="citation_author" content="Stoica, Ion">
+<meta name="citation_author" content="Gonzalez, Joseph E.">
+<meta name="citation_author" content="Chiang, Wei-Lin">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="3877">
+<meta name="citation_lastpage" content="3887">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Chou_VisionArena_230k_Real_World_User-VLM_Conversations_with_Preference_Labels_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        VisionArena: 230k Real World User-VLM Conversations with Preference Labels
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Christopher Chou, Lisa Dunlap, Koki Mashita, Krishna Mandal, Trevor Darrell, Ion Stoica, Joseph E. Gonzalez, Wei-Lin Chiang</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 3877-3887
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The growing adoption and capabilities of vision-language models (VLMs) demand benchmarks that reflect real-world user interactions. We introduce VisionArena, the largest existing dataset of crowdsourced real-world conversations between users and VLMs. While most visual question-answering datasets focus on close-ended problems or synthetic scenarios, VisionArena contains a wide variety of closed and open ended problems across 230K conversations, 73K unique users, 138 languages, and 45 VLMs. VisionArena consists of VisionArena-Chat, a set of 200k single-turn and multi-turn chat logs with a VLM,  VisionArena-Battle, a set of 30K conversations between a user and 2 anonymous VLMs with preference votes, and VisionArena-Bench, an automatic benchmark consisting of 500 diverse user prompts which can be used to cheaply approximate model rankings.We analyze these datasets and highlight the types of question asked by users, the influence of style on user preference, and areas where models often fall short. We find that more open-ended questions like captioning and humor are heavily influenced by style, which causes certain models like Reka Flash and InternVL which are tuned for style to perform significantly better on these categories compared to other categories. We show that VisionArena-Chat and VisionArena-Battle can be used for post-training to align VLMs to human preferences through supervised fine-tuning. Compared to the popular instruction tuning dataset Llava-Instruct-158K, finetuning the same base model on VisionArena results in a a 17 point improvement on MMMU and a 46 point improvement on the WildVision human preference benchmark. Lastly, we show that running automatic VLM evaluation on VisionArena-Bench results in a model ranking which is largely consistent with major online preference benchmarks. We release both VisionArena and our finetuned model to further VLM development.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Chou_VisionArena_230k_Real_World_User-VLM_Conversations_with_Preference_Labels_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Chou_VisionArena_230k_Real_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2412.08687">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Chou_2025_CVPR,
+    author    = {Chou, Christopher and Dunlap, Lisa and Mashita, Koki and Mandal, Krishna and Darrell, Trevor and Stoica, Ion and Gonzalez, Joseph E. and Chiang, Wei-Lin},
+    title     = {VisionArena: 230k Real World User-VLM Conversations with Preference Labels},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {3877-3887}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

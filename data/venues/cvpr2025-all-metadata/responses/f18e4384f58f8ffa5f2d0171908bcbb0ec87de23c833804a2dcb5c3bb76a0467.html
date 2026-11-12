@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Stabilizing and Accelerating Autofocus with Expert Trajectory Regularized Deep Reinforcement Learning">
+<meta name="citation_author" content="Zhu, Shouhang">
+<meta name="citation_author" content="Li, Chenglin">
+<meta name="citation_author" content="Jiang, Yuankun">
+<meta name="citation_author" content="Wei, Li">
+<meta name="citation_author" content="Kan, Nuowen">
+<meta name="citation_author" content="Zheng, Ziyang">
+<meta name="citation_author" content="Dai, Wenrui">
+<meta name="citation_author" content="Zou, Junni">
+<meta name="citation_author" content="Xiong, Hongkai">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="26440">
+<meta name="citation_lastpage" content="26450">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Zhu_Stabilizing_and_Accelerating_Autofocus_with_Expert_Trajectory_Regularized_Deep_Reinforcement_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Stabilizing and Accelerating Autofocus with Expert Trajectory Regularized Deep Reinforcement Learning
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Shouhang Zhu, Chenglin Li, Yuankun Jiang, Li Wei, Nuowen Kan, Ziyang Zheng, Wenrui Dai, Junni Zou, Hongkai Xiong</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 26440-26450
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Autofocus is a crucial component of modern digital cameras. While recent learning-based methods achieve state-of-the-art in focus prediction accuracy, they unfortunately ignore the potential focus hunting phenomenon of back-and-forth lens movement in the multi-step focusing procedure. To address this, in this paper, we propose an expert regularized deep reinforcement learning (DRL)-based approach for autofocus, which can utilize the sequential information of lens movement trajectory to both enhance the multi-step in-focus prediction accuracy and reduce the chance of focus hunting. Our method generally follows an actor-critic framework. To accelerate the DRL&#x27;s training with a higher sample efficiency, we initialize the policy with a pre-trained single-step prediction network, where the network is further improved by modifying the output of absolute in-focus position distribution to the relative lens movement distribution to establish a better mapping between input images and lens movement. To further stabilize DRL&#x27;s training with a lower occurrence of focus hunting in the resulting lens movement trajectory, we generate some offline trajectories based on prior knowledge to avoid focus hunting, which are then leveraged as an offline dataset of expert trajectories to regularize the actor network&#x27;s training. Empirical evaluations show that our method outperforms those learning-based methods on public benchmarks, with higher single- and multi-step prediction accuracy, and a significant reduction of focus hunting rate.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Zhu_Stabilizing_and_Accelerating_Autofocus_with_Expert_Trajectory_Regularized_Deep_Reinforcement_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Zhu_Stabilizing_and_Accelerating_CVPR_2025_supplemental.zip">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhu_2025_CVPR,
+    author    = {Zhu, Shouhang and Li, Chenglin and Jiang, Yuankun and Wei, Li and Kan, Nuowen and Zheng, Ziyang and Dai, Wenrui and Zou, Junni and Xiong, Hongkai},
+    title     = {Stabilizing and Accelerating Autofocus with Expert Trajectory Regularized Deep Reinforcement Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {26440-26450}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
