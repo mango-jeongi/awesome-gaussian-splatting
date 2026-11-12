@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving">
+<meta name="citation_author" content="Min, Chen">
+<meta name="citation_author" content="Zhao, Dawei">
+<meta name="citation_author" content="Xiao, Liang">
+<meta name="citation_author" content="Zhao, Jian">
+<meta name="citation_author" content="Xu, Xinli">
+<meta name="citation_author" content="Zhu, Zheng">
+<meta name="citation_author" content="Jin, Lei">
+<meta name="citation_author" content="Li, Jianshu">
+<meta name="citation_author" content="Guo, Yulan">
+<meta name="citation_author" content="Xing, Junliang">
+<meta name="citation_author" content="Jing, Liping">
+<meta name="citation_author" content="Nie, Yiming">
+<meta name="citation_author" content="Dai, Bin">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="15522">
+<meta name="citation_lastpage" content="15533">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Min_DriveWorld_4D_Pre-trained_Scene_Understanding_via_World_Models_for_Autonomous_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Chen Min, Dawei Zhao, Liang Xiao, Jian Zhao, Xinli Xu, Zheng Zhu, Lei Jin, Jianshu Li, Yulan Guo, Junliang Xing, Liping Jing, Yiming Nie, Bin Dai</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 15522-15533
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Vision-centric autonomous driving has recently raised wide attention due to its lower cost. Pre-training is essential for extracting a universal representation. However current vision-centric pre-training typically relies on either 2D or 3D pre-text tasks overlooking the temporal characteristics of autonomous driving as a 4D scene understanding task. In this paper we address this challenge by introducing a world model-based autonomous driving 4D representation learning framework dubbed DriveWorld which is capable of pre-training from multi-camera driving videos in a spatio-temporal fashion. Specifically we propose a Memory State-Space Model for spatio-temporal modelling which consists of a Dynamic Memory Bank module for learning temporal-aware latent dynamics to predict future changes and a Static Scene Propagation module for learning spatial-aware latent statics to offer comprehensive scene contexts. We additionally introduce a Task Prompt to decouple task-aware features for various downstream tasks. The experiments demonstrate that DriveWorld delivers promising results on various autonomous driving tasks. When pre-trained with the OpenScene dataset DriveWorld achieves a 7.5% increase in mAP for 3D object detection a 3.0% increase in IoU for online mapping a 5.0% increase in AMOTA for multi-object tracking a 0.1m decrease in minADE for motion forecasting a 3.0% increase in IoU for occupancy prediction and a 0.34m reduction in average L2 error for planning.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Min_DriveWorld_4D_Pre-trained_Scene_Understanding_via_World_Models_for_Autonomous_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Min_DriveWorld_4D_Pre-trained_CVPR_2024_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2405.04390">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Min_2024_CVPR,
+    author    = {Min, Chen and Zhao, Dawei and Xiao, Liang and Zhao, Jian and Xu, Xinli and Zhu, Zheng and Jin, Lei and Li, Jianshu and Guo, Yulan and Xing, Junliang and Jing, Liping and Nie, Yiming and Dai, Bin},
+    title     = {DriveWorld: 4D Pre-trained Scene Understanding via World Models for Autonomous Driving},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {15522-15533}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

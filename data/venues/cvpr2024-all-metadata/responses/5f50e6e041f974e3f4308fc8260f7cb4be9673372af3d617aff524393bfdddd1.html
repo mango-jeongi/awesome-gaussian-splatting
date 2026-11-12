@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="TFMQ-DM: Temporal Feature Maintenance Quantization for Diffusion Models">
+<meta name="citation_author" content="Huang, Yushi">
+<meta name="citation_author" content="Gong, Ruihao">
+<meta name="citation_author" content="Liu, Jing">
+<meta name="citation_author" content="Chen, Tianlong">
+<meta name="citation_author" content="Liu, Xianglong">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="7362">
+<meta name="citation_lastpage" content="7371">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_TFMQ-DM_Temporal_Feature_Maintenance_Quantization_for_Diffusion_Models_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        TFMQ-DM: Temporal Feature Maintenance Quantization for Diffusion Models
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yushi Huang, Ruihao Gong, Jing Liu, Tianlong Chen, Xianglong Liu</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 7362-7371
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The Diffusion model a prevalent framework for image generation encounters significant challenges in terms of broad applicability due to its extended inference times and substantial memory requirements. Efficient Post-training Quantization (PTQ) is pivotal for addressing these issues in traditional models. Different from traditional models diffusion models heavily depend on the time-step t to achieve satisfactory multi-round denoising. Usually t from the finite set \ 1 \ldots T\  is encoded to a temporal feature by a few modules totally irrespective of the sampling data. However existing PTQ methods do not optimize these modules separately. They adopt inappropriate reconstruction targets and complex calibration methods resulting in a severe disturbance of the temporal feature and denoising trajectory as well as a low compression efficiency. To solve these we propose a Temporal Feature Maintenance Quantization (TFMQ) framework building upon a Temporal Information Block which is just related to the time-step t and unrelated to the sampling data. Powered by the pioneering block design we devise temporal information aware reconstruction (TIAR) and finite set calibration (FSC) to align the full-precision temporal features in a limited time. Equipped with the framework we can maintain the most temporal information and ensure the end-to-end generation quality. Extensive experiments on various datasets and diffusion models prove our state-of-the-art results. Remarkably our quantization approach for the first time achieves model performance nearly on par with the full-precision model under 4-bit weight quantization. Additionally our method incurs almost no extra computational cost and accelerates quantization time by 2.0 xon LSUN-Bedrooms 256 x256 compared to previous works. Our code is publicly available at \href https://github.com/ModelTC/TFMQ-DM  https://github.com/ModelTC/TFMQ-DM .
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Huang_TFMQ-DM_Temporal_Feature_Maintenance_Quantization_for_Diffusion_Models_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Huang_TFMQ-DM_Temporal_Feature_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Huang_2024_CVPR,
+    author    = {Huang, Yushi and Gong, Ruihao and Liu, Jing and Chen, Tianlong and Liu, Xianglong},
+    title     = {TFMQ-DM: Temporal Feature Maintenance Quantization for Diffusion Models},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {7362-7371}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

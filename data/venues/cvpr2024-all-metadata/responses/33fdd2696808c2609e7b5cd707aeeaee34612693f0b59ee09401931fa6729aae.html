@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought">
+<meta name="citation_author" content="Yao, Junyi">
+<meta name="citation_author" content="Liu, Yijiang">
+<meta name="citation_author" content="Dong, Zhen">
+<meta name="citation_author" content="Guo, Mingfei">
+<meta name="citation_author" content="Hu, Helan">
+<meta name="citation_author" content="Keutzer, Kurt">
+<meta name="citation_author" content="Du, Li">
+<meta name="citation_author" content="Zhou, Daquan">
+<meta name="citation_author" content="Zhang, Shanghang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="7027">
+<meta name="citation_lastpage" content="7037">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Junyi Yao, Yijiang Liu, Zhen Dong, Mingfei Guo, Helan Hu, Kurt Keutzer, Li Du, Daquan Zhou, Shanghang Zhang</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 7027-7037
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Diffusion-based generative models have exhibited remarkable capability in the production of high-fidelity visual content such as images and videos. However their performance is significantly contingent upon the quality of textual inputs commonly referred to as &quot;prompts&quot;. The process of traditional prompt engineering while effective necessitates empirical expertise and poses challenges for inexperienced users. In this paper we introduce PromptCoT an innovative enhancer that autonomously refines prompts for users. PromptCoT is designed based on the observation that prompts which resemble the textual information of high-quality images in the training set often lead to superior generation performance. Therefore we fine-tune the pre-trained Large Language Models (LLM) using a curated text dataset that solely comprises descriptions of high-quality visual content. By doing so the LLM can capture the distribution of high-quality training texts enabling it to generate aligned continuations and revisions to boost the original texts. Nonetheless one drawback of pre-trained LLMs is their tendency to generate extraneous or irrelevant information. We employ the Chain-of-Thought (CoT) mechanism to improve the alignment between the original text prompts and their refined versions. CoT can extract and amalgamate crucial information from the aligned continuation and revision enabling reasonable inferences based on the contextual cues to produce a more comprehensive and nuanced final output. Considering computational efficiency instead of allocating a dedicated LLM for prompt enhancement to each individual model or dataset we integrate adapters that facilitate dataset-specific adaptation leveraging a shared pre-trained LLM as the foundation for this process. With independent fine-tuning of these adapters we can adapt PromptCoT to new datasets while minimally increasing training costs and memory usage. We evaluate the effectiveness of PromptCoT by assessing its performance on widely-used latent diffusion models for image and video generation. The results demonstrate significant improvements in key performance metrics.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Yao_PromptCoT_Align_Prompt_Distribution_via_Adapted_Chain-of-Thought_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Yao_PromptCoT_Align_Prompt_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Yao_2024_CVPR,
+    author    = {Yao, Junyi and Liu, Yijiang and Dong, Zhen and Guo, Mingfei and Hu, Helan and Keutzer, Kurt and Du, Li and Zhou, Daquan and Zhang, Shanghang},
+    title     = {PromptCoT: Align Prompt Distribution via Adapted Chain-of-Thought},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {7027-7037}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

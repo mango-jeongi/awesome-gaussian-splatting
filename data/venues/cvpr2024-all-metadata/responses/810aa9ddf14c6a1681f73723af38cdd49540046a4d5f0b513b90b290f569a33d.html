@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Learn to Rectify the Bias of CLIP for Unsupervised Semantic Segmentation">
+<meta name="citation_author" content="Wang, Jingyun">
+<meta name="citation_author" content="Kang, Guoliang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="4102">
+<meta name="citation_lastpage" content="4112">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_Learn_to_Rectify_the_Bias_of_CLIP_for_Unsupervised_Semantic_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Learn to Rectify the Bias of CLIP for Unsupervised Semantic Segmentation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Jingyun Wang, Guoliang Kang</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 4102-4112
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Recent works utilize CLIP to perform the challenging unsupervised semantic segmentation task where only images without annotations are available. However we observe that when adopting CLIP to such a pixel-level understanding task unexpected bias occurs. Previous works don&#x27;t explicitly model such bias which largely constrains the segmentation performance. In this paper we propose to explicitly model and rectify the bias existing in CLIP to facilitate the unsupervised semantic segmentation. Specifically we design a learnable &quot;Reference&quot; prompt to encode class-preference bias and project the positional embedding of vision transformer to represent space-preference bias. Via a simple element-wise subtraction we rectify the logits of CLIP classifier. Based on the rectified logits we generate a segmentation mask via a Gumbel-Softmax operation. Then a contrastive loss between masked visual feature and the text features of different classes is imposed to facilitate the effective bias modeling. To further improve the segmentation we distill the knowledge from the rectified CLIP to the advanced segmentation architecture via minimizing our designed mask-guided feature-guided and text-guided loss terms. Extensive experiments on standard benchmarks demonstrate that our method performs favorably against previous state-of-the-arts. The implementation is available at https://github.com/dogehhh/ReCLIP.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Wang_Learn_to_Rectify_the_Bias_of_CLIP_for_Unsupervised_Semantic_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Wang_Learn_to_Rectify_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wang_2024_CVPR,
+    author    = {Wang, Jingyun and Kang, Guoliang},
+    title     = {Learn to Rectify the Bias of CLIP for Unsupervised Semantic Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {4102-4112}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

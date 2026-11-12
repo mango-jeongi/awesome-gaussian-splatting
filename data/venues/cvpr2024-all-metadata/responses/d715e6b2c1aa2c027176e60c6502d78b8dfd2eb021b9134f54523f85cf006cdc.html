@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Visual Prompting for Generalized Few-shot Segmentation: A Multi-scale Approach">
+<meta name="citation_author" content="Hossain, Mir Rayat Imtiaz">
+<meta name="citation_author" content="Siam, Mennatullah">
+<meta name="citation_author" content="Sigal, Leonid">
+<meta name="citation_author" content="Little, James J.">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="23470">
+<meta name="citation_lastpage" content="23480">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Hossain_Visual_Prompting_for_Generalized_Few-shot_Segmentation_A_Multi-scale_Approach_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Visual Prompting for Generalized Few-shot Segmentation: A Multi-scale Approach
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Mir Rayat Imtiaz Hossain, Mennatullah Siam, Leonid Sigal, James J. Little</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 23470-23480
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The emergence of attention-based transformer models has led to their extensive use in various tasks due to their superior generalization and transfer properties. Recent research has demonstrated that such models when prompted appropriately are excellent for few-shot inference. However such techniques are under-explored for dense prediction tasks like semantic segmentation. In this work we examine the effectiveness of prompting a transformer-decoder with learned visual prompts for the generalized few-shot segmentation (GFSS) task. Our goal is to achieve strong performance not only on novel categories with limited examples but also to retain performance on base categories. We propose an approach to learn visual prompts with limited examples. These learned visual prompts are used to prompt a multiscale transformer decoder to facilitate accurate dense predictions. Additionally we introduce a unidirectional causal attention mechanism between the novel prompts learned with limited examples and the base prompts learned with abundant data. This mechanism enriches the novel prompts without deteriorating the base class performance. Overall this form of prompting helps us achieve state-of-the-art performance for GFSS on two different benchmark datasets: COCO-20^i and Pascal-5^i without the need for test-time optimization (or transduction). Furthermore test-time optimization leveraging unlabelled test data can be used to improve the prompts which we refer to as transductive prompt tuning.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Hossain_Visual_Prompting_for_Generalized_Few-shot_Segmentation_A_Multi-scale_Approach_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Hossain_Visual_Prompting_for_CVPR_2024_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2404.11732">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Hossain_2024_CVPR,
+    author    = {Hossain, Mir Rayat Imtiaz and Siam, Mennatullah and Sigal, Leonid and Little, James J.},
+    title     = {Visual Prompting for Generalized Few-shot Segmentation: A Multi-scale Approach},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {23470-23480}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

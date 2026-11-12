@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="TASeg: Temporal Aggregation Network for LiDAR Semantic Segmentation">
+<meta name="citation_author" content="Wu, Xiaopei">
+<meta name="citation_author" content="Hou, Yuenan">
+<meta name="citation_author" content="Huang, Xiaoshui">
+<meta name="citation_author" content="Lin, Binbin">
+<meta name="citation_author" content="He, Tong">
+<meta name="citation_author" content="Zhu, Xinge">
+<meta name="citation_author" content="Ma, Yuexin">
+<meta name="citation_author" content="Wu, Boxi">
+<meta name="citation_author" content="Liu, Haifeng">
+<meta name="citation_author" content="Cai, Deng">
+<meta name="citation_author" content="Ouyang, Wanli">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="15311">
+<meta name="citation_lastpage" content="15320">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_TASeg_Temporal_Aggregation_Network_for_LiDAR_Semantic_Segmentation_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        TASeg: Temporal Aggregation Network for LiDAR Semantic Segmentation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Xiaopei Wu, Yuenan Hou, Xiaoshui Huang, Binbin Lin, Tong He, Xinge Zhu, Yuexin Ma, Boxi Wu, Haifeng Liu, Deng Cai, Wanli Ouyang</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 15311-15320
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Training deep models for LiDAR semantic segmentation is challenging due to the inherent sparsity of point clouds. Utilizing temporal data is a natural remedy against the sparsity problem as it makes the input signal denser. However previous multi-frame fusion algorithms fall short in utilizing sufficient temporal information due to the memory constraint and they also ignore the informative temporal images. To fully exploit rich information hidden in long-term temporal point clouds and images we present the Temporal Aggregation Network termed TASeg. Specifically we propose a Temporal LiDAR Aggregation and Distillation (TLAD) algorithm which leverages historical priors to assign different aggregation steps for different classes. It can largely reduce memory and time overhead while achieving higher accuracy. Besides TLAD trains a teacher injected with gt priors to distill the model further boosting the performance. To make full use of temporal images we design a Temporal Image Aggregation and Fusion (TIAF) module which can greatly expand the camera FOV and enhance the present features. Temporal LiDAR points in the camera FOV are used as mediums to transform temporal image features to the present coordinate for temporal multi-modal fusion. Moreover we develop a Static-Moving Switch Augmentation (SMSA) algorithm which utilizes sufficient temporal information to enable objects to switch their motion states freely thus greatly increasing static and moving training samples. Our TASeg ranks 1st on three challenging tracks i.e. SemanticKITTI single-scan track multi-scan track and nuScenes LiDAR segmentation track strongly demonstrating the superiority of our method. Codes are available at https://github.com/LittlePey/TASeg.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Wu_TASeg_Temporal_Aggregation_Network_for_LiDAR_Semantic_Segmentation_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Wu_TASeg_Temporal_Aggregation_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wu_2024_CVPR,
+    author    = {Wu, Xiaopei and Hou, Yuenan and Huang, Xiaoshui and Lin, Binbin and He, Tong and Zhu, Xinge and Ma, Yuexin and Wu, Boxi and Liu, Haifeng and Cai, Deng and Ouyang, Wanli},
+    title     = {TASeg: Temporal Aggregation Network for LiDAR Semantic Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {15311-15320}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

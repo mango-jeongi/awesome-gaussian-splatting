@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="MicroCinema: A Divide-and-Conquer Approach for Text-to-Video Generation">
+<meta name="citation_author" content="Wang, Yanhui">
+<meta name="citation_author" content="Bao, Jianmin">
+<meta name="citation_author" content="Weng, Wenming">
+<meta name="citation_author" content="Feng, Ruoyu">
+<meta name="citation_author" content="Yin, Dacheng">
+<meta name="citation_author" content="Yang, Tao">
+<meta name="citation_author" content="Zhang, Jingxu">
+<meta name="citation_author" content="Dai, Qi">
+<meta name="citation_author" content="Zhao, Zhiyuan">
+<meta name="citation_author" content="Wang, Chunyu">
+<meta name="citation_author" content="Qiu, Kai">
+<meta name="citation_author" content="Yuan, Yuhui">
+<meta name="citation_author" content="Sun, Xiaoyan">
+<meta name="citation_author" content="Luo, Chong">
+<meta name="citation_author" content="Guo, Baining">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="8414">
+<meta name="citation_lastpage" content="8424">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_MicroCinema_A_Divide-and-Conquer_Approach_for_Text-to-Video_Generation_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        MicroCinema: A Divide-and-Conquer Approach for Text-to-Video Generation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yanhui Wang, Jianmin Bao, Wenming Weng, Ruoyu Feng, Dacheng Yin, Tao Yang, Jingxu Zhang, Qi Dai, Zhiyuan Zhao, Chunyu Wang, Kai Qiu, Yuhui Yuan, Xiaoyan Sun, Chong Luo, Baining Guo</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 8414-8424
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    We present MicroCinema a straightforward yet effective framework for high-quality and coherent text-to-video generation. Unlike existing approaches that align text prompts with video directly MicroCinema introduces a Divide-and-Conquer strategy which divides the text-to-video into a two-stage process: text-to-image generation and image&amp;text-to-video generation. This strategy offers two significant advantages. a) It allows us to take full advantage of the recent advances in text-to-image models such as Stable Diffusion Midjourney and DALLE to generate photorealistic and highly detailed images. b) Leveraging the generated image the model can allocate less focus to fine-grained appearance details prioritizing the efficient learning of motion dynamics. To implement this strategy effectively we introduce two core designs. First we propose the Appearance Injection Network enhancing the preservation of the appearance of the given image. Second we introduce the Appearance Noise Prior a novel mechanism aimed at maintaining the capabilities of pre-trained 2D diffusion models. These design elements empower MicroCinema to generate high-quality videos with precise motion guided by the provided text prompts. Extensive experiments demonstrate the superiority of the proposed framework. Concretely MicroCinema achieves SOTA zero-shot FVD of 342.86 on UCF-101 and 377.40 on MSR-VTT.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Wang_MicroCinema_A_Divide-and-Conquer_Approach_for_Text-to-Video_Generation_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Wang_MicroCinema_A_Divide-and-Conquer_CVPR_2024_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2311.18829">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wang_2024_CVPR,
+    author    = {Wang, Yanhui and Bao, Jianmin and Weng, Wenming and Feng, Ruoyu and Yin, Dacheng and Yang, Tao and Zhang, Jingxu and Dai, Qi and Zhao, Zhiyuan and Wang, Chunyu and Qiu, Kai and Yuan, Yuhui and Sun, Xiaoyan and Luo, Chong and Guo, Baining},
+    title     = {MicroCinema: A Divide-and-Conquer Approach for Text-to-Video Generation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {8414-8424}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

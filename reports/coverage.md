@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-11 (America/Los_Angeles)
 
-Observed at 2026-11-12T02:30:00.147205+00:00. The [current machine receipt](runs/coverage-after-discoveries-20261111.json) binds consumed source bytes and uses the current active corpus. It supersedes the preserved [pre-discovery snapshot](runs/coverage-current-20261111.json) and [earlier historical snapshot](runs/coverage-20261111.json). This report does not declare Phase 2/3 complete.
+Observed at 2026-11-12T02:46:46.176877+00:00. The [current machine receipt](runs/coverage-after-source-reviews-20261111.json) binds current source bytes. The prior [post-discovery snapshot](runs/coverage-after-discoveries-20261111.json) and earlier receipts remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -8,7 +8,7 @@ The catalog has **4,103 active papers and six archived records**. There are 4,07
 
 All 340 frozen monthly query slices are complete, covering 1998-08-01 through the exclusive cutoff 2026-11-10T00:00:00Z. The literal query and comparator remain in the receipt. There are 4,466 unique candidates: 4,045 reviewed-application includes, 41 exclusions and 380 unresolved reviews under the frozen application policy. These counts do not establish coverage of all NeRF literature or later updates. The current source hashes were checked before retaining the historical-query results.
 
-The original 165-seed ledger has **141 retained, five archived and 19 unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Reviewed MASt3R foundation retention and SAR-GS identity changes did not discard unresolved seed cases.
+The original 165-seed ledger has **142 retained, five archived and 18 unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Source-backed MASt3R and [Zero-1-to-3 foundation retention](zero123-seed-foundation-review-20261111.md), plus the SAR-GS identity review, preserve all original IDs without silently discarding review cases.
 
 ## Venue coverage
 
@@ -17,11 +17,11 @@ The declared inventory still has **56 cells: four crawled/partial and 52 pending
 | Full-metadata epoch | Frozen listing | Verified pages | Pending, including failures | Failed |
 | --- | ---: | ---: | ---: | ---: |
 | ICCV 2025 main | 2,701 | 2,701 | 0 | 0 |
-| CVPR 2024 main | 2,716 | 1,029 | 1,687 | 4 |
+| CVPR 2024 main | 2,716 | 1,526 | 1,190 | 7 |
 
 ICCV has all 2,701 abstracts and a verified one-to-one title mapping between the two frozen official inventories. **512 rows retain author discrepancies**; source identity, dates, scope and provider review remain open. Of 2,552 title-excluded pages, metadata produced 49 include leads, 62 review leads and 2,441 exclusions. Those are automatic policy outcomes, not measured population relevance accuracy. See the [ICCV report](iccv2025-metadata-capture.md).
 
-CVPR 2024 has 133 reused verified pages and 896 new verified pages from 900 live requests. Four failures remain recorded: one HTTP 404, one HTTP 200 metadata mismatch and two transport failures. Their retry deadlines remain intact. The 896 title-excluded pages yield six include leads and 35 review leads. These need source scope adjudication. Both epochs passed zero-request hash/parser replays and retain separate frozen policies. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023/2025 and the other 52 cells retain their published gaps in `config/sources.yaml`; DBLP access remains unresolved.
+CVPR 2024 has 133 reused verified pages and 1,393 additional verified pages from 1,400 bounded live requests, including one separately reviewed author-encoding correction applied offline. Seven failures remain recorded: two HTTP 404s and five transport failures. Their retry deadlines remain intact. The 1,393 title-excluded pages yield six include leads and 53 review leads. These need source scope adjudication. Both epochs passed zero-request hash/parser replays and retain separate frozen policies. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023/2025 and the other 52 cells retain their published gaps in `config/sources.yaml`; DBLP access remains unresolved.
 
 Two [source-reviewed proceedings discoveries](iccv2025-reviewed-discoveries-20261111.md), DGTalker and Hi-Gaussian, are now canonical additions with verified publication DOIs and independent official author agreement. All 4,101 previous records, existing aliases and six archives remain exact. Neither captured CVF page links arXiv; global preprint absence is not asserted. The two papers have fresh OpenAlex observations, but no eligible velocity window.
 
@@ -51,4 +51,4 @@ Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollb
 
 The [full cached-corpus release rehearsal](release-cache-backed-rehearsal-20261111.md) produced two byte-identical 83,681,280-byte archives, restored all 160 files and verified the earlier 393-file rollback archive. These local checks do not establish production deployment or rollback.
 
-Remaining gates include 19 seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
+Remaining gates include 18 seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.

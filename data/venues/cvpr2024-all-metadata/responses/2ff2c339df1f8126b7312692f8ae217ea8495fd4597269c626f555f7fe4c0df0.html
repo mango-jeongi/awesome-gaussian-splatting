@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="DL3DV-10K: A Large-Scale Scene Dataset for Deep Learning-based 3D Vision">
+<meta name="citation_author" content="Ling, Lu">
+<meta name="citation_author" content="Sheng, Yichen">
+<meta name="citation_author" content="Tu, Zhi">
+<meta name="citation_author" content="Zhao, Wentian">
+<meta name="citation_author" content="Xin, Cheng">
+<meta name="citation_author" content="Wan, Kun">
+<meta name="citation_author" content="Yu, Lantao">
+<meta name="citation_author" content="Guo, Qianyu">
+<meta name="citation_author" content="Yu, Zixun">
+<meta name="citation_author" content="Lu, Yawen">
+<meta name="citation_author" content="Li, Xuanmao">
+<meta name="citation_author" content="Sun, Xingpeng">
+<meta name="citation_author" content="Ashok, Rohan">
+<meta name="citation_author" content="Mukherjee, Aniruddha">
+<meta name="citation_author" content="Kang, Hao">
+<meta name="citation_author" content="Kong, Xiangrui">
+<meta name="citation_author" content="Hua, Gang">
+<meta name="citation_author" content="Zhang, Tianyi">
+<meta name="citation_author" content="Benes, Bedrich">
+<meta name="citation_author" content="Bera, Aniket">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="22160">
+<meta name="citation_lastpage" content="22169">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Ling_DL3DV-10K_A_Large-Scale_Scene_Dataset_for_Deep_Learning-based_3D_Vision_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        DL3DV-10K: A Large-Scale Scene Dataset for Deep Learning-based 3D Vision
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Lu Ling, Yichen Sheng, Zhi Tu, Wentian Zhao, Cheng Xin, Kun Wan, Lantao Yu, Qianyu Guo, Zixun Yu, Yawen Lu, Xuanmao Li, Xingpeng Sun, Rohan Ashok, Aniruddha Mukherjee, Hao Kang, Xiangrui Kong, Gang Hua, Tianyi Zhang, Bedrich Benes, Aniket Bera</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 22160-22169
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    We have witnessed significant progress in deep learning-based 3D vision ranging from neural radiance field (NeRF) based 3D representation learning to applications in novel view synthesis (NVS). However existing scene-level datasets for deep learning-based 3D vision limited to either synthetic environments or a narrow selection of real-world scenes are quite insufficient. This insufficiency not only hinders a comprehensive benchmark of existing methods but also caps what could be explored in deep learning-based 3D analysis. To address this critical gap we present DL3DV-10K a large-scale scene dataset featuring 51.2 million frames from 10510 videos captured from 65 types of point-of-interest (POI) locations covering both bounded and unbounded scenes with different levels of reflection transparency and lighting. We conducted a comprehensive benchmark of recent NVS methods on DL3DV-10K which revealed valuable insights for future research in NVS. In addition we have obtained encouraging results in a pilot study to learn generalizable NeRF from DL3DV-10K which manifests the necessity of a large-scale scene-level dataset to forge a path toward a foundation model for learning 3D representation. Our DL3DV-10K dataset benchmark results and models will be publicly accessible.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Ling_DL3DV-10K_A_Large-Scale_Scene_Dataset_for_Deep_Learning-based_3D_Vision_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Ling_DL3DV-10K_A_Large-Scale_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Ling_2024_CVPR,
+    author    = {Ling, Lu and Sheng, Yichen and Tu, Zhi and Zhao, Wentian and Xin, Cheng and Wan, Kun and Yu, Lantao and Guo, Qianyu and Yu, Zixun and Lu, Yawen and Li, Xuanmao and Sun, Xingpeng and Ashok, Rohan and Mukherjee, Aniruddha and Kang, Hao and Kong, Xiangrui and Hua, Gang and Zhang, Tianyi and Benes, Bedrich and Bera, Aniket},
+    title     = {DL3DV-10K: A Large-Scale Scene Dataset for Deep Learning-based 3D Vision},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {22160-22169}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
