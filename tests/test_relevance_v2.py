@@ -108,7 +108,7 @@ def test_foundations_require_exact_reviewed_identity_and_keep_source_evidence():
         assert override.evidence[0].value["source_capture_sha256"]
 
 
-def test_frozen_development_and_challenge_are_identity_disjoint_and_meet_thresholds():
+def test_source_disjoint_packets_with_explicit_scope_review_version_meet_thresholds():
     root = Path(__file__).resolve().parents[1]
     policy = RelevancePolicy.load(root / "config/overrides.yaml")
     inventories = []
@@ -117,7 +117,14 @@ def test_frozen_development_and_challenge_are_identity_disjoint_and_meet_thresho
         packet_payload = (directory / "candidates.json").read_bytes()
         report = evaluate_relevance(
             packet_payload,
-            (directory / "annotations.json").read_bytes(),
+            (
+                directory
+                / (
+                    "annotations-full-method-20261112.json"
+                    if name == "relevance"
+                    else "annotations.json"
+                )
+            ).read_bytes(),
             policy,
             source_directory=directory / "sources",
         )

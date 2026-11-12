@@ -1,0 +1,71 @@
+{
+  "canonical_raw_sha256": "aeca06fbb26027671ff7c09b9cb658df49e6c64ab1b944603691a83033eba0da",
+  "canonical_unchanged": true,
+  "capture_epochs_reclassified": false,
+  "current_ledger_sha256": "edf58998dee8c16020e944ec4dc2e7239afb2d969b5bdeee3886d57a76b37723",
+  "decisions": [
+    {
+      "limitations": "Scope retention only; the abbreviated canonical author display, legacy summary/abstract, original date, publication metadata and existing identifiers remain unchanged. The existing active-view-selection summary is not validated by this review. FisherRF figure captions alone were not used as proof of a GS implementation of BayesRays.",
+      "paper_id": "paper:2024-be14b98be1",
+      "reason": "Curated uncertainty-estimation foundation: PUP 3D-GS (2406.10219v2) Section 4.1 explicitly identifies its Fisher approximation with references 5 and 7; reference 5 is Bayes’ Rays. Section 2.1 distinguishes the NeRF perturbation-field formulation from PUP’s direct Gaussian-parameter formulation. This is a specific methodological foundation for a Gaussian-pruning method, not a claim that BayesRays itself uses GS or is directly implemented on GS.",
+      "record_sha256": "827aec2528414bb321750bba515648aadfa24846596fc49096bbe72ee2fc222b",
+      "source_arxiv_id": "2309.03185"
+    },
+    {
+      "limitations": "Scope retention only; no claim that the 2017 paper used GS, that the GS paper reuses its code, or that downstream transfer performance was independently reproduced. Canonical authors, dates, identifiers and publication fields remain unchanged.",
+      "paper_id": "paper:2017-b2f76bd1a5",
+      "reason": "Curated simulation-to-real foundation: Meshless Domain Randomization (2607.22890v1) Section 2 explicitly attributes randomized rendering for sim-to-real transfer to Tobin et al. (reference 4), and Sections 3.1–3.4 instantiate that principle directly in the 3D Gaussian representation through photometric SH perturbations, procedural textures and randomized rendered backgrounds. This specific cited rendering principle underlies the inspected GS data-generation pipeline; generic robotics or an incidental citation alone does not grant inclusion.",
+      "record_sha256": "9fa74b659b95cc8506af103b3212bb514b8c281d4bcf5371913708a345a6534d",
+      "source_arxiv_id": "1703.06907"
+    }
+  ],
+  "new_policy_digest": "00733c9e70f9653c396b7a5ae97c51f6c20c8705289884b0558b99f3c5b9afe2",
+  "new_policy_frozen_file": "data/venues/policies/00733c9e70f9653c396b7a5ae97c51f6c20c8705289884b0558b99f3c5b9afe2.yaml",
+  "other_seed_rows_unchanged": 163,
+  "prior_ledger_file": "data/reviews/history/seed-before-uncertainty-randomization-eee9eb24e0704e896f98e05fb664f4187ad1b127682c7883f25e40fa3bbbb937.json",
+  "prior_ledger_sha256": "eee9eb24e0704e896f98e05fb664f4187ad1b127682c7883f25e40fa3bbbb937",
+  "prior_policy_digest": "b836bbdfbae820fcacff2ab87731400694659f8ffe6399e159e27cdc27ddd362",
+  "prior_policy_frozen_bytes_unchanged": true,
+  "retained_seed_record_hashes_verified": 153,
+  "reviewed_at": "2026-11-12T18:09:19.941068+00:00",
+  "reviewed_by": "Codex primary-method foundation adjudication; not independent human review",
+  "source_captures": [
+    {
+      "bytes": 263089,
+      "http_status": 200,
+      "observed_at": "2026-11-12T18:06:08.844002+00:00",
+      "sha256": "ea9750c9ca1268082d4a62da929c844a57c4ec7ab096249ca49f6a4ae4915ca7",
+      "source_file": "data/reviews/sources/ea9750c9ca1268082d4a62da929c844a57c4ec7ab096249ca49f6a4ae4915ca7.html",
+      "url": "https://arxiv.org/html/2406.10219v2"
+    },
+    {
+      "bytes": 126038,
+      "http_status": 200,
+      "observed_at": "2026-11-12T18:06:11.963635+00:00",
+      "sha256": "75c92e8c5d7f6f1e32d73830a65fc1b371ccb022af8e68938727ed1e56576c2a",
+      "source_file": "data/reviews/sources/75c92e8c5d7f6f1e32d73830a65fc1b371ccb022af8e68938727ed1e56576c2a.html",
+      "url": "https://arxiv.org/html/2607.22890v1"
+    },
+    {
+      "bytes": 39382,
+      "http_status": 200,
+      "observed_at": "2026-11-12T18:06:15.072787+00:00",
+      "sha256": "fd54143a8b34bae3e1ad49478f41a8b3a3f179fde76fdb6248ca43ad18b1daa1",
+      "source_file": "data/reviews/sources/fd54143a8b34bae3e1ad49478f41a8b3a3f179fde76fdb6248ca43ad18b1daa1.html",
+      "url": "https://arxiv.org/abs/2309.03185v1"
+    },
+    {
+      "bytes": 42483,
+      "http_status": 200,
+      "observed_at": "2026-11-12T18:06:18.106480+00:00",
+      "sha256": "94ed74cf6859409a051c6916e89357c35dbbc90ae8b4ee021425ce6a1aa52448",
+      "source_file": "data/reviews/sources/94ed74cf6859409a051c6916e89357c35dbbc90ae8b4ee021425ce6a1aa52448.html",
+      "url": "https://arxiv.org/abs/1703.06907v1"
+    }
+  ],
+  "summary": {
+    "archived": 5,
+    "retained": 153,
+    "unresolved_review": 7
+  }
+}

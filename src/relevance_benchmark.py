@@ -6,7 +6,8 @@ import json
 from collections import Counter
 from datetime import datetime
 from pathlib import Path
-from typing import Literal
+from typing import Annotated, Literal
+from urllib.parse import urlparse
 
 from pydantic import Field, model_validator
 
@@ -66,13 +67,53 @@ class ReviewPacket(SourceModel):
         return self
 
 
+class SupplementalReviewCapture(SourceModel):
+    """Retained primary text used for a later, explicitly versioned scope review."""
+
+    reviewed_paper_id: str = Field(min_length=1)
+    source_url: str
+    observed_at: datetime
+    evidence_kind: Literal["official_primary_full_method", "official_primary_abstract"]
+    source_body_sha256: str = Field(pattern=SHA)
+    source_body_utf8: str = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def valid_source(self):
+        parsed = urlparse(self.source_url)
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+            raise ValueError("Supplemental review needs a public HTTPS primary source")
+        if self.observed_at.utcoffset() is None:
+            raise ValueError("Supplemental source observation requires a timezone")
+        if _digest(self.source_body_utf8.encode("utf-8")) != self.source_body_sha256:
+            raise ValueError("Supplemental source body hash mismatch")
+        return self
+
+
 class ReviewAnnotation(SourceModel):
     sample_id: str = Field(pattern=r"^R[0-9]{3,}$")
     record_sha256: str = Field(pattern=SHA)
     outcome: Outcome
     reason: str = Field(min_length=10)
     phenomena: list[str] = Field(min_length=1)
-    evidence_basis: Literal["title_and_abstract", "explicit_title", "legacy_title_and_description"]
+    evidence_basis: Literal[
+        "title_and_abstract",
+        "explicit_title",
+        "legacy_title_and_description",
+        "supplemental_primary_source",
+    ]
+    supplemental_source_sha256: list[Annotated[str, Field(pattern=SHA)]] = Field(
+        default_factory=list
+    )
+
+    @model_validator(mode="after")
+    def evidence_contract(self):
+        if (self.evidence_basis == "supplemental_primary_source") != bool(
+            self.supplemental_source_sha256
+        ):
+            raise ValueError("Supplemental review basis requires explicit source captures")
+        if len(set(self.supplemental_source_sha256)) != len(self.supplemental_source_sha256):
+            raise ValueError("Duplicate supplemental source capture")
+        return self
 
 
 class ReviewAnnotations(SourceModel):
@@ -84,6 +125,20 @@ class ReviewAnnotations(SourceModel):
     reviewed_at: datetime
     scope_definition: str = Field(min_length=20)
     annotations: list[ReviewAnnotation] = Field(min_length=1)
+    supersedes_annotations_sha256: Annotated[str, Field(pattern=SHA)] | None = None
+
+    @model_validator(mode="after")
+    def versioned_review(self):
+        if self.reviewed_at.utcoffset() is None:
+            raise ValueError("Annotation review time requires a timezone")
+        if (
+            any(a.supplemental_source_sha256 for a in self.annotations)
+            and not self.supersedes_annotations_sha256
+        ):
+            raise ValueError(
+                "Supplemental annotations must identify their prior annotation version"
+            )
+        return self
 
 
 def evaluate_relevance(
@@ -98,8 +153,46 @@ def evaluate_relevance(
         raise ValueError("Duplicate annotation sample ID")
     if set(annotations) != {row.sample_id for row in packet.rows}:
         raise ValueError("Annotations must cover the exact candidate inventory")
+    prior_verified = False
+    if labels.supersedes_annotations_sha256:
+        prior_payload = (
+            source_directory / f"{labels.supersedes_annotations_sha256}.annotations.json"
+        ).read_bytes()
+        if _digest(prior_payload) != labels.supersedes_annotations_sha256:
+            raise ValueError("Prior annotation version hash mismatch")
+        prior = ReviewAnnotations.model_validate_json(prior_payload)
+        previous = {a.sample_id: a for a in prior.annotations}
+        if len(previous) != len(prior.annotations):
+            raise ValueError("Duplicate annotation sample ID in prior version")
+        if prior.packet_sha256 != labels.packet_sha256 or set(previous) != set(annotations):
+            raise ValueError("Prior annotation version has a different candidate inventory")
+        if prior.reviewed_at > labels.reviewed_at:
+            raise ValueError("Prior annotation version postdates current review")
+        for sample_id, annotation in annotations.items():
+            old = previous[sample_id]
+            if (
+                old.record_sha256 != annotation.record_sha256
+                or old.phenomena != annotation.phenomena
+            ):
+                raise ValueError("Scope review must preserve source record and sample composition")
+            if old != annotation and not annotation.supplemental_source_sha256:
+                raise ValueError("Changed annotation requires supplemental primary evidence")
+        prior_verified = True
     captures = {}
+    supplemental = {}
     for row in packet.rows:
+        for digest in annotations[row.sample_id].supplemental_source_sha256:
+            if digest not in supplemental:
+                payload = (source_directory / f"{digest}.json").read_bytes()
+                if _digest(payload) != digest:
+                    raise ValueError("Supplemental review capture hash mismatch")
+                supplemental[digest] = SupplementalReviewCapture.model_validate_json(payload)
+            source = supplemental[digest]
+            if source.reviewed_paper_id != row.paper["id"]:
+                raise ValueError("Supplemental review paper identity mismatch")
+            if source.observed_at > labels.reviewed_at:
+                raise ValueError("Supplemental source postdates annotation review")
+
         digest = row.source_capture_sha256
         if digest not in captures:
             payload = (source_directory / f"{digest}.json").read_bytes()
@@ -179,6 +272,12 @@ def evaluate_relevance(
         "population_accuracy_claim": False,
         "sample_count": len(rows),
         "source_captures_verified": len(captures),
+        "supplemental_source_captures_verified": len(supplemental),
+        "supplemental_reviewed_samples": sum(
+            bool(a.supplemental_source_sha256) for a in labels.annotations
+        ),
+        "supersedes_annotations_sha256": labels.supersedes_annotations_sha256,
+        "prior_annotations_verified": prior_verified,
         "strata": dict(sorted(Counter(row.stratum for row in packet.rows).items())),
         "source_quality": dict(sorted(quality.items())),
         "phenomena": dict(sorted(phenomena.items())),
