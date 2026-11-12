@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-12 (America/Los_Angeles)
 
-Observed at 2026-11-12T18:49:20.567135+00:00. The [current machine receipt](runs/coverage-after-foundation-reviews-and-cvpr2025-pass4-final-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. Earlier receipts remain preserved, including the pre-note-correction pass-four snapshot. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-12T21:24:36.889735+00:00. The [current machine receipt](runs/coverage-after-complete-cvpr2025-and-hf-details-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -8,7 +8,7 @@ The catalog has **4,104 active papers and six archived records**. There are 4,07
 
 All 340 frozen monthly query slices are complete, covering 1998-08-01 through the exclusive cutoff 2026-11-10T00:00:00Z. The literal query and comparator remain in the receipt. There are 4,466 unique candidates: 4,045 reviewed-application includes, 41 exclusions and 380 review outcomes under the frozen application policy; later independent resolutions, including PhysConvex, are recorded separately. These counts do not establish coverage of all NeRF literature or later updates. The current source hashes were checked before retaining the historical-query results.
 
-The original 165-seed ledger has **153 retained, five archived and seven unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Source-backed MASt3R and [Zero-1-to-3 foundation retention](zero123-seed-foundation-review-20261111.md), plus the SAR-GS identity review, preserve all original IDs without silently discarding review cases.
+The original 165-seed ledger has **154 retained, five archived and six unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Source-backed MASt3R and [Zero-1-to-3 foundation retention](zero123-seed-foundation-review-20261111.md), plus the SAR-GS identity review, preserve all original IDs without silently discarding review cases.
 
 ## Venue coverage
 
@@ -18,17 +18,19 @@ The declared inventory still has **56 cells: four crawled/partial and 52 pending
 | --- | ---: | ---: | ---: | ---: |
 | ICCV 2025 main | 2,701 | 2,701 | 0 | 0 |
 | CVPR 2024 main | 2,716 | 2,715 | 1 | 1 |
-| CVPR 2025 main | 2,871 | 2,075 | 796 | 7 |
+| CVPR 2025 main | 2,871 | 2,871 | 0 | 0 |
 
 ICCV has all 2,701 abstracts and a verified one-to-one title mapping between the two frozen official inventories. **512 rows retain author discrepancies**; source identity, dates, scope and provider review remain open. Of 2,552 title-excluded pages, metadata produced 49 include leads, 62 review leads and 2,441 exclusions. Those are automatic policy outcomes, not measured population relevance accuracy. See the [ICCV report](iccv2025-metadata-capture.md).
 
 CVPR 2024 now has **2,715/2,716** verified pages. Two [source-bound URL reviews](cvpr2024-url-reviews-20261112.md) resolve GenHowTo and DePT using previously retained official HTTP-200 responses; application and identical replays made zero requests. A full cache replay preserved state bytes, and a subsequent one-request retry confirms SportsSloMo still returns HTTP 404. Four earlier title/author corrections remain intact, as do all 2,713 prior verified captures and original observation times. Title-excluded pages yield 15 include leads and 91 review leads for scope adjudication. The epoch retains its frozen policy. The [accepted-table cross-edition title conflict](cvpr2024-cross-edition-title-diagnostic-20261112.md), announcement count gap and remaining metadata/scope work remain unresolved. CVPR 2023 and the other 52 cells retain their declared gaps; DBLP access remains unresolved.
 
-CVPR 2025 now has **2,075/2,871** full-metadata pages verified: 148 reused responses and 1,927 additional verified pages from four bounded passes totalling 1,936 paced requests. There are 796 pending pages, including seven transport failures with retry deadlines preserved. A zero-request hash/parser replay preserves state bytes and the original epoch. Title-excluded pages yield 53 include leads and 55 review leads awaiting current-scope adjudication. The epoch retains its explicit frozen policy despite later root scope changes. [Checkpoint](cvpr2025-full-metadata-capture.md).
+CVPR 2025 now has **2,871/2,871** full-metadata pages verified, with zero pending pages and zero failures: 148 reused responses and 2,723 additional verified pages. Four completed passes reported 1,936 requests; the user-paused fifth pass retained 488 further verified pages but produced no terminal request receipt, so its exact request count remains unknown. Zero-request recovery verified 2,563 retained pages, and a separate 308-request resume finished the queue. The final zero-request hash/parser replay preserves state bytes, all response timestamps and the frozen policy. All 2,723 title-excluded pages yield 73 include leads and 74 review leads awaiting current-scope adjudication. Metadata completeness does not settle source identity, authors, original dates, the accepted-table count gap or scope. [Complete capture and recovery evidence](cvpr2025-full-metadata-capture.md).
 
 Two [source-reviewed proceedings discoveries](iccv2025-reviewed-discoveries-20261111.md), DGTalker and Hi-Gaussian, are now canonical additions with verified publication DOIs and independent official author agreement. All 4,101 previous records, existing aliases and six archives remain exact. Neither captured CVF page links arXiv; global preprint absence is not asserted. The two papers have fresh OpenAlex observations, but no eligible velocity window.
 
-AutoPhyX and LiTo have [direct GS method decisions](autophyx-lito-method-scope-reviews-20261112.md); [SyncDreamer](syncdreamer-foundation-review-20261112.md), Matrix3D, fVDB and the newly reviewed [Bayes’ Rays and Domain Randomization foundations](uncertainty-randomization-foundation-reviews-20261112.md) leave **153 retained, seven unresolved and five archived** seeds. The [review report](matrix3d-fvdb-seed-foundation-reviews-20261111.md) distinguishes full-method GS use from current software dependency evidence. Canonical bibliographic fields remain unchanged.
+AutoPhyX and LiTo have [direct GS method decisions](autophyx-lito-method-scope-reviews-20261112.md); [SyncDreamer](syncdreamer-foundation-review-20261112.md), Matrix3D, fVDB and the newly reviewed [Bayes’ Rays and Domain Randomization foundations](uncertainty-randomization-foundation-reviews-20261112.md) leave **154 retained, six unresolved and five archived** seeds. The [review report](matrix3d-fvdb-seed-foundation-reviews-20261111.md) distinguishes full-method GS use from current software dependency evidence. Canonical bibliographic fields remain unchanged.
+
+[VGGT-Ω retention](vggt-omega-foundation-review-20261112.md) adds a concrete GS geometry foundation: two inspected primary GS methods explicitly use its features/depth or pretrained encoder. All 154 retained seed hashes verify. D4RT and the drone NeRF method remain under review; Gaussian blur augmentation and a proposed future GS extension are not treated as implemented splatting. Canonical bytes remain unchanged.
 
 The user's [adjacent-work preference](../data/reviews/adjacent-splatting-user-scope-20261112.json) now retains verified non-Gaussian splatting competitors as explicitly labelled adjacent work. Hexels, CVTSplat and OV-Foam display `Adjacent Work` and `Non-Gaussian Splatting` tags; Hexels' misleading `2DGS` tag was removed. Digital Twin AI is retained for substantive GS survey coverage. In that earlier 4,103-record application, only those three tag/provenance records changed; all other 4,100 records, titles/authors/dates/identifiers, aliases and archives remain unchanged. [Four reviews and validation](adjacent-splatting-scope-and-seed-reviews-20261112.md). The frozen challenge packet counts Hexels conservatively against its older review gold label: precision/recall 0.9855/1.00, with no gold relabelling or population-accuracy claim.
 
@@ -44,9 +46,11 @@ All denominators below are **4,104 active papers**. Latest attempt status is sep
 | --- | ---: | --- | ---: | ---: | ---: |
 | openalex | 4,104 | ambiguous: 32, not_found: 277, ok: 3,795 | 3,787 | 8 | 0 |
 | semanticscholar | 41 | rate_limited: 41 | 0 | 0 | 4,063 |
-| huggingface | 5 | not_found: 3, ok: 2 | 1 | 1 | 4,099 |
+| huggingface | 15 | not_found: 7, ok: 8 | 7 | 1 | 4,089 |
 
 OpenAlex has 1,089 genuinely observed zero citation counts. The 4,066 zeros in canonical bibliographic records do not themselves carry provider observation freshness; the cache independently verifies successful observed zeros. OpenAlex has 3,692 single-snapshot histories, 95 histories without an eligible 7–45-day interval, 8 stale histories and 309 without observations. **No active paper has eligible measured citation velocity.** Semantic Scholar has no successful history for any active paper. No dates or counts are fabricated to fill those gaps, and providers are never added together. HF's small sample is not full-corpus enrichment.
+
+The [HF detail delivery](huggingface-detail-delivery-20261112.md) now exposes attributed provider summaries, returned upvotes/stars, repository evidence and recorded Spaces through lazy paper details. Ten bounded requests produced six exact-ID matches and four misses, preserving all five older observations. All 15 cached observations have corresponding details; 4,089 papers remain unobserved. Valid zeros, unavailable values, stale retained successes and confirmed misses stay distinct. No provider text replaces the author abstract or reviewed code URL, and repository ownership remains unverified.
 
 ## Public graph and extraction
 
@@ -58,11 +62,11 @@ The [approved Gemma real-page diagnostic](gemma-radsplat-real-page-20261111.md) 
 
 ## Storage, release and remaining gates
 
-Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollback rehearsals passed locally; cutover and compatible remote writer deployment remain open. [Bounded public retention](public-artifact-retention-20261111.md) removed 316 obsolete files while retaining three verified generations. The current index is 1,718,965 bytes; all 81 referenced public descriptors and all six adjacent labels in index/details pass [integrity checks](runs/generalized-convex-public-verification-20261112.json). The README retains its existing latest-60-per-category window. Browser QA was not rerun for these data-only labels. Dedicated reports retain actual and 5,000-paper portal/performance evidence.
+Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollback rehearsals passed locally; cutover and compatible remote writer deployment remain open. [Bounded public retention](public-artifact-retention-20261111.md) removed 316 obsolete files while retaining three verified generations. The current index is 1,718,965 bytes (449,904 gzip), and the largest detail shard is 492,412 bytes. All 81 referenced descriptors and the 15 HF detail projections pass [current integrity checks](runs/hf-detail-public-verification-20261112.json); prior adjacent-label evidence remains preserved. The README retains its existing latest-60-per-category window. The new HF section passed [actual browser QA](runs/hf-detail-browser-verification-20261112.json), including mobile layout, themes, BibTeX, the 50-card catalog, safe text/links and the search shortcut, with zero page/console errors. The full suite passed 564 tests with one skip plus lint/format checks. Earlier actual/5,000-paper performance evidence is preserved; this is not a fresh five-cold-load performance measurement.
 
 The [full cached-corpus release rehearsal](release-cache-backed-rehearsal-20261111.md) produced two byte-identical 83,681,280-byte archives, restored all 160 files and verified the earlier 393-file rollback archive. These local checks do not establish production deployment or rollback.
 
-Remaining gates include seven seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
+Remaining gates include six seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
 
 ## Reproducing this report
 

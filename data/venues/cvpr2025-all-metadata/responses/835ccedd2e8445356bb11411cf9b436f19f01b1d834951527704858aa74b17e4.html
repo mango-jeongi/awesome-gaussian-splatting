@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images">
+<meta name="citation_author" content="Wang, Rong">
+<meta name="citation_author" content="Prada, Fabian">
+<meta name="citation_author" content="Wang, Ziyan">
+<meta name="citation_author" content="Jiang, Zhongshi">
+<meta name="citation_author" content="Yin, Chengxiang">
+<meta name="citation_author" content="Li, Junxuan">
+<meta name="citation_author" content="Saito, Shunsuke">
+<meta name="citation_author" content="Santesteban, Igor">
+<meta name="citation_author" content="Romero, Javier">
+<meta name="citation_author" content="Joshi, Rohan">
+<meta name="citation_author" content="Li, Hongdong">
+<meta name="citation_author" content="Saragih, Jason">
+<meta name="citation_author" content="Sheikh, Yaser">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="281">
+<meta name="citation_lastpage" content="291">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_FRESA_Feedforward_Reconstruction_of_Personalized_Skinned_Avatars_from_Few_Images_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Rong Wang, Fabian Prada, Ziyan Wang, Zhongshi Jiang, Chengxiang Yin, Junxuan Li, Shunsuke Saito, Igor Santesteban, Javier Romero, Rohan Joshi, Hongdong Li, Jason Saragih, Yaser Sheikh</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 281-291
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    We present a novel method for reconstructing personalized 3D human avatars with realistic animation from only a few images. Due to the large variations in body shapes, poses, and cloth types, existing methods mostly require hours of per-subject optimization during inference, which limits their practical applications. In contrast, we learn a universal prior from over a thousand clothed humans to achieve instant feedforward generation and zero-shot generalization. Specifically, instead of rigging the avatar with shared skinning weights, we jointly infer personalized avatar shape, skinning weights, and pose-dependent deformations, which effectively improves overall geometric fidelity and reduces deformation artifacts. Moreover, to normalize pose variations and resolve coupled ambiguity between canonical shapes and skinning weights, we design a 3D canonicalization process to produce pixel-aligned initial conditions, which helps to reconstruct fine-grained geometric details. We then propose a multi-frame feature aggregation to robustly reduce artifacts introduced in canonicalization and fuse a plausible avatar preserving person-specific identities. Finally, we train the model in an end-to-end framework on a large-scale capture dataset, which contains diverse human subjects paired with high-quality 3D scans. Extensive experiments show that our method generates more authentic reconstruction and animation than state-of-the-arts, and can be directly generalized to inputs from casually taken phone photos. Project page and code is available at https://github.com/rongakowang/FRESA.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Wang_FRESA_Feedforward_Reconstruction_of_Personalized_Skinned_Avatars_from_Few_Images_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Wang_FRESA_Feedforward_Reconstruction_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2503.19207">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wang_2025_CVPR,
+    author    = {Wang, Rong and Prada, Fabian and Wang, Ziyan and Jiang, Zhongshi and Yin, Chengxiang and Li, Junxuan and Saito, Shunsuke and Santesteban, Igor and Romero, Javier and Joshi, Rohan and Li, Hongdong and Saragih, Jason and Sheikh, Yaser},
+    title     = {FRESA: Feedforward Reconstruction of Personalized Skinned Avatars from Few Images},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {281-291}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

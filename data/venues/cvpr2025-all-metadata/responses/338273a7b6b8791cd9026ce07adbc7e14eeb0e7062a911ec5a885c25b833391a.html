@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="PointLoRA: Low-Rank Adaptation with Token Selection for Point Cloud Learning">
+<meta name="citation_author" content="Wang, Song">
+<meta name="citation_author" content="Liu, Xiaolu">
+<meta name="citation_author" content="Kong, Lingdong">
+<meta name="citation_author" content="Xu, Jianyun">
+<meta name="citation_author" content="Hu, Chunyong">
+<meta name="citation_author" content="Fang, Gongfan">
+<meta name="citation_author" content="Li, Wentong">
+<meta name="citation_author" content="Zhu, Jianke">
+<meta name="citation_author" content="Wang, Xinchao">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="6605">
+<meta name="citation_lastpage" content="6615">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_PointLoRA_Low-Rank_Adaptation_with_Token_Selection_for_Point_Cloud_Learning_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        PointLoRA: Low-Rank Adaptation with Token Selection for Point Cloud Learning
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Song Wang, Xiaolu Liu, Lingdong Kong, Jianyun Xu, Chunyong Hu, Gongfan Fang, Wentong Li, Jianke Zhu, Xinchao Wang</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 6605-6615
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Self-supervised representation learning for point cloud has demonstrated effectiveness in improving pre-trained model performance across diverse tasks. However, as pre-trained models grow in complexity, fully fine-tuning them for downstream applications demands substantial computational and storage resources. Parameter-efficient fine-tuning (PEFT) methods offer a promising solution to mitigate these resource requirements, yet most current approaches rely on complex adapter and prompt mechanisms that increase tunable parameters. In this paper, we propose PointLoRA, a simple yet effective method that combines low-rank adaptation (LoRA) with multi-scale token selection to efficiently fine-tune point cloud models. Our approach embeds LoRA layers within the most parameter-intensive components of point cloud transformers, reducing the need for tunable parameters while enhancing global feature capture. Additionally, multi-scale token selection extracts critical local information to serve as prompts for downstream fine-tuning, effectively complementing the global context captured by LoRA. The experimental results across various pre-trained models and three challenging public datasets demonstrate that our approach achieves competitive performance with only 3.43% of the trainable parameters, making it highly effective for resource-constrained applications. Source code is available at: https://github.com/songw-zju/PointLoRA.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Wang_PointLoRA_Low-Rank_Adaptation_with_Token_Selection_for_Point_Cloud_Learning_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Wang_PointLoRA_Low-Rank_Adaptation_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2504.16023">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Wang_2025_CVPR,
+    author    = {Wang, Song and Liu, Xiaolu and Kong, Lingdong and Xu, Jianyun and Hu, Chunyong and Fang, Gongfan and Li, Wentong and Zhu, Jianke and Wang, Xinchao},
+    title     = {PointLoRA: Low-Rank Adaptation with Token Selection for Point Cloud Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {6605-6615}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

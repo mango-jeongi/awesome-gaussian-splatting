@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Insightful Instance Features for 3D Instance Segmentation">
+<meta name="citation_author" content="Roh, Wonseok">
+<meta name="citation_author" content="Jung, Hwanhee">
+<meta name="citation_author" content="Nam, Giljoo">
+<meta name="citation_author" content="Lee, Dong In">
+<meta name="citation_author" content="Park, Hyeongcheol">
+<meta name="citation_author" content="Yoon, Sang Ho">
+<meta name="citation_author" content="Joo, Jungseock">
+<meta name="citation_author" content="Kim, Sangpil">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="14057">
+<meta name="citation_lastpage" content="14067">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Roh_Insightful_Instance_Features_for_3D_Instance_Segmentation_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Insightful Instance Features for 3D Instance Segmentation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Wonseok Roh, Hwanhee Jung, Giljoo Nam, Dong In Lee, Hyeongcheol Park, Sang Ho Yoon, Jungseock Joo, Sangpil Kim</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 14057-14067
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Recent 3D Instance Segmentation methods typically encode hundreds of instance-wise candidates with instance-specific information in various ways and refine them into final masks. However, they have yet to fully explore the benefit of these candidates. They overlook the valuable cues encoded in multiple candidates that represent different parts of the same instance, resulting in fragments. Also, they often fail to capture the precise spatial range of 3D instances, primarily due to inherent noises from sparse and unordered point clouds. In this work, to address these challenges, we propose IKNE, a novel instance-wise knowledge enhancement approach. We first introduce an Instance-wise Knowledge Aggregation (IKA) to associate scattered single instance details by optimizing correlations among candidates representing the same instance. Moreover, we present an Instance-wise Structural Guidance (ISG) to enhance the spatial understanding of candidates using structural cues from ambiguity-reduced features. Here, we utilize a simple yet effective truncated singular value decomposition algorithm to minimize inherent noises of 3D features. In our extensive experiments on large-scale datasets, ScanNetV2, ScanNet200, S3DIS, and STPLS3D, IKNE outperforms existing works. We validate the effectiveness of our modules in both kernel-based and transformer-based architectures.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Roh_Insightful_Instance_Features_for_3D_Instance_Segmentation_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Roh_Insightful_Instance_Features_CVPR_2025_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Roh_2025_CVPR,
+    author    = {Roh, Wonseok and Jung, Hwanhee and Nam, Giljoo and Lee, Dong In and Park, Hyeongcheol and Yoon, Sang Ho and Joo, Jungseock and Kim, Sangpil},
+    title     = {Insightful Instance Features for 3D Instance Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {14057-14067}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

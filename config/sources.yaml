@@ -228,16 +228,18 @@ editions:
   - provider: cvf_all_metadata_capture
     evidence_file: data/venues/cvpr2025-all-metadata/latest-report.json
     listing_records: 2871
-    verified_records: 2075
-    pending_records: 796
-    failed_records: 7
+    verified_records: 2871
+    pending_records: 0
+    failed_records: 0
     policy_overrides_file: data/venues/policies/cb275781b3efd0119a4679c135ac88d09c60ac186045b764b0d68279fbd1be3d.yaml
-    selected_metadata_complete: false
+    selected_metadata_complete: true
     canonical_modified: false
     venue_inventory_reconciled: false
-    note: Separate frozen full-abstract epoch reuses 148 original responses; three 500-request and one 436-request
-      passes and zero-request hash/parser replays preserve original times and the prior
-      epoch. Seven transport failures retain deadlines. Title-excluded leads await scope review.
+    note: All 2871 frozen pages verified, including 148 reused responses. User-paused
+      pass retained 488 further verified pages; offline recovery and a 308-request
+      resume completed the queue. Interrupted request count is not reconstructed.
+      Final zero-request hash/parser replay preserves state bytes and all source times.
+      Metadata complete does not mean inventory, identity, dates or scope reconciled.
   - provider: official_cvpr_accepted_table
     source_url: https://cvpr.thecvf.com/Conferences/2025/AcceptedPapers
     sha256: e74d37f9f26dba88099eced2cd6969cdb301ef64577826039469d1983e50b6da
