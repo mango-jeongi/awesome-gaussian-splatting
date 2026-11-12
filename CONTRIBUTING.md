@@ -506,3 +506,37 @@ new epoch. Receipts must be outside the source capture and review input.
 Capture reports count reviewed title and author variants separately. A verified
 source correction is not a relevance decision, a canonical alias or permission
 to merge publications. It does not bypass retry deadlines by making traffic.
+
+## Reproducible offline coverage
+
+```sh
+uv run python -m src.cli coverage --output reports/runs/coverage-<new-run>.json
+```
+
+This reads canonical v1 or an explicit `--data data/manifest.json` v2 snapshot,
+provider caches/history, seed and extraction ledgers, source inventory/evidence,
+and configured historical checkpoints/applications. Declare historical inputs
+under `historical_runs` in `config/sources.yaml`, with `checkpoint` and optional
+`application_report` paths. The reporter verifies slice structure, query digest,
+cached-page checksums and exact application candidate accounting before reporting
+interval completion. It does not reclassify a frozen application under today's
+policy. Venue inventory fields remain declarations; bound evidence summaries
+show the latest completed invocation, not inferred process liveness or live
+in-flight progress.
+
+No network request, observation sampling, canonical update or build occurs.
+Missing optional inputs stay explicit; missing declared evidence, corrupt
+components and inputs that change during the snapshot refuse publication. Source
+paths remain inside the selected repository. Per-file/aggregate/file-count
+limits bound the read. Exact hashes of every consumed input accompany the report.
+Output must be a new file under `reports/` or outside the repository; existing
+reports and canonical/generated inputs cannot be overwritten.
+
+Use `--root <repository>` to inspect another checkout. `--as-of <aware-ISO-time>`
+evaluates freshness reproducibly against the same frozen input bytes; it must
+not precede their observations. It creates no provider history. Without an
+output argument, the JSON report is printed. Cache attempt status, retained
+successful values, genuine observed zeros and unavailable velocity are separate.
+Stale seed/extraction bindings are visible rather than declared complete. The
+graph is an owned cache-backed projection; public manifest metadata is labelled
+separately and is not a replacement for release artifact or deployed-site checks.

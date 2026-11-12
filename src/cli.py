@@ -62,6 +62,29 @@ def utc_bound(value: str) -> datetime:
         ) from None
 
 
+def cmd_coverage(args: argparse.Namespace) -> int:
+    from src.coverage import coverage_snapshot, write_coverage_report
+
+    root = args.root
+    data = args.data if args.data != DEFAULT_DATA else root / "data/papers.json"
+    report = coverage_snapshot(root, data_path=data, now=args.as_of)
+    if args.output:
+        write_coverage_report(root, args.output, report)
+        print(
+            json.dumps(
+                {
+                    "active": report["canonical"]["active"],
+                    "venue_cells": report["venues"]["cells"],
+                    "inputs": len(report["input_sha256"]),
+                    "output": str(args.output),
+                }
+            )
+        )
+    else:
+        print(json.dumps(report, indent=2))
+    return 0
+
+
 def cmd_refresh_signals(args: argparse.Namespace) -> int:
     load_local_environment(ROOT_DIR)
     filenames = {
@@ -714,6 +737,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--docs-data", type=Path, default=DEFAULT_DOCS_DATA)
 
     sub = parser.add_subparsers(dest="command", required=True)
+
+    p_coverage = sub.add_parser(
+        "coverage", help="Read-only source, review, freshness, graph and extraction coverage"
+    )
+    p_coverage.add_argument("--root", type=Path, default=ROOT_DIR)
+    p_coverage.add_argument("--as-of", type=utc_bound)
+    p_coverage.add_argument("--output", type=Path)
+    p_coverage.set_defaults(func=cmd_coverage)
 
     p_signals = sub.add_parser(
         "refresh-signals", help="Resume a bounded due-provider queue with explicit health"
