@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="EMatch: A Unified Framework for Event-based Optical Flow and Stereo Matching">
+<meta name="citation_author" content="Zhang, Pengjie">
+<meta name="citation_author" content="Zhu, Lin">
+<meta name="citation_author" content="Wang, Xiao">
+<meta name="citation_author" content="Wang, Lizhi">
+<meta name="citation_author" content="Huang, Hua">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="5845">
+<meta name="citation_lastpage" content="5855">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_EMatch_A_Unified_Framework_for_Event-based_Optical_Flow_and_Stereo_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        EMatch: A Unified Framework for Event-based Optical Flow and Stereo Matching
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Pengjie Zhang, Lin Zhu, Xiao Wang, Lizhi Wang, Hua Huang</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 5845-5855
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Event cameras have shown promise in vision applications like optical flow estimation and stereo matching with many specialized architectures. However, existing works only focus event data within the confines of task-specific domains, overlooking the correlations between tasks across the temporal and spatial domains. In this paper, we propose a novel matching-based framework for event cameras to estimate flow and disparity simultaneously in a shared representation space, reformulating them as a unified pixel-wise correspondence matching problem. Specifically, our method utilizes a Temporal Recurrent Network to aggregate asynchronous event features across temporal or spatial domains, and a Spatial Contextual Attention to enhance knowledge transfer across event flows via temporal or spatial interactions. By utilizing a shared pixel-wise feature similarities module, our network performs optical flow estimation from temporal event segments and stereo matching from spatial event segments simultaneously. Our unified model inherently supports multi-task unification and cross-task transfer, which facilitate training and streamline deployment. Without the need for retraining on specific tasks, our model can effectively handle both event-based flow and stereo estimation, achieving state-of-the-art performance on both tasks. Our code will be released upon acceptance.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Zhang_EMatch_A_Unified_Framework_for_Event-based_Optical_Flow_and_Stereo_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Zhang_EMatch_A_Unified_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2407.21735">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhang_2025_ICCV,
+    author    = {Zhang, Pengjie and Zhu, Lin and Wang, Xiao and Wang, Lizhi and Huang, Hua},
+    title     = {EMatch: A Unified Framework for Event-based Optical Flow and Stereo Matching},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {5845-5855}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

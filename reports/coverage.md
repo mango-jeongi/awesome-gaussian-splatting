@@ -136,3 +136,15 @@ still encountered rate limiting: 41 active cached failures, no successful counts
 and 4,060 unobserved active IDs. No provider absence or zero influence is inferred.
 The public status/trending artifacts were rebuilt offline; graph artifacts stayed
 identical. Neither activity deployed or pushed changes.
+
+## Complete ICCV frozen-listing metadata — 2026-11-11
+
+All 2,701 pages and abstracts are verified, including 2,700 exact matches and one
+source-hash-bound title adjudication. The final replay used zero requests and
+reported zero pending/failures. Of 2,552 title-excluded records, full metadata
+produces 49 include leads, 62 review leads and 2,441 exclusions; these are automated
+policy decisions, not independent relevance accuracy. There are 1,682 official
+arXiv links awaiting separate identity/date verification. The reviewed RoboTron
+pair leaves 16 unmatched titles per independent source plus 504 author differences.
+The edition remains partial. See the [final source report](iccv2025-metadata-capture.md)
+and [completion receipt](runs/iccv2025-full-metadata-completion-20261111.json).

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="SC-Lane: Slope-aware and Consistent Road Height Estimation Framework for 3D Lane Detection">
+<meta name="citation_author" content="Park, Chaesong">
+<meta name="citation_author" content="Seo, Eunbin">
+<meta name="citation_author" content="Hwang, Jihyeon">
+<meta name="citation_author" content="Lim, Jongwoo">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="28407">
+<meta name="citation_lastpage" content="28416">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Park_SC-Lane_Slope-aware_and_Consistent_Road_Height_Estimation_Framework_for_3D_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        SC-Lane: Slope-aware and Consistent Road Height Estimation Framework for 3D Lane Detection
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Chaesong Park, Eunbin Seo, Jihyeon Hwang, Jongwoo Lim</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 28407-28416
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    In this paper, we introduce SC-Lane, a novel slope-aware and temporally consistent heightmap estimation framework for 3D lane detection. Unlike previous approaches that rely on fixed slope anchors, SC-Lane adaptively determines the fusion of slope-specific height features, improving robustness to diverse road geometries. To achieve this, we propose a Slope-Aware Adaptive Feature module that dynamically predicts the appropriate weights from image cues for integrating multi-slope representations into a unified heightmap. Additionally, a Height Consistency Module enforces temporal coherence, ensuring stable and accurate height estimation across consecutive frames, which is crucial for real-world driving scenarios. To evaluate the effectiveness of SC-Lane, we employ three standardized metrics-Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and threshold-based accuracy-which, although common in surface and depth estimation, have been underutilized for road height assessment. Using the LiDAR-derived heightmap dataset introduced in prior work, we benchmark our method under these metrics, thereby establishing a rigorous standard for future comparisons. Extensive experiments on the OpenLane benchmark demonstrate that SC-Lane significantly improves both height estimation and 3D lane detection, achieving state-of-the-art performance with an F-score of 64.3%, outperforming existing methods by a notable margin. For detailed results and a demonstration video, please refer to our project page: https://parkchaesong.github.io/sclane/
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Park_SC-Lane_Slope-aware_and_Consistent_Road_Height_Estimation_Framework_for_3D_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Park_SC-Lane_Slope-aware_and_ICCV_2025_supplemental.zip">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Park_2025_ICCV,
+    author    = {Park, Chaesong and Seo, Eunbin and Hwang, Jihyeon and Lim, Jongwoo},
+    title     = {SC-Lane: Slope-aware and Consistent Road Height Estimation Framework for 3D Lane Detection},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {28407-28416}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Controllable-LPMoE: Adapting to Challenging Object Segmentation via Dynamic Local Priors from Mixture-of-Experts">
+<meta name="citation_author" content="Sun, Yanguang">
+<meta name="citation_author" content="Lian, Jiawei">
+<meta name="citation_author" content="Yang, Jian">
+<meta name="citation_author" content="Luo, Lei">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="22327">
+<meta name="citation_lastpage" content="22337">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Controllable-LPMoE_Adapting_to_Challenging_Object_Segmentation_via_Dynamic_Local_Priors_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Controllable-LPMoE: Adapting to Challenging Object Segmentation via Dynamic Local Priors from Mixture-of-Experts
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yanguang Sun, Jiawei Lian, Jian Yang, Lei Luo</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 22327-22337
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Large-scale foundation models provide powerful feature representations for downstream object segmentation tasks. However, when adapted to specific tasks through the full-parameter fine-tuning, the enormous parameters being updated often results in significant computational overhead, creating a bottleneck in training efficiency. Although existing methods attempt to fine-tune frozen models by directly embedding trainable prompts, these prompts lack inherent semantic priors, limiting the adaptability of large-scale models. In this paper, we propose a novel dynamic priors-based fine-tuning paradigm with fewer trainable parameters, dubbed Controllable-LPMoE, which adaptively modulates frozen foundation models by dynamically controlling local priors to enhance fine-grained perception for specific segmentation tasks. More specifically, we construct a lightweight dynamic mixed local priors extractor that captures diverse local priors from input images through heterogeneous convolutions while employing a gating network to dynamically output expert priors required for the subsequent fine-tuning. Furthermore, we design a bi-directional interaction adapter that employs cosine-aligned deformable attention and channel-oriented adaptive scale enhancement to interact and restructure between frozen and trainable features, achieving efficient fine-tuning. Extensive experiments validate the superiority of our Controllable-LPMoE approach, demonstrating excellent segmentation performance compared to 31 state-of-the-art (SOTA) methods and adaptability to multiple binary object segmentation tasks.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Sun_Controllable-LPMoE_Adapting_to_Challenging_Object_Segmentation_via_Dynamic_Local_Priors_ICCV_2025_paper.pdf">pdf</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Sun_2025_ICCV,
+    author    = {Sun, Yanguang and Lian, Jiawei and Yang, Jian and Luo, Lei},
+    title     = {Controllable-LPMoE: Adapting to Challenging Object Segmentation via Dynamic Local Priors from Mixture-of-Experts},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {22327-22337}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

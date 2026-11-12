@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="An Efficient Post-hoc Framework for Reducing Task Discrepancy of Text Encoders for Composed Image Retrieval">
+<meta name="citation_author" content="Byun, Jaeseok">
+<meta name="citation_author" content="Jeong, Seokhyeon">
+<meta name="citation_author" content="Kim, Wonjae">
+<meta name="citation_author" content="Chun, Sanghyuk">
+<meta name="citation_author" content="Moon, Taesup">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="3895">
+<meta name="citation_lastpage" content="3904">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Byun_An_Efficient_Post-hoc_Framework_for_Reducing_Task_Discrepancy_of_Text_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        An Efficient Post-hoc Framework for Reducing Task Discrepancy of Text Encoders for Composed Image Retrieval
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Jaeseok Byun, Seokhyeon Jeong, Wonjae Kim, Sanghyuk Chun, Taesup Moon</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 3895-3904
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Composed Image Retrieval (CIR) aims to retrieve a target image based on a reference image and conditioning text, enabling controllable image searches. The mainstream Zero-Shot (ZS) CIR methods bypass the need for expensive training CIR triplets by projecting image embeddings into the text token embedding space, forming a composed query for retrieval. However, we highlight an inherent limitation in these projection-based CIR: a task discrepancy of text encoders between the original pre-training task of the encoders (text \leftrightarrow image) and the target CIR task (image + text \leftrightarrow image), which potentially negatively impacts CIR performance. To reduce such a discrepancy, a naive solution would be to train both image and text encoders with CIR triplets in a supervised manner. Instead, we introduce Reducing Task Discrepancy of Text encoders (RTD), an efficient text-only post-hoc framework that complements projection-based CIR methods. We devise a novel frozen-target text contrastive learning designed to enhance the capability of the text encoder for CIR. We also propose two key enhancements: (1) a hard negative-based refined batch sampling strategy and (2) a refined concatenation scheme to further mitigate training-inference discrepancy. Integrating RTD into state-of-the-art projection-based methods achieves performance comparable to, or even surpassing, resource-intensive state-of-the-art synthetic CIR triplet-based approaches, only with 23 minutes of additional training on 4 A100 GPUs. Our code is available in https://github.com/jaeseokbyun/RTD.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Byun_An_Efficient_Post-hoc_Framework_for_Reducing_Task_Discrepancy_of_Text_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Byun_An_Efficient_Post-hoc_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2406.09188">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Byun_2025_ICCV,
+    author    = {Byun, Jaeseok and Jeong, Seokhyeon and Kim, Wonjae and Chun, Sanghyuk and Moon, Taesup},
+    title     = {An Efficient Post-hoc Framework for Reducing Task Discrepancy of Text Encoders for Composed Image Retrieval},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {3895-3904}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

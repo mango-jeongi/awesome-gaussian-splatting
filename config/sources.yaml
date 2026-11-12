@@ -318,7 +318,10 @@ editions:
     proceedings_rows: 2701
     normalized_title_matches: 2677
     reviewed_typography_pairs: 7
-    unresolved_title_rows_per_source: 17
+    original_unmatched_title_rows_per_source: 17
+    unresolved_title_rows_per_source: 16
+    reviewed_non_typographic_pairs: 1
+    reviewed_identity_evidence_file: data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json
     exact_title_author_differences: 504
     inventory_reconciled: false
   - provider: cvf_all_metadata_capture
@@ -327,18 +330,22 @@ editions:
     selection_mode: all_metadata
     selected_records: 2701
     reused_verified_captures: 149
-    verified_records: 2303
-    pending_records: 398
-    failed_records: 6
+    verified_records: 2701
+    reviewed_title_variant_records: 1
+    selected_metadata_complete: true
+    abstract_records: 2701
+    official_arxiv_link_records: 1682
+    pending_records: 0
+    failed_records: 0
     metadata_dispositions:
-      include: 167
-      exclude: 2061
-      review: 75
+      include: 173
+      exclude: 2441
+      review: 87
     source_screen_rescue_evidence: data/venues/iccv2025-all-metadata/title-screen-rescue-evidence.json
   remaining:
-  - Complete the all-metadata backlog without treating title-priority completion as
-    full coverage.
-  - Review 17 unmatched titles on each source and 504 author-list differences without
+  - Full metadata capture is complete; source scope, identity and original-date review
+    remain open.
+  - Review 16 remaining unmatched titles on each source and 504 author-list differences without
     automatic alias assertions.
   - Identity/original-date resolution, reviewed GS scope decisions and publication
     imports remain pending.

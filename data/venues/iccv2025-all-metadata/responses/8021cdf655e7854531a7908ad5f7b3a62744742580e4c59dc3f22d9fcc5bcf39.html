@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>ICCV 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="MVQA: Mamba with Unified Sampling for Efficient Video Quality Assessment">
+<meta name="citation_author" content="Mi, Yachun">
+<meta name="citation_author" content="Li, Yu">
+<meta name="citation_author" content="Meng, Weicheng">
+<meta name="citation_author" content="Chen, Chaofeng">
+<meta name="citation_author" content="Hui, Chen">
+<meta name="citation_author" content="Liu, Shaohui">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision">
+<meta name="citation_firstpage" content="18498">
+<meta name="citation_lastpage" content="18509">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Mi_MVQA_Mamba_with_Unified_Sampling_for_Efficient_Video_Quality_Assessment_ICCV_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://iccv.thecvf.com/"><img src="/img/iccv2025-logo.svg" width="175" border="0" alt="ICCV 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://iccv.thecvf.com/">ICCV 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These ICCV 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/ICCV2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        MVQA: Mamba with Unified Sampling for Efficient Video Quality Assessment
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Yachun Mi, Yu Li, Weicheng Meng, Chaofeng Chen, Chen Hui, Shaohui Liu</i></b>; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 18498-18509
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The rapid growth of long-duration, high-definition videos has made efficient video quality assessment (VQA) a critical challenge. Existing research typically tackles this problem through two main strategies: reducing model parameters and resampling inputs. However, light-weight Convolution Neural Networks (CNN) and Transformers often struggle to balance efficiency with high performance due to the requirement of long-range modeling capabilities. Recently, the state-space model, particularly Mamba, has emerged as a promising alternative, offering linear complexity with respect to sequence length. Meanwhile, efficient VQA heavily depends on resampling long sequences to minimize computational costs, yet current resampling methods are often weak in preserving essential semantic information. In this work, we present MVQA, a Mamba-based model designed for efficient VQA along with a novel Unified Semantic and Distortion Sampling (USDS) approach. USDS combines semantic patch sampling from low-resolution videos and distortion patch sampling from original-resolution videos. The former captures semantically dense regions, while the latter retains critical distortion details. To prevent computation increase from dual inputs, we propose a fusion mechanism using pre-defined masks, enabling a unified sampling strategy that captures both semantic and quality information without additional computational burden. Experiments show that the proposed MVQA, equipped with USDS, achieve comparable performance to state-of-the-art methods while being 2xas fast and requiring only 1/5 GPU memory. Code is available at https://github.com/xiao-mi-d/MVQA
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/ICCV2025/papers/Mi_MVQA_Mamba_with_Unified_Sampling_for_Efficient_Video_Quality_Assessment_ICCV_2025_paper.pdf">pdf</a>]
+[<a href="/content/ICCV2025/supplemental/Mi_MVQA_Mamba_with_ICCV_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2504.16003">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Mi_2025_ICCV,
+    author    = {Mi, Yachun and Li, Yu and Meng, Weicheng and Chen, Chaofeng and Hui, Chen and Liu, Shaohui},
+    title     = {MVQA: Mamba with Unified Sampling for Efficient Video Quality Assessment},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {18498-18509}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

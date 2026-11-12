@@ -1,147 +1,99 @@
-# ICCV 2025 main-track capture and title-screen recall gap — 2026-11-10 Pacific
+# ICCV 2025 metadata evidence — complete frozen listing, partial edition review
 
-The official [CVF listing](https://openaccess.thecvf.com/ICCV2025?day=all) contains
-2,701 records (7,692,642 frozen bytes), SHA-256
-`e684fe760c417a35c2f1e9a5acb3015a192fce10e566086e2d4bf7f78cbb97fe`.
-The unchanged topic-policy digest is
+All **2,701 publications in the frozen official main-proceedings listing** now
+have verified metadata and author abstracts. This includes 2,700 automatic exact
+listing/page matches and one explicit source-reviewed title variant. A final
+zero-request replay rechecked every body hash and review binding: zero pending,
+zero failed, selected metadata complete. No canonical paper import occurred.
+
+The [completion receipt](runs/iccv2025-full-metadata-completion-20261111.json)
+binds listing, policy, state, report and review hashes. This completes metadata
+capture for this named listing; the edition remains **partial** pending inventory,
+identity, scope, original-date and provider review.
+
+## Frozen boundary and source evidence
+
+The official listing `https://openaccess.thecvf.com/ICCV2025?day=all` has 2,701 rows,
+SHA-256 `e684fe760c417a35c2f1e9a5acb3015a192fce10e566086e2d4bf7f78cbb97fe`.
+The all-metadata epoch retains its original policy digest
 `388dfe1507123d4bfb7e4bfac474e94afa84321eb5067d8a5db8f4622d8b4d0f`.
+The corresponding override document is frozen under `data/venues/policies/`;
+future replay must pass that file with `--overrides` and `--all-metadata`.
+The later MASt3R root-policy change did not reclassify this epoch.
 
-## Original title-priority epoch
+All 2,701 pages provide abstracts; 1,682 expose official arXiv links. Those links
+are source evidence, not completed exact-ID/original-date verification. A page
+without such a link does not prove the absence of a preprint. Raw bodies and
+original observation times remain retained. Request/response/time ceilings,
+successful-request pacing and per-page retry deadlines were enforced.
 
-The frozen title screen yields 108 include, 41 review and 2,552 exclude decisions.
-All 149 selected publication pages were fetched, hash-verified and parsed with
-matching title/authors/edition/track/PDF URL. Their full-abstract policy decisions
-are 124 include and 25 review. One hundred pages link arXiv IDs; this is link
-coverage, not independent preprint identity/date verification. Source state and
-responses are retained in `data/venues/iccv2025-main`. No paper was imported.
+## Title screening and full-metadata policy
 
-A catalog cross-check found 150 normalized-title matches in the full listing.
-Forty-six active catalog papers whose full stored text passes the policy had
-been excluded by title alone. They are review leads, not 46 independently verified
-false negatives: source abstracts/revisions and actual scope still require checks.
-The [tail audit](../data/venues/iccv2025-main/known-catalog-title-exclusion-review.json)
-retains titles, source URLs and canonical IDs. It demonstrates why title-priority
-fetch completion cannot be used as complete abstract-based venue coverage.
+The original title-priority epoch captured 149 selected pages, which was not
+complete abstract-based venue coverage. The separate all-metadata epoch reused
+those exact bodies/timestamps and fetched every remaining listed page.
 
-## Separate full-metadata epoch
+| Frozen title decision | Full metadata include | Full metadata review | Full metadata exclude |
+| --- | ---: | ---: | ---: |
+| Include | 108 | 0 | 0 |
+| Review | 16 | 25 | 0 |
+| Exclude | 49 | 62 | 2,441 |
+| Total | 173 | 87 | 2,441 |
 
-`discover-cvf --all-metadata` now selects every listed publication, while retaining
-request/time/response budgets, pacing, per-page hashes and retry deadlines. The
-mode is frozen before traffic, even for zero-request runs and legacy inventory-only
-checkpoints. Existing title-priority caches cannot silently switch modes. Their
-original listing/policy evidence is preserved.
+The [49 title-excluded inclusion leads](../data/venues/iccv2025-all-metadata/title-screen-rescue-evidence.json)
+are automatic policy outcomes, not 49 adjudicated GS papers or a population
+recall estimate. Baseline-only GS mentions and competing representations such
+as Radiant Foam still require scope inspection. The separate known-catalog tail
+audit found 46 policy-passing active matches excluded by title; those are also
+review leads rather than independent ground truth. No policy relaxation or
+automatic canonical inclusion was used to make capture complete.
 
-A new epoch, `data/venues/iccv2025-all-metadata`, reuses all 149 verified bodies
-with exact hashes and original observation timestamps. A seed receipt binds the
-original state. Two bounded passes (40 then 120 requests) brought it to:
+## Explicit RoboTron title adjudication
 
-- 309 verified pages, 2,392 pending, zero fetch failures.
-- Full-metadata policy dispositions: 125 include, 29 review, 155 exclude.
-- One directly observed title-screen rescue: SpatialSplat (`2505.23044`). Its
-  official abstract passes the unchanged policy despite its excluded title.
-  [Source evidence](../data/venues/iccv2025-all-metadata/title-screen-rescue-evidence.json)
-  retains the publication and capture hashes. This is not a population recall
-  estimate, manual scope adjudication or an automatic canonical inclusion.
+The sole persistent metadata failure was reachable HTTP-200 content: the listing
+and URL slug say **RoboTrom-Nav**, while page citation metadata and the independent
+accepted table say **RoboTron-Nav**. All six full authors agree in order after case
+normalization; year, edition and exact source/PDF path also agree.
 
-The all-metadata checkpoint is incomplete and must be resumed with the explicit
-mode and same frozen listing/policy. No source watermark or corpus import advanced.
-The original title-only decisions remain labelled as such in the inventory; full
-abstract dispositions are separate.
+The [review](../data/reviews/iccv2025-robotron-title-review-20261111.json) binds the
+unchanged listing and exact retained response hashes plus independent accepted
+row evidence. It promotes only that already captured body, without network
+traffic or a retry-deadline bypass. Its observation time remains the actual fetch
+time. The [application/replay receipt](runs/iccv2025-robotron-title-review-20261111.json)
+shows an offline application and no-op replay.
 
-## Independent inventory comparison
+Every other page retains strict default title matching. Author, year, edition,
+PDF-path and source-hash checks also remain strict for the reviewed case. Changed
+or forged review sources fail before traffic. Diagnostics retain complete bounded
+invalid responses separately; invalid/oversized data is not counted as verified.
+No canonical paper alias was asserted by this source-level correction.
+
+## Independent inventory remains unresolved
 
 The [official accepted table](https://iccv.thecvf.com/Conferences/2025/AcceptedPapers)
-also has 2,701 rows, frozen at SHA-256
+also has 2,701 rows at SHA-256
 `b4aa86509a1c613e884f5bea41bc8952770d7754ce757431ffac73b30065331e`.
-The [comparison](../data/venues/iccv2025-main/independent-reconciliation.json)
-retains 2,677 normalized-title matches, seven inspected subscript/degree/diacritic
-display correspondences with matching full author sequences, and 17 unmatched
-rows on each source. One candidate typography match has different authors and
-remains ambiguous. The exact-title set has 504 author-list differences, including
-name expansion, order and other source variations; they are not silently repaired.
-No canonical alias or identity is asserted from this comparison. Equal aggregate
-counts therefore do not establish reconciliation.
+The original [comparison](../data/venues/iccv2025-main/independent-reconciliation.json)
+retains 2,677 normalized-title matches, seven reviewed typography pairs and 17
+unmatched rows on each source. Its evidence is preserved unchanged.
 
-## Verification and remaining work
+The new [review overlay](../data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json)
+resolves the RoboTron pair and leaves **16 unadjudicated titles on each source**.
+The 504 exact-title author-list differences and the ambiguous typography/author
+case are not silently repaired. Equal aggregate counts do not establish identity
+reconciliation. Source-record matching is distinct from canonical deduplication.
 
-All 455 tests passed in 35.57 seconds after the mode/checkpoint changes; global
-Ruff lint/formatting (150 files) pass. Four new regressions cover opaque-title
-recovery, mode fencing in both directions and a legacy zero-request epoch.
-Canonical 4,102 active/five archived stays unchanged at raw SHA-256
-`9e0da7759d593cfa4d95f50dc30383a059b32392de22f9595cfc9a638c60daca`.
+## Validation and remaining gates
 
-The inventory now has four partial cells and 52 pending cells. ICCV 2025 remains
-partial: complete the 2,392-page backlog, reconcile unmatched/author variants,
-verify identities/original dates, review scope and actual new proceedings
-candidates, and obtain DBLP source evidence. A page without an arXiv link is not
-proof of a paper without a preprint. No model service, push or deployment was
-performed by this work.
+All 480 tests pass with one native-symlink case skipped on this Windows host;
+global Ruff lint/formatting (164 files) pass. New checks cover bounded failure
+body retention, default strict matching, reviewed-title replay, unchanged source
+bytes, stale/tampered review refusal and preservation of author/year checks.
 
-## Follow-up full-metadata checkpoint — 2026-11-11
-
-A further invocation capped at 500 requests added 497 verified responses. The
-completed epoch now has **806 verified pages, 1,895 pending, and three failed
-fetches** (the failures are included in pending). Each transport failure has a
-one-hour retry deadline in state; none was retried immediately. A subsequent CLI
-replay used zero requests and reverified every retained body against its hash.
-The original invocation's terminal output was unavailable; the retained
-[checkpoint receipt](runs/iccv2025-full-metadata-pass-20261111.json) explicitly
-records that limitation rather than presenting the cap as a measured request log.
-
-Current automatic full-metadata dispositions are 137 include, 41 review and 628
-exclude. Thirteen title-excluded records now pass the full-text policy. These
-are **policy rescue leads**, not thirteen adjudicated GS papers: papers can
-mention GS as a baseline, and Radiant Foam in particular requires review of its
-competing representation. Their full abstracts and response hashes remain in
-the rescue evidence. No policy relaxation, identity assertion or canonical import
-was performed. The 309-page figures above describe the previous checkpoint.
-
-The configured source inventory now points to this partial 806-page checkpoint.
-Canonical 4,102 active/five archived remains byte-identical. The remaining
-1,895 pages, retry-deferred failures, independent inventory discrepancies,
-identity/original-date resolution, source scope review and DBLP evidence remain
-open. The prepared Gemma real-page diagnostic is a separate, unexecuted activity.
-
-## Second capped follow-up — 2026-11-11
-
-The next live invocation completed all 500 permitted requests: 497 additional
-responses verified and three additional transport failures deferred. Its original
-invocation summary is retained this time. A zero-request replay using the frozen
-policy file verified **1,303/2,701 pages**, with **1,398 pending** (including six
-retry-deferred failures). No retry deadline was bypassed.
-
-The [second-pass receipt](runs/iccv2025-full-metadata-pass2-20261111.json) binds the
-state/report hashes, complete invocation summary and retry deadlines. Current
-automatic dispositions are 150 include, 51 review and 1,102 exclude; 26
-previously title-excluded records pass the abstract policy. They remain scope
-review leads, not 26 newly accepted papers. The canonical catalog stays unchanged.
-The earlier 806-page figures describe the preceding checkpoint.
-
-A later MASt3R foundation adjudication changed the root policy. The existing ICCV
-epoch retains digest `388dfe1507123d4bfb7e4bfac474e94afa84321eb5067d8a5db8f4622d8b4d0f`;
-resumption must pass its recorded frozen override file explicitly. The final
-zero-request replay proved that frozen policy still matches the epoch. No source
-coverage watermark, corpus import, push or deployment advanced.
-
-## Third capped follow-up — 2026-11-11
-
-The next invocation completed 500 requests with **500 additional verified
-responses and no new failures**. The zero-request frozen-policy replay verified
-**1,803/2,701 pages**; **898 remain pending**, including the six prior
-retry-deferred failures. Automatic dispositions are 160 include, 59 review and
-1,584 exclude; 36 title-excluded records are policy review leads, not automatic
-canonical inclusions. The [third-pass receipt](runs/iccv2025-full-metadata-pass3-20261111.json)
-retains the original invocation summary and final state/report hashes. Canonical
-identity changed independently through the separately reviewed SAR-GS merge; this
-source capture imported no papers and changed no policy or retry deadline.
-
-## Fourth capped follow-up — 2026-11-11
-
-Another 500-request invocation added 500 verified responses with no new failures.
-Its original JSON summary was retained directly on completion, and a zero-request
-replay verified **2,303/2,701 pages**. The remaining **398** include six existing
-retry-deferred failures. Automatic outcomes are 167 include, 75 review and 2,061
-exclude; 43 title-excluded policy leads remain unadjudicated. The
-[fourth-pass receipt](runs/iccv2025-full-metadata-pass4-20261111.json) binds the
-checkpoint and original invocation. Frozen policy and retry deadlines are intact;
-no canonical import or source watermark advanced.
+The final capture uses no extra inference or canonical writes. The catalog remains
+4,101 active/six archived at raw SHA-256
+`bc966ff4d460b33f08a589d3fe5d1133d472c0d89de32c23fb17d6a007770dfd`.
+The venue inventory still has four partial cells and 52 pending cells. Original
+dates/identities, scope adjudication, proceedings-only insertion review, remaining
+inventory discrepancies and DBLP evidence remain open. No watermark, push,
+workflow dispatch or deployment advanced.

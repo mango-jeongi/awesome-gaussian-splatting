@@ -1,7 +1,37 @@
 {
   "canonical_modified": false,
-  "count": 43,
+  "count": 49,
   "records": [
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:48:28.429464+00:00",
+        "sha256": "0c0e7c50c05e1b69edaa2ca4e16989a8f83ab856299e2d43c3ba117b1bcc5d42"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Video Anomaly Detection (VAD) is a challenging task due to the variability of anomalous events and the limited availability of labeled data. Under the Weakly-Supervised VAD (WSVAD) paradigm, only video-level labels are provided during training, while predictions are made at the frame level. Although state-of-the-art models perform well on simple anomalies (e.g., explosions), they struggle with complex real-world events (e.g., shoplifting). This difficulty stems from two key issues: (1) the inability of current models to address the diversity of anomaly types, as they process all categories with a shared model, overlooking category-specific features; and (2) the weak supervision signal, which lacks precise temporal information, limiting the ability to capture nuanced anomalous patterns blended with normal events. To address these challenges, we propose Gaussian Splatting-guided Mixture of Experts (GS-MoE), a novel framework that employs a set of expert models, each specialized in capturing specific anomaly types. These experts are guided by a temporal Gaussian splatting loss, enabling the model to leverage temporal consistency and enhance weak supervision. The Gaussian splatting approach encourages a more precise and comprehensive representation of anomalies by focusing on temporal segments most likely to contain abnormal events. The predictions from these specialized experts are integrated through a mixture-of-experts mechanism to model complex relationships across diverse anomaly patterns. Our approach achieves state-of-the-art performance, with a 91.58% AUC on the UCF-Crime dataset, and demonstrates superior results on XD-Violence and MSAD datasets. By leveraging category-specific expertise and temporal guidance, GS-MoE sets a new benchmark for VAD under weak supervision.",
+        "arxiv_id": null,
+        "authors": [
+          "Giacomo D' Amicantonio",
+          "Snehashis Majhi",
+          "Quan Kong",
+          "Lorenzo Garattoni",
+          "Gianpiero Francesca",
+          "Francois Bremond",
+          "Egor Bondarev"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Amicantonio_Mixture_of_Experts_Guided_by_Gaussian_Splatters_Matters_A_new_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Amicantonio_Mixture_of_Experts_Guided_by_Gaussian_Splatters_Matters_A_new_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Mixture of Experts Guided by Gaussian Splatters Matters: A new Approach to Weakly-Supervised Video Anomaly Detection",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
     {
       "capture": {
         "observed_at": "2026-11-11T04:27:12.401412+00:00",
@@ -434,6 +464,59 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:47:43.926811+00:00",
+        "sha256": "de7d6f19f0656728f3cc57e7f170f656d32abfa998ec45b9751511a961ab538b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Despite recent advances in feed-forward 3D Gaussian Splatting, generalizable 3D reconstruction remains challenging, particularly in multi-view correspondence modeling. Existing approaches face a fundamental trade-off: explicit methods achieve geometric precision but struggle with ambiguous regions, while implicit methods provide robustness but suffer from slow convergence. We present H3R, a hybrid framework that addresses this limitation by integrating volumetric latent fusion with attention-based feature aggregation. Our framework consists of two complementary components: an efficient latent volume that enforces geometric consistency through epipolar constraints, and a camera-aware Transformer that leverages Plucker coordinates for adaptive correspondence refinement. By integrating both paradigms, our approach enhances generalization while converging 2xfaster than existing methods. Furthermore, we show that spatial-aligned foundation models (e.g., SD-VAE) substantially outperform semantic-aligned models (e.g., DINOv2), resolving the mismatch between semantic representations and spatial reconstruction requirements. Our method supports variable-number and high-resolution input views while demonstrating robust cross-dataset generalization. Extensive experiments show that our method achieves state-of-the-art performance across multiple benchmarks, with significant PSNR improvements of 0.59 dB, 1.06 dB, and 0.22 dB on the RealEstate10K, ACID, and DTU datasets, respectively. Code is available at https://github.com/JiaHeng-DLUT/H3R.",
+        "arxiv_id": "2508.03118",
+        "authors": [
+          "Heng Jia",
+          "Linchao Zhu",
+          "Na Zhao"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jia_H3R_Hybrid_Multi-view_Correspondence_for_Generalizable_3D_Reconstruction_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jia_H3R_Hybrid_Multi-view_Correspondence_for_Generalizable_3D_Reconstruction_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "H3R: Hybrid Multi-view Correspondence for Generalizable 3D Reconstruction",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:43:42.659634+00:00",
+        "sha256": "9bd405367ac99449fa12c4664f960c9735af707d97a5dfccd19e81e99e703e76"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We present an active mapping system that could plan for long-horizon exploration goals and short-term actions with a 3D Gaussian Splatting (3DGS) representation. Existing methods either did not take advantage of recent developments in multimodal Large Language Models (LLM) or did not consider challenges in localization uncertainty which is critical in embodied agents. We propose employing multimodal LLMs for long-horizon planning in conjunction with detailed motion planning using our information-based algorithm. By leveraging high-quality view synthesis from our 3DGS representation, our method employs a multimodal LLM as a zero-shot planner for long-horizon exploration goals from the semantic perspective. We also introduce an uncertainty-aware path proposal and selection algorithm that balances the dual objectives of maximizing the information gain for the environment while minimizing the cost of localization errors. Experiments conducted on the Gibson and Habitat-Matterport 3D datasets demonstrate state-of-the-art results of the proposed method.",
+        "arxiv_id": "2410.17422",
+        "authors": [
+          "Wen Jiang",
+          "Boshu Lei",
+          "Katrina Ashton",
+          "Kostas Daniilidis"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Jiang_Multimodal_LLM_Guided_Exploration_and_Active_Mapping_using_Fisher_Information_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Jiang_Multimodal_LLM_Guided_Exploration_and_Active_Mapping_using_Fisher_Information_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Multimodal LLM Guided Exploration and Active Mapping using Fisher Information",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T04:33:54.636609+00:00",
         "sha256": "cbd97072bd57ca354fc59e516fe97b4628a280100709c5f6f36168e8c0d1d6ae"
       },
@@ -597,6 +680,33 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liang_DGTalker_Disentangled_Generative_Latent_Space_Learning_for_Audio-Driven_Gaussian_Talking_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "DGTalker: Disentangled Generative Latent Space Learning for Audio-Driven Gaussian Talking Heads",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:46:32.327331+00:00",
+        "sha256": "8a7ca1ec6e3abae5092272368ec91ec74da3e2f851ea5c8bb443f79f3e3ea439"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Surface reconstruction is fundamental to computer vision and graphics, enabling applications in 3D modeling, mixed reality, robotics, and more. Existing approaches based on volumetric rendering obtain promising results, but optimize on a per-scene basis, resulting in a slow optimization that can struggle to model under-observed or textureless regions. We introduce QuickSplat, which learns data-driven priors to generate dense initializations for 2D gaussian splatting optimization of large-scale indoor scenes. This provides a strong starting point for the reconstruction, which accelerates the convergence of the optimization and improves the geometry of flat wall structures. We further learn to jointly estimate the densification and update of the scene parameters during each iteration; our proposed densifier network predicts new Gaussians based on the rendering gradients of existing ones, removing the needs of heuristics for densification. Extensive experiments on large-scale indoor scene reconstruction demonstrate the superiority of our data-driven optimization. Concretely, we accelerate runtime by 8x, while decreasing depth errors by 48% in comparison to state of the art methods.",
+        "arxiv_id": null,
+        "authors": [
+          "Yueh-Cheng Liu",
+          "Lukas Höllein",
+          "Matthias Nießner",
+          "Angela Dai"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_QuickSplat_Fast_3D_Surface_Reconstruction_via_Learned_Gaussian_Initialization_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Liu_QuickSplat_Fast_3D_Surface_Reconstruction_via_Learned_Gaussian_Initialization_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "QuickSplat: Fast 3D Surface Reconstruction via Learned Gaussian Initialization",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
@@ -1082,6 +1192,40 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-11T05:46:48.706572+00:00",
+        "sha256": "c9cb7cfdb1d643910910a90206409822516c7b1494acd9f5b60a7368d10c6cd8"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "3D human digitization has long been a highly pursued yet challenging task. Existing methods aim to generate high-quality 3D digital humans from single or multiple views, but remain primarily constrained by current paradigms and the scarcity of 3D human assets. Specifically, recent approaches fall into several paradigms: optimization-based and feed-forward (both single-view regression and multi-view generation with reconstruction). However, they are limited by slow speed, low quality, cascade reasoning, and ambiguity in mapping low-dimensional planes to high-dimensional space due to occlusion and invisibility, respectively. Furthermore, existing 3D human assets remain small-scale, insufficient for large-scale training. To address these challenges, we propose a latent space generation paradigm for 3D human digitization, which involves compressing multi-view images into Gaussians via a UV-structured VAE, along with DiT-based conditional generation, we transform the ill-posed low-to-high-dimensional mapping problem into a learnable distribution shift, which also supports end-to-end inference. In addition, we employ the multi-view optimization approach combined with synthetic data to construct the HGS-1M dataset, which contains 1 million 3D Gaussian assets to support the large-scale training. Experimental results demonstrate that our paradigm, powered by large-scale training, produces high-quality 3D human Gaussians with intricate textures, facial details, and loose clothing deformation. All training code, models, and the dataset will be open-sourced.",
+        "arxiv_id": "2504.06982",
+        "authors": [
+          "Yuhang Yang",
+          "Fengqi Liu",
+          "Yixing Lu",
+          "Qin Zhao",
+          "Pingyu Wu",
+          "Wei Zhai",
+          "Ran Yi",
+          "Yang Cao",
+          "Lizhuang Ma",
+          "Zheng-Jun Zha",
+          "Junting Dong"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Yang_SIGMAN_Scaling_3D_Human_Gaussian_Generation_with_Millions_of_Assets_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Yang_SIGMAN_Scaling_3D_Human_Gaussian_Generation_with_Millions_of_Assets_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "SIGMAN: Scaling 3D Human Gaussian Generation with Millions of Assets",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-11T05:10:31.471272+00:00",
         "sha256": "88c7ec3c822a2fcc8ae2426907497bdf91cd8e9bf3705399ca5e2de694010787"
       },
@@ -1132,6 +1276,36 @@
         "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_Neural_Shell_Texture_Splatting_More_Details_and_Fewer_Primitives_ICCV_2025_paper.html",
         "status": "official_publication_metadata_verified",
         "title": "Neural Shell Texture Splatting: More Details and Fewer Primitives",
+        "track": "main",
+        "venue": "ICCV",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-11T05:46:21.499337+00:00",
+        "sha256": "0f6f7226e8ad171d498dfd1b1084716b08518479701700703f2968312ecbdfcb"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context",
+      "publication": {
+        "abstract": "Novel view synthesis (NVS) boosts immersive experiences in computer vision and graphics. Existing techniques, though progressed, rely on dense multi-view observations, restricting their application. This work takes on the challenge of reconstructing photorealistic 3D scenes from sparse or single-view inputs.We introduce SpatialCrafter, a framework that leverages the rich knowledge in video diffusion models to generate plausible additional observations, thereby alleviating reconstruction ambiguity. Through a trainable camera encoder and an epipolar attention mechanism for explicit geometric constraints, we achieve precise camera control and 3D consistency, further reinforced by a unified scale estimation strategy to handle scale discrepancies across datasets.Furthermore, by integrating monocular depth priors with semantic features in the video latent space, our framework directly regresses 3D Gaussian primitives and efficiently processes long-sequence features using a hybrid network structure. Extensive experiments show our method enhances sparse view reconstruction and restores the realistic appearance of 3D scenes.",
+        "arxiv_id": "2505.11992",
+        "authors": [
+          "Songchun Zhang",
+          "Huiyao Xu",
+          "Sitong Guo",
+          "Zhongwei Xie",
+          "Hujun Bao",
+          "Weiwei Xu",
+          "Changqing Zou"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Zhang_SpatialCrafter_Unleashing_the_Imagination_of_Video_Diffusion_Models_for_Scene_ICCV_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Zhang_SpatialCrafter_Unleashing_the_Imagination_of_Video_Diffusion_Models_for_Scene_ICCV_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations",
         "track": "main",
         "venue": "ICCV",
         "venue_year": 2025
