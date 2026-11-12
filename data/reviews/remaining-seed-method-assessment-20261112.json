@@ -1,0 +1,35 @@
+{
+  "assessments": [
+    {
+      "arxiv_id": "2512.08924",
+      "disposition": "unresolved_review",
+      "finding": "The inspected D4RT v1 method decodes point-level 4D queries and uses Gaussian blur as training augmentation, not Gaussian splat scene primitives. No concrete GS dependency is established by the inspected primary sources. This is not a claim of global downstream absence.",
+      "paper_id": "paper:2025-f13a7b00a2",
+      "source_urls": [
+        "https://arxiv.org/html/2512.08924v1",
+        "https://arxiv.org/abs/2512.08924v1"
+      ]
+    },
+    {
+      "arxiv_id": "2602.21101",
+      "disposition": "unresolved_review",
+      "finding": "The inspected primary method and reported experiments use a NeRF backbone. Its Extension to Gaussian Splatting discussion describes a possible representation change, not an implemented or evaluated GS pipeline. GS references and that proposal alone do not resolve the current curated-foundation scope review.",
+      "paper_id": "paper:2026-3995de4f15",
+      "source_urls": [
+        "https://arxiv.org/html/2602.21101v1"
+      ]
+    },
+    {
+      "arxiv_id": "2610.28257",
+      "finding": "SplatFlux uses DA3 initialization in the inspected method. VGGT-Ω appears among references; this source was not adopted as evidence of a direct VGGT-Ω or D4RT dependency.",
+      "source_urls": [
+        "https://arxiv.org/html/2610.28257v1"
+      ]
+    }
+  ],
+  "canonical_mutated": false,
+  "dispositions_mutated": false,
+  "recorded_at": "2026-11-12T19:00:49.595304+00:00",
+  "reviewer": "Codex primary source inspection; not independent human review",
+  "source_manifest": "data/reviews/remaining-seed-method-sources-20261112.json"
+}

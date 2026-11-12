@@ -3254,11 +3254,54 @@
       "arxiv_id": "2605.15195",
       "cached_signal_status": "error",
       "canonical_id": "paper:2026-b2e6dfab1b",
-      "disposition": "unresolved_review",
+      "disposition": "retained",
+      "evidence_basis": "primary_method_explicit_GS_dependency",
+      "foundation_use_evidence": [
+        {
+          "observed_at": "2026-11-12T18:56:52.849229+00:00",
+          "reviewed_at": "2026-11-12T18:58:57.814113+00:00",
+          "reviewed_by": "Codex primary-method foundation review; not independent human adjudication",
+          "source": "frozen_primary_GS_method_foundation_review",
+          "source_url": "https://arxiv.org/html/2610.27604v1",
+          "value": {
+            "scope_justification": "Curated GS geometry foundation: HiQGS (2610.27604v1), Sections 3.1 and 4.1, adopts VGGT-Ω geometry features and initializes its geometry encoder from the pretrained checkpoint for feed-forward Gaussian reconstruction. Amortized Anchor Refinement (2608.30218v1), Section 3.1 and Appendix A, independently uses frozen VGGT-Ω depth/features to initialize ray-grounded Gaussian centers and predict Gaussian attributes before scene refinement. These are explicit method dependencies, not comparison-only citations or a claim that VGGT-Ω itself renders Gaussian splats.",
+            "source_capture_file": "data/reviews/sources/b6f70907c7946f5044c8a962200280e93d8cdbc8d47a2dbf0a53dc6da2901838.html",
+            "source_capture_sha256": "b6f70907c7946f5044c8a962200280e93d8cdbc8d47a2dbf0a53dc6da2901838"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T18:56:55.997752+00:00",
+          "reviewed_at": "2026-11-12T18:58:57.814113+00:00",
+          "reviewed_by": "Codex primary-method foundation review; not independent human adjudication",
+          "source": "frozen_primary_GS_method_foundation_review",
+          "source_url": "https://arxiv.org/html/2608.30218v1",
+          "value": {
+            "scope_justification": "Curated GS geometry foundation: HiQGS (2610.27604v1), Sections 3.1 and 4.1, adopts VGGT-Ω geometry features and initializes its geometry encoder from the pretrained checkpoint for feed-forward Gaussian reconstruction. Amortized Anchor Refinement (2608.30218v1), Section 3.1 and Appendix A, independently uses frozen VGGT-Ω depth/features to initialize ray-grounded Gaussian centers and predict Gaussian attributes before scene refinement. These are explicit method dependencies, not comparison-only citations or a claim that VGGT-Ω itself renders Gaussian splats.",
+            "source_capture_file": "data/reviews/sources/0ed06645457cba3c6b7362b1d1984ddad2dba2b2c903352b90316360627a181d.html",
+            "source_capture_sha256": "0ed06645457cba3c6b7362b1d1984ddad2dba2b2c903352b90316360627a181d"
+          }
+        },
+        {
+          "observed_at": "2026-11-12T18:55:25.391104+00:00",
+          "reviewed_at": "2026-11-12T18:58:57.814113+00:00",
+          "reviewed_by": "Codex primary-method foundation review; not independent human adjudication",
+          "source": "frozen_primary_GS_method_foundation_review",
+          "source_url": "https://arxiv.org/abs/2605.15195v1",
+          "value": {
+            "scope_justification": "Curated GS geometry foundation: HiQGS (2610.27604v1), Sections 3.1 and 4.1, adopts VGGT-Ω geometry features and initializes its geometry encoder from the pretrained checkpoint for feed-forward Gaussian reconstruction. Amortized Anchor Refinement (2608.30218v1), Section 3.1 and Appendix A, independently uses frozen VGGT-Ω depth/features to initialize ray-grounded Gaussian centers and predict Gaussian attributes before scene refinement. These are explicit method dependencies, not comparison-only citations or a claim that VGGT-Ω itself renders Gaussian splats.",
+            "source_capture_file": "data/reviews/sources/d708928ca720a63f16a44dc1fe793667bf35f352e9338891997cfaa1ef95aae7.html",
+            "source_capture_sha256": "d708928ca720a63f16a44dc1fe793667bf35f352e9338891997cfaa1ef95aae7"
+          }
+        }
+      ],
+      "metadata_limitations": "Scope retention only. Exact arXiv identity, math-normalized title, first-author surname and original preprint date agree. Existing abbreviated authors, title typography and publication metadata remain unchanged; upstream performance is not independently reproduced.",
       "old_id": "paper:2026-b2e6dfab1b",
       "provider_title_match": "unavailable",
-      "reason": "Active identity mapped; final source-backed retention, merge or archival adjudication remains pending.",
-      "reviewed": false,
+      "reason": "Curated GS geometry foundation: HiQGS (2610.27604v1), Sections 3.1 and 4.1, adopts VGGT-Ω geometry features and initializes its geometry encoder from the pretrained checkpoint for feed-forward Gaussian reconstruction. Amortized Anchor Refinement (2608.30218v1), Section 3.1 and Appendix A, independently uses frozen VGGT-Ω depth/features to initialize ray-grounded Gaussian centers and predict Gaussian attributes before scene refinement. These are explicit method dependencies, not comparison-only citations or a claim that VGGT-Ω itself renders Gaussian splats.",
+      "reviewed": true,
+      "reviewed_at": "2026-11-12T18:58:57.814113+00:00",
+      "reviewed_by": "Codex primary-method foundation review; not independent human adjudication",
+      "reviewed_canonical_record_sha256": "b59921b5d505e1e5a1f5bbf88de409b343bd4f49b9adca37be8ab38f54b0a676",
       "source_scope_review_capture_sha256": "95da1b00aff4b4d730917691e7b8aa10e21581312446416094b88d6c34bd53f7",
       "source_scope_review_reason": "Scalable feed-forward geometry estimation; a specific GS use or curated foundation link requires further source evidence.",
       "source_scope_reviewed_at": "2026-11-09T21:51:43.473821+00:00",
@@ -5983,7 +6026,7 @@
   ],
   "summary": {
     "archived": 5,
-    "retained": 153,
-    "unresolved_review": 7
+    "retained": 154,
+    "unresolved_review": 6
   }
 }
