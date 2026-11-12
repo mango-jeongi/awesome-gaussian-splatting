@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Multi-view Reconstruction via SfM-guided Monocular Depth Estimation">
+<meta name="citation_author" content="Guo, Haoyu">
+<meta name="citation_author" content="Zhu, He">
+<meta name="citation_author" content="Peng, Sida">
+<meta name="citation_author" content="Lin, Haotong">
+<meta name="citation_author" content="Yan, Yunzhi">
+<meta name="citation_author" content="Xie, Tao">
+<meta name="citation_author" content="Wang, Wenguan">
+<meta name="citation_author" content="Zhou, Xiaowei">
+<meta name="citation_author" content="Bao, Hujun">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="5272">
+<meta name="citation_lastpage" content="5282">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Guo_Multi-view_Reconstruction_via_SfM-guided_Monocular_Depth_Estimation_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Multi-view Reconstruction via SfM-guided Monocular Depth Estimation
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Haoyu Guo, He Zhu, Sida Peng, Haotong Lin, Yunzhi Yan, Tao Xie, Wenguan Wang, Xiaowei Zhou, Hujun Bao</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 5272-5282
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    This paper aims to reconstruct the scene geometry from multi-view images with strong robustness and high quality. Previous learning-based methods incorporate neural networks into the multi-view stereo matching and have shown impressive reconstruction results. However, due to the reliance on matching across input images, they typically suffer from high GPU memory consumption and tend to fail in sparse view scenarios. To overcome this problem, we develop a new pipeline, named Murre, for multi-view geometry reconstruction of 3D scenes based on SfM-guided monocular depth estimation. For input images, Murre first recover the SfM point cloud that captures the global scene structure, and then use it to guide a conditional diffusion model to produce multi-view metric depth maps for the final TSDF fusion. By predicting the depth map from a single image, Murre bypasses the multi-view matching step and naturally resolves the issues of previous MVS-based methods. In addition, the diffusion-based model can easily leverage the powerful priors of 2D foundation models, achieving good generalization ability across diverse real-world scenes. To obtain multi-view consistent depth maps, our key design is providing effective guidance on the diffusion model through the SfM point cloud, which is a condensed form of multi-view information, highlighting the scene&#x27;s salient structure, and can be readily transformed into point maps to drive the image-space estimation process. We evaluate the reconstruction quality of Murre in various types of real-world datasets including indoor, streetscapes, and aerial scenes, surpassing state-of-the-art MVS-based and implicit neural reconstruction-based methods. The code and supplementary materials are available at https://zju3dv.github.io/murre/.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Guo_Multi-view_Reconstruction_via_SfM-guided_Monocular_Depth_Estimation_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Guo_Multi-view_Reconstruction_via_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2503.14483">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Guo_2025_CVPR,
+    author    = {Guo, Haoyu and Zhu, He and Peng, Sida and Lin, Haotong and Yan, Yunzhi and Xie, Tao and Wang, Wenguan and Zhou, Xiaowei and Bao, Hujun},
+    title     = {Multi-view Reconstruction via SfM-guided Monocular Depth Estimation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {5272-5282}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

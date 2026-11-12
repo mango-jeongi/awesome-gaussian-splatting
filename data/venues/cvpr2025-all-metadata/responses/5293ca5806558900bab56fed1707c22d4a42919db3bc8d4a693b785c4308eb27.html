@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2025 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="CARL: A Framework for Equivariant Image Registration">
+<meta name="citation_author" content="Greer, Hastings">
+<meta name="citation_author" content="Tian, Lin">
+<meta name="citation_author" content="Vialard, François-Xavier">
+<meta name="citation_author" content="Kwitt, Roland">
+<meta name="citation_author" content="Estepar, Raul San Jose">
+<meta name="citation_author" content="Niethammer, Marc">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="26014">
+<meta name="citation_lastpage" content="26023">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Greer_CARL_A_Framework_for_Equivariant_Image_Registration_CVPR_2025_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="https://cvpr.thecvf.com/"><img src="/img/cvpr2025_logo.png" width="175" border="0" alt="CVPR 2025"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="https://cvpr.thecvf.com/">CVPR 2025</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2025 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2025" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        CARL: A Framework for Equivariant Image Registration
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Hastings Greer, Lin Tian, François-Xavier Vialard, Roland Kwitt, Raul San Jose Estepar, Marc Niethammer</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 26014-26023
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Image registration estimates spatial correspondences between image pairs. These estimates are typically obtained via numerical optimization or regression by a deep network. A desirable property is that a correspondence estimate (e.g., the true oracle correspondence) for an image pair is maintained under deformations of the input images. Formally, the estimator should be equivariant to a desired class of image transformations. In this work, we present careful analyses of equivariance properties in the context of multi-step deep registration networks. Based on these analyses we 1) introduce the notions of [U,U] equivariance (network equivariance to the same deformations of the input images) and [W,U] equivariance (where input images can undergo different deformations); we 2) show that in a suitable multi-step registration setup it is sufficient for overall [W,U] equivariance if the first step has [W,U] equivariance and all others have [U,U] equivariance; we 3) show that common displacement-predicting networks only exhibit [U,U] equivariance to translations instead of the more powerful [W,U] equivariance; and we 4) show how to achieve multi-step [W,U] equivariance via a coordinate-attention mechanism combined with displacement-predicting networks. Our approach obtains excellent practical performance for 3D abdomen, lung, and brain medical image registration. We match or outperform state-of-the-art (SOTA) registration approaches on all the datasets with a particularly strong performance for the challening abdomen registration.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2025/papers/Greer_CARL_A_Framework_for_Equivariant_Image_Registration_CVPR_2025_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2025/supplemental/Greer_CARL_A_Framework_CVPR_2025_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2405.16738">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Greer_2025_CVPR,
+    author    = {Greer, Hastings and Tian, Lin and Vialard, Fran\c{c}ois-Xavier and Kwitt, Roland and Estepar, Raul San Jose and Niethammer, Marc},
+    title     = {CARL: A Framework for Equivariant Image Registration},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {26014-26023}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

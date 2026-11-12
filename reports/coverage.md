@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-12 (America/Los_Angeles)
 
-Observed at 2026-11-12T16:16:24.610883+00:00. The [current machine receipt](runs/coverage-after-direct-method-reviews-20261112.json) is generated directly by `python -m src.cli coverage` and binds 394 consumed files, including verified cached historical pages. The prior [source-review snapshot](runs/coverage-after-source-reviews-20261111.json) and earlier receipts remain preserved. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-12T16:31:27.391682+00:00. The [current machine receipt](runs/coverage-after-cvpr2025-pass1-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. The prior [source-review snapshot](runs/coverage-after-source-reviews-20261111.json) and earlier receipts remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -8,7 +8,7 @@ The catalog has **4,103 active papers and six archived records**. There are 4,07
 
 All 340 frozen monthly query slices are complete, covering 1998-08-01 through the exclusive cutoff 2026-11-10T00:00:00Z. The literal query and comparator remain in the receipt. There are 4,466 unique candidates: 4,045 reviewed-application includes, 41 exclusions and 380 unresolved reviews under the frozen application policy. These counts do not establish coverage of all NeRF literature or later updates. The current source hashes were checked before retaining the historical-query results.
 
-The original 165-seed ledger has **146 retained, five archived and 14 unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Source-backed MASt3R and [Zero-1-to-3 foundation retention](zero123-seed-foundation-review-20261111.md), plus the SAR-GS identity review, preserve all original IDs without silently discarding review cases.
+The original 165-seed ledger has **147 retained, five archived and 13 unresolved**. The sixth catalog archive is a later duplicate, not an extra excluded seed. Source-backed MASt3R and [Zero-1-to-3 foundation retention](zero123-seed-foundation-review-20261111.md), plus the SAR-GS identity review, preserve all original IDs without silently discarding review cases.
 
 ## Venue coverage
 
@@ -18,14 +18,17 @@ The declared inventory still has **56 cells: four crawled/partial and 52 pending
 | --- | ---: | ---: | ---: | ---: |
 | ICCV 2025 main | 2,701 | 2,701 | 0 | 0 |
 | CVPR 2024 main | 2,716 | 2,713 | 3 | 3 |
+| CVPR 2025 main | 2,871 | 647 | 2,224 | 1 |
 
 ICCV has all 2,701 abstracts and a verified one-to-one title mapping between the two frozen official inventories. **512 rows retain author discrepancies**; source identity, dates, scope and provider review remain open. Of 2,552 title-excluded pages, metadata produced 49 include leads, 62 review leads and 2,441 exclusions. Those are automatic policy outcomes, not measured population relevance accuracy. See the [ICCV report](iccv2025-metadata-capture.md).
 
-CVPR 2024 has **2,713/2,716** verified pages: 133 reused and 2,580 additional captures from 2,593 paced requests across seven bounded passes, including four source-bound offline metadata corrections. Three frozen listing URLs still return HTTP 404. A zero-request replay verified all retained response hashes without changing state. Title-excluded pages yield 15 include leads and 91 review leads, awaiting scope adjudication. The epoch retains its frozen policy. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023/2025 and the other 52 cells retain their declared gaps; DBLP access remains unresolved.
+CVPR 2024 has **2,713/2,716** verified pages: 133 reused and 2,580 additional captures from 2,593 paced requests across seven bounded passes, including four source-bound offline metadata corrections. Three frozen listing URLs still return HTTP 404. A zero-request replay verified all retained response hashes without changing state. Title-excluded pages yield 15 include leads and 91 review leads, awaiting scope adjudication. The epoch retains its frozen policy. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023 and the other 52 cells retain their declared gaps; DBLP access remains unresolved. Two [primary URL repair candidates](cvpr2024-alternate-url-candidates-20261112.md) remain unapplied, and the remaining accepted-table [cross-edition title conflict](cvpr2024-cross-edition-title-diagnostic-20261112.md) remains unresolved.
+
+CVPR 2025 now has **647/2,871** full-metadata pages verified: 148 reused responses and 499 new verified pages from 500 paced requests. There are 2,224 pending pages, including one transport failure with its retry deadline preserved. A zero-request hash/parser replay preserved state bytes and the original title-priority epoch. Seven include leads and 13 review leads among title exclusions await source scope review. [Checkpoint](cvpr2025-full-metadata-capture.md).
 
 Two [source-reviewed proceedings discoveries](iccv2025-reviewed-discoveries-20261111.md), DGTalker and Hi-Gaussian, are now canonical additions with verified publication DOIs and independent official author agreement. All 4,101 previous records, existing aliases and six archives remain exact. Neither captured CVF page links arXiv; global preprint absence is not asserted. The two papers have fresh OpenAlex observations, but no eligible velocity window.
 
-AutoPhyX and LiTo now have [direct GS method decisions](autophyx-lito-method-scope-reviews-20261112.md), alongside Matrix3D and fVDB foundation decisions, leaving **146 retained, 14 unresolved and five archived** seeds. The [review report](matrix3d-fvdb-seed-foundation-reviews-20261111.md) distinguishes full-method GS use from current software dependency evidence. Canonical bibliographic fields remain unchanged.
+AutoPhyX and LiTo have [direct GS method decisions](autophyx-lito-method-scope-reviews-20261112.md); [SyncDreamer](syncdreamer-foundation-review-20261112.md) joins the source-backed Matrix3D and fVDB foundations, leaving **147 retained, 13 unresolved and five archived** seeds. The [review report](matrix3d-fvdb-seed-foundation-reviews-20261111.md) distinguishes full-method GS use from current software dependency evidence. Canonical bibliographic fields remain unchanged.
 
 ## Provider observations and real time windows
 
@@ -53,7 +56,7 @@ Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollb
 
 The [full cached-corpus release rehearsal](release-cache-backed-rehearsal-20261111.md) produced two byte-identical 83,681,280-byte archives, restored all 160 files and verified the earlier 393-file rollback archive. These local checks do not establish production deployment or rollback.
 
-Remaining gates include 14 seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
+Remaining gates include 13 seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
 
 ## Reproducing this report
 

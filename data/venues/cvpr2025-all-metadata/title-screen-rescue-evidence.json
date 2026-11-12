@@ -1,0 +1,603 @@
+{
+  "records": [
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:30:13.502499+00:00",
+        "sha256": "b5c5737820f2d88ee2d6ac36f79b9388dbf55cc191c138234bf9202c9f68ad89"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Pre-trained video generation models hold great potential for generative video super-resolution (VSR). However, adapting them for full-size VSR, as most existing methods do, suffers from unnecessary intensive full-attention computation and fixed output resolution. To overcome these limitations, we make the first exploration into utilizing video diffusion priors for patch-wise VSR.This is non-trivial because pre-trained video diffusion models are not native for patch-level detail generation. To mitigate this challenge, we propose an innovative approach, called PatchVSR, which integrates a dual-stream adapter for conditional guidance. The patch branch extracts features from input patches to maintain content fidelity while the global branch extracts context features from the resized full video to bridge the generation gap caused byincomplete semantics of patches.Particularly, we also inject the patch's location information into the model to better contextualize patch synthesis within the global video frame.Experiments demonstrate that our method can synthesize high-fidelity, high-resolution details at the patch level. A tailor-made multi-patch joint modulation is proposed to ensure visual consistency across individually enhanced patches. Due to the flexibility of our patch-based paradigm, we can achieve highly competitive 4K VSR based on a 512x512 resolution base model, with extremely high efficiency.",
+        "arxiv_id": null,
+        "authors": [
+          "Shian Du",
+          "Menghan Xia",
+          "Chang Liu",
+          "Xintao Wang",
+          "Jing Wang",
+          "Pengfei Wan",
+          "Di Zhang",
+          "Xiangyang Ji"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Du_PatchVSR_Breaking_Video_Diffusion_Resolution_Limits_with_Patch-wise_Video_Super-Resolution_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Du_PatchVSR_Breaking_Video_Diffusion_Resolution_Limits_with_Patch-wise_Video_Super-Resolution_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "PatchVSR: Breaking Video Diffusion Resolution Limits with Patch-wise Video Super-Resolution",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:30:31.481166+00:00",
+        "sha256": "2ebcb805999da0858842906ee166d7636da11e6b408c3d5e83f916eec3fc1ad6"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "3D Gaussian Splatting (3DGS) has shown impressive results for the novel view synthesis task, where lighting is assumed to be fixed. However, creating relightable 3D assets, especially for objects with ill-defined shapes (fur, fabric, etc.), remains a challenging task. The decomposition between light, geometry, and material is ambiguous, especially if either smooth surface assumptions or surface-based analytical shading models do not apply. We propose Relightable Neural Gaussians (RNG), a novel 3DGS-based framework that enables the relighting of objects with both hard surfaces or soft boundaries, while avoiding assumptions on the shading model. We condition the radiance at each point on both view and light directions. We also introduce a shadow cue, as well as a depth refinement network to improve shadow accuracy. Finally, we propose a hybrid forward-deferred fitting strategy to balance geometry and appearance quality. Our method achieves significantly faster training (1.3 hours) and rendering (60 frames per second) compared to a prior method based on neural radiance fields and produces higher-quality shadows than a concurrent 3DGS-based method.",
+        "arxiv_id": "2409.19702",
+        "authors": [
+          "Jiahui Fan",
+          "Fujun Luan",
+          "Jian Yang",
+          "Milos Hasan",
+          "Beibei Wang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Fan_RNG_Relightable_Neural_Gaussians_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Fan_RNG_Relightable_Neural_Gaussians_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "RNG: Relightable Neural Gaussians",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:23:28.053007+00:00",
+        "sha256": "34bd714e751cc23ab9767d94dbed4c2b12d1ad037e226e7dc7f540aa1a038206"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We demonstrate the feasibility of integrating physics-based animations of solids and fluids with 3D Gaussian Splatting (3DGS) to create novel effects in virtual scenes reconstructed using 3DGS. Leveraging the coherence of the Gaussian Splatting and Position-Based Dynamics (PBD) in the underlying representation, we manage rendering, view synthesis, and the dynamics of solids and fluids in a cohesive manner. Similar to GaussianShader, we enhance each Gaussian kernel with an added normal, aligning the kernel's orientation with the surface normal to refine the PBD simulation. This approach effectively eliminates spiky noises that arise from rotational deformation in solids. It also allows us to integrate physically based rendering to augment the dynamic surface reflections on fluids. Consequently, our framework is capable of realistically reproducing surface highlights on dynamic fluids and facilitating interactions between scene objects and fluids from new views.",
+        "arxiv_id": "2401.15318",
+        "authors": [
+          "Yutao Feng",
+          "Xiang Feng",
+          "Yintong Shang",
+          "Ying Jiang",
+          "Chang Yu",
+          "Zeshun Zong",
+          "Tianjia Shao",
+          "Hongzhi Wu",
+          "Kun Zhou",
+          "Chenfanfu Jiang",
+          "Yin Yang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Feng_Gaussian_Splashing_Unified_Particles_for_Versatile_Motion_Synthesis_and_Rendering_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_Gaussian_Splashing_Unified_Particles_for_Versatile_Motion_Synthesis_and_Rendering_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Gaussian Splashing: Unified Particles for Versatile Motion Synthesis and Rendering",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:23:39.057207+00:00",
+        "sha256": "ccb918c62e4b8cbc735fc31051a13d088d0595d8d9fb08ea8456e9c138e3ccc0"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Gaussian functions in the abstract need explicit splatting or curated-foundation evidence",
+      "publication": {
+        "abstract": "As interest grows in world models that predict future states from current observations and actions, accurately modeling part-level dynamics has become increasingly relevant for various applications. Existing approaches, such as Puppet-Master, rely on fine-tuning large-scale pre-trained video diffusion models, which are impractical for real-world use due to the limitations of 2D video representation and slow processing times. To overcome these challenges, we present PartRM, a novel 4D reconstruction framework that simultaneously models appearance, geometry, and part-level motion from multi-view images of a static object. PartRM builds upon large 3D Gaussian reconstruction models, leveraging their extensive knowledge of appearance and geometry in static objects. To address data scarcity in 4D, we introduce the PartDrag-4D dataset, providing multi-view observations of part-level dynamics across over 20,000 states. We enhance the model's understanding of interaction conditions with a multi-scale drag embedding module that captures dynamics at varying granularities. To prevent catastrophic forgetting during fine-tuning, we implement a two-stage training process that focuses sequentially on motion and appearance learning. Experimental results show that PartRM establishes a new state-of-the-art in part-level motion learning and can be applied in manipulation tasks in robotics. Our code, data, and models are publicly available to facilitate future research.",
+        "arxiv_id": "2503.19913",
+        "authors": [
+          "Mingju Gao",
+          "Yike Pan",
+          "Huan-ang Gao",
+          "Zongzheng Zhang",
+          "Wenyi Li",
+          "Hao Dong",
+          "Hao Tang",
+          "Li Yi",
+          "Hao Zhao"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Gao_PartRM_Modeling_Part-Level_Dynamics_with_Large_Cross-State_Reconstruction_Model_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Gao_PartRM_Modeling_Part-Level_Dynamics_with_Large_Cross-State_Reconstruction_Model_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "PartRM: Modeling Part-Level Dynamics with Large Cross-State Reconstruction Model",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:29:53.007195+00:00",
+        "sha256": "fbcfaf10e31270625ae7666326b56d634bcd1e039a75db6063b981504791788d"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "We introduce a novel geometry-guided online video view synthesis method with enhanced view and temporal consistency. Traditional approaches achieve high-quality synthesis from dense multi-view camera setups but require significant computational resources. In contrast, selective-input methods reduce this cost but often compromise quality, leading to multi-view and temporal inconsistencies such as flickering artifacts. Our method addresses this challenge to deliver efficient, high-quality novel-view synthesis with view and temporal consistency. The key innovation of our approach lies in using global geometry to guide an image-based rendering pipeline. To accomplish this, we progressively refine depth maps using color difference masks across time. These depth maps are then accumulated through truncated signed distance fields in the synthesized view's image space. This depth representation is view and temporally consistent, and is used to guide a pre-trained blending network that fuses multiple forward-rendered input-view images. Thus, the network is encouraged to output geometrically consistent synthesis results across multiple views and time. Our approach achieves consistent, high-quality video synthesis, while running efficiently in an online manner.",
+        "arxiv_id": "2505.18932",
+        "authors": [
+          "Hyunho Ha",
+          "Lei Xiao",
+          "Christian Richardt",
+          "Thu Nguyen-Phuoc",
+          "Changil Kim",
+          "Min H. Kim",
+          "Douglas Lanman",
+          "Numair Khan"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ha_Geometry-guided_Online_3D_Video_Synthesis_with_Multi-View_Temporal_Consistency_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Ha_Geometry-guided_Online_3D_Video_Synthesis_with_Multi-View_Temporal_Consistency_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Geometry-guided Online 3D Video Synthesis with Multi-View Temporal Consistency",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:27:35.868054+00:00",
+        "sha256": "3aea70607d50311fc81c8d85f80ca11da13f5f0130d74e06308ad6aaa6e0434b"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Implicit Neural Representations (INRs) are increasingly recognized as a versatile data modality for representing discretized signals, offering benefits such as infinite query resolution and reduced storage requirements. Existing signal compression approaches for INRs typically employ one of two strategies: 1. direct quantization with entropy coding of the trained INR; 2. deriving a latent code on top of the INR through a learnable transformation. Thus, their performance is heavily dependent on the quantization and entropy coding schemes employed. In this paper, we introduce SINR, an innovative compression algorithm that leverages the patterns in the vector spaces formed by weights of INRs. We compress these vector spaces using a high-dimensional sparse code within a dictionary. Further analysis reveals that the atoms of the dictionary used to generate the sparse code do not need to be learned or transmitted to successfully recover the INR weights. We demonstrate that the proposed approach can be integrated with any existing INR-based signal compression technique. Our results indicate that SINR achieves substantial reductions in storage requirements for INRs across various configurations, outperforming conventional INR-based compression baselines. Furthermore, SINR maintains high-quality decoding across diverse data modalities, including images, occupancy fields, and Neural Radiance Fields.",
+        "arxiv_id": "2503.19576",
+        "authors": [
+          "Dhananjaya Jayasundara",
+          "Sudarshan Rajagopalan",
+          "Yasiru Ranasinghe",
+          "Trac D. Tran",
+          "Vishal M. Patel"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Jayasundara_SINR_Sparsity_Driven_Compressed_Implicit_Neural_Representations_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Jayasundara_SINR_Sparsity_Driven_Compressed_Implicit_Neural_Representations_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "SINR: Sparsity Driven Compressed Implicit Neural Representations",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:28:07.396468+00:00",
+        "sha256": "cc6bfb878792585be3758dc85ee2722b59068d674838b7f37077e77a22e1a90f"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Score distillation sampling (SDS) demonstrates a powerful capability for text-conditioned 2D image and 3D object generation by distilling the knowledge from learned score functions. However, SDS often suffers from blurriness caused by noisy gradients. When SDS meets the image editing, such degradations can be reduced by adjusting bias shifts using reference pairs, but the de-biasing techniques are still corrupted by erroneous gradients. To this end, we introduce Identity-preserving Distillation Sampling (IDS), which compensates for the gradient leading to undesired changes in the results. Based on the analysis that these errors come from the text-conditioned scores, a new regularization technique, called fixed-point iterative regularization (FPR), is proposed to modify the score itself, driving the preservation of the identity even including poses and structures. Thanks to a self-correction by FPR, the proposed method provides clear and unambiguous representations corresponding to the given prompts in image-to-image editing and editable neural radiance field (NeRF). The structural consistency between the source and the edited data is obviously maintained compared to other state-of-the-art methods.",
+        "arxiv_id": "2502.19930",
+        "authors": [
+          "SeonHwa Kim",
+          "Jiwon Kim",
+          "Soobin Park",
+          "Donghoon Ahn",
+          "Jiwon Kang",
+          "Seungryong Kim",
+          "Kyong Hwan Jin",
+          "Eunju Cha"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_Identity-preserving_Distillation_Sampling_by_Fixed-Point_Iterator_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_Identity-preserving_Distillation_Sampling_by_Fixed-Point_Iterator_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Identity-preserving Distillation Sampling by Fixed-Point Iterator",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:24:04.750215+00:00",
+        "sha256": "92572ac30bb420ddddfa7fd8536f6629fec66d21cb2d888efd4e5afd49e01e1b"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Reconstructing dynamic radiance fields from video clips is challenging, especially when entertainment videos like TV shows are given. Many challenges make the reconstruction difficult due to (1) actors occluding with each other and having diverse facial expressions, (2) cluttered stages, and (3) small baseline views or sudden shot changes. To address these issues, we present ShowMak3r, a comprehensive reconstruction pipeline that allows the editing of scenes like how video clips are made in a production control room. In ShowMak3r, a 3DLocator module locates recovered actors on the stage using depth prior, and estimates unseen human poses via interpolation. The proposed ShotMatcher module then tracks the actors under shot changes. Furthermore, ShowMak3r introduces a face-fitting network that dynamically recovers the actors' expressions. Experiments on Sitcoms3D dataset show that our pipeline can reassemble TV show scenes with new cameras at different timestamps. We also demonstrate that ShowMak3r enables interesting applications such as synthetic shot-making, actor relocation, insertion, deletion, and pose manipulation. Project page : https://nstar1125.github.io/showmak3r",
+        "arxiv_id": "2504.19584",
+        "authors": [
+          "Sangmin Kim",
+          "Seunguk Do",
+          "Jaesik Park"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Kim_ShowMak3r_Compositional_TV_Show_Reconstruction_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Kim_ShowMak3r_Compositional_TV_Show_Reconstruction_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "ShowMak3r: Compositional TV Show Reconstruction",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:27:03.526363+00:00",
+        "sha256": "199e55510758a0d0f6f974e24a4ca8b275812f04c2eb6df0bf0742b44a60172f"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "This work presents a novel text-to-vector graphics generation approach, Dream3DVG, allowing for arbitrary viewpoint viewing, progressive detail optimization, and view-dependent occlusion awareness. Our approach is a dual-branch optimization framework, consisting of an auxiliary 3D Gaussian Splatting optimization branch and a 3D vector graphics optimization branch. The introduced 3DGS branch can bridge the domain gaps between text prompts and vector graphics with more consistent guidance. Moreover, 3DGS allows for progressive detail control by scheduling classifier-free guidance, facilitating guiding vector graphics with coarse shapes at the initial stages and finer details at later stages. We also improve the view-dependent occlusions by devising a visibility-awareness rendering module. Extensive results on 3D sketches and 3D iconographies, demonstrate the superiority of the method on different abstraction levels of details, cross-view consistency, and occlusion-aware stroke culling.",
+        "arxiv_id": "2505.21377",
+        "authors": [
+          "Yidi Li",
+          "Jun Xiao",
+          "Zhengda Lu",
+          "Yiqun Wang",
+          "Haiyong Jiang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_Empowering_Vector_Graphics_with_Consistently_Arbitrary_Viewing_and_View-dependent_Visibility_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_Empowering_Vector_Graphics_with_Consistently_Arbitrary_Viewing_and_View-dependent_Visibility_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Empowering Vector Graphics with Consistently Arbitrary Viewing and View-dependent Visibility",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:20:52.391982+00:00",
+        "sha256": "167897eee9a96910e98f794474b9ddad353cae9b471dc4bb301de326dd202ee6"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Diffusion models have achieved remarkable success in novel view synthesis, but their reliance on large, diverse, and often untraceable Web datasets has raised pressing concerns about image copyright protection. Current methods fall short in reliably identifying unauthorized image use, as they struggle to generalize across varied generation tasks and fail when the training dataset includes images from multiple sources with few identifiable (watermarked or poisoned) samples. In this paper, we present novel evidence that diffusion-generated images faithfully preserve the statistical properties of their training data, particularly reflected in their spectral features. Leveraging this insight, we introduce CoprGuard, a robust frequency domain watermarking framework to safeguard against unauthorized image usage in diffusion model training and fine-tuning. CoprGuard demonstrates remarkable effectiveness against a wide range of models, from naive diffusion models to sophisticated text-to-image models, and is robust even when watermarked images comprise a mere 1% of the training dataset. This robust and versatile approach empowers content owners to protect their intellectual property in the era of AI-driven image generation.",
+        "arxiv_id": "2503.11071",
+        "authors": [
+          "Zhenguang Liu",
+          "Chao Shuai",
+          "Shaojing Fan",
+          "Ziping Dong",
+          "Jinwu Hu",
+          "Zhongjie Ba",
+          "Kui Ren"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_Harnessing_Frequency_Spectrum_Insights_for_Image_Copyright_Protection_Against_Diffusion_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Liu_Harnessing_Frequency_Spectrum_Insights_for_Image_Copyright_Protection_Against_Diffusion_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Harnessing Frequency Spectrum Insights for Image Copyright Protection Against Diffusion Models",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:23:17.187135+00:00",
+        "sha256": "1923a233602e095afed6576fface583d8ec542e198fc00975f0483529650b064"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Isolated Gaussian splatting mention needs scope review",
+      "publication": {
+        "abstract": "We present Disco4D, a novel Gaussian Splatting framework for 4D human generation and animation from a single image. Different from existing methods, Disco4D distinctively disentangles clothings (with Gaussian models) from the human body (with SMPL-X model), significantly enhancing the generation details and flexibility. It has the following technical innovations. (1) Disco4D learns to efficiently fit the clothing Gaussians over the SMPL-X Gaussians. (2) It adopts diffusion models to enhance the 3D generation process, e.g. modeling occluded parts not visible in the input image. (3) It learns an identity encoding for each clothing Gaussian to facilitate the separation and extraction of clothing assets. Furthermore, Disco4D naturally supports 4D human animation with vivid dynamics. Extensive experiments demonstrate the superiority of Disco4D on 4D human generation and animation tasks.",
+        "arxiv_id": "2409.17280",
+        "authors": [
+          "Hui En Pang",
+          "Shuai Liu",
+          "Zhongang Cai",
+          "Lei Yang",
+          "Tianwei Zhang",
+          "Ziwei Liu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Pang_Disco4D_Disentangled_4D_Human_Generation_and_Animation_from_a_Single_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Pang_Disco4D_Disentangled_4D_Human_Generation_and_Animation_from_a_Single_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Disco4D: Disentangled 4D Human Generation and Animation from a Single Image",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:23:12.398850+00:00",
+        "sha256": "8a8a7050bd9f075f8278eaf1aa8e799a0bafaa679f4bcadb8be61515f993c0c6"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We present DeSiRe-GS, a self-supervised gaussian splatting representation, enabling effective static-dynamic decomposition and high-fidelity surface reconstruction in complex driving scenarios. Our approach employs a two-stage optimization pipeline of dynamic street Gaussians. In the first stage, we extract 2D motion masks based on the observation that 3D Gaussian Splatting inherently can reconstruct only the static regions in dynamic environments. These extracted 2D motion priors are then mapped into the Gaussian space in a differentiable manner, leveraging an efficient formulation of dynamic Gaussians in the second stage. Combined with the introduced geometric regularizations, our method are able to address the over-fitting issues caused by data sparsity in autonomous driving, reconstructing physically plausible Gaussians that align with object surfaces rather than floating in air. Furthermore, we introduce temporal cross-view consistency to ensure coherence across time and viewpoints, resulting in high-quality surface reconstruction. Comprehensive experiments demonstrate the efficiency and effectiveness of DeSiRe-GS, surpassing prior self-supervised arts and achieving accuracy comparable to methods relying on external 3D bounding box annotations.",
+        "arxiv_id": null,
+        "authors": [
+          "Chensheng Peng",
+          "Chengwei Zhang",
+          "Yixiao Wang",
+          "Chenfeng Xu",
+          "Yichen Xie",
+          "Wenzhao Zheng",
+          "Kurt Keutzer",
+          "Masayoshi Tomizuka",
+          "Wei Zhan"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Peng_DeSiRe-GS_4D_Street_Gaussians_for_Static-Dynamic_Decomposition_and_Surface_Reconstruction_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Peng_DeSiRe-GS_4D_Street_Gaussians_for_Static-Dynamic_Decomposition_and_Surface_Reconstruction_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "DeSiRe-GS: 4D Street Gaussians for Static-Dynamic Decomposition and Surface Reconstruction for Urban Driving Scenes",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:21:36.858403+00:00",
+        "sha256": "64a0994724d63a62de7b2ff81c1ac7a5a9339a746b35e6466f0a70261dddd522"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "We propose a novel approach for reconstructing animatable 3D Gaussian avatars from monocular videos captured by commodity devices like smartphones. Photorealistic 3D head avatar reconstruction from such recordings is challenging due to limited observations, which leaves unobserved regions under-constrained and can lead to artifacts in novel views. To address this problem, we introduce a multi-view head diffusion model, leveraging its priors to fill in missing regions and ensure view consistency in Gaussian splatting renderings. To enable precise viewpoint control, we use normal maps rendered from FLAME-based head reconstruction, which provides pixel-aligned inductive biases. We also condition the diffusion model on VAE features extracted from the input image to preserve facial identity and appearance details. For Gaussian avatar reconstruction, we distill multi-view diffusion priors by using iteratively denoised images as pseudo-ground truths, effectively mitigating over-saturation issues. To further improve photorealism, we apply latent upsampling priors to refine the denoised latent before decoding it into an image. We evaluate our method on the NeRSemble dataset, showing that GAF outperforms previous state-of-the-art methods in novel view synthesis. Furthermore, we demonstrate higher-fidelity avatar reconstructions from monocular videos captured on commodity devices.",
+        "arxiv_id": "2412.10209",
+        "authors": [
+          "Jiapeng Tang",
+          "Davide Davoli",
+          "Tobias Kirschstein",
+          "Liam Schoneveld",
+          "Matthias Nießner"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Tang_GAF_Gaussian_Avatar_Reconstruction_from_Monocular_Videos_via_Multi-view_Diffusion_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Tang_GAF_Gaussian_Avatar_Reconstruction_from_Monocular_Videos_via_Multi-view_Diffusion_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "GAF: Gaussian Avatar Reconstruction from Monocular Videos via Multi-view Diffusion",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:26:55.203045+00:00",
+        "sha256": "9196a54663372928b3d4ee67bdc79d260f431a0be2ac804ef41e0b06829e25f2"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "Reconstructing photorealistic and dynamic portrait avatars from images is essential to many applications including advertising, visual effects, and virtual reality. Depending on the application, avatar reconstruction involves different capture setups and constraints -- for example, visual effects studios use camera arrays to capture hundreds of reference images, while content creators may seek to animate a single portrait image downloaded from the internet. As such, there is a large and heterogeneous ecosystem of methods for avatar reconstruction. Techniques based on multi-view stereo or neural rendering achieve the highest quality results, but require hundreds of reference images. Recent generative models produce convincing avatars from a single reference image, but visual fidelity lags behind multi-view techniques. Here, we present CAP4D: an approach that uses a morphable multi-view diffusion model to reconstruct photoreal 4D (dynamic 3D) portrait avatars from any number of reference images (i.e., one to 100) and animate and render them in real time. Our approach demonstrates state-of-the-art performance for single-, few-, and multi-image 4D portrait avatar reconstruction, and takes steps to bridge the gap in visual fidelity between single-image and multi-view reconstruction techniques.",
+        "arxiv_id": "2412.12093",
+        "authors": [
+          "Felix Taubner",
+          "Ruihang Zhang",
+          "Mathieu Tuli",
+          "David B. Lindell"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Taubner_CAP4D_Creating_Animatable_4D_Portrait_Avatars_with_Morphable_Multi-View_Diffusion_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Taubner_CAP4D_Creating_Animatable_4D_Portrait_Avatars_with_Morphable_Multi-View_Diffusion_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "CAP4D: Creating Animatable 4D Portrait Avatars with Morphable Multi-View Diffusion Models",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:26:49.976887+00:00",
+        "sha256": "729422bae71ea63f005b7d79177362364576f4a503c082fd0fd8549f97d8ab30"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Creating high-fidelity head avatars from multi-view videos is essential for many AR/VR applications. However, current methods often struggle to achieve high-quality renderings across all head components (e.g., skin vs. hair) due to the limitations of using one single representation for elements with varying characteristics. In this paper, we introduce a Hybrid Mesh-Gaussian Head Avatar (MeGA) that models different head components with more suitable representations. Specifically, we employ an enhanced FLAME mesh for the facial representation and predict a UV displacement map to provide per-vertex offsets for improved personalized geometric details. To achieve photorealistic rendering, we use deferred neural rendering to obtain facial colors and decompose neural textures into three meaningful parts. For hair modeling, we first build a static canonical hair using 3D Gaussian Splatting. A rigid transformation and an MLP-based deformation field are further applied to handle complex dynamic expressions. Combined with our occlusion-aware blending, MeGA generates higher-fidelity renderings for the whole head and naturally supports diverse downstream tasks. Experiments on the NeRSemble dataset validate the effectiveness of our designs, outperforming previous state-of-the-art methods and enabling versatile editing capabilities, including hairstyle alteration and texture editing.",
+        "arxiv_id": "2404.19026",
+        "authors": [
+          "Cong Wang",
+          "Di Kang",
+          "Heyi Sun",
+          "Shenhan Qian",
+          "Zixuan Wang",
+          "Linchao Bao",
+          "Song-Hai Zhang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_MeGA_Hybrid_Mesh-Gaussian_Head_Avatar_for_High-Fidelity_Rendering_and_Head_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wang_MeGA_Hybrid_Mesh-Gaussian_Head_Avatar_for_High-Fidelity_Rendering_and_Head_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "MeGA: Hybrid Mesh-Gaussian Head Avatar for High-Fidelity Rendering and Head Editing",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:22:05.537560+00:00",
+        "sha256": "5abaa90b56aa39962a8805a3bf5ffe295db0754a7e75142147db5d70fc113091"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context",
+      "publication": {
+        "abstract": "Three-dimensional scene inpainting is crucial for applications from virtual reality to architectural visualization, yet existing methods struggle with view consistency and geometric accuracy in 360deg unbounded scenes. We present AuraFusion360, a novel reference-based method that enables high-quality object removal and hole filling in 3D scenes represented by Gaussian Splatting. Our approach introduces (1) depth-aware unseen mask generation for accurate occlusion identification, (2) Adaptive Guided Depth Diffusion, a zero-shot method for accurate initial point placement without requiring additional training, and (3) SDEdit-based detail enhancement for multi-view coherence. We also introduce 360-USID, the first comprehensive dataset for 360deg unbounded scene inpainting with ground truth. Extensive experiments demonstrate that AuraFusion360 significantly outperforms existing methods, achieving superior perceptual quality while maintaining geometric accuracy across dramatic viewpoint changes.",
+        "arxiv_id": null,
+        "authors": [
+          "Chung-Ho Wu",
+          "Yang-Jung Chen",
+          "Ying-Huan Chen",
+          "Jie-Ying Lee",
+          "Bo-Hsu Ke",
+          "Chun-Wei Tuan Mu",
+          "Yi-Chuan Huang",
+          "Chin-Yang Lin",
+          "Min-Hung Chen",
+          "Yen-Yu Lin",
+          "Yu-Lun Liu"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_AuraFusion360_Augmented_Unseen_Region_Alignment_for_Reference-based_360deg_Unbounded_Scene_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wu_AuraFusion360_Augmented_Unseen_Region_Alignment_for_Reference-based_360deg_Unbounded_Scene_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360deg Unbounded Scene Inpainting",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:27:22.725515+00:00",
+        "sha256": "0f3f6adf8f99dc9ddddfd298f30d1119b8f2a0cfb4eb708cde60a8725f720239"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification",
+      "publication": {
+        "abstract": "The challenge of image-based 3D reconstruction for glossy objects lies in separating diffuse and specular components on glossy surfaces from captured images, a task complicated by the ambiguity in discerning lighting conditions and material properties using RGB data alone. While state-of-the-art methods rely on tailored and/or high-end equipment for data acquisition, which can be cumbersome and time-consuming, this work introduces a scalable polarization-aided approach that employs cost-effective acquisition tools. By attaching a linear polarizer to readily available RGB cameras, multi-view polarization images can be captured without the need for advance calibration or precise measurements of the polarizer angle, substantially reducing system construction costs. The proposed approach represents polarimetric BRDF, Stokes vectors, and polarization states of object surfaces as neural implicit fields. These fields, combined with the polarizer angle, are retrieved by optimizing the rendering loss of input polarized images. By leveraging fundamental physical principles for the implicit representation of polarization rendering, our method demonstrates superiority over existing techniques through experiments in public datasets and real captured images on both reconstruction and novel view synthesis.",
+        "arxiv_id": "2504.07025",
+        "authors": [
+          "Bojian Wu",
+          "Yifan Peng",
+          "Ruizhen Hu",
+          "Xiaowei Zhou"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_Glossy_Object_Reconstruction_with_Cost-effective_Polarized_Acquisition_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Glossy_Object_Reconstruction_with_Cost-effective_Polarized_Acquisition_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Glossy Object Reconstruction with Cost-effective Polarized Acquisition",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:24:16.054800+00:00",
+        "sha256": "69a11260a7abce5f8b44ee57066d2ec0344789e721e631717bf2133c8d32e026"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Gaussian functions in the abstract need explicit splatting or curated-foundation evidence",
+      "publication": {
+        "abstract": "We introduce a novel 3D generation method for versatile and high-quality 3D asset creation.The cornerstone is a unified Structured LATent (SLAT) representation which allows decoding to different output formats, such as Radiance Fields, 3D Gaussians, and meshes. This is achieved by integrating a sparsely-populated 3D grid with dense multiview visual features extracted from a powerful vision foundation model, comprehensively capturing both structural (geometry) and textural (appearance) information while maintaining flexibility during decoding.We employ rectified flow transformers tailored for SLAT as our 3D generation models and train models with up to 2 billion parameters on a large 3D asset dataset of 500K diverse objects. Our model generates high-quality results with text or image conditions, significantly surpassing existing methods, including recent ones at similar scales. We showcase flexible output format selection and local 3D editing capabilities which were not offered by previous models. Code, model, and data will be released.",
+        "arxiv_id": "2412.01506",
+        "authors": [
+          "Jianfeng Xiang",
+          "Zelong Lv",
+          "Sicheng Xu",
+          "Yu Deng",
+          "Ruicheng Wang",
+          "Bowen Zhang",
+          "Dong Chen",
+          "Xin Tong",
+          "Jiaolong Yang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xiang_Structured_3D_Latents_for_Scalable_and_Versatile_3D_Generation_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Xiang_Structured_3D_Latents_for_Scalable_and_Versatile_3D_Generation_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Structured 3D Latents for Scalable and Versatile 3D Generation",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:29:55.420736+00:00",
+        "sha256": "66c2ebc329ca0d3c7d7d1eb3e7c9b335a095b4419937e19aa33eec67173c24c6"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Statistical Gaussian model requires explicit primitive or splatting evidence",
+      "publication": {
+        "abstract": "With the rapidly increasing demand for oriented object detection (OOD), recent research involving weakly-supervised detectors for learning OOD from point annotations has gained great attention. In this paper, we rethink this challenging task setting with the layout among instances and present Point2RBox-v2. At the core are three principles: 1) Gaussian overlap loss. It learns an upper bound for each instance by treating objects as 2D Gaussian distributions and minimizing their overlap. 2) Voronoi watershed loss. It learns a lower bound for each instance through watershed on Voronoi tessellation. 3) Consistency loss. It learns the size/rotation variation between two output sets with respect to an input image and its augmented view. Supplemented by a few devised techniques, e.g. edge loss and copy-paste, the detector is further enhanced. To our best knowledge, Point2RBox-v2 is the first approach to explore the spatial layout among instances for learning point-supervised OOD. Our solution is elegant and lightweight, yet it is expected to give a competitive performance especially in densely packed scenes: 62.61%/86.15%/34.71% on DOTA/HRSC/FAIR1M.",
+        "arxiv_id": null,
+        "authors": [
+          "Yi Yu",
+          "Botao Ren",
+          "Peiyuan Zhang",
+          "Mingxin Liu",
+          "Junwei Luo",
+          "Shaofeng Zhang",
+          "Feipeng Da",
+          "Junchi Yan",
+          "Xue Yang"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yu_Point2RBox-v2_Rethinking_Point-supervised_Oriented_Object_Detection_with_Spatial_Layout_Among_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Point2RBox-v2_Rethinking_Point-supervised_Oriented_Object_Detection_with_Spatial_Layout_Among_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Point2RBox-v2: Rethinking Point-supervised Oriented Object Detection with Spatial Layout Among Instances",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    },
+    {
+      "capture": {
+        "observed_at": "2026-11-12T16:21:14.490139+00:00",
+        "sha256": "56ba45a0f579cebca39ddcb47ba48350749484ad8ccf6bf8b5317ef5a18d864a"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Gaussian functions in the abstract need explicit splatting or curated-foundation evidence",
+      "publication": {
+        "abstract": "Text-driven avatar generation has gained significant attention owing to its convenience. However, existing methods typically model the human body with all garments as a single 3D model, limiting its usability, such as clothing replacement, and reducing user control over the generation process. To overcome the limitations above, we propose DAGSM, a novel pipeline that generates disentangled human bodies and garments from the given text prompts. Specifically, we model each part (e.g., body, upper/lower clothes) of the clothed human as one GS-enhanced mesh (GSM), which is a traditional mesh attached with 2D Gaussians to better handle complicated textures (e.g., woolen, translucent clothes) and produce realistic cloth animations. During the generation, we first create the unclothed body, followed by a sequence of individual cloth generation based on the body, where we introduce a semantic-based algorithm to achieve better human-cloth and garment-garment separation. To improve texture quality, we propose a view-consistent texture refinement module, including a cross-view attention mechanism for texture style consistency and an incident-angle-weighted denoising (IAW-DE) strategy to update the appearance. Extensive experiments have demonstrated that DAGSM generates high-quality disentangled avatars, supports clothing replacement and realistic animation, and outperforms the baselines in visual quality.",
+        "arxiv_id": "2411.15205",
+        "authors": [
+          "Jingyu Zhuang",
+          "Di Kang",
+          "Linchao Bao",
+          "Liang Lin",
+          "Guanbin Li"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Zhuang_DAGSM_Disentangled_Avatar_Generation_with_GS-enhanced_Mesh_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhuang_DAGSM_Disentangled_Avatar_Generation_with_GS-enhanced_Mesh_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "DAGSM: Disentangled Avatar Generation with GS-enhanced Mesh",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      }
+    }
+  ],
+  "selection_incomplete": true
+}
