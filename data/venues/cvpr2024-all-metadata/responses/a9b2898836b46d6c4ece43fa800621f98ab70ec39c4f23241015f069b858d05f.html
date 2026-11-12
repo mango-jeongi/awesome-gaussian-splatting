@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Effective Video Mirror Detection with Inconsistent Motion Cues">
+<meta name="citation_author" content="Warren, Alex">
+<meta name="citation_author" content="Xu, Ke">
+<meta name="citation_author" content="Lin, Jiaying">
+<meta name="citation_author" content="Tam, Gary K.L.">
+<meta name="citation_author" content="Lau, Rynson W.H.">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="17244">
+<meta name="citation_lastpage" content="17252">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Warren_Effective_Video_Mirror_Detection_with_Inconsistent_Motion_Cues_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Effective Video Mirror Detection with Inconsistent Motion Cues
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Alex Warren, Ke Xu, Jiaying Lin, Gary K.L. Tam, Rynson W.H. Lau</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 17244-17252
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Image-based mirror detection has recently undergone rapid research due to its significance in applications such as robotic navigation semantic segmentation and scene reconstruction. Recently VMD-Net was proposed as the first video mirror detection technique by modeling dual correspondences between the inside and outside of the mirror both spatially and temporally. However this approach is not reliable as correspondences can occur completely inside or outside of the mirrors. In addition the proposed dataset VMD-D contains many small mirrors limiting its applicability to real-world scenarios. To address these problems we developed a more challenging dataset that includes mirrors of various shapes and sizes at different locations of the frames providing a better reflection of real-world scenarios. Next we observed that the motions between the inside and outside of the mirror are often inconsistent. For instance when moving in front of a mirror the motion inside the mirror is often much smaller than the motion outside due to increased depth perception. With these observations we propose modeling inconsistent motion cues to detect mirrors and a new network with two novel modules. The Motion Attention Module (MAM) explicitly models inconsistent motions around mirrors via optical flow and the Motion-Guided Edge Detection Module (MEDM) uses motions to guide mirror edge feature learning. Experimental results on our proposed dataset show that our method outperforms state-of-the-arts. The code and dataset are available at https://github.com/AlexAnthonyWarren/MG-VMD.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Warren_Effective_Video_Mirror_Detection_with_Inconsistent_Motion_Cues_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Warren_Effective_Video_Mirror_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Warren_2024_CVPR,
+    author    = {Warren, Alex and Xu, Ke and Lin, Jiaying and Tam, Gary K.L. and Lau, Rynson W.H.},
+    title     = {Effective Video Mirror Detection with Inconsistent Motion Cues},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {17244-17252}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

@@ -147,13 +147,13 @@ editions:
   - provider: cvf_all_metadata_capture
     evidence_file: data/venues/cvpr2024-all-metadata/latest-report.json
     listing_records: 2716
-    verified_records: 532
-    pending_records: 2184
-    failed_records: 1
+    verified_records: 1029
+    pending_records: 1687
+    failed_records: 4
     selected_metadata_complete: false
     canonical_modified: false
     venue_inventory_reconciled: false
-    note: Separate frozen full-abstract epoch; 133 reused verified pages plus 399 new pages; one 404 deferred.
+    note: Separate frozen full-abstract epoch; 133 reused verified pages plus 896 new pages; four failures deferred.
   - provider: cvf_exact_arxiv_identity_resolution
     evidence_file: data/venues/cvpr2024-main/identity-resolution.json
     exact_original_dates_verified: 87
@@ -369,6 +369,16 @@ editions:
     author_identity_reconciled: false
     canonical_modified: false
     inventory_reconciled: false
+  - provider: cvf_reviewed_new_proceedings_discoveries
+    evidence_file: data/venues/iccv2025-reviewed-discoveries/application-receipt-20261111.json
+    source_review_file: data/venues/iccv2025-reviewed-discoveries/source-review-20261111.json
+    new_canonical_records: 2
+    existing_records_unchanged: 4101
+    publication_dois_verified: 2
+    captured_cvf_arxiv_links: 0
+    global_preprint_absence_proven: false
+    after_active_count: 4103
+    pushed_or_deployed: false
   remaining:
   - Full metadata capture is complete; source scope, identity and original-date review
     remain open.
@@ -377,7 +387,7 @@ editions:
   - Identity/original-date resolution, reviewed GS scope decisions and publication
     imports remain pending.
   - Full-metadata policy decisions are not independently measured human precision/recall.
-  - DBLP discovery/access and verified non-arXiv insertions remain open.
+  - DBLP discovery/access and broader proceedings discovery coverage remain open.
 - venue: ICCV
   year: 2025
   track: workshop

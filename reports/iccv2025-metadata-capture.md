@@ -83,6 +83,10 @@ Author reconciliation remains open for **512 rows**: 504 among normalized-title 
 
 For the SafetyDPO/AlignGuard title change, five additional bounded arXiv metadata captures include both versions of the same ID: v1 is SafetyDPO and v2 is AlignGuard. The other three linked arXiv records corroborate proceedings titles and full author lists. Raw bodies and hashes are retained in `data/venues/iccv2025-main/inventory-arxiv-evidence/`. The whole edition remains partial until author/source, scope, identity/date and provider gates are resolved.
 
+## Reviewed proceedings discoveries
+
+A later [source-reviewed import](iccv2025-reviewed-discoveries-20261111.md) added DGTalker and Hi-Gaussian using independent official author agreement and exact-title/full-author Crossref DOI evidence. All 4,101 prior active records remain exact. This does not retrospectively change the frozen capture outcomes or reconcile the whole edition. The current catalog has 4,103 active records and six archives.
+
 ## Validation and remaining gates
 
 All 480 tests pass with one native-symlink case skipped on this Windows host;
@@ -90,7 +94,7 @@ global Ruff lint/formatting (164 files) pass. New checks cover bounded failure
 body retention, default strict matching, reviewed-title replay, unchanged source
 bytes, stale/tampered review refusal and preservation of author/year checks.
 
-The final capture uses no extra inference or canonical writes. The catalog remains
+The final capture uses no extra inference or canonical writes. At metadata-capture completion, the catalog was
 4,101 active/six archived at raw SHA-256
 `bc966ff4d460b33f08a589d3fe5d1133d472c0d89de32c23fb17d6a007770dfd`.
 The venue inventory still has four partial cells and 52 pending cells. Original

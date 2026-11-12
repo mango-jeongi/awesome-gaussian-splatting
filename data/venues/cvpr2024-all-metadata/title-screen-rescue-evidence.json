@@ -56,6 +56,33 @@
     },
     {
       "publication": {
+        "title": "Map-Relative Pose Regression for Visual Re-Localization",
+        "authors": [
+          "Shuai Chen",
+          "Tommaso Cavallari",
+          "Victor Adrian Prisacariu",
+          "Eric Brachmann"
+        ],
+        "abstract": "Pose regression networks predict the camera pose of a query image relative to a known environment. Within this family of methods absolute pose regression (APR) has recently shown promising accuracy in the range of a few centimeters in position error. APR networks encode the scene geometry implicitly in their weights. To achieve high accuracy they require vast amounts of training data that realistically can only be created using novel view synthesis in a days-long process. This process has to be repeated for each new scene again and again. We present a new approach to pose regression map-relative pose regression (marepo) that satisfies the data hunger of the pose regression network in a scene-agnostic fashion. We condition the pose regressor on a scene-specific map representation such that its pose predictions are relative to the scene map. This allows us to train the pose regressor across hundreds of scenes to learn the generic relation between a scene-specific map representation and the camera pose. Our map-relative pose regressor can be applied to new map representations immediately or after mere minutes of fine-tuning for the highest accuracy. Our approach outperforms previous pose regression methods by far on two public datasets indoor and outdoor. Code is available: https://nianticlabs.github.io/marepo.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Map-Relative_Pose_Regression_for_Visual_Re-Localization_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chen_Map-Relative_Pose_Regression_for_Visual_Re-Localization_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.09884",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:18:59.604096+00:00",
+        "sha256": "c0b8baae5ebd7403cecd31bdf53944f70a4fc63ab31c3a873084042657c0540f"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "Morphable Diffusion: 3D-Consistent Diffusion for Single-image Avatar Creation",
         "authors": [
           "Xiyi Chen",
@@ -78,6 +105,39 @@
       "capture": {
         "observed_at": "2026-11-12T02:10:10.487164+00:00",
         "sha256": "1c7709a7c4f793af2073d0ca4307c9b7dfc6b5f86d076a8f90063eef34f49fa0"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "LTM: Lightweight Textured Mesh Extraction and Refinement of Large Unbounded Scenes for Efficient Storage and Real-time Rendering",
+        "authors": [
+          "Jaehoon Choi",
+          "Rajvi Shah",
+          "Qinbo Li",
+          "Yipeng Wang",
+          "Ayush Saraf",
+          "Changil Kim",
+          "Jia-Bin Huang",
+          "Dinesh Manocha",
+          "Suhib Alsisan",
+          "Johannes Kopf"
+        ],
+        "abstract": "Advancements in neural signed distance fields (SDFs) have enabled modeling 3D surface geometry from a set of 2D images of real-world scenes. Baking neural SDFs can extract explicit mesh with appearance baked into texture maps as neural features. The baked meshes still have a large memory footprint and require a powerful GPU for real-time rendering. Neural optimization of such large meshes with differentiable rendering pose significant challenges. We propose a method to produce optimized meshes for large unbounded scenes with low triangle budget and high fidelity of geometry and appearance. We achieve this by combining advancements in baking neural SDFs with classical mesh simplification techniques and proposing a joint appearance-geometry refinement step. The visual quality is comparable to or better than state-of-the-art neural meshing and baking methods with high geometric accuracy despite significant reduction in triangle count making the produced meshes efficient for storage transmission and rendering on mobile hardware. We validate the effectiveness of the proposed method on large unbounded scenes from mip-NeRF 360 Tanks & Temples and Deep Blending datasets achieving at-par rendering quality with 73x reduced triangles and 11x reduction in memory footprint.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Choi_LTM_Lightweight_Textured_Mesh_Extraction_and_Refinement_of_Large_Unbounded_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Choi_LTM_Lightweight_Textured_Mesh_Extraction_and_Refinement_of_Large_Unbounded_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:25:09.503448+00:00",
+        "sha256": "2e9d522879b240b09b2a4da4ac2fd026edc66745bc97a40c6622c4f149fdc675"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -167,6 +227,60 @@
     },
     {
       "publication": {
+        "title": "Neural 3D Strokes: Creating Stylized 3D Scenes with Vectorized 3D Strokes",
+        "authors": [
+          "Hao-Bin Duan",
+          "Miao Wang",
+          "Yan-Xun Li",
+          "Yong-Liang Yang"
+        ],
+        "abstract": "We present Neural 3D Strokes a novel technique to generate stylized images of a 3D scene at arbitrary novel views from multi-view 2D images. Different from existing methods which apply stylization to trained neural radiance fields at the voxel level our approach draws inspiration from image-to-painting methods simulating the progressive painting process of human artwork with vector strokes. We develop a palette of stylized 3D strokes from basic primitives and splines and consider the 3D scene stylization task as a multi-view reconstruction process based on these 3D stroke primitives. Instead of directly searching for the parameters of these 3D strokes which would be too costly we introduce a differentiable renderer that allows optimizing stroke parameters using gradient descent and propose a training scheme to alleviate the vanishing gradient issue. The extensive evaluation demonstrates that our approach effectively synthesizes 3D scenes with significant geometric and aesthetic stylization while maintaining a consistent appearance across different views. Our method can be further integrated with style loss and image-text contrastive models to extend its applications including color transfer and text-driven 3D scene drawing. Results and code are available at http://buaavrcg.github.io/Neural3DStrokes.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Duan_Neural_3D_Strokes_Creating_Stylized_3D_Scenes_with_Vectorized_3D_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Duan_Neural_3D_Strokes_Creating_Stylized_3D_Scenes_with_Vectorized_3D_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.15637",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:22:13.526435+00:00",
+        "sha256": "d840e6682f4d6640a4b6da67a48e343adf9f563b33098a08e4835319fa3e908c"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "VMINer: Versatile Multi-view Inverse Rendering with Near- and Far-field Light Sources",
+        "authors": [
+          "Fan Fei",
+          "Jiajun Tang",
+          "Ping Tan",
+          "Boxin Shi"
+        ],
+        "abstract": "This paper introduces a versatile multi-view inverse rendering framework with near- and far-field light sources. Tackling the fundamental challenge of inherent ambiguity in inverse rendering our framework adopts a lightweight yet inclusive lighting model for different near- and far-field lights thus is able to make use of input images under varied lighting conditions available during capture. It leverages observations under each lighting to disentangle the intrinsic geometry and material from the external lighting using both neural radiance field rendering and physically-based surface rendering on the 3D implicit fields. After training the reconstructed scene is extracted to a textured triangle mesh for seamless integration into industrial rendering software for various applications. Quantitatively and qualitatively tested on synthetic and real-world scenes our method shows superiority to state-of-the-art multi-view inverse rendering methods in both speed and quality.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Fei_VMINer_Versatile_Multi-view_Inverse_Rendering_with_Near-_and_Far-field_Light_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Fei_VMINer_Versatile_Multi-view_Inverse_Rendering_with_Near-_and_Far-field_Light_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:14.877974+00:00",
+        "sha256": "cc533562f06a20458d1f5ea873f12753c10e4c2742b80a5760c54e6549fefb8d"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "ConTex-Human: Free-View Rendering of Human from a Single Image with Texture-Consistent Synthesis",
         "authors": [
           "Xiangjun Gao",
@@ -191,6 +305,32 @@
       "capture": {
         "observed_at": "2026-11-12T02:01:27.613041+00:00",
         "sha256": "184db27989a17c89c51207dcfd8502bdcbd1f0e6d791503a3aea8b33712d0007"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "SurMo: Surface-based 4D Motion Modeling for Dynamic Human Rendering",
+        "authors": [
+          "Tao Hu",
+          "Fangzhou Hong",
+          "Ziwei Liu"
+        ],
+        "abstract": "Dynamic human rendering from video sequences has achieved remarkable progress by formulating the rendering as a mapping from static poses to human images. However existing methods focus on the human appearance reconstruction of every single frame while the temporal motion relations are not fully explored. In this paper we propose a new 4D motion modeling paradigm SurMo that jointly models the temporal dynamics and human appearances in a unified framework with three key designs: 1) Surface-based motion encoding that models 4D human motions with an efficient compact surface-based triplane. It encodes both spatial and temporal motion relations on the dense surface manifold of a statistical body template which inherits body topology priors for generalizable novel view synthesis with sparse training observations. 2) Physical motion decoding that is designed to encourage physical motion learning by decoding the motion triplane features at timestep t to predict both spatial derivatives and temporal derivatives at the next timestep t+1 in the training stage. 3) 4D appearance decoding that renders the motion triplanes into images by an efficient volumetric surface-conditioned renderer that focuses on the rendering of body surfaces with motion learning conditioning. Extensive experiments validate the state-of-the-art performance of our new paradigm and illustrate the expressiveness of surface-based motion triplanes for rendering high-fidelity view-consistent humans with fast motions and even motion-dependent shadows. Our project page is at: https://taohuumd.github.io/projects/SurMo.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Hu_SurMo_Surface-based_4D_Motion_Modeling_for_Dynamic_Human_Rendering_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Hu_SurMo_Surface-based_4D_Motion_Modeling_for_Dynamic_Human_Rendering_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.01225",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:20.744489+00:00",
+        "sha256": "bfbfc13333bacd4094243b4f625d8943249f47a9d0ab24f65af8a56cb7be220f"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -223,6 +363,39 @@
       "capture": {
         "observed_at": "2026-11-12T02:07:24.799235+00:00",
         "sha256": "4baf1f605bcb6c17dc1345b4958705e1ffa11beb128e88822cf537ec8b763025"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "SPAD: Spatially Aware Multi-View Diffusers",
+        "authors": [
+          "Yash Kant",
+          "Aliaksandr Siarohin",
+          "Ziyi Wu",
+          "Michael Vasilkovsky",
+          "Guocheng Qian",
+          "Jian Ren",
+          "Riza Alp Guler",
+          "Bernard Ghanem",
+          "Sergey Tulyakov",
+          "Igor Gilitschenski"
+        ],
+        "abstract": "We present SPAD a novel approach for creating consistent multi-view images from text prompts or single images. To enable multi-view generation we repurpose a pretrained 2D diffusion model by extending its self-attention layers with cross-view interactions and fine-tune it on a high quality subset of Objaverse. We find that a naive extension of the self-attention proposed in prior work (e.g. MVDream) leads to content copying between views. Therefore we explicitly constrain the cross-view attention based on epipolar geometry. To further enhance 3D consistency we utilize Pl ?ucker coordinates derived from camera rays and inject them as positional encoding. This enables SPAD to reason over spatial proximity in 3D well. Compared to concurrent works that can only generate views at fixed azimuth and elevation (e.g. MVDream SyncDreamer) SPAD offers full camera control and achieves state-of-the-art results in novel view synthesis on unseen objects from the Objaverse and Google Scanned Objects datasets. Finally we demonstrate that text-to-3D generation using SPAD prevents the multi-face Janus issue.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Kant_SPAD_Spatially_Aware_Multi-View_Diffusers_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:21.887880+00:00",
+        "sha256": "4aa4a005df6f1627239ec2c4ade2c662832c28845bdbf6a4dfb22e082a6cb52e"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -321,6 +494,33 @@
     },
     {
       "publication": {
+        "title": "Continuous Pose for Monocular Cameras in Neural Implicit Representation",
+        "authors": [
+          "Qi Ma",
+          "Danda Pani Paudel",
+          "Ajad Chhatkuli",
+          "Luc Van Gool"
+        ],
+        "abstract": "In this paper we showcase the effectiveness of optimizing monocular camera poses as a continuous function of time. The camera poses are represented using an implicit neural function which maps the given time to the corresponding camera pose. The mapped camera poses are then used for the downstream tasks where joint camera pose optimization is also required. While doing so the network parameters - that implicitly represent camera poses - are optimized. We exploit the proposed method in four diverse experimental settings namely (1) NeRF from noisy poses; (2) NeRF from asynchronous Events; (3) Visual Simultaneous Localization and Mapping (vSLAM); and (4) vSLAM with IMUs. In all four settings the proposed method performs significantly better than the compared baselines and the state-of-the-art methods. Additionally using the assumption of continuous motion changes in pose may actually live in a manifold that has lower than 6 degrees of freedom (DOF) is also realized. We call this low DOF motion representation as the intrinsic motion and use the approach in vSLAM settings show ing impressive camera tracking performance.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Ma_Continuous_Pose_for_Monocular_Cameras_in_Neural_Implicit_Representation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Ma_Continuous_Pose_for_Monocular_Cameras_in_Neural_Implicit_Representation_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.17119",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:18:46.764858+00:00",
+        "sha256": "1c133b106335aaf88a5f6f069188d25ab773e2c5486de214cec9047cf08cf6b1"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "SpecNeRF: Gaussian Directional Encoding for Specular Reflections",
         "authors": [
           "Li Ma",
@@ -346,6 +546,98 @@
       "capture": {
         "observed_at": "2026-11-12T02:09:30.295435+00:00",
         "sha256": "09c3aaf3a9db05fcaa33592190d4764276701fb78f064fc013dd96d259eb9900"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Towards 3D Vision with Low-Cost Single-Photon Cameras",
+        "authors": [
+          "Fangzhou Mu",
+          "Carter Sifferman",
+          "Sacha Jungerman",
+          "Yiquan Li",
+          "Mark Han",
+          "Michael Gleicher",
+          "Mohit Gupta",
+          "Yin Li"
+        ],
+        "abstract": "We present a method for reconstructing 3D shape of arbitrary Lambertian objects based on measurements by miniature energy-efficient low-cost single-photon cameras. These cameras operating as time resolved image sensors illuminate the scene with a very fast pulse of diffuse light and record the shape of that pulse as it returns back from the scene at a high temporal resolution. We propose to model this image formation process account for its non-idealities and adapt neural rendering to reconstruct 3D geometry from a set of spatially distributed sensors with known poses. We show that our approach can successfully recover complex 3D shapes from simulated data. We further demonstrate 3D object reconstruction from real-world captures utilizing measurements from a commodity proximity sensor. Our work draws a connection between image-based modeling and active range scanning and offers a step towards 3D vision with single-photon cameras.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Mu_Towards_3D_Vision_with_Low-Cost_Single-Photon_Cameras_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mu_Towards_3D_Vision_with_Low-Cost_Single-Photon_Cameras_CVPR_2024_paper.pdf",
+        "arxiv_id": "2403.17801",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:22:29.639978+00:00",
+        "sha256": "0617f7fcfff27f5f27c03fdbff7bbf1be6c68107ce424216b18dea1be58ccb99"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Explaining the Implicit Neural Canvas: Connecting Pixels to Neurons by Tracing their Contributions",
+        "authors": [
+          "Namitha Padmanabhan",
+          "Matthew Gwilliam",
+          "Pulkit Kumar",
+          "Shishira R Maiya",
+          "Max Ehrlich",
+          "Abhinav Shrivastava"
+        ],
+        "abstract": "The many variations of Implicit Neural Representations (INRs) where a neural network is trained as a continuous representation of a signal have tremendous practical utility for downstream tasks including novel view synthesis video compression and image super-resolution. Unfortunately the inner workings of these networks are seriously understudied. Our work eXplaining the Implicit Neural Canvas (XINC) is a unified framework for explaining properties of INRs by examining the strength of each neuron's contribution to each output pixel. We call the aggregate of these contribution maps the Implicit Neural Canvas and we use this concept to demonstrate that the INRs we study learn to \"see\" the frames they represent in surprising ways. For example INRs tend to have highly distributed representations. While lacking high-level object semantics they have a significant bias for color and edges and are almost entirely space-agnostic. We arrive at our conclusions by examining how objects are represented across time in video INRs using clustering to visualize similar neurons across layers and architectures and show that this is dominated by motion. These insights demonstrate the general usefulness of our analysis framework.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Padmanabhan_Explaining_the_Implicit_Neural_Canvas_Connecting_Pixels_to_Neurons_by_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Padmanabhan_Explaining_the_Implicit_Neural_Canvas_Connecting_Pixels_to_Neurons_by_CVPR_2024_paper.pdf",
+        "arxiv_id": "2401.10217",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:20:21.039201+00:00",
+        "sha256": "59cc2f3def7be18f4aee76042662b2da2d1945e60c55502ad06f32b40f70c98a"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Implicit Event-RGBD Neural SLAM",
+        "authors": [
+          "Delin Qu",
+          "Chi Yan",
+          "Dong Wang",
+          "Jie Yin",
+          "Qizhi Chen",
+          "Dan Xu",
+          "Yiting Zhang",
+          "Bin Zhao",
+          "Xuelong Li"
+        ],
+        "abstract": "Implicit neural SLAM has achieved remarkable progress recently. Nevertheless existing methods face significant challenges in non-ideal scenarios such as motion blur or lighting variation which often leads to issues like convergence failures localization drifts and distorted mapping. To address these challenges we propose EN-SLAM the first event-RGBD implicit neural SLAM framework which effectively leverages the high rate and high dynamic range advantages of event data for tracking and mapping. Specifically EN-SLAM proposes a differentiable CRF (Camera Response Function) rendering technique to generate distinct RGB and event camera data via a shared radiance field which is optimized by learning a unified implicit representation with the captured event and RGBD supervision. Moreover based on the temporal difference property of events we propose a temporal aggregating optimization strategy for the event joint tracking and global bundle adjustment capitalizing on the consecutive difference constraints of events significantly enhancing tracking accuracy and robustness. Finally we construct the simulated dataset DEV-Indoors and real captured dataset DEV-Reals containing 6 scenes 17 sequences with practical motion blur and lighting changes for evaluations. Experimental results show that our method outperforms the SOTA methods in both tracking ATE and mapping ACC with a real-time 17 FPS in various challenging environments. Project page: https://delinqu.github.io/EN-SLAM.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Qu_Implicit_Event-RGBD_Neural_SLAM_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Qu_Implicit_Event-RGBD_Neural_SLAM_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.11013",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:00.740900+00:00",
+        "sha256": "9a48ec79bfaf731886e33cc656adbbb0ab372e1dddf0cdddf6d542a7cf70dd32"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -379,6 +671,32 @@
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "SelfPose3d: Self-Supervised Multi-Person Multi-View 3d Pose Estimation",
+        "authors": [
+          "Vinkle Srivastav",
+          "Keqi Chen",
+          "Nicolas Padoy"
+        ],
+        "abstract": "We present a new self-supervised approach SelfPose3d for estimating 3d poses of multiple persons from multiple camera views. Unlike current state-of-the-art fully-supervised methods our approach does not require any 2d or 3d ground-truth poses and uses only the multi-view input images from a calibrated camera setup and 2d pseudo poses generated from an off-the-shelf 2d human pose estimator. We propose two self-supervised learning objectives: self-supervised person localization in 3d space and self-supervised 3d pose estimation. We achieve self-supervised 3d person localization by training the model on synthetically generated 3d points serving as 3d person root positions and on the projected root-heatmaps in all the views. We then model the 3d poses of all the localized persons with a bottleneck representation map them onto all views obtaining 2d joints and render them using 2d Gaussian heatmaps in an end-to-end differentiable manner. Afterwards we use the corresponding 2d joints and heatmaps from the pseudo 2d poses for learning. To alleviate the intrinsic inaccuracy of the pseudo labels we propose an adaptive supervision attention mechanism to guide the self-supervision. Our experiments and analysis on three public benchmark datasets including Panoptic Shelf and Campus show the effectiveness of our approach which is comparable to fully-supervised methods. Code is available at https://github.com/CAMMA-public/SelfPose3D.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Srivastav_SelfPose3d_Self-Supervised_Multi-Person_Multi-View_3d_Pose_Estimation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Srivastav_SelfPose3d_Self-Supervised_Multi-Person_Multi-View_3d_Pose_Estimation_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.02041",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:23:59.934693+00:00",
+        "sha256": "150715cdc7769b9a485a4b1de484597895ca4855f116cf35e375a72447eb047a"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Gaussian functions in the abstract need explicit splatting or curated-foundation evidence"
     },
     {
       "publication": {
@@ -430,6 +748,93 @@
       "capture": {
         "observed_at": "2026-11-12T02:10:33.741003+00:00",
         "sha256": "9a0d772649ef7d585af00128e53dbf63edb1a7ea5fbd5a35a1d91dc9645c62a5"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "VOODOO 3D: Volumetric Portrait Disentanglement For One-Shot 3D Head Reenactment",
+        "authors": [
+          "Phong Tran",
+          "Egor Zakharov",
+          "Long-Nhat Ho",
+          "Anh Tuan Tran",
+          "Liwen Hu",
+          "Hao Li"
+        ],
+        "abstract": "We present a 3D-aware one-shot head reenactment method based on a fully volumetric neural disentanglement framework for source appearance and driver expressions. Our method is real-time and produces high-fidelity and view-consistent output suitable for 3D teleconferencing systems based on holographic displays. Existing cutting-edge 3D-aware reenactment methods often use neural radiance fields or 3D meshes to produce view-consistent appearance encoding but at the same time they rely on linear face models such as 3DMM to achieve its disentanglement with facial expressions. As a result their reenactment results often exhibit identity leakage from the driver or have unnatural expressions. To address these problems we propose a neural self-supervised disentanglement approach that lifts both the source image and driver video frame into a shared 3D volumetric representation based on tri-planes. This representation can then be freely manipulated with expression tri-planes extracted from the driving images and rendered from an arbitrary view using neural radiance fields. We achieve this disentanglement via self-supervised learning on a large in-the-wild video dataset. We further introduce a highly effective fine-tuning approach to improve the generalizability of the 3D lifting using the same real-world data. We demonstrate state-of-the-art performance on a wide range of datasets and also showcase high-quality 3D-aware head reenactment on highly challenging and diverse subjects including non-frontal head poses and complex expressions for both source and driver.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Tran_VOODOO_3D_Volumetric_Portrait_Disentanglement_For_One-Shot_3D_Head_Reenactment_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Tran_VOODOO_3D_Volumetric_Portrait_Disentanglement_For_One-Shot_3D_Head_Reenactment_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.04651",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:22:15.776995+00:00",
+        "sha256": "379f6c242c0d658c057c82d2fdc72b68da0bbb902380b79f8c695f302faedcad"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "CAD: Photorealistic 3D Generation via Adversarial Distillation",
+        "authors": [
+          "Ziyu Wan",
+          "Despoina Paschalidou",
+          "Ian Huang",
+          "Hongyu Liu",
+          "Bokui Shen",
+          "Xiaoyu Xiang",
+          "Jing Liao",
+          "Leonidas Guibas"
+        ],
+        "abstract": "The increased demand for 3D data in AR/VR robotics and gaming applications gave rise to powerful generative pipelines capable of synthesizing high-quality 3D objects. Most of these models rely on the Score Distillation Sampling (SDS) algorithm to optimize a 3D representation such that the rendered image maintains a high likelihood as evaluated by a pre-trained diffusion model. However this distillation process involves finding a correct mode in the high-dimensional and large-variance distribution produced by the diffusion model. This task is challenging and often leads to issues such as over-saturation over-smoothing and Janus-like artifacts in the 3D generation. In this paper we propose a novel learning paradigm for 3D synthesis that utilizes pre-trained diffusion models. Instead of focusing on mode-seeking our method directly models the distribution discrepancy between multi-view renderings and diffusion priors in an adversarial manner which unlocks the generation of high-fidelity and photorealistic 3D content conditioned on a single image and prompt. Moreover by harnessing the latent space of GANs and expressive diffusion model priors our method enables a wide variety of 3D applications including single-view reconstruction high diversity generation and continuous 3D interpolation in open domain. Our experiments demonstrate the superiority of our pipeline compared to previous works in terms of generation quality and diversity.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wan_CAD_Photorealistic_3D_Generation_via_Adversarial_Distillation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wan_CAD_Photorealistic_3D_Generation_via_Adversarial_Distillation_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.06663",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:18:15.379591+00:00",
+        "sha256": "351d558b355ce86dbff1ff7084d276e11db02d46e60d749b6e97415197e19a80"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "IntrinsicAvatar: Physically Based Inverse Rendering of Dynamic Humans from Monocular Videos via Explicit Ray Tracing",
+        "authors": [
+          "Shaofei Wang",
+          "Bozidar Antic",
+          "Andreas Geiger",
+          "Siyu Tang"
+        ],
+        "abstract": "We present IntrinsicAvatar a novel approach to recovering the intrinsic properties of clothed human avatars including geometry albedo material and environment lighting from only monocular videos. Recent advancements in human-based neural rendering have enabled high-quality geometry and appearance reconstruction of clothed humans from just monocular videos. However these methods bake intrinsic properties such as albedo material and environment lighting into a single entangled neural representation. On the other hand only a handful of works tackle the problem of estimating geometry and disentangled appearance properties of clothed humans from monocular videos. They usually achieve limited quality and disentanglement due to approximations of secondary shading effects via learned MLPs. In this work we propose to model secondary shading effects explicitly via Monte-Carlo ray tracing. We model the rendering process of clothed humans as a volumetric scattering process and combine ray tracing with body articulation. Our approach can recover high-quality geometry albedo material and lighting properties of clothed humans from a single monocular video without requiring supervised pre-training using ground truth materials. Furthermore since we explicitly model the volumetric scattering process and ray tracing our model naturally generalizes to novel poses enabling animation of the reconstructed avatar in novel lighting conditions.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_IntrinsicAvatar_Physically_Based_Inverse_Rendering_of_Dynamic_Humans_from_Monocular_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_IntrinsicAvatar_Physically_Based_Inverse_Rendering_of_Dynamic_Humans_from_Monocular_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.05210",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:22:05.466976+00:00",
+        "sha256": "2b2113aa2cb73be5110552f0e54c17347bfb5003ca348800a69d2500041c3d34"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -519,6 +924,33 @@
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "FlashAvatar: High-fidelity Head Avatar with Efficient Gaussian Embedding",
+        "authors": [
+          "Jun Xiang",
+          "Xuan Gao",
+          "Yudong Guo",
+          "Juyong Zhang"
+        ],
+        "abstract": "We propose FlashAvatar a novel and lightweight 3D animatable avatar representation that could reconstruct a digital avatar from a short monocular video sequence in minutes and render high-fidelity photo-realistic images at 300FPS on a consumer-grade GPU. To achieve this we maintain a uniform 3D Gaussian field embedded in the surface of a parametric face model and learn extra spatial offset to model non-surface regions and subtle facial details. While full use of geometric priors can capture high-frequency facial details and preserve exaggerated expressions proper initialization can help reduce the number of Gaussians thus enabling super-fast rendering speed. Extensive experimental results demonstrate that FlashAvatar outperforms existing works regarding visual quality and personalized details and is almost an order of magnitude faster in rendering speed. Project page: https://ustc3dv.github.io/FlashAvatar/",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Xiang_FlashAvatar_High-fidelity_Head_Avatar_with_Efficient_Gaussian_Embedding_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xiang_FlashAvatar_High-fidelity_Head_Avatar_with_Efficient_Gaussian_Embedding_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.02214",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:21:02.119768+00:00",
+        "sha256": "1cb51279b93718d3557b7a62adce4e55374662aaed75dacf7328eb578878262c"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context"
     },
     {
       "publication": {
@@ -667,6 +1099,93 @@
       "capture": {
         "observed_at": "2026-11-12T02:02:13.758701+00:00",
         "sha256": "84ce2f59dc22bb3c8a34160682d807ab6df6c01f4bee0d6592196be7d943c81c"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation",
+        "authors": [
+          "Songchun Zhang",
+          "Yibo Zhang",
+          "Quan Zheng",
+          "Rui Ma",
+          "Wei Hua",
+          "Hujun Bao",
+          "Weiwei Xu",
+          "Changqing Zou"
+        ],
+        "abstract": "Text-driven 3D scene generation techniques have made rapid progress in recent years. Their success is mainly attributed to using existing generative models to iteratively perform image warping and inpainting to generate 3D scenes. However these methods heavily rely on the outputs of existing models leading to error accumulation in geometry and appearance that prevent the models from being used in various scenarios (e.g. outdoor and unreal scenarios). To address this limitation we generatively refine the newly generated local views by querying and aggregating global 3D information and then progressively generate the 3D scene. Specifically we employ a tri-plane features-based NeRF as a unified representation of the 3D scene to constrain global 3D consistency and propose a generative refinement network to synthesize new contents with higher quality by exploiting the natural image prior from 2D diffusion model as well as the global 3D information of the current scene. Our extensive experiments demonstrate that in comparison to previous methods our approach supports wide variety of scene generation and arbitrary camera trajectories with improved visual quality and 3D consistency.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:13.681977+00:00",
+        "sha256": "f588d2fd0c08c08aa0da8102f40bdeaec68bbbd3a8a5b9d1e53064550d4f7a78"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Aerial Lifting: Neural Urban Semantic and Building Instance Lifting from Aerial Imagery",
+        "authors": [
+          "Yuqi Zhang",
+          "Guanying Chen",
+          "Jiaxing Chen",
+          "Shuguang Cui"
+        ],
+        "abstract": "We present a neural radiance field method for urban-scale semantic and building-level instance segmentation from aerial images by lifting noisy 2D labels to 3D. This is a challenging problem due to two primary reasons. Firstly objects in urban aerial images exhibit substantial variations in size including buildings cars and roads which pose a significant challenge for accurate 2D segmentation. Secondly the 2D labels generated by existing segmentation methods suffer from the multi-view inconsistency problem especially in the case of aerial images where each image captures only a small portion of the entire scene. To overcome these limitations we first introduce a scale-adaptive semantic label fusion strategy that enhances the segmentation of objects of varying sizes by combining labels predicted from different altitudes harnessing the novel-view synthesis capabilities of NeRF. We then introduce a novel cross-view instance label grouping strategy based on the 3D scene representation to mitigate the multi-view inconsistency problem in the 2D instance labels. Furthermore we exploit multi-view reconstructed depth priors to improve the geometric quality of the reconstructed radiance field resulting in enhanced segmentation results. Experiments on multiple real-world urban-scale datasets demonstrate that our approach outperforms existing methods highlighting its effectiveness. The source code is available at https://github.com/zyqz97/Aerial_lifting.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Aerial_Lifting_Neural_Urban_Semantic_and_Building_Instance_Lifting_from_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_Aerial_Lifting_Neural_Urban_Semantic_and_Building_Instance_Lifting_from_CVPR_2024_paper.pdf",
+        "arxiv_id": "2403.11812",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:19:06.722948+00:00",
+        "sha256": "a66f044b7e6cc3f2d4f5063a3017e5b512bae017ac2f1b2f5c89a39472223480"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "A Unified Approach for Text- and Image-guided 4D Scene Generation",
+        "authors": [
+          "Yufeng Zheng",
+          "Xueting Li",
+          "Koki Nagano",
+          "Sifei Liu",
+          "Otmar Hilliges",
+          "Shalini De Mello"
+        ],
+        "abstract": "Large-scale diffusion generative models are greatly simplifying image video and 3D asset creation from user provided text prompts and images. However the challenging problem of text-to-4D dynamic 3D scene generation with diffusion guidance remains largely unexplored. We propose Dream-in-4D which features a novel two-stage approach for text-to-4D synthesis leveraging (1) 3D and 2D diffusion guidance to effectively learn a high-quality static 3D asset in the first stage; (2) a deformable neural radiance field that explicitly disentangles the learned static asset from its deformation preserving quality during motion learning; and (3) a multi-resolution feature grid for the deformation field with a displacement total variation loss to effectively learn motion with video diffusion guidance in the second stage. Through a user preference study we demonstrate that our approach significantly advances image and motion quality 3D consistency and text fidelity for text-to-4D generation compared to baseline approaches. Thanks to its motion-disentangled representation Dream-in-4D can also be easily adapted for controllable generation where appearance is defined by one or multiple images without the need to modify the motion learning stage. Thus our method offers for the first time a unified approach for text-to-4D image-to-4D and personalized 4D generation tasks.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_A_Unified_Approach_for_Text-_and_Image-guided_4D_Scene_Generation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zheng_A_Unified_Approach_for_Text-_and_Image-guided_4D_Scene_Generation_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T02:21:39.950905+00:00",
+        "sha256": "46b967724c3234b7f526ce1e960264845a1b15ee798972af8c69a726fd82a63b"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
