@@ -77,11 +77,11 @@ The original [comparison](../data/venues/iccv2025-main/independent-reconciliatio
 retains 2,677 normalized-title matches, seven reviewed typography pairs and 17
 unmatched rows on each source. Its evidence is preserved unchanged.
 
-The new [review overlay](../data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json)
-resolves the RoboTron pair. A subsequent [explicit eight-pair review](../data/reviews/iccv2025-eight-inventory-title-pairs-20261111.json) binds exact ordered author lists and retained official publication bodies for eight further title variants, leaving **eight unadjudicated titles on each source**. These are source-inventory correspondences, not canonical merge instructions.
-The 504 exact-title author-list differences and the ambiguous typography/author
-case are not silently repaired. Equal aggregate counts do not establish identity
-reconciliation. Source-record matching is distinct from canonical deduplication.
+The [RoboTron review overlay](../data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json), [eight exact-author title reviews](../data/reviews/iccv2025-eight-inventory-title-pairs-20261111.json), and [final eight explicit source reviews](../data/reviews/iccv2025-final-eight-inventory-title-pairs-20261111.json) now account for all 17 original unmatched title pairs. An independent reconstruction from both frozen primary inventories proves a [one-to-one mapping of all 2,701 rows](../data/venues/iccv2025-main/reviewed-complete-title-mapping-20261111.json): 2,677 normalized-title matches, seven typography pairs and 17 explicitly reviewed title correspondences. No title row remains unmatched.
+
+Author reconciliation remains open for **512 rows**: 504 among normalized-title matches and eight among explicit title variants. These author sequences are preserved verbatim; name expansions, spelling differences and accepted-table institutional fragments are not silently corrected. The earlier ambiguous typography/author case is included among the eight explicitly reviewed variants. Inventory-row correspondence does not authorize a canonical paper merge or establish relevance.
+
+For the SafetyDPO/AlignGuard title change, five additional bounded arXiv metadata captures include both versions of the same ID: v1 is SafetyDPO and v2 is AlignGuard. The other three linked arXiv records corroborate proceedings titles and full author lists. Raw bodies and hashes are retained in `data/venues/iccv2025-main/inventory-arxiv-evidence/`. The whole edition remains partial until author/source, scope, identity/date and provider gates are resolved.
 
 ## Validation and remaining gates
 

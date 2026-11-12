@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Revamping Federated Learning Security from a Defender&#x27;s Perspective: A Unified Defense with Homomorphic Encrypted Data Space">
+<meta name="citation_author" content="Kumar, K Naveen">
+<meta name="citation_author" content="Mitra, Reshmi">
+<meta name="citation_author" content="Mohan, C Krishna">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="24387">
+<meta name="citation_lastpage" content="24397">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Kumar_Revamping_Federated_Learning_Security_from_a_Defenders_Perspective_A_Unified_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Revamping Federated Learning Security from a Defender&#x27;s Perspective: A Unified Defense with Homomorphic Encrypted Data Space
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>K Naveen Kumar, Reshmi Mitra, C Krishna Mohan</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 24387-24397
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Federated Learning (FL) facilitates clients to collaborate on training a shared machine learning model without exposing individual private data. Nonetheless FL remains susceptible to utility and privacy attacks notably evasion data poisoning and model inversion attacks compromising the system&#x27;s efficiency and data privacy. Existing FL defenses are often specialized to a particular single attack lacking generality and a comprehensive defender&#x27;s perspective. To address these challenges we introduce Federated Cryptography Defense (FCD) a unified single framework aligning with the defender&#x27;s perspective. FCD employs row-wise transposition cipher based data encryption with a secret key to counter both evasion black-box data poisoning and model inversion attacks. The crux of FCD lies in transferring the entire learning process into an encrypted data space and using a novel distillation loss guided by the Kullback-Leibler (KL) divergence. This measure compares the probability distributions of the local pretrained teacher model&#x27;s predictions on normal data and the local student model&#x27;s predictions on the same data in FCD&#x27;s encrypted form. By working within this encrypted space FCD eliminates the need for decryption at the server resulting in reduced computational complexity. We demonstrate the practical feasibility of FCD and apply it to defend against evasion utility attack on benchmark datasets (GTSRB KBTS CIFAR10 and EMNIST). We further extend FCD for defending against model inversion attack in split FL on the CIFAR100 dataset. Our experiments across the diverse attack and FL settings demonstrate practical feasibility and robustness against utility evasion (impact &gt;30) and privacy attacks (MSE &gt;73) compared to the second best method.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Kumar_Revamping_Federated_Learning_Security_from_a_Defenders_Perspective_A_Unified_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Kumar_Revamping_Federated_Learning_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Kumar_2024_CVPR,
+    author    = {Kumar, K Naveen and Mitra, Reshmi and Mohan, C Krishna},
+    title     = {Revamping Federated Learning Security from a Defender&#x27;s Perspective: A Unified Defense with Homomorphic Encrypted Data Space},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {24387-24397}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

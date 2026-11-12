@@ -147,13 +147,13 @@ editions:
   - provider: cvf_all_metadata_capture
     evidence_file: data/venues/cvpr2024-all-metadata/latest-report.json
     listing_records: 2716
-    verified_records: 233
-    pending_records: 2483
-    failed_records: 0
+    verified_records: 532
+    pending_records: 2184
+    failed_records: 1
     selected_metadata_complete: false
     canonical_modified: false
     venue_inventory_reconciled: false
-    note: Separate frozen full-abstract epoch; 133 reused verified pages plus 100 new pages.
+    note: Separate frozen full-abstract epoch; 133 reused verified pages plus 399 new pages; one 404 deferred.
   - provider: cvf_exact_arxiv_identity_resolution
     evidence_file: data/venues/cvpr2024-main/identity-resolution.json
     exact_original_dates_verified: 87
@@ -329,7 +329,7 @@ editions:
     normalized_title_matches: 2677
     reviewed_typography_pairs: 7
     original_unmatched_title_rows_per_source: 17
-    unresolved_title_rows_per_source: 16
+    unresolved_title_rows_after_first_review_per_source: 16
     reviewed_non_typographic_pairs: 1
     reviewed_identity_evidence_file: data/venues/iccv2025-main/reviewed-identity-reconciliation-20261111.json
     exact_title_author_differences: 504
@@ -359,11 +359,21 @@ editions:
     exact_title_author_differences_unadjudicated: 504
     canonical_modified: false
     reconciled: false
+  - provider: source_reviewed_complete_title_mapping
+    evidence_file: data/venues/iccv2025-main/reviewed-complete-title-mapping-20261111.json
+    additional_review_file: data/reviews/iccv2025-final-eight-inventory-title-pairs-20261111.json
+    mapped_rows: 2701
+    one_to_one_title_mapping_complete: true
+    unmatched_rows_per_source: 0
+    author_discrepancy_rows: 512
+    author_identity_reconciled: false
+    canonical_modified: false
+    inventory_reconciled: false
   remaining:
   - Full metadata capture is complete; source scope, identity and original-date review
     remain open.
-  - Review eight remaining unmatched titles on each source and 504 author-list differences without
-    automatic alias assertions.
+  - Title mapping is complete; review 512 author-list discrepancy rows without automatic
+    alias assertions.
   - Identity/original-date resolution, reviewed GS scope decisions and publication
     imports remain pending.
   - Full-metadata policy decisions are not independently measured human precision/recall.
