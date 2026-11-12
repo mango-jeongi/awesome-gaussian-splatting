@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="CoDe: An Explicit Content Decoupling Framework for Image Restoration">
+<meta name="citation_author" content="Gu, Enxuan">
+<meta name="citation_author" content="Ge, Hongwei">
+<meta name="citation_author" content="Guo, Yong">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="2920">
+<meta name="citation_lastpage" content="2930">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Gu_CoDe_An_Explicit_Content_Decoupling_Framework_for_Image_Restoration_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        CoDe: An Explicit Content Decoupling Framework for Image Restoration
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Enxuan Gu, Hongwei Ge, Yong Guo</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 2920-2930
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    The performance of image restoration (IR) is highly dependent on the reconstruction quality of diverse contents with varying complexity. However most IR approaches model the mapping between various complexity contents of inputs and outputs through the repeated feature calculation propagation mechanism in a unified pipeline which leads to unsatisfactory results. To address this issue we propose an explicit Content Decoupling framework for IR dubbed CoDe to end-to-end model the restoration process by utilizing decoupled content components in a divide-and-conquer-like architecture. Specifically a Content Decoupling Module is first designed to decouple content components of inputs and outputs according to the frequency spectra adaptively generated from the transform domain. In addition in order to harness the divide-and-conquer strategy for reconstructing decoupled content components we propose an IR Network Container. It contains an optimized version which is a streamlining of an arbitrary IR network comprising the cascaded modulated subnets and a Reconstruction Layers Pool. Finally a Content Consistency Loss is designed from the transform domain perspective to supervise the restoration process of each content component and further guide the feature fusion process. Extensive experiments on several IR tasks such as image super-resolution image denoising and image blurring covering both real and synthetic settings demonstrate that the proposed paradigm can effectively take the performance of the original network to a new state-of-the-art level in multiple benchmark datasets (e.g. 0.34dB@Set5 x4 over DAT).
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Gu_CoDe_An_Explicit_Content_Decoupling_Framework_for_Image_Restoration_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Gu_CoDe_An_Explicit_CVPR_2024_supplemental.pdf">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Gu_2024_CVPR,
+    author    = {Gu, Enxuan and Ge, Hongwei and Guo, Yong},
+    title     = {CoDe: An Explicit Content Decoupling Framework for Image Restoration},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {2920-2930}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

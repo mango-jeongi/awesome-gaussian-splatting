@@ -234,6 +234,60 @@
     },
     {
       "publication": {
+        "title": "LeftRefill: Filling Right Canvas based on Left Reference through Generalized Text-to-Image Diffusion Model",
+        "authors": [
+          "Chenjie Cao",
+          "Yunuo Cai",
+          "Qiaole Dong",
+          "Yikai Wang",
+          "Yanwei Fu"
+        ],
+        "abstract": "This paper introduces LeftRefill an innovative approach to efficiently harness large Text-to-Image (T2I) diffusion models for reference-guided image synthesis. As the name implies LeftRefill horizontally stitches reference and target views together as a whole input. The reference image occupies the left side while the target canvas is positioned on the right. Then LeftRefill paints the right-side target canvas based on the left-side reference and specific task instructions. Such a task formulation shares some similarities with contextual inpainting akin to the actions of a human painter. This novel formulation efficiently learns both structural and textured correspondence between reference and target without other image encoders or adapters. We inject task and view information through cross-attention modules in T2I models and further exhibit multi-view reference ability via the re-arranged self-attention modules. These enable LeftRefill to perform consistent generation as a generalized model without requiring test-time fine-tuning or model modifications. Thus LeftRefill can be seen as a simple yet unified framework to address reference-guided synthesis. As an exemplar we leverage LeftRefill to address two different challenges: reference-guided inpainting and novel view synthesis based on the pre-trained StableDiffusion. Codes and models are released at https://github.com/ewrfcas/LeftRefill.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Cao_LeftRefill_Filling_Right_Canvas_based_on_Left_Reference_through_Generalized_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Cao_LeftRefill_Filling_Right_Canvas_based_on_Left_Reference_through_Generalized_CVPR_2024_paper.pdf",
+        "arxiv_id": "2305.11577",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:23:36.630714+00:00",
+        "sha256": "a7eabdba079423b05105541895dc002f0843ea76db0a7f43e1ee7c3c387d21b9"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Perceptual Assessment and Optimization of HDR Image Rendering",
+        "authors": [
+          "Peibei Cao",
+          "Rafal K. Mantiuk",
+          "Kede Ma"
+        ],
+        "abstract": "High dynamic range (HDR) rendering has the ability to faithfully reproduce the wide luminance ranges in natural scenes but how to accurately assess the rendering quality is relatively underexplored. Existing quality models are mostly designed for low dynamic range (LDR) images and do not align well with human perception of HDR image quality. To fill this gap we propose a family of HDR quality metrics in which the key step is employing a simple inverse display model to decompose an HDR image into a stack of LDR images with varying exposures. Subsequently these decomposed images are assessed through well-established LDR quality metrics. Our HDR quality models present three distinct benefits. First they directly inherit the recent advancements of LDR quality metrics. Second they do not rely on human perceptual data of HDR image quality for re-calibration. Third they facilitate the alignment and prioritization of specific luminance ranges for more accurate and detailed quality assessment. Experimental results show that our HDR quality metrics consistently outperform existing models in terms of quality assessment on four HDR image quality datasets and perceptual optimization of HDR novel view synthesis.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Cao_Perceptual_Assessment_and_Optimization_of_HDR_Image_Rendering_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Cao_Perceptual_Assessment_and_Optimization_of_HDR_Image_Rendering_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:16:44.507723+00:00",
+        "sha256": "9d86d64e10bca1e98b791b9ee4113f4778bed6a901fa9d0bb6cefe4f103503f0"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "SuperNormal: Neural Surface Reconstruction via Multi-View Normal Integration",
         "authors": [
           "Xu Cao",
@@ -253,6 +307,62 @@
       "capture": {
         "observed_at": "2026-11-12T02:08:30.717919+00:00",
         "sha256": "59eedfd98e8c96fd87b75b81872c5d164ed33c819a3674860d7d862ad503bdef"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "R-Cyclic Diffuser: Reductive and Cyclic Latent Diffusion for 3D Clothed Human Digitalization",
+        "authors": [
+          "Kennard Yanting Chan",
+          "Fayao Liu",
+          "Guosheng Lin",
+          "Chuan Sheng Foo",
+          "Weisi Lin"
+        ],
+        "abstract": "Recently the authors of Zero-1-to-3 demonstrated that a latent diffusion model pretrained with Internet-scale data can not only address the single-view 3D object reconstruction task but can even attain SOTA results in it. However when applied to the task of single-view 3D clothed human reconstruction Zero-1-to-3 (and related models) are unable to compete with the corresponding SOTA methods in this field despite being trained on clothed human data. In this work we aim to tailor Zero-1-to-3's approach to the single-view 3D clothed human reconstruction task in a much more principled and structured manner. To this end we propose R-Cyclic Diffuser a framework that adapts Zero-1-to-3's novel approach to clothed human data by fusing it with a pixel-aligned implicit model. R-Cyclic Diffuser offers a total of three new contributions. The first and primary contribution is R-Cyclic Diffuser's cyclical conditioning mechanism for novel view synthesis. This mechanism directly addresses the view inconsistency problem faced by Zero-1-to-3 and related models. Secondly we further enhance this mechanism with two key features - Lateral Inversion Constraint and Cyclic Noise Selection. Both features are designed to regularize and restrict the randomness of outputs generated by a latent diffusion model. Thirdly we show how SMPL-X body priors can be incorporated in a latent diffusion model such that novel views of clothed human bodies can be generated much more accurately. Our experiments show that R-Cyclic Diffuser is able to outperform current SOTA methods in single-view 3D clothed human reconstruction both qualitatively and quantitatively. Our code is made publicly available at https://github.com/kcyt/r-cyclic-diffuser.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chan_R-Cyclic_Diffuser_Reductive_and_Cyclic_Latent_Diffusion_for_3D_Clothed_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chan_R-Cyclic_Diffuser_Reductive_and_Cyclic_Latent_Diffusion_for_3D_Clothed_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:20:27.178282+00:00",
+        "sha256": "efb5f1b6cb2562e6130429e31bb9ad2557407914d25f4e4c0d77335f89049c02"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "GenNBV: Generalizable Next-Best-View Policy for Active 3D Reconstruction",
+        "authors": [
+          "Xiao Chen",
+          "Quanyi Li",
+          "Tai Wang",
+          "Tianfan Xue",
+          "Jiangmiao Pang"
+        ],
+        "abstract": "While recent advances in neural radiance field enable realistic digitization for large-scale scenes the image-capturing process is still time-consuming and labor-intensive. Previous works attempt to automate this process using the Next-Best-View (NBV) policy for active 3D reconstruction. However the existing NBV policies heavily rely on hand-crafted criteria limited action space or per-scene optimized representations. These constraints limit their cross-dataset generalizability. To overcome them we propose GenNBV an end-to-end generalizable NBV policy. Our policy adopts a reinforcement learning (RL)-based framework and extends typical limited action space to 5D free space. It empowers our agent drone to scan from any viewpoint and even interact with unseen geometries during training. To boost the cross-dataset generalizability we also propose a novel multi-source state embedding including geometric semantic and action representations. We establish a benchmark using the Isaac Gym simulator with the Houses3K and OmniObject3D datasets to evaluate this NBV policy. Experiments demonstrate that our policy achieves a 98.26% and 97.12% coverage ratio on unseen building-scale objects from these datasets respectively outperforming prior solutions.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Chen_GenNBV_Generalizable_Next-Best-View_Policy_for_Active_3D_Reconstruction_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Chen_GenNBV_Generalizable_Next-Best-View_Policy_for_Active_3D_Reconstruction_CVPR_2024_paper.pdf",
+        "arxiv_id": "2402.16174",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:20:52.121509+00:00",
+        "sha256": "887593065f7553f3b1822d1fb4a2c0dae8fc2608c9d91ae79920ec8b2276a855"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -431,6 +541,35 @@
     },
     {
       "publication": {
+        "title": "Differentiable Neural Surface Refinement for Modeling Transparent Objects",
+        "authors": [
+          "Weijian Deng",
+          "Dylan Campbell",
+          "Chunyi Sun",
+          "Shubham Kanitkar",
+          "Matthew E. Shaffer",
+          "Stephen Gould"
+        ],
+        "abstract": "Neural implicit surface reconstruction leveraging volume rendering has led to significant advances in multi-view reconstruction. However results for transparent objects can be very poor primarily because the rendering function fails to account for the intricate light transport induced by refraction and reflection. In this study we introduce transparent neural surface refinement (TNSR) a novel surface reconstruction framework that explicitly incorporates physical refraction and reflection tracing. Beginning with an initial approximate surface our method employs sphere tracing combined with Snell's law to cast both reflected and refracted rays. Central to our proposal is an innovative differentiable technique devised to allow signals from the photometric evidence to propagate back to the surface model by considering how the surface bends and reflects light rays. This allows us to connect surface refinement with volume rendering enabling end-to-end optimization solely on multi-view RGB images. In our experiments TNSR demonstrates significant improvements in novel view synthesis and geometry estimation of transparent objects without prior knowledge of the refractive index.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Deng_Differentiable_Neural_Surface_Refinement_for_Modeling_Transparent_Objects_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Deng_Differentiable_Neural_Surface_Refinement_for_Modeling_Transparent_Objects_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:22:07.238344+00:00",
+        "sha256": "605978a94673e27eab44a42d459cda6f0feeeb47bc25067888879126cf1d0382"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "PLGSLAM: Progressive Neural Scene Represenation with Local to Global Bundle Adjustment",
         "authors": [
           "Tianchen Deng",
@@ -571,6 +710,34 @@
     },
     {
       "publication": {
+        "title": "Multi-Level Neural Scene Graphs for Dynamic Urban Environments",
+        "authors": [
+          "Tobias Fischer",
+          "Lorenzo Porzi",
+          "Samuel Rota Bulo",
+          "Marc Pollefeys",
+          "Peter Kontschieder"
+        ],
+        "abstract": "We estimate the radiance field of large-scale dynamic areas from multiple vehicle captures under varying environmental conditions. Previous works in this domain are either restricted to static environments do not scale to more than a single short video or struggle to separately represent dynamic object instances. To this end we present a novel decomposable radiance field approach for dynamic urban environments. We propose a multi-level neural scene graph representation that scales to thousands of images from dozens of sequences with hundreds of fast-moving objects. To enable efficient training and rendering of our representation we develop a fast composite ray sampling and rendering scheme. To test our approach in urban driving scenarios we introduce a new novel view synthesis benchmark. We show that our approach outperforms prior art by a significant margin on both established and our proposed benchmark while being faster in training and rendering.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Fischer_Multi-Level_Neural_Scene_Graphs_for_Dynamic_Urban_Environments_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Fischer_Multi-Level_Neural_Scene_Graphs_for_Dynamic_Urban_Environments_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.00168",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:25:42.274507+00:00",
+        "sha256": "dad85c19d8892a14746f55909f875dae6c4442039aa3a17f4be312f312e5f124"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "ConTex-Human: Free-View Rendering of Human from a Single Image with Texture-Consistent Synthesis",
         "authors": [
           "Xiangjun Gao",
@@ -595,6 +762,36 @@
       "capture": {
         "observed_at": "2026-11-12T02:01:27.613041+00:00",
         "sha256": "184db27989a17c89c51207dcfd8502bdcbd1f0e6d791503a3aea8b33712d0007"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Multiplane Prior Guided Few-Shot Aerial Scene Rendering",
+        "authors": [
+          "Zihan Gao",
+          "Licheng Jiao",
+          "Lingling Li",
+          "Xu Liu",
+          "Fang Liu",
+          "Puhua Chen",
+          "Yuwei Guo"
+        ],
+        "abstract": "Neural Radiance Fields (NeRF) have been successfully applied in various aerial scenes yet they face challenges with sparse views due to limited supervision. The acquisition of dense aerial views is often prohibitive as unmanned aerial vehicles (UAVs) may encounter constraints in perspective range and energy constraints. In this work we introduce Multiplane Prior guided NeRF (MPNeRF) a novel approach tailored for few-shot aerial scene rendering--marking a pioneering effort in this domain. Our key insight is that the intrinsic geometric regularities specific to aerial imagery could be leveraged to enhance NeRF in sparse aerial scenes. By investigating NeRF's and Multiplane Image (MPI)'s behavior we propose to guide the training process of NeRF with a Multiplane Prior. The proposed Multiplane Prior draws upon MPI's benefits and incorporates advanced image comprehension through a SwinV2 Transformer pre-trained via SimMIM. Our extensive experiments demonstrate that MPNeRF outperforms existing state-of-the-art methods applied in non-aerial contexts by tripling the performance in SSIM and LPIPS even with three views available. We hope our work offers insights into the development of NeRF-based applications in aerial scenes with limited data.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Gao_Multiplane_Prior_Guided_Few-Shot_Aerial_Scene_Rendering_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Gao_Multiplane_Prior_Guided_Few-Shot_Aerial_Scene_Rendering_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:25:51.696425+00:00",
+        "sha256": "63ef650c50af7304d29135b200706a1b8dff6f71c5794cafd26ff6fe067043c4"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -628,6 +825,34 @@
     },
     {
       "publication": {
+        "title": "The More You See in 2D the More You Perceive in 3D",
+        "authors": [
+          "Xinyang Han",
+          "Zelin Gao",
+          "Angjoo Kanazawa",
+          "Shubham Goel",
+          "Yossi Gandelsman"
+        ],
+        "abstract": "Humans can infer 3D structure from 2D images of an object based on past experience and improve their 3D understanding as they see more images. Inspired by this behavior we introduce SAP3D a system for 3D reconstruction and novel view synthesis from an arbitrary number of unposed images. Given a few unposed images of an object we adapt a pre-trained view-conditioned diffusion model together with the camera poses of the images via test-time fine-tuning. The adapted diffusion model and the obtained camera poses are then utilized as instance-specific priors for 3D reconstruction and novel view synthesis. We show that as the number of input images increases the performance of our approach improves bridging the gap between optimization-based prior-less 3D reconstruction methods and single-image-to-3D diffusion-based methods. We demonstrate our system on real images as well as standard synthetic benchmarks. Our ablation studies confirm that this adaption behavior is key for more accurate 3D understanding.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Han_The_More_You_See_in_2D_the_More_You_Perceive_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Han_The_More_You_See_in_2D_the_More_You_Perceive_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.03652",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:24:03.560597+00:00",
+        "sha256": "86e4ed151f76f4aa9ede72793547f7a8d47c198cf743664c06fd7225e3175807"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "SurMo: Surface-based 4D Motion Modeling for Dynamic Human Rendering",
         "authors": [
           "Tao Hu",
@@ -648,6 +873,64 @@
       "capture": {
         "observed_at": "2026-11-12T02:19:20.744489+00:00",
         "sha256": "bfbfc13333bacd4094243b4f625d8943249f47a9d0ab24f65af8a56cb7be220f"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "DreamControl: Control-Based Text-to-3D Generation with 3D Self-Prior",
+        "authors": [
+          "Tianyu Huang",
+          "Yihan Zeng",
+          "Zhilu Zhang",
+          "Wan Xu",
+          "Hang Xu",
+          "Songcen Xu",
+          "Rynson W.H. Lau",
+          "Wangmeng Zuo"
+        ],
+        "abstract": "3D generation has raised great attention in recent years. With the success of text-to-image diffusion models the 2D-lifting technique becomes a promising route to controllable 3D generation. However these methods tend to present inconsistent geometry which is also known as the Janus problem. We observe that the problem is caused mainly by two aspects i.e. viewpoint bias in 2D diffusion models and overfitting of the optimization objective. To address it we propose a two-stage 2D-lifting framework namely DreamControl which optimizes coarse NeRF scenes as 3D self-prior and then generates fine-grained objects with control-based score distillation. Specifically adaptive viewpoint sampling and boundary integrity metric are proposed to ensure the consistency of generated priors. The priors are then regarded as input conditions to maintain reasonable geometries in which conditional LoRA and weighted score are further proposed to optimize detailed textures. DreamControl can generate high-quality 3D content in terms of both geometry consistency and texture fidelity. Moreover our control-based optimization guidance is applicable to more downstream tasks including user-guided generation and 3D animation.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Huang_DreamControl_Control-Based_Text-to-3D_Generation_with_3D_Self-Prior_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_DreamControl_Control-Based_Text-to-3D_Generation_with_3D_Self-Prior_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.06439",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T07:51:05.928821+00:00",
+        "sha256": "b8c67fc29cd6089cd455bc6b100a0df640e8b659a94c208613b2ab0e9014e19a"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Photo-SLAM: Real-time Simultaneous Localization and Photorealistic Mapping for Monocular Stereo and RGB-D Cameras",
+        "authors": [
+          "Huajian Huang",
+          "Longwei Li",
+          "Hui Cheng",
+          "Sai-Kit Yeung"
+        ],
+        "abstract": "The integration of neural rendering and the SLAM system recently showed promising results in joint localization and photorealistic view reconstruction. However existing methods fully relying on implicit representations are so resource-hungry that they cannot run on portable devices which deviates from the original intention of SLAM. In this paper we present Photo-SLAM a novel SLAM framework with a hyper primitives map. Specifically we simultaneously exploit explicit geometric features for localization and learn implicit photometric features to represent the texture information of the observed environment. In addition to actively densifying hyper primitives based on geometric features we further introduce a Gaussian-Pyramid-based training method to progressively learn multi-level features enhancing photorealistic mapping performance. The extensive experiments with monocular stereo and RGB-D datasets prove that our proposed system Photo-SLAM significantly outperforms current state-of-the-art SLAM systems for online photorealistic mapping e.g. PSNR is 30% higher and rendering speed is hundreds of times faster in the Replica dataset. Moreover the Photo-SLAM can run at real-time speed using an embedded platform such as Jetson AGX Orin showing the potential of robotics applications. Project Page and code: https://huajianup.github.io/research/Photo-SLAM/.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Huang_Photo-SLAM_Real-time_Simultaneous_Localization_and_Photorealistic_Mapping_for_Monocular_Stereo_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Huang_Photo-SLAM_Real-time_Simultaneous_Localization_and_Photorealistic_Mapping_for_Monocular_Stereo_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:18:26.690950+00:00",
+        "sha256": "789d861a156a22a69c7ad76725a55510cf3d18e7ac1aeb915bbeaafc901049c0"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -833,6 +1116,87 @@
     },
     {
       "publication": {
+        "title": "Guess The Unseen: Dynamic 3D Scene Reconstruction from Partial 2D Glimpses",
+        "authors": [
+          "Inhee Lee",
+          "Byungjun Kim",
+          "Hanbyul Joo"
+        ],
+        "abstract": "In this paper we present a method to reconstruct the world and multiple dynamic humans in 3D from a monocular video input. As a key idea we represent both the world and multiple humans via the recently emerging 3D Gaussian Splatting (3D-GS) representation enabling to conveniently and efficiently compose and render them together. In particular we address the scenarios with severely limited and sparse observations in 3D human reconstruction a common challenge encountered in the real world. To tackle this challenge we introduce a novel approach to optimize the 3D-GS representation in a canonical space by fusing the sparse cues in the common space where we leverage a pre-trained 2D diffusion model to synthesize unseen views while keeping the consistency with the observed 2D appearances. We demonstrate our method can reconstruct high-quality animatable 3D humans in various challenging examples in the presence of occlusion image crops few-shot and extremely sparse observations. After reconstruction our method is capable of not only rendering the scene in any novel views at arbitrary time instances but also editing the 3D scene by removing individual humans or applying different motions for each human. Through various experiments we demonstrate the quality and efficiency of our methods over alternative existing approaches.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Lee_Guess_The_Unseen_Dynamic_3D_Scene_Reconstruction_from_Partial_2D_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Lee_Guess_The_Unseen_Dynamic_3D_Scene_Reconstruction_from_Partial_2D_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.14410",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:23:56.525625+00:00",
+        "sha256": "6d343d377e4ed7df622f40f4464fa3de56d488df61371ddce621d8e1a836f8e5"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context"
+    },
+    {
+      "publication": {
+        "title": "GART: Gaussian Articulated Template Models",
+        "authors": [
+          "Jiahui Lei",
+          "Yufu Wang",
+          "Georgios Pavlakos",
+          "Lingjie Liu",
+          "Kostas Daniilidis"
+        ],
+        "abstract": "We introduce Gaussian Articulated Template Model (GART) an explicit efficient and expressive representation for non-rigid articulated subject capturing and rendering from monocular videos. GART utilizes a mixture of moving 3D Gaussians to explicitly approximate a deformable subject's geometry and appearance. It takes advantage of a categorical template model prior (SMPL SMAL etc.) with learnable forward skinning while further generalizing to more complex non-rigid deformations with novel latent bones. GART can be reconstructed via differentiable rendering from monocular videos in seconds or minutes and rendered in novel poses faster than 150fps.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Lei_GART_Gaussian_Articulated_Template_Models_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Lei_GART_Gaussian_Articulated_Template_Models_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.16099",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:21:19.062852+00:00",
+        "sha256": "543a531db0d72fcf0b64dff70024ba4293719bd7395ce40657c955df2ea9c79b"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian representation in title or explicit primitives with rendering/application context"
+    },
+    {
+      "publication": {
+        "title": "Animatable Gaussians: Learning Pose-dependent Gaussian Maps for High-fidelity Human Avatar Modeling",
+        "authors": [
+          "Zhe Li",
+          "Zerong Zheng",
+          "Lizhen Wang",
+          "Yebin Liu"
+        ],
+        "abstract": "Modeling animatable human avatars from RGB videos is a long-standing and challenging problem. Recent works usually adopt MLP-based neural radiance fields (NeRF) to represent 3D humans but it remains difficult for pure MLPs to regress pose-dependent garment details. To this end we introduce Animatable Gaussians a new avatar representation that leverages powerful 2D CNNs and 3D Gaussian splatting to create high-fidelity avatars. To associate 3D Gaussians with the animatable avatar we learn a parametric template from the input videos and then parameterize the template on two front & back canonical Gaussian maps where each pixel represents a 3D Gaussian. The learned template is adaptive to the wearing garments for modeling looser clothes like dresses. Such template-guided 2D parameterization enables us to employ a powerful StyleGAN-based CNN to learn the pose-dependent Gaussian maps for modeling detailed dynamic appearances. Furthermore we introduce a pose projection strategy for better generalization given novel poses. Overall our method can create lifelike avatars with dynamic realistic and generalized appearances. Experiments show that our method outperforms other state-of-the-art approaches. Code: https://github.com/lizhe00/AnimatableGaussians.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Li_Animatable_Gaussians_Learning_Pose-dependent_Gaussian_Maps_for_High-fidelity_Human_Avatar_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Animatable_Gaussians_Learning_Pose-dependent_Gaussian_Maps_for_High-fidelity_Human_Avatar_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:22:28.173914+00:00",
+        "sha256": "04bf983f9bf8c5cb796cf928a5acf67c3873b86241649c3f3a9a13fe5d4a96e6"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context"
+    },
+    {
+      "publication": {
         "title": "Know Your Neighbors: Improving Single-View Reconstruction via Spatial Vision-Language Reasoning",
         "authors": [
           "Rui Li",
@@ -859,6 +1223,63 @@
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Sat2Scene: 3D Urban Scene Generation from Satellite Images with Diffusion",
+        "authors": [
+          "Zuoyue Li",
+          "Zhenqiang Li",
+          "Zhaopeng Cui",
+          "Marc Pollefeys",
+          "Martin R. Oswald"
+        ],
+        "abstract": "Directly generating scenes from satellite imagery offers exciting possibilities for integration into applications like games and map services. However challenges arise from significant view changes and scene scale. Previous efforts mainly focused on image or video generation lacking exploration into the adaptability of scene generation for arbitrary views. Existing 3D generation works either operate at the object level or are difficult to utilize the geometry obtained from satellite imagery. To overcome these limitations we propose a novel architecture for direct 3D scene generation by introducing diffusion models into 3D sparse representations and combining them with neural rendering techniques. Specifically our approach generates texture colors at the point level for a given geometry using a 3D diffusion model first which is then transformed into a scene representation in a feed-forward manner. The representation can be utilized to render arbitrary views which would excel in both single-frame quality and inter-frame consistency. Experiments in two city-scale datasets show that our model demonstrates proficiency in generating photo-realistic street-view image sequences and cross-view urban scenes from satellite imagery.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Li_Sat2Scene_3D_Urban_Scene_Generation_from_Satellite_Images_with_Diffusion_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Sat2Scene_3D_Urban_Scene_Generation_from_Satellite_Images_with_Diffusion_CVPR_2024_paper.pdf",
+        "arxiv_id": "2401.10786",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:24:29.504573+00:00",
+        "sha256": "482c783728187f836b2d48a76d9b3b56231611c51b486185380ecbf9c018f746"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "LucidDreamer: Towards High-Fidelity Text-to-3D Generation via Interval Score Matching",
+        "authors": [
+          "Yixun Liang",
+          "Xin Yang",
+          "Jiantao Lin",
+          "Haodong Li",
+          "Xiaogang Xu",
+          "Yingcong Chen"
+        ],
+        "abstract": "The recent advancements in text-to-3D generation mark a significant milestone in generative models unlocking new possibilities for creating imaginative 3D assets across various real-world scenarios. While recent advancements in text-to-3D generation have shown promise they often fall short in rendering detailed and high-quality 3D models. This problem is especially prevalent as many methods base themselves on Score Distillation Sampling (SDS). This paper identifies a notable deficiency in SDS that it brings inconsistent and low-quality updating direction for the 3D model causing the over-smoothing effect. To address this we propose a novel approach called Interval Score Matching (ISM). ISM employs deterministic diffusing trajectories and utilizes interval-based score matching to counteract over-smoothing. Furthermore we incorporate 3D Gaussian Splatting into our text-to-3D generation pipeline. Extensive experiments show that our model largely outperforms the state-of-the-art in quality and training efficiency.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liang_LucidDreamer_Towards_High-Fidelity_Text-to-3D_Generation_via_Interval_Score_Matching_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liang_LucidDreamer_Towards_High-Fidelity_Text-to-3D_Generation_via_Interval_Score_Matching_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.11284",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:22:15.372631+00:00",
+        "sha256": "bd4176212ab16dc1c2dbddad1f65c1ea5b1334d6d69340dd84b564ab41707ad7"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context"
     },
     {
       "publication": {
@@ -958,6 +1379,34 @@
       "capture": {
         "observed_at": "2026-11-12T02:39:56.962334+00:00",
         "sha256": "52205763d9500a5e4718846851289c7690bd2974195d4f5ae60257d38df311af"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "GenN2N: Generative NeRF2NeRF Translation",
+        "authors": [
+          "Xiangyue Liu",
+          "Han Xue",
+          "Kunming Luo",
+          "Ping Tan",
+          "Li Yi"
+        ],
+        "abstract": "We present GenN2N a unified NeRF-to-NeRF translation framework for various NeRF translation tasks such as text-driven NeRF editing colorization super-resolution inpainting etc. Unlike previous methods designed for individual translation tasks with task-specific schemes GenN2N achieves all these NeRF editing tasks by employing a plug-and-play image-to-image translator to perform editing in the 2D domain and lifting 2D edits into the 3D NeRF space. Since the 3D consistency of 2D edits may not be assured we propose to model the distribution of the underlying 3D edits through a generative model that can cover all possible edited NeRFs. To model the distribution of 3D edited NeRFs from 2D edited images we carefully design a VAE-GAN that encodes images while decoding NeRFs. The latent space is trained to align with a Gaussian distribution and the NeRFs are supervised through an adversarial loss on its renderings. To ensure the latent code does not depend on 2D viewpoints but truly reflects the 3D edits we also regularize the latent code through a contrastive learning scheme. Extensive experiments on various editing tasks show GenN2N as a universal framework performs as well or better than task-specific specialists while possessing flexible generative power. More results on our project page: https://xiangyueliu.github.io/GenN2N/.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Liu_GenN2N_Generative_NeRF2NeRF_Translation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_GenN2N_Generative_NeRF2NeRF_Translation_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.02788",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T07:50:13.586839+00:00",
+        "sha256": "9a94af9b2c408338a6a5e53dce9ce21f91735ae01b5c0d4207393c93e46bff7b"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -1119,6 +1568,58 @@
     },
     {
       "publication": {
+        "title": "Contrastive Denoising Score for Text-guided Latent Diffusion Image Editing",
+        "authors": [
+          "Hyelin Nam",
+          "Gihyun Kwon",
+          "Geon Yeong Park",
+          "Jong Chul Ye"
+        ],
+        "abstract": "With the remarkable advent of text-to-image diffusion models image editing methods have become more diverse and continue to evolve. A promising recent approach in this realm is Delta Denoising Score (DDS) - an image editing technique based on Score Distillation Sampling (SDS) framework that leverages the rich generative prior of text-to-image diffusion models. However relying solely on the difference between scoring functions is insufficient for preserving specific structural elements from the original image a crucial aspect of image editing. To address this here we present an embarrassingly simple yet very powerful modification of DDS called Contrastive Denoising Score (CDS) for latent diffusion models (LDM). Inspired by the similarities and differences between DDS and the contrastive learning for unpaired image-to-image translation(CUT) we introduce a straightforward approach using CUT loss within the DDS framework. Rather than employing auxiliary networks as in the original CUT approach we leverage the intermediate features of LDM specifically those from the self-attention layers which possesses rich spatial information. Our approach enables zero-shot image-to-image translation and neural radiance field (NeRF) editing achieving structural correspondence between the input and output while maintaining content controllability. Qualitative results and comparisons demonstrates the effectiveness of our proposed method.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Nam_Contrastive_Denoising_Score_for_Text-guided_Latent_Diffusion_Image_Editing_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Nam_Contrastive_Denoising_Score_for_Text-guided_Latent_Diffusion_Image_Editing_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.18608",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:18:19.418746+00:00",
+        "sha256": "37027dc3e3662189bf9b6a4f2fb44a200da908198edb0dcf1bffd8aa0167f9d1"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "SwiftBrush: One-Step Text-to-Image Diffusion Model with Variational Score Distillation",
+        "authors": [
+          "Thuan Hoang Nguyen",
+          "Anh Tran"
+        ],
+        "abstract": "Despite their ability to generate high-resolution and diverse images from text prompts text-to-image diffusion models often suffer from slow iterative sampling processes. Model distillation is one of the most effective directions to accelerate these models. However previous distillation methods fail to retain the generation quality while requiring a significant amount of images for training either from real data or synthetically generated by the teacher model. In response to this limitation we present a novel image-free distillation scheme named SwiftBrush. Drawing inspiration from text-to-3D synthesis in which a 3D neural radiance field that aligns with the input prompt can be obtained from a 2D text-to-image diffusion prior via a specialized loss without the use of any 3D data ground-truth our approach re-purposes that same loss for distilling a pretrained multi-step text-to-image model to a student network that can generate high-fidelity images with just a single inference step. In spite of its simplicity our model stands as one of the first one-step text-to-image generators that can produce images of comparable quality to Stable Diffusion without reliance on any training image data. Remarkably SwiftBrush achieves an FID score of 16.67 and a CLIP score of 0.29 on the COCO-30K benchmark achieving competitive results or even substantially surpassing existing state-of-the-art distillation techniques.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Nguyen_SwiftBrush_One-Step_Text-to-Image_Diffusion_Model_with_Variational_Score_Distillation_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Nguyen_SwiftBrush_One-Step_Text-to-Image_Diffusion_Model_with_Variational_Score_Distillation_CVPR_2024_paper.pdf",
+        "arxiv_id": "2312.05239",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T07:49:06.901783+00:00",
+        "sha256": "b754553817dc52d9173a7846dd3060fa0690671705233649cf596dbc0a16cb87"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "Explaining the Implicit Neural Canvas: Connecting Pixels to Neurons by Tracing their Contributions",
         "authors": [
           "Namitha Padmanabhan",
@@ -1142,6 +1643,38 @@
       "capture": {
         "observed_at": "2026-11-12T02:20:21.039201+00:00",
         "sha256": "59cc2f3def7be18f4aee76042662b2da2d1945e60c55502ad06f32b40f70c98a"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "SyncTalk: The Devil is in the Synchronization for Talking Head Synthesis",
+        "authors": [
+          "Ziqiao Peng",
+          "Wentao Hu",
+          "Yue Shi",
+          "Xiangyu Zhu",
+          "Xiaomei Zhang",
+          "Hao Zhao",
+          "Jun He",
+          "Hongyan Liu",
+          "Zhaoxin Fan"
+        ],
+        "abstract": "Achieving high synchronization in the synthesis of realistic speech-driven talking head videos presents a significant challenge. Traditional Generative Adversarial Networks (GAN) struggle to maintain consistent facial identity while Neural Radiance Fields (NeRF) methods although they can address this issue often produce mismatched lip movements inadequate facial expressions and unstable head poses. A lifelike talking head requires synchronized coordination of subject identity lip movements facial expressions and head poses. The absence of these synchronizations is a fundamental flaw leading to unrealistic and artificial outcomes. To address the critical issue of synchronization identified as the \"devil\" in creating realistic talking heads we introduce SyncTalk. This NeRF-based method effectively maintains subject identity enhancing synchronization and realism in talking head synthesis. SyncTalk employs a Face-Sync Controller to align lip movements with speech and innovatively uses a 3D facial blendshape model to capture accurate facial expressions. Our HeadSync Stabilizer optimizes head poses achieving more natural head movements. The Portrait-Sync Generator restores hair details and blends the generated head with the torso for a seamless visual experience. Extensive experiments and user studies demonstrate that SyncTalk outperforms state-of-the-art methods in synchronization and realism. We recommend watching the supplementary video: https://ziqiaopeng.github.io/synctalk",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Peng_SyncTalk_The_Devil_is_in_the_Synchronization_for_Talking_Head_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Peng_SyncTalk_The_Devil_is_in_the_Synchronization_for_Talking_Head_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.17590",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:19:50.627384+00:00",
+        "sha256": "bfc9581672f64e3970d79ac9b77cec4dcfc38d3489a18856375ae71d704eaade"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -1174,6 +1707,34 @@
       "capture": {
         "observed_at": "2026-11-12T02:19:00.740900+00:00",
         "sha256": "9a48ec79bfaf731886e33cc656adbbb0ab372e1dddf0cdddf6d542a7cf70dd32"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Gated Fields: Learning Scene Reconstruction from Gated Videos",
+        "authors": [
+          "Andrea Ramazzina",
+          "Stefanie Walz",
+          "Pragyan Dahal",
+          "Mario Bijelic",
+          "Felix Heide"
+        ],
+        "abstract": "Reconstructing outdoor 3D scenes from temporal observations is a challenge that recent work on neural fields has offered a new avenue for. However existing methods that recover scene properties such as geometry appearance or radiance solely from RGB captures often fail when handling poorly-lit or texture-deficient regions. Similarly recovering scenes with scanning lidar sensors is also difficult due to their low angular sampling rate which makes recovering expansive real-world scenes difficult. Tackling these gaps we introduce Gated Fields - a neural scene reconstruction method that utilizes active gated video sequences. To this end we propose a neural rendering approach that seamlessly incorporates time-gated capture and illumination. Our method exploits the intrinsic depth cues in the gated videos achieving precise and dense geometry reconstruction irrespective of ambient illumination conditions. We validate the method across day and night scenarios and find that Gated Fields compares favorably to RGB and LiDAR reconstruction methods",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Ramazzina_Gated_Fields_Learning_Scene_Reconstruction_from_Gated_Videos_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Ramazzina_Gated_Fields_Learning_Scene_Reconstruction_from_Gated_Videos_CVPR_2024_paper.pdf",
+        "arxiv_id": "2405.19819",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:16:37.500187+00:00",
+        "sha256": "32733201f43bd65d5b144c4d11f6b0766729301b791d56ccba711c19cf1abfdb"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -1238,6 +1799,64 @@
     },
     {
       "publication": {
+        "title": "Neural Point Cloud Diffusion for Disentangled 3D Shape and Appearance Generation",
+        "authors": [
+          "Philipp Schröppel",
+          "Christopher Wewer",
+          "Jan Eric Lenssen",
+          "Eddy Ilg",
+          "Thomas Brox"
+        ],
+        "abstract": "Controllable generation of 3D assets is important for many practical applications like content creation in movies games and engineering as well as in AR/VR. Recently diffusion models have shown remarkable results in generation quality of 3D objects. However none of the existing models enable disentangled generation to control the shape and appearance separately. For the first time we present a suitable representation for 3D diffusion models to enable such disentanglement by introducing a hybrid point cloud and neural radiance field approach. We model a diffusion process over point positions jointly with a high-dimensional feature space for a local density and radiance decoder. While the point positions represent the coarse shape of the object the point features allow modeling the geometry and appearance details. This disentanglement enables us to sample both independently and therefore to control both separately. Our approach sets a new state of the art in generation compared to previous disentanglement-capable methods by reduced FID scores of 30-90% and is on-par with other non-disentanglement-capable state-of-the art methods.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Schroppel_Neural_Point_Cloud_Diffusion_for_Disentangled_3D_Shape_and_Appearance_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Schroppel_Neural_Point_Cloud_Diffusion_for_Disentangled_3D_Shape_and_Appearance_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:18:20.616105+00:00",
+        "sha256": "0f38bfc251755987b58d21f8c130bc0169929f8ad316497b6886c4ad5c9c3893"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Control4D: Efficient 4D Portrait Editing with Text",
+        "authors": [
+          "Ruizhi Shao",
+          "Jingxiang Sun",
+          "Cheng Peng",
+          "Zerong Zheng",
+          "Boyao Zhou",
+          "Hongwen Zhang",
+          "Yebin Liu"
+        ],
+        "abstract": "We introduce Control4D an innovative framework for editing dynamic 4D portraits using text instructions. Our method addresses the prevalent challenges in 4D editing notably the inefficiencies of existing 4D representations and the inconsistent editing effect caused by diffusion-based editors. We first propose GaussianPlanes a novel 4D representation that makes Gaussian Splatting more structured by applying plane-based decomposition in 3D space and time. This enhances both efficiency and robustness in 4D editing. Furthermore we propose to leverage a 4D generator to learn a more continuous generation space from inconsistent edited images produced by the diffusion-based editor which effectively improves the consistency and quality of 4D editing. Comprehensive evaluation demonstrates the superiority of Control4D including significantly reduced training time high-quality rendering and spatial-temporal consistency in 4D portrait editing.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Shao_Control4D_Efficient_4D_Portrait_Editing_with_Text_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_Control4D_Efficient_4D_Portrait_Editing_with_Text_CVPR_2024_paper.pdf",
+        "arxiv_id": "2305.20082",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:24:30.694388+00:00",
+        "sha256": "f40c2b53eda75228550ff4227223eaefc5cef54195d5a09fcd93d14d32e59162"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context"
+    },
+    {
+      "publication": {
         "title": "ZeroRF: Fast Sparse View 360deg Reconstruction with Zero Pretraining",
         "authors": [
           "Ruoxi Shi",
@@ -1259,6 +1878,34 @@
       "capture": {
         "observed_at": "2026-11-12T02:55:54.831244+00:00",
         "sha256": "57e98761428bcf456f1ca9cbd67dd574ae44783afbc06542ceff3686ad0e941f"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "REACTO: Reconstructing Articulated Objects from a Single Video",
+        "authors": [
+          "Chaoyue Song",
+          "Jiacheng Wei",
+          "Chuan Sheng Foo",
+          "Guosheng Lin",
+          "Fayao Liu"
+        ],
+        "abstract": "In this paper we address the challenge of reconstructing general articulated 3D objects from a single video. Existing works employing dynamic neural radiance fields have advanced the modeling of articulated objects like humans and animals from videos but face challenges with piece-wise rigid general articulated objects due to limitations in their deformation models. To tackle this we propose Quasi-Rigid Blend Skinning a novel deformation model that enhances the rigidity of each part while maintaining flexible deformation of the joints. Our primary insight combines three distinct approaches: 1) an enhanced bone rigging system for improved component modeling 2) the use of quasi-sparse skinning weights to boost part rigidity and reconstruction fidelity and 3) the application of geodesic point assignment for precise motion and seamless deformation. Our method outperforms previous works in producing higher-fidelity 3D reconstructions of general articulated objects as demonstrated on both real and synthetic datasets. Project page: https://chaoyuesong.github.io/REACTO.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Song_REACTO_Reconstructing_Articulated_Objects_from_a_Single_Video_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Song_REACTO_Reconstructing_Articulated_Objects_from_a_Single_Video_CVPR_2024_paper.pdf",
+        "arxiv_id": "2404.11151",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:22:21.317716+00:00",
+        "sha256": "15997e5c808eb86fb88dda1807737b486eee72a8d4c120b36110de0b239c4e12"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -1370,6 +2017,35 @@
       },
       "metadata_outcome": "include",
       "metadata_reason": "Gaussian splatting abstract with representation/application context"
+    },
+    {
+      "publication": {
+        "title": "Lift3D: Zero-Shot Lifting of Any 2D Vision Model to 3D",
+        "authors": [
+          "Mukund Varma T",
+          "Peihao Wang",
+          "Zhiwen Fan",
+          "Zhangyang Wang",
+          "Hao Su",
+          "Ravi Ramamoorthi"
+        ],
+        "abstract": "In recent years there has been an explosion of 2D vision models for numerous tasks such as semantic segmentation style transfer or scene editing enabled by large-scale 2D image datasets. At the same time there has been renewed interest in 3D scene representations such as neural radiance fields from multi-view images. However the availability of 3D or multiview data is still substantially limited compared to 2D image datasets making extending 2D vision models to 3D data highly desirable but also very challenging. Indeed extending a single 2D vision operator like scene editing to 3D typically requires a highly creative method specialized to that task and often requires per-scene optimization. In this paper we ask the question of whether any 2D vision model can be lifted to make 3D consistent predictions. We answer this question in the affirmative; our new Lift3D method trains to predict unseen views on feature spaces generated by a few visual models (i.e. DINO and CLIP) but then generalizes to novel vision operators and tasks such as style transfer super-resolution open vocabulary segmentation and image colorization; for some of these tasks there is no comparable previous 3D method. In many cases we even outperform state-of-the-art methods specialized for the task in question. Moreover Lift3D is a zero-shot method in the sense that it requires no task-specific training nor scene-specific optimization.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/T_Lift3D_Zero-Shot_Lifting_of_Any_2D_Vision_Model_to_3D_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/T_Lift3D_Zero-Shot_Lifting_of_Any_2D_Vision_Model_to_3D_CVPR_2024_paper.pdf",
+        "arxiv_id": "2403.18922",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T07:48:30.312548+00:00",
+        "sha256": "d8c1813a3c2363fd08f9f6388cc1090eb91b444996f8e4cd72398f956406523b"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
     },
     {
       "publication": {
@@ -1489,6 +2165,37 @@
     },
     {
       "publication": {
+        "title": "What You See is What You GAN: Rendering Every Pixel for High-Fidelity Geometry in 3D GANs",
+        "authors": [
+          "Alex Trevithick",
+          "Matthew Chan",
+          "Towaki Takikawa",
+          "Umar Iqbal",
+          "Shalini De Mello",
+          "Manmohan Chandraker",
+          "Ravi Ramamoorthi",
+          "Koki Nagano"
+        ],
+        "abstract": "3D-aware Generative Adversarial Networks (GANs) have shown remarkable progress in learning to generate multi-view-consistent images and 3D geometries of scenes from collections of 2D images via neural volume rendering. Yet the significant memory and computational costs of dense sampling in volume rendering have forced 3D GANs to adopt patch-based training or employ low-resolution rendering with post-processing 2D super resolution which sacrifices multiview consistency and the quality of resolved geometry. Consequently 3D GANs have not yet been able to fully resolve the rich 3D geometry present in 2D images. In this work we propose techniques to scale neural volume rendering to the much higher resolution of native 2D images thereby resolving fine-grained 3D geometry with unprecedented detail. Our approach employs learning-based samplers for accelerating neural rendering for 3D GAN training using up to 5 times fewer depth samples. This enables us to explicitly \"render every pixel\" of the full-resolution image during training and inference without post-processing superresolution in 2D. Together with our strategy to learn high-quality surface geometry our method synthesizes high-resolution 3D geometry and strictly view-consistent images while maintaining image quality on par with baselines relying on post-processing super resolution. We demonstrate state-of-the-art 3D gemetric quality on FFHQ and AFHQ setting a new standard for unsupervised learning of 3D shapes in 3D GANs.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Trevithick_What_You_See_is_What_You_GAN_Rendering_Every_Pixel_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Trevithick_What_You_See_is_What_You_GAN_Rendering_Every_Pixel_CVPR_2024_paper.pdf",
+        "arxiv_id": "2401.02411",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:22:03.461061+00:00",
+        "sha256": "cd025333675efdbbc9a194c6c3619e0a5883cb7ae1221206270d4b659be64095"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "CAD: Photorealistic 3D Generation via Adversarial Distillation",
         "authors": [
           "Ziyu Wan",
@@ -1595,6 +2302,37 @@
       "capture": {
         "observed_at": "2026-11-12T02:53:54.708539+00:00",
         "sha256": "005f21e8a0a64831aaabe57ca9d13e4342419b5d281769bb0a460c55a890c992"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Editable Scene Simulation for Autonomous Driving via Collaborative LLM-Agents",
+        "authors": [
+          "Yuxi Wei",
+          "Zi Wang",
+          "Yifan Lu",
+          "Chenxin Xu",
+          "Changxing Liu",
+          "Hao Zhao",
+          "Siheng Chen",
+          "Yanfeng Wang"
+        ],
+        "abstract": "Scene simulation in autonomous driving has gained significant attention because of its huge potential for generating customized data. However existing editable scene simulation approaches face limitations in terms of user interaction efficiency multi-camera photo-realistic rendering and external digital assets integration. To address these challenges this paper introduces ChatSim the first system that enables editable photo-realistic 3D driving scene simulations via natural language commands with external digital assets. To enable editing with high command flexibility ChatSim leverages a large language model (LLM) agent collaboration framework. To generate photo-realistic outcomes ChatSim employs a novel multi-camera neural radiance field method. Furthermore to unleash the potential of extensive high-quality digital assets ChatSim employs a novel multi-camera lighting estimation method to achieve scene-consistent assets' rendering. Our experiments on Waymo Open Dataset demonstrate that ChatSim can handle complex language commands and generate corresponding photo-realistic scene videos. Code can be accessed at: https://github.com/yifanlu0227/ChatSim.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wei_Editable_Scene_Simulation_for_Autonomous_Driving_via_Collaborative_LLM-Agents_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wei_Editable_Scene_Simulation_for_Autonomous_Driving_via_Collaborative_LLM-Agents_CVPR_2024_paper.pdf",
+        "arxiv_id": "2402.05746",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:24:40.046383+00:00",
+        "sha256": "dfbe7d617c2861fb33926b0a70d6cc01c90221ca35b3b16a4b3ea4d3b83fc99d"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -1803,6 +2541,33 @@
     },
     {
       "publication": {
+        "title": "3DiffTection: 3D Object Detection with Geometry-Aware Diffusion Features",
+        "authors": [
+          "Chenfeng Xu",
+          "Huan Ling",
+          "Sanja Fidler",
+          "Or Litany"
+        ],
+        "abstract": "3DiffTection introduces a novel method for 3D object detection from single images utilizing a 3D-aware diffusion model for feature extraction. Addressing the resource-intensive nature of annotating large-scale 3D image data our approach leverages pretrained diffusion models traditionally used for 2D tasks and adapts them for 3D detection through geometric and semantic tuning. Geometrically we enhance the model to perform view synthesis from single images incorporating an epipolar warp operator. This process utilizes easily accessible posed image data eliminating the need for manual annotation. Semantically the model is further refined on target detection data. Both stages utilize ControlNet ensuring the preservation of original feature capabilities. Through our methodology we obtain 3D-aware features that excel in identifying cross-view point correspondences. In 3D detection 3DiffTection substantially surpasses previous benchmarks e.g. Cube-RCNN by 9.43% in AP3D on the Omni3D-ARkitscene dataset. Furthermore 3DiffTection demonstrates robust label efficiency and generalizes well to cross-domain data nearly matching fully-supervised models in zero-shot scenarios.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Xu_3DiffTection_3D_Object_Detection_with_Geometry-Aware_Diffusion_Features_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_3DiffTection_3D_Object_Detection_with_Geometry-Aware_Diffusion_Features_CVPR_2024_paper.pdf",
+        "arxiv_id": "2311.04391",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T07:48:29.173017+00:00",
+        "sha256": "b08bd0cd3b21280013d3f60d46321843158aeb5e06ca889a5f98ef5e58362dc2"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
         "title": "Artist-Friendly Relightable and Animatable Neural Heads",
         "authors": [
           "Yingyan Xu",
@@ -1884,6 +2649,65 @@
       "capture": {
         "observed_at": "2026-11-12T02:09:11.232316+00:00",
         "sha256": "ed274ad5de4bbe311e20fa2cc9f087a8c0dbbc6fdba38804887443cbb3b77a0b"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "NEAT: Distilling 3D Wireframes from Neural Attraction Fields",
+        "authors": [
+          "Nan Xue",
+          "Bin Tan",
+          "Yuxi Xiao",
+          "Liang Dong",
+          "Gui-Song Xia",
+          "Tianfu Wu",
+          "Yujun Shen"
+        ],
+        "abstract": "This paper studies the problem of structured 3D recon- struction using wireframes that consist of line segments and junctions focusing on the computation of structured boundary geometries of scenes. Instead of leveraging matching-based solutions from 2D wireframes (or line segments) for 3D wireframe reconstruction as done in prior arts we present NEAT a rendering-distilling formulation using neural fields to represent 3D line segments with 2D observations and bipartite matching for perceiving and dis- tilling of a sparse set of 3D global junctions. The proposed NEAT enjoys the joint optimization of the neural fields and the global junctions from scratch using view-dependent 2D observations without precomputed cross-view feature matching. Comprehensive experiments on the DTU and BlendedMVS datasets demonstrate our NEAT's superiority over state-of-the-art alternatives for 3D wireframe recon- struction. Moreover the distilled 3D global junctions by NEAT are a better initialization than SfM points for the recently-emerged 3D Gaussian Splatting for high-fidelity novel view synthesis using about 20 times fewer initial 3D points. Project page: https://xuenan.net/neat",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Xue_NEAT_Distilling_3D_Wireframes_from_Neural_Attraction_Fields_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xue_NEAT_Distilling_3D_Wireframes_from_Neural_Attraction_Fields_CVPR_2024_paper.pdf",
+        "arxiv_id": "2307.10206",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:23:48.404505+00:00",
+        "sha256": "f0e6de18a41f4ade2a92c51a19c3b25bf084ea509c2baa5aef3f6f9d837f8184"
+      },
+      "metadata_outcome": "include",
+      "metadata_reason": "Gaussian splatting abstract with representation/application context"
+    },
+    {
+      "publication": {
+        "title": "Neural Visibility Field for Uncertainty-Driven Active Mapping",
+        "authors": [
+          "Shangjie Xue",
+          "Jesse Dill",
+          "Pranay Mathur",
+          "Frank Dellaert",
+          "Panagiotis Tsiotra",
+          "Danfei Xu"
+        ],
+        "abstract": "This paper presents Neural Visibility Field (NVF) a novel uncertainty quantification method for Neural Radiance Fields (NeRF) applied to active mapping. Our key insight is that regions not visible in the training views lead to inherently unreliable color predictions by NeRF at this region resulting in increased uncertainty in the synthesized views. To address this we propose to use Bayesian Networks to composite position-based field uncertainty into ray-based uncertainty in camera observations. Consequently NVF naturally assigns higher uncertainty to unobserved regions aiding robots to select the most informative next viewpoints. Extensive evaluations show that NVF excels not only in uncertainty quantification but also in scene reconstruction for active mapping outperforming existing methods. More details can be found at https://sites.google.com/view/nvf-cvpr24/.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Xue_Neural_Visibility_Field_for_Uncertainty-Driven_Active_Mapping_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xue_Neural_Visibility_Field_for_Uncertainty-Driven_Active_Mapping_CVPR_2024_paper.pdf",
+        "arxiv_id": null,
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:16:54.804796+00:00",
+        "sha256": "eca9282b9ecbb47f8a63ec33dfc7be24f5a6def0c0c6f9f434697a128206ef4c"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
@@ -2086,6 +2910,33 @@
       "capture": {
         "observed_at": "2026-11-12T02:36:16.281703+00:00",
         "sha256": "1a7b2d592cc84d4b49d9e8da8d830f1d11a28c03623240f5d2813c8f0de583b4"
+      },
+      "metadata_outcome": "review",
+      "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"
+    },
+    {
+      "publication": {
+        "title": "Grounding and Enhancing Grid-based Models for Neural Fields",
+        "authors": [
+          "Zelin Zhao",
+          "Fenglei Fan",
+          "Wenlong Liao",
+          "Junchi Yan"
+        ],
+        "abstract": "Many contemporary studies utilize grid-based models for neural field representation but a systematic analysis of grid-based models is still missing hindering the improvement of those models. Therefore this paper introduces a theoretical framework for grid-based models. This framework points out that these models' approximation and generalization behaviors are determined by grid tangent kernels (GTK) which are intrinsic properties of grid-based models. The proposed framework facilitates a consistent and systematic analysis of diverse grid-based models. Furthermore the introduced framework motivates the development of a novel grid-based model named the Multiplicative Fourier Adaptive Grid (MulFAGrid). The numerical analysis demonstrates that MulFAGrid exhibits a lower generalization bound than its predecessors indicating its robust generalization performance. Empirical studies reveal that MulFAGrid achieves state-of-the-art performance in various tasks including 2D image fitting 3D signed distance field (SDF) reconstruction and novel view synthesis demonstrating superior representation ability. The project website is available at https://sites.google.com/view/cvpr24-2034-submission/home.",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zhao_Grounding_and_Enhancing_Grid-based_Models_for_Neural_Fields_CVPR_2024_paper.html",
+        "venue": "CVPR",
+        "venue_year": 2024,
+        "track": "main",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zhao_Grounding_and_Enhancing_Grid-based_Models_for_Neural_Fields_CVPR_2024_paper.pdf",
+        "arxiv_id": "2403.20002",
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "status": "official_publication_metadata_verified"
+      },
+      "capture": {
+        "observed_at": "2026-11-12T03:21:06.054779+00:00",
+        "sha256": "7e2d1335e413cbf1c70e89636aadabdc782217b25469854d7a6c6fe89e5145d9"
       },
       "metadata_outcome": "review",
       "metadata_reason": "Foundation/adjacent representation requires explicit scope justification"

@@ -1,0 +1,99 @@
+{
+  "canonical_modified": false,
+  "network_requests": 0,
+  "reviews": [
+    {
+      "field": "title",
+      "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+      "network_requests": 0,
+      "original_observed_at_preserved": true,
+      "publication": {
+        "abstract": "Video transformers have become the de facto standard for human action recognition yet their exclusive reliance on the RGB modality still limits their adoption in certain domains. One such domain is Activities of Daily Living (ADL) where RGB alone is not sufficient to distinguish between visually similar actions or actions observed from multiple viewpoints. To facilitate the adoption of video transformers for ADL we hypothesize that the augmentation of RGB with human pose information known for its sensitivity to fine-grained motion and multiple viewpoints is essential. Consequently we introduce the first Pose Induced Video Transformer: PI-ViT (or π-ViT) a novel approach that augments the RGB representations learned by video transformers with 2D and 3D pose information. The key elements of π-ViT are two plug-in modules 2D Skeleton Induction Module and 3D Skeleton Induction Module that are responsible for inducing 2D and 3D pose information into the RGB representations. These modules operate by performing pose-aware auxiliary tasks a design choice that allows π-ViT to discard the modules during inference. Notably π-ViT achieves the state-of-the-art performance on three prominent ADL datasets encompassing both real-world and large-scale RGB-D datasets without requiring poses or additional computational overhead at inference.",
+        "arxiv_id": null,
+        "authors": [
+          "Dominick Reilly",
+          "Srijan Das"
+        ],
+        "doi": null,
+        "match_method": "reviewed_title_variant_exact_authors_edition_pdf",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Reilly_Just_Add__Pose_Induced_Video_Transformers_for_Understanding_Activities_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Reilly_Just_Add__Pose_Induced_Video_Transformers_for_Understanding_Activities_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Just Add π! Pose Induced Video Transformers for Understanding Activities of Daily Living",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      },
+      "replay_status": "no_op",
+      "response_sha256": "819cd3f240da5f2ac1b972807932608f58daca4d1df034de782710d2a2b2760c",
+      "review_file": "data/reviews/cvpr2024-just-add-pi-metadata-review-20261111.json",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Reilly_Just_Add__Pose_Induced_Video_Transformers_for_Understanding_Activities_CVPR_2024_paper.html",
+      "status": "applied"
+    },
+    {
+      "field": "authors",
+      "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+      "network_requests": 0,
+      "original_observed_at_preserved": true,
+      "publication": {
+        "abstract": "Despite encouraging results from recent developments in transfer learning for adapting pre-trained model to downstream tasks the performance of model probing is still lagging behind the state-of-the-art parameter efficient tuning methods. Our investigation reveals that existing model probing methods perform well for the easy case when the source domain (where models are pre-trained) and the adapted domain are similar but fail for the difficult case when the two domains are significantly different. Simply incorporating features extracted from multiple layers and increasing complexity of the probing model can mitigate the gap in the difficult case but degrades the performance in the easy case. To address this challenge we propose structured model probing (SMP) that is able to deliver good performance for both cases through structured regularization. The regularization performs feature selection leveraging model structure as a prior and controls the complexity of the probing model through the weights of selected structures. This enables us to construct a simple adaptation model with a small number of selected features and a linear prediction model for the easy case; and to automatically increase the complexity of adaptation model with a large number of selected features and a non-linear model for the difficult case. Our extensive empirical studies show that SMP significantly outperforms the state-of-the-art methods for parameter efficient tuning and at the same time still maintains the advantage of computational efficiency for probing-based methods.",
+        "arxiv_id": null,
+        "authors": [
+          "Zhi-Fan Wu",
+          "Chaojie Mao",
+          "Xue Wang",
+          "Jianwen Jiang",
+          "Yiliang Lv",
+          "Rong Jin"
+        ],
+        "doi": null,
+        "match_method": "reviewed_author_variant_exact_title_edition_pdf",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wu_Structured_Model_Probing_Empowering_Efficient_Transfer_Learning_by_Structured_Regularization_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Structured_Model_Probing_Empowering_Efficient_Transfer_Learning_by_Structured_Regularization_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Structured Model Probing: Empowering Efficient Transfer Learning by Structured Regularization",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      },
+      "replay_status": "no_op",
+      "response_sha256": "7b3aa4c4483f2763c351945385cc81648e5df08af6351a1b560efe88a12a0680",
+      "review_file": "data/reviews/cvpr2024-structured-probing-metadata-review-20261111.json",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wu_Structured_Model_Probing_Empowering_Efficient_Transfer_Learning_by_Structured_Regularization_CVPR_2024_paper.html",
+      "status": "applied"
+    },
+    {
+      "field": "authors",
+      "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+      "network_requests": 0,
+      "original_observed_at_preserved": true,
+      "publication": {
+        "abstract": "Underwater visual understanding has recently gained increasing attention within the computer vision community for studying and monitoring underwater ecosystems. Among these coral reefs play an important and intricate role often referred to as the rainforests of the sea due to their rich biodiversity and crucial environmental impact. Existing coral analysis due to its technical complexity requires significant manual work from coral biologists therefore hindering scalable and comprehensive studies. In this paper we introduce CoralSCOP the first foundation model designed for the automatic dense segmentation of coral reefs. CoralSCOP is developed to accurately assign labels to different coral entities addressing the challenges in the semantic analysis of coral imagery. Its main objective is to identify and delineate the irregular boundaries between various coral individuals across different granularities such as coral/non-coral growth form and genus. This task is challenging due to the semantic agnostic nature or fixed limited semantic categories of previous generic segmentation methods which fail to adequately capture the complex characteristics of coral structures. By introducing a novel parallel semantic branch CoralSCOP can produce high-quality coral masks with semantics that enable a wide range of downstream coral reef analysis tasks. We demonstrate that CoralSCOP exhibits a strong zero-shot ability to segment unseen coral images. To effectively train our foundation model we propose CoralMask a new dataset with 41297 densely labeled coral images and 330144 coral masks. We have conducted comprehensive and extensive experiments to demonstrate the advantages of CoralSCOP over existing generalist segmentation algorithms and coral reef analytical approaches.",
+        "arxiv_id": null,
+        "authors": [
+          "Ziqiang Zheng",
+          "Haixin Liang",
+          "Binh-Son Hua",
+          "Yue Him Wong",
+          "Put Ang",
+          "Apple Pui Yi Chui",
+          "Sai-Kit Yeung"
+        ],
+        "doi": null,
+        "match_method": "reviewed_author_variant_exact_title_edition_pdf",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Zheng_CoralSCOP_Segment_any_COral_Image_on_this_Planet_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_CoralSCOP_Segment_any_COral_Image_on_this_Planet_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "CoralSCOP: Segment any COral Image on this Planet",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      },
+      "replay_status": "no_op",
+      "response_sha256": "13f625e2765424424c65e8c40dc04547335d2097d16fcbd56318e5fabbe62fef",
+      "review_file": "data/reviews/cvpr2024-coralscop-metadata-review-20261111.json",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_CoralSCOP_Segment_any_COral_Image_on_this_Planet_CVPR_2024_paper.html",
+      "status": "applied"
+    }
+  ]
+}

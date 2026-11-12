@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="M&amp;M VTO: Multi-Garment Virtual Try-On and Editing">
+<meta name="citation_author" content="Zhu, Luyang">
+<meta name="citation_author" content="Li, Yingwei">
+<meta name="citation_author" content="Liu, Nan">
+<meta name="citation_author" content="Peng, Hao">
+<meta name="citation_author" content="Yang, Dawei">
+<meta name="citation_author" content="Kemelmacher-Shlizerman, Ira">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="1346">
+<meta name="citation_lastpage" content="1356">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhu_MM_VTO_Multi-Garment_Virtual_Try-On_and_Editing_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        M&amp;M VTO: Multi-Garment Virtual Try-On and Editing
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Luyang Zhu, Yingwei Li, Nan Liu, Hao Peng, Dawei Yang, Ira Kemelmacher-Shlizerman</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 1346-1356
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    We present M&amp;M VTO-a mix and match virtual try-on method that takes as input multiple garment images text description for garment layout and an image of a person. An example input includes: an image of a shirt an image of a pair of pants &quot;rolled sleeves shirt tucked in&quot; and an image of a person. The output is a visualization of how those garments (in the desired layout) would look like on the given person. Key contributions of our method are: 1) a single stage diffusion based model with no super resolution cascading that allows to mix and match multiple garments at 1024x512 resolution preserving and warping intricate garment details 2) architecture design (VTO UNet Diffusion Transformer) to disentangle denoising from person specific features allowing for a highly effective finetuning strategy for identity preservation (6MB model per individual vs 4GB achieved with e.g. dreambooth finetuning); solving a common identity loss problem in current virtual try-on methods 3) layout control for multiple garments via text inputs finetuned over PaLI-3 for virtual try-on task. Experimental results indicate that M&amp;M VTO achieves state-of-the-art performance both qualitatively and quantitatively as well as opens up new opportunities for virtual try-on via language-guided and multi-garment try-on.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Zhu_MM_VTO_Multi-Garment_Virtual_Try-On_and_Editing_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Zhu_MM_VTO_Multi-Garment_CVPR_2024_supplemental.zip">supp</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Zhu_2024_CVPR,
+    author    = {Zhu, Luyang and Li, Yingwei and Liu, Nan and Peng, Hao and Yang, Dawei and Kemelmacher-Shlizerman, Ira},
+    title     = {M\&amp;M VTO: Multi-Garment Virtual Try-On and Editing},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {1346-1356}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

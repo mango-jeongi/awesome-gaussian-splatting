@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="Generative Region-Language Pretraining for Open-Ended Object Detection">
+<meta name="citation_author" content="Lin, Chuang">
+<meta name="citation_author" content="Jiang, Yi">
+<meta name="citation_author" content="Qu, Lizhen">
+<meta name="citation_author" content="Yuan, Zehuan">
+<meta name="citation_author" content="Cai, Jianfei">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="13958">
+<meta name="citation_lastpage" content="13968">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Lin_Generative_Region-Language_Pretraining_for_Open-Ended_Object_Detection_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        Generative Region-Language Pretraining for Open-Ended Object Detection
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Chuang Lin, Yi Jiang, Lizhen Qu, Zehuan Yuan, Jianfei Cai</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 13958-13968
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    In recent research significant attention has been devoted to the open-vocabulary object detection task aiming to generalize beyond the limited number of classes labeled during training and detect objects described by arbitrary category names at inference. Compared with conventional object detection open vocabulary object detection largely extends the object detection categories. However it relies on calculating the similarity between image regions and a set of arbitrary category names with a pretrained vision-and-language model. This implies that despite its open-set nature the task still needs the predefined object categories during the inference stage. This raises the question: What if we do not have exact knowledge of object categories during inference? In this paper we call such a new setting as generative open-ended object detection which is a more general and practical problem. To address it we formulate object detection as a generative problem and propose a simple framework named GenerateU which can detect dense objects and generate their names in a free-form way. Particularly we employ Deformable DETR as a region proposal generator with a language model translating visual regions to object names. To assess the free-form object detection task we introduce an evaluation method designed to quantitatively measure the performance of generative outcomes. Extensive experiments demonstrate strong zero-shot detection performance of our GenerateU. For example on the LVIS dataset our GenerateU achieves comparable results to the open-vocabulary object detection method GLIP even though the category names are not seen by GenerateU during inference. Code is available at: https://github.com/FoundationVision/GenerateU.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Lin_Generative_Region-Language_Pretraining_for_Open-Ended_Object_Detection_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="http://arxiv.org/abs/2403.10191">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Lin_2024_CVPR,
+    author    = {Lin, Chuang and Jiang, Yi and Qu, Lizhen and Yuan, Zehuan and Cai, Jianfei},
+    title     = {Generative Region-Language Pretraining for Open-Ended Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {13958-13968}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>
