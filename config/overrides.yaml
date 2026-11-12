@@ -281,9 +281,12 @@ relevance:
   reviewed_at: '2026-11-10T18:38:45.543144Z'
 - identifiers:
   - '2602.18886'
-  action: review
-  reason: PhysConvex uses physically grounded convex primitives, with GS presented
-    as an existing representation.
+  action: include
+  reason: 'User-curated adjacent non-Gaussian splatting: PhysConvex v1 Sections 3
+    and 4 use smooth convex splatting with boundary-driven convex fields and differentiable
+    rendering/simulation. The proposed representation is convex primitives, not Gaussians.
+    Retained under the user preference with Adjacent Work / Non-Gaussian Splatting
+    labels; performance claims are not reproduced.'
   evidence:
   - source: captured_arxiv_author_abstract
     source_url: https://arxiv.org/abs/2602.18886
@@ -298,8 +301,41 @@ relevance:
     observed_at: '2026-11-10T18:24:45.992593Z'
     reviewed_by: Codex author-abstract scope review (not independent human review)
     reviewed_at: '2026-11-10T18:38:45.543144Z'
-  reviewed_by: Codex author-abstract scope review (not independent human review)
-  reviewed_at: '2026-11-10T18:38:45.543144Z'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/html/2602.18886v1
+    value:
+      source_capture_file: data/reviews/sources/e16162fba4f558299194d019559fc169abb4f04e5697c0a71ae1fe6456cdf2b5.html
+      source_capture_sha256: e16162fba4f558299194d019559fc169abb4f04e5697c0a71ae1fe6456cdf2b5
+      scope_justification: 'User-curated adjacent non-Gaussian splatting: PhysConvex
+        v1 Sections 3 and 4 use smooth convex splatting with boundary-driven convex
+        fields and differentiable rendering/simulation. The proposed representation
+        is convex primitives, not Gaussians. Retained under the user preference with
+        Adjacent Work / Non-Gaussian Splatting labels; performance claims are not
+        reproduced.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:37:59.633900+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/abs/2602.18886v1
+    value:
+      source_capture_file: data/reviews/sources/620624e11b88f705b5691e9706441ec3a3d9f76c2d1ce8e5ffc4d9395ce5e1cc.html
+      source_capture_sha256: 620624e11b88f705b5691e9706441ec3a3d9f76c2d1ce8e5ffc4d9395ce5e1cc
+      scope_justification: 'User-curated adjacent non-Gaussian splatting: PhysConvex
+        v1 Sections 3 and 4 use smooth convex splatting with boundary-driven convex
+        fields and differentiable rendering/simulation. The proposed representation
+        is convex primitives, not Gaussians. Retained under the user preference with
+        Adjacent Work / Non-Gaussian Splatting labels; performance claims are not
+        reproduced.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:38:00.733731+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+    independent human review
+  reviewed_at: '2026-11-12T17:46:31.666519+00:00'
 - identifiers:
   - '2602.22731'
   action: review
@@ -605,11 +641,13 @@ relevance:
   reviewed_at: '2026-11-10T18:38:45.543144Z'
 - identifiers:
   - '2402.10128'
-  action: review
-  reason: The official author abstract defines a Generalized Exponential Function
-    representation as a plug-and-play replacement for Gaussian primitives. This is
-    a competing/generalized primitive scope boundary requiring explicit adjudication,
-    consistent with the unresolved convex/voxel cases; a GS comparison alone is insufficient.
+  action: include
+  reason: 'User-curated adjacent generalized splatting: GES v1 Sections 3.1 and 4
+    define generalized exponential primitives with a learnable shape parameter and
+    differentiable rasterization. The shape family includes a scaled Gaussian at beta=2,
+    so the explicit labels are Adjacent Work / Generalized Splatting, not a claim
+    that Gaussian members are impossible. The prior scope hold is resolved under the
+    user preference.'
   evidence:
   - source: cvf_official_author_abstract
     source_url: https://openaccess.thecvf.com/content/CVPR2024/html/Hamdi_GES__Generalized_Exponential_Splatting_for_Efficient_Radiance_Field_Rendering_CVPR_2024_paper.html
@@ -625,8 +663,57 @@ relevance:
     observed_at: '2026-11-10T18:26:24.214477Z'
     reviewed_by: Codex source scope review (not independent human review)
     reviewed_at: '2026-11-10T18:49:38.524436Z'
-  reviewed_by: Codex source scope review (not independent human review)
-  reviewed_at: '2026-11-10T18:49:38.524436Z'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/html/2402.10128v1
+    value:
+      source_capture_file: data/reviews/sources/9f82c3b807691f28fb6ab77c5cb7e74ff5da902b2b067cf8962bcc5b3f04d8de.html
+      source_capture_sha256: 9f82c3b807691f28fb6ab77c5cb7e74ff5da902b2b067cf8962bcc5b3f04d8de
+      scope_justification: 'User-curated adjacent generalized splatting: GES v1 Sections
+        3.1 and 4 define generalized exponential primitives with a learnable shape
+        parameter and differentiable rasterization. The shape family includes a scaled
+        Gaussian at beta=2, so the explicit labels are Adjacent Work / Generalized
+        Splatting, not a claim that Gaussian members are impossible. The prior scope
+        hold is resolved under the user preference.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:37:54.794714+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/abs/2402.10128v1
+    value:
+      source_capture_file: data/reviews/sources/b4fed9251897f841d13f7a92981b57276c18a6c8041d1ef3ca35116f7b338523.html
+      source_capture_sha256: b4fed9251897f841d13f7a92981b57276c18a6c8041d1ef3ca35116f7b338523
+      scope_justification: 'User-curated adjacent generalized splatting: GES v1 Sections
+        3.1 and 4 define generalized exponential primitives with a learnable shape
+        parameter and differentiable rasterization. The shape family includes a scaled
+        Gaussian at beta=2, so the explicit labels are Adjacent Work / Generalized
+        Splatting, not a claim that Gaussian members are impossible. The prior scope
+        hold is resolved under the user preference.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:37:56.018844+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/abs/2402.10128v2
+    value:
+      source_capture_file: data/reviews/sources/8ac6c78c65740f8bd07b4f8f135b01e602da8e1c85985591e5eed11cce5f14ca.html
+      source_capture_sha256: 8ac6c78c65740f8bd07b4f8f135b01e602da8e1c85985591e5eed11cce5f14ca
+      scope_justification: 'User-curated adjacent generalized splatting: GES v1 Sections
+        3.1 and 4 define generalized exponential primitives with a learnable shape
+        parameter and differentiable rasterization. The shape family includes a scaled
+        Gaussian at beta=2, so the explicit labels are Adjacent Work / Generalized
+        Splatting, not a claim that Gaussian members are impossible. The prior scope
+        hold is resolved under the user preference.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:44:25.515450+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+    independent human review
+  reviewed_at: '2026-11-12T17:46:31.666519+00:00'
 - identifiers:
   - '2406.09756'
   - paper:2024-b9d0817758
@@ -1160,3 +1247,45 @@ relevance:
   reviewed_by: Codex primary full-method scope review under explicit user adjacent-work
     preference; not independent human review
   reviewed_at: '2026-11-12T17:15:39.647252+00:00'
+- identifiers:
+  - '2411.09156'
+  evidence:
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/html/2411.09156v1
+    value:
+      source_capture_file: data/reviews/sources/880f6a9a82eb855af1840ea9a3796166445be43b2faeb8493d1482dbd8dfac56.html
+      source_capture_sha256: 880f6a9a82eb855af1840ea9a3796166445be43b2faeb8493d1482dbd8dfac56
+      scope_justification: 'User-curated adjacent generalized splatting: DyGASR v1
+        Sections 3.2-3.3 rasterize generalized exponential ellipsoids and align them
+        for surface reconstruction. Epsilon=2 is a Gaussian member of the shape family.
+        Explicit Adjacent Work / Generalized Splatting labels distinguish the generalized
+        method without calling every primitive strictly non-Gaussian.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:37:57.207481+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  - source: frozen_primary_method_and_user_adjacent_scope
+    source_url: https://arxiv.org/abs/2411.09156v1
+    value:
+      source_capture_file: data/reviews/sources/9456bcf0456d0718e906e18ab5cd6dfa9fbcd31dfcfabe624d0d6731a06ac5b9.html
+      source_capture_sha256: 9456bcf0456d0718e906e18ab5cd6dfa9fbcd31dfcfabe624d0d6731a06ac5b9
+      scope_justification: 'User-curated adjacent generalized splatting: DyGASR v1
+        Sections 3.2-3.3 rasterize generalized exponential ellipsoids and align them
+        for surface reconstruction. Epsilon=2 is a Gaussian member of the shape family.
+        Explicit Adjacent Work / Generalized Splatting labels distinguish the generalized
+        method without calling every primitive strictly non-Gaussian.'
+      user_scope_file: data/reviews/adjacent-splatting-user-scope-20261112.json
+    observed_at: '2026-11-12T17:37:58.346370+00:00'
+    reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+      independent human review
+    reviewed_at: '2026-11-12T17:46:31.666519+00:00'
+  action: include
+  reason: 'User-curated adjacent generalized splatting: DyGASR v1 Sections 3.2-3.3
+    rasterize generalized exponential ellipsoids and align them for surface reconstruction.
+    Epsilon=2 is a Gaussian member of the shape family. Explicit Adjacent Work / Generalized
+    Splatting labels distinguish the generalized method without calling every primitive
+    strictly non-Gaussian.'
+  reviewed_by: Codex primary-method review under user-approved adjacent scope; not
+    independent human review
+  reviewed_at: '2026-11-12T17:46:31.666519+00:00'
