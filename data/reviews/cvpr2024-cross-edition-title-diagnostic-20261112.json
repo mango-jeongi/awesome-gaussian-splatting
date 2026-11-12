@@ -1,0 +1,90 @@
+{
+  "accepted_row": {
+    "authors": [
+      "Jian Wang",
+      "Zhe Cao",
+      "Diogo Luvizon",
+      "Lingjie Liu",
+      "Kripasindhu Sarkar",
+      "Danhang Tang",
+      "Thabo Beeler",
+      "Christian Theobalt"
+    ],
+    "title": "REWIND: Real-Time Egocentric Whole-Body Motion Diffusion with Exemplar-Based Identity Conditioning"
+  },
+  "accepted_source_file": "data/venues/cvpr2024-main/accepted.86e6135ddff76a6780e5bc04cb1c94eec5178fea5becdd4a9d08b5dddeb46f7f.html",
+  "accepted_source_sha256": "86e6135ddff76a6780e5bc04cb1c94eec5178fea5becdd4a9d08b5dddeb46f7f",
+  "canonical_modified": false,
+  "decision": "cross-title identity not established; do not alias",
+  "inventory_mapping_completed": false,
+  "network_requests": 0,
+  "primary_proceedings": [
+    {
+      "listing_file": "data/venues/cvpr2024-all-metadata/listing.720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c.html",
+      "listing_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+      "observed_at": "2026-11-12T03:22:22.444052+00:00",
+      "publication": {
+        "abstract": "In this work we explore egocentric whole-body motion capture using a single fisheye camera which simultaneously estimates human body and hand motion. This task presents significant challenges due to three factors: the lack of high-quality datasets fisheye camera distortion and human body self-occlusion. To address these challenges we propose a novel approach that leverages FisheyeViT to extract fisheye image features which are subsequently converted into pixel-aligned 3D heatmap representations for 3D human body pose prediction. For hand tracking we incorporate dedicated hand detection and hand pose estimation networks for regressing 3D hand poses. Finally we develop a diffusion-based whole-body motion prior model to refine the estimated whole-body motion while accounting for joint uncertainties. To train these networks we collect a large synthetic dataset EgoWholeBody comprising 840000 high-quality egocentric images captured across a diverse range of whole-body motion sequences. Quantitative and qualitative evaluations demonstrate the effectiveness of our method in producing high-quality whole-body motion estimates from a single egocentric camera.",
+        "arxiv_id": "2311.16495",
+        "authors": [
+          "Jian Wang",
+          "Zhe Cao",
+          "Diogo Luvizon",
+          "Lingjie Liu",
+          "Kripasindhu Sarkar",
+          "Danhang Tang",
+          "Thabo Beeler",
+          "Christian Theobalt"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Wang_Egocentric_Whole-Body_Motion_Capture_with_FisheyeViT_and_Diffusion-Based_Motion_Refinement_CVPR_2024_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2024/html/Wang_Egocentric_Whole-Body_Motion_Capture_with_FisheyeViT_and_Diffusion-Based_Motion_Refinement_CVPR_2024_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Egocentric Whole-Body Motion Capture with FisheyeViT and Diffusion-Based Motion Refinement",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2024
+      },
+      "source_file": "data/reviews/sources/c82bf87918a12eb7e1dcdb3fcac6e0aa5b5f86c47d4c58244208202574aef958.html",
+      "source_sha256": "c82bf87918a12eb7e1dcdb3fcac6e0aa5b5f86c47d4c58244208202574aef958"
+    },
+    {
+      "listing_file": "data/venues/cvpr2025-all-metadata/listing.d3ced827c00cbf4dad3be7187811e40100ecc3173aec0ce4c13f743a1d28a35d.html",
+      "listing_sha256": "d3ced827c00cbf4dad3be7187811e40100ecc3173aec0ce4c13f743a1d28a35d",
+      "observed_at": "2026-11-12T16:23:14.756237+00:00",
+      "publication": {
+        "abstract": "We present REWIND (Real-Time Egocentric Whole-Body Motion Diffusion), a one-step diffusion model for real-time, high-fidelity human motion estimation from egocentric image inputs. While an existing method for egocentric whole-body (i.e., body and hands) motion estimation is non-real-time and acausal due to diffusion-based iterative motion refinement to capture correlations between body and hand poses, REWIND operates in a fully causal and real-time manner. To enable real-time inference, we introduce (1) cascaded body-hand denoising diffusion, which effectively models the correlation between egocentric body and hand motions in a fast, feed-forward manner, and (2) diffusion distillation, which enables high-quality motion estimation with a single denoising step. Our denoising diffusion model is based on a modified Transformer architecture, designed to causally model output motions while enhancing generalizability to unseen motion lengths. Additionally, REWIND optionally supports identity-conditioned motion estimation when identity prior is available. To this end, we propose a novel identity conditioning method based on a small set of pose exemplars of the target identity, which further enhances motion estimation quality. Through extensive experiments, we demonstrate that REWIND significantly outperforms the existing baselines both with and without exemplar-based identity conditioning.",
+        "arxiv_id": "2504.04956",
+        "authors": [
+          "Jihyun Lee",
+          "Weipeng Xu",
+          "Alexander Richard",
+          "Shih-En Wei",
+          "Shunsuke Saito",
+          "Shaojie Bai",
+          "Te-Li Wang",
+          "Minhyuk Sung",
+          "Tae-Kyun Kim",
+          "Jason Saragih"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lee_REWIND_Real-Time_Egocentric_Whole-Body_Motion_Diffusion_with_Exemplar-Based_Identity_Conditioning_CVPR_2025_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Lee_REWIND_Real-Time_Egocentric_Whole-Body_Motion_Diffusion_with_Exemplar-Based_Identity_Conditioning_CVPR_2025_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "REWIND: Real-Time Egocentric Whole-Body Motion Diffusion with Exemplar-Based Identity Conditioning",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2025
+      },
+      "source_file": "data/reviews/sources/ac5da43400da77c171e7204705c486939e71225d015f91ca1302ca15b8f38ebf.html",
+      "source_sha256": "ac5da43400da77c171e7204705c486939e71225d015f91ca1302ca15b8f38ebf"
+    }
+  ],
+  "prior_reconciliation_file": "data/reviews/history/cvpr2024-independent-reconciliation-before-cross-edition-check-1e4de61981e1f322307db8631ff951347fd147cc7b1065c1baa672f55f4ed643.json",
+  "prior_reconciliation_sha256": "1e4de61981e1f322307db8631ff951347fd147cc7b1065c1baa672f55f4ed643",
+  "reason": "The frozen 2024 accepted-table row pairs the REWIND title with eight authors matching the 2024 FisheyeViT proceedings paper. The identical REWIND title is independently present in the 2025 CVF listing and verified 2025 paper page with ten different ordered authors led by Jihyun Lee. This is a source title/authorship conflict across editions, not evidence that REWIND is a renamed 2024 FisheyeViT paper. No cross-title alias or canonical merge is approved; the 2024 accepted-row mapping remains unresolved pending a primary 2024 identifier or publisher correction.",
+  "reviewed_at": "2026-11-12T16:27:31.762766+00:00",
+  "reviewed_by": "Codex frozen primary source cross-check; not independent human review"
+}
