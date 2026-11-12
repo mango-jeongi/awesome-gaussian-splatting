@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <title>CVPR 2024 Open Access Repository</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/conf.css">
+<meta name="citation_title" content="PTQ4SAM: Post-Training Quantization for Segment Anything">
+<meta name="citation_author" content="Lv, Chengtao">
+<meta name="citation_author" content="Chen, Hong">
+<meta name="citation_author" content="Guo, Jinyang">
+<meta name="citation_author" content="Ding, Yifu">
+<meta name="citation_author" content="Liu, Xianglong">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition">
+<meta name="citation_firstpage" content="15941">
+<meta name="citation_lastpage" content="15951">
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Lv_PTQ4SAM_Post-Training_Quantization_for_Segment_Anything_CVPR_2024_paper.pdf">
+</head>
+<body>
+<div id="header">
+    <div id="header_left">
+        <a href="http://cvpr2024.thecvf.com/"><img src="/img/cvpr2024_logo.svg" width="175" border="0" alt="CVPR 2024"></a>
+        <a href="https://www.thecvf.com/"><img src="/img/cropped-cvf-s.jpg" width="175" height="112" border="0" alt="CVF"></a>
+    </div>
+    <div id="header_right">
+        <div id="header_title">
+            <a href="http://cvpr2024.thecvf.com/">CVPR 2024</a> <a href="/menu" class="a_monochrome">open access</a>
+        </div>
+        <div id="help">
+            These CVPR 2024 papers are the Open Access versions, provided by the
+<a href="https://www.thecvf.com/">Computer Vision Foundation.</a><br>
+Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore.
+        </div>
+        <div id="disclaimer">
+            This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright.<br><br>
+            <form action="/CVPR2024" method="post">
+                <input type="text" name="query">
+                <input type="submit" value="Search">
+            </form>
+
+        </div>
+    </div>
+    <div id="header_sponsor">
+        <p style="vertical-align:center; text-align: center"> <strong>Powered by:</strong></p>
+        <img src="/img/ms-azure-logo.png" width="100" alt="Microsoft Azure">
+        <p> </p>
+        <p> </p>
+        <p style="vertical-align:center; text-align: center"> <strong>Sponsored by:</strong></p>
+        <img src="/img/amazon-logo.png" width="100" alt="Amazon">
+        <img src="/img/facebook_logo.jpg" width="100" alt="Facebook">
+        <img src="/img/Google_2015_logo.svg" width="100" alt="Google">
+    </div>
+</div>
+<div class="clear"></div>
+<div id="content">    <dl>
+    <div id="papertitle">
+        PTQ4SAM: Post-Training Quantization for Segment Anything
+    <dd>
+    </div>
+    <div id="authors">        <br><b><i>Chengtao Lv, Hong Chen, Jinyang Guo, Yifu Ding, Xianglong Liu</i></b>; Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 15941-15951
+    </div>
+    <font size="5">
+    <br><b>Abstract</b>
+    </font>
+    <br><br>
+    <div id="abstract">
+    Segment Anything Model (SAM) has achieved impressive performance in many computer vision tasks. However as a large-scale model the immense memory and computation costs hinder its practical deployment. In this paper we propose a post-training quantization (PTQ) framework for Segment Anything Model namely PTQ4SAM. First we investigate the inherent bottleneck of SAM quantization attributed to the bimodal distribution in \cls post-Key-Linear  activations. We analyze its characteristics from both per-tensor and per-channel perspectives and propose a Bimodal Integration strategy which utilizes a mathematically equivalent sign operation to transform the bimodal distribution into a relatively easy-quantized normal distribution offline. Second SAM encompasses diverse attention mechanisms (i.e. self-attention and two-way cross-attention) resulting in substantial variations in the post-Softmax distributions. Therefore we introduce an Adaptive Granularity Quantization for Softmax through searching the optimal power-of-two base which is hardware-friendly. Extensive experimental results across various vision tasks (instance segmentation semantic segmentation and object detection) datasets and model variants show the superiority of PTQ4SAM. For example when quantizing SAM-L to 6-bit we achieve lossless accuracy for instance segmentation about 0.5% drop with theoretical 3.9xacceleration. The code is available at https://github.com/chengtao-lv/PTQ4SAM.
+    </div>
+    <font size="5">
+    <br><b>Related Material</b>
+    </font>
+    <br><br>    <dd>
+[<a href="/content/CVPR2024/papers/Lv_PTQ4SAM_Post-Training_Quantization_for_Segment_Anything_CVPR_2024_paper.pdf">pdf</a>]
+[<a href="/content/CVPR2024/supplemental/Lv_PTQ4SAM_Post-Training_Quantization_CVPR_2024_supplemental.pdf">supp</a>]
+[<a href="http://arxiv.org/abs/2405.03144">arXiv</a>]
+<div class="link2">[<a class="fakelink" onclick="$(this).siblings('.bibref').slideToggle()">bibtex</a>]
+<div class="bibref pre-white-space">@InProceedings{Lv_2024_CVPR,
+    author    = {Lv, Chengtao and Chen, Hong and Guo, Jinyang and Ding, Yifu and Liu, Xianglong},
+    title     = {PTQ4SAM: Post-Training Quantization for Segment Anything},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {15941-15951}
+}</div>
+</div>        
+</dd></dl></div>
+</body>
+</html>

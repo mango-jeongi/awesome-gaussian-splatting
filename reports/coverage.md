@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-11 (America/Los_Angeles)
 
-Observed at 2026-11-12T02:46:46.176877+00:00. The [current machine receipt](runs/coverage-after-source-reviews-20261111.json) binds current source bytes. The prior [post-discovery snapshot](runs/coverage-after-discoveries-20261111.json) and earlier receipts remain preserved. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-12T03:08:18.163327+00:00. The [current machine receipt](runs/coverage-command-20261111.json) is generated directly by `python -m src.cli coverage` and binds 394 consumed files, including verified cached historical pages. The prior [source-review snapshot](runs/coverage-after-source-reviews-20261111.json) and earlier receipts remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -17,11 +17,11 @@ The declared inventory still has **56 cells: four crawled/partial and 52 pending
 | Full-metadata epoch | Frozen listing | Verified pages | Pending, including failures | Failed |
 | --- | ---: | ---: | ---: | ---: |
 | ICCV 2025 main | 2,701 | 2,701 | 0 | 0 |
-| CVPR 2024 main | 2,716 | 1,526 | 1,190 | 7 |
+| CVPR 2024 main | 2,716 | 2,022 | 694 | 11 |
 
 ICCV has all 2,701 abstracts and a verified one-to-one title mapping between the two frozen official inventories. **512 rows retain author discrepancies**; source identity, dates, scope and provider review remain open. Of 2,552 title-excluded pages, metadata produced 49 include leads, 62 review leads and 2,441 exclusions. Those are automatic policy outcomes, not measured population relevance accuracy. See the [ICCV report](iccv2025-metadata-capture.md).
 
-CVPR 2024 has 133 reused verified pages and 1,393 additional verified pages from 1,400 bounded live requests, including one separately reviewed author-encoding correction applied offline. Seven failures remain recorded: two HTTP 404s and five transport failures. Their retry deadlines remain intact. The 1,393 title-excluded pages yield six include leads and 53 review leads. These need source scope adjudication. Both epochs passed zero-request hash/parser replays and retain separate frozen policies. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023/2025 and the other 52 cells retain their published gaps in `config/sources.yaml`; DBLP access remains unresolved.
+CVPR 2024 has 133 reused verified pages and 1,889 additional verified pages from 1,900 bounded live requests, including one separately reviewed author-encoding correction applied offline. Eleven failures remain recorded: two HTTP 404s, three HTTP 200 metadata mismatches and six transport failures. Their retry deadlines remain intact. The 1,889 title-excluded pages yield nine include leads and 67 review leads. These need source scope adjudication. Both epochs passed zero-request hash/parser replays and retain separate frozen policies. See the [CVPR checkpoint](cvpr2024-full-metadata-capture.md). CVPR 2023/2025 and the other 52 cells retain their published gaps in `config/sources.yaml`; DBLP access remains unresolved.
 
 Two [source-reviewed proceedings discoveries](iccv2025-reviewed-discoveries-20261111.md), DGTalker and Hi-Gaussian, are now canonical additions with verified publication DOIs and independent official author agreement. All 4,101 previous records, existing aliases and six archives remain exact. Neither captured CVF page links arXiv; global preprint absence is not asserted. The two papers have fresh OpenAlex observations, but no eligible velocity window.
 
@@ -52,3 +52,7 @@ Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollb
 The [full cached-corpus release rehearsal](release-cache-backed-rehearsal-20261111.md) produced two byte-identical 83,681,280-byte archives, restored all 160 files and verified the earlier 393-file rollback archive. These local checks do not establish production deployment or rollback.
 
 Remaining gates include 18 seed decisions, unresolved source/scope cases, venue inventory work, author/date/identifier adjudication, reviewed figure publication, broader extraction coverage, live Semantic Scholar access, genuine citation windows, compatible storage rollout, live competing-writer evidence and public candidate verification. Nothing in this snapshot pushes, dispatches, deploys, advances a source watermark or claims either phase complete.
+
+## Reproducing this report
+
+Run `uv run --all-groups python -m src.cli coverage --output reports/runs/<new-run>.json`. This performs no provider request, build or canonical update. It verifies the declared historical source pages and exact application inventory, reports seed/extraction binding gaps, and refuses input changes or report overwrite. An identical evaluation time and unchanged inputs reproduce the same JSON bytes. Public-manifest metadata is reported separately from the owned graph projection; release/deployment integrity checks remain separate. See [command validation](coverage-command-20261111.md).
