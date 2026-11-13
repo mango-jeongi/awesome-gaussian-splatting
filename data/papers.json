@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-13T02:21:23Z",
+  "last_updated": "2026-11-13T02:30:59Z",
   "total_count": 4109,
   "papers": [
     {
@@ -283022,6 +283022,7 @@
     "arxiv:2604.02586": "2604.02586",
     "arxiv:2604.02696": "2604.02696",
     "arxiv:2604.02752": "2604.02752",
+    "arxiv:2604.02781": "2602.06846",
     "arxiv:2604.02799": "2604.02799",
     "arxiv:2604.02828": "2604.02828",
     "arxiv:2604.02851": "paper:2026-48934263b9",
@@ -287540,6 +287541,7 @@
     "doi:10.48550/arxiv.2604.02586": "2604.02586",
     "doi:10.48550/arxiv.2604.02696": "2604.02696",
     "doi:10.48550/arxiv.2604.02752": "2604.02752",
+    "doi:10.48550/arxiv.2604.02781": "2602.06846",
     "doi:10.48550/arxiv.2604.02799": "2604.02799",
     "doi:10.48550/arxiv.2604.02828": "2604.02828",
     "doi:10.48550/arxiv.2604.02851": "paper:2026-48934263b9",
@@ -289660,6 +289662,89 @@
           "values": {}
         }
       }
+    },
+    "2604.02781": {
+      "paper": {
+        "id": "2604.02781",
+        "arxiv_id": "2604.02781",
+        "doi": null,
+        "source": "arxiv",
+        "title": "DynFOA: Generating First-Order Ambisonics with Conditional Diffusion for Dynamic and Acoustically Complex 360-Degree Videos",
+        "authors": [
+          "Ziyu Luo",
+          "Lin Chen",
+          "Qiang Qu",
+          "Xiaoming Chen",
+          "Yiran Shen"
+        ],
+        "first_author": "Luo et al.",
+        "published_date": "2026-04-03",
+        "updated_date": "2026-04-10",
+        "year": 2026,
+        "month": 4,
+        "venue": null,
+        "published_date_precision": "day",
+        "date_placement": "observed",
+        "publication_date": null,
+        "publication_year": null,
+        "publication_date_precision": "unknown",
+        "arxiv_doi": "10.48550/arxiv.2604.02781",
+        "metadata_evidence": {
+          "published_date": [
+            {
+              "source": "arxiv",
+              "source_url": "http://arxiv.org/abs/2604.02781v2",
+              "value": "2026-04-03",
+              "observed_at": null,
+              "reviewed_by": null,
+              "reviewed_at": null
+            }
+          ]
+        },
+        "paper_url": "https://arxiv.org/abs/2604.02781",
+        "pdf_url": "https://arxiv.org/pdf/2604.02781.pdf",
+        "code_url": null,
+        "project_url": null,
+        "abstract": "Spatial audio is crucial for immersive 360-degree video experiences, yet most 360-degree videos lack it due to the difficulty of capturing spatial audio during recording. Automatically generating spatial audio such as first-order ambisonics (FOA) from video therefore remains an important but challenging problem. In complex scenes, sound perception depends not only on sound source locations but also on scene geometry, materials, and dynamic interactions with the environment. However, existing approaches only rely on visual cues and fail to model dynamic sources and acoustic effects such as occlusion, reflections, and reverberation. To address these challenges, we propose DynFOA, a generative framework that synthesizes FOA from 360-degree videos by integrating dynamic scene reconstruction with conditional diffusion modeling. DynFOA analyzes the input video to detect and localize dynamic sound sources, estimate depth and semantics, and reconstruct scene geometry and materials using 3D Gaussian Splatting (3DGS). The reconstructed scene representation provides physically grounded features that capture acoustic interactions between sources, environment, and listener viewpoint. Conditioned on these features, a diffusion model generates spatial audio consistent with the scene dynamics and acoustic context. We introduce M2G-360, a dataset of 600 real-world clips divided into MoveSources, Multi-Source, and Geometry subsets for evaluating robustness under diverse conditions. Experiments show that DynFOA consistently outperforms existing methods in spatial accuracy, acoustic fidelity, distribution matching, and perceived immersive experience.",
+        "tldr": "To address these challenges, we propose DynFOA, a generative framework that synthesizes FOA from 360-degree videos by integrating dynamic scene reconstruction with conditional diffusion modeling.",
+        "primary_category": "Foundations & Acceleration",
+        "categories": [
+          "Foundations & Acceleration"
+        ],
+        "tags": [
+          "Foundations"
+        ],
+        "primary_arxiv_category": "cs.SD",
+        "comment": "Accidental duplicate submission. This paper was intended to be a replacement (v2) for arXiv:2602.06846",
+        "citation_count": 0,
+        "influential_citation_count": 0,
+        "openalex_id": null,
+        "referenced_works": [],
+        "db_citation_count": 0,
+        "db_citations": [],
+        "db_references": []
+      },
+      "disposition": "merged",
+      "reason": "Authors explicitly identify April submission as accidental duplicate intended as v2 of February record; exact title, five ordered authors and full abstract agree.",
+      "evidence": [
+        {
+          "source": "retained_primary_arxiv_author_declared_accidental_duplicate",
+          "source_url": "https://arxiv.org/abs/2604.02781",
+          "value": "Accidental duplicate submission. This paper was intended to be a replacement (v2) for arXiv:2602.06846",
+          "observed_at": "2026-11-10T18:25:03.965732Z",
+          "reviewed_by": "Codex primary arXiv author-declared accidental duplicate adjudication; not independent human review",
+          "reviewed_at": "2026-11-13T02:26:43.592613Z"
+        }
+      ],
+      "reviewed_by": "Codex primary arXiv author-declared accidental duplicate adjudication; not independent human review",
+      "reviewed_at": "2026-11-13T02:26:43.592613Z",
+      "merged_into": "2602.06846",
+      "aliases": [
+        "2604.02781",
+        "arxiv:2604.02781",
+        "doi:10.48550/arxiv.2604.02781"
+      ],
+      "observations": {}
     }
   }
 }
