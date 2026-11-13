@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-12 (America/Los_Angeles)
 
-Observed at 2026-11-13T02:59:46.964488+00:00. The [current machine receipt](runs/coverage-after-lucas-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-13T03:03:01.142391+00:00. The [current machine receipt](runs/coverage-after-hgmm-unboxed-taga-lucas-observations-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -60,19 +60,21 @@ All denominators below are **4,116 active papers**. Latest attempt status is sep
 
 | Provider | Cached active entries | Latest attempt statuses | Fresh successful values | Stale successful values | No cache entry |
 | --- | ---: | --- | ---: | ---: | ---: |
-| openalex | 4,112 | ambiguous: 31, not_found: 277, ok: 3,804 | 3,804 | 0 | 4 |
+| openalex | 4,116 | ambiguous: 31, not_found: 277, ok: 3,808 | 3,808 | 0 | 0 |
 | semanticscholar | 41 | rate_limited: 41 | 0 | 0 | 4,075 |
 | huggingface | 15 | not_found: 7, ok: 8 | 7 | 1 | 4,101 |
 
-OpenAlex has 1,090 genuinely observed zero citation counts. The 4,078 zeros in canonical bibliographic records do not themselves carry provider observation freshness; the cache independently verifies successful observed zeros. OpenAlex has 3,701 single-snapshot histories, 103 histories without an eligible 7–45-day interval, 0 stale histories and 312 without observations. **No active paper has eligible measured citation velocity.** Semantic Scholar has no successful history for any active paper. No dates or counts are fabricated to fill those gaps, and providers are never added together. HF's small sample is not full-corpus enrichment.
+OpenAlex has 1,090 genuinely observed zero citation counts. The 4,078 zeros in canonical bibliographic records do not themselves carry provider observation freshness; the cache independently verifies successful observed zeros. OpenAlex has 3,705 single-snapshot histories, 103 histories without an eligible 7–45-day interval, 0 stale histories and 308 without observations. **No active paper has eligible measured citation velocity.** Semantic Scholar has no successful history for any active paper. No dates or counts are fabricated to fill those gaps, and providers are never added together. HF's small sample is not full-corpus enrichment.
 
 The [four new observations](four-new-papers-provider-observations-20261112.md) return FreeSim 25, Sketch and Patch seven, GPAvatar four and GPVK-VL zero citations. GPVK-VL’s zero is measured, not missing. All previous cache/history objects remain intact. Each has one sample, so no eligible velocity is available.
+
+The [HGMM/Unboxed/TAGA/LUCAS observations](hgmm-unboxed-taga-lucas-provider-observations-20261112.md) add four genuine single samples, returning four, three, nine and seven citations respectively. All 4,119 older observation objects and 3,910 history samples remain exact. No new paper has eligible measured velocity. Canonical bytes and extraction tasks remain unchanged.
 
 The [HF detail delivery](huggingface-detail-delivery-20261112.md) now exposes attributed provider summaries, returned upvotes/stars, repository evidence and recorded Spaces through lazy paper details. Ten bounded requests produced six exact-ID matches and four misses, preserving all five older observations. All 15 cached observations have corresponding details; 4,101 papers remain unobserved. Valid zeros, unavailable values, stale retained successes and confirmed misses stay distinct. No provider text replaces the author abstract or reviewed code URL, and repository ownership remains unverified.
 
 ## Public graph and extraction
 
-The verified public buckets have **27,428 directed internal edges**, connecting 3,472/4,116 papers; 644 are isolated in this observed graph. There are 69,617 external/unmatched source references. Canonical v1 materialized references still contain 28 edges; the public builder projects current cache evidence offline. This is partial observed lineage, not a scientific isolation or provider-recall claim. See the [graph verification](cache-backed-public-graph-20261111.md).
+The verified public buckets have **27,430 directed internal edges**, connecting 3,474/4,116 papers; 642 are isolated in this observed graph. There are 69,624 external/unmatched source references. Canonical v1 materialized references still contain 28 edges; the public builder projects current cache evidence offline. This is partial observed lineage, not a scientific isolation or provider-recall claim. See the [graph verification](cache-backed-public-graph-20261111.md).
 
 Extraction covers all active IDs: **11 processed, 4,095 queued for source materialization, nine unavailable in the configured inventory and one unsupported**. Queued tasks are not downloaded PDFs or completed jobs. The 12-paper pilot spans six categories. Prior agent rendered-source inspection checked 30 numeric candidates: 22 accepted cells across six papers and eight rejected/deferred cells. This is not an independent human benchmark. No figure asset is accepted for redistribution.
 
@@ -80,7 +82,7 @@ The [approved Gemma real-page diagnostic](gemma-radsplat-real-page-20261111.md) 
 
 ## Storage, release and remaining gates
 
-Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollback rehearsals passed locally; cutover and compatible remote writer deployment remain open. [Bounded public retention](public-artifact-retention-20261111.md) removed 316 obsolete files while retaining three verified generations. The current index is 1,725,809 bytes (451,593 gzip), and the largest detail shard is 492,425 bytes. All 81 referenced descriptors and the 15 HF detail projections pass [current integrity checks](runs/lucas-public-verification-20261112.json); prior adjacent-label evidence remains preserved. The README retains its existing latest-60-per-category window. The new HF section passed [actual browser QA](runs/hf-detail-browser-verification-20261112.json), including mobile layout, themes, BibTeX, the 50-card catalog, safe text/links and the search shortcut, with zero page/console errors. The full suite passed 564 tests with one skip plus lint/format checks. Earlier actual/5,000-paper performance evidence is preserved; this is not a fresh five-cold-load performance measurement.
+Canonical storage remains v1. Full-corpus v2 parity, interrupted-write and rollback rehearsals passed locally; cutover and compatible remote writer deployment remain open. [Bounded public retention](public-artifact-retention-20261111.md) removed 316 obsolete files while retaining three verified generations. The current index is 1,725,897 bytes (451,618 gzip), and the largest detail shard is 492,425 bytes. All 81 referenced descriptors and the 15 HF detail projections pass [current integrity checks](runs/hgmm-unboxed-taga-lucas-public-verification-20261112.json); prior adjacent-label evidence remains preserved. The README retains its existing latest-60-per-category window. The new HF section passed [actual browser QA](runs/hf-detail-browser-verification-20261112.json), including mobile layout, themes, BibTeX, the 50-card catalog, safe text/links and the search shortcut, with zero page/console errors. The full suite passed 564 tests with one skip plus lint/format checks. Earlier actual/5,000-paper performance evidence is preserved; this is not a fresh five-cold-load performance measurement.
 
 The [full cached-corpus release rehearsal](release-cache-backed-rehearsal-20261111.md) produced two byte-identical 83,681,280-byte archives, restored all 160 files and verified the earlier 393-file rollback archive. These local checks do not establish production deployment or rollback.
 
