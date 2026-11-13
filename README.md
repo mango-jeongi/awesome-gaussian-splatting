@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4109-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4112-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-13` | Total Papers: **4109** | With Official Code: **570***
+*Last updated: `2026-11-13` | Total Papers: **4112** | With Official Code: **570***
 
 ---
 
@@ -18,10 +18,10 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | :--- | :---: | :--- |
 | **[Foundations & Acceleration](#foundations--acceleration)** | `1006` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
 | **[Dynamic & 4DGS](#dynamic--4dgs)** | `850` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
-| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `550` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
-| **[Human Avatars & VR](#human-avatars--vr)** | `285` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
+| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `551` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
+| **[Human Avatars & VR](#human-avatars--vr)** | `286` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
 | **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `695` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
-| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `314` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
+| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `315` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
 | **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `93` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
 | **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `315` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
@@ -211,10 +211,10 @@ Showing 60 of 850 papers. [Browse the full category](https://mango-jeongi.github
 
 ### Active Perception, SLAM & Robotics
 
-*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (550 papers)
+*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (551 papers)
 
 <details>
-<summary><strong>View 550 papers in Active Perception, SLAM & Robotics</strong></summary>
+<summary><strong>View 551 papers in Active Perception, SLAM & Robotics</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -279,16 +279,16 @@ Showing 60 of 850 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-08` | **TRACE: Ergodic Trajectory Optimization for Active Scene Reconstruction**<br><sub>Existing active reconstruction systems with Gaussian-splatting maps select observations greedily, optimizing a single next-best-view (NBV) at each step and connecting the chosen views by short-horizon path...</sub> | Zheng et al. | `Active Perception`, `Foundations` | [[arXiv:2608.02304]](https://arxiv.org/abs/2608.02304) [[PDF]](https://arxiv.org/pdf/2608.02304.pdf) [[Code]](https://github.com/spikelab-jhu/trace-active-reconstruction) |
 | `2026-08` | **Stipple: Real-Time Incremental Gaussian Splatting with Visual-Inertial Tracking**<br><sub>Proposes method that tracks and reconstructs simultaneously in real-time by leveraging an efficient visual-inertial tracking system based on Basalt together with a novel incremental method built on top of...</sub> | Northoff et al. | `SLAM`, `VR & XR`, `Foundations` | [[arXiv:2608.00931]](https://arxiv.org/abs/2608.00931) [[PDF]](https://arxiv.org/pdf/2608.00931.pdf) |
 
-Showing 60 of 550 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Active%20Perception%2C%20SLAM%20%26%20Robotics).
+Showing 60 of 551 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Active%20Perception%2C%20SLAM%20%26%20Robotics).
 
 </details>
 
 ### Human Avatars & VR
 
-*Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence.* (285 papers)
+*Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence.* (286 papers)
 
 <details>
-<summary><strong>View 285 papers in Human Avatars & VR</strong></summary>
+<summary><strong>View 286 papers in Human Avatars & VR</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -353,7 +353,7 @@ Showing 60 of 550 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-03` | **PolGS++: Physically-Guided Polarimetric Gaussian Splatting for Fast Reflective Surface Reconstruction**<br><sub>To address this gap, we propose PolGS++, a physically-guided polarimetric Gaussian Splatting framework for fast reflective surface reconstruction.</sub> | Han et al. | `Mesh & Surface`, `Relighting & BRDF`, `VR & XR`, `Foundations` | [[arXiv:2603.10801]](https://arxiv.org/abs/2603.10801) [[PDF]](https://arxiv.org/pdf/2603.10801.pdf) |
 | `2026-03` | **SSR-GS: Separating Specular Reflection in Gaussian Splatting for Glossy Surface Reconstruction**<br><sub>Proposes SSR-GS, a specular reflection modeling framework for glossy surface reconstruction.</sub> | Fan et al. | `Mesh & Surface`, `Foundations` | [[arXiv:2603.05152]](https://arxiv.org/abs/2603.05152) [[PDF]](https://arxiv.org/pdf/2603.05152.pdf) [[Project]](https://gsflyer.github.io/SSR-GS/) |
 
-Showing 60 of 285 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Human%20Avatars%20%26%20VR).
+Showing 60 of 286 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Human%20Avatars%20%26%20VR).
 
 </details>
 
@@ -433,10 +433,10 @@ Showing 60 of 695 papers. [Browse the full category](https://mango-jeongi.github
 
 ### Autonomous Driving & Urban Scenes
 
-*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (314 papers)
+*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (315 papers)
 
 <details>
-<summary><strong>View 314 papers in Autonomous Driving & Urban Scenes</strong></summary>
+<summary><strong>View 315 papers in Autonomous Driving & Urban Scenes</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -501,7 +501,7 @@ Showing 60 of 695 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-06` | **UnsOcc: 3D Semantic Occupancy Prediction in Unstructured Scene via Rendering Fusion**<br><sub>Based on this, we propose UnsOcc, a multi-modal 3D semantic occupancy prediction framework that improves robustness in unstructured environments.</sub> | Wu et al. | `Autonomous Driving`, `Foundations` | [[arXiv:2606.03581]](https://arxiv.org/abs/2606.03581) [[PDF]](https://arxiv.org/pdf/2606.03581.pdf) |
 | `2026-06` | **SparseStreet: Sparse Gaussian Splatting for Real-Time Street Scene Simulation**<br><sub>Motivated by this, we propose SparseStreet, a general compression framework specifically designed for street scenes.</sub> | Wuwu et al. | `Densification & Pruning`, `Compression`, `Autonomous Driving`, `Physics & Simulation` | [[arXiv:2606.03909]](https://arxiv.org/abs/2606.03909) [[PDF]](https://arxiv.org/pdf/2606.03909.pdf) [[Project]](https://sparsestreet.github.io/) |
 
-Showing 60 of 314 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
+Showing 60 of 315 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
 
 </details>
 

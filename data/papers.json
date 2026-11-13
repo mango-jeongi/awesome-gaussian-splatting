@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-13T02:30:59Z",
-  "total_count": 4109,
+  "last_updated": "2026-11-13T02:40:10Z",
+  "total_count": 4112,
   "papers": [
     {
       "id": "2611.11951",
@@ -202225,6 +202225,309 @@
       "db_references": []
     },
     {
+      "id": "doi:10.1109/cvpr52734.2025.01559",
+      "arxiv_id": null,
+      "doi": "10.1109/cvpr52734.2025.01559",
+      "source": "cvf",
+      "title": "GPVK-VL: Geometry-Preserving Virtual Keyframes for Visual Localization under Large Viewpoint Changes",
+      "authors": [
+        "Yunxuan Li",
+        "Lei Fan",
+        "Xiaoying Xing",
+        "Jianxiong Zhou",
+        "Ying Wu"
+      ],
+      "first_author": "Li et al.",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "year": 2025,
+      "month": 1,
+      "venue": "CVPR 2025",
+      "published_date_precision": "year",
+      "date_placement": "year_start",
+      "publication_date": "2025-06-10",
+      "publication_year": 2025,
+      "publication_date_precision": "day",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+            "value": "Visual localization, the task of determining the position and orientation of a camera, typically involves three core components: offline construction of a keyframe database, efficient online keyframes retrieval, and robust local feature matching. However, significant challenges arise when there are large viewpoint disparities between the query view and the database, such as attempting localization in a corridor previously build from an opposing direction. Intuitively, this issue can be addressed by synthesizing a set of virtual keyframes that cover all viewpoints. However, existing methods for synthesizing novel views to assist localization often fail to ensure geometric accuracy under large viewpoint changes. In this paper, we introduce a confidence-aware geometric prior into 2D Gaussian splatting to ensure the geometric accuracy of the scene. Then we can render novel views through the mesh with clear structures and accurate geometry, even under significant viewpoint changes, enabling the synthesis of a comprehensive set of virtual keyframes. Incorporating this geometry-preserving virtual keyframe database into the localization pipeline significantly enhances the robustness of visual localization.",
+            "observed_at": "2026-11-12T17:12:50.737318Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "categories": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+            "value": [
+              "Active Perception, SLAM & Robotics"
+            ],
+            "observed_at": "2026-11-12T17:12:50.737318Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "doi": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPVK-VL%3A+Geometry-Preserving+Virtual+Keyframes+for+Visual+Localization+under+Large+Viewpoint+Changes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "10.1109/cvpr52734.2025.01559",
+            "observed_at": "2026-11-13T02:34:30.498104Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPVK-VL%3A+Geometry-Preserving+Virtual+Keyframes+for+Visual+Localization+under+Large+Viewpoint+Changes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "2025-06-10",
+            "observed_at": "2026-11-13T02:34:30.498104Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date_precision": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPVK-VL%3A+Geometry-Preserving+Virtual+Keyframes+for+Visual+Localization+under+Large+Viewpoint+Changes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "day",
+            "observed_at": "2026-11-13T02:34:30.498104Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+            "value": 2025,
+            "observed_at": "2026-11-12T17:12:50.737318Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPVK-VL%3A+Geometry-Preserving+Virtual+Keyframes+for+Visual+Localization+under+Large+Viewpoint+Changes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": 2025,
+            "observed_at": "2026-11-13T02:34:30.498104Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "tags": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+            "value": [
+              "2DGS"
+            ],
+            "observed_at": "2026-11-12T17:12:50.737318Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+            "value": "CVPR 2025",
+            "observed_at": "2026-11-12T17:12:50.737318Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPVK-VL%3A+Geometry-Preserving+Virtual+Keyframes+for+Visual+Localization+under+Large+Viewpoint+Changes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "CVPR 2025",
+            "observed_at": "2026-11-13T02:34:30.498104Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Visual localization, the task of determining the position and orientation of a camera, typically involves three core components: offline construction of a keyframe database, efficient online keyframes retrieval, and robust local feature matching. However, significant challenges arise when there are large viewpoint disparities between the query view and the database, such as attempting localization in a corridor previously build from an opposing direction. Intuitively, this issue can be addressed by synthesizing a set of virtual keyframes that cover all viewpoints. However, existing methods for synthesizing novel views to assist localization often fail to ensure geometric accuracy under large viewpoint changes. In this paper, we introduce a confidence-aware geometric prior into 2D Gaussian splatting to ensure the geometric accuracy of the scene. Then we can render novel views through the mesh with clear structures and accurate geometry, even under significant viewpoint changes, enabling the synthesis of a comprehensive set of virtual keyframes. Incorporating this geometry-preserving virtual keyframe database into the localization pipeline significantly enhances the robustness of visual localization.",
+      "tldr": "Introduces a confidence-aware geometric prior into 2D Gaussian splatting to ensure the geometric accuracy of the scene.",
+      "primary_category": "Active Perception, SLAM & Robotics",
+      "categories": [
+        "Active Perception, SLAM & Robotics"
+      ],
+      "tags": [
+        "2DGS"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "doi:10.1109/cvpr52734.2025.00032",
+      "arxiv_id": null,
+      "doi": "10.1109/cvpr52734.2025.00032",
+      "source": "cvf",
+      "title": "GPAvatar: High-fidelity Head Avatars by Learning Efficient Gaussian Projections",
+      "authors": [
+        "Wei-Qi Feng",
+        "Dong Han",
+        "Ze-Kang Zhou",
+        "Shunkai Li",
+        "Xiaoqiang Liu",
+        "Pengfei Wan",
+        "Di Zhang",
+        "Miao Wang"
+      ],
+      "first_author": "Feng et al.",
+      "published_date": "2025-01-01",
+      "updated_date": null,
+      "year": 2025,
+      "month": 1,
+      "venue": "CVPR 2025",
+      "published_date_precision": "year",
+      "date_placement": "year_start",
+      "publication_date": "2025-06-10",
+      "publication_year": 2025,
+      "publication_date_precision": "day",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+            "value": "Existing radiance field-based head avatar methods have mostly relied on pre-computed explicit priors (e.g., mesh, point) or neural implicit representations, making it challenging to achieve high fidelity with both computational efficiency and low memory consumption. To overcome this, we present GPAvatar, a novel and efficient Gaussian splatting-based method for reconstructing high-fidelity dynamic 3D head avatars from monocular videos. We extend Gaussians in 3D space to a high-dimensional embedding space encompassing Gaussian's spatial position and avatar expression, enabling the representation of the head avatar with arbitrary pose and expression. To enable splatting-based rasterization, a linear transformation is learned to project each high-dimensional Gaussian back to the 3D space, which is sufficient to capture expression variations instead of using complex neural networks. Furthermore, we propose an adaptive densification strategy that dynamically allocates Gaussians to regions with high expression variance, improving the facial detail representation. Experimental results on three datasets show that our method outperforms existing state-of-the-art methods in rendering quality and speed while reducing memory usage in training and rendering.",
+            "observed_at": "2026-11-12T17:05:01.856698Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "categories": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+            "value": [
+              "Human Avatars & VR"
+            ],
+            "observed_at": "2026-11-12T17:05:01.856698Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "doi": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPAvatar%3A+High-fidelity+Head+Avatars+by+Learning+Efficient+Gaussian+Projections&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "10.1109/cvpr52734.2025.00032",
+            "observed_at": "2026-11-13T02:34:30.296791Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPAvatar%3A+High-fidelity+Head+Avatars+by+Learning+Efficient+Gaussian+Projections&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "2025-06-10",
+            "observed_at": "2026-11-13T02:34:30.296791Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date_precision": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPAvatar%3A+High-fidelity+Head+Avatars+by+Learning+Efficient+Gaussian+Projections&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "day",
+            "observed_at": "2026-11-13T02:34:30.296791Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+            "value": 2025,
+            "observed_at": "2026-11-12T17:05:01.856698Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPAvatar%3A+High-fidelity+Head+Avatars+by+Learning+Efficient+Gaussian+Projections&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": 2025,
+            "observed_at": "2026-11-13T02:34:30.296791Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "tags": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+            "value": [
+              "Avatars"
+            ],
+            "observed_at": "2026-11-12T17:05:01.856698Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+            "value": "CVPR 2025",
+            "observed_at": "2026-11-12T17:05:01.856698Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=GPAvatar%3A+High-fidelity+Head+Avatars+by+Learning+Efficient+Gaussian+Projections&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "CVPR 2025",
+            "observed_at": "2026-11-13T02:34:30.296791Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Existing radiance field-based head avatar methods have mostly relied on pre-computed explicit priors (e.g., mesh, point) or neural implicit representations, making it challenging to achieve high fidelity with both computational efficiency and low memory consumption. To overcome this, we present GPAvatar, a novel and efficient Gaussian splatting-based method for reconstructing high-fidelity dynamic 3D head avatars from monocular videos. We extend Gaussians in 3D space to a high-dimensional embedding space encompassing Gaussian's spatial position and avatar expression, enabling the representation of the head avatar with arbitrary pose and expression. To enable splatting-based rasterization, a linear transformation is learned to project each high-dimensional Gaussian back to the 3D space, which is sufficient to capture expression variations instead of using complex neural networks. Furthermore, we propose an adaptive densification strategy that dynamically allocates Gaussians to regions with high expression variance, improving the facial detail representation. Experimental results on three datasets show that our method outperforms existing state-of-the-art methods in rendering quality and speed while reducing memory usage in training and rendering.",
+      "tldr": "To overcome this, we present GPAvatar, a novel and efficient Gaussian splatting-based method for reconstructing high-fidelity dynamic 3D head avatars from monocular videos.",
+      "primary_category": "Human Avatars & VR",
+      "categories": [
+        "Human Avatars & VR"
+      ],
+      "tags": [
+        "Avatars"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "doi:10.1109/cvpr52734.2025.01969",
       "arxiv_id": null,
       "doi": "10.1109/cvpr52734.2025.01969",
@@ -211911,6 +212214,140 @@
       ],
       "primary_arxiv_category": "cs.RO",
       "comment": "5 pages, 2 figures, 4 tables",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2412.03566",
+      "arxiv_id": "2412.03566",
+      "doi": "10.1109/cvpr52734.2025.01121",
+      "source": "arxiv",
+      "title": "FreeSim: Toward Free-viewpoint Camera Simulation in Driving Scenes",
+      "authors": [
+        "Lue Fan",
+        "Hao Zhang",
+        "Qitai Wang",
+        "Hongsheng Li",
+        "Zhaoxiang Zhang"
+      ],
+      "first_author": "Fan et al.",
+      "published_date": "2024-12-04",
+      "updated_date": "2024-12-04",
+      "year": 2024,
+      "month": 12,
+      "venue": "CVPR 2025",
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": "2025-06-10",
+      "publication_year": 2025,
+      "publication_date_precision": "day",
+      "arxiv_doi": "10.48550/arxiv.2412.03566",
+      "metadata_evidence": {
+        "categories": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Fan_FreeSim_Toward_Free-viewpoint_Camera_Simulation_in_Driving_Scenes_CVPR_2025_paper.html",
+            "value": [
+              "Autonomous Driving & Urban Scenes"
+            ],
+            "observed_at": "2026-11-12T17:12:41.037927Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "doi": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=FreeSim%3A+Toward+Free-viewpoint+Camera+Simulation+in+Driving+Scenes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "10.1109/cvpr52734.2025.01121",
+            "observed_at": "2026-11-13T02:34:30.099292Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=FreeSim%3A+Toward+Free-viewpoint+Camera+Simulation+in+Driving+Scenes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "2025-06-10",
+            "observed_at": "2026-11-13T02:34:30.099292Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_date_precision": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=FreeSim%3A+Toward+Free-viewpoint+Camera+Simulation+in+Driving+Scenes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "day",
+            "observed_at": "2026-11-13T02:34:30.099292Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=FreeSim%3A+Toward+Free-viewpoint+Camera+Simulation+in+Driving+Scenes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": 2025,
+            "observed_at": "2026-11-13T02:34:30.099292Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2412.03566v1",
+            "value": "2024-12-04",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "tags": [
+          {
+            "source": "reviewed_primary_GS_method_abstract",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Fan_FreeSim_Toward_Free-viewpoint_Camera_Simulation_in_Driving_Scenes_CVPR_2025_paper.html",
+            "value": [
+              "Diffusion"
+            ],
+            "observed_at": "2026-11-12T17:12:41.037927Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ],
+        "venue": [
+          {
+            "source": "reviewed_CVF_and_Crossref_exact_title_ordered_authors",
+            "source_url": "https://api.crossref.org/works?query.title=FreeSim%3A+Toward+Free-viewpoint+Camera+Simulation+in+Driving+Scenes&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+            "value": "CVPR 2025",
+            "observed_at": "2026-11-13T02:34:30.099292Z",
+            "reviewed_by": "Codex primary CVF/Crossref/arXiv metadata and direct GS scope review; not independent human review",
+            "reviewed_at": "2026-11-13T02:38:42.682796Z"
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2412.03566",
+      "pdf_url": "https://arxiv.org/pdf/2412.03566.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "We propose FreeSim, a camera simulation method for autonomous driving. FreeSim emphasizes high-quality rendering from viewpoints beyond the recorded ego trajectories. In such viewpoints, previous methods have unacceptable degradation because the training data of these viewpoints is unavailable. To address such data scarcity, we first propose a generative enhancement model with a matched data construction strategy. The resulting model can generate high-quality images in a viewpoint slightly deviated from the recorded trajectories, conditioned on the degraded rendering of this viewpoint. We then propose a progressive reconstruction strategy, which progressively adds generated images of unrecorded views into the reconstruction process, starting from slightly off-trajectory viewpoints and moving progressively farther away. With this progressive generation-reconstruction pipeline, FreeSim supports high-quality off-trajectory view synthesis under large deviations of more than 3 meters.",
+      "tldr": "Proposes FreeSim, a camera simulation method for autonomous driving.",
+      "primary_category": "Autonomous Driving & Urban Scenes",
+      "categories": [
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Diffusion"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Project page: https://drive-sim.github.io/freesim",
       "citation_count": 0,
       "influential_citation_count": 0,
       "openalex_id": null,
@@ -281060,6 +281497,7 @@
     "arxiv:2412.03473": "2412.03473",
     "arxiv:2412.03518": "2412.03518",
     "arxiv:2412.03526": "2412.03526",
+    "arxiv:2412.03566": "2412.03566",
     "arxiv:2412.03844": "cvf:Lin_HybridGS_Decoupling_Transients_and_Statics_with_2D_and_3D_Gaussian_CVPR_2025_paper",
     "arxiv:2412.03910": "2412.03910",
     "arxiv:2412.03911": "2412.03911",
@@ -284191,7 +284629,9 @@
     "cvf:Dai_EAP-GS_Efficient_Augmentation_of_Pointcloud_for_3D_Gaussian_Splatting_in_CVPR_2025_paper": "cvf:Dai_EAP-GS_Efficient_Augmentation_of_Pointcloud_for_3D_Gaussian_Splatting_in_CVPR_2025_paper",
     "cvf:Dai_Efficient_Decoupled_Feature_3D_Gaussian_Splatting_via_Hierarchical_Compression_CVPR_2025_paper": "cvf:Dai_Efficient_Decoupled_Feature_3D_Gaussian_Splatting_via_Hierarchical_Compression_CVPR_2025_paper",
     "cvf:Dai_RainyGS_Efficient_Rain_Synthesis_with_Physically-Based_Gaussian_Splatting_CVPR_2025_paper": "cvf:Dai_RainyGS_Efficient_Rain_Synthesis_with_Physically-Based_Gaussian_Splatting_CVPR_2025_paper",
+    "cvf:Fan_FreeSim_Toward_Free-viewpoint_Camera_Simulation_in_Driving_Scenes_CVPR_2025_paper": "2412.03566",
     "cvf:Feng_FlashGS_Efficient_3D_Gaussian_Splatting_for_Large-scale_and_High-resolution_Rendering_CVPR_2025_paper": "cvf:Feng_FlashGS_Efficient_3D_Gaussian_Splatting_for_Large-scale_and_High-resolution_Rendering_CVPR_2025_paper",
+    "cvf:Feng_GPAvatar_High-fidelity_Head_Avatars_by_Learning_Efficient_Gaussian_Projections_CVPR_2025_paper": "doi:10.1109/cvpr52734.2025.00032",
     "cvf:Fu_COLMAP-Free_3D_Gaussian_Splatting_CVPR_2024_paper": "2312.07504",
     "cvf:Galerne_SGSST_Scaling_Gaussian_Splatting_Style_Transfer_CVPR_2025_paper": "cvf:Galerne_SGSST_Scaling_Gaussian_Splatting_Style_Transfer_CVPR_2025_paper",
     "cvf:Gao_Mani-GS_Gaussian_Splatting_Manipulation_with_Triangular_Mesh_CVPR_2025_paper": "cvf:Gao_Mani-GS_Gaussian_Splatting_Manipulation_with_Triangular_Mesh_CVPR_2025_paper",
@@ -284236,6 +284676,7 @@
     "cvf:Li_DNGaussian_Optimizing_Sparse-View_3D_Gaussian_Radiance_Fields_with_Global-Local_Depth_CVPR_2024_paper": "2403.06912",
     "cvf:Li_EVPGS_Enhanced_View_Prior_Guidance_for_Splatting-based_Extrapolated_View_Synthesis_CVPR_2025_paper": "cvf:Li_EVPGS_Enhanced_View_Prior_Guidance_for_Splatting-based_Extrapolated_View_Synthesis_CVPR_2025_paper",
     "cvf:Li_GIFStream_4D_Gaussian-based_Immersive_Video_with_Feature_Stream_CVPR_2025_paper": "cvf:Li_GIFStream_4D_Gaussian-based_Immersive_Video_with_Feature_Stream_CVPR_2025_paper",
+    "cvf:Li_GPVK-VL_Geometry-Preserving_Virtual_Keyframes_for_Visual_Localization_under_Large_Viewpoint_CVPR_2025_paper": "doi:10.1109/cvpr52734.2025.01559",
     "cvf:Li_GaussianUDF_Inferring_Unsigned_Distance_Functions_through_3D_Gaussian_Splatting_CVPR_2025_paper": "cvf:Li_GaussianUDF_Inferring_Unsigned_Distance_Functions_through_3D_Gaussian_Splatting_CVPR_2025_paper",
     "cvf:Li_Time_of_the_Flight_of_the_Gaussians_Optimizing_Depth_Indirectly_CVPR_2025_paper": "cvf:Li_Time_of_the_Flight_of_the_Gaussians_Optimizing_Depth_Indirectly_CVPR_2025_paper",
     "cvf:Liang_DGTalker_Disentangled_Generative_Latent_Space_Learning_for_Audio-Driven_Gaussian_Talking_ICCV_2025_paper": "doi:10.1109/iccv51701.2025.01031",
@@ -284395,9 +284836,12 @@
     "doi:10.1109/cvpr52733.2024.00159": "paper:2024-9d3962a919",
     "doi:10.1109/cvpr52733.2024.01840": "paper:2023-65d4217c16",
     "doi:10.1109/cvpr52733.2024.01896": "paper:2024-be14b98be1",
+    "doi:10.1109/cvpr52734.2025.00032": "doi:10.1109/cvpr52734.2025.00032",
     "doi:10.1109/cvpr52734.2025.00071": "doi:10.1109/cvpr52734.2025.00071",
     "doi:10.1109/cvpr52734.2025.00086": "paper:2025-eb1046d19e",
     "doi:10.1109/cvpr52734.2025.01051": "paper:2025-51c7d8fe35",
+    "doi:10.1109/cvpr52734.2025.01121": "2412.03566",
+    "doi:10.1109/cvpr52734.2025.01559": "doi:10.1109/cvpr52734.2025.01559",
     "doi:10.1109/cvpr52734.2025.01969": "doi:10.1109/cvpr52734.2025.01969",
     "doi:10.1109/cvpr52734.2025.02456": "doi:10.1109/cvpr52734.2025.02456",
     "doi:10.1109/cvprw63382.2024.00794": "2404.10625",
@@ -285579,6 +286023,7 @@
     "doi:10.48550/arxiv.2412.03473": "2412.03473",
     "doi:10.48550/arxiv.2412.03518": "2412.03518",
     "doi:10.48550/arxiv.2412.03526": "2412.03526",
+    "doi:10.48550/arxiv.2412.03566": "2412.03566",
     "doi:10.48550/arxiv.2412.03844": "cvf:Lin_HybridGS_Decoupling_Transients_and_Statics_with_2D_and_3D_Gaussian_CVPR_2025_paper",
     "doi:10.48550/arxiv.2412.03910": "2412.03910",
     "doi:10.48550/arxiv.2412.03911": "2412.03911",
