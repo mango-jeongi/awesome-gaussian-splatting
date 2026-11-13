@@ -1,0 +1,117 @@
+{
+  "baseline_git_revision": "4ddde7750c808c8a5f88ce402f16f75ba302a8b8",
+  "canonical_modified": false,
+  "canonical_raw_sha256": "7b9171117e22cdf03e8a09613d638e29adf946167046243a7db120e4a63f92bb",
+  "decision": "Distinct papers; remove wrongly attributed DOI from LapisGS and reassign its alias to source-verified Sketch and Patch on application",
+  "lapis_primary_source": {
+    "observed_at": "2026-11-10T18:22:17.838518Z",
+    "record": {
+      "abstract": "The rise of Extended Reality (XR) requires efficient streaming of 3D online worlds, challenging current 3DGS representations to adapt to bandwidth-constrained environments. This paper proposes LapisGS, a layered 3DGS that supports adaptive streaming and progressive rendering. Our method constructs a layered structure for cumulative representation, incorporates dynamic opacity optimization to maintain visual fidelity, and utilizes occupancy maps to efficiently manage Gaussian splats. This proposed model offers a progressive representation supporting a continuous rendering quality adapted for bandwidth-aware streaming. Extensive experiments validate the effectiveness of our approach in balancing visual fidelity with the compactness of the model, with up to 50.71% improvement in SSIM, 286.53% improvement in LPIPS with 23% of the original model size, and shows its potential for bandwidth-adapted 3D streaming and rendering applications.",
+      "arxiv_doi": "10.48550/arxiv.2408.14823",
+      "arxiv_id": "2408.14823",
+      "authors": [
+        "Yuang Shi",
+        "Géraldine Morin",
+        "Simone Gasparini",
+        "Wei Tsang Ooi"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "3DV 2025; Project Page: https://yuang-ian.github.io/lapisgs/ ; Code: https://github.com/nus-vv-streams/lapis-gs",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": "10.1145/3712677.3720466",
+      "first_author": "Shi et al.",
+      "id": "2408.14823",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2408.14823v2",
+            "value": "2024-08-27"
+          }
+        ]
+      },
+      "month": 8,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2408.14823",
+      "pdf_url": "https://arxiv.org/pdf/2408.14823.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-08-27",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "LapisGS: Layered Progressive 3D Gaussian Splatting for Adaptive Streaming",
+      "tldr": "Proposes LapisGS, a layered 3DGS that supports adaptive streaming and progressive rendering.",
+      "updated_date": "2025-02-10",
+      "venue": null,
+      "year": 2024
+    },
+    "sha256": "03313046d3c67ee49e39fea508051519b8e1ea7a6604e6a2570705295848284c",
+    "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/0518e2450dfa34da/00000000.03313046d3c67ee49e39fea508051519b8e1ea7a6604e6a2570705295848284c.json"
+  },
+  "normalization_scope": "Accent-only author comparison for this explicit registry match; no global person alias",
+  "prepared_records": "data/reviews/sketch-lapis-prepared-records-20261112.json",
+  "prepared_records_sha256": "f21b96f8be5015581b4463cd580f286150d7273958cc85e72bcd9abd5ce92616",
+  "provider_observations_modified": false,
+  "registry_source": "data/reviews/sketch-lapis-crossref-doi-source-20261112.json",
+  "registry_source_sha256": "c2f0159ebedddc2c7d224df4ee0e97ebf040707d4c5c119a34e3042ff23e9d89",
+  "remaining": "Apply correction and addition with snapshot guards, update seed/extraction bindings and new source task, preserve ambiguous provider evidence, rebuild and verify public aliases/metadata.",
+  "reviewed_at": "2026-11-13T02:19:56.045410+00:00",
+  "reviewed_by": "Codex primary Crossref/arXiv identity correction review; not independent human review",
+  "simulation": {
+    "active_after": 4109,
+    "correct_DOI_alias_target": "2501.13045",
+    "insertions": 1,
+    "lapis_changed_fields": [
+      "doi",
+      "metadata_evidence"
+    ],
+    "other_4107_records_unchanged": true
+  },
+  "sketch_primary_source": {
+    "abstract": "3D Gaussian Splatting (3DGS) has emerged as a promising representation for photorealistic rendering of 3D scenes. However, its high storage requirements pose significant challenges for practical applications. We observe that Gaussians exhibit distinct roles and characteristics that are analogous to traditional artistic techniques -- Like how artists first sketch outlines before filling in broader areas with color, some Gaussians capture high-frequency features like edges and contours; While other Gaussians represent broader, smoother regions, that are analogous to broader brush strokes that add volume and depth to a painting. Based on this observation, we propose a novel hybrid representation that categorizes Gaussians into (i) Sketch Gaussians, which define scene boundaries, and (ii) Patch Gaussians, which cover smooth regions. Sketch Gaussians are efficiently encoded using parametric models, leveraging their geometric coherence, while Patch Gaussians undergo optimized pruning, retraining, and vector quantization to maintain volumetric consistency and storage efficiency. Our comprehensive evaluation across diverse indoor and outdoor scenes demonstrates that this structure-aware approach achieves up to 32.62% improvement in PSNR, 19.12% in SSIM, and 45.41% in LPIPS at equivalent model sizes, and correspondingly, for an indoor scene, our model maintains the visual quality with 2.3% of the original model size.",
+    "authors": [
+      "Yuang Shi",
+      "Simone Gasparini",
+      "Géraldine Morin",
+      "Chenggang Yang",
+      "Wei Tsang Ooi"
+    ],
+    "canonical_id": null,
+    "current_policy_outcome": "include",
+    "current_policy_reason": "Gaussian splatting abstract with representation/application context",
+    "identity_conflict": "Contradictory identifiers for 2408.14823",
+    "original_disposition": {
+      "canonical_id": null,
+      "operation": "none",
+      "outcome": "review",
+      "reason": "Identity/metadata review required: Contradictory identifiers for 2408.14823",
+      "source_id": "2501.13045"
+    },
+    "plural_Gaussian_Splattings_present": false,
+    "record_sha256": "8d59e4d0676e857f897ce973cac2dbe46a45a5320ae37195a2a8e5e8d31c603d",
+    "source_file": "data/ingestion/backfill/full-v3-20261110/crawl/pages/e397a2d2c55fe4e4/00000000.bc01d1c655b4a1eb950aad14f322f91e19fd7940d3cb5efe60d7f592fc6c214e.json",
+    "source_id": "2501.13045",
+    "source_observed_at": "2026-11-10T18:22:51.971790Z",
+    "source_sha256": "bc01d1c655b4a1eb950aad14f322f91e19fd7940d3cb5efe60d7f592fc6c214e",
+    "title": "Sketch and Patch: Efficient 3D Gaussian Representation for Man-Made Scenes"
+  }
+}
