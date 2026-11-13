@@ -12,6 +12,9 @@ from src.file_lock import exclusive_file
 from src.releases import MAX_BYTES, MAX_FILES, check_public, descriptors, safe_name, sha
 from src.storage import _atomic_write, _encode
 
+# Cleanup may inspect an oversized historical cache without relaxing release limits.
+MAX_CLEANUP_BYTES = 500_000_000
+
 OWNED = re.compile(
     r"(?:index|search|aliases|archive|signals|trending|"
     r"details/[0-9]{4}-(?:0[1-9]|1[0-2])(?:-[01])*|"
@@ -45,11 +48,15 @@ def _target(root, name):
     return path
 
 
-def _limits(files, size):
+def _limits(files, size, max_scan_bytes=None):
+    scan_limit = MAX_BYTES if max_scan_bytes is None else max_scan_bytes
     if type(files) is not int or not 1 <= files <= MAX_FILES:
         raise ValueError("Invalid cleanup file budget")
-    if type(size) is not int or not 1 <= size <= MAX_BYTES:
+    if type(scan_limit) is not int or not 1 <= scan_limit <= MAX_CLEANUP_BYTES:
+        raise ValueError("Invalid cleanup scan byte budget")
+    if type(size) is not int or not 1 <= size <= scan_limit:
         raise ValueError("Invalid cleanup byte budget")
+    return scan_limit
 
 
 def _walk(root):
@@ -72,8 +79,8 @@ def _walk(root):
     return sorted(result)
 
 
-def _plan(root, retain, max_delete_files, max_delete_bytes):
-    _limits(max_delete_files, max_delete_bytes)
+def _plan(root, retain, max_delete_files, max_delete_bytes, max_scan_bytes=None):
+    scan_limit = _limits(max_delete_files, max_delete_bytes, max_scan_bytes)
     if not 1 <= len(retain) <= 5:
         raise ValueError("Retain one to five explicitly selected previous manifests")
     inventory = _walk(root)
@@ -156,7 +163,7 @@ def _plan(root, retain, max_delete_files, max_delete_bytes):
         target = _target(root, name)
         size = target.stat().st_size
         scanned_bytes += size
-        if scanned_bytes > MAX_BYTES:
+        if scanned_bytes > scan_limit:
             raise ValueError("Public immutable artifact bytes exceed scan budget")
         if sha(target.read_bytes()) != owned[1]:
             raise ValueError("Corrupt immutable artifact; cleanup refused before deletion")
@@ -174,13 +181,17 @@ def _plan(root, retain, max_delete_files, max_delete_bytes):
         "unknown_files_preserved": unknown,
         "delete": candidates,
     }
+    if max_scan_bytes is not None:
+        plan["max_scan_bytes"] = max_scan_bytes
     return {**plan, "plan_id": sha(_encode(plan))}
 
 
-def plan_cleanup(root, retain, *, max_delete_files=500, max_delete_bytes=100_000_000):
+def plan_cleanup(
+    root, retain, *, max_delete_files=500, max_delete_bytes=100_000_000, max_scan_bytes=None
+):
     root = _root(root)
     with exclusive_file(root / "public.run.lock", resource="public artifact writer"):
-        return _plan(root, retain, max_delete_files, max_delete_bytes)
+        return _plan(root, retain, max_delete_files, max_delete_bytes, max_scan_bytes)
 
 
 def apply_cleanup(root, approved):
@@ -191,7 +202,9 @@ def apply_cleanup(root, approved):
         != approved["plan_id"]
     ):
         raise ValueError("Cleanup plan root or identity mismatch")
-    _limits(approved["max_delete_files"], approved["max_delete_bytes"])
+    _limits(
+        approved["max_delete_files"], approved["max_delete_bytes"], approved.get("max_scan_bytes")
+    )
     if len(approved["delete"]) > approved["max_delete_files"]:
         raise ValueError("Invalid approved deletion inventory")
     allowed = {x["path"]: x for x in approved["delete"]}
@@ -203,6 +216,7 @@ def apply_cleanup(root, approved):
             [x["path"] for x in approved["retained_manifests"]],
             approved["max_delete_files"],
             approved["max_delete_bytes"],
+            approved.get("max_scan_bytes"),
         )
         for key in fresh.keys() - {"delete", "plan_id"}:
             if fresh[key] != approved[key]:
@@ -242,6 +256,11 @@ def main():
     preview.add_argument("--output", type=Path, required=True)
     preview.add_argument("--max-delete-files", type=int, default=500)
     preview.add_argument("--max-delete-bytes", type=int, default=100_000_000)
+    preview.add_argument(
+        "--max-scan-bytes",
+        type=int,
+        help="Explicit historical-cache scan bound, at most 500 MB; release limits stay unchanged",
+    )
     apply = commands.add_parser("apply")
     apply.add_argument("--root", type=Path, required=True)
     apply.add_argument("--plan", type=Path, required=True)
@@ -259,6 +278,7 @@ def main():
             args.retain,
             max_delete_files=args.max_delete_files,
             max_delete_bytes=args.max_delete_bytes,
+            max_scan_bytes=args.max_scan_bytes,
         )
     else:
         if args.plan.stat().st_size > 2_000_000:

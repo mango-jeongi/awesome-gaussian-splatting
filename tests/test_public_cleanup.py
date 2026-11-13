@@ -218,3 +218,42 @@ def test_transitive_artifact_pointers_cannot_be_omitted_from_retention(tmp_path,
     with pytest.raises(ValueError, match="undeclared"):
         plan_cleanup(root, [prior])
     assert snapshot(root) == before
+
+
+def test_explicit_oversized_history_budget_preserves_release_limit_and_replay(
+    tmp_path, monkeypatch
+):
+    from src.public import _artifact
+
+    root, prior = generations(tmp_path)
+    for version in range(3):
+        _artifact(root, "signals", {"stale": str(version) * 10_000})
+    initial = plan_cleanup(root, [prior])
+    protected_bytes = sum(item["bytes"] for item in initial["protected"].values())
+    obsolete_bytes = sum(item["bytes"] for item in initial["delete"])
+    scanned_bytes = protected_bytes + obsolete_bytes
+    monkeypatch.setattr(cleanup, "MAX_BYTES", protected_bytes + 100)
+    before = snapshot(root)
+    with pytest.raises(ValueError, match="scan budget"):
+        plan_cleanup(root, [prior], max_delete_bytes=protected_bytes)
+    assert snapshot(root) == before
+    plan = plan_cleanup(
+        root, [prior], max_scan_bytes=scanned_bytes, max_delete_bytes=obsolete_bytes
+    )
+    assert plan["max_scan_bytes"] == scanned_bytes
+    assert obsolete_bytes > cleanup.MAX_BYTES
+    receipt = apply_cleanup(root, plan)
+    assert receipt["deleted_bytes"] == obsolete_bytes
+    for name in ["manifest.json", "user-note.json", *plan["protected"]]:
+        assert (root / name).read_bytes() == before[name]
+    assert apply_cleanup(root, plan)["status"] == "no_op"
+    assert cleanup.MAX_BYTES == protected_bytes + 100
+
+
+@pytest.mark.parametrize("scan_limit", [True, 0, 500_000_001])
+def test_invalid_extended_scan_bound_refuses_without_deletion(tmp_path, scan_limit):
+    root, prior = generations(tmp_path)
+    before = snapshot(root)
+    with pytest.raises(ValueError, match="scan byte budget"):
+        plan_cleanup(root, [prior], max_scan_bytes=scan_limit)
+    assert snapshot(root) == before
