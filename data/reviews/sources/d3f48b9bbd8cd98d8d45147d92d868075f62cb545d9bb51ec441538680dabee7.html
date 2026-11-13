@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A speedup for any SDS-based 3D generation method">
+  <meta name="keywords" content="3D generation, Score Distillation Sampling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hash3D</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    video, img {
+      max-height: 160px; /* Adjust based on your preference */
+      max-width: 160px; /* Ensures responsiveness */
+    }
+    .speed-highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/lv-logo.jpg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/Adamdad/KnowledgeFactor">
+            KnowledgeFactor
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hash3D: Training-free Acceleration<br> for 3D Generation<br><small>CVPR 2025</small></h1>
+          <div class="is-size-5 publication-authors">
+            <!-- <h2><b>CVPR 2025</b></h2> -->
+            <span class="author-block">
+              <a href="https://adamdad.github.io">Xingyi Yang</a>,</span> 
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=AnYh2rAAAAAJ&hl=en">Songhua Liu</a>,</span> 
+            <span class="author-block">
+              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">National University of Singapore</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://adamdad.github.io/hash3D/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <!-- <i class="fa-regular fa-window"></i> -->
+                      <i class="fa fa-home"></i>
+                  </span>
+                  <span>Project Page</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.06091"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=q3WHjFWJ8w4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Adamdad/hash3D"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <img src="./static/images/pipeline4.jpg" style="max-height: 100%; max-width: 100%;">
+
+      <img src="./static/images/performance.jpg" style="max-height: 100%; max-width: 100%;"> -->
+      <img src="./static/images/head.jpg" style="max-height: 100%; max-width: 100%;">
+      <h3 class="subtitle has-text-centered">
+         Examples by applying our <span class="dnerf">Hash3D</span> on Gaussian-Dreamer and Dream-Gaussian. We accelerate Gaussian-Dreamer by 1.5X and Dream-Gaussian by 4X with comparable visual quality.
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The evolution of 3D generative modeling has been notably propelled by the adoption of 2D diffusion models. Despite this progress, the cumbersome optimization process per se presents a critical hurdle to efficiency. 
+            In this paper, we introduce <span class="dnerf">Hash3D</span>, a universal acceleration for 3D generation without model training.
+          </p>
+          <p>
+            Central to Hash3D is the insight that feature-map redundancy is prevalent in images rendered from camera positions and diffusion time-steps in close proximity. 
+            By effectively hashing and reusing these feature maps across neighboring timesteps and camera angles, Hash3D substantially prevents redundant calculations, 
+            thus accelerating the diffusion model's inference in 3D generation tasks. We achieve this through an adaptive grid-based hashing.
+          Surprisingly, this feature-sharing mechanism not only speed up the generation but also enhances the smoothness and view consistency of the synthesized 3D objects. 
+          Our experiments covering 6 text-to-3D and 3 image-to-3D models, demonstrate Hash3D's versatility to speed up optimization, enhancing efficiency by $1.3\sim 4\times$. 
+          Additionally, Hash3D's integration with 3D Gaussian splatting largely speeds up 3D model creation, reducing text-to-3D processing to about 10 minutes and image-to-3D conversion to roughly 30 seconds. 
+             The code is provided in <a href="https://github.com/Adamdad/Hash3D" target="_blank">https://github.com/Adamdad/Hash3D</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Main Method</h2>
+    <div class="hero-body">
+      <img src="./static/images/pipeline4.jpg" style="max-height: 100%; max-width: 100%;">
+
+      <img src="./static/images/performance.jpg" style="max-height: 100%; max-width: 100%;">
+      <!-- <img src="./static/images/head.jpg" style="max-height: 100%; max-width: 100%;"> -->
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Hash3D</span> speeds up 3D generative model by caching and reusing these feature maps across
+        neighboring timesteps and camera angles. We make this retrieval highly efficient through an adaptive grid-based hashing.
+         It speeds up the running time by 1.3-4X.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- make a table, the first column is a input image and the second column is a video-->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Image-to-3D Results</h2>
+        <div class="content has-text-justified">
+          <table>
+            <tr>
+              <th>Input Image</th>
+              <th>Zero-1-to-3</th>
+              <th>Hash3D + Zero-1-to-3<span class="speed-highlight">(Speed X3.3)</span></th>
+            </tr>
+            <tr>
+              <td><img src="./static/images/baby_phoenix_on_ice.png"></td>
+              <td><video poster="" id="steve" autoplay controls muted loop playsinline height="10%">
+                <source src="./static/videos/phoenix_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+              <td><video poster="" id="steve" autoplay controls muted loop playsinline height="10%">
+                <source src="./static/videos/phoenix_hash_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/grootplant_rgba.png"></td>
+              <td><video poster="" id="steve" autoplay controls muted loop playsinline height="10%">
+                <source src="./static/videos/grootplant_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+              <td><video poster="" id="steve" autoplay controls muted loop playsinline height="10%">
+                <source src="./static/videos/grootplant_hash_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/stucking_cups.png"></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/stucking_cups_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/stucking_cups_hash_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/shoe1.png"></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/shoe1_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/show1_hash_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/dog1_rgba.png"></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/dog1_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+              <td><video poster="" id="steve" autoplay muted loop playsinline height="10%">
+                <source src="./static/videos/dog1_hash_zero123.mp4"
+                        type="video/mp4">
+              </video></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <th>Input Image</th>
+              <th>DreamGaussian</th>
+              <th>Hash3D + DreamGaussian <span class="speed-highlight">(Speed X4.0)</span></th>
+            </tr>
+            <tr>
+              <td><img src="./static/images/sofa.png" alt="Sofa"></td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/sofa_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/sofa_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/sofa_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/sofa_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/mario.png" alt="Sofa"></td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/mario_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/mario_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/mario_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/mario_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="./static/images/lion.png" alt="Sofa"></td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/lion_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian/lion_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/lion_stage2.mp4" type="video/mp4">
+                </video>
+                <video poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/dreamgaussian_hash/lion_stage2_normal.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- make a table, the first column is a input image and the second column is a video-->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Text-to-3D Results</h2>
+        <div class="content has-text-justified">
+          <table>
+            <tr>
+              <th>Prompt</th>
+              <th>Gaussian-Dreamer</th>
+              <th>Hash3D + Gaussian-Dreamer <br> <span class="speed-highlight">(Speed X1.5)</span></th>
+            </tr>
+            <tr>
+              <td style="text-align: center; vertical-align: middle; font-size:18px; font-family:Comic sans MS">A bear dressed as a lumberjack</td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer/a bear dressed as a lumberjack.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer_hash3d/a bear dressed as a lumberjack.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; vertical-align: middle; font-size:18px; font-family:Comic sans MS">A chimpanzee dressed like Napoleon Bonaparte</td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer/a chimpanzee dressed like Napoleon Bonaparte.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer_hash3d/a chimpanzee dressed like Napoleon Bonaparte.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; vertical-align: middle; font-size:18px; font-family:Comic sans MS">A dachsund wearing a boater hat</td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer/a dachsund wearing a boater hat.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer_hash3d/a dachsund wearing a boater hat.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; vertical-align: middle; font-size:18px; font-family:Comic sans MS">A plate of delicious tacos</td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer/A plate of delicious tacos.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video  style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer_hash3d/A plate of delicious tacos.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center; vertical-align: middle; font-size:18px; font-family:Comic sans MS">A train engine made out of clay</td>
+              <td>
+                <video style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer/a train engine made out of clay.mp4" type="video/mp4">
+                </video>
+              </td>
+              <td>
+                <video  style="max-height: 250px; max-width: 250px;" poster="" autoplay muted loop playsinline>
+                  <source src="./static/videos/gaussiandreamer_hash3d/a train engine made out of clay.mp4" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Resource</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our work is inspired by several work that focus on accelerating the inference of diffusion model and 3D reconstruction.
+          </p>
+          <ul>
+            <li><p>
+              <a href="https://arxiv.org/abs/2312.00858"><b>DeepCache: Accelerating Diffusion Models for Free</b></a> <br>
+              Xinyin Ma, Gongfan Fang, Xinchao Wang<br>
+              CVPR 2024
+            </p></li>
+            <li><p>
+              <a href="https://niessnerlab.org/papers/2013/4hashing/niessner2013hashing.pdf"><b>Real-time 3D Reconstruction at Scale using Voxel Hashing</b></a> <br>
+              Matthias Nießner, Michael Zollho ̈fer, Shahram Izadi, Marc Stamminger <br>
+              ToG 2013
+            </p></li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{yang2024hash3d,
+      title={Hash3D: Training-free Acceleration for 3D Generation}, 
+      author={Xingyi Yang and Songhua Liu and Xinchao Wang},
+      booktitle={The IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+      year={2025}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Adamdad" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. We sincerely thank <a herf="https://keunhong.com">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

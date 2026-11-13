@@ -1,0 +1,143 @@
+{
+  "canonical_modified": false,
+  "captures": [
+    {
+      "bytes": 4947,
+      "observed_at": "2026-11-13T03:14:52.289089+00:00",
+      "retry_after": null,
+      "sha256": "57d5b9bd1b12a53b0a65a6cb329ce73e5d96a3ac845f9d837092bcd5e6636053",
+      "source_file": "data/reviews/sources/57d5b9bd1b12a53b0a65a6cb329ce73e5d96a3ac845f9d837092bcd5e6636053.xml",
+      "status_code": 200,
+      "url": "https://export.arxiv.org/api/query?start=0&max_results=2&sortBy=submittedDate&sortOrder=descending&id_list=2404.06091%2C2502.07685"
+    }
+  ],
+  "identifiers": [
+    "2502.07685",
+    "2404.06091"
+  ],
+  "maximum_attempts": 1,
+  "records": {
+    "2404.06091": {
+      "abstract": "The evolution of 3D generative modeling has been notably propelled by the adoption of 2D diffusion models. Despite this progress, the cumbersome optimization process per se presents a critical hurdle to efficiency. In this paper, we introduce Hash3D, a universal acceleration for 3D generation without model training. Central to Hash3D is the insight that feature-map redundancy is prevalent in images rendered from camera positions and diffusion time-steps in close proximity. By effectively hashing and reusing these feature maps across neighboring timesteps and camera angles, Hash3D substantially prevents redundant calculations, thus accelerating the diffusion model's inference in 3D generation tasks. We achieve this through an adaptive grid-based hashing. Surprisingly, this feature-sharing mechanism not only speed up the generation but also enhances the smoothness and view consistency of the synthesized 3D objects. Our experiments covering 5 text-to-3D and 3 image-to-3D models, demonstrate Hash3D's versatility to speed up optimization, enhancing efficiency by 1.3 to 4 times. Additionally, Hash3D's integration with 3D Gaussian splatting largely speeds up 3D model creation, reducing text-to-3D processing to about 10 minutes and image-to-3D conversion to roughly 30 seconds. The project page is at https://adamdad.github.io/hash3D/.",
+      "arxiv_doi": "10.48550/arxiv.2404.06091",
+      "arxiv_id": "2404.06091",
+      "authors": [
+        "Xingyi Yang",
+        "Xinchao Wang"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "https://adamdad.github.io/hash3D/",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Yang et al.",
+      "id": "2404.06091",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2404.06091v1",
+            "value": "2024-04-09"
+          }
+        ]
+      },
+      "month": 4,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2404.06091",
+      "pdf_url": "https://arxiv.org/pdf/2404.06091.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2024-04-09",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Hash3D: Training-free Acceleration for 3D Generation",
+      "tldr": "Introduces Hash3D, a universal acceleration for 3D generation without model training.",
+      "updated_date": "2024-04-09",
+      "venue": null,
+      "year": 2024
+    },
+    "2502.07685": {
+      "abstract": "We present Matrix3D, a unified model that performs several photogrammetry subtasks, including pose estimation, depth prediction, and novel view synthesis using just the same model. Matrix3D utilizes a multi-modal diffusion transformer (DiT) to integrate transformations across several modalities, such as images, camera parameters, and depth maps. The key to Matrix3D's large-scale multi-modal training lies in the incorporation of a mask learning strategy. This enables full-modality model training even with partially complete data, such as bi-modality data of image-pose and image-depth pairs, thus significantly increases the pool of available training data. Matrix3D demonstrates state-of-the-art performance in pose estimation and novel view synthesis tasks. Additionally, it offers fine-grained control through multi-round interactions, making it an innovative tool for 3D content creation. Project page: https://nju-3dv.github.io/projects/matrix3d.",
+      "arxiv_doi": "10.48550/arxiv.2502.07685",
+      "arxiv_id": "2502.07685",
+      "authors": [
+        "Yuanxun Lu",
+        "Jingyang Zhang",
+        "Tian Fang",
+        "Jean-Daniel Nahmias",
+        "Yanghai Tsin",
+        "Long Quan",
+        "Xun Cao",
+        "Yao Yao",
+        "Shiwei Li"
+      ],
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "citation_count": 0,
+      "code_url": null,
+      "comment": "CVPR 2025 camera ready. Project Page: https://nju-3dv.github.io/projects/matrix3d",
+      "date_placement": "observed",
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": [],
+      "doi": null,
+      "first_author": "Lu et al.",
+      "id": "2502.07685",
+      "influential_citation_count": 0,
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "observed_at": null,
+            "reviewed_at": null,
+            "reviewed_by": null,
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2502.07685v2",
+            "value": "2025-02-11"
+          }
+        ]
+      },
+      "month": 2,
+      "openalex_id": null,
+      "paper_url": "https://arxiv.org/abs/2502.07685",
+      "pdf_url": "https://arxiv.org/pdf/2502.07685.pdf",
+      "primary_arxiv_category": "cs.CV",
+      "primary_category": "Foundations & Acceleration",
+      "project_url": null,
+      "publication_date": null,
+      "publication_date_precision": "unknown",
+      "publication_year": null,
+      "published_date": "2025-02-11",
+      "published_date_precision": "day",
+      "referenced_works": [],
+      "source": "arxiv",
+      "tags": [
+        "Foundations"
+      ],
+      "title": "Matrix3D: Large Photogrammetry Model All-in-One",
+      "tldr": "Presents Matrix3D, a unified model that performs several photogrammetry subtasks, including pose estimation, depth prediction, and novel view synthesis using just the same model.",
+      "updated_date": "2025-03-21",
+      "venue": null,
+      "year": 2025
+    }
+  },
+  "status": "verified_primary_records"
+}
