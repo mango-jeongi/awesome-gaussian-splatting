@@ -1,0 +1,453 @@
+[
+  {
+    "abstract": "3D content creation has achieved significant progress in terms of both quality and speed. Although current Gaussian Splatting-based methods can produce 3D objects within seconds, they are still limited by complex preprocessing or low controllability. In this paper, we introduce a novel framework designed to efficiently and controllably generate high-resolution 3D models from text promptsor image. Our key insights are three-fold: 1) Hierarchical Gaussian Mixture Model Splatting: We propose an hybrid hierarchical representation to extract fixed number of fine-grained Gaussians with multiscale details from textured object, also establish part-level representation of Gaussians primitives. 2) Mamba with adaptive tree topology: We present a diffusion mamba with tree-topology to adaptively generate Gaussians with disordered spatial structures, without the need for complex preprocessing and maintain linear complexity generation. 3) Controllable Generation: Building on the HGMM tree, we introduce a cascaded diffusion framework combining controllable implicit latent generation, which progressively generates condition-driven latents, and explicit splatting generation, which transforms latents into high-quality Gaussian primitives. Extensive experiments demonstrate the high fidelity and efficiency of our approach.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Qitong Yang",
+      "Mingtao Feng",
+      "Zijie Wu",
+      "Weisheng Dong",
+      "Fangfang Wu",
+      "Yaonan Wang",
+      "Ajmal Mian"
+    ],
+    "categories": [
+      "Generative Priors & 3D Reconstruction"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.01037",
+    "first_author": "Yang et al.",
+    "id": "doi:10.1109/cvpr52734.2025.01037",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T17:35:31.422598Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+          "value": "3D content creation has achieved significant progress in terms of both quality and speed. Although current Gaussian Splatting-based methods can produce 3D objects within seconds, they are still limited by complex preprocessing or low controllability. In this paper, we introduce a novel framework designed to efficiently and controllably generate high-resolution 3D models from text promptsor image. Our key insights are three-fold: 1) Hierarchical Gaussian Mixture Model Splatting: We propose an hybrid hierarchical representation to extract fixed number of fine-grained Gaussians with multiscale details from textured object, also establish part-level representation of Gaussians primitives. 2) Mamba with adaptive tree topology: We present a diffusion mamba with tree-topology to adaptively generate Gaussians with disordered spatial structures, without the need for complex preprocessing and maintain linear complexity generation. 3) Controllable Generation: Building on the HGMM tree, we introduce a cascaded diffusion framework combining controllable implicit latent generation, which progressively generates condition-driven latents, and explicit splatting generation, which transforms latents into high-quality Gaussian primitives. Extensive experiments demonstrate the high fidelity and efficiency of our approach."
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T17:35:31.422598Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+          "value": [
+            "Generative Priors & 3D Reconstruction"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-13T02:46:53.746817Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Hierarchical+Gaussian+Mixture+Model+Splatting+for+Efficient+and+Part+Controllable+3D+Generation&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "10.1109/cvpr52734.2025.01037"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-13T02:46:53.746817Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Hierarchical+Gaussian+Mixture+Model+Splatting+for+Efficient+and+Part+Controllable+3D+Generation&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-13T02:46:53.746817Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Hierarchical+Gaussian+Mixture+Model+Splatting+for+Efficient+and+Part+Controllable+3D+Generation&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T17:35:31.422598Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-13T02:46:53.746817Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Hierarchical+Gaussian+Mixture+Model+Splatting+for+Efficient+and+Part+Controllable+3D+Generation&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T17:35:31.422598Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+          "value": [
+            "Diffusion"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T17:35:31.422598Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        },
+        {
+          "observed_at": "2026-11-13T02:46:53.746817Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Hierarchical+Gaussian+Mixture+Model+Splatting+for+Efficient+and+Part+Controllable+3D+Generation&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yang_Hierarchical_Gaussian_Mixture_Model_Splatting_for_Efficient_and_Part_Controllable_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Generative Priors & 3D Reconstruction",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "Diffusion"
+    ],
+    "title": "Hierarchical Gaussian Mixture Model Splatting for Efficient and Part Controllable 3D Generation",
+    "tldr": "Introduces framework designed to efficiently and controllably generate high-resolution 3D models from text promptsor image.",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  },
+  {
+    "abstract": "Extending the field of view of video content beyond its original version has many applications: immersive viewing experience with VR devices, reformatting 4:3 legacy content to today's viewing conditions with wide screens, or simply extending vertically captured phone videos. Many existing works focus on synthesizing the video using generative models only. Despite promising results, this strategy seems at the moment limited in terms of quality. In this work, we address this problem using two key ideas: 3D supported outpainting for the static regions of the images, and leveraging pre-trained video diffusion model to ensure realistic and temporally coherent results, particularly for the dynamic parts. In the first stage, we iterate between image outpainting and updating the 3D scene representation - we use 3D Gaussian Splatting. Then we consider dynamic objects independently per frame and inpaint missing pixels. Finally, we propose a denoising scheme that allows to maintain known reliable regions and update the dynamic parts to obtain temporally realistic results.We achieve state-of-the-art video outpainting. This is validated quantitatively and through a user study. We are also able to extend the field of view largely beyond the limits reached by existing methods.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Zhongrui Yu",
+      "Martina Megaro-Boldini",
+      "Robert W. Sumner",
+      "Abdelaziz Djelouah"
+    ],
+    "categories": [
+      "Generative Priors & 3D Reconstruction"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.00685",
+    "first_author": "Yu et al.",
+    "id": "doi:10.1109/cvpr52734.2025.00685",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T17:12:12.528325Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+          "value": "Extending the field of view of video content beyond its original version has many applications: immersive viewing experience with VR devices, reformatting 4:3 legacy content to today's viewing conditions with wide screens, or simply extending vertically captured phone videos. Many existing works focus on synthesizing the video using generative models only. Despite promising results, this strategy seems at the moment limited in terms of quality. In this work, we address this problem using two key ideas: 3D supported outpainting for the static regions of the images, and leveraging pre-trained video diffusion model to ensure realistic and temporally coherent results, particularly for the dynamic parts. In the first stage, we iterate between image outpainting and updating the 3D scene representation - we use 3D Gaussian Splatting. Then we consider dynamic objects independently per frame and inpaint missing pixels. Finally, we propose a denoising scheme that allows to maintain known reliable regions and update the dynamic parts to obtain temporally realistic results.We achieve state-of-the-art video outpainting. This is validated quantitatively and through a user study. We are also able to extend the field of view largely beyond the limits reached by existing methods."
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T17:12:12.528325Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+          "value": [
+            "Generative Priors & 3D Reconstruction"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-13T02:46:54.949204Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Unboxed%3A+Geometrically+and+Temporally+Consistent+Video+Outpainting&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "10.1109/cvpr52734.2025.00685"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-13T02:46:54.949204Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Unboxed%3A+Geometrically+and+Temporally+Consistent+Video+Outpainting&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-13T02:46:54.949204Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Unboxed%3A+Geometrically+and+Temporally+Consistent+Video+Outpainting&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T17:12:12.528325Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-13T02:46:54.949204Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Unboxed%3A+Geometrically+and+Temporally+Consistent+Video+Outpainting&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T17:12:12.528325Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+          "value": [
+            "Diffusion"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T17:12:12.528325Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        },
+        {
+          "observed_at": "2026-11-13T02:46:54.949204Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=Unboxed%3A+Geometrically+and+Temporally+Consistent+Video+Outpainting&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Yu_Unboxed_Geometrically_and_Temporally_Consistent_Video_Outpainting_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Generative Priors & 3D Reconstruction",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "Diffusion"
+    ],
+    "title": "Unboxed: Geometrically and Temporally Consistent Video Outpainting",
+    "tldr": "Finally, we propose a denoising scheme that allows to maintain known reliable regions and update the dynamic parts to obtain temporally realistic results.We achieve state-of-the-art video outpainting.",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  },
+  {
+    "abstract": "Decoupling from customized parametric templates represents a crucial step toward the creation of fully flexible, animatable articulated models. While existing template-free methods can achieve high-fidelity reconstruction in observed views, they struggle to recover plausible canonical models, resulting in suboptimal animation quality. This limitation stems from overlooking the fundamental ambiguity in canonical reconstruction, where multiple canonical models could explain the same observed views. By revealing the entanglement between the canonical ambiguity and incorrect skinning, we present a self-supervised framework that learns both plausible skinning and accurate canonical geometry using only sparse pose data. Our method, TAGA, uses explicit 3D Gaussians as skinning carriers and characterizes the ambiguity as \"Ambiguous Gaussians\" with incorrect skinning weights. TAGA then corrects ambiguous Gaussians in the observation space using anomaly detection. With the corrected ones, we enforce cycle consistency constraints on both geometry and skinning to refine the corresponding Gaussians in the canonical space through a new backward method. Compared to existing state-of-the-art template-free methods, TAGA delivers superior visual fidelity for novel views and poses, while significantly improving training and rendering speeds. Experiments on challenging datasets with limited pose variations further demonstrate the robustness and generality of TAGA.",
+    "arxiv_doi": null,
+    "arxiv_id": null,
+    "authors": [
+      "Zhichao Zhai",
+      "Guikun Chen",
+      "Wenguan Wang",
+      "Dong Zheng",
+      "Jun Xiao"
+    ],
+    "categories": [
+      "Dynamic & 4DGS"
+    ],
+    "citation_count": 0,
+    "code_url": null,
+    "comment": null,
+    "date_placement": "year_start",
+    "db_citation_count": 0,
+    "db_citations": [],
+    "db_references": [],
+    "doi": "10.1109/cvpr52734.2025.01971",
+    "first_author": "Zhai et al.",
+    "id": "doi:10.1109/cvpr52734.2025.01971",
+    "influential_citation_count": 0,
+    "metadata_evidence": {
+      "abstract": [
+        {
+          "observed_at": "2026-11-12T18:07:33.860173Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+          "value": "Decoupling from customized parametric templates represents a crucial step toward the creation of fully flexible, animatable articulated models. While existing template-free methods can achieve high-fidelity reconstruction in observed views, they struggle to recover plausible canonical models, resulting in suboptimal animation quality. This limitation stems from overlooking the fundamental ambiguity in canonical reconstruction, where multiple canonical models could explain the same observed views. By revealing the entanglement between the canonical ambiguity and incorrect skinning, we present a self-supervised framework that learns both plausible skinning and accurate canonical geometry using only sparse pose data. Our method, TAGA, uses explicit 3D Gaussians as skinning carriers and characterizes the ambiguity as \"Ambiguous Gaussians\" with incorrect skinning weights. TAGA then corrects ambiguous Gaussians in the observation space using anomaly detection. With the corrected ones, we enforce cycle consistency constraints on both geometry and skinning to refine the corresponding Gaussians in the canonical space through a new backward method. Compared to existing state-of-the-art template-free methods, TAGA delivers superior visual fidelity for novel views and poses, while significantly improving training and rendering speeds. Experiments on challenging datasets with limited pose variations further demonstrate the robustness and generality of TAGA."
+        }
+      ],
+      "categories": [
+        {
+          "observed_at": "2026-11-12T18:07:33.860173Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+          "value": [
+            "Dynamic & 4DGS"
+          ]
+        }
+      ],
+      "doi": [
+        {
+          "observed_at": "2026-11-13T02:46:56.348844Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=TAGA%3A+Self-supervised+Learning+for+Template-free+Animatable+Gaussian+Articulated+Model&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "10.1109/cvpr52734.2025.01971"
+        }
+      ],
+      "publication_date": [
+        {
+          "observed_at": "2026-11-13T02:46:56.348844Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=TAGA%3A+Self-supervised+Learning+for+Template-free+Animatable+Gaussian+Articulated+Model&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "2025-06-10"
+        }
+      ],
+      "publication_date_precision": [
+        {
+          "observed_at": "2026-11-13T02:46:56.348844Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=TAGA%3A+Self-supervised+Learning+for+Template-free+Animatable+Gaussian+Articulated+Model&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "day"
+        }
+      ],
+      "publication_year": [
+        {
+          "observed_at": "2026-11-12T18:07:33.860173Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+          "value": 2025
+        },
+        {
+          "observed_at": "2026-11-13T02:46:56.348844Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=TAGA%3A+Self-supervised+Learning+for+Template-free+Animatable+Gaussian+Articulated+Model&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": 2025
+        }
+      ],
+      "tags": [
+        {
+          "observed_at": "2026-11-12T18:07:33.860173Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_primary_Gaussian_method_abstract",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+          "value": [
+            "Avatars"
+          ]
+        }
+      ],
+      "venue": [
+        {
+          "observed_at": "2026-11-12T18:07:33.860173Z",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "source": "cvf_official_proceedings",
+          "source_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+          "value": "CVPR 2025"
+        },
+        {
+          "observed_at": "2026-11-13T02:46:56.348844Z",
+          "reviewed_at": "2026-11-13T02:48:36.006370Z",
+          "reviewed_by": "Codex primary CVF/Crossref GS method scope review; not independent human review",
+          "source": "reviewed_CVF_Crossref_title_complete_ordered_authors",
+          "source_url": "https://api.crossref.org/works?query.title=TAGA%3A+Self-supervised+Learning+for+Template-free+Animatable+Gaussian+Articulated+Model&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+          "value": "CVPR 2025"
+        }
+      ]
+    },
+    "month": 1,
+    "openalex_id": null,
+    "paper_url": "https://openaccess.thecvf.com/content/CVPR2025/html/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.html",
+    "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Zhai_TAGA_Self-supervised_Learning_for_Template-free_Animatable_Gaussian_Articulated_Model_CVPR_2025_paper.pdf",
+    "primary_arxiv_category": null,
+    "primary_category": "Dynamic & 4DGS",
+    "project_url": null,
+    "publication_date": "2025-06-10",
+    "publication_date_precision": "day",
+    "publication_year": 2025,
+    "published_date": "2025-01-01",
+    "published_date_precision": "year",
+    "referenced_works": [],
+    "source": "cvf",
+    "tags": [
+      "Avatars"
+    ],
+    "title": "TAGA: Self-supervised Learning for Template-free Animatable Gaussian Articulated Model",
+    "tldr": "By revealing the entanglement between the canonical ambiguity and incorrect skinning, we present a self-supervised framework that learns both plausible skinning and accurate canonical geometry using only...",
+    "updated_date": null,
+    "venue": "CVPR 2025",
+    "year": 2025
+  }
+]
