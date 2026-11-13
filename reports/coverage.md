@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-12 (America/Los_Angeles)
 
-Observed at 2026-11-13T03:43:07.055817+00:00. The [current machine receipt](runs/coverage-after-cvpr2023-metadata-pass2-20261112.json) is generated directly by `python -m src.cli coverage` and binds 396 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-13T03:50:26.010081+00:00. The [current machine receipt](runs/coverage-after-genmojo-20261112.json) is generated directly by `python -m src.cli coverage` and binds 396 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -100,3 +100,5 @@ Remaining gates include six seed decisions, unresolved source/scope cases, venue
 ## Reproducing this report
 
 Run `uv run --all-groups python -m src.cli coverage --output reports/runs/<new-run>.json`. This performs no provider request, build or canonical update. It verifies the declared historical source pages and exact application inventory, reports seed/extraction binding gaps, and refuses input changes or report overwrite. An identical evaluation time and unchanged inputs reproduce the same JSON bytes. Public-manifest metadata is reported separately from the owned graph projection; release/deployment integrity checks remain separate. See [command validation](coverage-command-20261111.md).
+
+The [GenMOJO proceedings association](genmojo-association-20261112.md) is applied using explicit author-project version links. The latest CVPR 2025 audit has 191 matched and 104 unmatched non-excluded leads, with zero matched venue/year gaps. Original preprint metadata and provider histories are preserved; publication precision is month. This does not complete the unmatched source/scope reviews or inventory reconciliation.
