@@ -1,0 +1,16 @@
+[Unit]
+Description=One bounded retry of deferred CVPR 2023 official metadata
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/workspaces/awesome-gaussian-splatting
+Environment=UV_PROJECT_ENVIRONMENT=%h/.venvs/awesome-gaussian-splatting
+ExecStart=%h/.local/bin/uv run --frozen python -m src.cli discover-cvf --venue CVPR --year 2023 --cache data/venues/cvpr2023-all-metadata --listing data/venues/cvpr2023-all-metadata/listing.8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5.html --overrides data/venues/policies/ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9.yaml --all-metadata --max-requests 100 --max-seconds 180 --report reports/runs/cvpr2023-deferred-retry-20261113.json
+TimeoutStartSec=5min
+Restart=no
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0077
+Nice=10
+MemoryMax=2G
+CPUQuota=150%

@@ -1,0 +1,11 @@
+[Unit]
+Description=Observe OpenAlex after the earliest seven-day maturity boundary
+
+[Timer]
+OnCalendar=2026-11-16 05:21:29 UTC
+AccuracySec=1s
+Persistent=true
+Unit=papers-openalex-velocity.service
+
+[Install]
+WantedBy=timers.target
