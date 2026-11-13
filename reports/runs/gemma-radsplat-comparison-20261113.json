@@ -1,0 +1,148 @@
+{
+  "accepted_predictions": 0,
+  "deterministic": {
+    "evaluations": [
+      {
+        "ambiguous_coordinate_candidates": 0,
+        "candidates_outside_accepted_reference_subset_not_scored": 35,
+        "context_counts": {
+          "column_label": {
+            "different": 4,
+            "exact": 0,
+            "missing": 0
+          },
+          "dataset": {
+            "different": 0,
+            "exact": 0,
+            "missing": 4
+          },
+          "metric": {
+            "different": 0,
+            "exact": 0,
+            "missing": 4
+          },
+          "row_label": {
+            "different": 4,
+            "exact": 0,
+            "missing": 0
+          },
+          "split": {
+            "different": 0,
+            "exact": 0,
+            "missing": 4
+          },
+          "unit": {
+            "different": 0,
+            "exact": 0,
+            "missing": 4
+          }
+        },
+        "duplicate_coordinate_candidates": 0,
+        "duplicate_coordinate_cells_refused": 0,
+        "exact_value_cells": 4,
+        "exact_value_fraction_of_matches": 1.0,
+        "exact_value_recall": 1.0,
+        "extractor_version": "pdfplumber-0.11.10-lines-v1",
+        "matched_cells": 4,
+        "papers_with_results": 1,
+        "reference_cells": 4,
+        "reviewed_subset_recall": 1.0,
+        "rows": [
+          {
+            "context": {
+              "column_label": "different",
+              "dataset": "missing",
+              "metric": "missing",
+              "row_label": "different",
+              "split": "missing",
+              "unit": "missing"
+            },
+            "matched": true,
+            "page": 6,
+            "paper_id": "paper:2024-353dac41f1",
+            "review_key": "81e736228f6ebbe426c993b3191fa211fd93d334e7b6f1a7640cbd32585ad97e:10",
+            "value_exact": true
+          },
+          {
+            "context": {
+              "column_label": "different",
+              "dataset": "missing",
+              "metric": "missing",
+              "row_label": "different",
+              "split": "missing",
+              "unit": "missing"
+            },
+            "matched": true,
+            "page": 6,
+            "paper_id": "paper:2024-353dac41f1",
+            "review_key": "81e736228f6ebbe426c993b3191fa211fd93d334e7b6f1a7640cbd32585ad97e:11",
+            "value_exact": true
+          },
+          {
+            "context": {
+              "column_label": "different",
+              "dataset": "missing",
+              "metric": "missing",
+              "row_label": "different",
+              "split": "missing",
+              "unit": "missing"
+            },
+            "matched": true,
+            "page": 6,
+            "paper_id": "paper:2024-353dac41f1",
+            "review_key": "81e736228f6ebbe426c993b3191fa211fd93d334e7b6f1a7640cbd32585ad97e:12",
+            "value_exact": true
+          },
+          {
+            "context": {
+              "column_label": "different",
+              "dataset": "missing",
+              "metric": "missing",
+              "row_label": "different",
+              "split": "missing",
+              "unit": "missing"
+            },
+            "matched": true,
+            "page": 6,
+            "paper_id": "paper:2024-353dac41f1",
+            "review_key": "81e736228f6ebbe426c993b3191fa211fd93d334e7b6f1a7640cbd32585ad97e:8",
+            "value_exact": true
+          }
+        ],
+        "selected_papers": 1
+      }
+    ],
+    "limitations": [
+      "Review labels are existing source-inspected references, not an independent human benchmark.",
+      "Predictions outside the accepted reference subset are not scored or labelled false positives.",
+      "Context string differences require inspection; equivalent paraphrases can differ.",
+      "No speed, VRAM, model-weight attestation or live model superiority is established."
+    ],
+    "matching": "Same paper/PDF/page; at least 80% of predicted box inside reviewed box; ambiguous matches refused",
+    "paper_ids": [
+      "paper:2024-353dac41f1"
+    ],
+    "population_precision": null,
+    "reviewers": [
+      "Codex (rendered-source inspection)"
+    ],
+    "scope": "Explicit accepted numeric-cell subset only; not full table/corpus recall or precision",
+    "text_comparison": "Whitespace normalization only; case-sensitive; no numeric/unit conversions"
+  },
+  "deterministic_result_sha256": "00a76fc612dae4d37b37b2476ec6bc1d3a50b7c5a3f4aef09da7fdffa3ae6b82",
+  "generations": [
+    {
+      "population_precision": null,
+      "reason": "Harness rejected the generation; no accepted extraction result",
+      "repetition": 1,
+      "reviewed_subset_recall": null,
+      "valid": false
+    }
+  ],
+  "population_precision": null,
+  "port_open_after": false,
+  "receipt_sha256": "5043f783beb619273ff5e79778dd8398d4c507a7c8ead17a5c0bbf5464a15075",
+  "reviewed_ledger_sha256": "252c9d1dfaea28c3f10452629488efc92a71a9c5abac9f6ef9271c195c2be58b",
+  "scope": "RadSplat physical page 6, four existing accepted cells; not population precision/recall",
+  "unit_inactive": "ActiveState=inactive\nSubState=dead\nExecMainStatus=0\n"
+}
