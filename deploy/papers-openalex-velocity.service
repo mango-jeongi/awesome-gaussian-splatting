@@ -5,7 +5,7 @@ Description=Bounded first mature OpenAlex citation observation
 Type=oneshot
 WorkingDirectory=%h/workspaces/awesome-gaussian-splatting
 Environment=UV_PROJECT_ENVIRONMENT=%h/.venvs/awesome-gaussian-splatting
-ExecStart=%h/.local/bin/uv run --frozen python -m src.cli refresh-openalex --limit 100 --max-requests 20 --max-seconds 120
+ExecStart=%h/.local/bin/uv run --frozen python -m src.cli refresh-signals --provider openalex --due --require-key --limit 100 --max-requests 20 --max-seconds 120
 TimeoutStartSec=5min
 Restart=no
 NoNewPrivileges=true
