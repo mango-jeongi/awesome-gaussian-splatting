@@ -1,0 +1,17 @@
+# CVPR 2023 full-metadata capture: first bounded pass
+
+The new `data/venues/cvpr2023-all-metadata` epoch selects all **2,353** papers in the existing frozen official main-track listing. Its first pass verifies **290 pages**, leaving **2,063 pending and zero failures**. This is partial metadata coverage, not edition reconciliation or a completed literature review.
+
+The epoch reuses all 90 earlier verified pages with original response hashes and observation times intact. Its current implementation-bound policy is frozen in `data/venues/policies/ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9.yaml`. The earlier title-priority epoch and policy are unchanged; the selection mode is separate rather than silently widening an old checkpoint. [Preparation receipt](runs/cvpr2023-all-metadata-preparation-20261112.json).
+
+The [terminal pass receipt](runs/cvpr2023-all-metadata-pass1-20261112.json) records exactly **200 network requests**, adding 200 verified pages. Limits were 200 paced requests and 240 seconds, with durable atomic checkpointing and the existing retry/error behavior. No observation timeout triggered a restart. The completed process was observed terminal before finalization.
+
+The [zero-request verification](runs/cvpr2023-all-metadata-pass1-verification-20261112.json) hash-checks and replays all 290 retained responses through the production parser. It preserves state bytes, all 90 old capture entries/times and the original epoch state. The latest report reflects this zero-request replay; the separate terminal receipt retains the actual 200-request count.
+
+Current metadata outcomes are **zero include, 95 review and 195 exclude**. Five newly captured title-excluded pages become automatic review leads; 195 stay excluded. These are current-policy source-screening outcomes, not accepted scope judgments or population relevance accuracy. None was imported. All original 90 adjacent/foundation candidates still require scope adjudication, and 2,063 pages remain uncaptured.
+
+Only the CVPR 2023 main entry receives new partial evidence in `config/sources.yaml`; all other edition entries remain semantically unchanged. The four crawled/partial and 52 pending cell counts are unchanged. The independent accepted inventory still has 2,359 rows versus 2,353 proceedings rows: six accepted-only titles, nine reviewed typography mappings and 14 exact-title author differences remain separate open evidence. Deferred original identity/date lookup and DBLP work are not completed by abstract capture.
+
+The [current coverage receipt](runs/coverage-after-cvpr2023-metadata-pass1-20261112.json) verifies all consumed-input hashes, current seed/extraction bindings and the newly declared partial source. Canonical data, provider histories and public artifacts are unchanged; no paper/figure/table extraction result or source watermark is published. Validation uses actual complete hash/parser replay and unchanged source-state comparisons; no production code changed and unchanged unit tests were not rerun.
+
+Resume this exact epoch with the same listing, frozen policy file and `--all-metadata`; use a new uniquely named run receipt and bounded request/time budgets. Do not switch the frozen policy in place or retry before recorded deadlines. Full metadata capture, source/scope adjudication and independent reconciliation remain required. No push, workflow dispatch, deployment or remote worker change occurred. Phase 2/3 remains active.

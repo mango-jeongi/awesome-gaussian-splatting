@@ -102,6 +102,23 @@ editions:
     original_dates_verified: 0
     lookup_status: deferred_http_429
     failure_evidence: data/venues/cvpr2023-main/arxiv-lookup-deferred.json
+  - provider: cvf_publication_pages
+    source_url: https://openaccess.thecvf.com/CVPR2023?day=all
+    evidence_file: data/venues/cvpr2023-all-metadata/latest-report.json
+    listing_sha256: 8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5
+    listing_records: 2353
+    selection_mode: all_metadata
+    policy_digest: ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9
+    selected_metadata_records: 2353
+    verified_metadata_records: 290
+    pending_records: 2063
+    failed_records: 0
+    metadata_dispositions:
+      include: 0
+      review: 95
+      exclude: 195
+    selected_metadata_complete: false
+    venue_inventory_reconciled: false
   remaining:
   - All 90 captured adjacent/foundation candidates require scope justification; no
     automatic inclusions.
@@ -113,6 +130,9 @@ editions:
     identity changes.
   - Title-screen exclusions have not had an independent recall audit.
   - DBLP discovery and reviewed non-arXiv import remain pending for this edition.
+  - Separate all-metadata epoch verifies 290/2353 pages; 2063 remain pending including
+    0 failures. Automatic abstract outcomes require source/scope review and do not
+    reconcile the accepted-table count gap.
 - venue: CVPR
   year: 2023
   track: workshop
@@ -161,7 +181,9 @@ editions:
     selected_metadata_complete: false
     canonical_modified: false
     venue_inventory_reconciled: false
-    note: Separate frozen full-abstract epoch; 2582 newly verified pages include four title/author corrections and two URL reviews applied offline. One HTTP 404 remains deferred. Scope and inventory reconciliation remain partial.
+    note: Separate frozen full-abstract epoch; 2582 newly verified pages include four
+      title/author corrections and two URL reviews applied offline. One HTTP 404 remains
+      deferred. Scope and inventory reconciliation remain partial.
   - provider: cvf_exact_arxiv_identity_resolution
     evidence_file: data/venues/cvpr2024-main/identity-resolution.json
     exact_original_dates_verified: 87

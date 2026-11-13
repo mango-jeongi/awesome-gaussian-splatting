@@ -1,6 +1,6 @@
 # Coverage snapshot — 2026-11-12 (America/Los_Angeles)
 
-Observed at 2026-11-13T03:20:34.460153+00:00. The [current machine receipt](runs/coverage-after-matrix3d-hash3d-20261112.json) is generated directly by `python -m src.cli coverage` and binds 395 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
+Observed at 2026-11-13T03:29:37.230532+00:00. The [current machine receipt](runs/coverage-after-cvpr2023-metadata-pass1-20261112.json) is generated directly by `python -m src.cli coverage` and binds 396 consumed files, including verified cached historical pages. Earlier snapshots remain preserved. This report does not declare Phase 2/3 complete.
 
 ## Corpus and frozen discovery boundary
 
@@ -16,9 +16,12 @@ The declared inventory still has **56 cells: four crawled/partial and 52 pending
 
 | Full-metadata epoch | Frozen listing | Verified pages | Pending, including failures | Failed |
 | --- | ---: | ---: | ---: | ---: |
+| CVPR 2023 main | 2,353 | 290 | 2,063 | 0 |
 | ICCV 2025 main | 2,701 | 2,701 | 0 | 0 |
 | CVPR 2024 main | 2,716 | 2,715 | 1 | 1 |
 | CVPR 2025 main | 2,871 | 2,871 | 0 | 0 |
+
+CVPR 2023 now has a separate [all-metadata epoch](cvpr2023-all-metadata-capture.md): 290/2,353 pages verified, with 2,063 pending and 0 failures. Its first bounded pass made 200 requests and reused all 90 older captures without changing their times; zero-request replay preserves state bytes. Of 200 newly captured title-excluded pages, five are automatic review leads and 195 remain excluded; none is automatically included. No canonical import or scope approval occurs. The earlier title-priority epoch, 2,359-versus-2,353 accepted-table gap, author differences and source-identity work remain open.
 
 ICCV has all 2,701 abstracts and a verified one-to-one title mapping between the two frozen official inventories. **512 rows retain author discrepancies**; source identity, dates, scope and provider review remain open. Of 2,552 title-excluded pages, metadata produced 49 include leads, 62 review leads and 2,441 exclusions. Those are automatic policy outcomes, not measured population relevance accuracy. See the [ICCV report](iccv2025-metadata-capture.md).
 
