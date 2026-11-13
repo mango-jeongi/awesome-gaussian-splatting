@@ -17,3 +17,5 @@ One service run and one generation reproduced the prior source-word selection fa
 The four reference cells are prior source-inspected labels, not an independent human benchmark. Exact numeric recall on one selected page does not establish full-table recall, context accuracy, or model superiority. The unchanged index-only prompt lacks layout coordinates. No retry or prompt change was made after rejection.
 
 Evidence: [service and generation receipt](runs/gemma-radsplat-real-page-20261113.json), [production evaluator comparison](runs/gemma-radsplat-comparison-20261113.json), and [hash-validated worker sync](runs/co-located-worker-sync-20261113.json). The 98-candidate deterministic result is preserved in the repository review queue; existing accepted decisions remain intact.
+
+[Post-run artifact attestation](runs/gemma-runtime-attestation-20261113.json) confirms the staged model SHA-256 matches the prior verified pin. Its measured size is 5,154,941,280 bytes; the handoff byte count was stale.

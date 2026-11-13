@@ -1444,3 +1444,80 @@ relevance:
     reviewed_by: Codex primary-method foundation review; not independent human adjudication
   reviewed_at: '2026-11-12T18:58:57.814113+00:00'
   reviewed_by: Codex primary-method foundation review; not independent human adjudication
+- identifiers:
+  - '2611.16655'
+  action: include
+  reason: The source abstract explicitly uses synchronized 3D Gaussian view synthesis
+    for real/synthetic multiview visual speech learning; this is a concrete Gaussian
+    scene-representation application.
+  evidence:
+  - source: reviewed_arxiv_metadata_from_feed_commit
+    source_url: https://github.com/mango-jeongi/awesome-gaussian-splatting/blob/080a5a338042c52bce391c2ded1a9c63eb3c8f92/data/papers.json
+    value:
+      title: 'MuViRL: Multimodal View-Invariant Visual Speech Representation Learning
+        via Calibrated View Aggregation'
+      abstract: Multimodal representation learning combines complementary signals
+        to capture shared semantic information. For dynamic scenes, these representations
+        need to remain consistent across views while preserving distinctions between
+        temporal states. In visual speech representation learning, view variation
+        changes the visibility and reliability of articulation cues, making it difficult
+        to learn such representations from synchronized audio and video. To address
+        this challenge, we propose MuViRL, a self-supervised framework for multimodal
+        view-invariant visual speech representation learning via calibrated view aggregation.
+        The framework combines synchronized 3D Gaussian view synthesis with multimodal
+        self-supervision to learn consistent representations from real and synthesized
+        data. A multimodal decision model learns relative view utility from teacher
+        prediction losses, and its calibrated scores guide the aggregation of complementary
+        information. Aggregation-to-Single Distillation transfers the aggregated predictions
+        to a single branch. Real-synthetic alignment matches synchronized windows
+        across views while preserving their temporal relations. Experiments on real
+        and synthesized multiview data demonstrate that MuViRL improves multimodal
+        representation consistency and visual speech recognition performance across
+        views.
+      original_source_url: https://arxiv.org/abs/2611.16655
+      record_sha256: a99a1b414acbda7adc84aca8cce70eb0bcc7ce976615e8c951e349306e7b89b9
+      feed_revision: 080a5a338042c52bce391c2ded1a9c63eb3c8f92
+    observed_at: '2026-11-13T20:09:37.893318+00:00'
+    reviewed_by: Codex (feed source metadata and scope review)
+    reviewed_at: '2026-11-13T20:09:37.893318+00:00'
+  reviewed_by: Codex (feed source metadata and scope review)
+  reviewed_at: '2026-11-13T20:09:37.893318+00:00'
+- identifiers:
+  - '2611.15375'
+  action: exclude
+  reason: Nuclear-medicine recovery-coefficient modeling assumes a Gaussian point-spread
+    function; no splatting or geometric Gaussian scene representation is described.
+  evidence:
+  - source: reviewed_arxiv_metadata_from_feed_commit
+    source_url: https://github.com/mango-jeongi/awesome-gaussian-splatting/blob/080a5a338042c52bce391c2ded1a9c63eb3c8f92/data/papers.json
+    value:
+      title: A novel model-based equation for size dependent mean recovery coefficients
+        for spheres and other shapes
+      abstract: 'Background: In NM-imaging, theoretical curves for the recovery coefficient
+        (RC) of the signal maximum and mean are known for spheres and cubes, if a
+        3D Gaussian PSF is assumed. The RC of the maximum is also known for cylinders.
+        For these and other shapes empirical equations with one or two fit-parameters
+        have been utilized. Methods: An equation for the RC for large objects of arbitrary
+        shape is derived and generalized into an empirical equation for smaller objects,
+        which is verified by numerical simulations. The proposed equation is compared
+        to published results on SPECT kidney phantom measurements and to PET measurements
+        on the NEMA IEC PET body phantom with six spheres. Results: The signal loss
+        (1-RC) for large spheres is inversely proportional to the radius, where the
+        slope is proportional to the FWHM of the spatial resolution. For non-spherical
+        shapes the generalized instead of the volume equivalent radius should be utilized.
+        For smaller objects, an equation with one added empirical fit-parameter is
+        presented. It is demonstrated that the EANM-guidelines'' two-parameter logistic
+        function results in a poor fit if the theoretical slope and inverse proportionality
+        are forced and it gives a suboptimal fit when both parameters are fitted.
+        Conclusions: A novel model-based equation for the mean RC-curve is derived.
+        It can be used for arbitrary shapes as long as the sphericity is taken into
+        account and it is accurate down to RC=10%. One parameter is directly related
+        to the spatial resolution, while the other is a shape depending fit-parameter.'
+      original_source_url: https://arxiv.org/abs/2611.15375
+      record_sha256: 004abc990d47c95699d0cf1f3db3ae9ea7c9cef64cf1b3ac7f0e28e9581a4159
+      feed_revision: 080a5a338042c52bce391c2ded1a9c63eb3c8f92
+    observed_at: '2026-11-13T20:09:37.893318+00:00'
+    reviewed_by: Codex (feed source metadata and scope review)
+    reviewed_at: '2026-11-13T20:09:37.893318+00:00'
+  reviewed_by: Codex (feed source metadata and scope review)
+  reviewed_at: '2026-11-13T20:09:37.893318+00:00'
