@@ -1,0 +1,121 @@
+{
+  "abstract": "We tackle the challenge of generating dynamic 4D scenes from monocular, multi-object videos with heavy occlusions, and introduce GenMOJO, a novel approach that integrates rendering-based deformable 3D Gaussian optimization with generative priors for view synthesis. While existing models perform well on novel view synthesis for isolated objects, they struggle to generalize to complex, cluttered scenes. To address this, GenMOJO decomposes the scene into individual objects, optimizing a differentiable set of deformable Gaussians per object. This object-wise decomposition allows leveraging object-centric diffusion models to infer unobserved regions in novel viewpoints. It performs joint Gaussian splatting to render the full scene, capturing cross-object occlusions, and enabling occlusion-aware supervision. To bridge the gap between object-centric priors and the global frame-centric coordinate system of videos, GenMOJO uses differentiable transformations that align generative and rendering constraints within a unified framework. The resulting model generates 4D object reconstructions over space and time, and produces accurate 2D and 3D point tracks from monocular input. Quantitative evaluations and perceptual human studies confirm that GenMOJO generates more realistic novel views of scenes and produces more accurate point tracks compared to existing approaches.",
+  "arxiv_doi": "10.48550/arxiv.2506.12716",
+  "arxiv_id": "2506.12716",
+  "authors": [
+    "Wen-Hsuan Chu",
+    "Lei Ke",
+    "Jianmeng Liu",
+    "Mingxiao Huo",
+    "Pavel Tokmakov",
+    "Katerina Fragkiadaki"
+  ],
+  "categories": [
+    "Generative Priors & 3D Reconstruction",
+    "Dynamic & 4DGS"
+  ],
+  "citation_count": 0,
+  "code_url": null,
+  "comment": "This is an updated and extended version of our CVPR paper \"Robust Multi-Object 4D Generation in Complex Video Scenarios\"",
+  "date_placement": "observed",
+  "db_citation_count": 0,
+  "db_citations": [],
+  "db_references": [],
+  "doi": "10.1109/cvpr52734.2025.02055",
+  "first_author": "Chu et al.",
+  "id": "2506.12716",
+  "influential_citation_count": 0,
+  "metadata_evidence": {
+    "doi": [
+      {
+        "observed_at": "2026-11-13T03:36:43.442023Z",
+        "reviewed_at": "2026-11-13T03:40:30.133431Z",
+        "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+        "source": "reviewed_primary_Crossref_publication_month_first_day_placement_not_observed_day",
+        "source_url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+        "value": "10.1109/cvpr52734.2025.02055"
+      }
+    ],
+    "publication_date": [
+      {
+        "observed_at": "2026-11-13T03:36:43.442023Z",
+        "reviewed_at": "2026-11-13T03:40:30.133431Z",
+        "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+        "source": "reviewed_primary_Crossref_publication_month_first_day_placement_not_observed_day",
+        "source_url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+        "value": "2025-06-01"
+      }
+    ],
+    "publication_date_precision": [
+      {
+        "observed_at": "2026-11-13T03:36:43.442023Z",
+        "reviewed_at": "2026-11-13T03:40:30.133431Z",
+        "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+        "source": "reviewed_primary_Crossref_publication_month_first_day_placement_not_observed_day",
+        "source_url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+        "value": "month"
+      }
+    ],
+    "publication_year": [
+      {
+        "observed_at": "2026-11-13T03:36:43.442023Z",
+        "reviewed_at": "2026-11-13T03:40:30.133431Z",
+        "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+        "source": "reviewed_primary_Crossref_publication_month_first_day_placement_not_observed_day",
+        "source_url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+        "value": 2025
+      }
+    ],
+    "published_date": [
+      {
+        "observed_at": null,
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "source": "arxiv",
+        "source_url": "http://arxiv.org/abs/2506.12716v1",
+        "value": "2025-06-15"
+      }
+    ],
+    "venue": [
+      {
+        "observed_at": null,
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "source": "author_comment",
+        "source_url": "https://arxiv.org/abs/2506.12716",
+        "value": "CVPR"
+      },
+      {
+        "observed_at": "2026-11-13T03:36:43.442023Z",
+        "reviewed_at": "2026-11-13T03:40:30.133431Z",
+        "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+        "source": "reviewed_primary_Crossref_publication_month_first_day_placement_not_observed_day",
+        "source_url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3",
+        "value": "CVPR 2025"
+      }
+    ]
+  },
+  "month": 6,
+  "openalex_id": null,
+  "paper_url": "https://arxiv.org/abs/2506.12716",
+  "pdf_url": "https://arxiv.org/pdf/2506.12716.pdf",
+  "primary_arxiv_category": "cs.CV",
+  "primary_category": "Generative Priors & 3D Reconstruction",
+  "project_url": null,
+  "publication_date": "2025-06-01",
+  "publication_date_precision": "month",
+  "publication_year": 2025,
+  "published_date": "2025-06-15",
+  "published_date_precision": "day",
+  "referenced_works": [],
+  "source": "arxiv",
+  "tags": [
+    "Diffusion",
+    "Foundations"
+  ],
+  "title": "Generative 4D Scene Gaussian Splatting with Object View-Synthesis Priors",
+  "tldr": "To address this, GenMOJO decomposes the scene into individual objects, optimizing a differentiable set of deformable Gaussians per object.",
+  "updated_date": "2025-06-15",
+  "venue": "CVPR 2025",
+  "year": 2025
+}

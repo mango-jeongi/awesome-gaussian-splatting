@@ -1,0 +1,56 @@
+{
+  "association_basis": "Author project labels the exact CVF PDF as Paper and exact arXiv identity as Updated ver.; complete six-author sequence agrees with CVF/Crossref and retained preprint.",
+  "baseline_git_revision": "eb436ac094ac02319545e61fa1f0dface22a8ada",
+  "canonical_abstract_preserved": true,
+  "canonical_model_sha256": "ca5d5b1bd490f29228e7d00126ad2916fd00c572ed2f36214d33c59d35d7aba1",
+  "canonical_modified": false,
+  "canonical_raw_sha256": "0972e24a515064821826554dd0fc159393a010243a1a09c3f4b83f8d1b31a4a0",
+  "canonical_updated_preprint_title": "Generative 4D Scene Gaussian Splatting with Object View-Synthesis Priors",
+  "changed_fields": [
+    "doi",
+    "venue",
+    "publication_date",
+    "publication_year",
+    "publication_date_precision",
+    "metadata_evidence"
+  ],
+  "decision": "Associate the author-linked proceedings version with existing stable preprint ID, retaining distinct source titles/abstracts and the explicit updated/extended relation; do not import a duplicate record.",
+  "original_preprint_date": "2025-06-15",
+  "precise_publication_day_established": false,
+  "prepared_record": "data/reviews/genmojo-prepared-proceedings-association-20261112.json",
+  "prepared_record_sha256": "5f61df8c491cc3f634087fedc64f2b5d0683e631e8ea42eccf1bebc6b850ce18",
+  "primary_PDF_receipt": "data/reviews/genmojo-v1-primary-pdf-receipt-20261112.json",
+  "primary_PDF_receipt_sha256": "9179fcac46659ef0ebf5e2c5934dd9dd4d42f066edaf468a89d92a16293a833c",
+  "prior_record_sha256": "914c3bfee7036a566a53eac2ed4a48dc6e732442a72a8b5e105de317e989db1d",
+  "publication_date_placement": "2025-06-01",
+  "publication_date_precision": "month",
+  "publication_month": [
+    2025,
+    6
+  ],
+  "remaining": "Apply association with snapshot guards, preserve original/preprint metadata and provider histories, refresh source-bound ledgers, rebuild/verify month precision and aliases, then rerun CVPR identity audit.",
+  "rendered_first_page": {
+    "path": "C:\\Users\\mingu\\Documents\\Codex\\2026-11-08\\c-users-mingu-gemini-antigravity-brain\\tmp\\pdfs\\genmojo-v1-page1.png",
+    "sha256": "bdd79e92f316588619f1f4dc52cee9c5a4adb14123ba5c48156eed9289176f12",
+    "visually_inspected": true
+  },
+  "retained_CVF_review": "data/reviews/cvpr2025-hera-flexdrive-extended-work-review-20261112.json",
+  "retained_CVF_review_sha256": "cd392c1b67a37409c6b3bf6a21b371bcfd6ac1ecc23ced10f73ab10fc6bacd11",
+  "reviewed_at": "2026-11-13T03:40:30.133431+00:00",
+  "reviewed_by": "Codex author-project explicit version-link and primary publication metadata review; not independent human validation",
+  "simulation": {
+    "active": 4116,
+    "archives": 8,
+    "other_4115_records_unchanged": true,
+    "published_source_candidate_resolves_to_existing_ID": true
+  },
+  "source_aliases": {
+    "cvf:Chu_Robust_Multi-Object_4D_Generation_for_In-the-wild_Videos_CVPR_2025_paper": "2506.12716",
+    "doi:10.1109/cvpr52734.2025.02055": "2506.12716"
+  },
+  "source_project_registry": "data/reviews/genmojo-primary-project-publication-review-20261112.json",
+  "source_project_registry_sha256": "d0060b9b0bd57b6fe7422df8d1293e0e561778d6f3a556ce850d60e374cce78a",
+  "source_published_abstract": "We address the challenge of generating dynamic 4D scenes from monocular multi-object videos with heavy occlusions and introduce Robust4DGen, a novel approach that integrates rendering-based deformable 3D Gaussian optimization with generative priors for view synthesis. While existing view-synthesis models excel at novel view generation for isolated objects, they struggle with full scenes due to their complexity and data demands. To overcome this, Robust4DGen decomposes scenes into individual objects, optimizing a differentiable set of deformable Gaussians per object while capturing 2D occlusions from a 3D perspective through joint Gaussian splatting. Joint splatting ensures occlusion-aware rendering losses in observed frames while explicit object decomposition allows the usage of object-centric diffusion models for object completion in unobserved viewpoints. To reconcile the differences between object-centric priors and the global frame-centric coordinate system of the video, Robust4DGen employs differentiable transformations to unify the rendering and generative constraints within a single framework. The result is a model capable of generating 4D objects across space and time while producing 2D and 3D point tracks from monocular videos. To rigorously evaluate the quality of scene generation and the accuracy of the motion under multi-object occlusions, we introduce MOSE-PTS, a subset of the challenging MOSE benchmark, which we annotated with high-quality 2D point tracks. Quantitative evaluations and perceptual human studies confirm that Robust4DGen generates more realistic novel views of scenes and produces more accurate point tracks compared to existing approaches.",
+  "source_published_title": "Robust Multi-Object 4D Generation for In-the-wild Videos",
+  "updated_record_sha256": "5f61df8c491cc3f634087fedc64f2b5d0683e631e8ea42eccf1bebc6b850ce18"
+}

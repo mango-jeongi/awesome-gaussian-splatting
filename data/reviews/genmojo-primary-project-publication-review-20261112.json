@@ -1,0 +1,165 @@
+{
+  "canonical_modified": false,
+  "captures": [
+    {
+      "bytes": 36043,
+      "kind": "author_project",
+      "observed_at": "2026-11-13T03:36:42.934095+00:00",
+      "retry_after": null,
+      "sha256": "ebd1ab99cc1a2572b34abb1b212ce960a01eb933630282957fd3c5fcddd63d6c",
+      "source_file": "data/reviews/sources/ebd1ab99cc1a2572b34abb1b212ce960a01eb933630282957fd3c5fcddd63d6c.html",
+      "status_code": 200,
+      "url": "https://genmojo.github.io/"
+    },
+    {
+      "bytes": 22866,
+      "kind": "primary_publication_registry",
+      "observed_at": "2026-11-13T03:36:43.442023+00:00",
+      "retry_after": null,
+      "sha256": "94fbc3f32dacdb558da7483f9bfc06392a40a9bd70e59ad12300b08565679ea1",
+      "source_file": "data/reviews/sources/94fbc3f32dacdb558da7483f9bfc06392a40a9bd70e59ad12300b08565679ea1.json",
+      "status_code": 200,
+      "url": "https://api.crossref.org/works?query.title=Robust+Multi-Object+4D+Generation+for+In-the-wild+Videos&filter=type%3Aproceedings-article%2Cfrom-pub-date%3A2025-01-01%2Cuntil-pub-date%3A2025-12-31&rows=3"
+    }
+  ],
+  "maximum_requests": 2,
+  "project_links": [
+    {
+      "href": null,
+      "text": ""
+    },
+    {
+      "href": "https://wenhsuanchu.github.io/",
+      "text": ""
+    },
+    {
+      "href": "https://wenhsuanchu.github.io/",
+      "text": "Wen-Hsuan Chu"
+    },
+    {
+      "href": "https://www.kelei.site/",
+      "text": "Lei Ke"
+    },
+    {
+      "href": "https://www.jmliu.site/",
+      "text": "Jianmeng Liu"
+    },
+    {
+      "href": "https://www.linkedin.com/in/mingxiao-huo-8695a82ab/",
+      "text": "Mingxiao Huo"
+    },
+    {
+      "href": "https://pvtokmakov.github.io/home/",
+      "text": "Pavel Tokmakov"
+    },
+    {
+      "href": "https://www.cs.cmu.edu/~katef/",
+      "text": "Katerina Fragkiadaki"
+    },
+    {
+      "href": "https://openaccess.thecvf.com/content/CVPR2025/papers/Chu_Robust_Multi-Object_4D_Generation_for_In-the-wild_Videos_CVPR_2025_paper.pdf",
+      "text": "Paper"
+    },
+    {
+      "href": "https://arxiv.org/abs/2506.12716",
+      "text": "arXiv (Updated ver.)"
+    },
+    {
+      "href": "https://github.com/genmojo/GenMOJO",
+      "text": "Code"
+    },
+    {
+      "href": "index_dataset.html",
+      "text": "MOSE-PTS Dataset"
+    },
+    {
+      "href": "https://github.com/nerfies/nerfies.github.io",
+      "text": "Nerfies"
+    },
+    {
+      "href": "https://storage.googleapis.com/dm-tapnet/content/davis_ground_truth_v2.html",
+      "text": "TAP-VID"
+    }
+  ],
+  "project_text": "GenMOJO: Robust Multi-Object 4D Generation for In-the-wild Videos GenMOJO: Robust Multi-Object 4D Generation for In-the-wild Videos Wen-Hsuan Chu *1 , Lei Ke *1 , Jianmeng Liu *1 , Mingxiao Huo 1 , Pavel Tokmakov 2 , Katerina Fragkiadaki 1 1 Carnegie Mellon University 2 Toyota Research Institute * Equal Contribution Paper arXiv (Updated ver.) Code MOSE-PTS Dataset GenMOJO can reconstruct and synthesize scene-level Gaussians from multi-object monocular videos with complex motions. Abstract We address the challenge of generating dynamic 4D scenes from monocular multi-object videos with heavy occlusions and introduce GenMOJO, a novel approach that integrates rendering-based deformable 3D Gaussian optimization with generative priors for view synthesis. While existing view-synthesis models excel at novel view generation for isolated objects, but they struggle with full scenes due to their complexity and data demands. To overcome this, GenMOJO decomposes scenes into individual objects, optimizing a differentiable set of deformable Gaussians per object while capturing 2D occlusions from a 3D perspective through joint Gaussian splatting. Joint splatting ensures occlusion-aware rendering losses in observed frames, while explicit object decomposition allows the usage of object-centric diffusion models for object completion in unobserved viewpoints. To reconcile the differences between object-centric priors and the global frame-centric coordinate system of the video, GenMOJO employs differentiable transformations to unify the rendering and generative constraints within a single framework. The result is a model capable of generating 4D objects across space and time while producing 2D and 3D point tracks from monocular videos. To rigorously evaluate the quality of scene generation and the accuracy of the motion under multi-object occlusions, we introduce MOSE-PTS, a subset of the challenging MOSE benchmark, which we annotated with high-quality 2D point tracks. Quantitative evaluations and perceptual human studies confirm that GenMOJO generates more realistic novel views of scenes and produces more accurate point tracks compared to existing approaches. Method Overview Arbitrary View Synthesis GenMOJO can synthesize views from arbitrary camera poses at any given timestep for long videos. We present some examples where we render the scene using the reference camera (outlined in blue ) and novel views (outlined in orange ). The original input video is presented in the leftmost column for reference. Input Video Original View Novel View 1 Novel View 2 Motion Trajectory Comparisons We visualize the Gaussian motion from GenMOJO corresponding to the pixels rendered from camera views by projecting them to 2D. The motion of our Gaussians are highly accurate even in complex videos with fast motion and heavy occlusions. Ground Truth Ours CoTracker V3 Shape-of-Motion 4D Generation Comparisons We show some comparisons between GenMOJO and other video-to-4d baselines. Our method preserves the correct geometrical relationships between objects in complex multi-object videos without inter-penetration artifacts. The original input video is presented in the leftmost column for reference. Input Video DreamScene4D GenMOJO (Ours) Acknowledgements This material is based upon work supported by an NSF Career award, an AFOSR Grant FA9550-23-1-0257, and TRI research. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the United States Army, the National Science Foundation, or the United States Air Force. The website template was borrowed from Nerfies and TAP-VID . .slider-navigation-next{ background: #e6e6e6 center center no-repeat; border: 1px solid #e6e6e6; box-shadow: 0 2px 5px #32323284; } .slider-navigation-previous{ background: #e6e6e6 center center no-repeat; border: 1px solid #e6e6e6; box-shadow: 0 2px 5px #32323284; } .slider-pagination{ .slider-page{ border: 1px solid #c9c9c9; }; } // Video lazy loading document.addEventListener(\"DOMContentLoaded\", function() { var lazyVideos = [].slice.call(document.querySelectorAll(\"video.lazy\")); if (\"IntersectionObserver\" in window) { var lazyVideoObserver = new IntersectionObserver(function(entries, observer) { entries.forEach(function(video) { if (video.isIntersecting) { for (var source in video.target.children) { var videoSource = video.target.children[source]; if (typeof videoSource.tagName === \"string\" && videoSource.tagName === \"SOURCE\") { videoSource.src = videoSource.dataset.src; } } video.target.load(); video.target.classList.remove(\"lazy\"); lazyVideoObserver.unobserve(video.target); } }); }); lazyVideos.forEach(function(lazyVideo) { lazyVideoObserver.observe(lazyVideo); }); } }); // Carousel configs bulmaCarousel.attach('#nvs-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true, infinite: true }); bulmaCarousel.attach('#motion-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true, infinite: true }); bulmaCarousel.attach('#comparisons-carousel', { slidesToScroll: 1, slidesToShow: 1, loop: true, infinite: true });",
+  "registry_items": [
+    {
+      "DOI": "10.1109/cvpr52734.2025.02055",
+      "authors": [
+        "Wen-Hsuan Chu",
+        "Lei Ke",
+        "Jianmeng Liu",
+        "Mingxiao Huo",
+        "Pavel Tokmakov",
+        "Katerina Fragkiadaki"
+      ],
+      "container": [
+        "2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            6
+          ]
+        ]
+      },
+      "record_sha256": "5d8352f4d43fdf1c6eb28742a23aa21f5cdf9a7183a848cf5c62a29a94db1488",
+      "title": [
+        "Robust Multi-Object 4D Generation for In-the-wild Videos"
+      ]
+    },
+    {
+      "DOI": "10.1109/ecmr65884.2025.11162972",
+      "authors": [
+        "Yitong Quan",
+        "Benjamin Kiefer",
+        "Martin Messmer",
+        "Andreas Zell"
+      ],
+      "container": [
+        "2025 European Conference on Mobile Robots (ECMR)"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            9,
+            2
+          ]
+        ]
+      },
+      "record_sha256": "3de42bf3d362a865969da822d446e9d252446335085ba048d39d896ca6970974",
+      "title": [
+        "Lightweight Multi-Frame Integration for Robust YOLO Object Detection in Videos"
+      ]
+    },
+    {
+      "DOI": "10.1109/itsc60802.2025.11423633",
+      "authors": [
+        "Xiangyuan Peng",
+        "Yu Wang",
+        "Miao Tang",
+        "Bierzynski Kay",
+        "Lorenzo Servadei",
+        "Robert Wille"
+      ],
+      "container": [
+        "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            11,
+            18
+          ]
+        ]
+      },
+      "record_sha256": "16f31e6c8eb15c4c2ab3ee157ece2862b78b2f5adfd29ce259332733fbed72a0",
+      "title": [
+        "MoRAL: Motion-Aware Multi-Frame 4D Radar and LiDAR Fusion for Robust 3D Object Detection"
+      ]
+    }
+  ]
+}
