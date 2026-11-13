@@ -181,3 +181,73 @@ def test_batch_exclusion_preserves_original_linked_record_snapshots(order):
     replay, report = prepare_archive_review(candidate, review)
     assert replay.model_dump() == candidate.model_dump()
     assert not any(row["changed"] for row in report["decisions"])
+
+
+def reviewed_distinct_arxiv_duplicate():
+    original = PaperRecord(
+        arxiv_id="2602.06846",
+        title="Same reviewed work",
+        authors=["A. Author"],
+        published_date="2026-02-06",
+        abstract="Original source abstract",
+    )
+    duplicate = PaperRecord(
+        arxiv_id="2604.02781",
+        title=original.title,
+        authors=original.authors,
+        published_date="2026-04-03",
+        abstract=original.abstract,
+        comment="Author-declared accidental duplicate",
+    )
+    db = PaperDatabase(papers=[original, duplicate], total_count=2)
+    archive_paper(db, duplicate.id, disposition="merged", merged_into=original.id, **REVIEW)
+    return db, original, duplicate
+
+
+def test_exact_reviewed_distinct_arxiv_replay_preserves_survivor_and_mtime(tmp_path):
+    db, original, duplicate = reviewed_distinct_arxiv_duplicate()
+    path = tmp_path / "papers.json"
+    db.save(path)
+    payload, mtime = path.read_bytes(), path.stat().st_mtime_ns
+    before = db.model_dump()
+    assert db.upsert([duplicate]) == 0
+    assert db.model_dump() == before
+    assert db.get(duplicate.id).arxiv_id == original.arxiv_id
+    assert db.get(duplicate.id).published_date == original.published_date
+    db.save(path)
+    assert path.read_bytes() == payload and path.stat().st_mtime_ns == mtime
+
+
+@pytest.mark.parametrize(
+    "updates",
+    [
+        {"title": "Changed archived title"},
+        {"abstract": "A later version needs fresh review"},
+        {"doi": "10.1234/unreviewed"},
+        {"arxiv_id": "2605.00001"},
+        {"citation_count": 999},
+    ],
+)
+def test_changed_reviewed_archive_payload_requires_new_review(updates):
+    db, _, duplicate = reviewed_distinct_arxiv_duplicate()
+    before = db.model_dump()
+    with pytest.raises(IdentityConflict, match="Archived candidate requires explicit review"):
+        db.upsert([duplicate.model_copy(update=updates)])
+    assert db.model_dump() == before
+
+
+def test_unreviewed_alias_does_not_bypass_different_arxiv_guard():
+    db, original, duplicate = reviewed_distinct_arxiv_duplicate()
+    db.archive = {}
+    before = db.model_dump()
+    with pytest.raises(IdentityConflict, match="Contradictory identifiers"):
+        db.upsert([duplicate])
+    assert db.model_dump() == before
+
+
+def test_reviewed_duplicate_replay_does_not_block_other_batch_insertions():
+    db, _, duplicate = reviewed_distinct_arxiv_duplicate()
+    new = PaperRecord(arxiv_id="2605.00002", title="Unrelated new paper")
+    assert db.upsert([duplicate, new]) == 1
+    assert db.get(new.id).title == new.title
+    assert len(db.papers) == 2

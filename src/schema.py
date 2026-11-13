@@ -649,6 +649,20 @@ class PaperDatabase(BaseModel):
                     for key in paper_keys(rec)
                 ):
                     raise IdentityConflict(f"Archived candidate requires explicit review: {rec.id}")
+                archived = ledger.entries.get(rec.id)
+                if archived is not None:
+                    endpoint = ledger.resolve(rec.id, set(index.by_id))
+                    if (
+                        archived.disposition != "merged"
+                        or endpoint not in index.by_id
+                        or rec.model_dump() != archived.paper.model_dump()
+                    ):
+                        raise IdentityConflict(
+                            f"Archived candidate requires explicit review: {rec.id}"
+                        )
+                    # The reviewed source is already represented by its endpoint.
+                    # Never merge its different identifiers or dates into that paper.
+                    continue
                 existing_id = index.match(rec)
                 if existing_id and existing_id in by_id:
                     existing = by_id[existing_id]
