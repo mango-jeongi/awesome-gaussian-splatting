@@ -1,10 +1,10 @@
 {
   "corpus_modified": false,
-  "failed_records": 2,
+  "failed_records": 0,
   "invocation_requests": 0,
   "listing_records": 2353,
   "listing_sha256": "8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5",
-  "pending_records": 2,
+  "pending_records": 0,
   "policy_digest": "ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9",
   "records": [
     {
@@ -53220,6 +53220,35 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-13T20:52:54.323100+00:00",
+        "sha256": "5e001ea258db3fea22fda058b838bd55b3c46702759fe7c24984dd03aae4c346"
+      },
+      "metadata_outcome": "exclude",
+      "metadata_reason": "No Gaussian splatting or justified foundation evidence in title/abstract",
+      "publication": {
+        "abstract": "Face retouching aims to remove facial blemishes, while at the same time maintaining the textual details of a given input image. The main challenge lies in distinguishing blemishes from the facial characteristics, such as moles. Training an image-to-image translation network with pixel-wise supervision suffers from the problem of expensive paired training data, since professional retouching needs specialized experience and is time-consuming. In this paper, we propose a Blemish-aware and Progressive Face Retouching model, which is referred to as BPFRe. Our framework can be partitioned into two manageable stages to perform progressive blemish removal. Specifically, an encoder-decoder-based module learns to coarsely remove the blemishes at the first stage, and the resulting intermediate features are injected into a generator to enrich local detail at the second stage. We find that explicitly suppressing the blemishes can contribute to an effective collaboration among the components. Toward this end, we incorporate an attention module, which learns to infer a blemish-aware map and further determine the corresponding weights, which are then used to refine the intermediate features transferred from the encoder to the decoder, and from the decoder to the generator. Therefore, BPFRe is able to deliver significant performance gains on a wide range of face retouching tasks. It is worth noting that we reduce the dependence of BPFRe on paired training samples by imposing effective regularization on unpaired ones.",
+        "arxiv_id": null,
+        "authors": [
+          "Lianxin Xie",
+          "Wen Xue",
+          "Zhen Xu",
+          "Si Wu",
+          "Zhiwen Yu",
+          "Hau San Wong"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Xie_Blemish-Aware_and_Progressive_Face_Retouching_With_Limited_Paired_Data_CVPR_2023_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Xie_Blemish-Aware_and_Progressive_Face_Retouching_With_Limited_Paired_Data_CVPR_2023_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Blemish-Aware and Progressive Face Retouching With Limited Paired Data",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2023
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-13T03:56:19.523291+00:00",
         "sha256": "f96074cd412d22a372d081af97532e73e46c8d62fb4424f701284bc6b1962871"
       },
@@ -65476,6 +65505,34 @@
     },
     {
       "capture": {
+        "observed_at": "2026-11-13T20:52:55.705669+00:00",
+        "sha256": "f45edba469a2778a0ac22f100f61893c956b9acde043e2b99c1ac82baccb8b84"
+      },
+      "metadata_outcome": "exclude",
+      "metadata_reason": "No Gaussian splatting or justified foundation evidence in title/abstract",
+      "publication": {
+        "abstract": "Deep Learning-based Unsupervised Salient Object Detection (USOD) mainly relies on the noisy saliency pseudo labels that have been generated from traditional handcraft methods or pre-trained networks. To cope with the noisy labels problem, a class of methods focus on only easy samples with reliable labels but ignore valuable knowledge in hard samples. In this paper, we propose a novel USOD method to mine rich and accurate saliency knowledge from both easy and hard samples. First, we propose a Confidence-aware Saliency Distilling (CSD) strategy that scores samples conditioned on samples' confidences, which guides the model to distill saliency knowledge from easy samples to hard samples progressively. Second, we propose a Boundary-aware Texture Matching (BTM) strategy to refine the boundaries of noisy labels by matching the textures around the predicted boundaries. Extensive experiments on RGB, RGB-D, RGB-T, and video SOD benchmarks prove that our method achieves state-of-the-art USOD performance. Code is available at www.github.com/moothes/A2S-v2.",
+        "arxiv_id": "2207.05921",
+        "authors": [
+          "Huajun Zhou",
+          "Bo Qiao",
+          "Lingxiao Yang",
+          "Jianhuang Lai",
+          "Xiaohua Xie"
+        ],
+        "doi": null,
+        "match_method": "official_listing_and_citation_metadata",
+        "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhou_Texture-Guided_Saliency_Distilling_for_Unsupervised_Salient_Object_Detection_CVPR_2023_paper.pdf",
+        "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhou_Texture-Guided_Saliency_Distilling_for_Unsupervised_Salient_Object_Detection_CVPR_2023_paper.html",
+        "status": "official_publication_metadata_verified",
+        "title": "Texture-Guided Saliency Distilling for Unsupervised Salient Object Detection",
+        "track": "main",
+        "venue": "CVPR",
+        "venue_year": 2023
+      }
+    },
+    {
+      "capture": {
         "observed_at": "2026-11-13T19:59:25.309962+00:00",
         "sha256": "a9bf14611a394855fe3910d505555f4fd513a2a8103cdcf67b7cb680a9fbf262"
       },
@@ -66809,7 +66866,7 @@
   "reviewed_source_url_records": 0,
   "reviewed_title_variant_records": 0,
   "schema_version": 1,
-  "selected_metadata_complete": false,
+  "selected_metadata_complete": true,
   "selected_records": 2353,
   "selection_mode": "all_metadata",
   "title_dispositions": {
@@ -66820,6 +66877,6 @@
   "track": "main",
   "venue": "CVPR",
   "venue_inventory_reconciled": false,
-  "verified_records": 2351,
+  "verified_records": 2353,
   "year": 2023
 }

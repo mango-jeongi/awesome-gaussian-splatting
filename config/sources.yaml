@@ -110,15 +110,22 @@ editions:
     selection_mode: all_metadata
     policy_digest: ba199b2d41740722abb0dcc7aaad3f89a3f48c149dc4ff991d8929a1cefe73e9
     selected_metadata_records: 2353
-    verified_metadata_records: 2351
-    pending_records: 2
-    failed_records: 2
+    verified_metadata_records: 2353
+    pending_records: 0
+    failed_records: 0
     metadata_dispositions:
-      exclude: 2175
+      exclude: 2177
       review: 176
-    selected_metadata_complete: false
+    selected_metadata_complete: true
     venue_inventory_reconciled: false
     reviewed_author_variant_records: 1
+  - provider: bounded_current_policy_reconciliation
+    evidence_file: data/reviews/cvpr2023-bounded-reconciliation-20261113.json
+    verified_source_records: 2353
+    scope_review_pending: 176
+    canonical_imports_applied: 0
+    canonical_modified: false
+    inventory_reconciled: false
   remaining:
   - All 90 captured adjacent/foundation candidates require scope justification; no
     automatic inclusions.
@@ -130,10 +137,10 @@ editions:
     identity changes.
   - Title-screen exclusions have not had an independent recall audit.
   - DBLP discovery and reviewed non-arXiv import remain pending for this edition.
-  - Separate all-metadata epoch verifies 2351/2353 pages, including one source-bound
-    author-metadata variant; two transport failures remain. One bounded retry is scheduled
-    for 2026-11-13T20:52:51Z after both original deadlines. Automatic abstract outcomes
-    require scope review; accepted-table discrepancies remain unresolved.
+  - Separate all-metadata epoch verifies all 2353 publication pages, with zero pending
+    records or failures. Metadata capture is complete; 176 adjacent/foundation scope-review
+    leads and the independent accepted-table discrepancies remain explicitly unresolved.
+    No automatic canonical import.
 - venue: CVPR
   year: 2023
   track: workshop
