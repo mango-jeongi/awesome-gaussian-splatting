@@ -622,6 +622,199 @@
         "upvotes": 4
       }
     },
+    "2311.12198": {
+      "fetched_at": "2026-11-15T11:52:49.526991Z",
+      "last_attempt_at": "2026-11-15T11:52:49.526991Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.12198",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12198",
+          "text": "PhysGaussian integrates Newtonian dynamics within 3D Gaussians for high-quality motion synthesis using a Material Point Method (MPM) that aligns with continuum mechanics principles, eliminating the need for traditional meshing techniques."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12198",
+          "text": "We introduce PhysGaussian, a new method that seamlessly integrates physically\ngrounded Newtonian dynamics within 3D Gaussians to achieve high-quality novel\nmotion synthesis. Employing a custom Material Point Method (MPM), our approach\nenriches 3D Gaussian kernels with physically meaningful kinematic deformation\nand mechanical stress attributes, all evolved in line with continuum mechanics\nprinciples. A defining characteristic of our method is the seamless integration\nbetween physical simulation and visual rendering: both components utilize the\nsame 3D Gaussian kernels as their discrete representations. This negates the\nnecessity for triangle/tetrahedron meshing, marching cubes, \"cage meshes,\" or\nany other geometry embedding, highlighting the principle of \"what you see is\nwhat you simulate (WS^2).\" Our method demonstrates exceptional versatility\nacross a wide variety of materials--including elastic entities, metals,\nnon-Newtonian fluids, and granular materials--showcasing its strong\ncapabilities in creating diverse visual content with novel viewpoints and\nmovements. Our project page is at: https://xpandora.github.io/PhysGaussian/"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.12198",
+        "submitted_on_daily_at": "2023-11-22T00:00:00.000Z",
+        "upvotes": 18
+      }
+    },
+    "2311.12775": {
+      "fetched_at": "2026-11-15T11:52:49.526991Z",
+      "last_attempt_at": "2026-11-15T11:52:49.526991Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.12775",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12775",
+          "text": "A method for fast and precise mesh extraction from 3D Gaussian Splatting using a regularization term and Poisson reconstruction, enabling real-time editing and rendering quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12775",
+          "text": "We propose a method to allow precise and extremely fast mesh extraction from\n3D Gaussian Splatting. Gaussian Splatting has recently become very popular as\nit yields realistic rendering while being significantly faster to train than\nNeRFs. It is however challenging to extract a mesh from the millions of tiny 3D\ngaussians as these gaussians tend to be unorganized after optimization and no\nmethod has been proposed so far. Our first key contribution is a regularization\nterm that encourages the gaussians to align well with the surface of the scene.\nWe then introduce a method that exploits this alignment to extract a mesh from\nthe Gaussians using Poisson reconstruction, which is fast, scalable, and\npreserves details, in contrast to the Marching Cubes algorithm usually applied\nto extract meshes from Neural SDFs. Finally, we introduce an optional\nrefinement strategy that binds gaussians to the surface of the mesh, and\njointly optimizes these Gaussians and the mesh through Gaussian splatting\nrendering. This enables easy editing, sculpting, rigging, animating,\ncompositing and relighting of the Gaussians using traditional softwares by\nmanipulating the mesh instead of the gaussians themselves. Retrieving such an\neditable mesh for realistic rendering is done within minutes with our method,\ncompared to hours with the state-of-the-art methods on neural SDFs, while\nproviding a better rendering quality."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/Anttwo/SuGaR"
+        },
+        "source_url": "https://huggingface.co/papers/2311.12775",
+        "stars": 3568,
+        "submitted_on_daily_at": "2023-11-22T00:00:00.000Z",
+        "upvotes": 30
+      }
+    },
+    "2311.12897": {
+      "fetched_at": "2026-11-15T11:52:49.526991Z",
+      "last_attempt_at": "2026-11-15T11:52:49.526991Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.12897",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12897",
+          "text": "An efficient 3D Gaussian representation for dynamic scenes reduces memory usage and improves rendering speed by defining time-varying positions and rotations while keeping other properties static."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.12897",
+          "text": "In novel view synthesis of scenes from multiple input views, 3D Gaussian\nsplatting emerges as a viable alternative to existing radiance field\napproaches, delivering great visual quality and real-time rendering. While\nsuccessful in static scenes, the present advancement of 3D Gaussian\nrepresentation, however, faces challenges in dynamic scenes in terms of memory\nconsumption and the need for numerous observations per time step, due to the\nonus of storing 3D Gaussian parameters per time step. In this study, we present\nan efficient 3D Gaussian representation tailored for dynamic scenes in which we\ndefine positions and rotations as functions of time while leaving other\ntime-invariant properties of the static 3D Gaussian unchanged. Notably, our\nrepresentation reduces memory usage, which is consistent regardless of the\ninput sequence length. Additionally, it mitigates the risk of overfitting\nobserved frames by accounting for temporal changes. The optimization of our\nGaussian representation based on image and flow reconstruction results in a\npowerful framework for dynamic scene view synthesis in both monocular and\nmulti-view cases. We obtain the highest rendering speed of 118 frames per\nsecond (FPS) at a resolution of 1352 times 1014 with a single GPU, showing\nthe practical usability and effectiveness of our proposed method in dynamic\nscene rendering scenarios."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.12897",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2311.13384": {
+      "fetched_at": "2026-11-15T11:52:49.526991Z",
+      "last_attempt_at": "2026-11-15T11:52:49.526991Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.13384",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "ironjr/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/ironjr/LucidDreamer"
+          },
+          {
+            "id": "ironjr/LucidDreamer-mini",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/ironjr/LucidDreamer-mini"
+          },
+          {
+            "id": "Cyberspace/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Cyberspace/LucidDreamer"
+          },
+          {
+            "id": "sno0owing/LucidDreamer-mini",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/sno0owing/LucidDreamer-mini"
+          },
+          {
+            "id": "svjack/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/svjack/LucidDreamer"
+          },
+          {
+            "id": "Lucneoseb/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Lucneoseb/LucidDreamer"
+          },
+          {
+            "id": "Aritra003/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Aritra003/LucidDreamer"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 7,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13384",
+          "text": "LucidDreamer generates domain-free 3D scenes using diffusion-based generative models and Gaussian splats, producing highly detailed results."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13384",
+          "text": "With the widespread usage of VR devices and contents, demands for 3D scene\ngeneration techniques become more popular. Existing 3D scene generation models,\nhowever, limit the target scene to specific domain, primarily due to their\ntraining strategies using 3D scan dataset that is far from the real-world. To\naddress such limitation, we propose LucidDreamer, a domain-free scene\ngeneration pipeline by fully leveraging the power of existing large-scale\ndiffusion-based generative model. Our LucidDreamer has two alternate steps:\nDreaming and Alignment. First, to generate multi-view consistent images from\ninputs, we set the point cloud as a geometrical guideline for each image\ngeneration. Specifically, we project a portion of point cloud to the desired\nview and provide the projection as a guidance for inpainting using the\ngenerative model. The inpainted images are lifted to 3D space with estimated\ndepth maps, composing a new points. Second, to aggregate the new points into\nthe 3D scene, we propose an aligning algorithm which harmoniously integrates\nthe portions of newly generated 3D scenes. The finally obtained 3D scene serves\nas initial points for optimizing Gaussian splats. LucidDreamer produces\nGaussian splats that are highly-detailed compared to the previous 3D scene\ngeneration methods, with no constraint on domain of the target scene."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/luciddreamer-cvlab/LucidDreamer"
+        },
+        "source_url": "https://huggingface.co/papers/2311.13384",
+        "stars": 1528,
+        "submitted_on_daily_at": "2023-11-23T00:00:00.000Z",
+        "upvotes": 51
+      }
+    },
+    "2311.13398": {
+      "fetched_at": "2026-11-15T11:52:49.526991Z",
+      "last_attempt_at": "2026-11-15T11:52:49.526991Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.13398",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13398",
+          "text": "A method using dense depth maps optimizes Gaussian splatting with limited images and improves robust geometry by mitigating overfitting and floating artifacts."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13398",
+          "text": "In this paper, we present a method to optimize Gaussian splatting with a\nlimited number of images while avoiding overfitting. Representing a 3D scene by\ncombining numerous Gaussian splats has yielded outstanding visual quality.\nHowever, it tends to overfit the training views when only a small number of\nimages are available. To address this issue, we introduce a dense depth map as\na geometry guide to mitigate overfitting. We obtained the depth map using a\npre-trained monocular depth estimation model and aligning the scale and offset\nusing sparse COLMAP feature points. The adjusted depth aids in the color-based\noptimization of 3D Gaussian splatting, mitigating floating artifacts, and\nensuring adherence to geometric constraints. We verify the proposed method on\nthe NeRF-LLFF dataset with varying numbers of few images. Our approach\ndemonstrates robust geometry compared to the original method that relies solely\non images. Project page: robot0321.github.io/DepthRegGS"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/robot0321/DepthRegularizedGS"
+        },
+        "source_url": "https://huggingface.co/papers/2311.13398",
+        "stars": 275,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

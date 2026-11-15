@@ -72,7 +72,7 @@
           }
         ],
         "githubRepo": "https://github.com/yukyeongleee/wikitrace",
-        "githubStars": 19,
+        "githubStars": 25,
         "id": "2611.14320",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -109,7 +109,7 @@
           }
         ],
         "githubRepo": "https://github.com/ArcheOne-AI/RoboScript",
-        "githubStars": 174,
+        "githubStars": 245,
         "id": "2611.12885",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -183,7 +183,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately. This leaves unclear which capabilities they share, how their training objectives interact, and whether one model can perform all three well. We introduce the One Table Benchmark (), spanning 56 datasets, 46 registered methods, and 20 capability axes under aligned data splits and explicit task contracts. We compare task ranks on aligned support, train five backbones under all seven non-empty objective combinations on five datasets with three seeds, and contrast fixed-model profiles with specialist portfolios. Rank comparisons connect imputation and prediction through numerical recovery and dependence preservation, and link generation to both through predictive utility; distributional fidelity follows different, sometimes opposing, rankings. Objective interventions show the largest pooled gains from including the recipient's own objective. Generation has the broadest coverage of positive pooled auxiliary effects, while prediction shows potential to improve imputation and synthetic-data utility, with responses that vary across backbones. Cross-addition effects reveal that objective benefits need not add and depend on the objectives already present. Fixed-model comparisons expose corresponding utility--fidelity trade-offs: some generalists surpass specialist portfolios on utility, while fidelity continues to favor specialization. Frozen foundation models show strong prediction and numerical point imputation, together with promising synthetic-data utility, highlighting their potential across all three tasks. These findings motivate unified tabular models that share useful conditional information while improving categorical reconstruction and faithful joint sampling.",
         "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
-        "upvotes": 38
+        "upvotes": 39
       },
       "publishedAt": "2026-11-07T19:00:00.000Z"
     },
@@ -266,7 +266,7 @@
           }
         ],
         "githubRepo": "https://github.com/huawei-csl/MACaQ",
-        "githubStars": 233,
+        "githubStars": 264,
         "id": "2611.10649",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -375,7 +375,7 @@
           }
         ],
         "githubRepo": "https://github.com/mll-lab-nu/embodied-first-exam",
-        "githubStars": 274,
+        "githubStars": 277,
         "id": "2611.12177",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -421,7 +421,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "System-1 Decision Models directly make structured probabilistic decisions over query-specified options given a state in a single forward pass, without autoregressively generating reasoning trajectories or textual responses. Recent evaluations cover diverse tasks but often rely on existing benchmarks, where prior exposure to test material can obscure generalization. Moreover, real-world decision making often involves long contexts, large option spaces, and complex logical dependencies, challenges that existing benchmarks do not adequately capture together. Thus, we introduce MMDM (Massive Multitask Decision Making), a benchmark of 5,448 high-quality questions across 16 task categories, combining newly constructed tasks with source-grounded recompositions and rewrites for single-select, multi-select, and soft-label decision making in fresh contexts. It covers realistic scenarios such as agent state tracking, tool and skill selection, preference judgments, and rubric scoring, with option spaces ranging from 2 to 1,024 and inputs extending to 64,817 tokens. With MMDM, we conduct a comprehensive quantitative evaluation of 28 decision models, showing that many perform well on common knowledge yet struggle with interdependent options, constrained decisions, and multi-select tasks. For example, Perplexity Decider-V1.2 reaches 78.75% Hard Single-select Accuracy on world knowledge, but only 53.95% on option logic and 47.95% on constraint planning, while the best Hard Multi-select Accuracy across all models is 36.81%. These results highlight joint reasoning, constraint-aware selection, and complete multi-select recovery as key priorities for decision model development, with MMDM providing a testbed for measuring this progress.",
         "title": "MMDM: Measuring Massive Multitask Decision Making",
-        "upvotes": 27
+        "upvotes": 28
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
     },
@@ -553,7 +553,7 @@
           }
         ],
         "githubRepo": "https://github.com/sh-lee-prml/WaveGen",
-        "githubStars": 56,
+        "githubStars": 58,
         "id": "2611.12527",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -590,7 +590,7 @@
           }
         ],
         "githubRepo": "https://github.com/agentic-learning-ai-lab/deleting-weights",
-        "githubStars": 87,
+        "githubStars": 99,
         "id": "2611.10866",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -673,7 +673,7 @@
           }
         ],
         "githubRepo": "https://github.com/yikunpku/ProTEUS",
-        "githubStars": 6,
+        "githubStars": 8,
         "id": "2611.13348",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -716,7 +716,7 @@
           }
         ],
         "githubRepo": "https://github.com/chenyil6/phyRubric",
-        "githubStars": 0,
+        "githubStars": 1,
         "id": "2611.13576",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -725,7 +725,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "As text-to-video (T2V) models are increasingly positioned as world simulators, it is essential to evaluate whether their videos conform to physical commonsense. However, existing benchmarks rely on annotators who rate each video with a single score based on intuition, yielding ratings that are subjective and do not tell which physical principle is violated. We introduce PhyRubric, a rubric-grounded diagnostic framework for evaluating physical commonsense in T2V generation. For each caption, PhyRubric constructs a caption-specific rubric before any video is seen, decomposing the caption into semantic and physical items, and derives scores from item-level verdicts grounded in timestamped evidence. We instantiate this framework as PhyRubric-Bench, which spans 34 categories across five physical domains, and scale it up to PhyRubric-Train with 3,788 videos, on which we fine-tune the open-source PhyRubric-Judge. Empirical results across ten T2V models show that physical commonsense remains far from solved, and that PhyRubric-Judge correlates more closely with human judgments than existing open-source judges while matching the frontier proprietary Gemini 4 Argon. Further analysis provides actionable insights for T2V models.",
         "title": "PhyRubric: Rubric-Grounded Diagnostic Evaluation of Physical Commonsense in Text-to-Video Generation",
-        "upvotes": 11
+        "upvotes": 12
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
     },
@@ -1045,7 +1045,7 @@
           }
         ],
         "githubRepo": "https://github.com/jefftan969/dycraft",
-        "githubStars": 30,
+        "githubStars": 32,
         "id": "2610.40754",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1057,6 +1057,43 @@
         "upvotes": 5
       },
       "publishedAt": "2026-10-28T20:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Guowei Xu"
+          },
+          {
+            "name": "Jiaru Zou"
+          },
+          {
+            "name": "Mete Erdogan"
+          },
+          {
+            "name": "Haotian Ye"
+          },
+          {
+            "name": "Pan Lu"
+          },
+          {
+            "name": "James Zou"
+          }
+        ],
+        "githubRepo": "https://github.com/zou-group/BVSR",
+        "githubStars": 9,
+        "id": "2611.12184",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://zou-group.github.io/BVSR/",
+        "publishedAt": "2026-11-09T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
+        "summary": "Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BVSR), we propose a discovery framework that separates these two roles of information: it generates proposals under deliberately limited task information to broaden exploration, then learns from proposals previously verified on the same task and their outcomes to retain promising candidates for costly empirical evaluation. We evaluate BVSR across five proposer models and 12 scientific tasks. Limiting task information substantially increases proposal originality and non-obviousness, and produces a larger share of highly creative and high-utility proposals than existing state-of-the-art prompting-based baselines. Learning from prior proposal outcomes on the task further improves candidate selection, discarding half of the candidates while retaining most top-performing proposals. When incorporated into existing AI-scientist workflows, BVSR achieves stronger discoveries across gene expression analysis, drug response prediction, anomaly detection, scaling law discovery, and brain activity prediction. These results suggest that effective AI scientists should use information differently across stages of discovery: constrain task-specific information during exploration while exploiting accumulated empirical experience on the task.",
+        "title": "Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-08T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1170,43 +1207,6 @@
         "upvotes": 5
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Guowei Xu"
-          },
-          {
-            "name": "Jiaru Zou"
-          },
-          {
-            "name": "Mete Erdogan"
-          },
-          {
-            "name": "Haotian Ye"
-          },
-          {
-            "name": "Pan Lu"
-          },
-          {
-            "name": "James Zou"
-          }
-        ],
-        "githubRepo": "https://github.com/zou-group/BVSR",
-        "githubStars": 9,
-        "id": "2611.12184",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://zou-group.github.io/BVSR/",
-        "publishedAt": "2026-11-09T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "Scientific discovery requires ideas that are original, useful, and non-obvious. Yet AI scientists are typically given as much task information as possible during idea generation, which can anchor generation toward familiar approaches. Inspired by the cognitive framework of Blind Variation and Selective Retention (BVSR), we propose a discovery framework that separates these two roles of information: it generates proposals under deliberately limited task information to broaden exploration, then learns from proposals previously verified on the same task and their outcomes to retain promising candidates for costly empirical evaluation. We evaluate BVSR across five proposer models and 12 scientific tasks. Limiting task information substantially increases proposal originality and non-obviousness, and produces a larger share of highly creative and high-utility proposals than existing state-of-the-art prompting-based baselines. Learning from prior proposal outcomes on the task further improves candidate selection, discarding half of the candidates while retaining most top-performing proposals. When incorporated into existing AI-scientist workflows, BVSR achieves stronger discoveries across gene expression analysis, drug response prediction, anomaly detection, scaling law discovery, and brain activity prediction. These results suggest that effective AI scientists should use information differently across stages of discovery: constrain task-specific information during exploration while exploiting accumulated empirical experience on the task.",
-        "title": "Blind Variation, Selective Retention: Improving Creative Idea Generation in AI Scientists",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-08T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1393,7 +1393,7 @@
           }
         ],
         "githubRepo": "https://github.com/alexshtf/torchcurves",
-        "githubStars": 74,
+        "githubStars": 76,
         "id": "2611.14516",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1593,6 +1593,6 @@
       "publishedAt": "2026-11-08T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-14T11:21:52.462343+00:00",
+  "fetched_at": "2026-11-15T11:52:35.898909+00:00",
   "limit": 100
 }
