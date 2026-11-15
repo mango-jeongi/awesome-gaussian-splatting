@@ -486,6 +486,142 @@
       "status": "not_found",
       "values": {}
     },
+    "2311.08581": {
+      "fetched_at": "2026-11-15T03:16:39.836923Z",
+      "last_attempt_at": "2026-11-15T03:16:39.836923Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.08581",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.08581",
+          "text": "A new 3D controllable avatar model uses Gaussian splats for photorealistic rendering in real-time, employing cage deformations driven by joint angles and keypoints, outperforming existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.08581",
+          "text": "We present Drivable 3D Gaussian Avatars (D3GA), the first 3D controllable\nmodel for human bodies rendered with Gaussian splats. Current photorealistic\ndrivable avatars require either accurate 3D registrations during training,\ndense input images during testing, or both. The ones based on neural radiance\nfields also tend to be prohibitively slow for telepresence applications. This\nwork uses the recently presented 3D Gaussian Splatting (3DGS) technique to\nrender realistic humans at real-time framerates, using dense calibrated\nmulti-view videos as input. To deform those primitives, we depart from the\ncommonly used point deformation method of linear blend skinning (LBS) and use a\nclassic volumetric deformation method: cage deformations. Given their smaller\nsize, we drive these deformations with joint angles and keypoints, which are\nmore suitable for communication applications. Our experiments on nine subjects\nwith varied body shapes, clothes, and motions obtain higher-quality results\nthan state-of-the-art methods when using the same training and test data."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.08581",
+        "submitted_on_daily_at": "2023-11-16T00:00:00.000Z",
+        "upvotes": 45
+      }
+    },
+    "2311.10812": {
+      "fetched_at": "2026-11-15T03:16:39.836923Z",
+      "last_attempt_at": "2026-11-15T03:16:39.836923Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.10812",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.10812",
+          "text": "SplatArmor recovers detailed and animatable human models using 3D Gaussians in a canonical space, elevated with an SE(3) field and neural color field for precise positioning and articulation."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.10812",
+          "text": "We propose SplatArmor, a novel approach for recovering detailed and\nanimatable human models by `armoring' a parameterized body model with 3D\nGaussians. Our approach represents the human as a set of 3D Gaussians within a\ncanonical space, whose articulation is defined by extending the skinning of the\nunderlying SMPL geometry to arbitrary locations in the canonical space. To\naccount for pose-dependent effects, we introduce a SE(3) field, which allows us\nto capture both the location and anisotropy of the Gaussians. Furthermore, we\npropose the use of a neural color field to provide color regularization and 3D\nsupervision for the precise positioning of these Gaussians. We show that\nGaussian splatting provides an interesting alternative to neural rendering\nbased methods by leverging a rasterization primitive without facing any of the\nnon-differentiability and optimization challenges typically faced in such\napproaches. The rasterization paradigms allows us to leverage forward skinning,\nand does not suffer from the ambiguities associated with inverse skinning and\nwarping. We show compelling results on the ZJU MoCap and People Snapshot\ndatasets, which underscore the effectiveness of our method for controllable\nhuman synthesis."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.10812",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2311.11221": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-15T03:16:39.836923Z",
+      "next_retry_at": "2026-11-22T03:16:39.836923Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.11284": {
+      "fetched_at": "2026-11-15T03:16:39.836923Z",
+      "last_attempt_at": "2026-11-15T03:16:39.836923Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.11284",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "aswanthachooz/LucidDreamer",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/aswanthachooz/LucidDreamer"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 1,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.11284",
+          "text": "Interval Score Matching improves text-to-3D generation by addressing Score Distillation Sampling's over-smoothing issue and using 3D Gaussian Splatting, achieving superior quality and efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.11284",
+          "text": "The recent advancements in text-to-3D generation mark a significant milestone\nin generative models, unlocking new possibilities for creating imaginative 3D\nassets across various real-world scenarios. While recent advancements in\ntext-to-3D generation have shown promise, they often fall short in rendering\ndetailed and high-quality 3D models. This problem is especially prevalent as\nmany methods base themselves on Score Distillation Sampling (SDS). This paper\nidentifies a notable deficiency in SDS, that it brings inconsistent and\nlow-quality updating direction for the 3D model, causing the over-smoothing\neffect. To address this, we propose a novel approach called Interval Score\nMatching (ISM). ISM employs deterministic diffusing trajectories and utilizes\ninterval-based score matching to counteract over-smoothing. Furthermore, we\nincorporate 3D Gaussian Splatting into our text-to-3D generation pipeline.\nExtensive experiments show that our model largely outperforms the\nstate-of-the-art in quality and training efficiency."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/envision-research/luciddreamer"
+        },
+        "source_url": "https://huggingface.co/papers/2311.11284",
+        "stars": 828,
+        "submitted_on_daily_at": "2023-11-21T00:00:00.000Z",
+        "upvotes": 19
+      }
+    },
+    "2311.11700": {
+      "fetched_at": "2026-11-15T03:16:39.836923Z",
+      "last_attempt_at": "2026-11-15T03:16:39.836923Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.11700",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.11700",
+          "text": "GS-SLAM uses 3D Gaussian representation with an adaptive expansion strategy and coarse-to-fine pose tracking for efficient real-time SLAM."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.11700",
+          "text": "In this paper, we introduce GS-SLAM that first utilizes 3D\nGaussian representation in the Simultaneous Localization and Mapping (SLAM)\nsystem. It facilitates a better balance between efficiency and accuracy.\nCompared to recent SLAM methods employing neural implicit representations, our\nmethod utilizes a real-time differentiable splatting rendering pipeline that\noffers significant speedup to map optimization and RGB-D re-rendering.\nSpecifically, we propose an adaptive expansion strategy that adds new or\ndeletes noisy 3D Gaussian in order to efficiently reconstruct new observed\nscene geometry and improve the mapping of previously observed areas. This\nstrategy is essential to extend 3D Gaussian representation to reconstruct the\nwhole scene rather than synthesize a static object in existing methods.\nMoreover, in the pose tracking process, an effective coarse-to-fine technique\nis designed to select reliable 3D Gaussian representations to optimize camera\npose, resulting in runtime reduction and robust estimation. Our method achieves\ncompetitive performance compared with existing state-of-the-art real-time\nmethods on the Replica, TUM-RGBD datasets. The source code will be released\nsoon."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.11700",
+        "submitted_on_daily_at": null,
+        "upvotes": 4
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
