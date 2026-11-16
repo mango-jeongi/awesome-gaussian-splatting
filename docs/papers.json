@@ -1,8 +1,131 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-14T08:18:26Z",
-  "total_count": 4130,
+  "last_updated": "2026-11-16T09:02:36Z",
+  "total_count": 4132,
   "papers": [
+    {
+      "id": "2611.17752",
+      "arxiv_id": "2611.17752",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Stage-wise Lineage-aware Dropout for Sparse-View 3D Gaussian Splatting",
+      "authors": [
+        "Yan Xing",
+        "Zhi Chen",
+        "Fanglue Zhang",
+        "Junhong Zhao",
+        "Bing Xue",
+        "Mengjie Zhang"
+      ],
+      "first_author": "Xing et al.",
+      "published_date": "2026-11-13",
+      "updated_date": "2026-11-13",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.17752",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.17752v1",
+            "value": "2026-11-13",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.17752",
+      "pdf_url": "https://arxiv.org/pdf/2611.17752.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Sparse-view 3D Gaussian Splatting (3DGS) is prone to overfitting because only a limited number of images are available to constrain scene geometry. Dropout is one regularization strategy for alleviating this problem. We introduce the concept of a lineage family to describe a set of Gaussian primitives derived from the same founder through cloning or splitting operations. The founder Gaussians refer to all Gaussian primitives generated during initialization. Descendants within the same family often jointly contribute to the refinement of adjacent local regions. However, dropping individual Gaussians can be less effective due to the compensation effect from neighboring Gaussians for the dropped ones. To address this issue, we propose Stage-wise Lineage-aware Dropout(SLD), which applies lineage-family dropout during the structural regularization stage and switches to individual dropout during the later refinement stage. We further propose Lineage-Balanced Densification(LBD), which operates during densification by constructing an expanded candidate pool and reallocating the densification budget according to the mean gradient scores and existing descendant sizes of different families. Experiments on the LLFF, MipNeRF360, and Blender datasets show that the proposed framework achieves competitive performance in sparse-view reconstruction",
+      "tldr": "Introduces the concept of a lineage family to describe a set of Gaussian primitives derived from the same founder through cloning or splitting operations.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Sparse-View",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "11 pages, 9 figures, 7 tables, including supplementary material",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.17957",
+      "arxiv_id": "2611.17957",
+      "doi": null,
+      "source": "arxiv",
+      "title": "MacroGS: Macro-Pixel Shared Gaussian Primitives for Arbitrary-Scale Light Field Super-Resolutio",
+      "authors": [
+        "Zeqiang Wei",
+        "Angulia Yang",
+        "Min Xu"
+      ],
+      "first_author": "Wei et al.",
+      "published_date": "2026-11-13",
+      "updated_date": "2026-11-13",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.17957",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.17957v1",
+            "value": "2026-11-13",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.17957",
+      "pdf_url": "https://arxiv.org/pdf/2611.17957.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Arbitrary-scale light field spatial super-resolution reconstructs high-resolution views at any requested scale from low-resolution multi-view observations. Gaussian primitives enable continuous reconstruction, but generating separate primitive sets for each view redundantly encodes shared scene structure across views and causes the primitive count grow linearly with the number of views. To avoid such redundancy, we propose MacroGS, a feed-forward decoder that jointly predicts a single shared Gaussian set per macro pixel rather than generating separate sets for each view. Disparity-dependent replacement and angle-conditioned appearance allow each set to be reused across all output views, keeping the predicted primitive count independent of the number of views at each requested scale. The decoder iteratively predicts per-primitive disparities, retrieves the corresponding multi-view features, and updates the primitive states. Gaussian splatting and residual refinement then reconstruct the output light field. Despite being learned without geometric supervision, the predicted disparities strongly correlate with underlying scene geometry. Experiments across five benchmarks demonstrate that MacroGS integrates effectively with diverse light field encoders, improving reconstruction quality at fixed scales while achieving leading performance across most evaluated arbitrary-scale settings. The decoder also achieves speedups of approximately $2$-$10\\times$ over state-of-the-art implicit light field decoders and $10$-$18\\times$ over the view-wise Gaussian baseline.",
+      "tldr": "To avoid such redundancy, we propose MacroGS, a feed-forward decoder that jointly predicts a single shared Gaussian set per macro pixel rather than generating separate sets for each view.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Feed-Forward",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "11 pages, 5 figures",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
     {
       "id": "2611.16259",
       "arxiv_id": "2611.16259",
@@ -447659,6 +447782,8 @@
     "arxiv:2611.16259": "2611.16259",
     "arxiv:2611.16655": "2611.16655",
     "arxiv:2611.16840": "2611.16840",
+    "arxiv:2611.17752": "2611.17752",
+    "arxiv:2611.17957": "2611.17957",
     "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper": "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper",
     "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper": "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper",
     "cvf:Barda_Instant3dit_Multiview_Inpainting_for_Fast_Editing_of_3D_Objects_CVPR_2025_paper": "2412.00518",
@@ -452267,6 +452392,8 @@
     "doi:10.48550/arxiv.2611.16259": "2611.16259",
     "doi:10.48550/arxiv.2611.16655": "2611.16655",
     "doi:10.48550/arxiv.2611.16840": "2611.16840",
+    "doi:10.48550/arxiv.2611.17752": "2611.17752",
+    "doi:10.48550/arxiv.2611.17957": "2611.17957",
     "doi:10.5194/isprs-annals-x-2-2024-209-2024": "2404.17215",
     "doi:10.5194/isprs-annals-x-m-2-2025-215-2025": "paper:2025-a9c59fcf3c",
     "doi:10.5194/isprs-archives-xlviii-g-2025-1283-2025": "2502.13803",

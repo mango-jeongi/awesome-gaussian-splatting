@@ -815,6 +815,136 @@
         "upvotes": 1
       }
     },
+    "2311.13404": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-16T09:02:42.960662Z",
+      "next_retry_at": "2026-11-23T09:02:42.960662Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.13681": {
+      "fetched_at": "2026-11-16T09:02:42.960662Z",
+      "last_attempt_at": "2026-11-16T09:02:42.960662Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.13681",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13681",
+          "text": "A learnable mask strategy and grid-based neural field representation reduce storage and enhance rendering speed for 3D Gaussian splatting while maintaining scene quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.13681",
+          "text": "Neural Radiance Fields (NeRFs) have demonstrated remarkable potential in\ncapturing complex 3D scenes with high fidelity. However, one persistent\nchallenge that hinders the widespread adoption of NeRFs is the computational\nbottleneck due to the volumetric rendering. On the other hand, 3D Gaussian\nsplatting (3DGS) has recently emerged as an alternative representation that\nleverages a 3D Gaussisan-based representation and adopts the rasterization\npipeline to render the images rather than volumetric rendering, achieving very\nfast rendering speed and promising image quality. However, a significant\ndrawback arises as 3DGS entails a substantial number of 3D Gaussians to\nmaintain the high fidelity of the rendered images, which requires a large\namount of memory and storage. To address this critical issue, we place a\nspecific emphasis on two key objectives: reducing the number of Gaussian points\nwithout sacrificing performance and compressing the Gaussian attributes, such\nas view-dependent color and covariance. To this end, we propose a learnable\nmask strategy that significantly reduces the number of Gaussians while\npreserving high performance. In addition, we propose a compact but effective\nrepresentation of view-dependent color by employing a grid-based neural field\nrather than relying on spherical harmonics. Finally, we learn codebooks to\ncompactly represent the geometric attributes of Gaussian by vector\nquantization. In our extensive experiments, we consistently show over\n10times reduced storage and enhanced rendering speed, while maintaining the\nquality of the scene representation, compared to 3DGS. Our work provides a\ncomprehensive framework for 3D scene representation, achieving high\nperformance, fast training, compactness, and real-time rendering. Our project\npage is available at https://maincold2.github.io/c3dgs/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.13681",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2311.14521": {
+      "fetched_at": "2026-11-16T09:02:42.960662Z",
+      "last_attempt_at": "2026-11-16T09:02:42.960662Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.14521",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.14521",
+          "text": "GaussianEditor introduces Gaussian Splatting and Hierarchical Gaussian Splatting to enable efficient and precise 3D editing, enhancing control and speed over implicit representations like NeRF."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.14521",
+          "text": "3D editing plays a crucial role in many areas such as gaming and virtual\nreality. Traditional 3D editing methods, which rely on representations like\nmeshes and point clouds, often fall short in realistically depicting complex\nscenes. On the other hand, methods based on implicit 3D representations, like\nNeural Radiance Field (NeRF), render complex scenes effectively but suffer from\nslow processing speeds and limited control over specific scene areas. In\nresponse to these challenges, our paper presents GaussianEditor, an innovative\nand efficient 3D editing algorithm based on Gaussian Splatting (GS), a novel 3D\nrepresentation. GaussianEditor enhances precision and control in editing\nthrough our proposed Gaussian semantic tracing, which traces the editing target\nthroughout the training process. Additionally, we propose Hierarchical Gaussian\nsplatting (HGS) to achieve stabilized and fine results under stochastic\ngenerative guidance from 2D diffusion models. We also develop editing\nstrategies for efficient object removal and integration, a challenging task for\nexisting methods. Our comprehensive experiments demonstrate GaussianEditor's\nsuperior control, efficacy, and rapid performance, marking a significant\nadvancement in 3D editing. Project Page:\nhttps://buaacyw.github.io/gaussian-editor/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/buaacyw/gaussianeditor"
+        },
+        "source_url": "https://huggingface.co/papers/2311.14521",
+        "stars": 1465,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2311.16037": {
+      "fetched_at": "2026-11-16T09:02:42.960662Z",
+      "last_attempt_at": "2026-11-16T09:02:42.960662Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.16037",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16037",
+          "text": "GaussianEditor achieves detailed and precise 3D scene editing with text instructions through the use of 3D Gaussians, offering faster training times compared to existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16037",
+          "text": "Recently, impressive results have been achieved in 3D scene editing with text\ninstructions based on a 2D diffusion model. However, current diffusion models\nprimarily generate images by predicting noise in the latent space, and the\nediting is usually applied to the whole image, which makes it challenging to\nperform delicate, especially localized, editing for 3D scenes. Inspired by\nrecent 3D Gaussian splatting, we propose a systematic framework, named\nGaussianEditor, to edit 3D scenes delicately via 3D Gaussians with text\ninstructions. Benefiting from the explicit property of 3D Gaussians, we design\na series of techniques to achieve delicate editing. Specifically, we first\nextract the region of interest (RoI) corresponding to the text instruction,\naligning it to 3D Gaussians. The Gaussian RoI is further used to control the\nediting process. Our framework can achieve more delicate and precise editing of\n3D scenes than previous methods while enjoying much faster training speed, i.e.\nwithin 20 minutes on a single V100 GPU, more than twice as fast as\nInstruct-NeRF2NeRF (45 minutes -- 2 hours)."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.16037",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2311.16043": {
+      "fetched_at": "2026-11-16T09:02:42.960662Z",
+      "last_attempt_at": "2026-11-16T09:02:42.960662Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.16043",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16043",
+          "text": "A novel differentiable point-based rendering framework decomposes material and lighting from 3D scenes with Gaussian points, enabling real-time relighting and ray-tracing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16043",
+          "text": "We present a novel differentiable point-based rendering framework for\nmaterial and lighting decomposition from multi-view images, enabling editing,\nray-tracing, and real-time relighting of the 3D point cloud. Specifically, a 3D\nscene is represented as a set of relightable 3D Gaussian points, where each\npoint is additionally associated with a normal direction, BRDF parameters, and\nincident lights from different directions. To achieve robust lighting\nestimation, we further divide incident lights of each point into global and\nlocal components, as well as view-dependent visibilities. The 3D scene is\noptimized through the 3D Gaussian Splatting technique while BRDF and lighting\nare decomposed by physically-based differentiable rendering. Moreover, we\nintroduce an innovative point-based ray-tracing approach based on the bounding\nvolume hierarchy for efficient visibility baking, enabling real-time rendering\nand relighting of 3D Gaussian points with accurate shadow effects. Extensive\nexperiments demonstrate improved BRDF estimation and novel view rendering\nresults compared to state-of-the-art material estimation approaches. Our\nframework showcases the potential to revolutionize the mesh-based graphics\npipeline with a relightable, traceable, and editable rendering pipeline solely\nbased on point cloud. Project\npage:https://nju-3dv.github.io/projects/Relightable3DGaussian/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.16043",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
