@@ -72,7 +72,7 @@
           }
         ],
         "githubRepo": "https://github.com/yukyeongleee/wikitrace",
-        "githubStars": 25,
+        "githubStars": 31,
         "id": "2611.14320",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -81,7 +81,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that is incorrect, or misapplies or misreads a valid one. This is because lessons are inferred from trajectories labeled only with task success or failure, yet are typically provided without the trajectories they came from, leaving the agent no way to check them. To address this, we introduce WikiTrace, an evidence-linked memory system designed to let agents check each lesson against its original trajectory. Specifically, motivated by the finding that a trajectory often still holds the evidence needed to catch an erroneous lesson, WikiTrace stores each lesson as a concise insight linked to a summary of why its trajectory succeeded or failed and to the raw trajectory itself. Then, on a new task, the agent starts from all insights and, whenever one lacks details needed to act, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in missing details or correct the insight before acting. We validate WikiTrace on five agentic benchmarks, showing that it consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation. Our code is available at https://github.com/yukyeongleee/wikitrace",
         "title": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
-        "upvotes": 66
+        "upvotes": 69
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
     },
@@ -109,7 +109,7 @@
           }
         ],
         "githubRepo": "https://github.com/ArcheOne-AI/RoboScript",
-        "githubStars": 245,
+        "githubStars": 280,
         "id": "2611.12885",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -118,7 +118,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
         "title": "World In-Context Learning for Agentic Robot Manipulation",
-        "upvotes": 57
+        "upvotes": 58
       },
       "publishedAt": "2026-11-08T19:00:00.000Z"
     },
@@ -134,7 +134,7 @@
           }
         ],
         "githubRepo": "https://github.com/TheQuantumGOAT/Tree-Ising",
-        "githubStars": 13,
+        "githubStars": 15,
         "id": "2611.14210",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -174,7 +174,7 @@
           }
         ],
         "githubRepo": "https://github.com/limix-ldm-ai/OTBench",
-        "githubStars": 1,
+        "githubStars": 3,
         "id": "2611.13001",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -183,7 +183,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately. This leaves unclear which capabilities they share, how their training objectives interact, and whether one model can perform all three well. We introduce the One Table Benchmark (), spanning 56 datasets, 46 registered methods, and 20 capability axes under aligned data splits and explicit task contracts. We compare task ranks on aligned support, train five backbones under all seven non-empty objective combinations on five datasets with three seeds, and contrast fixed-model profiles with specialist portfolios. Rank comparisons connect imputation and prediction through numerical recovery and dependence preservation, and link generation to both through predictive utility; distributional fidelity follows different, sometimes opposing, rankings. Objective interventions show the largest pooled gains from including the recipient's own objective. Generation has the broadest coverage of positive pooled auxiliary effects, while prediction shows potential to improve imputation and synthetic-data utility, with responses that vary across backbones. Cross-addition effects reveal that objective benefits need not add and depend on the objectives already present. Fixed-model comparisons expose corresponding utility--fidelity trade-offs: some generalists surpass specialist portfolios on utility, while fidelity continues to favor specialization. Frozen foundation models show strong prediction and numerical point imputation, together with promising synthetic-data utility, highlighting their potential across all three tasks. These findings motivate unified tabular models that share useful conditional information while improving categorical reconstruction and faithful joint sampling.",
         "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
-        "upvotes": 39
+        "upvotes": 40
       },
       "publishedAt": "2026-11-07T19:00:00.000Z"
     },
@@ -266,7 +266,7 @@
           }
         ],
         "githubRepo": "https://github.com/huawei-csl/MACaQ",
-        "githubStars": 264,
+        "githubStars": 312,
         "id": "2611.10649",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -275,7 +275,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "Weight-activation quantization can reduce the memory and compute cost of neural-network inference, but recent methods often require expensive optimization and architecture-specific propagation of basis transforms across layers. We introduce MACaQ, an MXFP4 W4A4 post-training quantization method that treats every linear layer independently. MACaQ applies a per-channel scale and a block-Hadamard transform online to each layer's activations, while absorbing the corresponding inverse transforms into its weights. Retaining these transforms online avoids cross-layer dependencies and enables a simple streaming implementation of the quantization process, in which only one layer must reside in memory at a time. To improve over round-to-nearest quantization, we introduce Flip-Refinement, a Hessian-aware coordinate-descent procedure that greedily moves individual FP4 codes to adjacent representable values. Despite executing the activation transforms at inference time, MACaQ adds only 2.3% end-to-end overhead over pure MXFP4 on Qwen3-32B in vLLM. MACaQ reaches lower perplexity than DuQuant++ and MR-GPTQ, and already matches their best perplexity on Llama-3-8B in 11 times less quantization time. We further apply MACaQ without architecture-specific modifications to an image diffusion model, illustrating the generality of its layer-local design and show quantization of a 122B parameter model in 64 minutes, using only 32.5GB GPU RAM.",
         "title": "MACaQ: Fast, Model Agnostic Calibrated Quantization for Low-Precision Weights and Activations",
-        "upvotes": 30
+        "upvotes": 31
       },
       "publishedAt": "2026-11-06T19:00:00.000Z"
     },
@@ -375,7 +375,7 @@
           }
         ],
         "githubRepo": "https://github.com/mll-lab-nu/embodied-first-exam",
-        "githubStars": 277,
+        "githubStars": 282,
         "id": "2611.12177",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -384,7 +384,7 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "Early successes on agentic robotics point to a potential paradigm shift toward using coding agents to control robots. Existing robotics benchmarks are built around visuomotor policy learning, leaving it open whether coding agents can reliably control diverse robots under physical-world constraints. We therefore introduce the Embodied First Exam, a unified, comprehensive, and agent-native evaluation framework where coding agents can choose their own control approach: direct control, code to control, or train a policy to control. We hope it serves as a first exam for coding agents before they enter the physical world, with 1,156 tasks in 35 suites on 47 robots, including 9 new suites that go beyond pick-and-place to spatial puzzles, dexterous manipulation, multi-robot interaction, dynamic whole-body control, and sim-to-sim engineering. Each task can be run in up to three evaluation settings. The Standard Setting mimics the real world: the agent receives only sensor observations and, by default, cannot reset the environment. Its Realtime variant keeps the environment running while the agent reasons. The Privileged Setting gives the agent access to the full simulator state and unlimited resets, allowing it to search for an oracle solution for training purposes. Success rates in this setting serve as an approximate upper bound. On the 456 core tasks, the strongest of eight agents, GPT-6 Astra in Codex, achieves a success rate of 34% in the Standard Setting, leaving much room for improvement. To see where agents fail, we label the stage at which failed attempts go wrong and compare failures across agents, settings, and stage categories.",
         "title": "Embodied First Exam",
-        "upvotes": 28
+        "upvotes": 30
       },
       "publishedAt": "2026-11-08T19:00:00.000Z"
     },
@@ -590,7 +590,7 @@
           }
         ],
         "githubRepo": "https://github.com/agentic-learning-ai-lab/deleting-weights",
-        "githubStars": 99,
+        "githubStars": 105,
         "id": "2611.10866",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -762,37 +762,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Bowen Zuo"
-          },
-          {
-            "name": "Yue Yu"
-          },
-          {
-            "name": "Dongruo Zhou"
-          },
-          {
-            "name": "Yinglun Zhu"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.10486",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-07T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "Diffusion language models (DLMs) generate text through iterative denoising, where decisions about which tokens to commit or remask strongly affect output quality. Existing certainty-aware strategies rely on instantaneous confidence or entropy, but these local signals can be misleading on difficult reasoning problems. We formulate DLM test-time scaling as adaptive allocation of both inference compute and decoding strategies. Our two-stage approach uses a fast base sampler to solve easy questions, then applies frequency-aware remasking to the remaining hard questions. This strategy tracks how often each token's prediction changes across denoising steps and preferentially commits frequently changing tokens, encouraging samples to explore alternative reasoning paths rather than collapse onto the model's preferred trajectory. Experiments with LLaDA-8B-Instruct and Dream-7B-Instruct show consistent improvements over a strong adaptive allocation baseline, with absolute accuracy gains of up to 3.73 percentage points (LLaDA) and 7.33 percentage points (Dream) on MATH-500, and absolute coverage gains of up to 11.39 percentage points (LLaDA) and 10.98 percentage points (Dream) on HumanEval. On questions unsolved by the base certainty-aware strategy after 100 samples, frequency-aware remasking recovers solutions for 3.75% to 18.75% of examples.",
-        "title": "Test-Time Scaling for Diffusion Language Models with Frequency-Aware Remasking",
-        "upvotes": 9
-      },
-      "publishedAt": "2026-11-06T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "Micius-Flash is a 27B-parameter multimodal reasoning model trained with a knowledge-tree data pipeline and multi-teacher on-policy distillation, achieving strong hardware and semiconductor agent benchmark results and supporting tool-integrated engineering workflows.",
         "authors": [
           {
@@ -884,9 +853,40 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "We introduce Micius-Flash, a 27-billion-parameter model for engineering with native multimodal input, deep reasoning and a 256K-token context window. We design the Micius data pipeline as a knowledge-tree-driven data flywheel comprising three stages: knowledge tree construction and expansion, data synthesis, and quality validation with hard-example augmentation. From this data, we train expert models for semiconductor knowledge and reasoning, hardware coding, and semiconductor multimodal understanding, along with agentic experts. Subsequently, we employ Multi-Teacher On-Policy Distillation (MOPD) to supervise training on sequences generated by Micius itself, thereby integrating the capabilities of these expert models into a unified model. On more than 20 datasets with about 15K records, Micius-Flash averages 64.2% on hardware code benchmarks, 15.0 points above a same-size baseline. It scores 62.4% on a semiconductor-specific agent benchmark, exceeding the same-size baseline by 17.2 points. We further develop Micius Harness for industrial applications, connecting the model to specialized tools, including EDA tools and KiCad, as well as execution environments. Case studies in PCB design, chip design workflow automation, and software development demonstrate the model's ability to use tool execution feedback for multi-step planning, code debugging, and iterative verification. We release Micius as an open-source model to advance the development of agents for science and engineering.",
         "title": "Micius-Flash: Lightweight Agentic Intelligence for Engineering",
-        "upvotes": 9
+        "upvotes": 10
       },
       "publishedAt": "2026-11-03T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Bowen Zuo"
+          },
+          {
+            "name": "Yue Yu"
+          },
+          {
+            "name": "Dongruo Zhou"
+          },
+          {
+            "name": "Yinglun Zhu"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.10486",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-07T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
+        "summary": "Diffusion language models (DLMs) generate text through iterative denoising, where decisions about which tokens to commit or remask strongly affect output quality. Existing certainty-aware strategies rely on instantaneous confidence or entropy, but these local signals can be misleading on difficult reasoning problems. We formulate DLM test-time scaling as adaptive allocation of both inference compute and decoding strategies. Our two-stage approach uses a fast base sampler to solve easy questions, then applies frequency-aware remasking to the remaining hard questions. This strategy tracks how often each token's prediction changes across denoising steps and preferentially commits frequently changing tokens, encouraging samples to explore alternative reasoning paths rather than collapse onto the model's preferred trajectory. Experiments with LLaDA-8B-Instruct and Dream-7B-Instruct show consistent improvements over a strong adaptive allocation baseline, with absolute accuracy gains of up to 3.73 percentage points (LLaDA) and 7.33 percentage points (Dream) on MATH-500, and absolute coverage gains of up to 11.39 percentage points (LLaDA) and 10.98 percentage points (Dream) on HumanEval. On questions unsolved by the base certainty-aware strategy after 100 samples, frequency-aware remasking recovers solutions for 3.75% to 18.75% of examples.",
+        "title": "Test-Time Scaling for Diffusion Language Models with Frequency-Aware Remasking",
+        "upvotes": 9
+      },
+      "publishedAt": "2026-11-06T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1097,6 +1097,43 @@
     },
     {
       "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Haoran Zhang"
+          },
+          {
+            "name": "Huizhen Sun"
+          },
+          {
+            "name": "Hanbin Wen"
+          },
+          {
+            "name": "Jie Leng"
+          },
+          {
+            "name": "Jiaxin Zhu"
+          },
+          {
+            "name": "Zhaohua Sun"
+          }
+        ],
+        "githubRepo": "https://github.com/ranranrannervous/EarthRecord",
+        "githubStars": 3,
+        "id": "2611.12934",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://ranranrannervous.github.io/EarthRecord/",
+        "publishedAt": "2026-11-06T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
+        "summary": "While multimodal agents now carry out complex data analysis with tools, their ability to turn decades of satellite imagery into reliable land-change analysis, crucial for Earth observation science, remains unmeasured. Existing benchmarks fall short: they pose questions on curated images or give agents preprocessed inputs, leaving out the raw multi-sensor archives where such analysis begins. We introduce EarthRecord, a benchmark built on the raw record of 56 sites: four decades of Landsat, MODIS, VIIRS, and Sentinel-2 data, with cloud masking and cross-sensor harmonization left to the agent. It poses 238 land-change questions across ten analysis tasks, scored against withheld references from global products, agreement among methods, and visual interpretation. Two controls test what answers rest on: the closed book removes the record, and instrument pairs alter one satellite's data while nothing changes on the ground. Evaluations of twelve multimodal agents reveal that leading agents complete most analyses end to end but falter when an answer requires mapping from imagery. Further analysis shows that the record moves answers from prior knowledge to the pixels but not yet to the real change on the ground: when one satellite's data are altered, half of the right answers follow the alteration. EarthRecord thus provides a principled platform for measuring and advancing agents from pixels to land change.",
+        "title": "EarthRecord: From Pixels to Land Change with Multimodal Agents over Four Decades of Satellite Imagery",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-05T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": "At matched compute, dense process rewards such as Monte-Carlo rewards underperform standard GRPO for language-model reasoning, while selecting prompts with predicted success near 1/2 yields small consistent accuracy gains.",
         "authors": [
           {
@@ -1195,7 +1232,7 @@
           }
         ],
         "githubRepo": "https://github.com/OpenFinMind/MC-JEPA",
-        "githubStars": 2,
+        "githubStars": 3,
         "id": "2611.13572",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1210,40 +1247,89 @@
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "EVAThink trains vision-language models to adaptively choose between direct answering and reasoning based on whether sampled video frames provide sufficient evidence, improving video understanding under fixed frame budgets.",
         "authors": [
           {
-            "name": "Haoran Zhang"
+            "name": "Changti Wu"
           },
           {
-            "name": "Huizhen Sun"
+            "name": "Ruizhe Fan"
           },
           {
-            "name": "Hanbin Wen"
+            "name": "Bin Wang"
           },
           {
-            "name": "Jie Leng"
+            "name": "Lei Zhang"
           },
           {
-            "name": "Jiaxin Zhu"
-          },
-          {
-            "name": "Zhaohua Sun"
+            "name": "Yuxiang Zhang"
           }
         ],
-        "githubRepo": "https://github.com/ranranrannervous/EarthRecord",
-        "githubStars": 3,
-        "id": "2611.12934",
+        "githubRepo": "https://github.com/ChangtiWu/EVAThink",
+        "githubStars": 2,
+        "id": "2611.13907",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://ranranrannervous.github.io/EarthRecord/",
-        "publishedAt": "2026-11-06T00:00:00.000Z",
+        "projectPage": "https://github.com/ChangtiWu/EVAThink",
+        "publishedAt": "2026-11-10T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "While multimodal agents now carry out complex data analysis with tools, their ability to turn decades of satellite imagery into reliable land-change analysis, crucial for Earth observation science, remains unmeasured. Existing benchmarks fall short: they pose questions on curated images or give agents preprocessed inputs, leaving out the raw multi-sensor archives where such analysis begins. We introduce EarthRecord, a benchmark built on the raw record of 56 sites: four decades of Landsat, MODIS, VIIRS, and Sentinel-2 data, with cloud masking and cross-sensor harmonization left to the agent. It poses 238 land-change questions across ten analysis tasks, scored against withheld references from global products, agreement among methods, and visual interpretation. Two controls test what answers rest on: the closed book removes the record, and instrument pairs alter one satellite's data while nothing changes on the ground. Evaluations of twelve multimodal agents reveal that leading agents complete most analyses end to end but falter when an answer requires mapping from imagery. Further analysis shows that the record moves answers from prior knowledge to the pixels but not yet to the real change on the ground: when one satellite's data are altered, half of the right answers follow the alteration. EarthRecord thus provides a principled platform for measuring and advancing agents from pixels to land change.",
-        "title": "EarthRecord: From Pixels to Land Change with Multimodal Agents over Four Decades of Satellite Imagery",
+        "summary": "Under a fixed frame budget, video understanding with vision-language models (VLMs) depends on whether the sampled frames provide sufficient evidence for the question. Sufficient frame evidence supports direct answering, whereas less informative observations may benefit from reasoning that connects the available cues. We introduce EVAThink, which enhances video understanding through evidence sufficiency-guided training for adaptive thinking. First, Recoverable Evidence Gap Mining constructs evidence-dense and evidence-sparse video views that share the same question and answer under an identical frame budget. It retains pairs where sparse views yield lower direct-answer accuracy than dense views but benefit from explicit reasoning, providing supervision for response-mode selection. Second, Evidence-Guided Two-Stage Reinforcement Learning uses stage-specific rewards to guide training with evidence-based mode preferences and then refine response efficiency, while first-token advantage regularization mitigates mode collapse. Trained on only 6.7K curated samples, EVAThink consistently improves upon the base model across video understanding benchmarks under both 32- and 64-frame budgets, while outperforming strong baselines on average. The code, model, and datasets are available at https://github.com/ChangtiWu/EVAThink{EVAThink}.",
+        "title": "EVAThink: Evidence Sufficiency-Guided Training for Adaptive Thinking in Video Understanding",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-09T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "P2Echo is a unified view-aware text-prompted segmentation framework that uses dynamic image-text alignment to segment diverse cardiac structures across multiple echocardiographic views with high accuracy and low computational cost.",
+        "authors": [
+          {
+            "name": "Moein Heidari"
+          },
+          {
+            "name": "Alvin Kimbowa"
+          },
+          {
+            "name": "Mahdi Tabatabaei"
+          },
+          {
+            "name": "Afshin Bozorgpour"
+          },
+          {
+            "name": "Sina Ghorbani Kolahi"
+          },
+          {
+            "name": "River Jiang"
+          },
+          {
+            "name": "Wenjin Chen"
+          },
+          {
+            "name": "David J. Foran"
+          },
+          {
+            "name": "Jasmine Grewal"
+          },
+          {
+            "name": "Dorit Merhof"
+          },
+          {
+            "name": "Ilker Hacihaliloglu"
+          }
+        ],
+        "githubRepo": "https://github.com/moeinheidari7829/P2Echo",
+        "githubStars": 5,
+        "id": "2611.13425",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://moeinheidari7829.github.io/p2echo/",
+        "publishedAt": "2026-11-10T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
+        "summary": "Automated segmentation in multi-view echocardiography is essential for comprehensive cardiac assessment, yet remains challenging due to substantial anatomical and appearance variability across standard acoustic windows. In this paper, we present P2Echo, a unified framework capable of segmenting diverse cardiac structures across multiple standard echocardiographic views using a single model controlled by structured view-aware text prompts. Unlike recent foundation model adaptations that rely on implicit latent priors, P2Echo explicitly conditions the segmentation process via a novel Dynamic Image-Text Alignment (DyITA) module. DyITA integrates a differentiable routing mechanism and token differential operators to dynamically modulate decoder features according to the requested view and target structure. This allows the network to adaptively switch its processing pathways for different views without architectural changes. Extensive experiments on a large-scale internal dataset (seen during training) and held-out evaluation on three external datasets demonstrate that P2Echo matches or exceeds both view-specific specialists and state-of-the-art universal models at a fraction of their computational cost, offering an efficient, controllable solution for multi-plane cardiac analysis. Code is available at: https://github.com/moeinheidari7829/P2Echo.",
+        "title": "Prompt2Echo (P2Echo): Text-Prompted Multi-View Echocardiography Segmentation with One Model",
         "upvotes": 4
       },
-      "publishedAt": "2026-11-05T19:00:00.000Z"
+      "publishedAt": "2026-11-09T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1312,6 +1398,37 @@
     },
     {
       "paper": {
+        "ai_summary": "A unified 4D world model jointly forecasts LiDAR point clouds and 3D semantic occupancy in a shared BEV latent space, improving accuracy and real-time throughput.",
+        "authors": [
+          {
+            "name": "Zhimin Liao"
+          },
+          {
+            "name": "Ping Wei"
+          },
+          {
+            "name": "Kai Mao"
+          },
+          {
+            "name": "Shuaijia Chen"
+          }
+        ],
+        "githubRepo": "https://github.com/lzzzzzm/LO-World",
+        "githubStars": 5,
+        "id": "2611.11912",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://lzzzzzm.github.io/LO-World/",
+        "publishedAt": "2026-11-09T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
+        "summary": "LiDAR point clouds and 3D semantic occupancy represent two distinct modalities capturing fine-grained metric geometry and dense volumetric semantics, respectively, holding natural potential for mutual complementarity. However, existing world models typically forecast these modalities independently or cascade them heuristically, missing the opportunity for reciprocal cross-modal regularization. To address this, we propose LO-World, a unified 4D world model that forecasts both modalities within a shared BEV latent space. This single-stream formulation enables dense semantics and metric geometry to mutually reinforce each other, while eliminating multi-pipeline redundancy. Specifically, LO-World couples an efficient hybrid range-voxel autoencoder with a flow-matching generator that caches historical context to reduce iterative sampling latency. Extensive experiments demonstrate that LO-World outperforms prior state-of-the-art baselines, improving occupancy forecasting IoU by 10.9% and reducing LiDAR Chamfer Distance by 30.1%. Meanwhile, it sustains a real-time throughput exceeding 25~FPS on a single RTX 4090. Our code is available at https://github.com/lzzzzzm/LO-World.",
+        "title": "LO-World: Unified BEV Latent Modeling for Joint 4D Occupancy and LiDAR Forecasting",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-08T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": "Visual similarity measured by a self-supervised visual encoder partially explains word generalization in adults and artificial learners, while the composition of teaching examples contributes additional structure beyond that distance.",
         "authors": [
           {
@@ -1328,58 +1445,6 @@
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
         "summary": "When two objects share a name, how much does their visual similarity explain, and what do the teaching examples add? First, we reanalyzed trial-level data from a large adult word-extension study (Lewis & Frank, 2018), computing each test image's distance to the examples shown in the space of a frozen self-supervised visual encoder (DINOv2). Distance was associated with extension (log odds -3.23 per standard deviation; 520 people), and an exploratory post hoc analysis suggested that this association persisted within the taught domain after controlling for taxonomic level and teaching condition. Example composition also mattered: after three examples, adults extended a word to 1.1% of superordinate items when the examples were subordinate and to 77.5% when they were superordinate. Second, in an artificial learner using the same encoder, words joining two categories were learned less accurately the farther apart the categories were (84.7%, 65.4%, and 53.0% naming accuracy for near, mid, and far pairs). The encoder's distances correlated with human similarity and confusability measures from three datasets (rho = .501-.795), but this representational alignment did not translate into conclusive evidence that human-derived distances predict learner difficulty, and a second encoder trained on one child's experience reproduced the tier ordering but not the pair-level effect. The secondary human data were analyzed under an internal plan fixed before the confirmatory analyses (not externally preregistered). Visual similarity accounts for part of how generalization is organized in both systems, while the composition of examples contributes what the distance we used does not capture.",
         "title": "Visual Similarity in Adult Word Extension and Artificial Word Learning",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-09T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "P2Echo is a unified view-aware text-prompted segmentation framework that uses dynamic image-text alignment to segment diverse cardiac structures across multiple echocardiographic views with high accuracy and low computational cost.",
-        "authors": [
-          {
-            "name": "Moein Heidari"
-          },
-          {
-            "name": "Alvin Kimbowa"
-          },
-          {
-            "name": "Mahdi Tabatabaei"
-          },
-          {
-            "name": "Afshin Bozorgpour"
-          },
-          {
-            "name": "Sina Ghorbani Kolahi"
-          },
-          {
-            "name": "River Jiang"
-          },
-          {
-            "name": "Wenjin Chen"
-          },
-          {
-            "name": "David J. Foran"
-          },
-          {
-            "name": "Jasmine Grewal"
-          },
-          {
-            "name": "Dorit Merhof"
-          },
-          {
-            "name": "Ilker Hacihaliloglu"
-          }
-        ],
-        "githubRepo": "https://github.com/moeinheidari7829/P2Echo",
-        "githubStars": 5,
-        "id": "2611.13425",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://moeinheidari7829.github.io/p2echo/",
-        "publishedAt": "2026-11-10T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "Automated segmentation in multi-view echocardiography is essential for comprehensive cardiac assessment, yet remains challenging due to substantial anatomical and appearance variability across standard acoustic windows. In this paper, we present P2Echo, a unified framework capable of segmenting diverse cardiac structures across multiple standard echocardiographic views using a single model controlled by structured view-aware text prompts. Unlike recent foundation model adaptations that rely on implicit latent priors, P2Echo explicitly conditions the segmentation process via a novel Dynamic Image-Text Alignment (DyITA) module. DyITA integrates a differentiable routing mechanism and token differential operators to dynamically modulate decoder features according to the requested view and target structure. This allows the network to adaptively switch its processing pathways for different views without architectural changes. Extensive experiments on a large-scale internal dataset (seen during training) and held-out evaluation on three external datasets demonstrate that P2Echo matches or exceeds both view-specific specialists and state-of-the-art universal models at a fraction of their computational cost, offering an efficient, controllable solution for multi-plane cardiac analysis. Code is available at: https://github.com/moeinheidari7829/P2Echo.",
-        "title": "Prompt2Echo (P2Echo): Text-Prompted Multi-View Echocardiography Segmentation with One Model",
         "upvotes": 3
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
@@ -1408,34 +1473,22 @@
     },
     {
       "paper": {
-        "ai_summary": "EVAThink trains vision-language models to adaptively choose between direct answering and reasoning based on whether sampled video frames provide sufficient evidence, improving video understanding under fixed frame budgets.",
+        "ai_summary": null,
         "authors": [
           {
-            "name": "Changti Wu"
-          },
-          {
-            "name": "Ruizhe Fan"
-          },
-          {
-            "name": "Bin Wang"
-          },
-          {
-            "name": "Lei Zhang"
-          },
-          {
-            "name": "Yuxiang Zhang"
+            "name": "Tomer Solberg"
           }
         ],
-        "githubRepo": "https://github.com/ChangtiWu/EVAThink",
-        "githubStars": 2,
-        "id": "2611.13907",
+        "githubRepo": "https://github.com/moonmath-ai/Sable",
+        "githubStars": 17,
+        "id": "2611.14083",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://github.com/ChangtiWu/EVAThink",
+        "projectPage": null,
         "publishedAt": "2026-11-10T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "Under a fixed frame budget, video understanding with vision-language models (VLMs) depends on whether the sampled frames provide sufficient evidence for the question. Sufficient frame evidence supports direct answering, whereas less informative observations may benefit from reasoning that connects the available cues. We introduce EVAThink, which enhances video understanding through evidence sufficiency-guided training for adaptive thinking. First, Recoverable Evidence Gap Mining constructs evidence-dense and evidence-sparse video views that share the same question and answer under an identical frame budget. It retains pairs where sparse views yield lower direct-answer accuracy than dense views but benefit from explicit reasoning, providing supervision for response-mode selection. Second, Evidence-Guided Two-Stage Reinforcement Learning uses stage-specific rewards to guide training with evidence-based mode preferences and then refine response efficiency, while first-token advantage regularization mitigates mode collapse. Trained on only 6.7K curated samples, EVAThink consistently improves upon the base model across video understanding benchmarks under both 32- and 64-frame budgets, while outperforming strong baselines on average. The code, model, and datasets are available at https://github.com/ChangtiWu/EVAThink{EVAThink}.",
-        "title": "EVAThink: Evidence Sufficiency-Guided Training for Adaptive Thinking in Video Understanding",
+        "summary": "We present Sable, an argument system and single-GPU prover for the statement that a committed, integer-quantized transformer produced a given token sequence from a given prompt, bit for bit. Sable fixes an integer function F_O with no floating-point step, in which every rounding, normalization, softmax and sampling decision is determined by its inputs, and proves it with a constraint system whose relations provably never wrap modulo the 31-bit KoalaBear prime. The proof batches zerochecks and LogUp-GKR lookups into one sumcheck per domain, and commits to every witness tensor and weight in one multilinear commitment built from Reed-Solomon codes, BLAKE3 Merkle trees and a mixed-length BaseFold opening. The prover streams the model layer by layer on one GPU. On one NVIDIA RTX PRO 6000 Blackwell GPU, Sable proves all 64 layers of Qwen2.5-32B in 92.5 s for 4,096 tokens and 398 s for 16,384 tokens, and covers Qwen3-32B and the mixture-of-experts Qwen3-30B-A3B (4,096 tokens in 121.8 and 84.7 s). A proof costs 41 to 50 times the serving time, or 6.4 cents per 4,096-token request at public GPU prices, and 40 to 64 times less time per parameter and token than zkLLM. On WikiText-2, F_O's greedy token matches the BF16 model's at 86.3% of positions; on Qwen3, F_O is within 1.6 points of BF16 on MMLU and 1.7 points on GSM8K. A verifier with a compiled core checks a proof on one CPU core in 19 to 56 s. In the random-oracle model, the interactive proof has round-by-round soundness error 2^-103. The proof is not zero-knowledge, so the system targets open-weight models. Code: https://github.com/moonmath-ai/Sable",
+        "title": "Sable: A Small-Field Sumcheck Argument for Bit-Exact Inference of Large Language Models",
         "upvotes": 3
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
@@ -1510,28 +1563,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Tomer Solberg"
-          }
-        ],
-        "githubRepo": "https://github.com/moonmath-ai/Sable",
-        "githubStars": 15,
-        "id": "2611.14083",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-10T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "We present Sable, an argument system and single-GPU prover for the statement that a committed, integer-quantized transformer produced a given token sequence from a given prompt, bit for bit. Sable fixes an integer function F_O with no floating-point step, in which every rounding, normalization, softmax and sampling decision is determined by its inputs, and proves it with a constraint system whose relations provably never wrap modulo the 31-bit KoalaBear prime. The proof batches zerochecks and LogUp-GKR lookups into one sumcheck per domain, and commits to every witness tensor and weight in one multilinear commitment built from Reed-Solomon codes, BLAKE3 Merkle trees and a mixed-length BaseFold opening. The prover streams the model layer by layer on one GPU. On one NVIDIA RTX PRO 6000 Blackwell GPU, Sable proves all 64 layers of Qwen2.5-32B in 92.5 s for 4,096 tokens and 398 s for 16,384 tokens, and covers Qwen3-32B and the mixture-of-experts Qwen3-30B-A3B (4,096 tokens in 121.8 and 84.7 s). A proof costs 41 to 50 times the serving time, or 6.4 cents per 4,096-token request at public GPU prices, and 40 to 64 times less time per parameter and token than zkLLM. On WikiText-2, F_O's greedy token matches the BF16 model's at 86.3% of positions; on Qwen3, F_O is within 1.6 points of BF16 on MMLU and 1.7 points on GSM8K. A verifier with a compiled core checks a proof on one CPU core in 19 to 56 s. In the random-oracle model, the interactive proof has round-by-round soundness error 2^-103. The proof is not zero-knowledge, so the system targets open-weight models. Code: https://github.com/moonmath-ai/Sable",
-        "title": "Sable: A Small-Field Sumcheck Argument for Bit-Exact Inference of Large Language Models",
-        "upvotes": 2
-      },
-      "publishedAt": "2026-11-09T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "LipsFlower stabilizes flow-matching image restoration by combining Lipschitz-aware architecture and regularization to reduce perturbation amplification while maintaining competitive restoration quality.",
         "authors": [
           {
@@ -1560,39 +1591,8 @@
         "upvotes": 2
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A unified 4D world model jointly forecasts LiDAR point clouds and 3D semantic occupancy in a shared BEV latent space, improving accuracy and real-time throughput.",
-        "authors": [
-          {
-            "name": "Zhimin Liao"
-          },
-          {
-            "name": "Ping Wei"
-          },
-          {
-            "name": "Kai Mao"
-          },
-          {
-            "name": "Shuaijia Chen"
-          }
-        ],
-        "githubRepo": "https://github.com/lzzzzzm/LO-World",
-        "githubStars": 5,
-        "id": "2611.11912",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://lzzzzzm.github.io/LO-World/",
-        "publishedAt": "2026-11-09T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-11T00:00:00.000Z",
-        "summary": "LiDAR point clouds and 3D semantic occupancy represent two distinct modalities capturing fine-grained metric geometry and dense volumetric semantics, respectively, holding natural potential for mutual complementarity. However, existing world models typically forecast these modalities independently or cascade them heuristically, missing the opportunity for reciprocal cross-modal regularization. To address this, we propose LO-World, a unified 4D world model that forecasts both modalities within a shared BEV latent space. This single-stream formulation enables dense semantics and metric geometry to mutually reinforce each other, while eliminating multi-pipeline redundancy. Specifically, LO-World couples an efficient hybrid range-voxel autoencoder with a flow-matching generator that caches historical context to reduce iterative sampling latency. Extensive experiments demonstrate that LO-World outperforms prior state-of-the-art baselines, improving occupancy forecasting IoU by 10.9% and reducing LiDAR Chamfer Distance by 30.1%. Meanwhile, it sustains a real-time throughput exceeding 25~FPS on a single RTX 4090. Our code is available at https://github.com/lzzzzzm/LO-World.",
-        "title": "LO-World: Unified BEV Latent Modeling for Joint 4D Occupancy and LiDAR Forecasting",
-        "upvotes": 1
-      },
-      "publishedAt": "2026-11-08T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-15T11:52:35.898909+00:00",
+  "fetched_at": "2026-11-16T12:36:58.182314+00:00",
   "limit": 100
 }
