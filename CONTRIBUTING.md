@@ -443,15 +443,16 @@ and for the prior verified release. Store those snapshots outside `docs/data`;
 keep immutable Pages archives separately for exact deployment rollback.
 
 The checked-in selection is recorded in
-`reports/runs/public-retention-selected-manifests-20261111.json`. It includes the
-prior cache-backed generation and the earlier local release-rehearsal generation;
-it does not assert which build is deployed in production. Select the appropriate
-retained generations for the deployment being operated.
+`reports/runs/public-retention-selected-manifests-20261117.json`. It includes the
+previous validated checkpoint and the verified published `v2026.W46` generation.
+Older snapshot files remain historical evidence; their artifacts need not remain
+in the active public tree. Select the appropriate retained generations for the
+deployment being operated.
 
 Preview with one to five retained snapshots, using the mandated SSD environment:
 
 ```bash
-uv run python -m src.public_cleanup plan --root docs/data --retain reports/public-manifests/ac4e0b920b14a7d660b9735b470f1ce8dc0b82c0491d2f2bd9b930a022a06f24.json --retain reports/public-manifests/ca6f62226f48ed5ce627ebf449fc44a5afb6c2ded9183ed808d26976d738bdee.json --output reports/runs/public-cleanup-plan.json
+uv run python -m src.public_cleanup plan --root docs/data --retain reports/public-manifests/51c5e1c4cf8d48edd9704480d2f56ae5c816aef66e3ab3b56d69ff23bcfe16fc.json --retain reports/public-manifests/09ad26870a189d9d453af0f3075793fe0276fbd683835e34e844be3530369278.json --output reports/runs/public-cleanup-plan.json
 ```
 
 Inspect the plan's absolute root, generation identities, file list and byte/file
