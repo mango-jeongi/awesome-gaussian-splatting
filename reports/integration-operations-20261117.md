@@ -84,3 +84,21 @@ The Reddit author's quota figures are their own measurements, not a prediction
 for this homelab. [Anthropic guide](https://claude.com/resources/articles/building-always-on-agents).
 The second Reddit short link could not be resolved after repeated retrieval;
 its content was not inferred from the other post.
+
+## Offline layout follow-up
+
+Both CI runs for checkpoint `400202a` completed successfully. The optional
+llama parser now supplies each source word's PDF bounding box along with its
+original index and text. The prompt describes the coordinate system and asks
+for row/column alignment while leaving uncertain context empty. The extractor
+identity is versioned `llama-words-layout-v2`, fencing earlier jobs/configurations.
+Malformed or non-finite geometry is refused before any HTTP request.
+
+On the digest-verified cached RadSplat PDF, physical page 6 has 498 words. All four
+previously accepted numeric values resolve to unique original word indices inside
+their reviewed boxes. This proves geometry is available in the input, not that a
+model identifies the correct table semantics. The receipt records zero model
+requests. New mock tests exercise row/column geometry, unchanged index selection
+and refusal before network I/O. The pinned extraction runtime and accepted review
+ledger remain unchanged. Any next live Gemma pilot remains a separate bounded,
+approved operation.

@@ -11,6 +11,7 @@ from src.workers.llama_parser import (
     PageSelections,
     candidates_from_selection,
     extractor_version,
+    page_payload,
     parse_page,
 )
 from src.workers.queue import ExtractionQueue, ExtractionResult
@@ -102,6 +103,9 @@ def test_llama_schema_request_and_response_contract():
         assert body["chat_template_kwargs"] == {"enable_thinking": False}
         assert body["response_format"]["type"] == "json_schema"
         assert body["response_format"]["schema"] == PageSelections.model_json_schema()
+        payload = json.loads(body["messages"][1]["content"])
+        assert payload["coordinate_system"] == "pdf_points_top_left"
+        assert payload["words"][2] == {"index": 2, "text": "32.15", "bbox": [40, 10, 55, 20]}
         return httpx.Response(
             200,
             json={
@@ -188,6 +192,31 @@ def test_recorded_live_gemma_response_remains_grounded_and_unreviewed():
 
 def test_thinking_configuration_changes_the_fenced_job_identity():
     assert extractor_version(config()) != extractor_version(config(enable_thinking=True))
+
+
+def test_layout_preserves_source_order_across_rows_and_columns():
+    source = [
+        {"text": "PSNR", "x0": 100, "top": 10, "x1": 130, "bottom": 20},
+        {"text": "Ours", "x0": 10, "top": 30, "x1": 40, "bottom": 40},
+        {"text": "32.15", "x0": 100, "top": 30, "x1": 130, "bottom": 40},
+    ]
+    payload = page_payload(source, 6)
+    assert [word["index"] for word in payload["words"]] == [0, 1, 2]
+    assert [word["text"] for word in payload["words"]] == ["PSNR", "Ours", "32.15"]
+    assert payload["words"][0]["bbox"][0] == payload["words"][2]["bbox"][0]
+    assert payload["words"][1]["bbox"][1] == payload["words"][2]["bbox"][1]
+    assert extractor_version(config()).startswith("llama-words-layout-v2:")
+
+
+@pytest.mark.parametrize("field,value", [("x0", float("nan")), ("top", float("inf")), ("x1", -1)])
+def test_invalid_geometry_is_refused_before_model_request(field, value):
+    source = words()
+    source[0][field] = value
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda request: pytest.fail("Network called"))
+    ) as client:
+        with pytest.raises(ValueError):
+            parse_page(client, config(), source, 1)
 
 
 def test_captured_real_page_gemma_response_rejects_duplicate_context_indices():
