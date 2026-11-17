@@ -77,6 +77,7 @@ jobs:
       - name: Upload restored Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
+          include-hidden-files: true
           name: github-pages-redeploy-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/restored-site
 

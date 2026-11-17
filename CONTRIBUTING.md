@@ -565,3 +565,25 @@ An identical replay is a no-op. Changing an accepted decision requires another
 epoch. Capture reports expose `reviewed_source_url_records` separately. Neither
 this correction nor successful metadata capture establishes canonical identity,
 topic inclusion, independent inventory reconciliation or provider recall.
+
+## MSI checkout refresh
+
+`papers-repo-sync.timer` checks every five minutes after boot. The companion
+service fast-forwards a clean `main` or `feed` checkout from its matching origin
+branch. It skips local changes, detached HEAD, other working branches, interrupted
+Git operations and local commits/divergence. It never stashes, resets, commits or
+pushes. This is polling, not instantaneous synchronization; `feed` receives daily
+ingestion, while `main` follows the publication/sync schedule. Pause the timer
+before interactive repository maintenance with `systemctl --user stop
+papers-repo-sync.timer`. Inspect outcomes with `journalctl --user -u
+papers-repo-sync.service`. The extraction runtime is a separate pinned checkout
+and is not upgraded by this timer.
+
+Install the two `deploy/papers-repo-sync.*` units under
+`~/.config/systemd/user/`, run `systemctl --user daemon-reload`, then
+`systemctl --user enable --now papers-repo-sync.timer`. The MSI service uses its
+existing SSH identity and a process-only HTTPS-to-SSH transport override.
+
+Pages uploads must set `include-hidden-files: true`: the validated immutable
+candidate includes `.nojekyll`, and dropping it breaks exact-file verification.
+Both weekly publication and retained-archive redeployment use this setting.

@@ -130,6 +130,7 @@ jobs:
       - name: Upload frozen candidate site
         uses: actions/upload-pages-artifact@v5
         with:
+          include-hidden-files: true
           name: ${{ steps.candidate.outputs.pages_artifact_name }}
           path: ${{ runner.temp }}/papers-release/site
 

@@ -1,0 +1,17 @@
+[Unit]
+Description=Fast-forward clean papers checkout from its matching upstream branch
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/workspaces/awesome-gaussian-splatting
+Environment="GIT_SSH_COMMAND=ssh -F /dev/null -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=yes"
+Environment=GIT_CONFIG_COUNT=1
+Environment=GIT_CONFIG_KEY_0=url.git@github.com:.insteadOf
+Environment=GIT_CONFIG_VALUE_0=https://github.com/
+ExecStart=/bin/bash %h/workspaces/awesome-gaussian-splatting/scripts/ops/sync-checkout.sh %h/workspaces/awesome-gaussian-splatting
+TimeoutStartSec=2min
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0077

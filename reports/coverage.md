@@ -1,3 +1,5 @@
+> Current November 17 integration evidence: [coverage snapshot](runs/coverage-integrated-20261117.json) and [operations checkpoint](integration-operations-20261117.md). The report below records the November 13 checkpoint.
+
 # Coverage snapshot — 2026-11-13 (America/Los_Angeles)
 
 Observed at 2026-11-13T20:56:21.410482+00:00. The [current machine receipt](runs/coverage-trunk-final-20261113.json) binds 397 consumed files. Earlier receipts remain preserved. Raw source replay depends on the local NVMe cache; only metadata, state and digests are tracked.
