@@ -1282,6 +1282,140 @@
         "upvotes": 1
       }
     },
+    "2311.18561": {
+      "fetched_at": "2026-11-17T19:46:10.120185Z",
+      "last_attempt_at": "2026-11-17T19:46:10.120185Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.18561",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18561",
+          "text": "A unified representation model, Periodic Vibration Gaussian (PVG), enhances the capture of dynamic urban scenes using 3D Gaussian splatting with periodic vibration and flow-based temporal smoothing, achieving state-of-the-art performance in reconstruction and novel view synthesis."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18561",
+          "text": "Modeling dynamic, large-scale urban scenes is challenging due to their highly\nintricate geometric structures and unconstrained dynamics in both space and\ntime. Prior methods often employ high-level architectural priors, separating\nstatic and dynamic elements, resulting in suboptimal capture of their\nsynergistic interactions. To address this challenge, we present a unified\nrepresentation model, called Periodic Vibration Gaussian (PVG). PVG builds upon\nthe efficient 3D Gaussian splatting technique, originally designed for static\nscene representation, by introducing periodic vibration-based temporal\ndynamics. This innovation enables PVG to elegantly and uniformly represent the\ncharacteristics of various objects and elements in dynamic urban scenes. To\nenhance temporally coherent representation learning with sparse training data,\nwe introduce a novel flow-based temporal smoothing mechanism and a\nposition-aware adaptive control strategy. Extensive experiments on Waymo Open\nDataset and KITTI benchmarks demonstrate that PVG surpasses state-of-the-art\nalternatives in both reconstruction and novel view synthesis for both dynamic\nand static scenes. Notably, PVG achieves this without relying on manually\nlabeled object bounding boxes or expensive optical flow estimation. Moreover,\nPVG exhibits 50/6000-fold acceleration in training/rendering over the best\nalternative."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.18561",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.00109": {
+      "fetched_at": "2026-11-17T19:46:10.120185Z",
+      "last_attempt_at": "2026-11-17T19:46:10.120185Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.00109",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00109",
+          "text": "Scaffold-GS improves 3D scene rendering by reducing Gaussian redundancy and enhancing robustness to varying views and lighting using anchor points and neural Gaussian importance assessment."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00109",
+          "text": "Neural rendering methods have significantly advanced photo-realistic 3D scene\nrendering in various academic and industrial applications. The recent 3D\nGaussian Splatting method has achieved the state-of-the-art rendering quality\nand speed combining the benefits of both primitive-based representations and\nvolumetric representations. However, it often leads to heavily redundant\nGaussians that try to fit every training view, neglecting the underlying scene\ngeometry. Consequently, the resulting model becomes less robust to significant\nview changes, texture-less area and lighting effects. We introduce Scaffold-GS,\nwhich uses anchor points to distribute local 3D Gaussians, and predicts their\nattributes on-the-fly based on viewing direction and distance within the view\nfrustum. Anchor growing and pruning strategies are developed based on the\nimportance of neural Gaussians to reliably improve the scene coverage. We show\nthat our method effectively reduces redundant Gaussians while delivering\nhigh-quality rendering. We also demonstrates an enhanced capability to\naccommodate scenes with varying levels-of-detail and view-dependent\nobservations, without sacrificing the rendering speed."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/city-super/Scaffold-GS"
+        },
+        "source_url": "https://huggingface.co/papers/2312.00109",
+        "stars": 1293,
+        "submitted_on_daily_at": "2023-12-04T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2312.00112": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-17T19:46:10.120185Z",
+      "next_retry_at": "2026-11-24T19:46:10.120185Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.00206": {
+      "fetched_at": "2026-11-17T19:46:10.120185Z",
+      "last_attempt_at": "2026-11-17T19:46:10.120185Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.00206",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00206",
+          "text": "A method is proposed to improve 3DGS for coherent scene representation from sparse views using depth priors and generative constraints."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00206",
+          "text": "The problem of novel view synthesis has grown significantly in popularity\nrecently with the introduction of Neural Radiance Fields (NeRFs) and other\nimplicit scene representation methods. A recent advance, 3D Gaussian Splatting\n(3DGS), leverages an explicit representation to achieve real-time rendering\nwith high-quality results. However, 3DGS still requires an abundance of\ntraining views to generate a coherent scene representation. In few shot\nsettings, similar to NeRF, 3DGS tends to overfit to training views, causing\nbackground collapse and excessive floaters, especially as the number of\ntraining views are reduced. We propose a method to enable training coherent\n3DGS-based radiance fields of 360 scenes from sparse training views. We find\nthat using naive depth priors is not sufficient and integrate depth priors with\ngenerative and explicit constraints to reduce background collapse, remove\nfloaters, and enhance consistency from unseen viewpoints. Experiments show that\nour method outperforms base 3DGS by up to 30.5% and NeRF-based methods by up to\n15.6% in LPIPS on the MipNeRF-360 dataset with substantially less training and\ninference cost."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ForMyCat/SparseGS"
+        },
+        "source_url": "https://huggingface.co/papers/2312.00206",
+        "stars": 234,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.00583": {
+      "fetched_at": "2026-11-17T19:46:10.120185Z",
+      "last_attempt_at": "2026-11-17T19:46:10.120185Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.00583",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00583",
+          "text": "MD-Splatting enhances 3D tracking and novel view synthesis in dynamic scenes with deformations, shadows, and occlusions using Gaussian splatting and neural-voxel encoding."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.00583",
+          "text": "Accurate 3D tracking in highly deformable scenes with occlusions and shadows\ncan facilitate new applications in robotics, augmented reality, and generative\nAI. However, tracking under these conditions is extremely challenging due to\nthe ambiguity that arises with large deformations, shadows, and occlusions. We\nintroduce MD-Splatting, an approach for simultaneous 3D tracking and novel view\nsynthesis, using video captures of a dynamic scene from various camera poses.\nMD-Splatting builds on recent advances in Gaussian splatting, a method that\nlearns the properties of a large number of Gaussians for state-of-the-art and\nfast novel view synthesis. MD-Splatting learns a deformation function to\nproject a set of Gaussians with non-metric, thus canonical, properties into\nmetric space. The deformation function uses a neural-voxel encoding and a\nmultilayer perceptron (MLP) to infer Gaussian position, rotation, and a shadow\nscalar. We enforce physics-inspired regularization terms based on local\nrigidity, conservation of momentum, and isometry, which leads to trajectories\nwith smaller trajectory errors. MD-Splatting achieves high-quality 3D tracking\non highly deformable scenes with shadows and occlusions. Compared to\nstate-of-the-art, we improve 3D tracking by an average of 23.9 %, while\nsimultaneously achieving high-quality novel view synthesis. With sufficient\ntexture such as in scene 6, MD-Splatting achieves a median tracking error of\n3.39 mm on a cloth of 1 x 1 meters in size. Project website:\nhttps://md-splatting.github.io/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.00583",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
