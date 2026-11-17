@@ -1190,6 +1190,98 @@
         "upvotes": 2
       }
     },
+    "2311.17857": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-17T13:02:47.386957Z",
+      "next_retry_at": "2026-11-24T13:02:47.386957Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.17907": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-17T13:02:47.386957Z",
+      "next_retry_at": "2026-11-24T13:02:47.386957Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.17977": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-17T13:02:47.386957Z",
+      "next_retry_at": "2026-11-24T13:02:47.386957Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.18159": {
+      "fetched_at": "2026-11-17T13:02:47.386957Z",
+      "last_attempt_at": "2026-11-17T13:02:47.386957Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.18159",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18159",
+          "text": "A vector quantization method using the kmeans algorithm optimizes storage in 3D Gaussian Splatting while maintaining image quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18159",
+          "text": "3D Gaussian Splatting is a new method for modeling and rendering 3D radiance\nfields that achieves much faster learning and rendering time compared to SOTA\nNeRF methods. However, it comes with a drawback in the much larger storage\ndemand compared to NeRF methods since it needs to store the parameters for\nseveral 3D Gaussians. We notice that many Gaussians may share similar\nparameters, so we introduce a simple vector quantization method based on\n\\kmeans algorithm to quantize the Gaussian parameters. Then, we store the small\ncodebook along with the index of the code for each Gaussian. Moreover, we\ncompress the indices further by sorting them and using a method similar to\nrun-length encoding. We do extensive experiments on standard benchmarks as well\nas a new benchmark which is an order of magnitude larger than the standard\nbenchmarks. We show that our simple yet effective method can reduce the storage\ncost for the original 3D Gaussian Splatting method by a factor of almost\n20times with a very small drop in the quality of rendered images."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ucdvision/compact3d"
+        },
+        "source_url": "https://huggingface.co/papers/2311.18159",
+        "stars": 228,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2311.18482": {
+      "fetched_at": "2026-11-17T13:02:47.386957Z",
+      "last_attempt_at": "2026-11-17T13:02:47.386957Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.18482",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18482",
+          "text": "A new scene representation called Language Embedded 3D Gaussians addresses memory and performance challenges in open-vocabulary querying by using quantization and a novel embedding procedure, providing high visual quality and language accuracy with real-time rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.18482",
+          "text": "Open-vocabulary querying in 3D space is challenging but essential for scene\nunderstanding tasks such as object localization and segmentation.\nLanguage-embedded scene representations have made progress by incorporating\nlanguage features into 3D spaces. However, their efficacy heavily depends on\nneural networks that are resource-intensive in training and rendering. Although\nrecent 3D Gaussians offer efficient and high-quality novel view synthesis,\ndirectly embedding language features in them leads to prohibitive memory usage\nand decreased performance. In this work, we introduce Language Embedded 3D\nGaussians, a novel scene representation for open-vocabulary query tasks.\nInstead of embedding high-dimensional raw semantic features on 3D Gaussians, we\npropose a dedicated quantization scheme that drastically alleviates the memory\nrequirement, and a novel embedding procedure that achieves smoother yet high\naccuracy query, countering the multi-view feature inconsistencies and the\nhigh-frequency inductive bias in point-based representations. Our comprehensive\nexperiments show that our representation achieves the best visual quality and\nlanguage querying accuracy across current language-embedded representations,\nwhile maintaining real-time rendering frame rates on a single desktop GPU."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.18482",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

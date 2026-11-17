@@ -47,7 +47,7 @@
         "submittedOnDailyAt": "2026-11-12T00:00:00.000Z",
         "summary": "Mathematical supervision for language models is typically flattened into isolated problem-solution pairs, discarding the curricular organization and evidential structure of the original sources. We introduce TOME-Math (Textbook-Oriented Mathematical Evidence), a large-scale corpus that converts 2,118 textbooks spanning the core areas of university-level mathematics subjects into approximately 380K structured proof-supervision records while preserving chapter order, proposition-proof links, dependency references, and source provenance. Leveraging these structural signals, we explore curriculum learning across multiple mathematical subjects and characterize scaling patterns with supervision volume and source breadth. At full scale, fine-tuning on TOME-Math raises the unweighted mean score across our held-out evaluations and established public benchmarks by 16.7 percentage points over the base model, while exceeding all three public instruction-data baselines evaluated in aggregate. Our findings highlight structured textbooks as both a scalable source of mathematical supervision and an empirical framework for studying the impact of data organization on mathematical reasoning. We will release the corpus to facilitate further research on structured mathematical supervision.",
         "title": "Scaling Mathematical Proof Supervision from Structured Textbooks",
-        "upvotes": 49
+        "upvotes": 50
       },
       "publishedAt": "2026-10-28T20:00:00.000Z"
     },
@@ -84,7 +84,7 @@
         "submittedOnDailyAt": "2026-11-12T00:00:00.000Z",
         "summary": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. Examining failed rollouts, we find that quantized agents overlook task requirements or environmental conditions, producing environment transitions that diverge from successful full-precision references. Correcting these behavioral divergences remains difficult: offline data may miss the student's failure contexts, while its own rollouts may provide few correct responses in those contexts. We introduce SteerDistill, a quantization-aware distillation method in which a full-precision teacher guides the student to revise failed responses and iteratively refines its guidance using feedback from student execution. This closed-loop teacher steering produces locally verified behavioral corrections. We internalize these corrections by training the student without guidance to match the steered student's predictions at corrected turns and the full-precision teacher's at other turns, enabling unassisted inference. Across five agentic benchmarks and three models, SteerDistill exceeds the strongest quantized baseline by 1.67--2.18 points in average score under W4A16 and stays within one point of BF16. On τ^2-Bench, it outperforms QeRL by 1.84 percentage points in success rate using 67% fewer training GPU hours and produces shorter successful trajectories than the quantized baselines.",
         "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
-        "upvotes": 38
+        "upvotes": 39
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
     },
@@ -164,7 +164,7 @@
           }
         ],
         "githubRepo": "https://github.com/Liuzedooong/SparseReading",
-        "githubStars": 87,
+        "githubStars": 89,
         "id": "2608.22237",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -342,7 +342,7 @@
           }
         ],
         "githubRepo": "https://github.com/mit-han-lab/EvolvingInfra",
-        "githubStars": 55,
+        "githubStars": 92,
         "id": "2611.12304",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -466,7 +466,7 @@
           }
         ],
         "githubRepo": "https://github.com/santoshrajkumar/fame-qp",
-        "githubStars": 11,
+        "githubStars": 12,
         "id": "2611.13766",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -618,7 +618,7 @@
           }
         ],
         "githubRepo": "https://github.com/ambroiseodt/waldo",
-        "githubStars": 1,
+        "githubStars": 4,
         "id": "2611.11531",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -768,6 +768,6 @@
       "publishedAt": "2026-11-09T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-16T12:36:58.182314+00:00",
+  "fetched_at": "2026-11-17T13:02:39.447276+00:00",
   "limit": 100
 }
