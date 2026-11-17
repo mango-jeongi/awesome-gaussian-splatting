@@ -1056,6 +1056,140 @@
         "upvotes": 0
       }
     },
+    "2311.16737": {
+      "fetched_at": "2026-11-17T10:15:22.090387Z",
+      "last_attempt_at": "2026-11-17T10:15:22.090387Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.16737",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16737",
+          "text": "Point'n Move uses Gaussian Splatting Radiance Field for interactive scene object manipulation with real-time editing and exposed region inpainting."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.16737",
+          "text": "We propose Point'n Move, a method that achieves interactive scene object\nmanipulation with exposed region inpainting. Interactivity here further comes\nfrom intuitive object selection and real-time editing. To achieve this, we\nadopt Gaussian Splatting Radiance Field as the scene representation and fully\nleverage its explicit nature and speed advantage. Its explicit representation\nformulation allows us to devise a 2D prompt points to 3D mask dual-stage\nself-prompting segmentation algorithm, perform mask refinement and merging,\nminimize change as well as provide good initialization for scene inpainting and\nperform editing in real-time without per-editing training, all leads to\nsuperior quality and performance. We test our method by performing editing on\nboth forward-facing and 360 scenes. We also compare our method against existing\nscene object removal methods, showing superior quality despite being more\ncapable and having a speed advantage."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.16737",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2311.17061": {
+      "fetched_at": "2026-11-17T10:15:22.090387Z",
+      "last_attempt_at": "2026-11-17T10:15:22.090387Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.17061",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17061",
+          "text": "A framework called HumanGaussian enhances 3D human generation from text by using Structure-Aware Score Distillation Sampling and Annealed Negative Prompt Guidance to optimize geometry and appearance with high detail and efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17061",
+          "text": "Realistic 3D human generation from text prompts is a desirable yet\nchallenging task. Existing methods optimize 3D representations like mesh or\nneural fields via score distillation sampling (SDS), which suffers from\ninadequate fine details or excessive training time. In this paper, we propose\nan efficient yet effective framework, HumanGaussian, that generates\nhigh-quality 3D humans with fine-grained geometry and realistic appearance. Our\nkey insight is that 3D Gaussian Splatting is an efficient renderer with\nperiodic Gaussian shrinkage or growing, where such adaptive density control can\nbe naturally guided by intrinsic human structures. Specifically, 1) we first\npropose a Structure-Aware SDS that simultaneously optimizes human appearance\nand geometry. The multi-modal score function from both RGB and depth space is\nleveraged to distill the Gaussian densification and pruning process. 2)\nMoreover, we devise an Annealed Negative Prompt Guidance by decomposing SDS\ninto a noisier generative score and a cleaner classifier score, which well\naddresses the over-saturation issue. The floating artifacts are further\neliminated based on Gaussian size in a prune-only phase to enhance generation\nsmoothness. Extensive experiments demonstrate the superior efficiency and\ncompetitive quality of our framework, rendering vivid 3D humans under diverse\nscenarios. Project Page: https://alvinliu0.github.io/projects/HumanGaussian"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2311.17061",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2311.17089": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-17T10:15:22.090387Z",
+      "next_retry_at": "2026-11-24T10:15:22.090387Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2311.17113": {
+      "fetched_at": "2026-11-17T10:15:22.090387Z",
+      "last_attempt_at": "2026-11-17T10:15:22.090387Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.17113",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17113",
+          "text": "An animatable human model based on 3D Gaussian Splatting achieves improved visual quality and real-time rendering for novel pose synthesis of clothed bodies."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17113",
+          "text": "This work addresses the problem of real-time rendering of photorealistic\nhuman body avatars learned from multi-view videos. While the classical\napproaches to model and render virtual humans generally use a textured mesh,\nrecent research has developed neural body representations that achieve\nimpressive visual quality. However, these models are difficult to render in\nreal-time and their quality degrades when the character is animated with body\nposes different than the training observations. We propose an animatable human\nmodel based on 3D Gaussian Splatting, that has recently emerged as a very\nefficient alternative to neural radiance fields. The body is represented by a\nset of gaussian primitives in a canonical space which is deformed with a coarse\nto fine approach that combines forward skinning and local non-rigid refinement.\nWe describe how to learn our Human Gaussian Splatting (HuGS) model in an\nend-to-end fashion from multi-view observations, and evaluate it against the\nstate-of-the-art approaches for novel pose synthesis of clothed body. Our\nmethod achieves 1.5 dB PSNR improvement over the state-of-the-art on THuman4\ndataset while being able to render in real-time (80 fps for 512x512\nresolution)."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/mrnerf/awesome-3d-gaussian-splatting"
+        },
+        "source_url": "https://huggingface.co/papers/2311.17113",
+        "stars": 9009,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2311.17245": {
+      "fetched_at": "2026-11-17T10:15:22.090387Z",
+      "last_attempt_at": "2026-11-17T10:15:22.090387Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2311.17245",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17245",
+          "text": "LightGaussian efficiently compresses 3D Gaussians using pruning, spherical harmonics distillation, and vector tree quantization, significantly enhancing real-time neural rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2311.17245",
+          "text": "Recent advancements in real-time neural rendering using point-based\ntechniques have paved the way for the widespread adoption of 3D\nrepresentations. However, foundational approaches like 3D Gaussian Splatting\ncome with a substantial storage overhead caused by growing the SfM points to\nmillions, often demanding gigabyte-level disk space for a single unbounded\nscene, posing significant scalability challenges and hindering the splatting\nefficiency.\n  To address this challenge, we introduce LightGaussian, a novel method\ndesigned to transform 3D Gaussians into a more efficient and compact format.\nDrawing inspiration from the concept of Network Pruning, LightGaussian\nidentifies Gaussians that are insignificant in contributing to the scene\nreconstruction and adopts a pruning and recovery process, effectively reducing\nredundancy in Gaussian counts while preserving visual effects. Additionally,\nLightGaussian employs distillation and pseudo-view augmentation to distill\nspherical harmonics to a lower degree, allowing knowledge transfer to more\ncompact representations while maintaining reflectance. Furthermore, we propose\na hybrid scheme, VecTree Quantization, to quantize all attributes, resulting in\nlower bitwidth representations with minimal accuracy losses.\n  In summary, LightGaussian achieves an averaged compression rate over 15x\nwhile boosting the FPS from 139 to 215, enabling an efficient representation of\ncomplex scenes on Mip-NeRF 360, Tank and Temple datasets.\n  Project website: https://lightgaussian.github.io/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/VITA-Group/LightGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2311.17245",
+        "stars": 826,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
