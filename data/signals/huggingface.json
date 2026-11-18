@@ -1669,6 +1669,117 @@
       "status": "not_found",
       "values": {}
     },
+    "2312.02155": {
+      "fetched_at": "2026-11-18T21:42:45.350293Z",
+      "last_attempt_at": "2026-11-18T21:42:45.350293Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02155",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02155",
+          "text": "A GPS-Gaussian approach synthesizes 2K-resolution views in real-time using Gaussian parameter maps and depth estimation, outperforming existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02155",
+          "text": "We present a new approach, termed GPS-Gaussian, for synthesizing novel views\nof a character in a real-time manner. The proposed method enables 2K-resolution\nrendering under a sparse-view camera setting. Unlike the original Gaussian\nSplatting or neural implicit rendering methods that necessitate per-subject\noptimizations, we introduce Gaussian parameter maps defined on the source views\nand regress directly Gaussian Splatting properties for instant novel view\nsynthesis without any fine-tuning or optimization. To this end, we train our\nGaussian parameter regression module on a large amount of human scan data,\njointly with a depth estimation module to lift 2D parameter maps to 3D space.\nThe proposed framework is fully differentiable and experiments on several\ndatasets demonstrate that our method outperforms state-of-the-art methods while\nachieving an exceeding rendering speed."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/aipixel/gps-gaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2312.02155",
+        "stars": 631,
+        "submitted_on_daily_at": "2023-12-05T00:00:00.000Z",
+        "upvotes": 12
+      }
+    },
+    "2312.02214": {
+      "fetched_at": "2026-11-18T21:42:45.350293Z",
+      "last_attempt_at": "2026-11-18T21:42:45.350293Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02214",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02214",
+          "text": "FlashAvatar is a lightweight, fast-rendering 3D avatar generator that reconstructs a digital avatar from a short video sequence using a Gaussian field and parametric face model, achieving high visual quality and speed."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02214",
+          "text": "We propose FlashAvatar, a novel and lightweight 3D animatable avatar\nrepresentation that could reconstruct a digital avatar from a short monocular\nvideo sequence in minutes and render high-fidelity photo-realistic images at\n300FPS on a consumer-grade GPU. To achieve this, we maintain a uniform 3D\nGaussian field embedded in the surface of a parametric face model and learn\nextra spatial offset to model non-surface regions and subtle facial details.\nWhile full use of geometric priors can capture high-frequency facial details\nand preserve exaggerated expressions, proper initialization can help reduce the\nnumber of Gaussians, thus enabling super-fast rendering speed. Extensive\nexperimental results demonstrate that FlashAvatar outperforms existing works\nregarding visual quality and personalized details and is almost an order of\nmagnitude faster in rendering speed. Project page:\nhttps://ustc3dv.github.io/FlashAvatar/"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.02214",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2312.02218": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-18T21:42:45.350293Z",
+      "next_retry_at": "2026-11-25T21:42:45.350293Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.02255": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-18T21:42:45.350293Z",
+      "next_retry_at": "2026-11-25T21:42:45.350293Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.02902": {
+      "fetched_at": "2026-11-18T21:42:45.350293Z",
+      "last_attempt_at": "2026-11-18T21:42:45.350293Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02902",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02902",
+          "text": "HeadGaS combines 3D Gaussian Splats with learnable latent features to achieve real-time 3D head animation with superior quality and speed."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02902",
+          "text": "3D head animation has seen major quality and runtime improvements over the\nlast few years, particularly empowered by the advances in differentiable\nrendering and neural radiance fields. Real-time rendering is a highly desirable\ngoal for real-world applications. We propose HeadGaS, a model that uses 3D\nGaussian Splats (3DGS) for 3D head reconstruction and animation. In this paper\nwe introduce a hybrid model that extends the explicit 3DGS representation with\na base of learnable latent features, which can be linearly blended with\nlow-dimensional parameters from parametric head models to obtain\nexpression-dependent color and opacity values. We demonstrate that HeadGaS\ndelivers state-of-the-art results in real-time inference frame rates,\nsurpassing baselines by up to 2dB, while accelerating rendering speed by over\nx10."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.02902",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
