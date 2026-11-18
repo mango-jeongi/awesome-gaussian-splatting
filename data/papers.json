@@ -1,8 +1,522 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-17T10:15:14Z",
-  "total_count": 4141,
+  "last_updated": "2026-11-18T09:46:56Z",
+  "total_count": 4149,
   "papers": [
+    {
+      "id": "2611.22898",
+      "arxiv_id": "2611.22898",
+      "doi": null,
+      "source": "arxiv",
+      "title": "You Only Encode Once: Sub-Pixel-Shifted Frames for Arbitrary-Scale Remote Sensing Super-Resolution with 2D Gaussian Splatting",
+      "authors": [
+        "Canjie Liu",
+        "Liuqian Wang",
+        "Qi Ming",
+        "Wei Lu",
+        "Xiaohan Hao",
+        "Yuefei Wu",
+        "Wentao Chao",
+        "Lei Shi"
+      ],
+      "first_author": "Liu et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22898",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22898v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22898",
+      "pdf_url": "https://arxiv.org/pdf/2611.22898.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Arbitrary-scale super-resolution (ASSR) of remote sensing images remains challenging due to the limited high-frequency information in a single low-resolution (LR) observation. While multi-frame SR can exploit complementary sub-pixel information, existing approaches often require real multi-frame training sequences and repeated feature encoding, increasing data acquisition demands and computational costs. To address these limitations, we propose SPS-GS (Sub-Pixel-Shifted Gaussian Splatting), an encode-once framework that learns from multi-phase LR observations synthesized from individual high-resolution images, without requiring real multi-frame training sequences. Specifically, Phase-Coherent Aliasing Demodulation (PCAD) exploits shift-dependent aliasing through Fourier-based alignment, phase-aware residual fusion, and least-squares aliasing estimation, enabling multi-frame information to be integrated before a single deep encoding pass. Gaussian Projection Alignment (GPA) then iteratively refines Gaussian centers and colors using multi-observation back-projection to promote observation consistency. The refined Gaussians support continuous rendering at arbitrary scales. Extensive experiments on five remote sensing datasets demonstrate strong reconstruction performance against single-image and multi-frame SR baselines, while maintaining competitive inference efficiency at common scales. The code will be publicly released.",
+      "tldr": "Proposes SPS-GS (Sub-Pixel-Shifted Gaussian Splatting), an encode-once framework that learns from multi-phase LR observations synthesized from individual high-resolution images, without requiring real...",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "2DGS",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.23054",
+      "arxiv_id": "2611.23054",
+      "doi": null,
+      "source": "arxiv",
+      "title": "ReTouchGS: Ultralight Render-free Aesthetic Color Enhancement and Transfer for 3D Gaussian Splatting",
+      "authors": [
+        "Chuanzhi Xu",
+        "Boyu Wei",
+        "Chengkun Yue",
+        "Xuanhua Yin",
+        "Yiyang Li",
+        "Haodong Chen",
+        "Qiang Qu",
+        "Weidong Cai"
+      ],
+      "first_author": "Xu et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.23054",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.23054v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.23054",
+      "pdf_url": "https://arxiv.org/pdf/2611.23054.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) enables photorealistic scene reconstruction. Existing 3DGS color transfer and interactive editing methods are guided by reference images and user-specified color adjustments. However, in many applications, users simply want aesthetically guided color enhancement that automatically makes the scene more visually appealing while maintaining consistent colors and tones across viewpoints. We present ReTouchGS, to our knowledge the first framework for reference-free aesthetic color enhancement of pretrained 3DGS models. It predicts a scene-level color lookup table (LUT) from the model and its associated camera parameters. ReTouchGS also supports reference-guided color transfer by fitting a scene-level LUT using one edited view of the same scene and its corresponding original render. A shared blend-aware color refinement network with only 44.7K parameters refines an analytic color update to realize either color mapping without rendering. It preserves geometry and delivers standard 3DGS assets in seconds. We also design the ReTouch3D benchmark to support the evaluation of aesthetic color enhancement and reference-guided color transfer across viewpoints. Experiments demonstrate high color accuracy and strong generalization to unseen scenes in both aesthetic color enhancement and reference-guided color transfer.",
+      "tldr": "Presents ReTouchGS, to our knowledge the first framework for reference-free aesthetic color enhancement of pretrained 3DGS models.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22742",
+      "arxiv_id": "2611.22742",
+      "doi": null,
+      "source": "arxiv",
+      "title": "GaussianMamba: Geometric and Relational State Space Scanning of 3D Gaussian Primitives",
+      "authors": [
+        "A. Enes Doruk",
+        "Ozgur Erkent"
+      ],
+      "first_author": "Doruk et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22742",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22742v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22742",
+      "pdf_url": "https://arxiv.org/pdf/2611.22742.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D semantic occupancy prediction requires representing complex spatial structures and modeling contextual relationships across a scene. 3D Gaussian primitives provide a sparse and adaptive representation of scene geometry and semantics, while Mamba offers efficient sequence modeling for capturing dependencies among primitives. However, Gaussian primitives are irregular and unordered, making sequence construction challenging, as conventional spatial ordering may overlook their anisotropic geometry and feature-semantic relationships. In this paper, we present GaussianMamba, a dual-branch Mamba framework that explicitly incorporates Gaussian-specific geometric and feature-semantic relationships into complementary scanning strategies. The first branch refines a locality-preserving traversal using anisotropic Gaussian support derived from primitive scale and orientation. The second branch reorders spatially organized groups according to feature-semantic affinity and adjusts local features using geometry-weighted semantic differences. The resulting sequences are processed by separate Mamba modules, and their features are fused through a support-aware mechanism that incorporates local feature discrepancies arising from the distinct scanning paths. Experiments on nuScenes-SurroundOcc and SSCBench-KITTI-360 demonstrate consistent improvements over GaussianFormer and GaussianFormer-2 in both IoU and mIoU.",
+      "tldr": "Presents GaussianMamba, a dual-branch Mamba framework that explicitly incorporates Gaussian-specific geometric and feature-semantic relationships into complementary scanning strategies.",
+      "primary_category": "Autonomous Driving & Urban Scenes",
+      "categories": [
+        "Autonomous Driving & Urban Scenes",
+        "Medical, Defense & Multimodal Sensors"
+      ],
+      "tags": [
+        "Medical & Healthcare",
+        "Autonomous Driving",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22805",
+      "arxiv_id": "2611.22805",
+      "doi": null,
+      "source": "arxiv",
+      "title": "DOOM-GS: Dynamic Out-of-core Optimization for Massive Gaussian Splatting",
+      "authors": [
+        "Doğa Yılmaz",
+        "Jialin Zhu",
+        "Binglun Wang",
+        "He Wang"
+      ],
+      "first_author": "Yılmaz et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22805",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22805v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22805",
+      "pdf_url": "https://arxiv.org/pdf/2611.22805.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Traditional Gaussian Splatting (GS) methods use in-core training, i.e. assuming that GPU memory is large enough to accommodate all the primitives. This assumption breaks down when the primitives exceed the capacity of GPU memory, e.g. GS on large environments. Recent out-of-core training research starts to address this issue, but is limited to static scenes. Unlike static GS, dynamic GS primitives move in space and time, breaking common assumptions held in existing out-of-core research and impose new challenges in memory management and training. To this end, we propose Dynamic Out-of-core Optimization for Massive Gaussian Splatting (DOOM-GS), the first out-of-core optimization method designed specifically for massive-scale dynamic GS. DOOM-GS is equipped with novel memory management strategies that optimize caching for spatio-temporal primitives, and a fast learning method for large numbers of primitives. Due to the lack of suitable datasets for large-scale dynamic GS, we also contribute a new dataset for evaluation. Since there are no directly comparable methods, we adapt several closely related methods for comparison. Through extensive evaluation, we demonstrate the effectiveness of DOOM-GS which now makes it possible to reconstruct city-scale dynamic scenes with high quality on moderate hardware, serving as a foundational tool for diverse future research and applications.",
+      "tldr": "Recent out-of-core training research starts to address this issue, but is limited to static scenes.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.GR",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22095",
+      "arxiv_id": "2611.22095",
+      "doi": null,
+      "source": "arxiv",
+      "title": "CueSplat: Learning to Schedule Sparse Deformation for Dynamic Gaussian Splatting on Edge Devices",
+      "authors": [
+        "Qingyuan Tang",
+        "He Zhu",
+        "Shixuan Sun",
+        "Anbang Wu",
+        "Jingwen Leng",
+        "Minyi Guo",
+        "Yu Feng"
+      ],
+      "first_author": "Tang et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22095",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22095v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22095",
+      "pdf_url": "https://arxiv.org/pdf/2611.22095.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Deformation-based 4D Gaussian splatting (4DGS) enables dynamic scene rendering. However, evaluating deformation networks for all Gaussians at every frame is compute-intensive on edge devices. We find that Gaussian trajectories are often locally predictable, yet prediction reliability varies across Gaussians and time. Thus, we propose CueSplat, a post-training framework that exploits local temporal regularity while keeping the pretrained backbone frozen and retaining its Gaussian set. Specifically, CueSplat predicts Gaussian attributes from recent history and uses a lightweight learned router to select exact deformation updates within a scene-specific budget calibrated offline. Selection accounts for prediction reliability and rendering contribution. Selected indices are reused across nearby frames to reduce routing overhead, while selected Gaussians still receive exact updates each frame. To control accumulated prediction error, we use drift signals to schedule three consecutive full-deformation frames that rebuild the prediction history. Evaluated across four mainstream 4DGS algorithms, CueSplat achieves up to $6.74\\times$ and $8.15\\times$ speedups on Jetson AGX Orin and Orin NX, respectively, with a negligible quality drop (at most $0.16$ dB in dataset-average PSNR).",
+      "tldr": "Thus, we propose CueSplat, a post-training framework that exploits local temporal regularity while keeping the pretrained backbone frozen and retaining its Gaussian set.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "4DGS",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "10 pages, 6 figures. Main paper only",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22240",
+      "arxiv_id": "2611.22240",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Cross3DGS: Unified Vulkan-Based 3D Gaussian Splatting Training from Workstations to Mobile Devices",
+      "authors": [
+        "Hiroyuki Sato",
+        "Yusuke Takimoto"
+      ],
+      "first_author": "Sato et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": "WACV 2027",
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22240",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22240v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "author_comment",
+            "source_url": "https://arxiv.org/abs/2611.22240",
+            "value": "WACV 2027",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22240",
+      "pdf_url": "https://arxiv.org/pdf/2611.22240.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Scenes captured with handheld and wearable cameras are still shipped to a CUDA workstation for 3D Gaussian Splatting (3DGS) training. Training on the device that captured them, or on its companion phone or laptop, requires more than translating kernels: GPUs and drivers differ in parallel features, memory limits, and command submission, and these differences decide whether a training schedule executes and returns the correct update. We present Cross3DGS, a cross-vendor, cross-platform Vulkan trainer that keeps one optimizer and chooses its execution schedule per device in two steps: rules on device limits, workload size, and observed driver failures exclude the schedules known not to run correctly, and a fixed preference order selects one of the remaining feasible schedules. The same core completes standard-quality training (30k updates, one million Gaussians) on every configuration we measured, spanning NVIDIA, Intel, Arm, Qualcomm, AMD, and Apple GPUs and including Android devices and an iPhone, whereas the existing portable trainers VkSplat and Brush do not run on some of the mobile GPUs. Averaged over 11 scenes on a workstation, Cross3DGS has higher quality than VkSplat with no significant difference in training time, and Brush reports about three times the training time at comparable quality. The final quality of Cross3DGS is nearly identical across devices. A mobile application turns a handheld capture into a viewable model entirely on the device.",
+      "tldr": "Presents Cross3DGS, a cross-vendor, cross-platform Vulkan trainer that keeps one optimizer and chooses its execution schedule per device in two steps: rules on device limits, workload size, and observed...",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Accepted to the WACV 2027 Workshop on Eyes of the Future (EOF). 19 pages including appendix",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22235",
+      "arxiv_id": "2611.22235",
+      "doi": null,
+      "source": "arxiv",
+      "title": "CoSphere-SLAM: Multi-Agent Panoramic Gaussian Splatting SLAM with Spherical Loop Closure",
+      "authors": [
+        "Qi Shao",
+        "Zhihao Cao",
+        "Shuhao Zhai",
+        "Taoyu Wu",
+        "Zhuoxiao Li",
+        "Anh Nguyen",
+        "Long Hu",
+        "Xianzhi Li",
+        "Hong Liang",
+        "Baoru Huang",
+        "Liang Li"
+      ],
+      "first_author": "Shao et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22235",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22235v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22235",
+      "pdf_url": "https://arxiv.org/pdf/2611.22235.pdf",
+      "code_url": null,
+      "project_url": "https://cosphere-slam.github.io",
+      "abstract": "Dense collaborative mapping is essential for search and rescue, building inspection, and warehouse automation, where panoramic cameras capture the entire surroundings in a single frame. Unlike pinhole agents that share views only at similar headings, panoramic agents observe overlapping scenes at any 3D orientation, yet searching full rotations also produces mutually consistent false loop closures across distinct symmetric rooms. Moreover, continuous monocular scale drift splits rigidly merged maps at revisited surfaces, while depth noise at short baselines distorts loop translation directions. To address these challenges, we propose CoSphere-SLAM, the first multi-agent Gaussian splatting SLAM framework for panoramic cameras, whose spherical loop closure aligns spherical features over $\\mathrm{SO}(3)$ via fast Fourier correlation across arbitrary orientations and rejects symmetric false closures through global $\\mathrm{Sim}(3)$ consensus. Building on these closures, directional global optimization solves a per-keyframe $\\mathrm{Sim}(3)$ pose graph with log-scale regularization to correct scale drift while separating optical-flow translation directions from depth-based magnitudes. Finally, omnidirectional Gaussian fusion transforms each Gaussian with its keyframe similarity and renders Gaussians at their maximum ray response to jointly refine poses and maps. Experiments on indoor and cross-session multi-agent panoramic benchmarks demonstrate that CoSphere-SLAM achieves state-of-the-art trajectory accuracy and rendering quality among single-agent and multi-agent methods. Project website: https://cosphere-slam.github.io.",
+      "tldr": "To address these challenges, we propose CoSphere-SLAM, the first multi-agent Gaussian splatting SLAM framework for panoramic cameras, whose spherical loop closure aligns spherical features over...",
+      "primary_category": "Active Perception, SLAM & Robotics",
+      "categories": [
+        "Active Perception, SLAM & Robotics"
+      ],
+      "tags": [
+        "SLAM",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "9 pages, 4 figures, 7 tables. Project website: https://cosphere-slam.github.io",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.22059",
+      "arxiv_id": "2611.22059",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Accelerating 3D Gaussian Splatting Training through Selective Freezing and Computation Caching",
+      "authors": [
+        "He Zhu",
+        "Zhiheng Dai",
+        "Zihan Liu",
+        "Ruyang Li",
+        "Hui Wei",
+        "Yaqian Zhao",
+        "Han Zhao",
+        "Xiaofeng Hou",
+        "Chen Chen",
+        "Jingwen Leng",
+        "Yu Feng",
+        "Minyi Guo"
+      ],
+      "first_author": "Zhu et al.",
+      "published_date": "2026-11-17",
+      "updated_date": "2026-11-17",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.22059",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22059v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.22059",
+      "pdf_url": "https://arxiv.org/pdf/2611.22059.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) becomes a key primitive for immersive 3D experiences. However, its applicability is limited by its long training overhead. Although prior work has shown that gradient accumulation is the dominant bottleneck in training, existing works either have limited speedup or degrade reconstruction quality. To address this issue, we present ElsaGS, an algorithm-hardware co-designed framework that accelerates 3DGS training with negligible accuracy degradation. Our key observation is that most Gaussians converge early, while later iterations only refine a small subset of Gaussians. Thus, we propose a technique, progressive Gaussian freezing, which dynamically freezes well-converged Gaussians and caches their cumulative contributions, thereby reducing computations in both forward rasterization and backward gradient accumulation. To make caching efficient, we further propose an architecture, ElsaGS core, which integrates a pixel-parallel rasterization array with a set-associative frozen Gaussian cache, FGcache. Across three 3DGS datasets, ElsaGS freezes up to 90% of Gaussians with negligible quality loss and achieves up to 20.6x end-to-end speedup and 99.4% energy reduction over GPUs.",
+      "tldr": "Proposes ElsaGS, an algorithm-hardware co-designed framework that accelerates 3DGS training with negligible accuracy degradation.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.AR",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
     {
       "id": "2611.21383",
       "arxiv_id": "2611.21383",
@@ -4539,7 +5053,7 @@
       ],
       "first_author": "Ding et al.",
       "published_date": "2026-11-01",
-      "updated_date": "2026-11-01",
+      "updated_date": "2026-11-17",
       "year": 2026,
       "month": 11,
       "venue": null,
@@ -4554,6 +5068,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2611.01534v1",
+            "value": "2026-11-01",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.01534v2",
             "value": "2026-11-01",
             "observed_at": null,
             "reviewed_by": null,
@@ -43256,7 +43778,7 @@
       ],
       "first_author": "Overdulve et al.",
       "published_date": "2026-07-06",
-      "updated_date": "2026-09-16",
+      "updated_date": "2026-11-17",
       "year": 2026,
       "month": 7,
       "venue": null,
@@ -43271,6 +43793,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2607.05598v2",
+            "value": "2026-07-06",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2607.05598v3",
             "value": "2026-07-06",
             "observed_at": null,
             "reviewed_by": null,
@@ -45761,7 +46291,7 @@
       ],
       "first_author": "Overdulve et al.",
       "published_date": "2026-06-30",
-      "updated_date": "2026-09-16",
+      "updated_date": "2026-11-17",
       "year": 2026,
       "month": 6,
       "venue": null,
@@ -45776,6 +46306,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2606.31679v2",
+            "value": "2026-06-30",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2606.31679v3",
             "value": "2026-06-30",
             "observed_at": null,
             "reviewed_by": null,
@@ -288895,6 +289433,14 @@
     "arxiv:2611.20546": "2611.20546",
     "arxiv:2611.21253": "2611.21253",
     "arxiv:2611.21383": "2611.21383",
+    "arxiv:2611.22059": "2611.22059",
+    "arxiv:2611.22095": "2611.22095",
+    "arxiv:2611.22235": "2611.22235",
+    "arxiv:2611.22240": "2611.22240",
+    "arxiv:2611.22742": "2611.22742",
+    "arxiv:2611.22805": "2611.22805",
+    "arxiv:2611.22898": "2611.22898",
+    "arxiv:2611.23054": "2611.23054",
     "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper": "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper",
     "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper": "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper",
     "cvf:Barda_Instant3dit_Multiview_Inpainting_for_Fast_Editing_of_3D_Objects_CVPR_2025_paper": "2412.00518",
@@ -293514,6 +294060,14 @@
     "doi:10.48550/arxiv.2611.20546": "2611.20546",
     "doi:10.48550/arxiv.2611.21253": "2611.21253",
     "doi:10.48550/arxiv.2611.21383": "2611.21383",
+    "doi:10.48550/arxiv.2611.22059": "2611.22059",
+    "doi:10.48550/arxiv.2611.22095": "2611.22095",
+    "doi:10.48550/arxiv.2611.22235": "2611.22235",
+    "doi:10.48550/arxiv.2611.22240": "2611.22240",
+    "doi:10.48550/arxiv.2611.22742": "2611.22742",
+    "doi:10.48550/arxiv.2611.22805": "2611.22805",
+    "doi:10.48550/arxiv.2611.22898": "2611.22898",
+    "doi:10.48550/arxiv.2611.23054": "2611.23054",
     "doi:10.5194/isprs-annals-x-2-2024-209-2024": "2404.17215",
     "doi:10.5194/isprs-annals-x-m-2-2025-215-2025": "paper:2025-a9c59fcf3c",
     "doi:10.5194/isprs-archives-xlviii-g-2025-1283-2025": "2502.13803",
