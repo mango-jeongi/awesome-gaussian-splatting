@@ -1550,6 +1550,125 @@
         "upvotes": 0
       }
     },
+    "2312.02069": {
+      "fetched_at": "2026-11-18T12:55:21.910796Z",
+      "last_attempt_at": "2026-11-18T12:55:21.910796Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02069",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02069",
+          "text": "GaussianAvatars use dynamic 3D Gaussian splats and a morphable face model to create highly controllable and photorealistic head avatars, demonstrating superior performance in reenactments from driving videos."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02069",
+          "text": "We introduce GaussianAvatars, a new method to create photorealistic head\navatars that are fully controllable in terms of expression, pose, and\nviewpoint. The core idea is a dynamic 3D representation based on 3D Gaussian\nsplats that are rigged to a parametric morphable face model. This combination\nfacilitates photorealistic rendering while allowing for precise animation\ncontrol via the underlying parametric model, e.g., through expression transfer\nfrom a driving sequence or by manually changing the morphable model parameters.\nWe parameterize each splat by a local coordinate frame of a triangle and\noptimize for explicit displacement offset to obtain a more accurate geometric\nrepresentation. During avatar reconstruction, we jointly optimize for the\nmorphable model parameters and Gaussian splat parameters in an end-to-end\nfashion. We demonstrate the animation capabilities of our photorealistic avatar\nin several challenging scenarios. For instance, we show reenactments from a\ndriving video, where our method outperforms existing works by a significant\nmargin."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ShenhanQian/GaussianAvatars"
+        },
+        "source_url": "https://huggingface.co/papers/2312.02069",
+        "stars": 1081,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.02121": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-18T12:55:21.910796Z",
+      "next_retry_at": "2026-11-25T12:55:21.910796Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.02126": {
+      "fetched_at": "2026-11-18T12:55:21.910796Z",
+      "last_attempt_at": "2026-11-18T12:55:21.910796Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02126",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02126",
+          "text": "SplaTAM uses 3D Gaussians for dense SLAM with a single unposed monocular RGB-D camera, achieving superior performance in camera pose estimation, map construction, and novel-view synthesis with real-time rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02126",
+          "text": "Dense simultaneous localization and mapping (SLAM) is pivotal for embodied\nscene understanding. Recent work has shown that 3D Gaussians enable\nhigh-quality reconstruction and real-time rendering of scenes using multiple\nposed cameras. In this light, we show for the first time that representing a\nscene by 3D Gaussians can enable dense SLAM using a single unposed monocular\nRGB-D camera. Our method, SplaTAM, addresses the limitations of prior radiance\nfield-based representations, including fast rendering and optimization, the\nability to determine if areas have been previously mapped, and structured map\nexpansion by adding more Gaussians. We employ an online tracking and mapping\npipeline while tailoring it to specifically use an underlying Gaussian\nrepresentation and silhouette-guided optimization via differentiable rendering.\nExtensive experiments show that SplaTAM achieves up to 2X state-of-the-art\nperformance in camera pose estimation, map construction, and novel-view\nsynthesis, demonstrating its superiority over existing approaches, while\nallowing real-time rendering of a high-resolution dense 3D map."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/spla-tam/splatam"
+        },
+        "source_url": "https://huggingface.co/papers/2312.02126",
+        "stars": 2222,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.02134": {
+      "fetched_at": "2026-11-18T12:55:21.910796Z",
+      "last_attempt_at": "2026-11-18T12:55:21.910796Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02134",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02134",
+          "text": "GaussianAvatar creates realistic, dynamic human avatars from a single video by using animatable 3D Gaussians and a dynamic appearance network to learn motion-to-appearance mappings, improving rendering efficiency and appearance quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02134",
+          "text": "We present GaussianAvatar, an efficient approach to creating realistic human\navatars with dynamic 3D appearances from a single video. We start by\nintroducing animatable 3D Gaussians to explicitly represent humans in various\nposes and clothing styles. Such an explicit and animatable representation can\nfuse 3D appearances more efficiently and consistently from 2D observations. Our\nrepresentation is further augmented with dynamic properties to support\npose-dependent appearance modeling, where a dynamic appearance network along\nwith an optimizable feature tensor is designed to learn the\nmotion-to-appearance mapping. Moreover, by leveraging the differentiable motion\ncondition, our method enables a joint optimization of motions and appearances\nduring avatar modeling, which helps to tackle the long-standing issue of\ninaccurate motion estimation in monocular settings. The efficacy of\nGaussianAvatar is validated on both the public dataset and our collected\ndataset, demonstrating its superior performances in terms of appearance quality\nand rendering efficiency."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/aipixel/gaussianavatar"
+        },
+        "source_url": "https://huggingface.co/papers/2312.02134",
+        "stars": 609,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.02137": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-18T12:55:21.910796Z",
+      "next_retry_at": "2026-11-25T12:55:21.910796Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

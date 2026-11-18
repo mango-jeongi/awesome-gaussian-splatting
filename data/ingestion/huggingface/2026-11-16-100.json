@@ -4,64 +4,6 @@
   "entries": [
     {
       "paper": {
-        "ai_summary": "Agentic robotics, centered on an Embodied System 2 formed by a foundation model and embodied harness, requires a shared evaluation framework and research roadmap to achieve reliable physical autonomy.",
-        "authors": [
-          {
-            "name": "Grid Robotics"
-          },
-          {
-            "name": "Qingfeng Lan"
-          },
-          {
-            "name": "Duo Li"
-          },
-          {
-            "name": "Siyao Li"
-          },
-          {
-            "name": "Yiheng Lyu"
-          },
-          {
-            "name": "Shijian Lu"
-          },
-          {
-            "name": "Zhenghao Qi"
-          },
-          {
-            "name": "Shizun Wang"
-          },
-          {
-            "name": "Xinchao Wang"
-          },
-          {
-            "name": "Ming Yang"
-          },
-          {
-            "name": "Zhiqin Yang"
-          },
-          {
-            "name": "Zuhao Yang"
-          },
-          {
-            "name": "Tao Yu"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.18359",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://grid-robotics-official.github.io/agentic-robotics-roadmap",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
-        "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
-        "upvotes": 120
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "Gamer is a generalist agent framework that integrates perception, memory, and multi-step reasoning, trained through continued pre-training, sparse-thinking instruction tuning, and multi-turn reinforcement learning to interact efficiently in 2D and 3D environments.",
         "authors": [
           {
@@ -147,7 +89,7 @@
           }
         ],
         "githubRepo": "https://github.com/RainBowLuoCS/Gamer",
-        "githubStars": 243,
+        "githubStars": 588,
         "id": "2611.18397",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -156,7 +98,65 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
         "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-        "upvotes": 103
+        "upvotes": 128
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Agentic robotics, centered on an Embodied System 2 formed by a foundation model and embodied harness, requires a shared evaluation framework and research roadmap to achieve reliable physical autonomy.",
+        "authors": [
+          {
+            "name": "Grid Robotics"
+          },
+          {
+            "name": "Qingfeng Lan"
+          },
+          {
+            "name": "Duo Li"
+          },
+          {
+            "name": "Siyao Li"
+          },
+          {
+            "name": "Yiheng Lyu"
+          },
+          {
+            "name": "Shijian Lu"
+          },
+          {
+            "name": "Zhenghao Qi"
+          },
+          {
+            "name": "Shizun Wang"
+          },
+          {
+            "name": "Xinchao Wang"
+          },
+          {
+            "name": "Ming Yang"
+          },
+          {
+            "name": "Zhiqin Yang"
+          },
+          {
+            "name": "Zuhao Yang"
+          },
+          {
+            "name": "Tao Yu"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.18359",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://grid-robotics-official.github.io/agentic-robotics-roadmap",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
+        "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
+        "upvotes": 125
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -232,7 +232,7 @@
           }
         ],
         "githubRepo": "https://github.com/vibeprevisbench/vibeprevisbench",
-        "githubStars": 14,
+        "githubStars": 16,
         "id": "2611.15789",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -241,7 +241,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Controllable real-world video generation models can condition on a rendered graybox proxy video, which fixes layout, motion and camera. Coding agents can build such videos by reconstructing a 4D scene in Blender, yet no benchmark checks both these videos and the long, multi-shot scenes behind them. We introduce VibePrevisBench, a benchmark for 4D scene reconstruction: an agent turns a brief into an executable 4D scene and renders its proxy video. Its 242 tasks span four input kinds, including scripts, photos, continuations, and reference videos. Each delivery is scored along two evaluation dimensions. Rule-based Scene Check re-runs the code and compares the exported 4D scene with hidden ground truth facts in nine dimensions. VLM-based Screen Check asks a VLM judge whether the facts that pass can be recognized in the proxy video. We analyze the evaluation results and trajectories of 11 frontier coding agents and identify three key observations. First, multimodal understanding separates the agents, especially in understanding space and camera motion. Second, all agents seem to already master basic camera work and staging, and fail at challenging requests. Third, agents inspect their own renders but fail to correct their errors. Agents thus need better visual understanding of space and camera, explicit checks for challenging requests, and item-by-item verification of renders against the brief.",
         "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
-        "upvotes": 87
+        "upvotes": 85
       },
       "publishedAt": "2026-11-10T19:00:00.000Z"
     },
@@ -266,7 +266,7 @@
           }
         ],
         "githubRepo": "https://github.com/Mirix-AI/MIRIX",
-        "githubStars": 3481,
+        "githubStars": 3497,
         "id": "2611.12068",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -275,7 +275,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
         "title": "MIRIX-2.0: Multi-Agent Memory System",
-        "upvotes": 49
+        "upvotes": 52
       },
       "publishedAt": "2026-11-08T19:00:00.000Z"
     },
@@ -300,7 +300,7 @@
           }
         ],
         "githubRepo": "https://github.com/fscdc/MMFlash",
-        "githubStars": 34,
+        "githubStars": 42,
         "id": "2611.18482",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -309,64 +309,46 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Speculative decoding accelerates generation by letting a lightweight drafter propose tokens for parallel verification by a target model. Diffusion drafters such as DFlash propose an entire token block in a single forward pass, but mainly focus on text-only tasks, leaving multimodal drafting underexplored. To study this setting, we first introduce a metric of token-level visual dependence based on the KL divergence between next-token distributions with and without visual input. We find that acceptance rates decrease from 46% in the lowest visual-dependence quartile to 22% in the highest, with this disparity persisting after multimodal training. Motivated by this observation, we propose MMFlash, a simple and effective framework that adaptively upweights visually dependent tokens that the drafter predicts poorly. For long video inputs, MMFlash further employs sparse attention to reduce redundant attention computation and improve drafting quality. Across various multimodal benchmarks, MMFlash achieves lossless decoding speedups of up to 3.58times, outperforming EAGLE-3 and DFlash by up to 195.4% and 17.1%, respectively.",
         "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
-        "upvotes": 36
+        "upvotes": 39
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": "StepRefine, a plug-and-play decoding strategy, mitigates hallucinations in multimodal diffusion language models by switching between discrete denoising and latent refinement based on entropy spikes and distributional stability.",
+        "ai_summary": "A looped Transformer that separately controls input strength, total update weight, and per-update allocation achieves lower validation loss and higher downstream accuracy than standard and looped residual baselines while using fewer parameters.",
         "authors": [
           {
-            "name": "Zhongxing Xu"
+            "name": "Xuan Ouyang"
           },
           {
-            "name": "Zhonghua Wang"
+            "name": "Zefan Cai"
           },
           {
-            "name": "Zhe Qian"
+            "name": "Chenlong Zhang"
           },
           {
-            "name": "Shiyan Su"
+            "name": "Cheng Luo"
           },
           {
-            "name": "Ming Hu"
+            "name": "Ke Wan"
           },
           {
-            "name": "Xiaocheng Zou"
-          },
-          {
-            "name": "Wei Feng"
-          },
-          {
-            "name": "Mingquan Lin"
-          },
-          {
-            "name": "Yuyin Zhou"
-          },
-          {
-            "name": "Yifan Peng"
-          },
-          {
-            "name": "Hamid Rezatofighi"
-          },
-          {
-            "name": "Zongyuan Ge"
+            "name": "Junjie Hu"
           }
         ],
-        "githubRepo": "https://github.com/mdlm-steprefine/mdlm-steprefine",
-        "githubStars": 7,
-        "id": "2611.12901",
+        "githubRepo": "https://github.com/yancyou/Loopback",
+        "githubStars": 14,
+        "id": "2611.07226",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-10-14T00:00:00.000Z",
+        "projectPage": "https://yancyou.github.io/Loopback_page/",
+        "publishedAt": "2026-11-04T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Recent advancements in multimodal diffusion language models (MDLMs) have exhibited strong global modeling capabilities through iterative refinement. We observe that mask uncertainty follows an overall downward trend during iterative denoising, while a few denoising steps exhibit localized entropy spikes closely associated with hallucinations. We argue that anomalous steps can be identified by measuring the entropy deviation of each denoising step from its neighboring temporal window. We hypothesize that discrete token commitment discards the distributional information at masked positions, limiting the continued interaction between candidate semantics and the context during entropy spikes. With this goal, we present StepRefine, a plug-and-play decoding strategy that leverages semantic context to achieve reliable denoising. The core of our method lies in a step-aware switch between discrete denoising and latent refinement. The model employs probability-weighted embeddings at entropy spike steps to preserve diverse reasoning hypotheses and performs multiple rounds of continuous refinement. Meanwhile, a refinement controller monitors distributional stability to reduce unnecessary loops and switch the model back to standard discrete denoising. Through extensive experiments, StepRefine demonstrates significant hallucination mitigation across different MDLMs on multimodal benchmarks.",
-        "title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
-        "upvotes": 36
+        "summary": "Looped Transformers reduce parameter count by repeatedly applying shared blocks, but parameter sharing alone does not determine how the results of repeated computation are reused. We take the depth-memory view of residual connections and analyze which representation is stored after each block application and how later reads weight it. A full block output contains both its input and its new update, so weighting that output also reweights the history already carried by the input. Reading individual updates instead, with the shared stack's input kept on a separate path, gives separate controls over input strength, total update weight, and allocation across updates. The Loopback Transformer implements these controls: geometric decay sets the total update weight and supplies a recency prior, and attention learns how to allocate that weight. On ClimbMix, Loopback reaches lower validation loss than standard Transformer baselines with 40-75% of their Transformer parameters (excluding token embeddings and the output head) at reference scales from 191M to 3B, with training tokens and executed depth matched. It also has higher mean accuracy over thirteen downstream tasks at 1.4B and 3B. At 191M, 374M, and 778M, it has the lowest validation loss and the highest thirteen-task mean among the standard Transformer and seven looped residual designs.",
+        "title": "Loopback Transformer: Towards a Unified View of Residual Looped Transformers",
+        "upvotes": 26
       },
-      "publishedAt": "2026-10-13T20:00:00.000Z"
+      "publishedAt": "2026-11-03T19:00:00.000Z"
     },
     {
       "paper": {
@@ -383,7 +365,7 @@
           }
         ],
         "githubRepo": "https://github.com/kkt94/Llama-V-JEPA-LM",
-        "githubStars": 4,
+        "githubStars": 5,
         "id": "2611.17831",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -392,7 +374,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "World-model video encoders such as V-JEPA learn how scenes change (direction, speed, order, state) from video alone. To answer questions, they are joined to a language model trained on captions and question-answer pairs. But each caption or question names only a few attributes of a clip, so the model learns to retrieve those attributes rather than to read the clip, and the dynamics the encoder carries go unused: on the same items, a linear probe reads speed from frozen V-JEPA features at 87% while the VLM answers at chance. We show where dynamics lives in a frozen encoder: in a subspace shared across videos for predictive encoders such as V-JEPA, but not as a shared component of frame-wise, text-aligned encoders such as SigLIP. We then build counterfactual supervision that makes the language model read it: pixel transformations turn public videos into answer-balanced variants whose answers are set by the transformation and differ only in the change. Trained in a single stage on 4.53M public samples with 32 visual tokens per frame, where open video LLMs use several stages, 9M to 172M samples and 64 to 256 tokens per frame on average, the resulting V-JEPA-LM models (1B to 8B, Qwen3 and Llama) lead every size class in average score across eleven video benchmarks; our 4B model scores 72.1, against 61.1 for the best open 4B and 64.8 for the best open 8B model. A controlled encoder x supervision study shows that the encoder decides what can be read and the supervision what is read: at a matched budget, counterfactual supervision adds 4.5 points on average and 38 on the speed questions of natural benchmarks. Code and models: https://github.com/kkt94/Llama-V-JEPA-LM.",
         "title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
-        "upvotes": 27
+        "upvotes": 25
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -435,46 +417,9 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Cities account for over two-thirds of the world's energy and more than 70% of global carbon dioxide emissions. City energy is essential for achieving the 2050 net-zero target and the UN's Sustainable Development Goals 7 and 11. Although existing studies have made progress, they are limited by data and methodological gaps. Existing studies are largely predictive for existing cities rather than generative for future cities; fine-grained, aligned monthly dynamic energy data are scarce; and existing GenAI models struggle to generate dynamic urban functional monthly energy. We present DySENSE, a joint multimodal GenAI framework that synthesizes static urban satellite imagery together with spatially aligned, dynamic monthly building energy consumption maps. We decouple long-term static urban morphology from short-term dynamic energy consumption. By conditioning on static urban land use, DySENSE can generate realistic, diverse and new static urban imagery with aligned energy maps. By conditioning on dynamic monthly and climate prompts, DySENSE can jointly generate dynamic, monthly energy consumption maps while keeping the urban morphology static. Experiments across four cities (New York, Washington, Norfolk, Busan) demonstrated that DySENSE can generate annotated high-fidelity synthetic energy data using less than 25% labelled data, boosting downstream prediction performance by 8% mIoU, and achieving strong energy dynamic consistency. Compared to existing methods, DySENSE significantly improved prediction performance (8.7% accuracy) and reduced prediction error (9%-18% CVRMSE, ASHRAE). DySENSE offers an effective foundation for energy-efficient cities, peak-load analysis, building performance simulation and dynamic demand response for city, energy, and building science. The data and code: https://huggingface.co/datasets/skl24/MUSE2 and https://github.com/kailaisun/DySENSE",
         "title": "DySENSE: Dynamic Spatiotemporal ENergy Synthesis and Emulation with Satellite Imagery",
-        "upvotes": 23
+        "upvotes": 21
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A looped Transformer that separately controls input strength, total update weight, and per-update allocation achieves lower validation loss and higher downstream accuracy than standard and looped residual baselines while using fewer parameters.",
-        "authors": [
-          {
-            "name": "Xuan Ouyang"
-          },
-          {
-            "name": "Zefan Cai"
-          },
-          {
-            "name": "Chenlong Zhang"
-          },
-          {
-            "name": "Cheng Luo"
-          },
-          {
-            "name": "Ke Wan"
-          },
-          {
-            "name": "Junjie Hu"
-          }
-        ],
-        "githubRepo": "https://github.com/yancyou/Loopback",
-        "githubStars": 9,
-        "id": "2611.07226",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://yancyou.github.io/Loopback_page/",
-        "publishedAt": "2026-11-04T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Looped Transformers reduce parameter count by repeatedly applying shared blocks, but parameter sharing alone does not determine how the results of repeated computation are reused. We take the depth-memory view of residual connections and analyze which representation is stored after each block application and how later reads weight it. A full block output contains both its input and its new update, so weighting that output also reweights the history already carried by the input. Reading individual updates instead, with the shared stack's input kept on a separate path, gives separate controls over input strength, total update weight, and allocation across updates. The Loopback Transformer implements these controls: geometric decay sets the total update weight and supplies a recency prior, and attention learns how to allocate that weight. On ClimbMix, Loopback reaches lower validation loss than standard Transformer baselines with 40-75% of their Transformer parameters (excluding token embeddings and the output head) at reference scales from 191M to 3B, with training tokens and executed depth matched. It also has higher mean accuracy over thirteen downstream tasks at 1.4B and 3B. At 191M, 374M, and 778M, it has the lowest validation loss and the highest thirteen-task mean among the standard Transformer and seven looped residual designs.",
-        "title": "Loopback Transformer: Towards a Unified View of Residual Looped Transformers",
-        "upvotes": 22
-      },
-      "publishedAt": "2026-11-03T19:00:00.000Z"
     },
     {
       "paper": {
@@ -506,37 +451,6 @@
         "upvotes": 20
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Mobile AI Factory is an agentic system that automatically builds task- and phone-specific fine-tuned quantized small language models, using an orchestrator LLM, real device measurements, and adaptive search to match or outperform larger models with much less GPU time.",
-        "authors": [
-          {
-            "name": "Evan Li"
-          },
-          {
-            "name": "Krishna Deshpande"
-          },
-          {
-            "name": "Wen Cheng"
-          },
-          {
-            "name": "Shyamnath Gollakota"
-          }
-        ],
-        "githubRepo": "https://github.com/evanly-gh/SLM_Factory",
-        "githubStars": 2,
-        "id": "2611.13509",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-10T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Small language models (SLMs) running on mobile devices can keep user data private and work without connectivity. But they perform well only when fine-tuned for the target task and sized for the target device, a process that today requires repeated expert tuning. We present {\\it Mobile AI Factory}, an agentic system that builds a fine-tuned, quantized SLM for a given task and phone. Given a task specification and a target phone, an orchestrator LLM chooses whether to tune hyperparameters, mine real data, or generate synthetic examples, while fixed rules roll back changes that hurt accuracy. The factory searches from small to large models across base models and quantizations, adapts its accuracy goal as it searches, and uses real measurements of the target phone across inference engines and backends. We evaluate Mobile AI Factory on ten tasks and four Android phones. On an unseen testset, its on-device models outperform two five-shot frontier models on five tasks, by up to 0.34, and match them on three more. Its search comes within 0.03 of exhaustively training all 27 model variants on an entity extraction task, while using 19times less GPU time. Phone measurements also matter: the best configuration changes across phones. Without phone measurements, Claude Opus 5.5, given the full hardware and model specifications, misses the app's requirements in 25\\% of easy and moderate cases and in 60\\% of hard ones. Code is available at: https://github.com/evanly-gh/SLM_Factory.",
-        "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
-        "upvotes": 20
-      },
-      "publishedAt": "2026-11-09T19:00:00.000Z"
     },
     {
       "paper": {
@@ -583,7 +497,38 @@
     },
     {
       "paper": {
-        "ai_summary": "JVT, a simple large-patch DiT-style Transformer, enables pixel-space video diffusion without pretrained autoencoders or U-Net skip connections, achieving competitive quality and supporting joint camera-conditioned RGB-disparity generation.",
+        "ai_summary": "Mobile AI Factory is an agentic system that automatically builds task- and phone-specific fine-tuned quantized small language models, using an orchestrator LLM, real device measurements, and adaptive search to match or outperform larger models with much less GPU time.",
+        "authors": [
+          {
+            "name": "Evan Li"
+          },
+          {
+            "name": "Krishna Deshpande"
+          },
+          {
+            "name": "Wen Cheng"
+          },
+          {
+            "name": "Shyamnath Gollakota"
+          }
+        ],
+        "githubRepo": "https://github.com/evanly-gh/SLM_Factory",
+        "githubStars": 8,
+        "id": "2611.13509",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-10T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Small language models (SLMs) running on mobile devices can keep user data private and work without connectivity. But they perform well only when fine-tuned for the target task and sized for the target device, a process that today requires repeated expert tuning. We present {\\it Mobile AI Factory}, an agentic system that builds a fine-tuned, quantized SLM for a given task and phone. Given a task specification and a target phone, an orchestrator LLM chooses whether to tune hyperparameters, mine real data, or generate synthetic examples, while fixed rules roll back changes that hurt accuracy. The factory searches from small to large models across base models and quantizations, adapts its accuracy goal as it searches, and uses real measurements of the target phone across inference engines and backends. We evaluate Mobile AI Factory on ten tasks and four Android phones. On an unseen testset, its on-device models outperform two five-shot frontier models on five tasks, by up to 0.34, and match them on three more. Its search comes within 0.03 of exhaustively training all 27 model variants on an entity extraction task, while using 19times less GPU time. Phone measurements also matter: the best configuration changes across phones. Without phone measurements, Claude Opus 5.5, given the full hardware and model specifications, misses the app's requirements in 25\\% of easy and moderate cases and in 60\\% of hard ones. Code is available at: https://github.com/evanly-gh/SLM_Factory.",
+        "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+        "upvotes": 15
+      },
+      "publishedAt": "2026-11-09T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "A simple DiT-style Transformer enables pixel-space video diffusion without pretrained autoencoders or U-Net components, achieving competitive quality and supporting joint camera-conditioned RGB-disparity generation.",
         "authors": [
           {
             "name": "Jianjun Zhou"
@@ -596,7 +541,7 @@
           }
         ],
         "githubRepo": "https://github.com/ZhouTimeMachine/JVT",
-        "githubStars": 26,
+        "githubStars": 39,
         "id": "2611.18549",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -605,49 +550,9 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Direct diffusion modeling of high-dimensional raw video data is challenging, and existing pixel-space methods often rely on specialized architectures. We introduce JVT (Just Video Transformer), a simple large-patch DiT-style Transformer for pixel-space video diffusion, without a pretrained autoencoder, auxiliary detailers, cascaded stages, or U-Net-style skip connections. We systematically examine video patch embeddings, register tokens, and adaptive layer normalization to identify design choices that balance generation quality and computational efficiency. The resulting JVT design achieves generation quality competitive with latent diffusion baselines in both class-conditioned and unconditional settings. The pixel-space formulation of JVT also naturally supports joint generation of pixel-aligned modalities. We demonstrate this capability through camera-conditioned RGB-disparity generation, which improves camera following relative to RGB-only baselines and yields explicit scene geometry without an additional reconstruction model at inference. These results highlight the potential of simple DiT-style Transformers for pixel-space video diffusion, and we hope our findings offer useful insights and practical guidance for future research.",
         "title": "JVT: Just Video Transformer makes pixel-space video diffusion simple",
-        "upvotes": 15
+        "upvotes": 14
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Endpoint Distribution Matching Distillation trains a shared fake model only on final student outputs and adds precise teacher supervision to better align few-step diffusion students with teacher distributions for 4-step generation.",
-        "authors": [
-          {
-            "name": "Tong Zhao"
-          },
-          {
-            "name": "Xianfang Zeng"
-          },
-          {
-            "name": "Yucheng Han"
-          },
-          {
-            "name": "Ruoyu Wang"
-          },
-          {
-            "name": "Mingkun Lei"
-          },
-          {
-            "name": "Gang Yu"
-          },
-          {
-            "name": "Chi Zhang"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.17194",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student's distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student's final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student's update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student's final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student's final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student's final output distribution matches the teacher's, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.",
-        "title": "eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation",
-        "upvotes": 13
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
     },
     {
       "paper": {
@@ -721,7 +626,7 @@
           }
         ],
         "githubRepo": "https://github.com/McGill-NLP/webarena-pro",
-        "githubStars": 1,
+        "githubStars": 13,
         "id": "2611.17955",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -736,105 +641,135 @@
     },
     {
       "paper": {
-        "ai_summary": "Alignment training on individual LLM agents often fails to transfer to multi-agent teams, but designating a safety lead and having a coordinator publish safety specifications can restore single-agent alignment.",
+        "ai_summary": "StepRefine, a plug-and-play decoding strategy, mitigates hallucinations in multimodal diffusion language models by switching between discrete denoising and latent refinement based on entropy spikes and distributional stability.",
         "authors": [
           {
-            "name": "Siddarth Srinivasan"
+            "name": "Zhongxing Xu"
           },
           {
-            "name": "Morgan Jane Matthews"
+            "name": "Zhonghua Wang"
           },
           {
-            "name": "Jascha Sohl-Dickstein"
+            "name": "Zhe Qian"
           },
           {
-            "name": "Erik Jones"
+            "name": "Shiyan Su"
+          },
+          {
+            "name": "Ming Hu"
+          },
+          {
+            "name": "Xiaocheng Zou"
+          },
+          {
+            "name": "Wei Feng"
+          },
+          {
+            "name": "Mingquan Lin"
+          },
+          {
+            "name": "Yuyin Zhou"
+          },
+          {
+            "name": "Yifan Peng"
+          },
+          {
+            "name": "Hamid Rezatofighi"
+          },
+          {
+            "name": "Zongyuan Ge"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.17820",
+        "githubRepo": "https://github.com/mdlm-steprefine/mdlm-steprefine",
+        "githubStars": 21,
+        "id": "2611.12901",
         "linkedSpaces": null,
         "numTotalSpaces": null,
         "projectPage": null,
-        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "publishedAt": "2026-10-14T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Previous work has shown that alignment training on individual LLM agents can fail to transfer to multi-agent settings. We investigate the underlying mechanisms for this failure, and explore interventions to preserve alignment transfer to multi-agent LLM teams. We focus on two software-engineering tasks (sepsis triage, a news recommender) and ten consulting-proposal generation tasks. We present four findings: (1) The single-vs-team safety gap does not show a clear trend with more capable models. We find that Anthropic's Mythos Preview shows the largest gap on one of our tasks but the smallest on another; (2) Many natural interventions, such as having agents critique each other's work or coordinate in a group chat, do not reliably bring agent teams back to single-agent alignment behavior; (3) diffusion of responsibility substantially accounts for the safety gap: agents in teams are less likely to proactively check for system-level safety failures and more likely to ignore, rationalize, or deflect responsibility for issues when they arise; (4) having a designated safety lead agent ensure system-level safety, and having a coordinator agent publish a safety specifications document are effective at restoring single-agent alignment. We also release magelab, a multi-agent LLM orchestration and experimentation framework. Our findings can help practitioners design agent teams that successfully preserve the behaviors expected of aligned individual agents.",
-        "title": "Aligning AI Teams",
+        "summary": "Recent advancements in multimodal diffusion language models (MDLMs) have exhibited strong global modeling capabilities through iterative refinement. We observe that mask uncertainty follows an overall downward trend during iterative denoising, while a few denoising steps exhibit localized entropy spikes closely associated with hallucinations. We argue that anomalous steps can be identified by measuring the entropy deviation of each denoising step from its neighboring temporal window. We hypothesize that discrete token commitment discards the distributional information at masked positions, limiting the continued interaction between candidate semantics and the context during entropy spikes. With this goal, we present StepRefine, a plug-and-play decoding strategy that leverages semantic context to achieve reliable denoising. The core of our method lies in a step-aware switch between discrete denoising and latent refinement. The model employs probability-weighted embeddings at entropy spike steps to preserve diverse reasoning hypotheses and performs multiple rounds of continuous refinement. Meanwhile, a refinement controller monitors distributional stability to reduce unnecessary loops and switch the model back to standard discrete denoising. Through extensive experiments, StepRefine demonstrates significant hallucination mitigation across different MDLMs on multimodal benchmarks.",
+        "title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
         "upvotes": 12
       },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
+      "publishedAt": "2026-10-13T20:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "Endpoint Distribution Matching Distillation trains a shared fake model only on final student outputs and adds precise teacher supervision to better align few-step diffusion students with teacher distributions for 4-step generation.",
         "authors": [
           {
-            "name": "Yuhang Wang"
+            "name": "Tong Zhao"
           },
           {
-            "name": "Jingxin Yang"
+            "name": "Xianfang Zeng"
           },
           {
-            "name": "Chuheng Wei"
+            "name": "Yucheng Han"
           },
           {
-            "name": "Suyang Chen"
+            "name": "Ruoyu Wang"
           },
           {
-            "name": "Haozhuang Chi"
+            "name": "Mingkun Lei"
           },
           {
-            "name": "Hao Zhou"
-          }
-        ],
-        "githubRepo": "https://github.com/WangYuHang-cmd/GPS--CAN",
-        "githubStars": 0,
-        "id": "2611.18442",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://wangyuhang-cmd.github.io/cantraj/",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Open driving releases and usage-based insurance programs often claim to prevent privacy breaches by omitting GPS records when sharing or collecting vehicle data. However, removing GPS coordinates from driving logs does not erase the location information carried by vehicle signals. While prior route-inference attacks have demonstrated that speed, steering, and driving events can be matched to road networks to reconstruct trajectories, existing studies rely on inconsistent prior assumptions and evaluation metrics and are tested only on small, restricted datasets, making their results difficult to compare and their real-world effectiveness uncertain. We release CANTraj, a naturalistic driving dataset pairing decoded CAN events with time-aligned GNSS trajectories (3,940 drives, 454 drivers), and CANTraj-Bench for evaluating trajectory recovery (3,675 drives, 431 drivers, 1,380 hours, 85,919 km). On 776 evaluation drives from 94 unseen drivers, we compare six re-implemented attacks and benchmark baselines under explicit information-access protocols, paired comparisons, and metrics incorporating failures. Experiments show that combining steering signals with road-network constraints yields the largest gain: With a known start and heading, adding steering to speed raises the online map filter's five-minute route recovery from 56% to 87%, with a median average displacement error of 43 m versus 921 m for map-free dead reckoning. Offline beam search recovers 88% of test routes with the heading and 81% without it. Because methods fail on different windows, we also evaluate an LLM harness that selects among candidate routes on 659 five-minute windows; its best configuration recovers 79% of routes on test and 83% on few-shot, outperforming the best baseline on test and matching it on few-shot. Data and code at huggingface.co/datasets/HenryYHW/CANTraj and github.com/WangYuHang-cmd/GPS--CAN.",
-        "title": "CANTraj: Recovering Vehicle Trajectories from CAN Signals in Naturalistic Driving",
-        "upvotes": 12
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Jasem Khelifi"
+            "name": "Gang Yu"
           },
           {
-            "name": "Hao Li"
-          },
-          {
-            "name": "Ali Ouni"
-          },
-          {
-            "name": "Mohammed Sayagh"
-          },
-          {
-            "name": "Mohamed Aymen Saied"
+            "name": "Chi Zhang"
           }
         ],
         "githubRepo": null,
         "githubStars": null,
-        "id": "2611.06866",
+        "id": "2611.17194",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://www.youtube.com/watch?v=KIlfmZhHxtA",
-        "publishedAt": "2026-11-04T18:20:41.000Z",
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Agentic workflows enable AI agents to perform recurring repository tasks on schedules or in response to repository events. Existing studies examine workflow definitions and outputs, but provide limited evidence of what happens during execution. We present GH-AWTrace, a dataset linking 25,014 verified GitHub Agentic Workflows across 5,051 repositories to 4,112,526 run records and 562,877 nonempty execution log archives. The dataset preserves execution evidence subject to GitHub's log-retention limits and links it to repository metadata and generated workflow configurations. Illustrative cases show how the logs expose tool denials, provider failures, changes in an agent's approach, and delegation among agents. These observations enable research on execution failures, tool use, and the relationship between reported run outcomes and visible task progress. Coverage varies across workflows, and the logs provide partial observations rather than complete agent trajectories. Video: https://youtu.be/KIlfmZhHxtA",
-        "title": "GH-AWTrace: A Large-Scale Dataset of GitHub Agentic Workflow Execution Logs",
-        "upvotes": 12
+        "summary": "Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student's distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student's final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student's update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student's final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student's final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student's final output distribution matches the teacher's, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.",
+        "title": "eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation",
+        "upvotes": 11
       },
-      "publishedAt": "2026-11-04T13:20:41.000Z"
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "A Twenty Questions-style benchmark for research ideation shows that large language models make most progress early, can recognize good ideas or questions but often cannot generate them, and may benefit from externally sourced candidates in automated research systems.",
+        "authors": [
+          {
+            "name": "Muhan Gao"
+          },
+          {
+            "name": "Hangxiao Zhu"
+          },
+          {
+            "name": "Xinqi Su"
+          },
+          {
+            "name": "Yu Zhang"
+          },
+          {
+            "name": "Daniel Khashabi"
+          },
+          {
+            "name": "Kuan-Hao Huang"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.14487",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-10T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of research ideas and what limits their progress. We introduce Re-Search, which adapts the format of Twenty Questions to research ideation: given only the research problem of a published paper, a model must rediscover the paper's core idea by asking yes-or-no questions. Built from 200 ICML 2026 papers, Re-Search tracks how a model's idea evolves as it asks questions and receives binary oracle feedback, isolating ideation from execution. Across six recent LLMs, nearly all progress happens within the first 30 of 100 questions, which largely decide how the game ends; after that, most models plateau. Through controlled interventions on the candidate questions and the hypothesis space, we find that the bottleneck is generation, not judgment: models recognize a good idea or a good question when one is offered, but often cannot produce it on their own. We further analyze the ideation traces and find that models fail by either over-exploiting one direction or over-exploring too many. These findings point to concrete design principles for autoresearch systems: since models can judge candidates they cannot produce, enriching the search with externally sourced ideas and questions may be more effective than improving any single model's generation ability.",
+        "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
+        "upvotes": 10
+      },
+      "publishedAt": "2026-11-09T19:00:00.000Z"
     },
     {
       "paper": {
@@ -848,7 +783,7 @@
           }
         ],
         "githubRepo": "https://github.com/SWE-rebench/trajectory-analyzer",
-        "githubStars": 0,
+        "githubStars": 1,
         "id": "2611.17440",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -857,149 +792,9 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Standard coding-agent benchmarks primarily evaluate binary task success, treating execution as a black box and obscuring the behaviors that produce those outcomes. We analyze a large corpus of 143,209 execution trajectories from 125 agent configurations spanning 117 unique models. To enable comparisons across heterogeneous agent interfaces, we develop a rule-based parser that maps raw execution traces to high-level actions such as repository search, file editing, and test execution, and audit its predictions against a six-model consensus reference on 500 events. We find that agents with similar solve rates can nevertheless differ substantially in how they explore, modify and verify code. Moreover, without using task outcomes, token counts, or tool names as features, aggregate behavioral profiles retrieve the corresponding agent stack across disjoint repository sets and programming languages, although task composition is not fully controlled in the cross-repository setting. Through analyses of frontier models and agent scaffolds, we further show that scaffold choice and reasoning effort systematically shift agents' search, editing, and testing behavior. We release the deterministic parser together with the full annotation and analysis pipeline alongside an annotated trajectory subset.",
         "title": "Interpreting Coding Agents Through Their Behavioral Trajectories",
-        "upvotes": 11
+        "upvotes": 10
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A governance framework separates generation from adoption of self-modifying autonomous-agent changes, using fresh paired audits, non-inferiority checks, and calibrated statistical bounds to confirm improvements before bounded deployment.",
-        "authors": [
-          {
-            "name": "Subodh Lonkar"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.16378",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Autonomous agents modify prompts, memories, tools, workflows, and policies using interaction histories. Yet a plausible modification is not necessarily suitable for persistent adoption: candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. We introduce Evidence-Governed Evolution (EGE), a framework for governing adoption of self-generated agent modifications. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities through reference-relative non-inferiority tests, and applies governance constraints before bounded canary deployment. We establish an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates. It combines candidate-wise Hoeffding bounds with independent calibration samples comparing the operational evaluator with a prespecified reference procedure. We also formalise reference replacement through bridge tests, derive a cumulative degradation bound along a versioned reference lineage, and provide an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability. A Monte Carlo stress test illustrates calibration under candidate-dependent evaluator optimism; it is a stylised statistical experiment, not an evaluation of a deployed agent. The guarantees are conditional on bounded paired scores, fresh sampling, a valid reference-evaluation construct, and declared evaluation distributions; they do not establish universal agent safety or robustness to arbitrary distribution shift.",
-        "title": "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents",
-        "upvotes": 11
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A streaming speaker-diarization method removes the fixed speaker-slot limit by clustering speaker embeddings within slots after all slots are used, allowing unlimited speakers and efficient large-scale linking.",
-        "authors": [
-          {
-            "name": "Kyudan Jung"
-          },
-          {
-            "name": "Jihwan Kim"
-          },
-          {
-            "name": "Minwoo Lee"
-          },
-          {
-            "name": "Eunji Shin"
-          },
-          {
-            "name": "Jaegul Choo"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.18529",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://kyudan1.github.io/eDIAR/",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Meetings last up to an hour, and nobody knows in advance how many people will speak. Neural diarizers with a fixed number of output slots, such as Streaming Sortformer and Nemotron-3, are accurate and run online, but they cannot name more speakers than they have slots. We remove this limit without retraining. The slot head keeps deciding who is active and when speech overlaps, and speaker embeddings are clustered inside a single slot, with the official e-means algorithm, only after every slot has been used. In the streaming system, re-clustering is confined to a bounded window, labels are revised for a few seconds, and identities are anchored to the slots of the head. The resulting system has no limit on the number of speakers and stays accurate when speakers outnumber the slots, where fixed-slot models break down. On meetings that grow to an hour it stays far more accurate than Streaming Sortformer, which accumulates errors, and its cost per update does not grow with the meeting. The same recipe turns the four-slot Streaming Sortformer into an open-speaker system. Across recordings, e-means makes it affordable to link the speakers of a large archive frame by frame, a task that arises when conversational corpora are prepared, and it reaches the clustering quality of Lloyd's k-means several times faster. The method needs little tuning, and e-means runs with its default recipe from a few hundred to more than a million embeddings.",
-        "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization for Long Meetings and Large Archives via e-means",
-        "upvotes": 11
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Continual-ARC, a lifelong stream of ARC-AGI tasks, compares memory- and weight-based continual learning under frozen-weight agent harnesses, revealing that harness persistence rarely improves memorization and most harness methods underperform simple caching, while weight-based learning shows better generalization.",
-        "authors": [
-          {
-            "name": "Daniel Lenton"
-          },
-          {
-            "name": "Yusha Arif"
-          },
-          {
-            "name": "Haris Mahmood"
-          }
-        ],
-        "githubRepo": "https://github.com/unifyai/continual-arc",
-        "githubStars": 37,
-        "id": "2611.14505",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://continual-arc.unify.ai",
-        "publishedAt": "2026-11-11T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose Continual-ARC, a lifelong stream built from the three ARC-AGI editions, whose tasks need no domain knowledge. The same tasks return after dormant gaps with fresh instances, while new tasks keep arriving. On each instance, the learner may pay for demonstrations, submit answers, or act inside the harness, with retries permitted on incorrect submissions, which are paid for. Each instance is scored based on the share of this feedback budget consumed. Since a learner may keep anything between instances, memory-based and weight-based systems are scored on the same scale. After the stream, the learner is frozen and tested on fresh instances of the tasks it met, which measures memorization, and on unseen tasks, which measures generalization. We run an agent harness with frozen weights, with and without persistence, on Qwen3.5-9B and GLM-5.3 Flash, comparing them with two prompting floors, a program-induction method and Qwen3.5-9B's weights trained to imitate GLM-5.3 Flash. Persistence in the harness generally does not improve memorization unless provided with explicit expert guidance. Most harness-based methods still learn less than a floor that simply caches each task's demonstrations, across all models we tested. No harness-based method gains on unseen tasks, whereas weight-based learning shows substantial gains. This opens the door to future weight-based continual learning that could teach models to drive harnesses in new domains.",
-        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
-        "upvotes": 10
-      },
-      "publishedAt": "2026-11-10T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Rishii Kumar Singh"
-          },
-          {
-            "name": "Abhinav Rajput"
-          },
-          {
-            "name": "Dinesh Kumar Vishwakarma"
-          }
-        ],
-        "githubRepo": "https://github.com/TrustUIQA/TrustUIQA",
-        "githubStars": 1,
-        "id": "2611.18429",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/datasets/TrustUIQA/TrustUIQA",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Underwater image enhancement is challenging to evaluate due to the lack of clean reference images, so researchers rely on no-reference image quality assessment (NR-IQA) metrics. However, it remains unclear whether these metrics agree with human judgments. We evaluate 73 handcrafted underwater, learned underwater, vision-language and general-purpose metrics against human preferences on five references: four published opinion-score sets and a new paired-comparison study. For each metric, we measure how often it selects the same image as people when comparing versions of the same scene. We further test whether simple image edits and small adversarial perturbations raise metric scores above the enhancement people preferred, and whether scores decrease as repeated generative edits add noise. Our results show that no metric consistently matches human preferences. The best worst-case Cohen's kappa over the five references is only 0.23 (Q-Align), while two raters in our study agree with a median kappa of 0.41. The widely used UCIQE often favors edits that people reject. On a Nano Banana Pro replica chain that should leave the image unchanged, only 22 of 73 scores decrease at every checkpoint, while noise grows by 2.5 times. We also introduce TrustUIQA, a benchmark that combines the human references, our study choices, the edited, attacked and generated images, and the scores of every metric on every image. The code is available at https://github.com/TrustUIQA/TrustUIQA and TrustUIQA at https://huggingface.co/datasets/TrustUIQA/TrustUIQA.",
-        "title": "Do Underwater Image Quality Metrics Agree with Human Perception? A Benchmark with Human Choices, Simple Edits and Generative Drift",
-        "upvotes": 10
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Large language models used for peer review draw about half or more of their identified weaknesses from paper appendices, whereas human reviewers draw only 8.4% and focus on presentation and core ideas.",
-        "authors": [
-          {
-            "name": "Saptarshi Ghosh"
-          },
-          {
-            "name": "Mohammad Saim"
-          },
-          {
-            "name": "Tianyu Jiang"
-          }
-        ],
-        "githubRepo": "https://github.com/cincynlp/review_appendix",
-        "githubStars": 2,
-        "id": "2611.17811",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit. Prior work studies how LLM reviews align with human ones, yet we know little about which parts of a paper these models actually criticize. In this work, we investigate 2,000 papers from ACL, EMNLP, COLM, and ICLR, and show that the latest GPT and Claude models draw about 50% or more of their review weaknesses from the appendix. This behavior holds across the API, coding-agent, and web access methods for using LLMs to review a paper. In contrast, we find that humans draw only 8.4% of their weaknesses from the appendix, and these weaknesses primarily revolve around a paper's presentation and content related to its core idea. Meanwhile, LLMs draw weaknesses from deep in the appendix that concern fine-grained technical details not central to the paper's contributions. We anticipate that our analysis will contribute to the scholarly discourse on AI reviews. Our code is publicly available at: https://github.com/cincynlp/review_appendix.",
-        "title": "AI Reviews Are Biased Towards the Appendix",
-        "upvotes": 10
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1059,111 +854,118 @@
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "A governance framework separates generation from adoption of self-modifying autonomous-agent changes, using fresh paired audits, non-inferiority checks, and calibrated statistical bounds to confirm improvements before bounded deployment.",
         "authors": [
           {
-            "name": "Issa Sugiura"
-          },
-          {
-            "name": "Taro Makino"
-          },
-          {
-            "name": "Takashi Ishida"
+            "name": "Subodh Lonkar"
           }
         ],
-        "githubRepo": "https://github.com/SakanaAI/JFinBench",
-        "githubStars": 6,
-        "id": "2611.18130",
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.16378",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://pub.sakana.ai/jfinbench/",
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Autonomous agents modify prompts, memories, tools, workflows, and policies using interaction histories. Yet a plausible modification is not necessarily suitable for persistent adoption: candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. We introduce Evidence-Governed Evolution (EGE), a framework for governing adoption of self-generated agent modifications. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities through reference-relative non-inferiority tests, and applies governance constraints before bounded canary deployment. We establish an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates. It combines candidate-wise Hoeffding bounds with independent calibration samples comparing the operational evaluator with a prespecified reference procedure. We also formalise reference replacement through bridge tests, derive a cumulative degradation bound along a versioned reference lineage, and provide an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability. A Monte Carlo stress test illustrates calibration under candidate-dependent evaluator optimism; it is a stylised statistical experiment, not an evaluation of a deployed agent. The guarantees are conditional on bounded paired scores, fresh sampling, a valid reference-evaluation construct, and declared evaluation distributions; they do not establish universal agent safety or robustness to arbitrary distribution shift.",
+        "title": "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents",
+        "upvotes": 8
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Alignment training on individual LLM agents often fails to transfer to multi-agent teams, but designating a safety lead and having a coordinator publish safety specifications can restore single-agent alignment.",
+        "authors": [
+          {
+            "name": "Siddarth Srinivasan"
+          },
+          {
+            "name": "Morgan Jane Matthews"
+          },
+          {
+            "name": "Jascha Sohl-Dickstein"
+          },
+          {
+            "name": "Erik Jones"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.17820",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
         "publishedAt": "2026-11-13T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Large language models (LLMs) are increasingly applied to finance, creating a need for benchmarks that evaluate their capabilities across financial systems with different regulations and practices. However, existing financial benchmarks provide limited coverage of country-specific financial systems, and they are difficult to keep up to date as released questions leak into training data. We introduce JFinBench, a Japanese financial benchmark comprising 321 examples from the 2026 editions of six regularly administered certification exams covering accounting, tax, financial planning, and banking. To construct it, we develop a human-in-the-loop agentic pipeline in which a coding agent writes exam-specific conversion code and a review page, while a human verifies every example and feeds corrections back to the agent. This pipeline adapts to heterogeneous exam formats and reduces the effort of incorporating new exam editions, enabling periodic refreshes that mitigate data contamination. Evaluating 12 recent LLMs, we find that Claude Fable 5 and GPT-6 Astra exceed 93% overall, while even the best open-weight model, Kimi K3.1 Pro, trails Claude Fable 5 by 12 percentage points. When models can additionally use a terminal and web access, they retrieve the knowledge they lack and every model improves. The gap narrows but about 4 points remain, and the ranking of models stays largely the same, suggesting that knowledge held in the model itself remains valuable even with tools. We release the dataset, the evaluation code, and the construction pipeline.",
-        "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
-        "upvotes": 9
+        "summary": "Previous work has shown that alignment training on individual LLM agents can fail to transfer to multi-agent settings. We investigate the underlying mechanisms for this failure, and explore interventions to preserve alignment transfer to multi-agent LLM teams. We focus on two software-engineering tasks (sepsis triage, a news recommender) and ten consulting-proposal generation tasks. We present four findings: (1) The single-vs-team safety gap does not show a clear trend with more capable models. We find that Anthropic's Mythos Preview shows the largest gap on one of our tasks but the smallest on another; (2) Many natural interventions, such as having agents critique each other's work or coordinate in a group chat, do not reliably bring agent teams back to single-agent alignment behavior; (3) diffusion of responsibility substantially accounts for the safety gap: agents in teams are less likely to proactively check for system-level safety failures and more likely to ignore, rationalize, or deflect responsibility for issues when they arise; (4) having a designated safety lead agent ensure system-level safety, and having a coordinator agent publish a safety specifications document are effective at restoring single-agent alignment. We also release magelab, a multi-agent LLM orchestration and experimentation framework. Our findings can help practitioners design agent teams that successfully preserve the behaviors expected of aligned individual agents.",
+        "title": "Aligning AI Teams",
+        "upvotes": 8
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": "Disen-Forcing is a distillation-time method for autoregressive video diffusion models that disentangles attention-head specialization to improve long-range consistency and motion dynamics in long-horizon video generation.",
+        "ai_summary": "Large language models used for peer review draw about half or more of their identified weaknesses from paper appendices, whereas human reviewers draw only 8.4% and focus on presentation and core ideas.",
         "authors": [
           {
-            "name": "Zhengyang Yu"
+            "name": "Saptarshi Ghosh"
           },
           {
-            "name": "Akio Hayakawa"
+            "name": "Mohammad Saim"
           },
           {
-            "name": "Masato Ishii"
-          },
-          {
-            "name": "Qingtao Yu"
-          },
-          {
-            "name": "Xuesong Li"
-          },
-          {
-            "name": "Takashi Shibuya"
-          },
-          {
-            "name": "Yuki Mitsufuji"
-          },
-          {
-            "name": "Jing Zhang"
+            "name": "Tianyu Jiang"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.02822",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://disen-forcing.github.io/",
-        "publishedAt": "2026-11-02T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Autoregressive video diffusion models (AR-VDMs) enable real-time, long-horizon video generation but degrade rapidly once the inference horizon outruns the training horizon, due to compounding exposure bias. To stabilize long rollouts, recent methods heuristically adopt frame sink, keeping initial frames as a persistent model context, inspired by attention sinks in LLMs. We revisit this design and find that the mechanism by which initial frames stabilize long-range consistency in AR-VDMs is not an LLM-style attention sink; instead, long-range consistency is anchored through a sparse subset of attention heads, while the majority of heads predominantly capture local temporal dynamics. This observation reveals an over-conditioning pathology in existing frame-sink strategies: by universally exposing every head to the pinned initial-frame context, the model becomes prone to collapsing motion toward the low-dynamic modes of the teacher during model distillation. We propose Disen-Forcing, a distillation-time plug-in for AR-VDMs that disentangles and reinforces this head specialization through disentangled context routing and motion-disentangling regularization. On long-horizon video generation benchmarks, Disen-Forcing simultaneously improves long-range consistency and motion dynamics of base AR-VDMs, a trade-off that sink-based methods fail to balance.",
-        "title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
-        "upvotes": 9
-      },
-      "publishedAt": "2026-11-01T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A Twenty Questions-style benchmark for research ideation shows that large language models make most progress early, can recognize good ideas or questions but often cannot generate them, and may benefit from externally sourced candidates in automated research systems.",
-        "authors": [
-          {
-            "name": "Muhan Gao"
-          },
-          {
-            "name": "Hangxiao Zhu"
-          },
-          {
-            "name": "Xinqi Su"
-          },
-          {
-            "name": "Yu Zhang"
-          },
-          {
-            "name": "Daniel Khashabi"
-          },
-          {
-            "name": "Kuan-Hao Huang"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.14487",
+        "githubRepo": "https://github.com/cincynlp/review_appendix",
+        "githubStars": 2,
+        "id": "2611.17811",
         "linkedSpaces": null,
         "numTotalSpaces": null,
         "projectPage": null,
-        "publishedAt": "2026-11-10T00:00:00.000Z",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of research ideas and what limits their progress. We introduce Re-Search, which adapts the format of Twenty Questions to research ideation: given only the research problem of a published paper, a model must rediscover the paper's core idea by asking yes-or-no questions. Built from 200 ICML 2026 papers, Re-Search tracks how a model's idea evolves as it asks questions and receives binary oracle feedback, isolating ideation from execution. Across six recent LLMs, nearly all progress happens within the first 30 of 100 questions, which largely decide how the game ends; after that, most models plateau. Through controlled interventions on the candidate questions and the hypothesis space, we find that the bottleneck is generation, not judgment: models recognize a good idea or a good question when one is offered, but often cannot produce it on their own. We further analyze the ideation traces and find that models fail by either over-exploiting one direction or over-exploring too many. These findings point to concrete design principles for autoresearch systems: since models can judge candidates they cannot produce, enriching the search with externally sourced ideas and questions may be more effective than improving any single model's generation ability.",
-        "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
+        "summary": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit. Prior work studies how LLM reviews align with human ones, yet we know little about which parts of a paper these models actually criticize. In this work, we investigate 2,000 papers from ACL, EMNLP, COLM, and ICLR, and show that the latest GPT and Claude models draw about 50% or more of their review weaknesses from the appendix. This behavior holds across the API, coding-agent, and web access methods for using LLMs to review a paper. In contrast, we find that humans draw only 8.4% of their weaknesses from the appendix, and these weaknesses primarily revolve around a paper's presentation and content related to its core idea. Meanwhile, LLMs draw weaknesses from deep in the appendix that concern fine-grained technical details not central to the paper's contributions. We anticipate that our analysis will contribute to the scholarly discourse on AI reviews. Our code is publicly available at: https://github.com/cincynlp/review_appendix.",
+        "title": "AI Reviews Are Biased Towards the Appendix",
         "upvotes": 8
       },
-      "publishedAt": "2026-11-09T19:00:00.000Z"
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Jasem Khelifi"
+          },
+          {
+            "name": "Hao Li"
+          },
+          {
+            "name": "Ali Ouni"
+          },
+          {
+            "name": "Mohammed Sayagh"
+          },
+          {
+            "name": "Mohamed Aymen Saied"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.06866",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://www.youtube.com/watch?v=KIlfmZhHxtA",
+        "publishedAt": "2026-11-04T18:20:41.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Agentic workflows enable AI agents to perform recurring repository tasks on schedules or in response to repository events. Existing studies examine workflow definitions and outputs, but provide limited evidence of what happens during execution. We present GH-AWTrace, a dataset linking 25,014 verified GitHub Agentic Workflows across 5,051 repositories to 4,112,526 run records and 562,877 nonempty execution log archives. The dataset preserves execution evidence subject to GitHub's log-retention limits and links it to repository metadata and generated workflow configurations. Illustrative cases show how the logs expose tool denials, provider failures, changes in an agent's approach, and delegation among agents. These observations enable research on execution failures, tool use, and the relationship between reported run outcomes and visible task progress. Coverage varies across workflows, and the logs provide partial observations rather than complete agent trajectories. Video: https://youtu.be/KIlfmZhHxtA",
+        "title": "GH-AWTrace: A Large-Scale Dataset of GitHub Agentic Workflow Execution Logs",
+        "upvotes": 7
+      },
+      "publishedAt": "2026-11-04T13:20:41.000Z"
     },
     {
       "paper": {
@@ -1192,7 +994,7 @@
           }
         ],
         "githubRepo": "https://github.com/H-furkan/rediverse",
-        "githubStars": 2,
+        "githubStars": 19,
         "id": "2611.18550",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1201,7 +1003,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher's, reviving the teacher's feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.",
         "title": "Restoring Diversity in Distilled Image and Video Generators by Probing Activations",
-        "upvotes": 4
+        "upvotes": 5
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -1235,7 +1037,266 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order, including two matched-length pairs that vary surface form at fixed length. Across 300 runs (5 training pool sizes, 5 seeds) with a hierarchical bootstrap and Holm correction fixed before the results were read, shortening alone never helps, but writing the target in ordinary words does. The word encoding is the most accurate format on both models (87.5% vs. 85.8% exact match for the native s-expression on Qwen) while emitting 4.1x fewer tokens, and it cuts the silent error rate by 2.3x on Qwen and 1.8x on LFM2, separating at every pool size. Error analysis locates much of the gain in negation. All runs also learn to refuse off-menu input (held out: 95.9-99.0% handled) and to apply in-utterance self-corrections. Strict refusal has a measured price: 2.1-10.1% of real, mostly polite, orders are refused.",
         "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Disen-Forcing is a distillation-time method for autoregressive video diffusion models that disentangles attention-head specialization to improve long-range consistency and motion dynamics in long-horizon video generation.",
+        "authors": [
+          {
+            "name": "Zhengyang Yu"
+          },
+          {
+            "name": "Akio Hayakawa"
+          },
+          {
+            "name": "Masato Ishii"
+          },
+          {
+            "name": "Qingtao Yu"
+          },
+          {
+            "name": "Xuesong Li"
+          },
+          {
+            "name": "Takashi Shibuya"
+          },
+          {
+            "name": "Yuki Mitsufuji"
+          },
+          {
+            "name": "Jing Zhang"
+          }
+        ],
+        "githubRepo": "https://github.com/Dijkstra14/Disen-Forcing",
+        "githubStars": 1,
+        "id": "2611.02822",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://disen-forcing.github.io/",
+        "publishedAt": "2026-11-02T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Autoregressive video diffusion models (AR-VDMs) enable real-time, long-horizon video generation but degrade rapidly once the inference horizon outruns the training horizon, due to compounding exposure bias. To stabilize long rollouts, recent methods heuristically adopt frame sink, keeping initial frames as a persistent model context, inspired by attention sinks in LLMs. We revisit this design and find that the mechanism by which initial frames stabilize long-range consistency in AR-VDMs is not an LLM-style attention sink; instead, long-range consistency is anchored through a sparse subset of attention heads, while the majority of heads predominantly capture local temporal dynamics. This observation reveals an over-conditioning pathology in existing frame-sink strategies: by universally exposing every head to the pinned initial-frame context, the model becomes prone to collapsing motion toward the low-dynamic modes of the teacher during model distillation. We propose Disen-Forcing, a distillation-time plug-in for AR-VDMs that disentangles and reinforces this head specialization through disentangled context routing and motion-disentangling regularization. On long-horizon video generation benchmarks, Disen-Forcing simultaneously improves long-range consistency and motion dynamics of base AR-VDMs, a trade-off that sink-based methods fail to balance.",
+        "title": "Disen-Forcing: Disentangling Semantic Anchoring from Motion for Autoregressive Video Diffusion",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-01T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "MemInStream is a benchmark that evaluates memory capabilities in streaming video understanding using evidence-controlled validation to separate memory limitations from visual understanding failures.",
+        "authors": [
+          {
+            "name": "Zhenqi He"
+          },
+          {
+            "name": "Dunyuan Xu"
+          },
+          {
+            "name": "Yang Bo"
+          },
+          {
+            "name": "Kien T. Pham"
+          },
+          {
+            "name": "Yanghao Wang"
+          },
+          {
+            "name": "Shuhan Li"
+          },
+          {
+            "name": "Xintong Guo"
+          },
+          {
+            "name": "Yuyang He"
+          },
+          {
+            "name": "Fang Liu"
+          },
+          {
+            "name": "Huankang Guan"
+          },
+          {
+            "name": "Jingyan Chen"
+          },
+          {
+            "name": "Rui Liu"
+          },
+          {
+            "name": "Long Chen"
+          }
+        ],
+        "githubRepo": "https://github.com/HKUST-LongGroup/MemInStream",
+        "githubStars": 10,
+        "id": "2611.15640",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://hkust-longgroup.github.io/MemInStream/",
+        "publishedAt": "2026-11-11T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Streaming video understanding aims to continuously process incoming visual observations, making the retention and retrieval of relevant information increasingly important as the video history grows. Although existing benchmarks include memory-related questions, question-answering accuracy alone does not reliably measure memory capabilities. Incorrect predictions may arise from failures in visual understanding rather than forgetting, whereas correct predictions may rely on linguistic priors or recent observations without requiring historical memory. To address these ambiguities, we introduce MemInStream, a benchmark dedicated to evaluating memory capabilities in streaming video understanding. We develop an evidence-controlled validation protocol that associates each question with temporally localized evidence intervals. The protocol validates evidence solvability and memory necessity by retaining questions that models can answer from the annotated evidence but cannot resolve using recent observations, post-evidence observations, or textual input alone. This helps disentangle memory limitations from understanding failures while reducing memory-independent shortcuts. MemInStream provides a systematic evaluation of memory capabilities through four major categories, covering Episodic Retrieval, State Tracking \\& Updating, Multi-Evidence Integration, and Contextual Memory across diverse video scenarios. Overall, MemInStream provides a comprehensive and reliable benchmark for systematically evaluating memory capabilities in streaming video understanding.",
+        "title": "MemInStream: Memorizing or Merely Recognizing? Rethinking Streaming Video Memory Evaluation",
         "upvotes": 4
+      },
+      "publishedAt": "2026-11-10T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Yuhang Wang"
+          },
+          {
+            "name": "Jingxin Yang"
+          },
+          {
+            "name": "Chuheng Wei"
+          },
+          {
+            "name": "Suyang Chen"
+          },
+          {
+            "name": "Haozhuang Chi"
+          },
+          {
+            "name": "Hao Zhou"
+          }
+        ],
+        "githubRepo": "https://github.com/WangYuHang-cmd/GPS--CAN",
+        "githubStars": 0,
+        "id": "2611.18442",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://wangyuhang-cmd.github.io/cantraj/",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Open driving releases and usage-based insurance programs often claim to prevent privacy breaches by omitting GPS records when sharing or collecting vehicle data. However, removing GPS coordinates from driving logs does not erase the location information carried by vehicle signals. While prior route-inference attacks have demonstrated that speed, steering, and driving events can be matched to road networks to reconstruct trajectories, existing studies rely on inconsistent prior assumptions and evaluation metrics and are tested only on small, restricted datasets, making their results difficult to compare and their real-world effectiveness uncertain. We release CANTraj, a naturalistic driving dataset pairing decoded CAN events with time-aligned GNSS trajectories (3,940 drives, 454 drivers), and CANTraj-Bench for evaluating trajectory recovery (3,675 drives, 431 drivers, 1,380 hours, 85,919 km). On 776 evaluation drives from 94 unseen drivers, we compare six re-implemented attacks and benchmark baselines under explicit information-access protocols, paired comparisons, and metrics incorporating failures. Experiments show that combining steering signals with road-network constraints yields the largest gain: With a known start and heading, adding steering to speed raises the online map filter's five-minute route recovery from 56% to 87%, with a median average displacement error of 43 m versus 921 m for map-free dead reckoning. Offline beam search recovers 88% of test routes with the heading and 81% without it. Because methods fail on different windows, we also evaluate an LLM harness that selects among candidate routes on 659 five-minute windows; its best configuration recovers 79% of routes on test and 83% on few-shot, outperforming the best baseline on test and matching it on few-shot. Data and code at huggingface.co/datasets/HenryYHW/CANTraj and github.com/WangYuHang-cmd/GPS--CAN.",
+        "title": "CANTraj: Recovering Vehicle Trajectories from CAN Signals in Naturalistic Driving",
+        "upvotes": 4
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Wei Feng"
+          },
+          {
+            "name": "Meiling Chen"
+          },
+          {
+            "name": "Boxiao Chen"
+          },
+          {
+            "name": "Lu Liu"
+          },
+          {
+            "name": "Bin Zi"
+          },
+          {
+            "name": "Libin Ye"
+          },
+          {
+            "name": "Xingyu Lu"
+          },
+          {
+            "name": "Lei Xu"
+          },
+          {
+            "name": "Jun Zhou"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.16661",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.",
+        "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "A unified generative backbone jointly models image appearance and depth, surpassing specialized depth models at scale while preserving general image generation.",
+        "authors": [
+          {
+            "name": "Alejandro Cañada"
+          },
+          {
+            "name": "Chema Garabito"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.16010",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://speridlabs.com/research/iris-z",
+        "publishedAt": "2026-11-11T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Language moved from many task-specific models to one unified model: a single generative model with a single generative training task that handles all of them within the same backbone, and keeps improving with data, parameters and compute. We believe the bitter lesson applies just as much to computer vision, 3D and spatial understanding, in the end to visual intelligence: the effort should go into general architectures that solve all these tasks in a unified way, and into scaling them, rather than into task-specific designs. We test this on monocular geometry, a task that has belonged to specialised architectures for years. Iris-Z is a general image generator that produces appearance and geometry together. A single backbone denoises, reasons about and understands the image and its depth at the same time, and one set of weights generates images with their depth, estimates depth from photographs and paints images onto a given depth. At enough scale it surpasses state-of-the-art specialists on established depth benchmarks while keeping the generative abilities of the backbone it started from without specialized layers. We release two models for the community.",
+        "title": "Iris-Z: Scaling One Generative Model Past Specialist Geometry Models",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-10T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Sevket Ege Yesilyurt"
+          },
+          {
+            "name": "Figen S. Oktem"
+          }
+        ],
+        "githubRepo": "https://github.com/METU-SPACE-Lab/Dual-Flow",
+        "githubStars": 2,
+        "id": "2611.05843",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Generative model-based approaches to linear inverse problems typically use the acquired noisy measurement to condition or guide sampling in the image domain. In this work, we introduce Dual Flow, a novel joint-flow model for solving linear inverse problems by jointly estimating the clean image and corresponding noise-free measurement from the observation. Specifically, Dual Flow formulates image reconstruction and measurement denoising as a coupled estimation problem, using coupled flows in the image and measurement domains. The acquired noisy measurement is used only to initialize the measurement state; thereafter, image and measurement states are jointly updated based on their current values. By construction, the final image and measurement estimates are guaranteed to satisfy the underlying forward model. We derive the sampling updates for the joint-flow which involves the conditional mean of the clean image given the joint state. We further derive a closed-form expression for a sufficient statistic of the joint state and show that the required conditional mean can be obtained by solving an image-domain Gaussian denoising problem involving operator-dependent, correlated noise. We train a velocity-prediction network using this formulation to estimate the conditional mean from the derived sufficient statistic. Extensive experiments across various linear inverse problems and image datasets demonstrate state-of-the-art performance in both distortion metrics and perceptual quality. Dual Flow requires no hyperparameter tuning beyond the number of inference steps and achieves shorter reconstruction times than competing methods. Additional analyses assess robustness to model mismatch, as well as the ability to generate diverse plausible reconstructions and characterize reconstruction uncertainty.",
+        "title": "Dual Flow: Joint Image-Measurement Interpolation for Inverse Problems",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "EvenVLM provides a text and multimodal VQA dataset for the endangered Even language, with tokenizer expansion and LoRA fine-tuning improving translation, text benchmarks, and VQA accuracy.",
+        "authors": [
+          {
+            "name": "Daniil Makovetskii"
+          },
+          {
+            "name": "Ivan Bondarenko"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.16500",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://aclanthology.org/2026.oracle-main.3/",
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "We present EvenVLM, the first text and multimodal (VQA) dataset for Even (Lamut), an endangered Northern Tungusic language spoken by approximately 6,800 people in Siberia. Our dataset comprises 50,521 structured Even-Russian entries extracted from dictionary and phrasebook sources via GPT-4o Mini-based parsing, from which we synthetically generate 107,543 training examples spanning translation, grammar, reading comprehension, and semantic classification. To address tokenization inefficiency on Even's agglutinative morphology, we propose a three-step tokenizer expansion algorithm that adds Even-specific graphemes (eng, oe, o-umlaut), whitelisted vocabulary, and BPE merges, reducing average tokens per word by 27% (4.99 to 3.64). Using LoRA fine-tuning of Qwen3-VL-4B, we adapt the model for text tasks (0.53% trainable parameters, rank 32) and separately for visual question answering (rank 64, frozen vision encoder). Our best configuration achieves 11.4% exact match and a 13.6 weighted score on text benchmarks, 0.1283 chrF for sentence translation, and 65% accuracy on VQA (up from 0% for the base model and text-only fine-tuning). We release our datasets, evaluation benchmarks, and training pipeline to support further research on Even and other low-resource languages.",
+        "title": "EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning",
+        "upvotes": 3
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
     },
@@ -1333,71 +1394,62 @@
         "ai_summary": null,
         "authors": [
           {
-            "name": "Wei Feng"
+            "name": "Issa Sugiura"
           },
           {
-            "name": "Meiling Chen"
+            "name": "Taro Makino"
           },
           {
-            "name": "Boxiao Chen"
-          },
-          {
-            "name": "Lu Liu"
-          },
-          {
-            "name": "Bin Zi"
-          },
-          {
-            "name": "Libin Ye"
-          },
-          {
-            "name": "Xingyu Lu"
-          },
-          {
-            "name": "Lei Xu"
-          },
-          {
-            "name": "Jun Zhou"
+            "name": "Takashi Ishida"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.16661",
+        "githubRepo": "https://github.com/SakanaAI/JFinBench",
+        "githubStars": 6,
+        "id": "2611.18130",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "projectPage": "https://pub.sakana.ai/jfinbench/",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.",
-        "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
-        "upvotes": 2
+        "summary": "Large language models (LLMs) are increasingly applied to finance, creating a need for benchmarks that evaluate their capabilities across financial systems with different regulations and practices. However, existing financial benchmarks provide limited coverage of country-specific financial systems, and they are difficult to keep up to date as released questions leak into training data. We introduce JFinBench, a Japanese financial benchmark comprising 321 examples from the 2026 editions of six regularly administered certification exams covering accounting, tax, financial planning, and banking. To construct it, we develop a human-in-the-loop agentic pipeline in which a coding agent writes exam-specific conversion code and a review page, while a human verifies every example and feeds corrections back to the agent. This pipeline adapts to heterogeneous exam formats and reduces the effort of incorporating new exam editions, enabling periodic refreshes that mitigate data contamination. Evaluating 12 recent LLMs, we find that Claude Fable 5 and GPT-6 Astra exceed 93% overall, while even the best open-weight model, Kimi K3.1 Pro, trails Claude Fable 5 by 12 percentage points. When models can additionally use a terminal and web access, they retrieve the knowledge they lack and every model improves. The gap narrows but about 4 points remain, and the ranking of models stays largely the same, suggesting that knowledge held in the model itself remains valuable even with tools. We release the dataset, the evaluation code, and the construction pipeline.",
+        "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
+        "upvotes": 3
       },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
+      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": "A unified generative backbone jointly models image appearance and depth, surpassing specialized depth models at scale while preserving general image generation.",
+        "ai_summary": "A streaming speaker-diarization method removes the fixed speaker-slot limit by clustering speaker embeddings within slots after all slots are used, allowing unlimited speakers and efficient large-scale linking.",
         "authors": [
           {
-            "name": "Alejandro Cañada"
+            "name": "Kyudan Jung"
           },
           {
-            "name": "Chema Garabito"
+            "name": "Jihwan Kim"
+          },
+          {
+            "name": "Minwoo Lee"
+          },
+          {
+            "name": "Eunji Shin"
+          },
+          {
+            "name": "Jaegul Choo"
           }
         ],
         "githubRepo": null,
         "githubStars": null,
-        "id": "2611.16010",
+        "id": "2611.18529",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://speridlabs.com/research/iris-z",
-        "publishedAt": "2026-11-11T00:00:00.000Z",
+        "projectPage": "https://kyudan1.github.io/eDIAR/",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Language moved from many task-specific models to one unified model: a single generative model with a single generative training task that handles all of them within the same backbone, and keeps improving with data, parameters and compute. We believe the bitter lesson applies just as much to computer vision, 3D and spatial understanding, in the end to visual intelligence: the effort should go into general architectures that solve all these tasks in a unified way, and into scaling them, rather than into task-specific designs. We test this on monocular geometry, a task that has belonged to specialised architectures for years. Iris-Z is a general image generator that produces appearance and geometry together. A single backbone denoises, reasons about and understands the image and its depth at the same time, and one set of weights generates images with their depth, estimates depth from photographs and paints images onto a given depth. At enough scale it surpasses state-of-the-art specialists on established depth benchmarks while keeping the generative abilities of the backbone it started from without specialized layers. We release two models for the community.",
-        "title": "Iris-Z: Scaling One Generative Model Past Specialist Geometry Models",
-        "upvotes": 2
+        "summary": "Meetings last up to an hour, and nobody knows in advance how many people will speak. Neural diarizers with a fixed number of output slots, such as Streaming Sortformer and Nemotron-3, are accurate and run online, but they cannot name more speakers than they have slots. We remove this limit without retraining. The slot head keeps deciding who is active and when speech overlaps, and speaker embeddings are clustered inside a single slot, with the official e-means algorithm, only after every slot has been used. In the streaming system, re-clustering is confined to a bounded window, labels are revised for a few seconds, and identities are anchored to the slots of the head. The resulting system has no limit on the number of speakers and stays accurate when speakers outnumber the slots, where fixed-slot models break down. On meetings that grow to an hour it stays far more accurate than Streaming Sortformer, which accumulates errors, and its cost per update does not grow with the meeting. The same recipe turns the four-slot Streaming Sortformer into an open-speaker system. Across recordings, e-means makes it affordable to link the speakers of a large archive frame by frame, a task that arises when conversational corpora are prepared, and it reaches the clustering quality of Lloyd's k-means several times faster. The method needs little tuning, and e-means runs with its default recipe from a few hundred to more than a million embeddings.",
+        "title": "eDIAR: Training-Free Open-Speaker Streaming Diarization for Long Meetings and Large Archives via e-means",
+        "upvotes": 3
       },
-      "publishedAt": "2026-11-10T19:00:00.000Z"
+      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1411,7 +1463,7 @@
           }
         ],
         "githubRepo": "https://github.com/kulits/BrickFlow",
-        "githubStars": 7,
+        "githubStars": 16,
         "id": "2611.17321",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1426,111 +1478,59 @@
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "Continual-ARC, a lifelong stream of ARC-AGI tasks, compares memory- and weight-based continual learning under frozen-weight agent harnesses, revealing that harness persistence rarely improves memorization and most harness methods underperform simple caching, while weight-based learning shows better generalization.",
         "authors": [
           {
-            "name": "Sevket Ege Yesilyurt"
+            "name": "Daniel Lenton"
           },
           {
-            "name": "Figen S. Oktem"
+            "name": "Yusha Arif"
+          },
+          {
+            "name": "Haris Mahmood"
           }
         ],
-        "githubRepo": "https://github.com/METU-SPACE-Lab/Dual-Flow",
-        "githubStars": 2,
-        "id": "2611.05843",
+        "githubRepo": "https://github.com/unifyai/continual-arc",
+        "githubStars": 38,
+        "id": "2611.14505",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Generative model-based approaches to linear inverse problems typically use the acquired noisy measurement to condition or guide sampling in the image domain. In this work, we introduce Dual Flow, a novel joint-flow model for solving linear inverse problems by jointly estimating the clean image and corresponding noise-free measurement from the observation. Specifically, Dual Flow formulates image reconstruction and measurement denoising as a coupled estimation problem, using coupled flows in the image and measurement domains. The acquired noisy measurement is used only to initialize the measurement state; thereafter, image and measurement states are jointly updated based on their current values. By construction, the final image and measurement estimates are guaranteed to satisfy the underlying forward model. We derive the sampling updates for the joint-flow which involves the conditional mean of the clean image given the joint state. We further derive a closed-form expression for a sufficient statistic of the joint state and show that the required conditional mean can be obtained by solving an image-domain Gaussian denoising problem involving operator-dependent, correlated noise. We train a velocity-prediction network using this formulation to estimate the conditional mean from the derived sufficient statistic. Extensive experiments across various linear inverse problems and image datasets demonstrate state-of-the-art performance in both distortion metrics and perceptual quality. Dual Flow requires no hyperparameter tuning beyond the number of inference steps and achieves shorter reconstruction times than competing methods. Additional analyses assess robustness to model mismatch, as well as the ability to generate diverse plausible reconstructions and characterize reconstruction uncertainty.",
-        "title": "Dual Flow: Joint Image-Measurement Interpolation for Inverse Problems",
-        "upvotes": 2
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "EvenVLM provides a text and multimodal VQA dataset for the endangered Even language, with tokenizer expansion and LoRA fine-tuning improving translation, text benchmarks, and VQA accuracy.",
-        "authors": [
-          {
-            "name": "Daniil Makovetskii"
-          },
-          {
-            "name": "Ivan Bondarenko"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.16500",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://aclanthology.org/2026.oracle-main.3/",
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "We present EvenVLM, the first text and multimodal (VQA) dataset for Even (Lamut), an endangered Northern Tungusic language spoken by approximately 6,800 people in Siberia. Our dataset comprises 50,521 structured Even-Russian entries extracted from dictionary and phrasebook sources via GPT-4o Mini-based parsing, from which we synthetically generate 107,543 training examples spanning translation, grammar, reading comprehension, and semantic classification. To address tokenization inefficiency on Even's agglutinative morphology, we propose a three-step tokenizer expansion algorithm that adds Even-specific graphemes (eng, oe, o-umlaut), whitelisted vocabulary, and BPE merges, reducing average tokens per word by 27% (4.99 to 3.64). Using LoRA fine-tuning of Qwen3-VL-4B, we adapt the model for text tasks (0.53% trainable parameters, rank 32) and separately for visual question answering (rank 64, frozen vision encoder). Our best configuration achieves 11.4% exact match and a 13.6 weighted score on text benchmarks, 0.1283 chrF for sentence translation, and 65% accuracy on VQA (up from 0% for the base model and text-only fine-tuning). We release our datasets, evaluation benchmarks, and training pipeline to support further research on Even and other low-resource languages.",
-        "title": "EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning",
-        "upvotes": 2
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "MemInStream is a benchmark that evaluates memory capabilities in streaming video understanding using evidence-controlled validation to separate memory limitations from visual understanding failures.",
-        "authors": [
-          {
-            "name": "Zhenqi He"
-          },
-          {
-            "name": "Dunyuan Xu"
-          },
-          {
-            "name": "Yang Bo"
-          },
-          {
-            "name": "Kien T. Pham"
-          },
-          {
-            "name": "Yanghao Wang"
-          },
-          {
-            "name": "Shuhan Li"
-          },
-          {
-            "name": "Xintong Guo"
-          },
-          {
-            "name": "Yuyang He"
-          },
-          {
-            "name": "Fang Liu"
-          },
-          {
-            "name": "Huankang Guan"
-          },
-          {
-            "name": "Jingyan Chen"
-          },
-          {
-            "name": "Rui Liu"
-          },
-          {
-            "name": "Long Chen"
-          }
-        ],
-        "githubRepo": "https://github.com/HKUST-LongGroup/MemInStream",
-        "githubStars": 9,
-        "id": "2611.15640",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://hkust-longgroup.github.io/MemInStream/",
+        "projectPage": "https://continual-arc.unify.ai",
         "publishedAt": "2026-11-11T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Streaming video understanding aims to continuously process incoming visual observations, making the retention and retrieval of relevant information increasingly important as the video history grows. Although existing benchmarks include memory-related questions, question-answering accuracy alone does not reliably measure memory capabilities. Incorrect predictions may arise from failures in visual understanding rather than forgetting, whereas correct predictions may rely on linguistic priors or recent observations without requiring historical memory. To address these ambiguities, we introduce MemInStream, a benchmark dedicated to evaluating memory capabilities in streaming video understanding. We develop an evidence-controlled validation protocol that associates each question with temporally localized evidence intervals. The protocol validates evidence solvability and memory necessity by retaining questions that models can answer from the annotated evidence but cannot resolve using recent observations, post-evidence observations, or textual input alone. This helps disentangle memory limitations from understanding failures while reducing memory-independent shortcuts. MemInStream provides a systematic evaluation of memory capabilities through four major categories, covering Episodic Retrieval, State Tracking \\& Updating, Multi-Evidence Integration, and Contextual Memory across diverse video scenarios. Overall, MemInStream provides a comprehensive and reliable benchmark for systematically evaluating memory capabilities in streaming video understanding.",
-        "title": "MemInStream: Memorizing or Merely Recognizing? Rethinking Streaming Video Memory Evaluation",
+        "summary": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose Continual-ARC, a lifelong stream built from the three ARC-AGI editions, whose tasks need no domain knowledge. The same tasks return after dormant gaps with fresh instances, while new tasks keep arriving. On each instance, the learner may pay for demonstrations, submit answers, or act inside the harness, with retries permitted on incorrect submissions, which are paid for. Each instance is scored based on the share of this feedback budget consumed. Since a learner may keep anything between instances, memory-based and weight-based systems are scored on the same scale. After the stream, the learner is frozen and tested on fresh instances of the tasks it met, which measures memorization, and on unseen tasks, which measures generalization. We run an agent harness with frozen weights, with and without persistence, on Qwen3.5-9B and GLM-5.3 Flash, comparing them with two prompting floors, a program-induction method and Qwen3.5-9B's weights trained to imitate GLM-5.3 Flash. Persistence in the harness generally does not improve memorization unless provided with explicit expert guidance. Most harness-based methods still learn less than a floor that simply caches each task's demonstrations, across all models we tested. No harness-based method gains on unseen tasks, whereas weight-based learning shows substantial gains. This opens the door to future weight-based continual learning that could teach models to drive harnesses in new domains.",
+        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
         "upvotes": 2
       },
       "publishedAt": "2026-11-10T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Rishii Kumar Singh"
+          },
+          {
+            "name": "Abhinav Rajput"
+          },
+          {
+            "name": "Dinesh Kumar Vishwakarma"
+          }
+        ],
+        "githubRepo": "https://github.com/TrustUIQA/TrustUIQA",
+        "githubStars": 1,
+        "id": "2611.18429",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://huggingface.co/datasets/TrustUIQA/TrustUIQA",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Underwater image enhancement is challenging to evaluate due to the lack of clean reference images, so researchers rely on no-reference image quality assessment (NR-IQA) metrics. However, it remains unclear whether these metrics agree with human judgments. We evaluate 73 handcrafted underwater, learned underwater, vision-language and general-purpose metrics against human preferences on five references: four published opinion-score sets and a new paired-comparison study. For each metric, we measure how often it selects the same image as people when comparing versions of the same scene. We further test whether simple image edits and small adversarial perturbations raise metric scores above the enhancement people preferred, and whether scores decrease as repeated generative edits add noise. Our results show that no metric consistently matches human preferences. The best worst-case Cohen's kappa over the five references is only 0.23 (Q-Align), while two raters in our study agree with a median kappa of 0.41. The widely used UCIQE often favors edits that people reject. On a Nano Banana Pro replica chain that should leave the image unchanged, only 22 of 73 scores decrease at every checkpoint, while noise grows by 2.5 times. We also introduce TrustUIQA, a benchmark that combines the human references, our study choices, the edited, attacked and generated images, and the scores of every metric on every image. The code is available at https://github.com/TrustUIQA/TrustUIQA and TrustUIQA at https://huggingface.co/datasets/TrustUIQA/TrustUIQA.",
+        "title": "Do Underwater Image Quality Metrics Agree with Human Perception? A Benchmark with Human Choices, Simple Edits and Generative Drift",
+        "upvotes": 1
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1558,6 +1558,6 @@
       "publishedAt": "2026-11-11T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-17T10:15:16.772038+00:00",
+  "fetched_at": "2026-11-18T12:55:05.267360+00:00",
   "limit": 100
 }
