@@ -1780,6 +1780,163 @@
         "upvotes": 0
       }
     },
+    "2312.02973": {
+      "fetched_at": "2026-11-19T09:55:52.181590Z",
+      "last_attempt_at": "2026-11-19T09:55:52.181590Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.02973",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02973",
+          "text": "GauHuman is a fast-training and real-time rendering 3D human model using Gaussian Splatting with LBS and KL divergence-based pruning and merging."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.02973",
+          "text": "We present, GauHuman, a 3D human model with Gaussian Splatting for both fast\ntraining (1 ~ 2 minutes) and real-time rendering (up to 189 FPS), compared with\nexisting NeRF-based implicit representation modelling frameworks demanding\nhours of training and seconds of rendering per frame. Specifically, GauHuman\nencodes Gaussian Splatting in the canonical space and transforms 3D Gaussians\nfrom canonical space to posed space with linear blend skinning (LBS), in which\neffective pose and LBS refinement modules are designed to learn fine details of\n3D humans under negligible computational cost. Moreover, to enable fast\noptimization of GauHuman, we initialize and prune 3D Gaussians with 3D human\nprior, while splitting/cloning via KL divergence guidance, along with a novel\nmerge operation for further speeding up. Extensive experiments on ZJU_Mocap and\nMonoCap datasets demonstrate that GauHuman achieves state-of-the-art\nperformance quantitatively and qualitatively with fast training and real-time\nrendering speed. Notably, without sacrificing rendering quality, GauHuman can\nfast model the 3D human performer with ~13k 3D Gaussians."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/skhu101/gauhuman"
+        },
+        "source_url": "https://huggingface.co/papers/2312.02973",
+        "stars": 427,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.03029": {
+      "fetched_at": "2026-11-19T09:55:52.181590Z",
+      "last_attempt_at": "2026-11-19T09:55:52.181590Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.03029",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03029",
+          "text": "The method uses controllable 3D Gaussians and a fully learned MLP-based deformation field for high-fidelity 3D head avatar modeling under sparse views, employing geometry-guided initialization with implicit SDF and Deep Marching Tetrahedra for stability and high rendering quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03029",
+          "text": "Creating high-fidelity 3D head avatars has always been a research hotspot,\nbut there remains a great challenge under lightweight sparse view setups. In\nthis paper, we propose Gaussian Head Avatar represented by controllable 3D\nGaussians for high-fidelity head avatar modeling. We optimize the neutral 3D\nGaussians and a fully learned MLP-based deformation field to capture complex\nexpressions. The two parts benefit each other, thereby our method can model\nfine-grained dynamic details while ensuring expression accuracy. Furthermore,\nwe devise a well-designed geometry-guided initialization strategy based on\nimplicit SDF and Deep Marching Tetrahedra for the stability and convergence of\nthe training procedure. Experiments show our approach outperforms other\nstate-of-the-art sparse-view methods, achieving ultra high-fidelity rendering\nquality at 2K resolution even under exaggerated expressions."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/yuelangx/gaussian-head-avatar"
+        },
+        "source_url": "https://huggingface.co/papers/2312.03029",
+        "stars": 875,
+        "submitted_on_daily_at": "2023-12-07T00:00:00.000Z",
+        "upvotes": 26
+      }
+    },
+    "2312.03203": {
+      "fetched_at": "2026-11-19T09:55:52.181590Z",
+      "last_attempt_at": "2026-11-19T09:55:52.181590Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.03203",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03203",
+          "text": "The paper extends 3D Gaussian Splatting to handle arbitrary-dimensional semantic features through 2D foundation model distillation, enabling faster rendering and novel view semantic segmentation and language-guided editing."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03203",
+          "text": "3D scene representations have gained immense popularity in recent years.\nMethods that use Neural Radiance fields are versatile for traditional tasks\nsuch as novel view synthesis. In recent times, some work has emerged that aims\nto extend the functionality of NeRF beyond view synthesis, for semantically\naware tasks such as editing and segmentation using 3D feature field\ndistillation from 2D foundation models. However, these methods have two major\nlimitations: (a) they are limited by the rendering speed of NeRF pipelines, and\n(b) implicitly represented feature fields suffer from continuity artifacts\nreducing feature quality. Recently, 3D Gaussian Splatting has shown\nstate-of-the-art performance on real-time radiance field rendering. In this\nwork, we go one step further: in addition to radiance field rendering, we\nenable 3D Gaussian splatting on arbitrary-dimension semantic features via 2D\nfoundation model distillation. This translation is not straightforward: naively\nincorporating feature fields in the 3DGS framework leads to warp-level\ndivergence. We propose architectural and training changes to efficiently avert\nthis problem. Our proposed method is general, and our experiments showcase\nnovel view semantic segmentation, language-guided editing and segment anything\nthrough learning feature fields from state-of-the-art 2D foundation models such\nas SAM and CLIP-LSeg. Across experiments, our distillation method is able to\nprovide comparable or better results, while being significantly faster to both\ntrain and render. Additionally, to the best of our knowledge, we are the first\nmethod to enable point and bounding-box prompting for radiance field\nmanipulation, by leveraging the SAM model. Project website at:\nhttps://feature-3dgs.github.io/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ShijieZhou-UCLA/feature-3dgs"
+        },
+        "source_url": "https://huggingface.co/papers/2312.03203",
+        "stars": 695,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.03431": {
+      "fetched_at": "2026-11-19T09:55:52.181590Z",
+      "last_attempt_at": "2026-11-19T09:55:52.181590Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.03431",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03431",
+          "text": "Gaussian-Flow, a point-based method for dynamic scene reconstruction and rendering from videos, improves efficiency and rendering quality using a Dual-Domain Deformation Model."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03431",
+          "text": "We introduce Gaussian-Flow, a novel point-based approach for fast dynamic\nscene reconstruction and real-time rendering from both multi-view and monocular\nvideos. In contrast to the prevalent NeRF-based approaches hampered by slow\ntraining and rendering speeds, our approach harnesses recent advancements in\npoint-based 3D Gaussian Splatting (3DGS). Specifically, a novel Dual-Domain\nDeformation Model (DDDM) is proposed to explicitly model attribute deformations\nof each Gaussian point, where the time-dependent residual of each attribute is\ncaptured by a polynomial fitting in the time domain, and a Fourier series\nfitting in the frequency domain. The proposed DDDM is capable of modeling\ncomplex scene deformations across long video footage, eliminating the need for\ntraining separate 3DGS for each frame or introducing an additional implicit\nneural field to model 3D dynamics. Moreover, the explicit deformation modeling\nfor discretized Gaussian points ensures ultra-fast training and rendering of a\n4D scene, which is comparable to the original 3DGS designed for static 3D\nreconstruction. Our proposed approach showcases a substantial efficiency\nimprovement, achieving a 5times faster training speed compared to the\nper-frame 3DGS modeling. In addition, quantitative results demonstrate that the\nproposed Gaussian-Flow significantly outperforms previous leading methods in\nnovel view rendering quality. Project page:\nhttps://nju-3dv.github.io/projects/Gaussian-Flow"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.03431",
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.03461": {
+      "fetched_at": "2026-11-19T09:55:52.181590Z",
+      "last_attempt_at": "2026-11-19T09:55:52.181590Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.03461",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03461",
+          "text": "HiFi4G uses a Gaussian-based approach with 3D Gaussian representation and non-rigid tracking for efficient high-fidelity human performance rendering, offering significant compression and quality improvements."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.03461",
+          "text": "We have recently seen tremendous progress in photo-real human modeling and\nrendering. Yet, efficiently rendering realistic human performance and\nintegrating it into the rasterization pipeline remains challenging. In this\npaper, we present HiFi4G, an explicit and compact Gaussian-based approach for\nhigh-fidelity human performance rendering from dense footage. Our core\nintuition is to marry the 3D Gaussian representation with non-rigid tracking,\nachieving a compact and compression-friendly representation. We first propose a\ndual-graph mechanism to obtain motion priors, with a coarse deformation graph\nfor effective initialization and a fine-grained Gaussian graph to enforce\nsubsequent constraints. Then, we utilize a 4D Gaussian optimization scheme with\nadaptive spatial-temporal regularizers to effectively balance the non-rigid\nprior and Gaussian updating. We also present a companion compression scheme\nwith residual compensation for immersive experiences on various platforms. It\nachieves a substantial compression rate of approximately 25 times, with less\nthan 2MB of storage per frame. Extensive experiments demonstrate the\neffectiveness of our approach, which significantly outperforms existing\napproaches in terms of optimization speed, rendering quality, and storage\noverhead."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.03461",
+        "submitted_on_daily_at": "2023-12-07T00:00:00.000Z",
+        "upvotes": 16
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
