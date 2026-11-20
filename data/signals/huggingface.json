@@ -2148,6 +2148,132 @@
         "upvotes": 11
       }
     },
+    "2312.07920": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-20T12:43:08.474828Z",
+      "next_retry_at": "2026-11-27T12:43:08.474828Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.09031": {
+      "fetched_at": "2026-11-20T12:43:08.474828Z",
+      "last_attempt_at": "2026-11-20T12:43:08.474828Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.09031",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09031",
+          "text": "The method iComMa optimizes camera pose estimation using 3D Gaussian Splatting in a differential framework, improving accuracy and robustness over existing mesh-free approaches."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09031",
+          "text": "We present a method named iComMa to address the 6D camera pose estimation\nproblem in computer vision. Conventional pose estimation methods typically rely\non the target's CAD model or necessitate specific network training tailored to\nparticular object classes. Some existing methods have achieved promising\nresults in mesh-free object and scene pose estimation by inverting the Neural\nRadiance Fields (NeRF). However, they still struggle with adverse\ninitializations such as large rotations and translations. To address this\nissue, we propose an efficient method for accurate camera pose estimation by\ninverting 3D Gaussian Splatting (3DGS). Specifically, a gradient-based\ndifferentiable framework optimizes camera pose by minimizing the residual\nbetween the query image and the rendered image, requiring no training. An\nend-to-end matching module is designed to enhance the model's robustness\nagainst adverse initializations, while minimizing pixel-level comparing loss\naids in precise pose estimation. Experimental results on synthetic and complex\nreal-world data demonstrate the effectiveness of the proposed approach in\nchallenging conditions and the accuracy of camera pose estimation."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/yuansun-xjtu/icomma"
+        },
+        "source_url": "https://huggingface.co/papers/2312.09031",
+        "stars": 135,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2312.09147": {
+      "fetched_at": "2026-11-20T12:43:08.474828Z",
+      "last_attempt_at": "2026-11-20T12:43:08.474828Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.09147",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "Maximelat/testmax",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Maximelat/testmax"
+          },
+          {
+            "id": "hysts-samples/gradio_model3dgs",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/hysts-samples/gradio_model3dgs"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 2,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09147",
+          "text": "A novel method for single-view 3D reconstruction uses a hybrid Triplane-Gaussian representation with transformer-based networks to achieve faster rendering and higher quality compared to existing techniques."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09147",
+          "text": "Recent advancements in 3D reconstruction from single images have been driven\nby the evolution of generative models. Prominent among these are methods based\non Score Distillation Sampling (SDS) and the adaptation of diffusion models in\nthe 3D domain. Despite their progress, these techniques often face limitations\ndue to slow optimization or rendering processes, leading to extensive training\nand optimization times. In this paper, we introduce a novel approach for\nsingle-view reconstruction that efficiently generates a 3D model from a single\nimage via feed-forward inference. Our method utilizes two transformer-based\nnetworks, namely a point decoder and a triplane decoder, to reconstruct 3D\nobjects using a hybrid Triplane-Gaussian intermediate representation. This\nhybrid representation strikes a balance, achieving a faster rendering speed\ncompared to implicit representations while simultaneously delivering superior\nrendering quality than explicit representations. The point decoder is designed\nfor generating point clouds from single images, offering an explicit\nrepresentation which is then utilized by the triplane decoder to query Gaussian\nfeatures for each point. This design choice addresses the challenges associated\nwith directly regressing explicit 3D Gaussian attributes characterized by their\nnon-structural nature. Subsequently, the 3D Gaussians are decoded by an MLP to\nenable rapid rendering through splatting. Both decoders are built upon a\nscalable, transformer-based architecture and have been efficiently trained on\nlarge-scale 3D datasets. The evaluations conducted on both synthetic datasets\nand real-world images demonstrate that our method not only achieves higher\nquality but also ensures a faster runtime in comparison to previous\nstate-of-the-art techniques. Please see our project page at\nhttps://zouzx.github.io/TriplaneGaussian/."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/vast-ai-research/triplanegaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2312.09147",
+        "stars": 927,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2312.09228": {
+      "fetched_at": "2026-11-20T12:43:08.474828Z",
+      "last_attempt_at": "2026-11-20T12:43:08.474828Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.09228",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09228",
+          "text": "3D Gaussian Splatting combined with a non-rigid deformation network generates fast-rendering animatable avatars from monocular videos."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.09228",
+          "text": "We introduce an approach that creates animatable human avatars from monocular\nvideos using 3D Gaussian Splatting (3DGS). Existing methods based on neural\nradiance fields (NeRFs) achieve high-quality novel-view/novel-pose image\nsynthesis but often require days of training, and are extremely slow at\ninference time. Recently, the community has explored fast grid structures for\nefficient training of clothed avatars. Albeit being extremely fast at training,\nthese methods can barely achieve an interactive rendering frame rate with\naround 15 FPS. In this paper, we use 3D Gaussian Splatting and learn a\nnon-rigid deformation network to reconstruct animatable clothed human avatars\nthat can be trained within 30 minutes and rendered at real-time frame rates\n(50+ FPS). Given the explicit nature of our representation, we further\nintroduce as-isometric-as-possible regularizations on both the Gaussian mean\nvectors and the covariance matrices, enhancing the generalization of our model\non highly articulated unseen poses. Experimental results show that our method\nachieves comparable and even better performance compared to state-of-the-art\napproaches on animatable avatar creation from a monocular input, while being\n400x and 250x faster in training and inference, respectively."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.09228",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.09682": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-20T12:43:08.474828Z",
+      "next_retry_at": "2026-11-27T12:43:08.474828Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
