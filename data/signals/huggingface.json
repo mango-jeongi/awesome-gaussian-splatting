@@ -2029,6 +2029,125 @@
       "status": "not_found",
       "values": {}
     },
+    "2312.05133": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-20T09:44:22.362009Z",
+      "next_retry_at": "2026-11-27T09:44:22.362009Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.05664": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-20T09:44:22.362009Z",
+      "next_retry_at": "2026-11-27T09:44:22.362009Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.05941": {
+      "fetched_at": "2026-11-20T09:44:22.362009Z",
+      "last_attempt_at": "2026-11-20T09:44:22.362009Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.05941",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.05941",
+          "text": "ASH, an animatable Gaussian splatting approach, enables real-time photorealistic rendering of dynamic humans by learning Gaussian parameters in 2D texture space, outperforming existing real-time methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.05941",
+          "text": "Real-time rendering of photorealistic and controllable human avatars stands\nas a cornerstone in Computer Vision and Graphics. While recent advances in\nneural implicit rendering have unlocked unprecedented photorealism for digital\navatars, real-time performance has mostly been demonstrated for static scenes\nonly. To address this, we propose ASH, an animatable Gaussian splatting\napproach for photorealistic rendering of dynamic humans in real-time. We\nparameterize the clothed human as animatable 3D Gaussians, which can be\nefficiently splatted into image space to generate the final rendering. However,\nnaively learning the Gaussian parameters in 3D space poses a severe challenge\nin terms of compute. Instead, we attach the Gaussians onto a deformable\ncharacter model, and learn their parameters in 2D texture space, which allows\nleveraging efficient 2D convolutional architectures that easily scale with the\nrequired number of Gaussians. We benchmark ASH with competing methods on\npose-controllable avatars, demonstrating that our method outperforms existing\nreal-time methods by a large margin and shows comparable or even better results\nthan offline methods."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/kv2000/ASH"
+        },
+        "source_url": "https://huggingface.co/papers/2312.05941",
+        "stars": 138,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.06741": {
+      "fetched_at": "2026-11-20T09:44:22.362009Z",
+      "last_attempt_at": "2026-11-20T09:44:22.362009Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.06741",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.06741",
+          "text": "A 3D Gaussian Splatting-based SLAM method enables real-time reconstruction from a single moving camera, combining accurate tracking and rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.06741",
+          "text": "We present the first application of 3D Gaussian Splatting to incremental 3D\nreconstruction using a single moving monocular or RGB-D camera. Our\nSimultaneous Localisation and Mapping (SLAM) method, which runs live at 3fps,\nutilises Gaussians as the only 3D representation, unifying the required\nrepresentation for accurate, efficient tracking, mapping, and high-quality\nrendering. Several innovations are required to continuously reconstruct 3D\nscenes with high fidelity from a live camera. First, to move beyond the\noriginal 3DGS algorithm, which requires accurate poses from an offline\nStructure from Motion (SfM) system, we formulate camera tracking for 3DGS using\ndirect optimisation against the 3D Gaussians, and show that this enables fast\nand robust tracking with a wide basin of convergence. Second, by utilising the\nexplicit nature of the Gaussians, we introduce geometric verification and\nregularisation to handle the ambiguities occurring in incremental 3D dense\nreconstruction. Finally, we introduce a full SLAM system which not only\nachieves state-of-the-art results in novel view synthesis and trajectory\nestimation, but also reconstruction of tiny and even transparent objects."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/muskie82/monogs"
+        },
+        "source_url": "https://huggingface.co/papers/2312.06741",
+        "stars": 2194,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.07504": {
+      "fetched_at": "2026-11-20T09:44:22.362009Z",
+      "last_attempt_at": "2026-11-20T09:44:22.362009Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.07504",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.07504",
+          "text": "The paper presents a method for novel view synthesis and camera pose estimation using 3D Gaussian Splatting, eliminating the need for pre-processed camera poses by processing input frames sequentially."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.07504",
+          "text": "While neural rendering has led to impressive advances in scene reconstruction\nand novel view synthesis, it relies heavily on accurately pre-computed camera\nposes. To relax this constraint, multiple efforts have been made to train\nNeural Radiance Fields (NeRFs) without pre-processed camera poses. However, the\nimplicit representations of NeRFs provide extra challenges to optimize the 3D\nstructure and camera poses at the same time. On the other hand, the recently\nproposed 3D Gaussian Splatting provides new opportunities given its explicit\npoint cloud representations. This paper leverages both the explicit geometric\nrepresentation and the continuity of the input video stream to perform novel\nview synthesis without any SfM preprocessing. We process the input frames in a\nsequential manner and progressively grow the 3D Gaussians set by taking one\ninput frame at a time, without the need to pre-compute the camera poses. Our\nmethod significantly improves over previous approaches in view synthesis and\ncamera pose estimation under large motion changes. Our project page is\nhttps://oasisyang.github.io/colmap-free-3dgs"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/NVlabs/CF-3DGS"
+        },
+        "source_url": "https://huggingface.co/papers/2312.07504",
+        "stars": 797,
+        "submitted_on_daily_at": "2023-12-13T00:00:00.000Z",
+        "upvotes": 11
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

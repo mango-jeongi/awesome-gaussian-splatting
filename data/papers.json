@@ -1,8 +1,379 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-19T09:55:30Z",
-  "total_count": 4159,
+  "last_updated": "2026-11-20T09:44:05Z",
+  "total_count": 4165,
   "papers": [
+    {
+      "id": "2611.25338",
+      "arxiv_id": "2611.25338",
+      "doi": null,
+      "source": "arxiv",
+      "title": "VideoRNG: Relightable Neural Gaussians from Generative Video Models",
+      "authors": [
+        "Bowen Xue",
+        "Saeed Hadadan",
+        "Fabrice Rousselle",
+        "Ravi Ramamoorthi",
+        "Zahra Montazeri",
+        "Miloš Hašan"
+      ],
+      "first_author": "Xue et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.25338",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.25338v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.25338",
+      "pdf_url": "https://arxiv.org/pdf/2611.25338.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Generating realistic 3D assets remains constrained by classical representations: surface meshes and compact physically based materials struggle to express objects whose appearance arises from fine geometry or complex light transport, while existing Gaussian-splatting generators typically bake fixed illumination into appearance. We introduce VideoRNG, a two-stage method that generates complete, relightable 3D assets from a text prompt or a single image without prescribing a mesh or analytic material model. A video generator fine-tuned from a pretrained video diffusion backbone first produces a structured RGBA turntable sequence under a known pose, camera, and illumination. A feed-forward large reconstruction model initialized from a pretrained video diffusion backbone then maps the video-VAE latent frames of selected turntable frames directly to millions of anisotropic Gaussians with learned neural appearance features. A shared directional decoder and stochastic Gaussian ray tracer turn this representation, which we call ray-traced Relightable Neural Gaussians (rtRNG), into radiance under novel viewpoints and illumination. To preserve high-frequency appearance while learning geometry, we introduce depth-anchored appearance training, and we make million-Gaussian reconstruction practical through foreground token selection and cost-aware distributed sampling. VideoRNG generates complex assets such as fur, feathers, and spider webs that can be interactively rendered, relit, and integrated into scenes.",
+      "tldr": "Introduces VideoRNG, a two-stage method that generates complete, relightable 3D assets from a text prompt or a single image without prescribing a mesh or analytic material model.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "Diffusion",
+        "Feed-Forward",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.26045",
+      "arxiv_id": "2611.26045",
+      "doi": null,
+      "source": "arxiv",
+      "title": "PaveSplat: Resolution-Robust Feed-Forward Gaussian Splatting with Residually Corrected Surface-Aligned Covariances",
+      "authors": [
+        "Janghun Kim",
+        "Hyun-Cheol Kim",
+        "Eunbin An",
+        "Myeonghun Oh",
+        "Hyon-Gon Choo"
+      ],
+      "first_author": "Kim et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.26045",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.26045v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.26045",
+      "pdf_url": "https://arxiv.org/pdf/2611.26045.pdf",
+      "code_url": "https://github.com/janghunn/pavesplat",
+      "project_url": "https://janghunn.github.io/pavesplat/",
+      "abstract": "We present PaveSplat, a feed-forward Gaussian splatting method that adds a learned residual to the analytic surface-aligned covariance, keeping surfels paving the visible surface across rendering resolutions. Pixel-aligned feed-forward Gaussian splatting predicts one primitive per pixel from a few images in a single pass, and its rendering quality depends on how well these primitives cover the surface. Recent surfel-based methods compute the surface-aligned covariance analytically from predicted depth. However, this covariance has no way to correct the surfel orientation where the depth-derived frame is ill-posed. The surfels then cover the surface loosely; at the training resolution each surfel's one-pixel minimum footprint covers the gaps, but they show up as holes when the same prediction is re-rendered at a higher resolution. To address this, we keep the analytic covariance as an initialization, with its axes aligned to the surface tangents, and add an identity-initialized unit-quaternion residual that reorients a surfel only where this improves rendering, turning surfels that the analytic frame mis-aims back onto the surface. On RealEstate10K, PaveSplat achieves the best PSNR, SSIM, and LPIPS among single-Gaussian-per-pixel methods at every scale (1x-8x). The native-resolution gain is small; the benefit appears when the same prediction is rendered at higher display resolutions without re-running the network. On zero-shot DL3DV, it leads PSNR within this group at every scale and ranks first or second on SSIM/LPIPS. A coverage-hole analysis shows fewer uncovered pixels than both baselines under high-resolution re-rendering.",
+      "tldr": "Presents PaveSplat, a feed-forward Gaussian splatting method that adds a learned residual to the analytic surface-aligned covariance, keeping surfels paving the visible surface across rendering resolutions.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "2DGS",
+        "Feed-Forward",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Accepted to ACCV 2026. 16 pages, 4 figures, 4 tables. Project page: https://janghunn.github.io/pavesplat/ ; code: https://github.com/janghunn/pavesplat",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.25979",
+      "arxiv_id": "2611.25979",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Multi-View Transformer with Geometry-Guided Multi-Modal ControlNet for 3D Virtual Try-On",
+      "authors": [
+        "Sarthak Batra",
+        "Armin Mustafa",
+        "Adrian Hilton"
+      ],
+      "first_author": "Batra et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.25979",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.25979v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.25979",
+      "pdf_url": "https://arxiv.org/pdf/2611.25979.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Editing a 3D Gaussian Splatting (3DGS) capture of a person so that they wear a new garment requires every rendered view to agree on the same garment details. Existing 3D virtual try-on (VTON) pipelines, however, edit training views largely independently and fuse them with hand-designed heuristics such as manually chosen reference views and fixed attention-blending weights. The resulting inconsistencies are baked into the 3D representation and surface as texture drift, blurred prints, and implausible geometry in novel views. We present GS-VTON-MVT, a three-stage framework that combines implicit and explicit 3D reasoning for consistent 3DGS try-on. (i) A multi-view inpainting transformer jointly edits a set of training views with full cross-view self-attention, so that cross-view correspondence is learned rather than imposed. (ii) A geometry-guided multi-modal ControlNet conditions the diffusion editor on the garment image together with depth and surface normals rendered from the current 3DGS state, supplying explicit structure where visual evidence is weakest. (iii) A pose-adaptive persona-aware attention replaces the fixed blending weight between current-view and reference-view features with weights derived from camera-pose proximity. On the 3D-VTONBench benchmark, GS-VTON-MVT improves FID, KID, LPIPS-based cross-view consistency, and user preference over general-purpose 3D editors and prior 3D try-on methods.",
+      "tldr": "Presents GS-VTON-MVT, a three-stage framework that combines implicit and explicit 3D reasoning for consistent 3DGS try-on.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "Human Avatars & VR"
+      ],
+      "tags": [
+        "Diffusion",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "20 pages, 2 figures, 3 tables",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.25523",
+      "arxiv_id": "2611.25523",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Multi-View Relighting with Mergeable Radiance Fields",
+      "authors": [
+        "Yinan Wang",
+        "Rohan Kadkol",
+        "Hyunjin Yoo",
+        "Jean-François Lalonde",
+        "James J. Clark"
+      ],
+      "first_author": "Wang et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.25523",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.25523v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.25523",
+      "pdf_url": "https://arxiv.org/pdf/2611.25523.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "We propose MergeableRF, a method for radiance field relighting through model parameter merging. Given multi-view images of a scene under known basis lights, our goal is to relight the scene by directly combining the parameters of radiance fields trained under these lights. This is motivated by the linearity of light transport: the image under a mixture of lights is the same weighted combination of the images under each light. However, combining the parameters of independently trained radiance fields does not produce the corresponding combination of images. To address this, we represent a scene with shared geometry and a separate appearance network for each basis light. We start these networks from the same initialization and introduce merge-aware training, which teaches their parameter combinations to reproduce the corresponding combinations of images. Given a target HDR environment map, we compute its basis-light coefficients and use them to merge the appearance networks into a single relit model. Our method supports both Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS), without material estimation, additional relighting networks, or target-specific optimization. Unlike image-space blending, it requires only one rendering pass per viewpoint. Experiments on synthetic Neural Gaffer objects and real OLATverse captures demonstrate relighting quality competitive with methods trained on the same multi-light observations.",
+      "tldr": "Proposes MergeableRF, a method for radiance field relighting through model parameter merging.",
+      "primary_category": "2D Gaussians, Geometry & Compression",
+      "categories": [
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "Relighting & BRDF",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.26128",
+      "arxiv_id": "2611.26128",
+      "doi": null,
+      "source": "arxiv",
+      "title": "CryoGaussian: Heterogeneous Cryo-EM Reconstruction Made Explicit with Gaussian Splatting",
+      "authors": [
+        "Ziwen Wang",
+        "Jiajun Fan",
+        "Chaoran Cheng",
+        "Ruihan Guo",
+        "Yanru Qu",
+        "Juexiao Zhou",
+        "Ge Liu"
+      ],
+      "first_author": "Wang et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.26128",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.26128v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.26128",
+      "pdf_url": "https://arxiv.org/pdf/2611.26128.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Single-particle cryo-electron microscopy (cryo-EM) determines macromolecular structures from noisy particle images. However, rare, transient compositional states and subtle, continuous conformational variation are difficult to resolve. We present CryoGaussian, a Gaussian splatting method for heterogeneous cryo-EM reconstruction that fits an explicit Gaussian density representation directly to the particle images through a differentiable rasterizer rendering orthographic line integrals modulated by the contrast transfer function. The Gaussians are initialized randomly, with their number derived from the estimated spatial support of the molecular density and their minimum size bounded by the Nyquist frequency of the particle images. To capture the compositional and conformational variation across particle images, we learn particle-image and per-Gaussian latents that jointly modulate the base position, amplitude, and scale of each Gaussian. Each structural state is then reconstructed by fitting the Gaussians conditioned on its inferred latent. On CryoBench, CryoGaussian achieves state-of-the-art reconstruction accuracy for both compositional and conformational heterogeneity. On experimental data, it resolves a rare compositional state of the 50S ribosomal subunit (class C4, 1.3% of particles) with rRNA helix 68 docked in the absence of the central protuberance, and continuous conformational motion of the SF3b and helicase subcomplexes of the pre-catalytic spliceosome. We further optimize the rasterizer for additive cryo-EM projection, reducing training time by 12.8-28.0$\\times$.",
+      "tldr": "Presents CryoGaussian, a Gaussian splatting method for heterogeneous cryo-EM reconstruction that fits an explicit Gaussian density representation directly to the particle images through a differentiable...",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "59 pages, 25 figures, 15 tables",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.25934",
+      "arxiv_id": "2611.25934",
+      "doi": null,
+      "source": "arxiv",
+      "title": "AGSR: Aperture-Guided Super-Resolution for Gaussian Splatting",
+      "authors": [
+        "Ayman Alkhateeb",
+        "Hadi Amirpour",
+        "Christian Timmerer"
+      ],
+      "first_author": "Alkhateeb et al.",
+      "published_date": "2026-11-19",
+      "updated_date": "2026-11-19",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.25934",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.25934v1",
+            "value": "2026-11-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.25934",
+      "pdf_url": "https://arxiv.org/pdf/2611.25934.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) enables real-time novel view synthesis, but Gaussian rasterization attenuates fine-scale scene structure through the projected covariance of each primitive. We show that contracting these projected covariances at inference time can mitigate the effective bandwidth limitation induced by finite Gaussian footprints, motivating a multi-aperture rendering framework for super-resolution. Based on this insight, we propose AGSR (Aperture-Guided Super-Resolution), a lightweight inference-time framework that progressively fuses multi-aperture renderings using uncertainty-guided feature aggregation and geometric conditioning from transmittance and depth cues. AGSR operates as a plug-in enhancement for pre-trained 3DGS models. Experiments on the Mip-NeRF 360 benchmark show that AGSR outperforms lightweight image-space super-resolution baselines, with gains increasing as the underlying Gaussian representation deteriorates. The results provide evidence that covariance contraction exposes bandwidth-sensitive structural cues attenuated by native Gaussian rasterization. AGSR achieves these improvements while maintaining real-time performance with up to 139k parameters.",
+      "tldr": "Based on this insight, we propose AGSR (Aperture-Guided Super-Resolution), a lightweight inference-time framework that progressively fuses multi-aperture renderings using uncertainty-guided feature...",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Accepted at the 2026 IEEE International Workshop on Multimedia Signal Processing (MMSP 2026). Recipient of the Best Paper Award",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
     {
       "id": "2611.24404",
       "arxiv_id": "2611.24404",
@@ -1895,7 +2266,7 @@
       ],
       "first_author": "Wu et al.",
       "published_date": "2026-11-12",
-      "updated_date": "2026-11-12",
+      "updated_date": "2026-11-19",
       "year": 2026,
       "month": 11,
       "venue": null,
@@ -1910,6 +2281,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2611.18766v1",
+            "value": "2026-11-12",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.18766v2",
             "value": "2026-11-12",
             "observed_at": null,
             "reviewed_by": null,
@@ -7002,7 +7381,7 @@
       ],
       "first_author": "Wang et al.",
       "published_date": "2026-10-27",
-      "updated_date": "2026-10-27",
+      "updated_date": "2026-11-19",
       "year": 2026,
       "month": 10,
       "venue": null,
@@ -7017,6 +7396,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2610.36760v1",
+            "value": "2026-10-27",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.36760v2",
             "value": "2026-10-27",
             "observed_at": null,
             "reviewed_by": null,
@@ -13254,7 +13641,7 @@
       ],
       "first_author": "Ye et al.",
       "published_date": "2026-10-09",
-      "updated_date": "2026-10-09",
+      "updated_date": "2026-11-19",
       "year": 2026,
       "month": 10,
       "venue": "ICLR 2027",
@@ -13269,6 +13656,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2610.13503v1",
+            "value": "2026-10-09",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.13503v2",
             "value": "2026-10-09",
             "observed_at": null,
             "reviewed_by": null,
@@ -258279,7 +258674,7 @@
       ],
       "first_author": "Cai et al.",
       "published_date": "2024-05-24",
-      "updated_date": "2024-10-26",
+      "updated_date": "2026-11-18",
       "year": 2024,
       "month": 5,
       "venue": "NEURIPS 2024",
@@ -258294,6 +258689,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2405.15125v4",
+            "value": "2024-05-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2405.15125v5",
             "value": "2024-05-24",
             "observed_at": null,
             "reviewed_by": null,
@@ -258314,8 +258717,8 @@
       "paper_url": "https://arxiv.org/abs/2405.15125",
       "pdf_url": "https://arxiv.org/pdf/2405.15125.pdf",
       "code_url": "https://github.com/caiyuanhao1998/HDR-GS",
-      "project_url": null,
-      "abstract": "High dynamic range (HDR) novel view synthesis (NVS) aims to create photorealistic images from novel viewpoints using HDR imaging techniques. The rendered HDR images capture a wider range of brightness levels containing more details of the scene than normal low dynamic range (LDR) images. Existing HDR NVS methods are mainly based on NeRF. They suffer from long training time and slow inference speed. In this paper, we propose a new framework, High Dynamic Range Gaussian Splatting (HDR-GS), which can efficiently render novel HDR views and reconstruct LDR images with a user input exposure time. Specifically, we design a Dual Dynamic Range (DDR) Gaussian point cloud model that uses spherical harmonics to fit HDR color and employs an MLP-based tone-mapper to render LDR color. The HDR and LDR colors are then fed into two Parallel Differentiable Rasterization (PDR) processes to reconstruct HDR and LDR views. To establish the data foundation for the research of 3D Gaussian splatting-based methods in HDR NVS, we recalibrate the camera parameters and compute the initial positions for Gaussian point clouds. Experiments demonstrate that our HDR-GS surpasses the state-of-the-art NeRF-based method by 3.84 and 1.91 dB on LDR and HDR NVS while enjoying 1000x inference speed and only requiring 6.3% training time. Code and recalibrated data will be publicly available at https://github.com/caiyuanhao1998/HDR-GS . A brief video introduction of our work is available at https://youtu.be/wtU7Kcwe7ck",
+      "project_url": "https://caiyuanhao1998.github.io/project/HDR-GS/",
+      "abstract": "High dynamic range (HDR) novel view synthesis (NVS) aims to create photorealistic images from novel viewpoints using HDR imaging techniques. The rendered HDR images capture a wider range of brightness levels containing more details of the scene than normal low dynamic range (LDR) images. Existing HDR NVS methods are mainly based on NeRF. They suffer from long training time and slow inference speed. In this paper, we propose a new framework, High Dynamic Range Gaussian Splatting (HDR-GS), which can efficiently render novel HDR views and reconstruct LDR images with a user input exposure time. Specifically, we design a Dual Dynamic Range (DDR) Gaussian point cloud model that uses spherical harmonics to fit HDR color and employs an MLP-based tone-mapper to render LDR color. The HDR and LDR colors are then fed into two Parallel Differentiable Rasterization (PDR) processes to reconstruct HDR and LDR views. To establish the data foundation for the research of 3D Gaussian splatting-based methods in HDR NVS, we recalibrate the camera parameters and compute the initial positions for Gaussian point clouds. Experiments demonstrate that our HDR-GS surpasses the state-of-the-art NeRF-based method by 3.84 and 1.91 dB on LDR and HDR NVS while enjoying 1000x inference speed and only requiring 6.3% training time. Code and recalibrated data will be publicly available at https://github.com/caiyuanhao1998/HDR-GS . Our project page at https://caiyuanhao1998.github.io/project/HDR-GS/ shows more video and interactive results. An online Gradio demo is also available on HuggingFace at https://huggingface.co/spaces/CaiYuanhao/HDR-GS",
       "tldr": "Proposes framework, High Dynamic Range Gaussian Splatting (HDR-GS), which can efficiently render novel HDR views and reconstruct LDR images with a user input exposure time.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
@@ -290137,6 +290540,12 @@
     "arxiv:2611.23935": "2611.23935",
     "arxiv:2611.24404": "2611.24404",
     "arxiv:2611.24723": "2611.24723",
+    "arxiv:2611.25338": "2611.25338",
+    "arxiv:2611.25523": "2611.25523",
+    "arxiv:2611.25934": "2611.25934",
+    "arxiv:2611.25979": "2611.25979",
+    "arxiv:2611.26045": "2611.26045",
+    "arxiv:2611.26128": "2611.26128",
     "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper": "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper",
     "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper": "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper",
     "cvf:Barda_Instant3dit_Multiview_Inpainting_for_Fast_Editing_of_3D_Objects_CVPR_2025_paper": "2412.00518",
@@ -294775,6 +295184,12 @@
     "doi:10.48550/arxiv.2611.23935": "2611.23935",
     "doi:10.48550/arxiv.2611.24404": "2611.24404",
     "doi:10.48550/arxiv.2611.24723": "2611.24723",
+    "doi:10.48550/arxiv.2611.25338": "2611.25338",
+    "doi:10.48550/arxiv.2611.25523": "2611.25523",
+    "doi:10.48550/arxiv.2611.25934": "2611.25934",
+    "doi:10.48550/arxiv.2611.25979": "2611.25979",
+    "doi:10.48550/arxiv.2611.26045": "2611.26045",
+    "doi:10.48550/arxiv.2611.26128": "2611.26128",
     "doi:10.5194/isprs-annals-x-2-2024-209-2024": "2404.17215",
     "doi:10.5194/isprs-annals-x-m-2-2025-215-2025": "paper:2025-a9c59fcf3c",
     "doi:10.5194/isprs-archives-xlviii-g-2025-1283-2025": "2502.13803",
