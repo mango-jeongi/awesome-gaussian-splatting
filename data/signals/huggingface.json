@@ -2274,6 +2274,166 @@
       "status": "not_found",
       "values": {}
     },
+    "2312.10070": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-21T12:25:14.365360Z",
+      "next_retry_at": "2026-11-28T12:25:14.365360Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.11458": {
+      "fetched_at": "2026-11-21T12:25:14.365360Z",
+      "last_attempt_at": "2026-11-21T12:25:14.365360Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.11458",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.11458",
+          "text": "A method for dynamic scene reconstruction using deformable 3D Gaussians in monocular video leverages Gaussian splatting with a time-dependent deformation field and static Gaussian point cloud, enabling real-time rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.11458",
+          "text": "We propose a method for dynamic scene reconstruction using deformable 3D\nGaussians that is tailored for monocular video. Building upon the efficiency of\nGaussian splatting, our approach extends the representation to accommodate\ndynamic elements via a deformable set of Gaussians residing in a canonical\nspace, and a time-dependent deformation field defined by a multi-layer\nperceptron (MLP). Moreover, under the assumption that most natural scenes have\nlarge regions that remain static, we allow the MLP to focus its\nrepresentational power by additionally including a static Gaussian point cloud.\nThe concatenated dynamic and static point clouds form the input for the\nGaussian Splatting rasterizer, enabling real-time rendering. The differentiable\npipeline is optimized end-to-end with a self-supervised rendering loss. Our\nmethod achieves results that are comparable to state-of-the-art dynamic neural\nradiance field methods while allowing much faster optimization and rendering.\nProject website: https://lynl7130.github.io/gaufre/index.html"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.11458",
+        "submitted_on_daily_at": "2023-12-19T00:00:00.000Z",
+        "upvotes": 4
+      }
+    },
+    "2312.11461": {
+      "fetched_at": "2026-11-21T12:25:14.365360Z",
+      "last_attempt_at": "2026-11-21T12:25:14.365360Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.11461",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.11461",
+          "text": "A method combining Gaussian splatting with neural implicit fields and SDF-based mesh learning for generating realistic and animatable avatars from text prompts, achieving high-quality appearance and geometry with fast rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.11461",
+          "text": "Gaussian splatting has emerged as a powerful 3D representation that harnesses\nthe advantages of both explicit (mesh) and implicit (NeRF) 3D representations.\nIn this paper, we seek to leverage Gaussian splatting to generate realistic\nanimatable avatars from textual descriptions, addressing the limitations (e.g.,\nflexibility and efficiency) imposed by mesh or NeRF-based representations.\nHowever, a naive application of Gaussian splatting cannot generate high-quality\nanimatable avatars and suffers from learning instability; it also cannot\ncapture fine avatar geometries and often leads to degenerate body parts. To\ntackle these problems, we first propose a primitive-based 3D Gaussian\nrepresentation where Gaussians are defined inside pose-driven primitives to\nfacilitate animation. Second, to stabilize and amortize the learning of\nmillions of Gaussians, we propose to use neural implicit fields to predict the\nGaussian attributes (e.g., colors). Finally, to capture fine avatar geometries\nand extract detailed meshes, we propose a novel SDF-based implicit mesh\nlearning approach for 3D Gaussians that regularizes the underlying geometries\nand extracts highly detailed textured meshes. Our proposed method, GAvatar,\nenables the large-scale generation of diverse animatable avatars using only\ntext prompts. GAvatar significantly surpasses existing methods in terms of both\nappearance and geometry quality, and achieves extremely fast rendering (100\nfps) at 1K resolution."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.11461",
+        "submitted_on_daily_at": "2023-12-19T00:00:00.000Z",
+        "upvotes": 17
+      }
+    },
+    "2312.13150": {
+      "fetched_at": "2026-11-21T12:25:14.365360Z",
+      "last_attempt_at": "2026-11-21T12:25:14.365360Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.13150",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "szymanowiczs/splatter_image",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/szymanowiczs/splatter_image"
+          },
+          {
+            "id": "einsafutdinov/flash3d",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/einsafutdinov/flash3d"
+          },
+          {
+            "id": "Alerin3/splatter_image2",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Alerin3/splatter_image2"
+          },
+          {
+            "id": "Leoseg/splatter_image",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/Leoseg/splatter_image"
+          },
+          {
+            "id": "jt5d/splatter_image",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/jt5d/splatter_image"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 5,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13150",
+          "text": "Splatter Image, a learning-based method using Gaussian Splatting and cross-view attention, achieves ultra-fast monocular 3D object reconstruction with high-quality results."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13150",
+          "text": "We introduce the Splatter Image, an ultra-fast approach for monocular 3D\nobject reconstruction which operates at 38 FPS. Splatter Image is based on\nGaussian Splatting, which has recently brought real-time rendering, fast\ntraining, and excellent scaling to multi-view reconstruction. For the first\ntime, we apply Gaussian Splatting in a monocular reconstruction setting. Our\napproach is learning-based, and, at test time, reconstruction only requires the\nfeed-forward evaluation of a neural network. The main innovation of Splatter\nImage is the surprisingly straightforward design: it uses a 2D image-to-image\nnetwork to map the input image to one 3D Gaussian per pixel. The resulting\nGaussians thus have the form of an image, the Splatter Image. We further extend\nthe method to incorporate more than one image as input, which we do by adding\ncross-view attention. Owning to the speed of the renderer (588 FPS), we can use\na single GPU for training while generating entire images at each iteration in\norder to optimize perceptual metrics like LPIPS. On standard benchmarks, we\ndemonstrate not only fast reconstruction but also better results than recent\nand much more expensive baselines in terms of PSNR, LPIPS, and other metrics."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/szymanowiczs/splatter-image"
+        },
+        "source_url": "https://huggingface.co/papers/2312.13150",
+        "stars": 1117,
+        "submitted_on_daily_at": "2023-12-21T00:00:00.000Z",
+        "upvotes": 15
+      }
+    },
+    "2312.13299": {
+      "fetched_at": "2026-11-21T12:25:14.365360Z",
+      "last_attempt_at": "2026-11-21T12:25:14.365360Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.13299",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13299",
+          "text": "A novel method organizes Gaussian parameters into a 2D grid to reduce storage requirements in 3D Gaussian Splatting while maintaining visual quality and enabling efficient rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13299",
+          "text": "3D Gaussian Splatting has recently emerged as a highly promising technique\nfor modeling of static 3D scenes. In contrast to Neural Radiance Fields, it\nutilizes efficient rasterization allowing for very fast rendering at\nhigh-quality. However, the storage size is significantly higher, which hinders\npractical deployment, e.g.~on resource constrained devices. In this paper, we\nintroduce a compact scene representation organizing the parameters of 3D\nGaussian Splatting (3DGS) into a 2D grid with local homogeneity, ensuring a\ndrastic reduction in storage requirements without compromising visual quality\nduring rendering. Central to our idea is the explicit exploitation of\nperceptual redundancies present in natural scenes. In essence, the inherent\nnature of a scene allows for numerous permutations of Gaussian parameters to\nequivalently represent it. To this end, we propose a novel highly parallel\nalgorithm that regularly arranges the high-dimensional Gaussian parameters into\na 2D grid while preserving their neighborhood structure. During training, we\nfurther enforce local smoothness between the sorted parameters in the grid. The\nuncompressed Gaussians use the same structure as 3DGS, ensuring a seamless\nintegration with established renderers. Our method achieves a reduction factor\nof 8x to 26x in size for complex scenes with no increase in training time,\nmarking a substantial leap forward in the domain of 3D scene distribution and\nconsumption. Additional information can be found on our project page:\nhttps://fraunhoferhhi.github.io/Self-Organizing-Gaussians/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/fraunhoferhhi/Self-Organizing-Gaussians"
+        },
+        "source_url": "https://huggingface.co/papers/2312.13299",
+        "stars": 400,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

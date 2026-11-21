@@ -89,7 +89,7 @@
           }
         ],
         "githubRepo": "https://github.com/RainBowLuoCS/Gamer",
-        "githubStars": 1004,
+        "githubStars": 1152,
         "id": "2611.18397",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -98,7 +98,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
         "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-        "upvotes": 141
+        "upvotes": 145
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -156,7 +156,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks. Instead of training a dedicated policy for each family of tasks, an agentic robotic system applies a foundation model to open-world embodied tasks. It operates in a closed loop: observing the environment, interpreting user intent, reasoning about the task, invoking skills and tools, verifying outcomes, and adapting its strategy. Despite these advances, the community has yet to converge on a shared definition, a reliable evaluation framework, or a research roadmap. We argue that Embodied System 2, realized by a foundation model together with an embodied harness, forms the decision-making core of agentic robotics. Its central challenge is to translate general-purpose reasoning into effective and verifiable actions under physical constraints such as limited reaction time, mechanical limits, unpredictable environment changes, and irreversible consequences. Motivated by this perspective, we propose an evaluation framework that measures both model capabilities and closed-loop system performance. Furthermore, we identify the principles that carry over from digital to physical agents and the challenges that must be addressed to achieve reliable physical autonomy. On top of the Embodied System 2 and the evaluation framework, we envision a research roadmap toward sustained autonomy: the ability to perform work safely and reliably with progressively broader responsibility, from executing individual primitives to fulfilling standing roles.",
         "title": "Envisioning Agentic Robotics: A New Era of Robotic Systems",
-        "upvotes": 135
+        "upvotes": 136
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -232,7 +232,7 @@
           }
         ],
         "githubRepo": "https://github.com/vibeprevisbench/vibeprevisbench",
-        "githubStars": 18,
+        "githubStars": 22,
         "id": "2611.15789",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -266,7 +266,7 @@
           }
         ],
         "githubRepo": "https://github.com/Mirix-AI/MIRIX",
-        "githubStars": 3504,
+        "githubStars": 3508,
         "id": "2611.12068",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -275,7 +275,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Long-term memory lets LLM agents personalize, stay consistent, and reuse what worked before. Parametric memories need training, consolidation can lose details for good, and keeping every record leaves a growing store to search. We present MIRIX-2.0, a multi-agent memory system designed to be practical, accurate, and efficient at once. It is the most accurate of the compared systems on four of five QA benchmarks. It reaches 91.4% on LoCoMo and 72.6% on LongMemEval-S, where it leads the strongest baseline by 14.3 points, and with AutoDream disabled it gains 31.0 and 22.0 points over HyperMem on single-hop and multi-hop document QA. As procedural memory, it yields the highest mean success among the compared memory methods on ALFWorld and WebShop and reaches 49.2% on MetaClaw-Bench, against 44.0% for MetaClaw's skill library. Six typed memory agents keep complete records as the system of record, and a provenance hypergraph indexes episodic and semantic records with n-ary frames that cite their rows. Retrieval runs under explicit budgets, so the evidence a question inspects does not grow with the history. AutoDream merges duplicate anchors outside the write path without rewriting any record, and it distills task sessions into skills. With AutoDream disabled, MIRIX-2.0 answers faster than HyperMem on all five timed benchmarks. It needs no fine-tuning, runs with closed and open models, and its code is public.",
         "title": "MIRIX-2.0: Multi-Agent Memory System",
-        "upvotes": 55
+        "upvotes": 56
       },
       "publishedAt": "2026-11-08T19:00:00.000Z"
     },
@@ -337,7 +337,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "World-model video encoders such as V-JEPA learn how scenes change (direction, speed, order, state) from video alone. To answer questions, they are joined to a language model trained on captions and question-answer pairs. But each caption or question names only a few attributes of a clip, so the model learns to retrieve those attributes rather than to read the clip, and the dynamics the encoder carries go unused: on the same items, a linear probe reads speed from frozen V-JEPA features at 87% while the VLM answers at chance. We show where dynamics lives in a frozen encoder: in a subspace shared across videos for predictive encoders such as V-JEPA, but not as a shared component of frame-wise, text-aligned encoders such as SigLIP. We then build counterfactual supervision that makes the language model read it: pixel transformations turn public videos into answer-balanced variants whose answers are set by the transformation and differ only in the change. Trained in a single stage on 4.53M public samples with 32 visual tokens per frame, where open video LLMs use several stages, 9M to 172M samples and 64 to 256 tokens per frame on average, the resulting V-JEPA-LM models (1B to 8B, Qwen3 and Llama) lead every size class in average score across eleven video benchmarks; our 4B model scores 72.1, against 61.1 for the best open 4B and 64.8 for the best open 8B model. A controlled encoder x supervision study shows that the encoder decides what can be read and the supervision what is read: at a matched budget, counterfactual supervision adds 4.5 points on average and 38 on the speed questions of natural benchmarks. Code and models: https://github.com/kkt94/Llama-V-JEPA-LM.",
         "title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
-        "upvotes": 26
+        "upvotes": 27
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -374,7 +374,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Looped Transformers reduce parameter count by repeatedly applying shared blocks, but parameter sharing alone does not determine how the results of repeated computation are reused. We take the depth-memory view of residual connections and analyze which representation is stored after each block application and how later reads weight it. A full block output contains both its input and its new update, so weighting that output also reweights the history already carried by the input. Reading individual updates instead, with the shared stack's input kept on a separate path, gives separate controls over input strength, total update weight, and allocation across updates. The Loopback Transformer implements these controls: geometric decay sets the total update weight and supplies a recency prior, and attention learns how to allocate that weight. On ClimbMix, Loopback reaches lower validation loss than standard Transformer baselines with 40-75% of their Transformer parameters (excluding token embeddings and the output head) at reference scales from 191M to 3B, with training tokens and executed depth matched. It also has higher mean accuracy over thirteen downstream tasks at 1.4B and 3B. At 191M, 374M, and 778M, it has the lowest validation loss and the highest thirteen-task mean among the standard Transformer and seven looped residual designs.",
         "title": "Loopback Transformer: Towards a Unified View of Residual Looped Transformers",
-        "upvotes": 26
+        "upvotes": 27
       },
       "publishedAt": "2026-11-03T19:00:00.000Z"
     },
@@ -405,7 +405,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "With the rapid advancement of Large Language Models (LLMs), an increasing number of users are turning to LLM-powered agents for conversational shopping in e-commerce. However, the user needs continue to change as new product categories, procurement scenarios, and feature requests emerge. At the same time, the product's execution harness-including its tools, skills, and operating procedures-continues to evolve to support increasingly sophisticated interactions. These changes create two practical challenges: 1) Demand drift alters the distribution, intent, and complexity of user requests, causing a model trained once to fall behind; 2) Harness evolution requires the model to use newly introduced capabilities correctly without losing behavior that users already rely on. Periodic manual retraining is too delayed and labor-intensive for this setting. To address these challenges, we present G-CAST, a governed continual self-training system that converts daily production evidence under evolving demand and capability contracts into reward-routed, entropy-prioritized training data and governed reward evolution. Governed checkpoint transition under cumulative evaluation controls each model update, enabling the agent to learn newly introduced behaviors without sacrificing previously accepted capabilities. Experiments on a real production e-commerce agent show that G-CAST achieves stronger adaptation to newly introduced demand while better preserving previously accepted behavior compared with a strong autonomous post-training baseline. Ablations further show that both reward-routed, entropy-prioritized data orchestration and governed reward evolution are important to these gains. G-CAST is now deployed in Yuancai(http://cai.1688.com/), a B2B procurement agent on Alibaba's 1688 platform.",
         "title": "G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands",
-        "upvotes": 20
+        "upvotes": 21
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -448,7 +448,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Text-to-SQL systems translate natural language questions into SQL queries over increasingly complex databases. However, widely used benchmarks evaluate questions independently, overlooking settings where earlier queries over the same database can supply joins or calculations for a new question. We introduce HARE (History-AwaRe Text-to-SQL BEnchmark) to measure the accuracy and cost of adapting historical SQL. HARE comprises 1,600 requests derived from a fixed pool of 823 verified queries across four datasets. Annotations record which components each request preserves and which edits it requires, distinguishing whole-query adaptation from partial reuse. Our method, MEM-SQL (Memory-EMpowered Text-to-SQL), stores whole-query templates, reusable SQL blocks, and mappings from domain concepts to schema elements. MEM-SQL uses a layer only if every requirement assigned to it has a match above that layer's threshold. With On-demand Schema Linking (OSL), MEM-SQL consults the schema only when no layer qualifies or the generator judges retrieved evidence insufficient. Across six language models on HARE, mean execution accuracy rises from 37.1% for Direct Generation without history to 50.0% for MEM-SQL, with 76.6% fewer input tokens and 68.8% lower latency on average. Further analysis shows that requests reusing several verified queries remain a bottleneck, with accuracy falling from 56.7% to 29.7%, most sharply when reused components must be placed in a new query structure or combined with a shared join. Applying OSL to three other memory designs consistently reduces generation cost, while its accuracy benefit depends on the memory design. Verified history can thus make generation both more accurate and cheaper, but its value depends on the evidence retained and when the system consults the schema.",
         "title": "MEM-SQL: Memory-Empowered Text-to-SQL",
-        "upvotes": 18
+        "upvotes": 19
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -479,9 +479,49 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Small language models (SLMs) running on mobile devices can keep user data private and work without connectivity. But they perform well only when fine-tuned for the target task and sized for the target device, a process that today requires repeated expert tuning. We present {\\it Mobile AI Factory}, an agentic system that builds a fine-tuned, quantized SLM for a given task and phone. Given a task specification and a target phone, an orchestrator LLM chooses whether to tune hyperparameters, mine real data, or generate synthetic examples, while fixed rules roll back changes that hurt accuracy. The factory searches from small to large models across base models and quantizations, adapts its accuracy goal as it searches, and uses real measurements of the target phone across inference engines and backends. We evaluate Mobile AI Factory on ten tasks and four Android phones. On an unseen testset, its on-device models outperform two five-shot frontier models on five tasks, by up to 0.34, and match them on three more. Its search comes within 0.03 of exhaustively training all 27 model variants on an entity extraction task, while using 19times less GPU time. Phone measurements also matter: the best configuration changes across phones. Without phone measurements, Claude Opus 5.5, given the full hardware and model specifications, misses the app's requirements in 25\\% of easy and moderate cases and in 60\\% of hard ones. Code is available at: https://github.com/evanly-gh/SLM_Factory.",
         "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
-        "upvotes": 16
+        "upvotes": 17
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Endpoint Distribution Matching Distillation trains a shared fake model only on final student outputs and adds precise teacher supervision to better align few-step diffusion students with teacher distributions for 4-step generation.",
+        "authors": [
+          {
+            "name": "Tong Zhao"
+          },
+          {
+            "name": "Xianfang Zeng"
+          },
+          {
+            "name": "Yucheng Han"
+          },
+          {
+            "name": "Ruoyu Wang"
+          },
+          {
+            "name": "Mingkun Lei"
+          },
+          {
+            "name": "Gang Yu"
+          },
+          {
+            "name": "Chi Zhang"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.17194",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student's distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student's final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student's update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student's final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student's final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student's final output distribution matches the teacher's, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.",
+        "title": "eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation",
+        "upvotes": 14
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
     },
     {
       "paper": {
@@ -541,7 +581,7 @@
           }
         ],
         "githubRepo": "https://github.com/ZhouTimeMachine/JVT",
-        "githubStars": 43,
+        "githubStars": 44,
         "id": "2611.18549",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -596,7 +636,7 @@
           }
         ],
         "githubRepo": "https://github.com/mdlm-steprefine/mdlm-steprefine",
-        "githubStars": 26,
+        "githubStars": 35,
         "id": "2611.12901",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -605,49 +645,9 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Recent advancements in multimodal diffusion language models (MDLMs) have exhibited strong global modeling capabilities through iterative refinement. We observe that mask uncertainty follows an overall downward trend during iterative denoising, while a few denoising steps exhibit localized entropy spikes closely associated with hallucinations. We argue that anomalous steps can be identified by measuring the entropy deviation of each denoising step from its neighboring temporal window. We hypothesize that discrete token commitment discards the distributional information at masked positions, limiting the continued interaction between candidate semantics and the context during entropy spikes. With this goal, we present StepRefine, a plug-and-play decoding strategy that leverages semantic context to achieve reliable denoising. The core of our method lies in a step-aware switch between discrete denoising and latent refinement. The model employs probability-weighted embeddings at entropy spike steps to preserve diverse reasoning hypotheses and performs multiple rounds of continuous refinement. Meanwhile, a refinement controller monitors distributional stability to reduce unnecessary loops and switch the model back to standard discrete denoising. Through extensive experiments, StepRefine demonstrates significant hallucination mitigation across different MDLMs on multimodal benchmarks.",
         "title": "Rethinking in Spikes: Mitigating Hallucinations in MDLMs with Step-Aware Decoding",
-        "upvotes": 13
+        "upvotes": 14
       },
       "publishedAt": "2026-10-13T20:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Endpoint Distribution Matching Distillation trains a shared fake model only on final student outputs and adds precise teacher supervision to better align few-step diffusion students with teacher distributions for 4-step generation.",
-        "authors": [
-          {
-            "name": "Tong Zhao"
-          },
-          {
-            "name": "Xianfang Zeng"
-          },
-          {
-            "name": "Yucheng Han"
-          },
-          {
-            "name": "Ruoyu Wang"
-          },
-          {
-            "name": "Mingkun Lei"
-          },
-          {
-            "name": "Gang Yu"
-          },
-          {
-            "name": "Chi Zhang"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.17194",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student's distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student's final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student's update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student's final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student's final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student's final output distribution matches the teacher's, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.",
-        "title": "eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation",
-        "upvotes": 12
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
     },
     {
       "paper": {
@@ -730,7 +730,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Web agents powered by large language and vision-language models are increasingly applied to realistic browser work that spans heterogeneous applications, multimodal content, and stateful workflows. However, existing reproducible web-agent benchmarks cover only a small number of web applications drawn from a few software categories, and restrict modality to text and vision. Live benchmarks broaden site coverage but sacrifice reproducibility, since pages and data drift between runs. Moreover, existing benchmarks do not meaningfully evaluate whether agents can understand and use audio and video content embedded within web tasks. To address these gaps, we introduce WebArena-Pro, a benchmark comprising 300 tasks across 20 self-hosted web applications in six domain categories, spanning distinct interface conventions, workflows, and data models. Across the evaluated agents, the best performance is achieved by both Codex with GPT 6.1 Sol and Claude Code with Claude Opus 5.5 at 62.3%, followed by OpenCode with Kimi 3.1 Pro at 60.7%. The strongest GenericAgent configurations, Gemini 3.1 Pro omni and Gemma4 31B, both achieve 30.3%. Among reproducible, human-curated web agent benchmarks, WebArena-Pro provides the broadest application coverage and the most comprehensive multimodal support to date. The benchmark treats audio and video as core observations alongside text and vision, with dedicated actions for extracting information from each. WebArena-Pro runs each task in isolation and supports reproducible, parallel evaluation. Tasks are authored through a dedicated annotator interface, filtered by LLM-assisted triage, and finally validated by humans before release. Project page: https://webarena-pro.github.io",
         "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
-        "upvotes": 12
+        "upvotes": 13
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -767,7 +767,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Research ideation is iterative: researchers refine their ideas step by step based on feedback. Yet existing evaluations obscure this search process, making it difficult to understand how LLMs explore the space of research ideas and what limits their progress. We introduce Re-Search, which adapts the format of Twenty Questions to research ideation: given only the research problem of a published paper, a model must rediscover the paper's core idea by asking yes-or-no questions. Built from 200 ICML 2026 papers, Re-Search tracks how a model's idea evolves as it asks questions and receives binary oracle feedback, isolating ideation from execution. Across six recent LLMs, nearly all progress happens within the first 30 of 100 questions, which largely decide how the game ends; after that, most models plateau. Through controlled interventions on the candidate questions and the hypothesis space, we find that the bottleneck is generation, not judgment: models recognize a good idea or a good question when one is offered, but often cannot produce it on their own. We further analyze the ideation traces and find that models fail by either over-exploiting one direction or over-exploring too many. These findings point to concrete design principles for autoresearch systems: since models can judge candidates they cannot produce, enriching the search with externally sourced ideas and questions may be more effective than improving any single model's generation ability.",
         "title": "Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game",
-        "upvotes": 10
+        "upvotes": 11
       },
       "publishedAt": "2026-11-09T19:00:00.000Z"
     },
@@ -792,7 +792,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Standard coding-agent benchmarks primarily evaluate binary task success, treating execution as a black box and obscuring the behaviors that produce those outcomes. We analyze a large corpus of 143,209 execution trajectories from 125 agent configurations spanning 117 unique models. To enable comparisons across heterogeneous agent interfaces, we develop a rule-based parser that maps raw execution traces to high-level actions such as repository search, file editing, and test execution, and audit its predictions against a six-model consensus reference on 500 events. We find that agents with similar solve rates can nevertheless differ substantially in how they explore, modify and verify code. Moreover, without using task outcomes, token counts, or tool names as features, aggregate behavioral profiles retrieve the corresponding agent stack across disjoint repository sets and programming languages, although task composition is not fully controlled in the cross-repository setting. Through analyses of frontier models and agent scaffolds, we further show that scaffold choice and reasoning effort systematically shift agents' search, editing, and testing behavior. We release the deterministic parser together with the full annotation and analysis pipeline alongside an annotated trajectory subset.",
         "title": "Interpreting Coding Agents Through Their Behavioral Trajectories",
-        "upvotes": 10
+        "upvotes": 11
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
     },
@@ -870,7 +870,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Autonomous agents modify prompts, memories, tools, workflows, and policies using interaction histories. Yet a plausible modification is not necessarily suitable for persistent adoption: candidate selection is adaptive, evaluators may be imperfect, and local gains can hide degradation against an earlier baseline. We introduce Evidence-Governed Evolution (EGE), a framework for governing adoption of self-generated agent modifications. EGE separates candidate generation from confirmatory adoption, evaluates frozen candidates on fresh paired audits, requires meaningful improvement on a prespecified primary objective, protects declared capabilities through reference-relative non-inferiority tests, and applies governance constraints before bounded canary deployment. We establish an evaluator-calibrated simultaneous lower-bound construction for a countable sequence of adaptively generated candidates. It combines candidate-wise Hoeffding bounds with independent calibration samples comparing the operational evaluator with a prespecified reference procedure. We also formalise reference replacement through bridge tests, derive a cumulative degradation bound along a versioned reference lineage, and provide an audit-planning condition relating effect-size margin, sample sizes, and acceptance probability. A Monte Carlo stress test illustrates calibration under candidate-dependent evaluator optimism; it is a stylised statistical experiment, not an evaluation of a deployed agent. The guarantees are conditional on bounded paired scores, fresh sampling, a valid reference-evaluation construct, and declared evaluation distributions; they do not establish universal agent safety or robustness to arbitrary distribution shift.",
         "title": "Evidence-Governed Adoption of Self-Generated Updates in Autonomous AI Agents",
-        "upvotes": 8
+        "upvotes": 9
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
     },
@@ -901,7 +901,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Previous work has shown that alignment training on individual LLM agents can fail to transfer to multi-agent settings. We investigate the underlying mechanisms for this failure, and explore interventions to preserve alignment transfer to multi-agent LLM teams. We focus on two software-engineering tasks (sepsis triage, a news recommender) and ten consulting-proposal generation tasks. We present four findings: (1) The single-vs-team safety gap does not show a clear trend with more capable models. We find that Anthropic's Mythos Preview shows the largest gap on one of our tasks but the smallest on another; (2) Many natural interventions, such as having agents critique each other's work or coordinate in a group chat, do not reliably bring agent teams back to single-agent alignment behavior; (3) diffusion of responsibility substantially accounts for the safety gap: agents in teams are less likely to proactively check for system-level safety failures and more likely to ignore, rationalize, or deflect responsibility for issues when they arise; (4) having a designated safety lead agent ensure system-level safety, and having a coordinator agent publish a safety specifications document are effective at restoring single-agent alignment. We also release magelab, a multi-agent LLM orchestration and experimentation framework. Our findings can help practitioners design agent teams that successfully preserve the behaviors expected of aligned individual agents.",
         "title": "Aligning AI Teams",
-        "upvotes": 8
+        "upvotes": 9
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -920,7 +920,7 @@
           }
         ],
         "githubRepo": "https://github.com/cincynlp/review_appendix",
-        "githubStars": 2,
+        "githubStars": 3,
         "id": "2611.17811",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -929,6 +929,46 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit. Prior work studies how LLM reviews align with human ones, yet we know little about which parts of a paper these models actually criticize. In this work, we investigate 2,000 papers from ACL, EMNLP, COLM, and ICLR, and show that the latest GPT and Claude models draw about 50% or more of their review weaknesses from the appendix. This behavior holds across the API, coding-agent, and web access methods for using LLMs to review a paper. In contrast, we find that humans draw only 8.4% of their weaknesses from the appendix, and these weaknesses primarily revolve around a paper's presentation and content related to its core idea. Meanwhile, LLMs draw weaknesses from deep in the appendix that concern fine-grained technical details not central to the paper's contributions. We anticipate that our analysis will contribute to the scholarly discourse on AI reviews. Our code is publicly available at: https://github.com/cincynlp/review_appendix.",
         "title": "AI Reviews Are Biased Towards the Appendix",
+        "upvotes": 9
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Distilled few-step diffusion models exhibit diversity collapse because activation variance is concentrated into fewer directions in an intermediate block at the initial denoising step, and ReDiverse restores sample diversity by reintroducing teacher variance directions through adapter fine-tuning or training-free activation steering while preserving generation quality.",
+        "authors": [
+          {
+            "name": "Furkan Horoz"
+          },
+          {
+            "name": "Ozgur Kara"
+          },
+          {
+            "name": "Kaan Oktay"
+          },
+          {
+            "name": "Adil Kaan Akan"
+          },
+          {
+            "name": "Atakan Kara"
+          },
+          {
+            "name": "Anand Bhattad"
+          },
+          {
+            "name": "James Matthew Rehg"
+          }
+        ],
+        "githubRepo": "https://github.com/H-furkan/rediverse",
+        "githubStars": 25,
+        "id": "2611.18550",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://rediverse-distillation.github.io/rediverse-distillation/",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher's, reviving the teacher's feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.",
+        "title": "Restoring Diversity in Distilled Image and Video Generators by Probing Activations",
         "upvotes": 8
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
@@ -963,7 +1003,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "A small fine-tuned parser that emits a well-formed but wrong tree fails silently: nothing downstream can tell. We ask whether the output format, a free design choice, controls how often this happens. On the PIZZA ordering benchmark we fine-tune two sub-billion models (Qwen3.5-0.8B and LFM2.5-350M) with LoRA on six lossless encodings of the same target tree, from 44.3 down to 10.9 tokens per order, including two matched-length pairs that vary surface form at fixed length. Across 300 runs (5 training pool sizes, 5 seeds) with a hierarchical bootstrap and Holm correction fixed before the results were read, shortening alone never helps, but writing the target in ordinary words does. The word encoding is the most accurate format on both models (87.5% vs. 85.8% exact match for the native s-expression on Qwen) while emitting 4.1x fewer tokens, and it cuts the silent error rate by 2.3x on Qwen and 1.8x on LFM2, separating at every pool size. Error analysis locates much of the gain in negation. All runs also learn to refuse off-menu input (held out: 95.9-99.0% handled) and to apply in-utterance self-corrections. Strict refusal has a measured price: 2.1-10.1% of real, mostly polite, orders are refused.",
         "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
-        "upvotes": 7
+        "upvotes": 8
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
     },
@@ -997,49 +1037,9 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Agentic workflows enable AI agents to perform recurring repository tasks on schedules or in response to repository events. Existing studies examine workflow definitions and outputs, but provide limited evidence of what happens during execution. We present GH-AWTrace, a dataset linking 25,014 verified GitHub Agentic Workflows across 5,051 repositories to 4,112,526 run records and 562,877 nonempty execution log archives. The dataset preserves execution evidence subject to GitHub's log-retention limits and links it to repository metadata and generated workflow configurations. Illustrative cases show how the logs expose tool denials, provider failures, changes in an agent's approach, and delegation among agents. These observations enable research on execution failures, tool use, and the relationship between reported run outcomes and visible task progress. Coverage varies across workflows, and the logs provide partial observations rather than complete agent trajectories. Video: https://youtu.be/KIlfmZhHxtA",
         "title": "GH-AWTrace: A Large-Scale Dataset of GitHub Agentic Workflow Execution Logs",
-        "upvotes": 7
+        "upvotes": 8
       },
       "publishedAt": "2026-11-04T13:20:41.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Distilled few-step diffusion models exhibit diversity collapse because activation variance is concentrated into fewer directions in an intermediate block at the initial denoising step, and ReDiverse restores sample diversity by reintroducing teacher variance directions through adapter fine-tuning or training-free activation steering while preserving generation quality.",
-        "authors": [
-          {
-            "name": "Furkan Horoz"
-          },
-          {
-            "name": "Ozgur Kara"
-          },
-          {
-            "name": "Kaan Oktay"
-          },
-          {
-            "name": "Adil Kaan Akan"
-          },
-          {
-            "name": "Atakan Kara"
-          },
-          {
-            "name": "Anand Bhattad"
-          },
-          {
-            "name": "James Matthew Rehg"
-          }
-        ],
-        "githubRepo": "https://github.com/H-furkan/rediverse",
-        "githubStars": 23,
-        "id": "2611.18550",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://rediverse-distillation.github.io/rediverse-distillation/",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher's, reviving the teacher's feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.",
-        "title": "Restoring Diversity in Distilled Image and Video Generators by Probing Activations",
-        "upvotes": 6
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1105,9 +1105,86 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Generative model-based approaches to linear inverse problems typically use the acquired noisy measurement to condition or guide sampling in the image domain. In this work, we introduce Dual Flow, a novel joint-flow model for solving linear inverse problems by jointly estimating the clean image and corresponding noise-free measurement from the observation. Specifically, Dual Flow formulates image reconstruction and measurement denoising as a coupled estimation problem, using coupled flows in the image and measurement domains. The acquired noisy measurement is used only to initialize the measurement state; thereafter, image and measurement states are jointly updated based on their current values. By construction, the final image and measurement estimates are guaranteed to satisfy the underlying forward model. We derive the sampling updates for the joint-flow which involves the conditional mean of the clean image given the joint state. We further derive a closed-form expression for a sufficient statistic of the joint state and show that the required conditional mean can be obtained by solving an image-domain Gaussian denoising problem involving operator-dependent, correlated noise. We train a velocity-prediction network using this formulation to estimate the conditional mean from the derived sufficient statistic. Extensive experiments across various linear inverse problems and image datasets demonstrate state-of-the-art performance in both distortion metrics and perceptual quality. Dual Flow requires no hyperparameter tuning beyond the number of inference steps and achieves shorter reconstruction times than competing methods. Additional analyses assess robustness to model mismatch, as well as the ability to generate diverse plausible reconstructions and characterize reconstruction uncertainty.",
         "title": "Dual Flow: Joint Image-Measurement Interpolation for Inverse Problems",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Wei Feng"
+          },
+          {
+            "name": "Meiling Chen"
+          },
+          {
+            "name": "Boxiao Chen"
+          },
+          {
+            "name": "Lu Liu"
+          },
+          {
+            "name": "Bin Zi"
+          },
+          {
+            "name": "Libin Ye"
+          },
+          {
+            "name": "Xingyu Lu"
+          },
+          {
+            "name": "Lei Xu"
+          },
+          {
+            "name": "Jun Zhou"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.16661",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-12T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.",
+        "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
         "upvotes": 4
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Ibrahim Memon"
+          },
+          {
+            "name": "Armin Karamzade"
+          },
+          {
+            "name": "M. Hanif Jhaveri"
+          },
+          {
+            "name": "Roy Fox"
+          }
+        ],
+        "githubRepo": "https://github.com/IAMIbrahimmemon/luthorsql",
+        "githubStars": 1,
+        "id": "2611.17780",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs. For example, a Claude Opus 5.5 agent serving 10,000 queries a day costs over $70,000 a year at list price. To what extent can local hardware already owned by an organization offload this burden without compromising the agent's accuracy? We present LuthorSQL, a non-autoregressive 7B text-to-SQL model that serves as a rapid System 1 gate for a slower LLM agent (System 2), escalating queries only when uncertain. LuthorSQL makes a single forward pass to predict slot scores over a bounded grammar for query plans, compiles and runs up to 32 candidate plans, and chooses an answer using a trained validator. On its own, LuthorSQL reaches 68.03% execution accuracy on BIRD's hidden test set at 0.84 s per question on a single GPU, maintains its accuracy in 9 GB with 8-bit quantized weights, and transfers zero-shot to Snowflake, BigQuery, MySQL, PostgreSQL, and DuckDB within 3.1 points of its native SQLite accuracy. Combined with Claude Opus 5.5 in a pre-registered confidence cascade over 227 questions on databases published after Opus's training cutoff, LuthorSQL answers nearly half of all questions locally and cuts API cost by 33.3% at the same accuracy. Finally, contamination probing shows that Opus reproduces 48-92% of public benchmark gold queries verbatim without seeing the schema; however, its tool-assisted accuracy holds on renamed schemas and reaches 95.6-97.4% on post-cutoff databases. Code and data: https://github.com/IAMIbrahimmemon/luthorsql",
+        "title": "LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent",
+        "upvotes": 4
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1206,52 +1283,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Wei Feng"
-          },
-          {
-            "name": "Meiling Chen"
-          },
-          {
-            "name": "Boxiao Chen"
-          },
-          {
-            "name": "Lu Liu"
-          },
-          {
-            "name": "Bin Zi"
-          },
-          {
-            "name": "Libin Ye"
-          },
-          {
-            "name": "Xingyu Lu"
-          },
-          {
-            "name": "Lei Xu"
-          },
-          {
-            "name": "Jun Zhou"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.16661",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Efficient batch execution of agent tasks is critical to LLM training and development workflows, including benchmark evaluation, synthetic-data generation, and RL rollouts. Since these tasks alternate between LLM inference and environment interaction, we present coordinated optimizations to reduce batch makespan, the time required to complete all tasks in a batch. For hybrid LLMs, a workload-based resource model guides GPU-memory allocation between key-value (KV) cache and recurrent state and provides a reference sample concurrency to exploit parallelism while limiting recomputation. Trajectory-aware routing and scheduling promote cache reuse while balancing worker load. Under constrained environment capacity, we decouple sample admission from environment execution and introduce Chain-Advancing Action Scheduling (CAAS), which prioritizes long chains using observed progress to shorten the batch tail. Controlled replay combines actual inference with recorded environment responses and durations for ablations of individual optimizations. Live evaluations with Ling-3.0-Flash and Ling-3.1-Flash on the BFCL, SWE-bench Multilingual, WideSearch, and MCP-Atlas benchmarks demonstrate makespan reductions of 10.4% to 65.0%, while evaluation scores remain aligned. Furthermore, these methods have been successfully applied to training and evaluation workflows for the Ling-3.x model series, accelerating the model-development cycle.",
-        "title": "Reducing Batch Makespan for LLM Agent Workloads through Inference-Environment Coordination",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "A unified generative backbone jointly models image appearance and depth, surpassing specialized depth models at scale while preserving general image generation.",
         "authors": [
           {
@@ -1299,37 +1330,6 @@
         "upvotes": 3
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Ibrahim Memon"
-          },
-          {
-            "name": "Armin Karamzade"
-          },
-          {
-            "name": "M. Hanif Jhaveri"
-          },
-          {
-            "name": "Roy Fox"
-          }
-        ],
-        "githubRepo": "https://github.com/IAMIbrahimmemon/luthorsql",
-        "githubStars": 1,
-        "id": "2611.17780",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs. For example, a Claude Opus 5.5 agent serving 10,000 queries a day costs over $70,000 a year at list price. To what extent can local hardware already owned by an organization offload this burden without compromising the agent's accuracy? We present LuthorSQL, a non-autoregressive 7B text-to-SQL model that serves as a rapid System 1 gate for a slower LLM agent (System 2), escalating queries only when uncertain. LuthorSQL makes a single forward pass to predict slot scores over a bounded grammar for query plans, compiles and runs up to 32 candidate plans, and chooses an answer using a trained validator. On its own, LuthorSQL reaches 68.03% execution accuracy on BIRD's hidden test set at 0.84 s per question on a single GPU, maintains its accuracy in 9 GB with 8-bit quantized weights, and transfers zero-shot to Snowflake, BigQuery, MySQL, PostgreSQL, and DuckDB within 3.1 points of its native SQLite accuracy. Combined with Claude Opus 5.5 in a pre-registered confidence cascade over 227 questions on databases published after Opus's training cutoff, LuthorSQL answers nearly half of all questions locally and cuts API cost by 33.3% at the same accuracy. Finally, contamination probing shows that Opus reproduces 48-92% of public benchmark gold queries verbatim without seeing the schema; however, its tool-assisted accuracy holds on renamed schemas and reaches 95.6-97.4% on post-cutoff databases. Code and data: https://github.com/IAMIbrahimmemon/luthorsql",
-        "title": "LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1558,6 +1558,6 @@
       "publishedAt": "2026-11-11T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-20T09:44:07.278728+00:00",
+  "fetched_at": "2026-11-21T12:24:56.927155+00:00",
   "limit": 100
 }

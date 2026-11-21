@@ -657,7 +657,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments. Sage Sci-Perception uses dedicated encoders for molecular graphs and biological sequences and represents spectra as ordered patches of measurements. Modality-specific projectors map these representations into the input space of a shared backbone, which processes them alongside text and images. To develop the model's agent capabilities, we construct verifiable environments for tool use, search, and coding, as well as specialized workflows involving machine learning experiments and scientific software. Task completion is checked against execution results, changes in environment state, or submitted artifacts. We evaluate Sage S1.5 Flash on 33 benchmarks across seven domains. In the primary comparison against five baselines, it ranks first on OfficeQA Pro (72.2), MLE-bench Lite (90.3 HumanRank), Harvey LAB, and SpreadsheetBench~2, and second on OSWorld-Verified (85.2), WebArena-Verified (67.6), and DeepResearch Bench~II (54.2). These results show particular strengths in using documentary evidence, producing verifiable workbooks, and carrying out machine learning tasks, alongside competitive performance in desktop and browser workflows that require the model to act on visual feedback.",
         "title": "Sage S2.1 Flash Technical Report",
-        "upvotes": 97
+        "upvotes": 98
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
     },
@@ -961,7 +961,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "We present K2-Horizon, a fleet of six fully open language models, from a 0.9B dense model to a 375B-A23B MoE, built for general-purpose reasoning and agentic work across math and science, software engineering, deep research, office automation, and beyond. The models lead or are competitive with strong open models of their size on agentic and coding benchmarks. On the modeling side, to strengthen reasoning, we introduce Mixture-of-Value Attention (MoVA), applying MoE to attention value projections, and softplus attention gating, a more flexible, theoretically motivated gate. Our 36B-A4B model uses both and nearly matches a 32B dense model trained on the same data, with one-seventh the active parameters. We also introduce Uno, lossless diffusion adapters that speed up decoding by up to 2.2x without a separate draft model. Our release follows the LLM360 definition of open source for transparency and reproducibility: the full development history, including intermediate checkpoints from every training stage, pre-training data, training logs, and all training, evaluation, and infrastructure code, notably our production-scale xLLM framework for dense and MoE training and the RL360 reinforcement-learning stack. Beyond the data itself, we release and document in detail every pipeline that built it, the part of model development that open releases most rarely disclose. These pipelines produced roughly 10T synthetic pre-training tokens, showing that synthetic data can be a major ingredient of pre-training at scale. Four of the models share one 22T-token pre-training corpus and recipe, revealing consistent scaling behavior and enabling controlled studies of scale and sparsity. All artifacts are available at https://ifm.ai/k2/",
         "title": "K2-Horizon: A Frontier Fleet of Open Source Language Models",
-        "upvotes": 88
+        "upvotes": 89
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
     },
@@ -995,7 +995,7 @@
           }
         ],
         "githubRepo": "https://github.com/allocflow/AllocFlow",
-        "githubStars": 32,
+        "githubStars": 36,
         "id": "2611.19937",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1004,7 +1004,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Real-world portfolio management requires converting noisy market observations into coordinated, simultaneous allocations across multiple assets under shared capital constraints. Advances in forecasting models and alpha discovery help identify opportunities. However, traditional pipelines often decouple signal forecasting from portfolio construction, potentially misaligning learning with allocation and execution objectives. We present AllocFlow, an end-to-end flow-matching framework that directly generates joint portfolio allocations from raw multi-asset market histories. To capture dependencies among portfolio positions, AllocFlow employs a cross-asset flow Transformer conditioned on temporal market representations to generate continuous, signed position weights across all instruments jointly. To address the sample inefficiency and instability of learning continuous allocation policies from scratch, we establish a two-stage training scheme: strategy-supervised imitation shapes a structured distribution of candidate portfolios, followed by group-relative reinforcement learning (RL) that refines joint decisions using portfolio-level financial rewards and a frozen policy reference. On hourly cryptocurrency perpetual futures, RL refinement raises the annualized net return of the imitation policy from 27.79% to 51.38% and its Calmar ratio from 0.955 to 4.043, surpassing the teacher strategy on every metric, and AllocFlow reaches a Calmar ratio of 4.90 on six further months of unseen 2026 data without retraining.",
         "title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
-        "upvotes": 72
+        "upvotes": 74
       },
       "publishedAt": "2026-11-14T19:00:00.000Z"
     },
@@ -1101,7 +1101,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "A coding agent working within a software organization must establish what to build, collaborate with colleagues, and verify what it delivers. We introduce SWE-CoWork, a benchmark comprising 101 development assignments across 101 real repositories, 11 programming languages, and 12 application domains. Each assignment places an agent in a simulated engineering organization with 26 colleagues who have distinct responsibilities, bounded knowledge, and controlled collaboration behavior. Starting from a brief handoff, agents must recover requirements distributed across colleagues and workplace records, reconcile conflicting evidence, and implement changes evaluated by private executable tests. We evaluate eleven models and find a substantial gap between partial implementation and complete task delivery. The two leading models satisfy approximately 63% of fail-to-pass (F2P) tests but complete fewer than 8% of assignments. Providing complete requirements upfront improves F2P by approximately 16 percentage points for Seed Evolving and GPT-6 Astra, yet leaves complete task success unchanged. Requirement-level trajectory analysis reveals failures throughout the delivery process: Claude-Opus-5.5 directs a mean of 93% of first questions about queried cards to their accountable owners across runs but obtains only 64% of colleague-held requirements. Deferred questions go unfollowed, implementations remain incomplete even after requirements are acquired, and 31% of requirements reported as completed fail their tests. These findings highlight sustained requirement tracking, from clarification through implementation, verification, and handoff, as a key challenge for reliable autonomous software engineering.",
         "title": "SWE-CoWork: Benchmarking Coding Agents as Digital Employees in Organizations",
-        "upvotes": 51
+        "upvotes": 52
       },
       "publishedAt": "2026-11-14T19:00:00.000Z"
     },
@@ -1129,7 +1129,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Tool-using agents act on email, files, and payments, so an instruction hidden in a web page or a shared document can make an agent send data or money to an attacker. Many runtime defenses put a language model on the decision that lets an action through, so the decision depends on a model that may read the attacker's text and adds model calls to every step. Provenance defenses keep the model off the final check but need a model to plan or route each task first. Where an action goes can instead be read from the tools' typed returns: an email's sender or a payment's account arrives in a typed field, while injected instructions arrive as free text. SPILLWAY turns this observation into a deterministic floor with no per-task plan. The check admits a call when each target value that appears in tool output but not in the user's task was returned by a read-only tool in a typed field or is covered by a fixed delegation rule. A deterministic sanitizer removes instruction-like regions its fixed rules match before the model reads them and retains the removed spans as evidence, and a local judge may restore a refused call, never one whose target lies in the removed text. Across three backbones, and seven task suites on one of them, no standard templated injection redirects an action to an attacker's target under SPILLWAY, at the highest observed mean utility and composite scores (NRP, ERS) of the defenses we run under that attack. A forged chat template also produces a raw zero, and mean in-scope attack success under a released reinforcement-learning attacker is .007. SPILLWAY reaches this floor with no defense-triggered backbone re-run and almost no added model call. As personal AI agents act on users' email, files, and payments, SPILLWAY gives them an auditable refusal floor on where their actions go that keeps them useful and holds across backbones.",
         "title": "SPILLWAY: Separating Target Admission from Sanitization to Defend Tool-Using Agents against Prompt Injection",
-        "upvotes": 44
+        "upvotes": 46
       },
       "publishedAt": "2026-11-03T19:00:00.000Z"
     },
@@ -1184,7 +1184,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Frontier Vision-Language Models (VLMs) such as GPT-6 Astra have demonstrated remarkable capabilities in robot control, suggesting that broad pretraining provides knowledge valuable for physical action. Yet most Vision-Language-Action (VLA) policies still rely on much smaller VLM backbones, leaving this potential largely untapped. We ask whether frontier-scale representations can provide a stronger foundation for robot learning. We introduce ScaleVLA, which connects a 552B DeepSeek-V4.1-Flash backbone to a trainable action DiT, and systematically compare VLMs from 2B to 552B under a shared training setup. We evaluate three fundamental capabilities of robot foundation models. In sample efficiency, just 10 demonstrations outperform a 2B backbone trained with 50 (87.8% vs. 85.6%). In generalization, LIBERO-PRO success reaches 45.1%, compared with at most 31.3% for smaller backbones. In precise manipulation, real-world charger insertion improves from 4/10 to 9/10 successes, with gains concentrated in contact-sensitive alignment. Despite its scale, ScaleVLA achieves 216 ms median latency per action chunk. Our findings suggest that frontier VLMs can serve not only as reasoning agents, but also as powerful representational foundations for efficient and generalizable robot policies.",
         "title": "ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters",
-        "upvotes": 39
+        "upvotes": 40
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
     },
@@ -1246,7 +1246,7 @@
           }
         ],
         "githubRepo": "https://github.com/LynnReal-AI/LynnReal",
-        "githubStars": 67,
+        "githubStars": 78,
         "id": "2611.21479",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1304,7 +1304,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Application optimization requires coding agents to discover useful changes and coordinate them across a complete program while preserving the required computation. We introduce Accelerate Bench, a benchmark of 32 CPU optimization tasks adapted from scientific applications and supercomputing competitions. Each task provides a working program and specifies the workload, correctness requirements, timing boundaries, and permitted edits, leaving agents to choose where and how to optimize. Public testing supports iterative development, and a separate verifier scores the final submission. On benchmark version 1.1, we evaluate 16 coding agents, each pairing a model with a harness. Their Score@1 ranges from 25.5% to 67.4%. Most of their programs are correct, and the size of the speedup separates them: the two leading agents are at least 2x faster on 22 or more of the 32 tasks, while the other fourteen reach 2x on 8 to 17 and leave 125 of their 412 correct outcomes below 1.25x. Controlled replays show why coordination across an application matters: identical source code runs between 0.29x and 2.12x depending only on build and runtime settings, and one code change is worth 1.01x or 6.4x depending on another. Accelerate Bench pairs executable workloads with agents' programs and trajectories to evaluate both their gains and the process behind them.",
         "title": "Accelerate Bench: Evaluating Agents for Application-Level Program Optimization",
-        "upvotes": 19
+        "upvotes": 20
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
     },
@@ -1341,7 +1341,7 @@
           }
         ],
         "githubRepo": "https://github.com/VoxDance-Lab/VoxMel",
-        "githubStars": 166,
+        "githubStars": 191,
         "id": "2611.20254",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1415,7 +1415,7 @@
           }
         ],
         "githubRepo": "https://github.com/yliust/Calpha",
-        "githubStars": 22,
+        "githubStars": 23,
         "id": "2611.20986",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1470,7 +1470,7 @@
           }
         ],
         "githubRepo": "https://github.com/Tencent-Hunyuan/MovieRoll",
-        "githubStars": 128,
+        "githubStars": 176,
         "id": "2611.21339",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1504,7 +1504,7 @@
           }
         ],
         "githubRepo": "https://github.com/wwillchen/ebr",
-        "githubStars": 87,
+        "githubStars": 91,
         "id": "2611.08977",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1513,7 +1513,7 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Looping is a powerful inductive bias for reasoning. By repeatedly iterating a recurrent block, looped models can scale their effective depth and enable multi-step reasoning in latent space. However, existing looped models are not inherently guided by an explicit measure of progress, making it difficult to determine when to stop looping and how to improve upon the current state. To enable this, we introduce Energy-Based Reasoners (EBRs), which learn an energy function over latent reasoning states and formulate looped updates as gradient descent on this energy. The energy scores latent states, while its gradient guides refinement and provides a signal for stopping. To train EBRs effectively, we further introduce exploration-based training to discover additional modes and to better shape the energy landscape over a broader set of states. Across four algorithmic reasoning benchmarks, EBRs match or outperform prior recurrent reasoning models, achieving 99.9% accuracy on Sudoku-Extreme while using 345times less inference compute than the next-best model and maintaining comparable training compute. On all multi-solution benchmarks, EBRs achieve state-of-the-art coverage of distinct valid solutions while maintaining near-100% single-sample accuracy. These results suggest that energy-based models are a promising approach for strong reasoning performance.",
         "title": "Energy-Based Reasoners: Your Recurrent Reasoner Should Be an Energy-Based Model",
-        "upvotes": 9
+        "upvotes": 10
       },
       "publishedAt": "2026-11-05T19:00:00.000Z"
     },
@@ -1541,9 +1541,37 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Coding agents can solve a task well before they stop working on it. We characterize termination lag--the number of steps between an agent's first correct patch and the end of its run--across five models, two agent frameworks, and three SWE-bench datasets by recording and testing every distinct repository patch generated during execution. Our analysis reveals that 38--82% of successful runs achieve a correct solution on their initial source-code edit. However, agents continue to expend substantial effort after correct patches, with post-solution steps accounting for a median of 35--37% for Qwen3-Coder and 54--60% for Laguna-XS.2 in successful runs on SWE-bench Verified and Multilingual. Agents spend most of these additional steps verifying their work and exploring the repository. In a small fraction of cases (1--8%), this continued activity leads agents to undo their earlier correct patch, leaving the final solution incorrect.",
         "title": "Termination Lag: Coding Agents Solve Early but Stop Late",
-        "upvotes": 7
+        "upvotes": 8
       },
       "publishedAt": "2026-11-10T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Abstention in large language models arises from query ambiguity, model knowledge limits, and value misalignment, and steering internal activations in middle layers can increase or decrease abstention across these causes.",
+        "authors": [
+          {
+            "name": "Koki Itai"
+          },
+          {
+            "name": "Jun Hirako"
+          },
+          {
+            "name": "Hiroaki Yamagiwa"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.20441",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-16T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Abstention, the withholding of a response by a large language model (LLM) under uncertainty or safety risks, is essential for trustworthy models. The causes of abstention fall into three perspectives: ambiguity in the Query (Q), limits of Model Knowledge (MK), and misalignment with Human Values (HV). However, prior analyses of internal representations have focused on HV, using a refusal direction computed from harmful and harmless queries. No study has analyzed the three perspectives jointly. We therefore extend the refusal direction framework to all three perspectives. Specifically, for each perspective, we construct counterfactual pairs that share a template and differ only in the abstention-inducing factor, and compute an abstention direction by normalizing the difference in mean activations between the two polarities. Activation steering experiments show that intervening in middle layers increases or decreases abstention across all three perspectives. Moreover, steering yields cross-perspective effects, indicating that the abstention directions share a common directional component.",
+        "title": "Abstention Direction in Large Language Models: Mechanistic Interpretability of Abstention Across Query Ambiguity, Knowledge Limits, and Safety Alignment",
+        "upvotes": 7
+      },
+      "publishedAt": "2026-11-15T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1573,28 +1601,6 @@
         "summary": "Robots in homes, warehouses and farms must pick up objects they have never seen, usually without a 3D model or a category label. A grasping policy that works directly on the point cloud from a depth sensor needs only the geometry the robot observes, so it applies to any new object. Offline grasp generators such as Contact-GraspNet work this way, but they rank grasps by learned plausibility rather than by whether the grasp actually lifts the object. Reinforcement learning (RL) can optimize for that directly and make a point-cloud grasping policy much better on average, yet it leaves specific grasps persistently unsolved. We present a human-in-the-loop failure loop that targets those grasps: situations an RL policy keeps failing are mined automatically, sent to a virtual-reality application where a person picks the object up with their own hands, and returned to training as two grasp points. The person contributes only where to grasp; the robot chooses its own approach. In simulation, RL raises success on unseen objects from 55% with Contact-GraspNet to 83%. Adding 58 human demonstrations nearly doubles success on the hard cases RL kept failing, from 24% to 45%, and recovers performance that RL alone loses on similar cases that were never demonstrated, without reducing success on unseen objects.",
         "title": "Correcting Persistent Failures in Point-Cloud Grasping Policies using Human Demonstrations in Virtual Reality",
         "upvotes": 7
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Marimba uses frozen Qwen3-ASR features and lightweight readouts to make lexical, turn-end, language, speaker-change, and personal-information decisions from speech, achieving strong detection and calibration on conversational and read-speech benchmarks.",
-        "authors": [
-          {
-            "name": "Solano Amadori"
-          }
-        ],
-        "githubRepo": "https://github.com/Charcot-AI/marimba-api",
-        "githubStars": 12,
-        "id": "2611.18330",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/spaces/charcot-ai/marimba",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features. Lexical questions use zero-shot scoring of ASR transcripts; non-lexical questions use a question-conditioned head and a separate layer-18 turn-end readout. Language identification uses the ASR model's own language scores. On private conversational test sets, decoder AUROC is 0.80-0.92; on public read speech it is 0.92-0.97. Speech Commands four-way accuracy is 0.93; binary lexical ECE is at most 0.08. Personal-information detection, which passes the greedy transcript to a private, curated PII pipeline, reaches item-level F1 0.904 on synthetic Brazilian Portuguese speech (1.000 on reference transcripts). Layer-12 speaker readouts detect speaker change with AUROC 0.966-0.980 on AMI and VoxConverse, above an ECAPA baseline, and count speakers (0, 1, 2, or 3+) more accurately than pyannote 3.1. The turn-end readout reaches AUROC 0.930 versus Smart Turn v3.2 at 0.982 on Smart Turn's own test set. On a subset of ICSI meetings labeled by next speaker, AUROC is 0.716 versus 0.712; the paired confidence interval includes zero.",
-        "title": "Marimba: A System One Model for Speech",
-        "upvotes": 6
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -1631,6 +1637,109 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "In many long-horizon settings, an agent's own choices create future constraints: committing finite capacity establishes future obligations and forecloses later opportunities. Sustaining performance therefore requires both keeping evolving plans feasible and comparing the value of resource allocations with the alternatives they displace. Recent benchmarks increasingly evaluate LLM agents in continuing operations, but give less attention to how agents keep their own commitments feasible while reassessing resource allocations as opportunities change. We introduce OutfitterBench, where agents manage an outdoor-equipment rental business for 200 days, purchasing from a 46-product catalog and handling roughly 1,100 reservation requests. Under a fixed capital ceiling, reservations and uncertain walk-in demand compete for reusable equipment whose availability changes over time. Experiments with seven frontier LLMs show that several agents underperform a simple rule-based baseline, while only the leading agent consistently surpasses it. Trajectory analysis shows that some agents apply known constraints inconsistently and make new decisions that conflict with existing commitments. Agents with more reliable fulfillment can still secure low returns from comparable commitments or delay resource reallocation. The leading agent better connects preparation with economic choices but also misses opportunities for more profitable asset use. These findings highlight limitations in sustaining coherent resource plans and reassessing their value over time. The benchmark code is publicly available at https://github.com/adminblackjack/OutfitterBench.",
         "title": "OutfitterBench: Evaluating LLM Agents on Long-Horizon Resource Allocation and Commitment Coordination",
+        "upvotes": 7
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Latent feedback, which feeds each token's top-layer state into the next token's input, improves compute and data efficiency over standard Transformers, especially when unique data is abundant relative to model size.",
+        "authors": [
+          {
+            "name": "Benhao Huang"
+          },
+          {
+            "name": "Chaitanya Dwivedi"
+          },
+          {
+            "name": "Xuezhe Ma"
+          },
+          {
+            "name": "Alexander Moreno"
+          },
+          {
+            "name": "Hector Liu"
+          }
+        ],
+        "githubRepo": "https://github.com/ifm-ai/LoRM",
+        "githubStars": 24,
+        "id": "2611.20404",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://x.com/huskydogewoof/status/2121282554053414945?a=UQNGljOAS2SOsm-RCQ4&s=20",
+        "publishedAt": "2026-11-16T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "When high-quality data runs out, a common practice is to train on it for several epochs, but each repeat is worth less than the last. Latent feedback, which feeds each token's top-layer state into the next token's input, is another way to spend that compute, yet it has not been tested against a vanilla Transformer that spends the same compute on more epochs. We run this test across a ladder of model sizes, unique data and epochs, tuning both models at every size and amount of unique data. Latent feedback makes every FLOP and every token count for more except when unique data is scarce relative to model size, a regime that today's models are far from. We find that latent feedback serves as an amplifier: with unique data fixed, it reaches a Transformer's loss with less compute; with epochs fixed, it reaches that loss with less unique data. Furthermore, both savings grow with unique data per parameter and with repetition, and downstream tasks agree. To go beyond our grid, we fit one scaling law to both models, in which latent feedback enters as a Transformer with more parameters; it predicts that both savings keep growing with unique data and repetition. Fitted on models from 60M to 271M parameters, the law predicts the losses at a held-out 778M size to within 0.3% and the gap between the two models to within 0.05%. At most, latent feedback saves 48% of the compute and 47% of the unique data. When data, not compute, is the limit, latent feedback is the better use of a FLOP for a model of a given size.",
+        "title": "Latent Feedback Is a Compute and Data Amplifier",
+        "upvotes": 7
+      },
+      "publishedAt": "2026-11-15T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Renee Jia"
+          },
+          {
+            "name": "Jinzhou Wu"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.04395",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-03T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Fine-tuning data can include metadata that predicts the correct answer, such as a reward-model score or a quality label. We ask whether a model learns to rely on this metadata even when every training label is correct. We fine-tune 7-9B open-weight models from three families on multiple-choice questions in which (Reward: 5) always marks the correct option; when this annotation is moved to a wrong option at test time, models select that option on 97-100% of CommonsenseQA items. Removing it leaves most answers correct, so evaluation without it misses the dependence. Cue-following rises sharply with training-time reliability and develops even with neutral or nonsense annotation words, although test-time wording affects its strength. A Qwen3 experiment also finds cue dependence in option-letter scores after direct preference optimization. Audits can test for this dependence by moving or removing visible annotations while holding the task and correct answer fixed.",
+        "title": "Correct Labels Are Not Enough: Reliable Metadata Can Silently Control Model Behavior",
+        "upvotes": 6
+      },
+      "publishedAt": "2026-11-02T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Seyed Mahmoud Sajjadi Mohammadabadi"
+          }
+        ],
+        "githubRepo": "https://github.com/mahmoudsajjadi/pace",
+        "githubStars": 3,
+        "id": "2611.17610",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://huggingface.co/spaces/sajjadi/pace-studio",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Evaluations of multi-agent language models often compare communicating architectures against a single greedy pass. This practice confounds coordination with sample multiplicity and inference compute. We synthesize nine primary empirical evaluations comprising 516 unique multi-agent configurations organized along a resource vector R with six dimensions and a baseline ladder with four categories. Against baselines with a single pass (Category A), multi-agent accuracy differences are negative overall and near zero when omitting the largest contributing study. When evaluated against baselines matched on sample count (Category B) or resource budget (Category C), multi-agent systems average -0.042 in accuracy, and multilevel random effects modeling on the log odds scale remains negative across sensitivity checks. Multi-agent accuracy equals or falls below the baseline in 74% of these comparable contrasts, and study means are nonpositive in almost all evaluated studies. Across studies reporting both baselines, moving from a greedy pass to a sampled baseline shifts accuracy differences by -0.038 on average. Because communication adds no information when agents share identical evidence, positive returns require partitioned evidence, external verification, or error diversity across models. We provide a reviewer checklist and accounting utilities.",
+        "title": "More Agents, More Samples, or More Thinking? Untangling Coordination, Ensembling, and Test-Time Compute in Multi-Agent LLMs",
+        "upvotes": 6
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Marimba uses frozen Qwen3-ASR features and lightweight readouts to make lexical, turn-end, language, speaker-change, and personal-information decisions from speech, achieving strong detection and calibration on conversational and read-speech benchmarks.",
+        "authors": [
+          {
+            "name": "Solano Amadori"
+          }
+        ],
+        "githubRepo": "https://github.com/Charcot-AI/marimba-api",
+        "githubStars": 14,
+        "id": "2611.18330",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://huggingface.co/spaces/charcot-ai/marimba",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features. Lexical questions use zero-shot scoring of ASR transcripts; non-lexical questions use a question-conditioned head and a separate layer-18 turn-end readout. Language identification uses the ASR model's own language scores. On private conversational test sets, decoder AUROC is 0.80-0.92; on public read speech it is 0.92-0.97. Speech Commands four-way accuracy is 0.93; binary lexical ECE is at most 0.08. Personal-information detection, which passes the greedy transcript to a private, curated PII pipeline, reaches item-level F1 0.904 on synthetic Brazilian Portuguese speech (1.000 on reference transcripts). Layer-12 speaker readouts detect speaker change with AUROC 0.966-0.980 on AMI and VoxConverse, above an ECAPA baseline, and count speakers (0, 1, 2, or 3+) more accurately than pyannote 3.1. The turn-end readout reaches AUROC 0.930 versus Smart Turn v3.2 at 0.982 on Smart Turn's own test set. On a subset of ICSI meetings labeled by next speaker, AUROC is 0.716 versus 0.712; the paired confidence interval includes zero.",
+        "title": "Marimba: A System One Model for Speech",
         "upvotes": 6
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
@@ -1659,112 +1768,108 @@
     },
     {
       "paper": {
-        "ai_summary": "Latent feedback, which feeds each token's top-layer state into the next token's input, improves compute and data efficiency over standard Transformers, especially when unique data is abundant relative to model size.",
+        "ai_summary": null,
         "authors": [
           {
-            "name": "Benhao Huang"
+            "name": "Sajib Acharjee Dip"
           },
           {
-            "name": "Chaitanya Dwivedi"
+            "name": "Brian Ouyang"
           },
           {
-            "name": "Xuezhe Ma"
-          },
-          {
-            "name": "Alexander Moreno"
-          },
-          {
-            "name": "Hector Liu"
+            "name": "Lala Motlhabi"
           }
         ],
-        "githubRepo": "https://github.com/ifm-ai/LoRM",
-        "githubStars": 22,
-        "id": "2611.20404",
+        "githubRepo": "https://github.com/Sajib-006/silentguard",
+        "githubStars": 1,
+        "id": "2611.20595",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://x.com/huskydogewoof/status/2121282554053414945?a=UQNGljOAS2SOsm-RCQ4&s=20",
+        "projectPage": "https://huggingface.co/datasets/Sajib-006/AgentOrchBench",
         "publishedAt": "2026-11-16T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "When high-quality data runs out, a common practice is to train on it for several epochs, but each repeat is worth less than the last. Latent feedback, which feeds each token's top-layer state into the next token's input, is another way to spend that compute, yet it has not been tested against a vanilla Transformer that spends the same compute on more epochs. We run this test across a ladder of model sizes, unique data and epochs, tuning both models at every size and amount of unique data. Latent feedback makes every FLOP and every token count for more except when unique data is scarce relative to model size, a regime that today's models are far from. We find that latent feedback serves as an amplifier: with unique data fixed, it reaches a Transformer's loss with less compute; with epochs fixed, it reaches that loss with less unique data. Furthermore, both savings grow with unique data per parameter and with repetition, and downstream tasks agree. To go beyond our grid, we fit one scaling law to both models, in which latent feedback enters as a Transformer with more parameters; it predicts that both savings keep growing with unique data and repetition. Fitted on models from 60M to 271M parameters, the law predicts the losses at a held-out 778M size to within 0.3% and the gap between the two models to within 0.05%. At most, latent feedback saves 48% of the compute and 47% of the unique data. When data, not compute, is the limit, latent feedback is the better use of a FLOP for a model of a given size.",
-        "title": "Latent Feedback Is a Compute and Data Amplifier",
-        "upvotes": 6
-      },
-      "publishedAt": "2026-11-15T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Abstention in large language models arises from query ambiguity, model knowledge limits, and value misalignment, and steering internal activations in middle layers can increase or decrease abstention across these causes.",
-        "authors": [
-          {
-            "name": "Koki Itai"
-          },
-          {
-            "name": "Jun Hirako"
-          },
-          {
-            "name": "Hiroaki Yamagiwa"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.20441",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-16T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Abstention, the withholding of a response by a large language model (LLM) under uncertainty or safety risks, is essential for trustworthy models. The causes of abstention fall into three perspectives: ambiguity in the Query (Q), limits of Model Knowledge (MK), and misalignment with Human Values (HV). However, prior analyses of internal representations have focused on HV, using a refusal direction computed from harmful and harmless queries. No study has analyzed the three perspectives jointly. We therefore extend the refusal direction framework to all three perspectives. Specifically, for each perspective, we construct counterfactual pairs that share a template and differ only in the abstention-inducing factor, and compute an abstention direction by normalizing the difference in mean activations between the two polarities. Activation steering experiments show that intervening in middle layers increases or decreases abstention across all three perspectives. Moreover, steering yields cross-perspective effects, indicating that the abstention directions share a common directional component.",
-        "title": "Abstention Direction in Large Language Models: Mechanistic Interpretability of Abstention Across Query Ambiguity, Knowledge Limits, and Safety Alignment",
+        "summary": "LLM agents answer questions by calling APIs and trusting the results. An API can fail silently. It ignores part of a request, such as a misnamed filter, yet returns HTTP 200 and a plausible but wrong result. Current fixes, such as checklists, reviewer models and LLM judges, ask the model to catch it. But models often see the problem and answer anyway. We present SilentGuard, which moves the decision from the model to the harness running tool calls. It tests each result against invariants that any correct API must satisfy and withholds values that break one. We find silent failures in 11 of 15 public research APIs, with counts inflated up to 691 times. Current fixes leave over 70% of answers wrong, and agents report 77.4% of counts a judge flags. Across 7 open models, SilentGuard cuts wrong answers on its target faults from 74.0% to 1.7%, with no loss on fault-free tasks. On three frontier models they fall from 70.2% to 0.5%. A warning from the same check leaves 70.1% wrong, so enforcement is the key. On new fault types, the harness alone cuts wrong answers from 61.1% to 24.5%. It avoids wrong answers by abstaining rather than recovering.",
+        "title": "Invariant-Aware Harness Enforcement to Protect LLM Agents from Silent API Failures",
         "upvotes": 5
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "BitDecoding-FP4 co-designs FP4 quantization and system optimizations to enable accurate, high-throughput long-context KV decoding for LLMs.",
         "authors": [
           {
-            "name": "Renee Jia"
+            "name": "Dayou Du"
           },
           {
-            "name": "Jinzhou Wu"
+            "name": "Woon Yee Ng"
+          },
+          {
+            "name": "Guangming Sheng"
+          },
+          {
+            "name": "Nick Lau"
+          },
+          {
+            "name": "Jianyi Cheng"
+          },
+          {
+            "name": "Luo Mai"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.04395",
+        "githubRepo": "https://github.com/OpenBitSys/BitDecoding-FP4",
+        "githubStars": 56,
+        "id": "2611.09825",
         "linkedSpaces": null,
         "numTotalSpaces": null,
         "projectPage": null,
-        "publishedAt": "2026-11-03T00:00:00.000Z",
+        "publishedAt": "2026-11-06T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Fine-tuning data can include metadata that predicts the correct answer, such as a reward-model score or a quality label. We ask whether a model learns to rely on this metadata even when every training label is correct. We fine-tune 7-9B open-weight models from three families on multiple-choice questions in which (Reward: 5) always marks the correct option; when this annotation is moved to a wrong option at test time, models select that option on 97-100% of CommonsenseQA items. Removing it leaves most answers correct, so evaluation without it misses the dependence. Cue-following rises sharply with training-time reliability and develops even with neutral or nonsense annotation words, although test-time wording affects its strength. A Qwen3 experiment also finds cue dependence in option-letter scores after direct preference optimization. Audits can test for this dependence by moving or removing visible annotations while holding the task and correct answer fixed.",
-        "title": "Correct Labels Are Not Enough: Reliable Metadata Can Silently Control Model Behavior",
+        "summary": "The key-value (KV) cache dominates memory capacity and bandwidth in long-context LLM serving. While 4-bit microscaling formats (NVFP4, MXFP4) shrink the cache and run attention on FP4 Tensor Cores, a fundamental gap remains between algorithmic quantization and system-aware acceleration: existing FP4 KV systems use vanilla quantization that causes severe accuracy drops, whereas accuracy-oriented 4-bit algorithms rely on vector codebooks whose lookup overhead degrades decoding throughput. We present BitDecoding-FP4, an algorithm--system co-design for accurate and efficient native FP4 KV decoding. We mitigate three error sources: Dual-Residual Query Quantization splits queries into two FP4 tensors, cutting query logit error from 60% to 1%; Underflow-Aware Probability Scaling prevents E4M3 scales from rounding long-context probabilities to zero; and Outlier-Aware Key Quantization combines static smoothing, Hadamard rotation, and scale search to suppress key outliers under token-wise scaling. At the system level, we remove the softmax bottleneck via transposed softmax with fused probability quantization and stacked query MMA on paged KV caches. Across dense and MoE models with GQA and MLA, BitDecoding-FP4 stays within 0.5 points of BF16 KV accuracy with NVFP4 (1 point with MXFP4), and tracks BF16 KV in RL training rollouts. In end-to-end serving on NVIDIA B300 with Qwen3-4B and Qwen3-30B-A3B, it delivers 2.4-3.0times higher peak serving throughput than BF16 KV. The implementation is available at https://github.com/OpenBitSys/BitDecoding-FP4.",
+        "title": "BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design",
         "upvotes": 5
       },
-      "publishedAt": "2026-11-02T19:00:00.000Z"
+      "publishedAt": "2026-11-05T19:00:00.000Z"
     },
     {
       "paper": {
         "ai_summary": null,
         "authors": [
           {
-            "name": "Seyed Mahmoud Sajjadi Mohammadabadi"
+            "name": "Jiarui Dong"
+          },
+          {
+            "name": "Zhiheng Liang"
+          },
+          {
+            "name": "Yanjun Li"
+          },
+          {
+            "name": "Zeyu Zhang"
+          },
+          {
+            "name": "Heejeong Nam"
+          },
+          {
+            "name": "Haoyu Chen"
+          },
+          {
+            "name": "Hao Tang"
           }
         ],
-        "githubRepo": "https://github.com/mahmoudsajjadi/pace",
-        "githubStars": 3,
-        "id": "2611.17610",
+        "githubRepo": "https://github.com/AIGeeksGroup/JEPA4R",
+        "githubStars": 5,
+        "id": "2611.19771",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/spaces/sajjadi/pace-studio",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "projectPage": "https://aigeeksgroup.github.io/JEPA4R",
+        "publishedAt": "2026-11-15T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Evaluations of multi-agent language models often compare communicating architectures against a single greedy pass. This practice confounds coordination with sample multiplicity and inference compute. We synthesize nine primary empirical evaluations comprising 516 unique multi-agent configurations organized along a resource vector R with six dimensions and a baseline ladder with four categories. Against baselines with a single pass (Category A), multi-agent accuracy differences are negative overall and near zero when omitting the largest contributing study. When evaluated against baselines matched on sample count (Category B) or resource budget (Category C), multi-agent systems average -0.042 in accuracy, and multilevel random effects modeling on the log odds scale remains negative across sensitivity checks. Multi-agent accuracy equals or falls below the baseline in 74% of these comparable contrasts, and study means are nonpositive in almost all evaluated studies. Across studies reporting both baselines, moving from a greedy pass to a sampled baseline shifts accuracy differences by -0.038 on average. Because communication adds no information when agents share identical evidence, positive returns require partitioned evidence, external verification, or error diversity across models. We provide a reviewer checklist and accounting utilities.",
-        "title": "More Agents, More Samples, or More Thinking? Untangling Coordination, Ensembling, and Test-Time Compute in Multi-Agent LLMs",
+        "summary": "Joint-embedding predictive architecture (JEPA) world models predict future embeddings instead of pixels and plan in latent space. Two challenges remain: 2D images leave the metric geometry that manipulation acts on implicit and entangled with appearance, and what these models imagine stays hidden, as they are mostly judged in simulation by short-horizon latent planning. We present JEPA4R, a JEPA world model that observes single-depth-camera point clouds, predicts and plans in their latent space, and acts through a policy head on its frozen latents; we call this 4D point planning. A decoder on the frozen world model shows what it imagines as 4D point clouds, with a mean point error within 1.1 cm over 200 steps. Under the policy-learning protocols of OGBench and CortexBench, JEPA4R leads pixel JEPA models on OGBench Cube-Single, Cube-Double, Cube-Triple and Scene, and ranks first on MetaWorld and Adroit Relocate with 98.4% and 88.0%, above the runner-up, R3M, at 96.0% and 65.3%. Trained only in a digital twin, JEPA4R and its policy heads run zero-shot on the real arm with both a gripper and a dexterous hand.",
+        "title": "JEPA4R: Embodied JEPA World Models with 4D Point Planning",
         "upvotes": 5
       },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
+      "publishedAt": "2026-11-14T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1784,6 +1889,68 @@
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
         "summary": "Coding agents can synthesize and optimize code-based policies from simulator feedback, allowing the resulting program to act with zero inference model calls. But for long horizon tasks, two challenges arise: local improvements can hurt final success and switching to a new objective requires another expensive synthesis run. We propose a framework that first develops competence by refining the policy through a feedback cascade, moving from episode returns to hierarchical goals and belief updates which can be scored densely from simulator. In the Craftax game, a partially observed and procedurally generated environment, refinements via episode level feedback stall at <1% final-level arrival, whereas with the feedback cascade the optimized policy reaches the final stage 50% of time (28% final boss defeats). Furthermore, to make this competence reusable towards new goals, we factor the previous controller into an environment interpreter I (models, memory, skills) and a rule program p_0, and we show that coding agents can optimize a reusable goal compiler C_θ that maps structured tasks g into new rule programs p_g. Across five independent compiler searches trained only on short tasks, the resulting compilers successfully transfer zero-shot to longer tasks without any task-specific tuning nor inference-time LLM calls: continuation-scored feedback and a fixed machine with an editable program together turn a single-task competent policy into a reusable one.\n  Code at: https://github.com/vicgalle/craftax-program-policies",
         "title": "Continuation-Guided LLM Evolution of Program Policies and Goal Compilers in Craftax",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-13T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Reformulating generation as progressive prediction of continuous perceptual representations improves visual understanding in unified multimodal models more than discrete-code or latent-flow objectives.",
+        "authors": [
+          {
+            "name": "Yucheng Zhou"
+          },
+          {
+            "name": "Yunjia Xi"
+          },
+          {
+            "name": "Di Yin"
+          },
+          {
+            "name": "Jianbing Shen"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.18668",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-10-26T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Unified multimodal models can support both visual understanding and generation, yet generative training does not necessarily improve understanding. We argue that this limitation may arise from a mismatch between the representation targeted by generation and the perceptual representation used for understanding. Conventional generation objectives primarily optimize synthesis-oriented spaces such as discrete visual codes or generative latents. We therefore introduce UMM-JEPA, which reformulates generation as progressive prediction of continuous visual-understanding representations. The model constructs a multi-scale representation hierarchy from coarse to fine, while pixel rendering is decoupled from representation pretraining and attached only afterward. Controlled comparisons show that the representation-prediction objective accounts for most of the understanding improvement, while a data-matched control leaves the group means nearly unchanged. UMM-JEPA reaches a 16-benchmark visual mean of 51.71, against 46.36 for the understanding-only Qwen-VL baseline, and the text mean also rises. Compared with discrete-code and latent-flow generation objectives, perceptual representation prediction yields stronger and more consistent transfer to understanding. Linear probes and visual-evidence interventions further reveal richer object and spatial structure and stronger use of image-specific information. These results suggest that generation can benefit understanding when it directly supervises the perceptual representations that understanding consumes.",
+        "title": "UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Unified Multimodal Models",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-10-25T20:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "LoopFill reduces decoding latency for looped language models by combining multi-token suffix drafts and shallow-loop predictions into a single draft tree with full-depth verification that preserves the autoregressive output distribution.",
+        "authors": [
+          {
+            "name": "Siqi Zhu"
+          },
+          {
+            "name": "Suozhi Huang"
+          },
+          {
+            "name": "Yi Zhao"
+          },
+          {
+            "name": "Jiaxuan You"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.19649",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://www.alphaxiv.org/abs/2611.loopfill-speculative-decoding-looped-transformers",
+        "publishedAt": "2026-11-14T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Looped Transformers improve parameter efficiency by repeatedly applying the same Transformer layers. During autoregressive decoding, however, generating each token requires several sequential passes through these layers, leading to high decoding latency. Pipelined self-speculative methods use shallow-loop predictions to process tokens at different loops in the same batch, but each token must reach the drafting depth before the next can enter the pipeline. We introduce LoopFill, a training-free speculative decoding algorithm for looped LLM that combines multi-token suffix drafts with shallow-loop predictions in a single draft tree. Both drafters contribute to one tree, so a suffix lookup can immediately extend a shallow prediction and several future tokens can enter the pipeline together. The shared block computes the highest-scoring draft candidates at different loop depths in one batch, and full-depth verification preserves the model's autoregressive output distribution. Across seven benchmarks, LoopFill's average speedup over greedy autoregressive decoding is 5.85times on Ouro-2.6B and 5.13times on Huginn-3.5B. The speedups exceed those of LoopAhead, the strongest baseline, by \\(40\\%\\) on Ouro-2.6B and \\(25\\%\\) on Huginn-3.5B.",
+        "title": "LoopFill: Pipelined Multi-Token Speculative Decoding for Looped Transformers",
         "upvotes": 5
       },
       "publishedAt": "2026-11-13T19:00:00.000Z"
@@ -1833,108 +2000,59 @@
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "A hybrid multi-agent trading system combining large language model analysts with momentum-based portfolio construction and rule-based execution produced a 34.5% paper-account return from March 11 to August 28, 2026, exceeding SPY's 14.4% but with a larger maximum drawdown.",
         "authors": [
           {
-            "name": "Sajib Acharjee Dip"
+            "name": "Renee Jia"
           },
           {
-            "name": "Brian Ouyang"
+            "name": "Di Mu"
           },
           {
-            "name": "Lala Motlhabi"
+            "name": "Yao Yu"
+          },
+          {
+            "name": "Tianrui Liu"
           }
         ],
-        "githubRepo": "https://github.com/Sajib-006/silentguard",
-        "githubStars": 1,
-        "id": "2611.20595",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/datasets/Sajib-006/AgentOrchBench",
-        "publishedAt": "2026-11-16T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "LLM agents answer questions by calling APIs and trusting the results. An API can fail silently. It ignores part of a request, such as a misnamed filter, yet returns HTTP 200 and a plausible but wrong result. Current fixes, such as checklists, reviewer models and LLM judges, ask the model to catch it. But models often see the problem and answer anyway. We present SilentGuard, which moves the decision from the model to the harness running tool calls. It tests each result against invariants that any correct API must satisfy and withholds values that break one. We find silent failures in 11 of 15 public research APIs, with counts inflated up to 691 times. Current fixes leave over 70% of answers wrong, and agents report 77.4% of counts a judge flags. Across 7 open models, SilentGuard cuts wrong answers on its target faults from 74.0% to 1.7%, with no loss on fault-free tasks. On three frontier models they fall from 70.2% to 0.5%. A warning from the same check leaves 70.1% wrong, so enforcement is the key. On new fault types, the harness alone cuts wrong answers from 61.1% to 24.5%. It avoids wrong answers by abstaining rather than recovering.",
-        "title": "Invariant-Aware Harness Enforcement to Protect LLM Agents from Silent API Failures",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-15T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "BitDecoding-FP4 co-designs FP4 quantization and system optimizations to enable accurate, high-throughput long-context KV decoding for LLMs.",
-        "authors": [
-          {
-            "name": "Dayou Du"
-          },
-          {
-            "name": "Woon Yee Ng"
-          },
-          {
-            "name": "Guangming Sheng"
-          },
-          {
-            "name": "Nick Lau"
-          },
-          {
-            "name": "Jianyi Cheng"
-          },
-          {
-            "name": "Luo Mai"
-          }
-        ],
-        "githubRepo": "https://github.com/OpenBitSys/BitDecoding-FP4",
-        "githubStars": 55,
-        "id": "2611.09825",
+        "githubRepo": "https://github.com/renee-jia/trading-bot",
+        "githubStars": 97,
+        "id": "2611.11657",
         "linkedSpaces": null,
         "numTotalSpaces": null,
         "projectPage": null,
-        "publishedAt": "2026-11-06T00:00:00.000Z",
+        "publishedAt": "2026-11-08T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "The key-value (KV) cache dominates memory capacity and bandwidth in long-context LLM serving. While 4-bit microscaling formats (NVFP4, MXFP4) shrink the cache and run attention on FP4 Tensor Cores, a fundamental gap remains between algorithmic quantization and system-aware acceleration: existing FP4 KV systems use vanilla quantization that causes severe accuracy drops, whereas accuracy-oriented 4-bit algorithms rely on vector codebooks whose lookup overhead degrades decoding throughput. We present BitDecoding-FP4, an algorithm--system co-design for accurate and efficient native FP4 KV decoding. We mitigate three error sources: Dual-Residual Query Quantization splits queries into two FP4 tensors, cutting query logit error from 60% to 1%; Underflow-Aware Probability Scaling prevents E4M3 scales from rounding long-context probabilities to zero; and Outlier-Aware Key Quantization combines static smoothing, Hadamard rotation, and scale search to suppress key outliers under token-wise scaling. At the system level, we remove the softmax bottleneck via transposed softmax with fused probability quantization and stacked query MMA on paged KV caches. Across dense and MoE models with GQA and MLA, BitDecoding-FP4 stays within 0.5 points of BF16 KV accuracy with NVFP4 (1 point with MXFP4), and tracks BF16 KV in RL training rollouts. In end-to-end serving on NVIDIA B300 with Qwen3-4B and Qwen3-30B-A3B, it delivers 2.4-3.0times higher peak serving throughput than BF16 KV. The implementation is available at https://github.com/OpenBitSys/BitDecoding-FP4.",
-        "title": "BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design",
+        "summary": "We built a hybrid multi-agent trading system that combines large language model (LLM) analysts with momentum-based portfolio construction and rule-based execution. Company-news and macroeconomic agents return structured reports to a coordinator that sets stock weights and cash reserves. We evaluate the portfolio engine using its broker-recorded paper account, which operated with deterministic fallbacks, and compare LLM-enabled configurations through retrospective replays. From March 11 to August 28, 2026, the account returned 34.5%, compared with 14.4% for the S&P 500 fund SPY over the same dates. This raw return advantage came with a larger maximum drawdown. Reconstructed policies also finish above matched SPY and QQQ references when assessments are used in the same session or deferred to the next. Design comparisons examine cash authority, selective invocation, and response contracts. A constant-cash control gives a return estimate close to stance-based sizing, and shorter report contracts improve observed parsing but can change recommendations.",
+        "title": "Inside the Trading Loop: Markets, Models, and Moves with LLM Agents",
         "upvotes": 4
       },
-      "publishedAt": "2026-11-05T19:00:00.000Z"
+      "publishedAt": "2026-11-07T19:00:00.000Z"
     },
     {
       "paper": {
-        "ai_summary": null,
+        "ai_summary": "A controlled two-pass audit varying only the revision context reveals that language models often fail to selectively correct errors under disagreement, with expert labels increasing reversals but not reliably improving accuracy, so revision should be assessed using paired conditional metrics per model and protocol.",
         "authors": [
           {
-            "name": "Jiarui Dong"
+            "name": "Yupeng Tang"
           },
           {
-            "name": "Zhiheng Liang"
-          },
-          {
-            "name": "Yanjun Li"
-          },
-          {
-            "name": "Zeyu Zhang"
-          },
-          {
-            "name": "Heejeong Nam"
-          },
-          {
-            "name": "Haoyu Chen"
-          },
-          {
-            "name": "Hao Tang"
+            "name": "Mingfeng Lin"
           }
         ],
-        "githubRepo": "https://github.com/AIGeeksGroup/JEPA4R",
+        "githubRepo": "https://github.com/yupengtang/when-expert-disagreement-hurts",
         "githubStars": 3,
-        "id": "2611.19771",
+        "id": "2611.16694",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://aigeeksgroup.github.io/JEPA4R",
-        "publishedAt": "2026-11-15T00:00:00.000Z",
+        "projectPage": "https://yupengtang.github.io/when-expert-disagreement-hurts/",
+        "publishedAt": "2026-11-12T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Joint-embedding predictive architecture (JEPA) world models predict future embeddings instead of pixels and plan in latent space. Two challenges remain: 2D images leave the metric geometry that manipulation acts on implicit and entangled with appearance, and what these models imagine stays hidden, as they are mostly judged in simulation by short-horizon latent planning. We present JEPA4R, a JEPA world model that observes single-depth-camera point clouds, predicts and plans in their latent space, and acts through a policy head on its frozen latents; we call this 4D point planning. A decoder on the frozen world model shows what it imagines as 4D point clouds, with a mean point error within 1.1 cm over 200 steps. Under the policy-learning protocols of OGBench and CortexBench, JEPA4R leads pixel JEPA models on OGBench Cube-Single, Cube-Double, Cube-Triple and Scene, and ranks first on MetaWorld and Adroit Relocate with 98.4% and 88.0%, above the runner-up, R3M, at 96.0% and 65.3%. Trained only in a digital twin, JEPA4R and its policy heads run zero-shot on the real arm with both a gripper and a dexterous hand.",
-        "title": "JEPA4R: Embodied JEPA World Models with 4D Point Planning",
+        "summary": "When language models revise a decision after another agent disagrees, neither reversal counts nor final accuracy shows whether they are fixing mistakes or abandoning correct answers. We introduce a controlled two-pass audit that holds the question, the evidence, and the model's initial answer fixed and varies only the revision context: neutral reflection, anonymous disagreement, or disagreement attributed to a domain expert. For binary decisions the accounting is exact: revision raises accuracy only if it is selective enough, reversing wrong answers more than a/(1-a) times as often as correct ones, where a is initial accuracy (nine times at 90%). Across five models and 1,989 evidence-grounded decisions in medicine, science, and law, no model clears this bar under expert disagreement, and accuracy falls by up to 16.1 points. The expert label, a prestige cue, adds reversals for four of the five models, yet its effect on accuracy ranges from a 5.2-point loss to a 2.4-point gain, so reversal counts are a poor proxy for harm. With identical arguments from both sources, the label still raises reversal for three proprietary models and in a pooled analysis of four newer models. Models also respond to stated source reliability. Revision pipelines should therefore be evaluated with paired, conditional metrics, per model and protocol.",
+        "title": "When Expert Disagreement Hurts: Prestige and Selectivity in LLM Decision Revision",
         "upvotes": 4
       },
-      "publishedAt": "2026-11-14T19:00:00.000Z"
+      "publishedAt": "2026-11-11T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1972,121 +2090,28 @@
     },
     {
       "paper": {
-        "ai_summary": "Reformulating generation as progressive prediction of continuous perceptual representations improves visual understanding in unified multimodal models more than discrete-code or latent-flow objectives.",
+        "ai_summary": null,
         "authors": [
           {
-            "name": "Yucheng Zhou"
+            "name": "Quy-Anh Dang"
           },
           {
-            "name": "Yunjia Xi"
-          },
-          {
-            "name": "Di Yin"
-          },
-          {
-            "name": "Jianbing Shen"
+            "name": "Chris Ngo"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.18668",
+        "githubRepo": "https://github.com/knoveleng/centered-ablation",
+        "githubStars": 1,
+        "id": "2611.20148",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-10-26T00:00:00.000Z",
+        "projectPage": "https://knoveleng.github.io/centered-ablation/",
+        "publishedAt": "2026-11-15T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Unified multimodal models can support both visual understanding and generation, yet generative training does not necessarily improve understanding. We argue that this limitation may arise from a mismatch between the representation targeted by generation and the perceptual representation used for understanding. Conventional generation objectives primarily optimize synthesis-oriented spaces such as discrete visual codes or generative latents. We therefore introduce UMM-JEPA, which reformulates generation as progressive prediction of continuous visual-understanding representations. The model constructs a multi-scale representation hierarchy from coarse to fine, while pixel rendering is decoupled from representation pretraining and attached only afterward. Controlled comparisons show that the representation-prediction objective accounts for most of the understanding improvement, while a data-matched control leaves the group means nearly unchanged. UMM-JEPA reaches a 16-benchmark visual mean of 51.71, against 46.36 for the understanding-only Qwen-VL baseline, and the text mean also rises. Compared with discrete-code and latent-flow generation objectives, perceptual representation prediction yields stronger and more consistent transfer to understanding. Linear probes and visual-evidence interventions further reveal richer object and spatial structure and stronger use of image-specific information. These results suggest that generation can benefit understanding when it directly supervises the perceptual representations that understanding consumes.",
-        "title": "UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Unified Multimodal Models",
+        "summary": "Directional ablation removes a hidden state's component along a \"behaviour direction\" while a language model runs. It is the standard way to switch a behaviour such as refusal off, but it is erratic: on some models it barely fires, on others the text collapses into repetition. We show why, and fix it. At the last residual stream, ablation is exactly a logit bias: a fixed vocabulary footprint scaled by a gate, the cosine between the hidden state and the direction. The gate is measured from the origin, but last-layer states share a large common mode far from it, so a direction that overlaps the common mode fires on benign text and under-fires on its targets. Centered Ablation (CA) projects the common mode out of the direction, in closed form. Across 8 models, CA raises attack success by 29 and 46 points where the standard recipe under-fires, cuts collapse on Gemma-2-9B from 50\\% to 1\\%, and preserves 12 to 40 points more benign answers on high-overlap models, 39 to 46 more than the affine offset of prior work. Two numbers computed before generation predict, on models the analysis had not seen, which gain faithfulness and which gain attack success, and a collapse index marks when text degenerates. We also show that two standard safety judges score collapsed text in opposite directions, which can fabricate a 46-point effect.",
+        "title": "Centered Ablation: Why Last-Layer Directional Ablation Under-Fires or Collapses, and a Closed-Form Fix",
         "upvotes": 4
       },
-      "publishedAt": "2026-10-25T20:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "LoopFill reduces decoding latency for looped language models by combining multi-token suffix drafts and shallow-loop predictions into a single draft tree with full-depth verification that preserves the autoregressive output distribution.",
-        "authors": [
-          {
-            "name": "Siqi Zhu"
-          },
-          {
-            "name": "Suozhi Huang"
-          },
-          {
-            "name": "Yi Zhao"
-          },
-          {
-            "name": "Jiaxuan You"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.19649",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://www.alphaxiv.org/abs/2611.loopfill-speculative-decoding-looped-transformers",
-        "publishedAt": "2026-11-14T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Looped Transformers improve parameter efficiency by repeatedly applying the same Transformer layers. During autoregressive decoding, however, generating each token requires several sequential passes through these layers, leading to high decoding latency. Pipelined self-speculative methods use shallow-loop predictions to process tokens at different loops in the same batch, but each token must reach the drafting depth before the next can enter the pipeline. We introduce LoopFill, a training-free speculative decoding algorithm for looped LLM that combines multi-token suffix drafts with shallow-loop predictions in a single draft tree. Both drafters contribute to one tree, so a suffix lookup can immediately extend a shallow prediction and several future tokens can enter the pipeline together. The shared block computes the highest-scoring draft candidates at different loop depths in one batch, and full-depth verification preserves the model's autoregressive output distribution. Across seven benchmarks, LoopFill's average speedup over greedy autoregressive decoding is 5.85times on Ouro-2.6B and 5.13times on Huginn-3.5B. The speedups exceed those of LoopAhead, the strongest baseline, by \\(40\\%\\) on Ouro-2.6B and \\(25\\%\\) on Huginn-3.5B.",
-        "title": "LoopFill: Pipelined Multi-Token Speculative Decoding for Looped Transformers",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-13T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A hybrid multi-agent trading system combining large language model analysts with momentum-based portfolio construction and rule-based execution produced a 34.5% paper-account return from March 11 to August 28, 2026, exceeding SPY's 14.4% but with a larger maximum drawdown.",
-        "authors": [
-          {
-            "name": "Renee Jia"
-          },
-          {
-            "name": "Di Mu"
-          },
-          {
-            "name": "Yao Yu"
-          },
-          {
-            "name": "Tianrui Liu"
-          }
-        ],
-        "githubRepo": "https://github.com/renee-jia/trading-bot",
-        "githubStars": 97,
-        "id": "2611.11657",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-08T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "We built a hybrid multi-agent trading system that combines large language model (LLM) analysts with momentum-based portfolio construction and rule-based execution. Company-news and macroeconomic agents return structured reports to a coordinator that sets stock weights and cash reserves. We evaluate the portfolio engine using its broker-recorded paper account, which operated with deterministic fallbacks, and compare LLM-enabled configurations through retrospective replays. From March 11 to August 28, 2026, the account returned 34.5%, compared with 14.4% for the S&P 500 fund SPY over the same dates. This raw return advantage came with a larger maximum drawdown. Reconstructed policies also finish above matched SPY and QQQ references when assessments are used in the same session or deferred to the next. Design comparisons examine cash authority, selective invocation, and response contracts. A constant-cash control gives a return estimate close to stance-based sizing, and shorter report contracts improve observed parsing but can change recommendations.",
-        "title": "Inside the Trading Loop: Markets, Models, and Moves with LLM Agents",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-07T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A controlled two-pass audit varying only the revision context reveals that language models often fail to selectively correct errors under disagreement, with expert labels increasing reversals but not reliably improving accuracy, so revision should be assessed using paired conditional metrics per model and protocol.",
-        "authors": [
-          {
-            "name": "Yupeng Tang"
-          },
-          {
-            "name": "Mingfeng Lin"
-          }
-        ],
-        "githubRepo": "https://github.com/yupengtang/when-expert-disagreement-hurts",
-        "githubStars": 3,
-        "id": "2611.16694",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://yupengtang.github.io/when-expert-disagreement-hurts/",
-        "publishedAt": "2026-11-12T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "When language models revise a decision after another agent disagrees, neither reversal counts nor final accuracy shows whether they are fixing mistakes or abandoning correct answers. We introduce a controlled two-pass audit that holds the question, the evidence, and the model's initial answer fixed and varies only the revision context: neutral reflection, anonymous disagreement, or disagreement attributed to a domain expert. For binary decisions the accounting is exact: revision raises accuracy only if it is selective enough, reversing wrong answers more than a/(1-a) times as often as correct ones, where a is initial accuracy (nine times at 90%). Across five models and 1,989 evidence-grounded decisions in medicine, science, and law, no model clears this bar under expert disagreement, and accuracy falls by up to 16.1 points. The expert label, a prestige cue, adds reversals for four of the five models, yet its effect on accuracy ranges from a 5.2-point loss to a 2.4-point gain, so reversal counts are a poor proxy for harm. With identical arguments from both sources, the label still raises reversal for three proprietary models and in a pooled analysis of four newer models. Models also respond to stated source reliability. Revision pipelines should therefore be evaluated with paired, conditional metrics, per model and protocol.",
-        "title": "When Expert Disagreement Hurts: Prestige and Selectivity in LLM Decision Revision",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-11T19:00:00.000Z"
+      "publishedAt": "2026-11-14T19:00:00.000Z"
     },
     {
       "paper": {
@@ -2145,31 +2170,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Quy-Anh Dang"
-          },
-          {
-            "name": "Chris Ngo"
-          }
-        ],
-        "githubRepo": "https://github.com/knoveleng/centered-ablation",
-        "githubStars": 1,
-        "id": "2611.20148",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://knoveleng.github.io/centered-ablation/",
-        "publishedAt": "2026-11-15T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Directional ablation removes a hidden state's component along a \"behaviour direction\" while a language model runs. It is the standard way to switch a behaviour such as refusal off, but it is erratic: on some models it barely fires, on others the text collapses into repetition. We show why, and fix it. At the last residual stream, ablation is exactly a logit bias: a fixed vocabulary footprint scaled by a gate, the cosine between the hidden state and the direction. The gate is measured from the origin, but last-layer states share a large common mode far from it, so a direction that overlaps the common mode fires on benign text and under-fires on its targets. Centered Ablation (CA) projects the common mode out of the direction, in closed form. Across 8 models, CA raises attack success by 29 and 46 points where the standard recipe under-fires, cuts collapse on Gemma-2-9B from 50\\% to 1\\%, and preserves 12 to 40 points more benign answers on high-overlap models, 39 to 46 more than the affine offset of prior work. Two numbers computed before generation predict, on models the analysis had not seen, which gain faithfulness and which gain attack success, and a collapse index marks when text degenerates. We also show that two standard safety judges score collapsed text in opposite directions, which can fabricate a 46-point effect.",
-        "title": "Centered Ablation: Why Last-Layer Directional Ablation Under-Fires or Collapses, and a Closed-Form Fix",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-14T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "MS-HVED enables flexible super-resolution of partially overlapping brain MRI stacks by fusing independently encoded multi-scale Gaussian posteriors with a field-of-view-aware Product-of-Gaussians and physics-informed domain randomisation, improving reconstruction, tissue segmentation, and external clinical generalisation.",
         "authors": [
           {
@@ -2225,6 +2225,68 @@
         "upvotes": 2
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "A reinforcement learning agent with a lightweight actor-critic architecture explores the Standard Model Effective Field Theory operator space to discover diverse high-quality theory hypotheses and improve global fits.",
+        "authors": [
+          {
+            "name": "Jacky Kumar"
+          }
+        ],
+        "githubRepo": "https://github.com/ReinforcePhysics/ReinforceSMEFT",
+        "githubStars": 2,
+        "id": "2611.21439",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://github.com/ReinforcePhysics",
+        "publishedAt": "2026-11-16T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "In particle physics, discrepancies between experimental measurements and Standard Model (SM) predictions are commonly interpreted within new theoretical models. In this context, the Standard Model Effective Field Theory (SMEFT) provides a general framework encompassing a broad class of models. However, exploring the enormous space of possible SMEFT operators rapidly becomes a challenging combinatorial problem: many operators can contribute simultaneously to different observables, their effects are correlated, and distinct operator combinations can provide comparably good descriptions of the data. In this work, we formulate the exploration of the SMEFT operator space as a sequential decision-making problem using reinforcement learning (RL). Our RL agent employs a lightweight actor-critic architecture with approximately 40K trainable parameters in total. Rather than searching for a single best-fit theory, our method is designed to discover a diverse set of high-quality theory hypotheses. We test the method in a complex phenomenological environment comprising 132 observables across several sectors of particle physics, including 24 measurements that deviate from their SM predictions by more than 1.5σ. We show that the learned RL policy efficiently constructs multi-operator theories that substantially improve the global fit. Comparisons with independent random-subset and random-sequential searches demonstrate the ability of the RL policy to navigate this large combinatorial space. Our results establish RL as a systematic framework for exploring diverse patterns of new physics (NP) interactions within SMEFT.",
+        "title": "A Reinforcement Learning Method to Navigate SMEFT Operator Space",
+        "upvotes": 2
+      },
+      "publishedAt": "2026-11-15T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Xuan Gong"
+          },
+          {
+            "name": "Hanbo Huang"
+          },
+          {
+            "name": "Hao Zheng"
+          },
+          {
+            "name": "Yiran Zhang"
+          },
+          {
+            "name": "Wenbin Dai"
+          },
+          {
+            "name": "Weishu Zhao"
+          },
+          {
+            "name": "Shiyu Liang"
+          }
+        ],
+        "githubRepo": "https://github.com/coder-gx/RAPO",
+        "githubStars": 3,
+        "id": "2605.09614",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://coder-gx.github.io/RAPO/",
+        "publishedAt": "2026-11-15T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
+        "summary": "Long chain-of-thought (CoT) reasoning improves large vision--language models, but visual information often fades during generation, limiting long-horizon multimodal reasoning. Existing methods either re-inject vision at inference or train policies for stronger grounding, but where to intervene relies on perception heuristics rather than principled gain analysis, and how local visual influence propagates remains implicit. We study this problem from an information-theoretic standpoint and derive a lower bound on the downstream visual gain of a one-step intervention, which suggests two factors: local branching room (token entropy) and downstream visual propagation potential (suffix divergence from a vision-marginalized reference). Guided by this analysis, we propose reflection-anchor policy optimization (RAPO), a GRPO-based policy optimization method that selects high-entropy reflection anchors and optimizes a chain-masked finite-window KL surrogate for downstream visual dependence. Experiments on reasoning-intensive and general-domain benchmarks show that RAPO delivers substantial gains over strong baselines across multiple LVLM backbones. Mechanism analyses further indicate that reflection anchors are enriched for visually sensitive decision points and that RAPO increases contrastive visual-dependence signals along generated trajectories.",
+        "title": "Reflection Anchors for Propagation-Aware Visual Retention in Long-Chain Multimodal Reasoning",
+        "upvotes": 2
+      },
+      "publishedAt": "2026-11-14T19:00:00.000Z"
     },
     {
       "paper": {
@@ -2309,70 +2371,8 @@
         "upvotes": 1
       },
       "publishedAt": "2026-11-03T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A reinforcement learning agent with a lightweight actor-critic architecture explores the Standard Model Effective Field Theory operator space to discover diverse high-quality theory hypotheses and improve global fits.",
-        "authors": [
-          {
-            "name": "Jacky Kumar"
-          }
-        ],
-        "githubRepo": "https://github.com/ReinforcePhysics/ReinforceSMEFT",
-        "githubStars": 2,
-        "id": "2611.21439",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://github.com/ReinforcePhysics",
-        "publishedAt": "2026-11-16T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "In particle physics, discrepancies between experimental measurements and Standard Model (SM) predictions are commonly interpreted within new theoretical models. In this context, the Standard Model Effective Field Theory (SMEFT) provides a general framework encompassing a broad class of models. However, exploring the enormous space of possible SMEFT operators rapidly becomes a challenging combinatorial problem: many operators can contribute simultaneously to different observables, their effects are correlated, and distinct operator combinations can provide comparably good descriptions of the data. In this work, we formulate the exploration of the SMEFT operator space as a sequential decision-making problem using reinforcement learning (RL). Our RL agent employs a lightweight actor-critic architecture with approximately 40K trainable parameters in total. Rather than searching for a single best-fit theory, our method is designed to discover a diverse set of high-quality theory hypotheses. We test the method in a complex phenomenological environment comprising 132 observables across several sectors of particle physics, including 24 measurements that deviate from their SM predictions by more than 1.5σ. We show that the learned RL policy efficiently constructs multi-operator theories that substantially improve the global fit. Comparisons with independent random-subset and random-sequential searches demonstrate the ability of the RL policy to navigate this large combinatorial space. Our results establish RL as a systematic framework for exploring diverse patterns of new physics (NP) interactions within SMEFT.",
-        "title": "A Reinforcement Learning Method to Navigate SMEFT Operator Space",
-        "upvotes": 1
-      },
-      "publishedAt": "2026-11-15T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Xuan Gong"
-          },
-          {
-            "name": "Hanbo Huang"
-          },
-          {
-            "name": "Hao Zheng"
-          },
-          {
-            "name": "Yiran Zhang"
-          },
-          {
-            "name": "Wenbin Dai"
-          },
-          {
-            "name": "Weishu Zhao"
-          },
-          {
-            "name": "Shiyu Liang"
-          }
-        ],
-        "githubRepo": "https://github.com/coder-gx/RAPO",
-        "githubStars": 3,
-        "id": "2605.09614",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://coder-gx.github.io/RAPO/",
-        "publishedAt": "2026-11-15T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-17T00:00:00.000Z",
-        "summary": "Long chain-of-thought (CoT) reasoning improves large vision--language models, but visual information often fades during generation, limiting long-horizon multimodal reasoning. Existing methods either re-inject vision at inference or train policies for stronger grounding, but where to intervene relies on perception heuristics rather than principled gain analysis, and how local visual influence propagates remains implicit. We study this problem from an information-theoretic standpoint and derive a lower bound on the downstream visual gain of a one-step intervention, which suggests two factors: local branching room (token entropy) and downstream visual propagation potential (suffix divergence from a vision-marginalized reference). Guided by this analysis, we propose reflection-anchor policy optimization (RAPO), a GRPO-based policy optimization method that selects high-entropy reflection anchors and optimizes a chain-masked finite-window KL surrogate for downstream visual dependence. Experiments on reasoning-intensive and general-domain benchmarks show that RAPO delivers substantial gains over strong baselines across multiple LVLM backbones. Mechanism analyses further indicate that reflection anchors are enriched for visually sensitive decision points and that RAPO increases contrastive visual-dependence signals along generated trajectories.",
-        "title": "Reflection Anchors for Propagation-Aware Visual Retention in Long-Chain Multimodal Reasoning",
-        "upvotes": 1
-      },
-      "publishedAt": "2026-11-14T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-20T09:44:07.278728+00:00",
+  "fetched_at": "2026-11-21T12:24:56.927155+00:00",
   "limit": 100
 }
