@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4165-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4166-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-20` | Total Papers: **4165** | With Official Code: **576***
+*Last updated: `2026-11-21` | Total Papers: **4166** | With Official Code: **576***
 
 ---
 
@@ -23,7 +23,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `704` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
 | **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `321` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
 | **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `95` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
-| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `318` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
+| **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `319` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
 ---
 
@@ -581,10 +581,10 @@ Showing 60 of 95 papers. [Browse the full category](https://mango-jeongi.github.
 
 ### 2D Gaussians, Geometry & Compression
 
-*2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression.* (318 papers)
+*2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression.* (319 papers)
 
 <details>
-<summary><strong>View 318 papers in 2D Gaussians, Geometry & Compression</strong></summary>
+<summary><strong>View 319 papers in 2D Gaussians, Geometry & Compression</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -592,6 +592,7 @@ Showing 60 of 95 papers. [Browse the full category](https://mango-jeongi.github.
 | `2026-11` | **RAPID: Reconstruction Accelerated by Polarization-Informed Depth for 2D Gaussian Splatting**<br><sub>Proposes RAPID, a geometry-first framework that uses multiview polarization cues to recover dense surface priors.</sub> | Ouyang et al. | `Densification & Pruning`, `2DGS`, `Mesh & Surface`, `Foundations` | [[arXiv:2611.24404]](https://arxiv.org/abs/2611.24404) [[PDF]](https://arxiv.org/pdf/2611.24404.pdf) |
 | `2026-11` | **Marrying Capacity and Precision for Efficient 2D Gaussian Image Representation**<br><sub>Presents CP-GS, a capacity-precision coupled Gaussian splatting framework for budget-aware 2D Gaussian image representation that jointly optimizes capacity allocation and attribute precision under a shared...</sub> | Dong et al. | `2DGS`, `Compression`, `Foundations` | [[arXiv:2611.13784]](https://arxiv.org/abs/2611.13784) [[PDF]](https://arxiv.org/pdf/2611.13784.pdf) |
 | `2026-11` | **SHIN: Scalable Hierarchy for INcremental 3D Gaussian Splatting**<br><sub>Across three benchmarks, SHIN progressively improves one cumulative representation and achieves the best PSNR-size efficiency in every overlapping comparison with the multi-rate and progressive baselines.</sub> | Koo et al. | `Anti-Aliasing`, `Densification & Pruning`, `Foundations` | [[arXiv:2611.10652]](https://arxiv.org/abs/2611.10652) [[PDF]](https://arxiv.org/pdf/2611.10652.pdf) |
+| `2026-11` | **TopSDF: Topological Signed Distance Field for High-Quality Triangle Mesh Extraction from 3D Gaussian Splatting**<br><sub>Introduces TopSDF, a framework that models the signed distance state as a multivariate Gaussian random field.</sub> | Do et al. | `Densification & Pruning`, `Mesh & Surface`, `Foundations` | [[arXiv:2611.18708]](https://arxiv.org/abs/2611.18708) [[PDF]](https://arxiv.org/pdf/2611.18708.pdf) |
 | `2026-11` | **Gaussians Can Subtract: Neural Dissolve Fields for Hybrid Scene Rendering** **[WACV 2027]**<br><sub>Introduces a lightweight Neural Dissolve Field, parameterized by scalar spherical-harmonic Gaussians, to learn where and from which viewing directions mesh content should be dissolved.</sub> | Wang et al. | `Foundations` | [[arXiv:2611.07049]](https://arxiv.org/abs/2611.07049) [[PDF]](https://arxiv.org/pdf/2611.07049.pdf) [[Project]](https://ooosn.github.io/gaussians-can-subtract/) |
 | `2026-11` | **CrossPressor: Scalable Cross-View Fusion for Feed-Forward 3D Gaussian Splatting** **[WACV 2027]**<br><sub>Feed-forward 3D Gaussian Splatting (3D-GS) becomes increasingly difficult to scale to long multi-view sequences.</sub> | Hu et al. | `Feed-Forward`, `Compression`, `Foundations` | [[arXiv:2611.06258]](https://arxiv.org/abs/2611.06258) [[PDF]](https://arxiv.org/pdf/2611.06258.pdf) [[Project]](https://yuhsihu.github.io/CrossPressor) |
 | `2026-11` | **GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs**<br><sub>Presents GSCV++, a lightweight pipeline for 3D {G}aussian {S}platting (GS) sequences {C}ompression with standard {V}ideo codecs.</sub> | Yang et al. | `Compression`, `Foundations` | [[arXiv:2611.05359]](https://arxiv.org/abs/2611.05359) [[PDF]](https://arxiv.org/pdf/2611.05359.pdf) |
@@ -647,9 +648,8 @@ Showing 60 of 95 papers. [Browse the full category](https://mango-jeongi.github.
 | `2026-08` | **DecoupleGS: Interactive 3D Gaussian Splatting for End-to-End Autonomous Driving Testing** **[ECCV 2026]**<br><sub>To bridge this gap, we propose a novel decoupled 3D Gaussian Splatting (3DGS) framework tailored for large-scale E2E evaluation.</sub> | Li et al. | `Densification & Pruning`, `Compression`, `Relighting & BRDF`, `Autonomous Driving` | [[arXiv:2608.01761]](https://arxiv.org/abs/2608.01761) [[PDF]](https://arxiv.org/pdf/2608.01761.pdf) |
 | `2026-07` | **Manifold-GS: Certified Hybrid Assets via Varifold-Conservative Gaussian Splatting**<br><sub>Introduces Manifold-GS, a certified hybrid asset layer for Gaussian scenes.</sub> | Li | `2DGS`, `Sparse-View`, `Mesh & Surface`, `Foundations` | [[arXiv:2608.00214]](https://arxiv.org/abs/2608.00214) [[PDF]](https://arxiv.org/pdf/2608.00214.pdf) |
 | `2026-07` | **MonoVoc: Decoupling Geometry and Semantics for Lightweight Monocular Open-Vocabulary 3D Gaussians**<br><sub>Presents a novel, training-free pipeline that fundamentally reimagines this paradigm by explicitly decoupling 3D geometric reconstruction from semantic integration.</sub> | Ardekhani et al. | `Foundations` | [[arXiv:2607.28300]](https://arxiv.org/abs/2607.28300) [[PDF]](https://arxiv.org/pdf/2607.28300.pdf) |
-| `2026-07` | **PanoLess: Environment Reconstruction from Partial Reflective Views** **[ECCV 2026]**<br><sub>Proposes PanoLess, a Gaussian-splat-based framework that reconstructs the surrounding environment as a distant illumination map from images captured on only one side of a reflective surface.</sub> | Das et al. | `2DGS`, `Foundations` | [[arXiv:2607.25362]](https://arxiv.org/abs/2607.25362) [[PDF]](https://arxiv.org/pdf/2607.25362.pdf) |
 
-Showing 60 of 318 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=2D%20Gaussians%2C%20Geometry%20%26%20Compression).
+Showing 60 of 319 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=2D%20Gaussians%2C%20Geometry%20%26%20Compression).
 
 </details>
 
