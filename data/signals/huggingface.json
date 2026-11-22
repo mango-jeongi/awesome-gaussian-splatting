@@ -2568,6 +2568,102 @@
         "upvotes": 1
       }
     },
+    "2312.15258": {
+      "fetched_at": "2026-11-22T12:28:18.169560Z",
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.15258",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15258",
+          "text": "Human101 is a framework that reconstructs high-fidelity dynamic 3D humans from single-view videos in real-time using 3D Gaussian Splatting and Human-centric Forward Gaussian Animation, achieving high rendering speeds and quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15258",
+          "text": "Reconstructing the human body from single-view videos plays a pivotal role in\nthe virtual reality domain. One prevalent application scenario necessitates the\nrapid reconstruction of high-fidelity 3D digital humans while simultaneously\nensuring real-time rendering and interaction. Existing methods often struggle\nto fulfill both requirements. In this paper, we introduce Human101, a novel\nframework adept at producing high-fidelity dynamic 3D human reconstructions\nfrom 1-view videos by training 3D Gaussians in 100 seconds and rendering in\n100+ FPS. Our method leverages the strengths of 3D Gaussian Splatting, which\nprovides an explicit and efficient representation of 3D humans. Standing apart\nfrom prior NeRF-based pipelines, Human101 ingeniously applies a Human-centric\nForward Gaussian Animation method to deform the parameters of 3D Gaussians,\nthereby enhancing rendering speed (i.e., rendering 1024-resolution images at an\nimpressive 60+ FPS and rendering 512-resolution images at 100+ FPS).\nExperimental results indicate that our approach substantially eclipses current\nmethods, clocking up to a 10 times surge in frames per second and delivering\ncomparable or superior rendering quality. Code and demos will be released at\nhttps://github.com/longxiang-ai/Human101."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/longxiang-ai/human101"
+        },
+        "source_url": "https://huggingface.co/papers/2312.15258",
+        "stars": 110,
+        "submitted_on_daily_at": "2023-12-27T00:00:00.000Z",
+        "upvotes": 12
+      }
+    },
+    "2312.15676": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.15856": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.16047": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.16084": {
+      "fetched_at": "2026-11-22T12:28:18.169560Z",
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.16084",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://langsplat.github.io/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.16084",
+          "text": "LangSplat constructs a 3D language field using a splatting technique with hierarchical semantics, enabling precise and efficient open-vocabulary querying in 3D spaces while significantly outperforming existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.16084",
+          "text": "Human lives in a 3D world and commonly uses natural language to interact with\na 3D scene. Modeling a 3D language field to support open-ended language queries\nin 3D has gained increasing attention recently. This paper introduces\nLangSplat, which constructs a 3D language field that enables precise and\nefficient open-vocabulary querying within 3D spaces. Unlike existing methods\nthat ground CLIP language embeddings in a NeRF model, LangSplat advances the\nfield by utilizing a collection of 3D Gaussians, each encoding language\nfeatures distilled from CLIP, to represent the language field. By employing a\ntile-based splatting technique for rendering language features, we circumvent\nthe costly rendering process inherent in NeRF. Instead of directly learning\nCLIP embeddings, LangSplat first trains a scene-wise language autoencoder and\nthen learns language features on the scene-specific latent space, thereby\nalleviating substantial memory demands imposed by explicit modeling. Existing\nmethods struggle with imprecise and vague 3D language fields, which fail to\ndiscern clear boundaries between objects. We delve into this issue and propose\nto learn hierarchical semantics using SAM, thereby eliminating the need for\nextensively querying the language field across various scales and the\nregularization of DINO features. Extensive experiments on open-vocabulary 3D\nobject localization and semantic segmentation demonstrate that LangSplat\nsignificantly outperforms the previous state-of-the-art method LERF by a large\nmargin. Notably, LangSplat is extremely efficient, achieving a {\\speed}\ntimes speedup compared to LERF at the resolution of 1440 times 1080. We\nstrongly recommend readers to check out our video results at\nhttps://langsplat.github.io"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/minghanqin/LangSplat"
+        },
+        "source_url": "https://huggingface.co/papers/2312.16084",
+        "stars": 1101,
+        "submitted_on_daily_at": "2023-12-27T00:00:00.000Z",
+        "upvotes": 15
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
