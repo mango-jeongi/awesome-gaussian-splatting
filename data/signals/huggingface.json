@@ -2434,6 +2434,140 @@
         "upvotes": 2
       }
     },
+    "2312.13308": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T03:37:07.012952Z",
+      "next_retry_at": "2026-11-29T03:37:07.012952Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.13729": {
+      "fetched_at": "2026-11-22T03:37:07.012952Z",
+      "last_attempt_at": "2026-11-22T03:37:07.012952Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.13729",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13729",
+          "text": "A hybrid model combining Gaussian Splatting and NeRFs improves rendering quality by encoding shape with Gaussian distributions and color/opacity with neural networks, addressing limitations of both methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13729",
+          "text": "Neural Radiance Fields (NeRFs) have demonstrated the remarkable potential of\nneural networks to capture the intricacies of 3D objects. By encoding the shape\nand color information within neural network weights, NeRFs excel at producing\nstrikingly sharp novel views of 3D objects. Recently, numerous generalizations\nof NeRFs utilizing generative models have emerged, expanding its versatility.\nIn contrast, Gaussian Splatting (GS) offers a similar render quality with\nfaster training and inference as it does not need neural networks to work. It\nencodes information about the 3D objects in the set of Gaussian distributions\nthat can be rendered in 3D similarly to classical meshes. Unfortunately, GS are\ndifficult to condition since they usually require circa hundred thousand\nGaussian components. To mitigate the caveats of both models, we propose a\nhybrid model Viewing Direction Gaussian Splatting (VDGS) that uses GS\nrepresentation of the 3D object's shape and NeRF-based encoding of color and\nopacity. Our model uses Gaussian distributions with trainable positions (i.e.\nmeans of Gaussian), shape (i.e. covariance of Gaussian), color and opacity, and\na neural network that takes Gaussian parameters and viewing direction to\nproduce changes in the said color and opacity. As a result, our model better\ndescribes shadows, light reflections, and the transparency of 3D objects\nwithout adding additional texture and light components."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/gmum/ViewingDirectionGaussianSplatting"
+        },
+        "source_url": "https://huggingface.co/papers/2312.13729",
+        "stars": 74,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2312.13763": {
+      "fetched_at": "2026-11-22T03:37:07.012952Z",
+      "last_attempt_at": "2026-11-22T03:37:07.012952Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.13763",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13763",
+          "text": "A text-guided compositional generation method uses score distillation and dynamic 3D Gaussian Splatting to synthesize high-quality, animated 4D objects with improved temporal consistency and realism."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.13763",
+          "text": "Text-guided diffusion models have revolutionized image and video generation\nand have also been successfully used for optimization-based 3D object\nsynthesis. Here, we instead focus on the underexplored text-to-4D setting and\nsynthesize dynamic, animated 3D objects using score distillation methods with\nan additional temporal dimension. Compared to previous work, we pursue a novel\ncompositional generation-based approach, and combine text-to-image,\ntext-to-video, and 3D-aware multiview diffusion models to provide feedback\nduring 4D object optimization, thereby simultaneously enforcing temporal\nconsistency, high-quality visual appearance and realistic geometry. Our method,\ncalled Align Your Gaussians (AYG), leverages dynamic 3D Gaussian Splatting with\ndeformation fields as 4D representation. Crucial to AYG is a novel method to\nregularize the distribution of the moving 3D Gaussians and thereby stabilize\nthe optimization and induce motion. We also propose a motion amplification\nmechanism as well as a new autoregressive synthesis scheme to generate and\ncombine multiple 4D sequences for longer generation. These techniques allow us\nto synthesize vivid dynamic scenes, outperform previous work qualitatively and\nquantitatively and achieve state-of-the-art text-to-4D performance. Due to the\nGaussian 4D representation, different 4D animations can be seamlessly combined,\nas we demonstrate. AYG opens up promising avenues for animation, simulation and\ndigital content creation as well as synthetic data generation."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.13763",
+        "submitted_on_daily_at": "2023-12-21T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2312.14937": {
+      "fetched_at": "2026-11-22T03:37:07.012952Z",
+      "last_attempt_at": "2026-11-22T03:37:07.012952Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.14937",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.14937",
+          "text": "A novel technique for dynamic scene synthesis decomposes motion and appearance into sparse control points and dense Gaussians, enabling high-quality and real-time view synthesis with motion editing capabilities."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.14937",
+          "text": "Novel view synthesis for dynamic scenes is still a challenging problem in\ncomputer vision and graphics. Recently, Gaussian splatting has emerged as a\nrobust technique to represent static scenes and enable high-quality and\nreal-time novel view synthesis. Building upon this technique, we propose a new\nrepresentation that explicitly decomposes the motion and appearance of dynamic\nscenes into sparse control points and dense Gaussians, respectively. Our key\nidea is to use sparse control points, significantly fewer in number than the\nGaussians, to learn compact 6 DoF transformation bases, which can be locally\ninterpolated through learned interpolation weights to yield the motion field of\n3D Gaussians. We employ a deformation MLP to predict time-varying 6 DoF\ntransformations for each control point, which reduces learning complexities,\nenhances learning abilities, and facilitates obtaining temporal and spatial\ncoherent motion patterns. Then, we jointly learn the 3D Gaussians, the\ncanonical space locations of control points, and the deformation MLP to\nreconstruct the appearance, geometry, and dynamics of 3D scenes. During\nlearning, the location and number of control points are adaptively adjusted to\naccommodate varying motion complexities in different regions, and an ARAP loss\nfollowing the principle of as rigid as possible is developed to enforce spatial\ncontinuity and local rigidity of learned motions. Finally, thanks to the\nexplicit sparse motion representation and its decomposition from appearance,\nour method can enable user-controlled motion editing while retaining\nhigh-fidelity appearances. Extensive experiments demonstrate that our approach\noutperforms existing approaches on novel view synthesis with a high rendering\nspeed and enables novel appearance-preserved motion editing applications.\nProject page: https://yihua7.github.io/SC-GS-web/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/yihua7/SC-GS"
+        },
+        "source_url": "https://huggingface.co/papers/2312.14937",
+        "stars": 658,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2312.15059": {
+      "fetched_at": "2026-11-22T03:37:07.012952Z",
+      "last_attempt_at": "2026-11-22T03:37:07.012952Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.15059",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15059",
+          "text": "A new method, ParDy-Human, constructs dynamic human avatars from a single video sequence using 3D Gaussian Splatting and parameter-driven deformations, outperforming existing techniques."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15059",
+          "text": "Recent advances in neural radiance fields enable novel view synthesis of\nphoto-realistic images in dynamic settings, which can be applied to scenarios\nwith human animation. Commonly used implicit backbones to establish accurate\nmodels, however, require many input views and additional annotations such as\nhuman masks, UV maps and depth maps. In this work, we propose ParDy-Human\n(Parameterized Dynamic Human Avatar), a fully explicit approach to construct a\ndigital avatar from as little as a single monocular sequence. ParDy-Human\nintroduces parameter-driven dynamics into 3D Gaussian Splatting where 3D\nGaussians are deformed by a human pose model to animate the avatar. Our method\nis composed of two parts: A first module that deforms canonical 3D Gaussians\naccording to SMPL vertices and a consecutive module that further takes their\ndesigned joint encodings and predicts per Gaussian deformations to deal with\ndynamics beyond SMPL vertex deformations. Images are then synthesized by a\nrasterizer. ParDy-Human constitutes an explicit model for realistic dynamic\nhuman avatars which requires significantly fewer training views and images. Our\navatars learning is free of additional annotations such as masks and can be\ntrained with variable backgrounds while inferring full-resolution images\nefficiently even on consumer hardware. We provide experimental evidence to show\nthat ParDy-Human outperforms state-of-the-art methods on ZJU-MoCap and\nTHUman4.0 datasets both quantitatively and visually."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2312.15059",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
