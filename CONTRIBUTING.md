@@ -649,7 +649,7 @@ epoch. Capture reports expose `reviewed_source_url_records` separately. Neither
 this correction nor successful metadata capture establishes canonical identity,
 topic inclusion, independent inventory reconciliation or provider recall.
 
-## MSI checkout refresh
+## Server checkout refresh
 
 `papers-repo-sync.timer` checks every five minutes after boot. The companion
 service fast-forwards a clean `main` or `feed` checkout from its matching origin
@@ -664,7 +664,7 @@ and is not upgraded by this timer.
 
 Install the two `deploy/papers-repo-sync.*` units under
 `~/.config/systemd/user/`, run `systemctl --user daemon-reload`, then
-`systemctl --user enable --now papers-repo-sync.timer`. The MSI service uses its
+`systemctl --user enable --now papers-repo-sync.timer`. The service uses its
 existing SSH identity and a process-only HTTPS-to-SSH transport override.
 
 Pages uploads must set `include-hidden-files: true`: the validated immutable
