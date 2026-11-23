@@ -16,12 +16,12 @@ on:
         description: "Expected 64-character release ID from the original candidate receipt"
         required: true
         type: string
+      legacy_archive_sha256:
+        description: "Independently trusted archive SHA-256 for a pre-attestation release only"
+        required: false
+        type: string
 
-permissions:
-  contents: write
-  actions: read
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: repository-writer
@@ -29,8 +29,15 @@ concurrency:
 
 jobs:
   redeploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+      pages: write
+      id-token: write
+      attestations: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -38,7 +45,7 @@ jobs:
       - name: Checkout trusted archive verifier
         uses: actions/checkout@v7
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Install uv
@@ -60,16 +67,31 @@ jobs:
           [[ "$SOURCE_RUN_ID" =~ ^[1-9][0-9]{0,19}$ ]] || exit 1
           [[ "$SOURCE_ATTEMPT" =~ ^[1-9][0-9]{0,4}$ ]] || exit 1
           [[ "$EXPECTED_RELEASE_ID" =~ ^[a-f0-9]{64}$ ]] || exit 1
-          gh run download "$SOURCE_RUN_ID" --name "papers-release-$EXPECTED_RELEASE_ID-$SOURCE_ATTEMPT" --dir "$RUNNER_TEMP/retained-release"
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID/attempts/$SOURCE_ATTEMPT" \
+            > "$RUNNER_TEMP/retained-source-run.json"
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" \
+            --name "papers-release-$EXPECTED_RELEASE_ID-$SOURCE_ATTEMPT" --dir "$RUNNER_TEMP/retained-release"
 
-      - name: Verify archive digest and restore exact immutable bytes
+      - name: Verify archive provenance and restore exact immutable bytes
         id: restored
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           EXPECTED_RELEASE_ID: ${{ inputs.release_id }}
+          LEGACY_ARCHIVE_SHA256: ${{ inputs.legacy_archive_sha256 }}
         run: |
-          uv run python -c 'import hashlib, json, os, pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"retained-release"; r=json.loads((p/"receipt.json").read_bytes()); assert r["release_id"]==os.environ["EXPECTED_RELEASE_ID"]; assert hashlib.sha256((p/"release.tar").read_bytes()).hexdigest()==r["archive_sha256"]'
-          uv run python -m src.releases restore --archive "$RUNNER_TEMP/retained-release/release.tar" --expected-release-id "$EXPECTED_RELEASE_ID" --output "$RUNNER_TEMP/restored-site"
-          uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"restored-site/release.json").read_bytes()); print("source_revision="+r["source_revision"]); print("release_tag="+(r.get("release_tag") or ""))' >> "$GITHUB_OUTPUT"
+          SOURCE_REVISION=$(uv run python -m src.release_provenance \
+            --artifact-dir "$RUNNER_TEMP/retained-release" --source-run "$RUNNER_TEMP/retained-source-run.json" \
+            --repository "$GITHUB_REPOSITORY" --release-id "$EXPECTED_RELEASE_ID" \
+            --legacy-archive-sha256 "$LEGACY_ARCHIVE_SHA256")
+          uv run python -m src.releases restore --archive "$RUNNER_TEMP/retained-release/release.tar" \
+            --expected-release-id "$EXPECTED_RELEASE_ID" --output "$RUNNER_TEMP/restored-site" \
+            --report "$RUNNER_TEMP/restore-receipt.json"
+          SOURCE_REVISION="$SOURCE_REVISION" uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"restored-site/release.json").read_bytes()); assert r["source_revision"]==os.environ["SOURCE_REVISION"], "Archive source revision differs from verified provenance"; print("source_revision="+r["source_revision"]); print("release_tag="+(r.get("release_tag") or ""))' >> "$GITHUB_OUTPUT"
+          if [[ -n "$LEGACY_ARCHIVE_SHA256" ]]; then
+            echo "- Verified independently pinned digest for pre-attestation release $EXPECTED_RELEASE_ID." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- Verified signed weekly release provenance for $EXPECTED_RELEASE_ID." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
@@ -100,7 +122,9 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: redeployment-verification-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/deployment-verification.json
+          path: |
+            ${{ runner.temp }}/restore-receipt.json
+            ${{ runner.temp }}/deployment-verification.json
           retention-days: 90
           if-no-files-found: warn
 

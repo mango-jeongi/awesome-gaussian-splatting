@@ -15,6 +15,7 @@ from src.observations import SignalStore
 from src.openalex_cache import OpenAlexCache, refresh_ttl
 from src.public import compact
 from src.releases import safe_name, sha
+from src.run_receipts import run_receipt
 from src.schema import PaperDatabase
 from src.semanticscholar_history import SemanticScholarHistory, history_path
 from src.storage import _encode, canonical_data_path
@@ -439,6 +440,14 @@ def coverage_snapshot(root, *, data_path=None, now=None):
     }
     result["input_sha256"] = inputs.finish()
     result["missing_optional_inputs"] = sorted(inputs.missing)
+    evaluated_inputs = {
+        key: result[key] for key in ("observed_at", "input_sha256", "missing_optional_inputs")
+    }
+    result["run_receipt"] = run_receipt(
+        "coverage.snapshot",
+        inputs={"evaluation_inputs_sha256": sha(compact(evaluated_inputs))},
+        outputs={"coverage_sha256": sha(compact(result))},
+    )
     return result
 
 

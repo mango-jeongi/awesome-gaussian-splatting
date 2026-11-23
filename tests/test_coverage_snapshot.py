@@ -11,6 +11,7 @@ from src.cli import main
 from src.coverage import SnapshotInputs, coverage_snapshot, write_coverage_report
 from src.observations import SignalStore
 from src.openalex_cache import CitationSample, OpenAlexCache
+from src.run_receipts import RunReceipt
 from src.schema import PaperDatabase, PaperRecord
 from src.storage import _encode, write_store
 
@@ -100,6 +101,11 @@ def test_provider_separation_zero_stale_retained_values_and_no_network(tmp_path,
     result = coverage_snapshot(tmp_path, now=NOW)
     assert inputs_bytes(tmp_path) == before
     assert coverage_snapshot(tmp_path, now=NOW) == result
+    run = RunReceipt.model_validate(result["run_receipt"])
+    assert run.job == "coverage.snapshot" and run.status == "succeeded"
+    assert coverage_snapshot(tmp_path, now=NOW + timedelta(seconds=1))["run_receipt"]["run_id"] != (
+        run.run_id
+    )
     actual = result["providers"]
     assert actual["openalex"]["verified_observed_zero_citations"] == 1
     assert actual["openalex"]["unobserved"] == 1
