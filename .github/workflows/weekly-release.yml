@@ -6,10 +6,7 @@ on:
     - cron: "0 0 * * 0"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: repository-writer
@@ -19,6 +16,11 @@ jobs:
   release-and-build:
     name: Validate main, Tag Release & Prepare Pages
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+      pages: read
+      id-token: write
+      attestations: write
     outputs:
       release_id: ${{ steps.candidate.outputs.release_id }}
       source_revision: ${{ steps.candidate.outputs.source_revision }}
@@ -80,6 +82,30 @@ jobs:
           uv run python -m src.releases pack --release-tag "$WEEKLY_TAG" --output "$RUNNER_TEMP/papers-release"
           uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"papers-release/receipt.json").read_bytes()); print("release_id="+r["release_id"]); print("source_revision="+r["source_revision"]); print("pages_artifact_name=github-pages-"+r["release_id"]+"-"+os.environ["GITHUB_RUN_ATTEMPT"])' >> "$GITHUB_OUTPUT"
 
+      - name: Attest immutable release archive
+        id: archive-attestation
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: ${{ runner.temp }}/papers-release/release.tar
+          create-storage-record: false
+
+      - name: Verify release provenance before publishing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ATTESTATION_BUNDLE: ${{ steps.archive-attestation.outputs.bundle-path }}
+          EXPECTED_RELEASE_ID: ${{ steps.candidate.outputs.release_id }}
+          SOURCE_REVISION: ${{ steps.candidate.outputs.source_revision }}
+        run: |
+          [[ "$SOURCE_REVISION" == "$GITHUB_SHA" ]] || exit 1
+          gh attestation verify "$RUNNER_TEMP/papers-release/release.tar" \
+            --bundle "$ATTESTATION_BUNDLE" --repo "$GITHUB_REPOSITORY" \
+            --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/weekly-release.yml" \
+            --source-ref refs/heads/main --source-digest "$SOURCE_REVISION" \
+            --deny-self-hosted-runners
+          cp -- "$ATTESTATION_BUNDLE" "$RUNNER_TEMP/papers-release/provenance.json"
+          uv run python -m src.releases restore --archive "$RUNNER_TEMP/papers-release/release.tar" \
+            --expected-release-id "$EXPECTED_RELEASE_ID" --output "$RUNNER_TEMP/attested-site"
+
       - name: Publish the verified candidate tag and prepare the draft release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -98,6 +124,7 @@ jobs:
           path: |
             ${{ runner.temp }}/papers-release/release.tar
             ${{ runner.temp }}/papers-release/receipt.json
+            ${{ runner.temp }}/papers-release/provenance.json
           retention-days: 90
           if-no-files-found: error
 
@@ -109,13 +136,17 @@ jobs:
         with:
           include-hidden-files: true
           name: ${{ steps.candidate.outputs.pages_artifact_name }}
-          path: ${{ runner.temp }}/papers-release/site
+          path: ${{ runner.temp }}/attested-site
 
   deploy-pages:
     name: Deploy and verify immutable candidate
     timeout-minutes: 10
     needs: release-and-build
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
