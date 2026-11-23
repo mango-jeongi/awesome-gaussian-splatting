@@ -2990,6 +2990,117 @@
       "status": "not_found",
       "values": {}
     },
+    "2401.12561": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.12561",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12561",
+          "text": "EndoGaussian achieves real-time endoscopic reconstruction using 3D Gaussian Splatting with efficient Gaussian initialization and spatio-temporal Gaussian tracking, outperforming existing methods in speed, quality, and training overhead."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12561",
+          "text": "Reconstructing deformable tissues from endoscopic videos is essential in many\ndownstream surgical applications. However, existing methods suffer from slow\nrendering speed, greatly limiting their practical use. In this paper, we\nintroduce EndoGaussian, a real-time endoscopic scene reconstruction framework\nbuilt on 3D Gaussian Splatting (3DGS). By integrating the efficient Gaussian\nrepresentation and highly-optimized rendering engine, our framework\nsignificantly boosts the rendering speed to a real-time level. To adapt 3DGS\nfor endoscopic scenes, we propose two strategies, Holistic Gaussian\nInitialization (HGI) and Spatio-temporal Gaussian Tracking (SGT), to handle the\nnon-trivial Gaussian initialization and tissue deformation problems,\nrespectively. In HGI, we leverage recent depth estimation models to predict\ndepth maps of input binocular/monocular image sequences, based on which pixels\nare re-projected and combined for holistic initialization. In SPT, we propose\nto model surface dynamics using a deformation field, which is composed of an\nefficient encoding voxel and a lightweight deformation decoder, allowing for\nGaussian tracking with minor training and rendering burden. Experiments on\npublic datasets demonstrate our efficacy against prior SOTAs in many aspects,\nincluding better rendering speed (195 FPS real-time, 100times gain), better\nrendering quality (37.848 PSNR), and less training overhead (within 2\nmin/scene), showing significant promise for intraoperative surgery\napplications. Code is available at:\nhttps://yifliu3.github.io/EndoGaussian/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.12561",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.12900": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.12900",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12900",
+          "text": "A novel framework, PSAvatar, combines point-based morphable shape models and 3D Gaussian representations for real-time, high-fidelity head avatar animation, addressing challenges in non-facial structure representation and rendering efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12900",
+          "text": "Despite much progress, achieving real-time high-fidelity head avatar\nanimation is still difficult and existing methods have to trade-off between\nspeed and quality. 3DMM based methods often fail to model non-facial structures\nsuch as eyeglasses and hairstyles, while neural implicit models suffer from\ndeformation inflexibility and rendering inefficiency. Although 3D Gaussian has\nbeen demonstrated to possess promising capability for geometry representation\nand radiance field reconstruction, applying 3D Gaussian in head avatar creation\nremains a major challenge since it is difficult for 3D Gaussian to model the\nhead shape variations caused by changing poses and expressions. In this paper,\nwe introduce PSAvatar, a novel framework for animatable head avatar creation\nthat utilizes discrete geometric primitive to create a parametric morphable\nshape model and employs 3D Gaussian for fine detail representation and high\nfidelity rendering. The parametric morphable shape model is a Point-based\nMorphable Shape Model (PMSM) which uses points instead of meshes for 3D\nrepresentation to achieve enhanced representation flexibility. The PMSM first\nconverts the FLAME mesh to points by sampling on the surfaces as well as off\nthe meshes to enable the reconstruction of not only surface-like structures but\nalso complex geometries such as eyeglasses and hairstyles. By aligning these\npoints with the head shape in an analysis-by-synthesis manner, the PMSM makes\nit possible to utilize 3D Gaussian for fine detail representation and\nappearance modeling, thus enabling the creation of high-fidelity avatars. We\nshow that PSAvatar can reconstruct high-fidelity head avatars of a variety of\nsubjects and the avatars can be animated in real-time (ge 25 fps at a\nresolution of 512 times 512 )."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/pcl3dv/PSAvatar"
+        },
+        "source_url": "https://huggingface.co/papers/2401.12900",
+        "stars": 82,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.13352": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": "2026-11-30T22:49:52.974430Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.14032": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": "2026-11-30T22:49:52.974430Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.14828": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.14828",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.14828",
+          "text": "TIPEditor, a text- and image-driven 3D scene editing framework, uses 2D personalization and 3D Gaussian splatting to achieve accurate and aligned edits within specified bounding boxes."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.14828",
+          "text": "Text-driven 3D scene editing has gained significant attention owing to its\nconvenience and user-friendliness. However, existing methods still lack\naccurate control of the specified appearance and location of the editing result\ndue to the inherent limitations of the text description. To this end, we\npropose a 3D scene editing framework, TIPEditor, that accepts both text and\nimage prompts and a 3D bounding box to specify the editing region. With the\nimage prompt, users can conveniently specify the detailed appearance/style of\nthe target content in complement to the text description, enabling accurate\ncontrol of the appearance. Specifically, TIP-Editor employs a stepwise 2D\npersonalization strategy to better learn the representation of the existing\nscene and the reference image, in which a localization loss is proposed to\nencourage correct object placement as specified by the bounding box.\nAdditionally, TIPEditor utilizes explicit and flexible 3D Gaussian splatting as\nthe 3D representation to facilitate local editing while keeping the background\nunchanged. Extensive experiments have demonstrated that TIP-Editor conducts\naccurate editing following the text and image prompts in the specified bounding\nbox region, consistently outperforming the baselines in editing quality, and\nthe alignment to the prompts, qualitatively and quantitatively."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.14828",
+        "submitted_on_daily_at": "2024-01-29T00:00:00.000Z",
+        "upvotes": 9
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
