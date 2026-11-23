@@ -344,8 +344,21 @@ full-length context, warm performance and persistent model operation remain open
 
 ## Immutable release, retry and rollback
 
-The weekly workflow now prepares a GitHub draft release, commits its generated
-candidate, and packages a frozen site outside the working tree. The packer requires
+Use a short branch from current `main` for each issue. Commit cohesive changes
+frequently, open a PR linked to its issue, and merge after the GitHub Actions
+checks pass. Use [Milestones](https://github.com/mango-jeongi/awesome-gaussian-splatting/milestones)
+for phase progress and [Issues](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues)
+for remaining work.
+
+Scheduled catalog jobs commit to `feed`. The midweek workflow builds and validates
+the candidate and creates a PR to `main` if one is needed. If GitHub asks for
+workflow approval on that PR, approve the run and wait for CI on the current head.
+The maintainer reviews the data and merges with a merge commit to preserve `feed`
+ancestry. To pin the reviewed head from a signed-in GitHub CLI, use
+`gh pr merge <number> --merge --match-head-commit <reviewed-feed-sha>`.
+
+The weekly workflow packages a frozen site from its approved `main` revision,
+then tags the verified candidate and prepares a GitHub draft release. The packer requires
 a clean checkout and committed code/data/site inputs, verifies the public manifest
 and every referenced artifact, and rebuilds the current data projection in isolation
 to refuse stale source or provider-cache output. Local coordination locks are not
