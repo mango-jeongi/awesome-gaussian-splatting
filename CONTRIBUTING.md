@@ -356,6 +356,38 @@ the extractor/job digest. Context fields were empty in this canary, and the
 updated adapter is not deployed into the active worker. Live real-table quality,
 full-length context, warm performance and persistent model operation remain open.
 
+## Citing software and catalog snapshots
+
+[CITATION.cff](CITATION.cff) describes the software. Include the release tag or
+full source commit you used. For an analysis of the catalog, also record the
+snapshot you queried. The live portal URL alone does not identify a snapshot.
+
+- For a published catalog release, record the tag, `source_revision`, `release_id`
+  and `public_build_digest` from that release's `release.json`. Use the
+  `canonical_data_model_sha256` for analysis of the underlying catalog records,
+  or the `public_build_digest` for analysis of the portal projection.
+- For a local catalog analysis, record the full source commit and SHA-256 of
+  the canonical input. For sharded storage, record the active manifest digest
+  and retain the immutable shards it identifies. Record any provider or review
+  inputs used in the analysis and their digests.
+
+Keep these identifiers with the experiment or report. Cite underlying papers
+individually for claims about their methods or results.
+
+## Versioned run receipts
+
+New coverage snapshots and release pack, restore, and deployed-byte verification
+reports carry a `run_receipt` object alongside their existing fields. Version 1
+contains `schema_version`, `run_id`, `job`, `inputs`, `outputs`, and terminal
+`status`. A `run_id` hashes the remaining fields in canonical key order. It
+identifies identical evidence across replays. Use the GitHub run and attempt
+numbers when you need to identify a particular execution.
+
+Input and output identifiers are digests or commit IDs. They bind the evidence
+without putting source URLs, local paths, or secrets in the envelope. A
+successful coverage snapshot can still document incomplete coverage. Earlier
+receipts remain readable and keep their original bytes.
+
 ## Immutable release, retry and rollback
 
 Follow the [branch and pull request conventions](#branches-commits-and-pull-requests)
@@ -388,8 +420,23 @@ From a committed candidate in the prescribed SSD environment:
 
 ```sh
 uv run python -m src.releases pack --output <new-staging-directory>
-uv run python -m src.releases restore --archive <release.tar> --expected-release-id <trusted-release-id> --output <new-restored-site>
+uv run python -m src.releases restore --archive <release.tar> --expected-release-id <trusted-release-id> --output <new-restored-site> --report <new-restore-receipt.json>
 ```
+
+For a published archive, verify its GitHub attestation before the local restore.
+Use the source commit from the trusted release record:
+
+```bash
+gh attestation verify release.tar \
+  --repo mango-jeongi/awesome-gaussian-splatting \
+  --signer-workflow mango-jeongi/awesome-gaussian-splatting/.github/workflows/weekly-release.yml \
+  --source-ref refs/heads/main --source-digest <trusted-source-commit> \
+  --deny-self-hosted-runners
+```
+
+The retained `provenance.json` bundle can also be passed to `--bundle` when
+verifying against that recorded repository identity. Local `restore` checks the
+archive's internal integrity and the expected release ID.
 
 For a tagged weekly candidate, add `--release-tag vYYYY.Www`; the CLI checks that
 the local tag points to the exact candidate commit. The pack output contains
@@ -400,9 +447,11 @@ traversing, link, duplicate and unsupported members are refused. It never rebuil
 an old portal with current data. Retain the trusted release ID outside the archive;
 accepting an arbitrary ID read from an unknown archive would not authenticate it.
 
-The weekly workflow retains `papers-release-<release-id>-<source-attempt>` for
-90 days (subject to repository retention policy) using a verified pinned upload
-action. The Pages artifact is separately named by candidate and source attempt.
+The weekly workflow signs and verifies the immutable `release.tar` before
+pushing its tag or preparing a draft release. It retains the archive, receipt,
+and signed bundle as `papers-release-<release-id>-<source-attempt>` for 90 days,
+subject to repository retention policy. The Pages artifact is separately named
+by candidate and source attempt.
 Deploy-only job retries consume that exact artifact name. Candidate source code
 is checked out for deployed-byte verification. A GitHub release leaves draft state
 only after the expected deployed release ID, manifest and every candidate file
@@ -411,8 +460,12 @@ are verified. Static-byte checks do not replace browser route/history/mobile QA.
 For retries after the short-lived Pages artifact expires, or deliberate rollback,
 manually dispatch `redeploy-pages.yml` with the original source run ID, its source
 attempt number, and the trusted release ID from that candidate receipt. The
-workflow downloads the retained archive, checks its receipt/hash, restores it,
-uploads those exact bytes and verifies the deployment. It does not merge feed,
+workflow downloads the retained archive and verifies its receipt and the signature
+against this repository's weekly workflow and exact `main` source revision before
+unpacking. It uploads those exact bytes and verifies the deployment. For an older
+archive whose release revision is in the pre-attestation `main` history through
+`271a097`, provide `legacy_archive_sha256` from an independently trusted record.
+An attestation failure never selects that path automatically. Restore does not merge feed,
 refresh signals, build artifacts, change canonical data or reuse current shards.
 A matching weekly draft may be published only after verification and a source-tag
 commit check. Existing data/migration reverts remain a separate reviewed Git step.
