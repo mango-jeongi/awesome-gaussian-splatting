@@ -356,6 +356,24 @@ the extractor/job digest. Context fields were empty in this canary, and the
 updated adapter is not deployed into the active worker. Live real-table quality,
 full-length context, warm performance and persistent model operation remain open.
 
+## Citing software and catalog snapshots
+
+[CITATION.cff](CITATION.cff) describes the software. Include the release tag or
+full source commit you used. For an analysis of the catalog, also record the
+snapshot you queried. The live portal URL alone does not identify a snapshot.
+
+- For a published catalog release, record the tag, `source_revision`, `release_id`
+  and `public_build_digest` from that release's `release.json`. Use the
+  `canonical_data_model_sha256` for analysis of the underlying catalog records,
+  or the `public_build_digest` for analysis of the portal projection.
+- For a local catalog analysis, record the full source commit and SHA-256 of
+  the canonical input. For sharded storage, record the active manifest digest
+  and retain the immutable shards it identifies. Record any provider or review
+  inputs used in the analysis and their digests.
+
+Keep these identifiers with the experiment or report. Cite underlying papers
+individually for claims about their methods or results.
+
 ## Immutable release, retry and rollback
 
 Follow the [branch and pull request conventions](#branches-commits-and-pull-requests)
