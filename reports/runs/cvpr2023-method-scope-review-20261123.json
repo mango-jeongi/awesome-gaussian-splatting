@@ -1,0 +1,62 @@
+{
+  "reviewed_at": "2026-11-23T22:24:29.439125+00:00",
+  "source_revision": "bfa2ebd1307094a763da210aa302bbec627ef561",
+  "prior_review": "reports/runs/cvpr2023-bounded-scope-review-20261117.json",
+  "prior_review_sha256": "322edece9d623d54c6540e8f1aea8c6c4b4be03b851af68ca083ef64e8d803cc",
+  "scope": "Method-level review of three frozen CVPR 2023 leads",
+  "canonical_changes": 0,
+  "frozen_dispositions_changed": false,
+  "records": [
+    {
+      "title": "Pointersect: Neural Rendering With Cloud-Ray Intersection",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Chang_Pointersect_Neural_Rendering_With_Cloud-Ray_Intersection_CVPR_2023_paper.html",
+      "source_capture_sha256": "f91ea530fd40e450bba0bed1d34707ed4aeb30a172897db5e33cf988543a94ec",
+      "arxiv_id": "2304.12390",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Chang_Pointersect_Neural_Rendering_With_Cloud-Ray_Intersection_CVPR_2023_paper.pdf",
+      "pdf_sha256": "d78167538fa257f6cce7680955e8adae815b7047b53260c6624d90dd575acea8",
+      "method_witness": "Section 3.2",
+      "decision": "exclude_from_bounded_splatting_scope",
+      "proposed_labels": null,
+      "reason": "A set transformer estimates the ray intersection and local material weights from nearby points. The rendering path traces rays against those intersections. Visibility splatting is a reported comparison baseline.",
+      "preprint_url": "https://arxiv.org/abs/2304.12390",
+      "preprint_v1_date_utc": "2023-04-24",
+      "proceedings_month": "2023-06",
+      "earliest_public_date_status": "v1 verified; earlier public evidence not independently ruled out"
+    },
+    {
+      "title": "NeuralEditor: Editing Neural Radiance Fields via Manipulating Point Clouds",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Chen_NeuralEditor_Editing_Neural_Radiance_Fields_via_Manipulating_Point_Clouds_CVPR_2023_paper.html",
+      "source_capture_sha256": "af74c7323ad2c95b6c9cf43ffbd6d4eb39824e6a6767d835a86e041a3accd0a7",
+      "arxiv_id": "2305.03049",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Chen_NeuralEditor_Editing_Neural_Radiance_Fields_via_Manipulating_Point_Clouds_CVPR_2023_paper.pdf",
+      "pdf_sha256": "9b1d21f4074e5b22effed7471a15391d1786917e1e997f2c762b064341a8824e",
+      "method_witness": "Sections 3.1–3.2",
+      "decision": "exclude_from_bounded_splatting_scope",
+      "proposed_labels": null,
+      "reason": "The point cloud defines adaptive K-D voxels. Deterministic spline integration and front-to-back volume rendering produce pixel values from the voxel intervals.",
+      "preprint_url": "https://arxiv.org/abs/2305.03049",
+      "preprint_v1_date_utc": "2023-05-04",
+      "proceedings_month": "2023-06",
+      "earliest_public_date_status": "v1 verified; earlier public evidence not independently ruled out"
+    },
+    {
+      "title": "Frequency-Modulated Point Cloud Rendering With Easy Editing",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_Frequency-Modulated_Point_Cloud_Rendering_With_Easy_Editing_CVPR_2023_paper.html",
+      "source_capture_sha256": "4363e84aefc4184672663ef5772ad745e1cef79543fa8ab01b77bd7b7e31786e",
+      "arxiv_id": "2303.07596",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_Frequency-Modulated_Point_Cloud_Rendering_With_Easy_Editing_CVPR_2023_paper.pdf",
+      "pdf_sha256": "addf9407dd97a490eb9be5e03c7be8d85a8625d8026e9a153246439388b06fe2",
+      "method_witness": "Sections 3.1 and 3.4, equation 4",
+      "decision": "propose_adjacent_work",
+      "proposed_labels": [
+        "Adjacent Work",
+        "Non-Gaussian Splatting"
+      ],
+      "reason": "Fixed-support projected disks generate nearest-depth estimates in the main renderer, an explicit special case of surface splatting. AFNet predicts radiance using the estimated surface coordinates. The point opacity optimization is a separate preprocessing stage.",
+      "preprint_url": "https://arxiv.org/abs/2303.07596",
+      "preprint_v1_date_utc": "2023-03-14",
+      "proceedings_month": "2023-06",
+      "earliest_public_date_status": "v1 verified; earlier public evidence not independently ruled out"
+    }
+  ]
+}
