@@ -196,6 +196,11 @@ def test_release_workflows_preserve_candidate_and_verification_order():
     stage = weekly["jobs"]["release-and-build"]
     deploy = weekly["jobs"]["deploy-pages"]
     producer = next(s for s in stage["steps"] if s.get("id") == "candidate")
+    assert stage["if"] == "github.ref == 'refs/heads/main'"
+    assert stage["steps"][0]["with"]["ref"] == "${{ github.sha }}"
+    for step in stage["steps"]:
+        script = step.get("run", "")
+        assert "git merge" not in script and "git push --atomic" not in script
     assert "src.releases pack" in producer["run"]
     assert '"pages_artifact_name=' in producer["run"]
     upload = next(s for s in stage["steps"] if "upload-pages-artifact" in s.get("uses", ""))

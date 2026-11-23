@@ -1,8 +1,8 @@
-name: Mid-Week Trunk Sync (No Deploy)
+name: Prepare Scheduled Catalog PR
 
 on:
   schedule:
-    # Wednesday branch synchronization; public Pages publication remains weekly.
+    # Wednesday review candidate; the maintainer merges the PR.
     - cron: "0 14 * * 3"
   workflow_dispatch:
 
@@ -16,7 +16,8 @@ concurrency:
 
 jobs:
   midweek-trunk-sync:
-    name: Wednesday Trunk Sync (feed -> main, No Deploy)
+    name: Validate feed and open a catalog PR
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
@@ -66,7 +67,9 @@ jobs:
           uv run pytest -v
           uv run python -m src.cli validate
 
-      - name: Push synced main and align feed branch
+      - name: Push validated catalog to feed and open a PR if needed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           for generated_path in data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
             if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
@@ -74,4 +77,15 @@ jobs:
             fi
           done
           git diff --cached --quiet || git commit -m "chore(sync): rebuild mid-week artifacts"
-          git push --atomic origin HEAD:main HEAD:feed
+          git push origin HEAD:feed
+          if git diff --quiet origin/main HEAD; then
+            echo "- Feed has no changes to review." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          pr_url=$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head feed --state open --json url --jq '.[0].url // empty')
+          if [[ -z "$pr_url" ]]; then
+            pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head feed \
+              --title "Update the Papers catalog" \
+              --body "Review the generated catalog changes and merge with a merge commit to preserve feed history. GitHub may require approval to start checks for this workflow-created PR.")
+          fi
+          echo "- Catalog changes ready for review: $pr_url" >> "$GITHUB_STEP_SUMMARY"

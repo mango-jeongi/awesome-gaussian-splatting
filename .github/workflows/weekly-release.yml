@@ -2,7 +2,7 @@ name: Weekly Production Release & GitHub Pages Deploy
 
 on:
   schedule:
-    # Sunday public publication; source and branch freshness are reported separately.
+    # Sunday publication of the approved main revision.
     - cron: "0 0 * * 0"
   workflow_dispatch:
 
@@ -17,7 +17,8 @@ concurrency:
 
 jobs:
   release-and-build:
-    name: Merge feed -> main, Tag Release & Prepare Pages
+    name: Validate main, Tag Release & Prepare Pages
+    if: github.ref == 'refs/heads/main'
     outputs:
       release_id: ${{ steps.candidate.outputs.release_id }}
       source_revision: ${{ steps.candidate.outputs.source_revision }}
@@ -25,10 +26,10 @@ jobs:
       pages_artifact_name: ${{ steps.candidate.outputs.pages_artifact_name }}
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout main
+      - name: Checkout the approved main revision
         uses: actions/checkout@v7
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Install uv
@@ -42,31 +43,8 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen --all-groups
 
-      - name: Merge origin/feed, rebuild & validate
-        env:
-          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      - name: Validate the approved catalog
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin feed main
-          git merge --ff-only origin/main
-          git merge origin/feed --no-edit -m "chore(release): weekly merge from feed"
-          # Optional providers retain successful caches on failure. All three
-          # passes are independently budgeted; at most 15 requests / 270 seconds
-          # are admitted in total (in-flight requests may finish afterward).
-          mkdir -p reports/runs
-          for provider in openalex semanticscholar huggingface; do
-            set +e
-            uv run python -m src.cli refresh-signals --provider "$provider" --due --require-key --max-requests 5 --max-seconds 90 --limit 100 --summary-file "$GITHUB_STEP_SUMMARY" > "reports/runs/signals-${provider}-latest.json" 2> "reports/runs/signals-${provider}-latest.error.txt"
-            signal_status=$?
-            set -e
-            if (( signal_status != 0 )); then
-              echo "::warning::${provider} refresh failed; retained cache will be used."
-              echo "- ${provider}: refresh command failed (exit ${signal_status}); inspect reports/runs diagnostics. Cached publication may proceed." >> "$GITHUB_STEP_SUMMARY"
-            fi
-          done
-          uv run python -m src.cli build
           uv run ruff check .
           uv run ruff format --check .
           uv run pytest -v
@@ -77,19 +55,11 @@ jobs:
           npm ci --ignore-scripts --include=dev --no-audit --no-fund
           npm run check:css
 
-      - name: Commit, Tag Weekly Release (vYYYY.Www) & Reset feed
+      - name: Prepare a local weekly tag (vYYYY.Www)
         id: tag
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for generated_path in data/papers.json data/manifest.json data/papers data/aliases*.json data/signals data/archive data/extraction docs/papers.json docs/data docs/assets README.md reports/coverage.md reports/runs; do
-            if [[ -e "$generated_path" ]] || git ls-files --error-unmatch "$generated_path" >/dev/null 2>&1; then
-              git add --all -- "$generated_path"
-            fi
-          done
-          git diff --cached --quiet || git commit -m "chore(release): compile weekly OBT and README"
-          git push --atomic origin HEAD:main HEAD:feed
-
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           TAG="v$(date -u +'%G.W%V')"
           if git rev-parse "$TAG" >/dev/null 2>&1; then
             if [[ "$(git rev-parse "$TAG^{commit}")" != "$(git rev-parse HEAD)" ]]; then
@@ -98,10 +68,6 @@ jobs:
             fi
           else
             git tag -a "$TAG" HEAD -m "Weekly 3DGS Database Release $TAG"
-            git push origin "$TAG"
-          fi
-          if ! gh release view "$TAG" >/dev/null 2>&1; then
-            gh release create "$TAG" --draft --title "Weekly 3DGS Paper Digest ($TAG)" --generate-notes
           fi
 
           echo "weekly_tag=$TAG" >> "$GITHUB_OUTPUT"
@@ -113,6 +79,17 @@ jobs:
         run: |
           uv run python -m src.releases pack --release-tag "$WEEKLY_TAG" --output "$RUNNER_TEMP/papers-release"
           uv run python -c 'import json, os, pathlib; r=json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"papers-release/receipt.json").read_bytes()); print("release_id="+r["release_id"]); print("source_revision="+r["source_revision"]); print("pages_artifact_name=github-pages-"+r["release_id"]+"-"+os.environ["GITHUB_RUN_ATTEMPT"])' >> "$GITHUB_OUTPUT"
+
+      - name: Publish the verified candidate tag and prepare the draft release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WEEKLY_TAG: ${{ steps.tag.outputs.weekly_tag }}
+        run: |
+          git push origin "refs/tags/$WEEKLY_TAG"
+          if ! gh release view "$WEEKLY_TAG" >/dev/null 2>&1; then
+            gh release create "$WEEKLY_TAG" --verify-tag --draft \
+              --title "Weekly 3DGS Paper Digest ($WEEKLY_TAG)" --generate-notes
+          fi
 
       - name: Retain immutable release and rollback archive
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

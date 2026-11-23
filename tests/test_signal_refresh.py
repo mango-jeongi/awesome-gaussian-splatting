@@ -190,9 +190,7 @@ def test_provider_failure_reports_degraded_without_erasing_success_or_exposing_b
     assert saved.values["citation_count"] == 42 and saved.fetched_at == NOW - timedelta(days=31)
 
 
-@pytest.mark.parametrize(
-    "filename", ["daily-feed.yml", "midweek-sync.yml", "weekly-release.yml", "daily-signals.yml"]
-)
+@pytest.mark.parametrize("filename", ["daily-feed.yml", "midweek-sync.yml", "daily-signals.yml"])
 def test_scheduled_writers_keep_signal_checkpoint_health_and_serialization(filename):
     from pathlib import Path
 
