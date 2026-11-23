@@ -38,7 +38,7 @@ from src.schema import PaperDatabase
 from src.seed import seed_database
 from src.semanticscholar_history import SemanticScholarHistory, history_path
 from src.signal_refresh import refresh_signals
-from src.storage import _atomic_write, _encode, load_store, write_store
+from src.storage import _atomic_write, _encode, canonical_data_path, load_store, write_store
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_DATA = ROOT_DIR / "data" / "papers.json"
@@ -66,8 +66,7 @@ def cmd_coverage(args: argparse.Namespace) -> int:
     from src.coverage import coverage_snapshot, write_coverage_report
 
     root = args.root
-    data = args.data if args.data != DEFAULT_DATA else root / "data/papers.json"
-    report = coverage_snapshot(root, data_path=data, now=args.as_of)
+    report = coverage_snapshot(root, data_path=args.data, now=args.as_of)
     if args.output:
         write_coverage_report(root, args.output, report)
         print(
@@ -731,7 +730,7 @@ def main(argv: list[str] | None = None) -> int:
         prog="awesome-3dgs",
         description="Data Ops CLI for the Awesome 3D Gaussian Splatting paper database.",
     )
-    parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
+    parser.add_argument("--data", type=Path)
     parser.add_argument("--taxonomy", type=Path, default=DEFAULT_TAXONOMY)
     parser.add_argument("--readme", type=Path, default=DEFAULT_README)
     parser.add_argument("--docs-data", type=Path, default=DEFAULT_DOCS_DATA)
@@ -1012,6 +1011,11 @@ def main(argv: list[str] | None = None) -> int:
     p_grp.set_defaults(func=cmd_graph)
 
     args = parser.parse_args(argv)
+    if args.data is None:
+        if args.command == "migrate":
+            args.data = DEFAULT_DATA
+        else:
+            args.data = canonical_data_path(getattr(args, "root", ROOT_DIR))
     return int(args.func(args))
 
 
