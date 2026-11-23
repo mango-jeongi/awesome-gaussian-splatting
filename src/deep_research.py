@@ -15,7 +15,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from src.environment import load_local_environment
 from src.schema import PaperDatabase
-from src.storage import _encode
+from src.storage import _encode, canonical_data_path
 
 ROOT = Path(__file__).resolve().parents[1]
 PROMPT_VERSION = "pdf-cluster-v1"
@@ -167,7 +167,7 @@ def synthesize(
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, default=ROOT / "data/papers.json")
+    parser.add_argument("--data", type=Path, default=canonical_data_path(ROOT))
     parser.add_argument("--paper", action="append", required=True, metavar="ID=PDF")
     parser.add_argument("--question", required=True)
     parser.add_argument("--output", type=Path, required=True)
