@@ -67,6 +67,33 @@ jobs:
           uv run pytest -v
           uv run python -m src.cli validate
 
+      - name: Prune obsolete public artifacts if the candidate exceeds the release budget
+        run: |
+          site_bytes=$(du --apparent-size --block-size=1 --summarize docs | cut -f1)
+          release_budget=$(uv run python -c 'from src.releases import MAX_BYTES; print(MAX_BYTES)')
+          if (( site_bytes <= release_budget )); then exit 0; fi
+
+          # Protect the candidate, current main, and these previously verified releases.
+          git show origin/main:docs/data/manifest.json > "$RUNNER_TEMP/retained-main-manifest.json"
+          declare -A retained_digests
+          current_digest=$(jq -er '.build_digest | select(test("^[a-f0-9]{64}$"))' docs/data/manifest.json)
+          retained_digests["$current_digest"]=1
+          retained=()
+          for manifest in "$RUNNER_TEMP/retained-main-manifest.json" \
+            reports/public-manifests/572056d9091426ff25b1ddbd22446784787e739a6bb94e14f743d93372008aa7.json \
+            reports/public-manifests/09ad26870a189d9d453af0f3075793fe0276fbd683835e34e844be3530369278.json; do
+            digest=$(jq -er '.build_digest | select(test("^[a-f0-9]{64}$"))' "$manifest")
+            if [[ ${retained_digests[$digest]+present} ]]; then continue; fi
+            retained_digests["$digest"]=1
+            retained+=(--retain "$manifest")
+          done
+
+          plan="$RUNNER_TEMP/feed-public-cleanup-plan.json"
+          receipt="reports/runs/feed-public-cleanup-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.json"
+          uv run python -m src.public_cleanup plan --root docs/data "${retained[@]}" \
+            --max-scan-bytes 250000000 --output "$plan"
+          uv run python -m src.public_cleanup apply --root docs/data --plan "$plan" --receipt "$receipt"
+
       - name: Push validated catalog to feed and open a PR if needed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -77,6 +104,7 @@ jobs:
             fi
           done
           git diff --cached --quiet || git commit -m "chore(sync): rebuild mid-week artifacts"
+          uv run python -m src.releases pack --output "$RUNNER_TEMP/feed-packing-check"
           git push origin HEAD:feed
           if git diff --quiet origin/main HEAD; then
             echo "- Feed has no changes to review." >> "$GITHUB_STEP_SUMMARY"
