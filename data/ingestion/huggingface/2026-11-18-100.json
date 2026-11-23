@@ -434,7 +434,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads.",
         "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
-        "upvotes": 167
+        "upvotes": 166
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -534,7 +534,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. Existing Ascend kernel benchmarks primarily focus on kernel generation, with less emphasis on the ability of agents to optimize existing implementations under input configurations drawn from real workloads. To address this requirement, we introduce AscendGYM, a benchmark whose initial suite comprises 48 kernels across three difficulty levels. Each kernel is paired with test cases whose data types and tensor shapes are collected from real-world training and inference tasks. Consequently, performance improvements on AscendGYM map directly to the corresponding workloads. In terms of usability, two evaluation modes are supported in AscendGYM: model evaluation and model-harness evaluation. The kernel optimization capabilities of both trained models and custom agents are allowed to be measured. It provides a complete execution environment that closely reproduces how Ascend kernels are invoked in practical pipelines. For model evaluation, it additionally includes a built-in harness equipped with search orchestration and experience accumulation. Finally, we propose a new metric, the Speedup-Token Score (STS), which quantifies performance gains relative to token cost. By jointly considering speedup and cost, STS enables the assessment of practical kernel optimization capability of a model or harness under an acceptable budget. AscendGYM is available at https://github.com/SLAI-AITP/AscendGYM.",
         "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
-        "upvotes": 95
+        "upvotes": 94
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -550,7 +550,7 @@
           }
         ],
         "githubRepo": "https://github.com/effl-lab/Weight-Space-Programming",
-        "githubStars": 50,
+        "githubStars": 51,
         "id": "2611.22055",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -559,7 +559,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
         "title": "Weight-Space Programming Doesn't Need Transformers",
-        "upvotes": 59
+        "upvotes": 55
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -605,7 +605,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
         "title": "Multi-Branch Transformer",
-        "upvotes": 47
+        "upvotes": 49
       },
       "publishedAt": "2026-11-14T19:00:00.000Z"
     },
@@ -630,7 +630,7 @@
           }
         ],
         "githubRepo": "https://github.com/showlab/ForceHarness",
-        "githubStars": 50,
+        "githubStars": 51,
         "id": "2611.21099",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -688,9 +688,49 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Harness optimization is often studied with a fixed policy model and benchmark. When either changes, the optimizer must decide which parts of an evolved harness to reuse or revise, but the harness alone may not explain why earlier edits were made or how they performed. In this work, we study Continual Recursive Self-Improvement (CRSI), a setting for continuing existing harness-optimization methods across compatible benchmarks or policy models. We propose Self-Improvement Memory (SIM) for the harness optimizer, rather than the task-solving policy. SIM groups edits by recurring harness problem and records their rationale, predicted and observed outcomes, and evaluation context. New attempts extend this history as optimization continues. In our experiments across four domains, SIM achieves higher final scores than harness-only and root-cause-only continuation in cross-dataset and pairwise cross-model comparisons. Across ten independent source runs in coding, paired continuations with SIM improve final scores by an average of 2.36 points over harness-only continuation (p=0.003).",
         "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
-        "upvotes": 38
+        "upvotes": 39
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Gene Chou"
+          },
+          {
+            "name": "Guandao Yang"
+          },
+          {
+            "name": "Fujun Luan"
+          },
+          {
+            "name": "Lars Mescheder"
+          },
+          {
+            "name": "Wei Dong"
+          },
+          {
+            "name": "Stephan Richter"
+          },
+          {
+            "name": "Vladlen Koltun"
+          }
+        ],
+        "githubRepo": "https://github.com/apple-aiml-research/ml-fastframes",
+        "githubStars": 146,
+        "id": "2611.23226",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://apple-aiml-research.github.io/ml-fastframes/",
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Autoregressive video diffusion models generate frames based on new observations and inputs, making them a promising medium for interactive visual experiences. However, existing models are orders of magnitude too slow for fluid interaction. This paper introduces FastFrames, a family of fast autoregressive video diffusion models that achieves interactive latency without compromising quality. We profile the inference pipeline of state-of-the-art models and find that operations often treated as fixed implementation details, such as VAE decoding and KV cache updates, in fact account for over half of end-to-end inference latency. We challenge the assumption that these components are indispensable and replace them with lightweight alternatives. Our 1.3B variant runs at 36 ms per frame, or 28 responses per second (RPS), on a single B200 GPU while matching the generation quality of a state-of-the-art model that is nearly 8x slower. Our 14B variant runs at 45 ms per frame, or 22 RPS, on an 8x B200 GPU node and yields significantly better visual quality and realism. We show that FastFrames enables real-time interaction in applications such as camera-conditioned and physics-conditioned video generation.",
+        "title": "FastFrames: Video Generation at Interactive Latency",
+        "upvotes": 33
+      },
+      "publishedAt": "2026-11-16T19:00:00.000Z"
     },
     {
       "paper": {
@@ -734,46 +774,6 @@
         "ai_summary": null,
         "authors": [
           {
-            "name": "Gene Chou"
-          },
-          {
-            "name": "Guandao Yang"
-          },
-          {
-            "name": "Fujun Luan"
-          },
-          {
-            "name": "Lars Mescheder"
-          },
-          {
-            "name": "Wei Dong"
-          },
-          {
-            "name": "Stephan Richter"
-          },
-          {
-            "name": "Vladlen Koltun"
-          }
-        ],
-        "githubRepo": "https://github.com/apple-aiml-research/ml-fastframes",
-        "githubStars": 122,
-        "id": "2611.23226",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://apple-aiml-research.github.io/ml-fastframes/",
-        "publishedAt": "2026-11-17T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "Autoregressive video diffusion models generate frames based on new observations and inputs, making them a promising medium for interactive visual experiences. However, existing models are orders of magnitude too slow for fluid interaction. This paper introduces FastFrames, a family of fast autoregressive video diffusion models that achieves interactive latency without compromising quality. We profile the inference pipeline of state-of-the-art models and find that operations often treated as fixed implementation details, such as VAE decoding and KV cache updates, in fact account for over half of end-to-end inference latency. We challenge the assumption that these components are indispensable and replace them with lightweight alternatives. Our 1.3B variant runs at 36 ms per frame, or 28 responses per second (RPS), on a single B200 GPU while matching the generation quality of a state-of-the-art model that is nearly 8x slower. Our 14B variant runs at 45 ms per frame, or 22 RPS, on an 8x B200 GPU node and yields significantly better visual quality and realism. We show that FastFrames enables real-time interaction in applications such as camera-conditioned and physics-conditioned video generation.",
-        "title": "FastFrames: Video Generation at Interactive Latency",
-        "upvotes": 32
-      },
-      "publishedAt": "2026-11-16T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
             "name": "Haosong Peng"
           },
           {
@@ -799,7 +799,7 @@
           }
         ],
         "githubRepo": "https://github.com/Livioni/TCP4D",
-        "githubStars": 22,
+        "githubStars": 25,
         "id": "2611.23143",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -808,7 +808,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Robot manipulation videos provide a rich visual experience, yet recovering robot action and gripper-state annotations from RGB observations still remains challenging. Using the embodiment-agnostic tool-center-point (TCP) pose as the action space, we present TCP4D, a unified model in which a shared 4D scene representation both tracks observed TCP motion and generates future TCP trajectories. Given a monocular video and initial 2D TCP queries, the tracker directly recovers metric TCP poses in SE(3) and gripper states alongside scene geometry and camera parameters. The generator samples local features from the same 4D representation along the recovered TCP tracks, then combines them with robot observations and language instructions to predict future TCP states. Our new cross-embodiment augmentation pipeline converts existing RGB videos into demonstrations for alternative embodiments by retargeting the recovered motion and synthesizing the corresponding observations, without recorded source-robot states. Experiments show that the tracker achieves absolute trajectory errors of 7.60 and 16.07 mm on DROID and RoboLab and adapts to a new embodiment with only ten demonstrations. The generator achieves 69.19% mean success on RoboTwin and outperforms well-established policy models on two real-world tasks, while joint training on source and augmented demonstrations improves target-robot success by 41.5% over augmented-only training.",
         "title": "TCP4D: A Unified Tool-Center-Point Tracking and Generation Model for Robot Manipulation",
-        "upvotes": 25
+        "upvotes": 24
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -848,7 +848,7 @@
           }
         ],
         "githubRepo": "https://github.com/heaveho-humanoid/Heave-Ho",
-        "githubStars": 28,
+        "githubStars": 30,
         "id": "2611.22275",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -857,7 +857,47 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Collaboration promises to extend humanoid capabilities beyond what individual robots can achieve. However, realizing this potential requires coordinated whole-body interactions, coherent long-horizon planning, and precise synchronization across robots. We introduce Heave-Ho, a decentralized framework for long-horizon collaborative multi-humanoid loco-manipulation. At the low level, we develop a multi-agent post-training framework that adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, enabling coordinated decentralized control from local observations alone. At the high level, we train a vision-language planner and design a speech-based leader-follower coordination mechanism to synchronize decentralized execution without network communication. Trained with two identical humanoids, our system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining. To benchmark these capabilities, we introduce HH-Bench, comprising 12 tasks involving teams of 2 to 10 humanoids, including heterogeneous teams. Systematic evaluations show that Heave-Ho consistently outperforms baseline methods, while real-world experiments demonstrate robust decentralized collaboration across challenging tasks.",
         "title": "Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration",
-        "upvotes": 22
+        "upvotes": 23
+      },
+      "publishedAt": "2026-11-16T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "This unified foundation model enables the recovery of dense geometry, camera poses, and object tracking from diverse, uncalibrated observations in 4D scenes using a shared geometry and motion branch architecture.",
+        "authors": [
+          {
+            "name": "Yifan Wang"
+          },
+          {
+            "name": "Weiguang Zhao"
+          },
+          {
+            "name": "Ni Yang"
+          },
+          {
+            "name": "Haoyu Guo"
+          },
+          {
+            "name": "Junting Dong"
+          },
+          {
+            "name": "Weinan Zhang"
+          },
+          {
+            "name": "Chunhua Shen"
+          }
+        ],
+        "githubRepo": "https://github.com/yyfz/Pi4",
+        "githubStars": 442,
+        "id": "2611.23144",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://yyfz.github.io/pi4",
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "π^4 is a unified foundation model for 4D scene perception. From diverse, uncalibrated RGB observations in the wild---a single image, an unordered collection, or a video sequence---it recovers dense geometry, camera poses, and metric scale, together with 2D/3D point tracks and moving-object masks for multi-image inputs. It couples a geometry branch with a geometry-conditioned motion branch, which predicts image-space correspondences that are lifted into 3D using reconstructed target-view geometry. Across diverse benchmarks, π^4 achieves the best overall average rank in geometry evaluation, alongside competitive performance in single- and multiview 2D/3D point tracking and moving-object segmentation. With a shared backbone, the full geometry-and-motion system contains approximately 0.5B parameters---less than half the size of most baselines. It produces joint reconstructions and tracks in one forward pass, including large-scale scenes with thousands of input images despite training with contexts of at most 64 views. We further present the data and training recipe underlying these capabilities, together with empirical studies of key design choices. Code and models are available at https://github.com/yyfz/Pi4.",
+        "title": "π^4: A Foundation Model for 4D Scene Geometry and Motion",
+        "upvotes": 21
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -900,46 +940,6 @@
         "upvotes": 20
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "This unified foundation model enables the recovery of dense geometry, camera poses, and object tracking from diverse, uncalibrated observations in 4D scenes using a shared geometry and motion branch architecture.",
-        "authors": [
-          {
-            "name": "Yifan Wang"
-          },
-          {
-            "name": "Weiguang Zhao"
-          },
-          {
-            "name": "Ni Yang"
-          },
-          {
-            "name": "Haoyu Guo"
-          },
-          {
-            "name": "Junting Dong"
-          },
-          {
-            "name": "Weinan Zhang"
-          },
-          {
-            "name": "Chunhua Shen"
-          }
-        ],
-        "githubRepo": "https://github.com/yyfz/Pi4",
-        "githubStars": 415,
-        "id": "2611.23144",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://yyfz.github.io/pi4",
-        "publishedAt": "2026-11-17T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "π^4 is a unified foundation model for 4D scene perception. From diverse, uncalibrated RGB observations in the wild---a single image, an unordered collection, or a video sequence---it recovers dense geometry, camera poses, and metric scale, together with 2D/3D point tracks and moving-object masks for multi-image inputs. It couples a geometry branch with a geometry-conditioned motion branch, which predicts image-space correspondences that are lifted into 3D using reconstructed target-view geometry. Across diverse benchmarks, π^4 achieves the best overall average rank in geometry evaluation, alongside competitive performance in single- and multiview 2D/3D point tracking and moving-object segmentation. With a shared backbone, the full geometry-and-motion system contains approximately 0.5B parameters---less than half the size of most baselines. It produces joint reconstructions and tracks in one forward pass, including large-scale scenes with thousands of input images despite training with contexts of at most 64 views. We further present the data and training recipe underlying these capabilities, together with empirical studies of key design choices. Code and models are available at https://github.com/yyfz/Pi4.",
-        "title": "π^4: A Foundation Model for 4D Scene Geometry and Motion",
-        "upvotes": 18
-      },
-      "publishedAt": "2026-11-16T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1078,7 +1078,7 @@
           }
         ],
         "githubRepo": "https://github.com/aurateam2026/Aura2.0",
-        "githubStars": 38,
+        "githubStars": 39,
         "id": "2611.17048",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1121,7 +1121,7 @@
           }
         ],
         "githubRepo": "https://github.com/zfkarl/MedJev",
-        "githubStars": 160,
+        "githubStars": 191,
         "id": "2611.20992",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1198,6 +1198,55 @@
     },
     {
       "paper": {
+        "ai_summary": "MPEG-Diffusion reduces the computational cost of video diffusion transformers by generating only a self-selected high-resolution region with dual-resolution attention and a mixed-resolution decoder, achieving faster denoising without quality loss.",
+        "authors": [
+          {
+            "name": "Dennis Menn"
+          },
+          {
+            "name": "Tianpei Gu"
+          },
+          {
+            "name": "Guande He"
+          },
+          {
+            "name": "Aryan V S"
+          },
+          {
+            "name": "Yanke Song"
+          },
+          {
+            "name": "Nan Liu"
+          },
+          {
+            "name": "Desai Xie"
+          },
+          {
+            "name": "Xun Huang"
+          },
+          {
+            "name": "Chenfeng Xu"
+          },
+          {
+            "name": "Diana Marculescu"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.12069",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://dennismenn.github.io/mpeg-diffusion/",
+        "publishedAt": "2026-11-09T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Video diffusion transformers (DiTs) generate realistic videos, but their heavy computational cost limits broader real-world applications. Mixed-resolution generation reduces this cost by generating the visually important region at high resolution (HR) and the rest at low resolution (LR), yet existing methods suffer a severe quality drop on videos and require knowing the HR region in advance. We show that these failures are not inherent to mixed resolution, and propose MPEG-Diffusion to address their three root causes: (1) dual-resolution attention to mitigate the curse of mixed resolution, where each query reads the K/V of its own resolution, (2) a mixed-resolution decoder to blend the HR and LR latents before decoding and resolve distortion, and (3) a self-selected HR region using the DiT's knowledge to find the visually important region without requiring it in advance. Processing only 30% of full-resolution tokens, MPEG-Diffusion speeds up denoising by 4.8times on Wan2.1 14B (3.8times on 1.3B), outperforming prior methods on nearly every metric. In the user study, we demonstrate the high quality of MPEG-Diffusion, with raters preferring it over prior mixed-resolution methods in over 90% of pairs and rating it close to full resolution.",
+        "title": "MPEG-Diffusion: Mixed-Resolution Video Generation",
+        "upvotes": 9
+      },
+      "publishedAt": "2026-11-08T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": "A lightweight feature-encoding method with rejection memory and architectural enhancements enables faster large language model inference by improving speculative-diffusion draft verification.",
         "authors": [
           {
@@ -1266,7 +1315,7 @@
           }
         ],
         "githubRepo": "https://github.com/Accio-Lab/VisualArtifactSpec",
-        "githubStars": 6,
+        "githubStars": 7,
         "id": "2611.21382",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1351,7 +1400,7 @@
           }
         ],
         "githubRepo": "https://github.com/StanfordMIMI/Glyph",
-        "githubStars": 16,
+        "githubStars": 20,
         "id": "2611.08922",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1409,55 +1458,6 @@
     },
     {
       "paper": {
-        "ai_summary": "MPEG-Diffusion reduces the computational cost of video diffusion transformers by generating only a self-selected high-resolution region with dual-resolution attention and a mixed-resolution decoder, achieving faster denoising without quality loss.",
-        "authors": [
-          {
-            "name": "Dennis Menn"
-          },
-          {
-            "name": "Tianpei Gu"
-          },
-          {
-            "name": "Guande He"
-          },
-          {
-            "name": "Aryan V S"
-          },
-          {
-            "name": "Yanke Song"
-          },
-          {
-            "name": "Nan Liu"
-          },
-          {
-            "name": "Desai Xie"
-          },
-          {
-            "name": "Xun Huang"
-          },
-          {
-            "name": "Chenfeng Xu"
-          },
-          {
-            "name": "Diana Marculescu"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.12069",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://dennismenn.github.io/mpeg-diffusion/",
-        "publishedAt": "2026-11-09T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "Video diffusion transformers (DiTs) generate realistic videos, but their heavy computational cost limits broader real-world applications. Mixed-resolution generation reduces this cost by generating the visually important region at high resolution (HR) and the rest at low resolution (LR), yet existing methods suffer a severe quality drop on videos and require knowing the HR region in advance. We show that these failures are not inherent to mixed resolution, and propose MPEG-Diffusion to address their three root causes: (1) dual-resolution attention to mitigate the curse of mixed resolution, where each query reads the K/V of its own resolution, (2) a mixed-resolution decoder to blend the HR and LR latents before decoding and resolve distortion, and (3) a self-selected HR region using the DiT's knowledge to find the visually important region without requiring it in advance. Processing only 30% of full-resolution tokens, MPEG-Diffusion speeds up denoising by 4.8times on Wan2.1 14B (3.8times on 1.3B), outperforming prior methods on nearly every metric. In the user study, we demonstrate the high quality of MPEG-Diffusion, with raters preferring it over prior mixed-resolution methods in over 90% of pairs and rating it close to full resolution.",
-        "title": "MPEG-Diffusion: Mixed-Resolution Video Generation",
-        "upvotes": 8
-      },
-      "publishedAt": "2026-11-08T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "Capable frozen LLM agents can autonomously construct context-based self-learning algorithms from basic resources and a general goal, yielding text artifacts that transfer to new game and 3D navigation tasks.",
         "authors": [
           {
@@ -1471,7 +1471,7 @@
           }
         ],
         "githubRepo": "https://github.com/ssundaram21/self-org",
-        "githubStars": 3,
+        "githubStars": 4,
         "id": "2611.23219",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1480,7 +1480,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "LLM agents increasingly drive their own learning. Self-improvement methods delegate various components of model optimization to the models themselves. As models become more capable, this motivates a basic question: do these increasingly capable models still need us to specify how they should self-improve? In this paper we study an autonomous paradigm in which, given basic primitives, resources, and a general goal for self-improvement, agents construct their own self-learning algorithm for context-based optimization. Using the setting of gameplay as a testbed, a frozen LLM agent is given a compute budget and tools for collecting experience and updating text documents, and allowed to freely experiment without an externally imposed loop or access to real-world data. We find that sufficiently capable models do self-improve under these conditions, demonstrating strategies that align with classic cognitive frameworks for self-regulated learning and constructs from machine learning literature on self-generated curricula. Furthermore, we study the extent to which the learned text artifacts transfer to external benchmarks, observing improvement across different game horizons, mechanics, and 3D navigation.",
         "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
-        "upvotes": 6
+        "upvotes": 7
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -1542,6 +1542,43 @@
         "upvotes": 5
       },
       "publishedAt": "2026-11-14T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Javad Amirian"
+          },
+          {
+            "name": "Armin Kiani"
+          },
+          {
+            "name": "Loïc Schaeffer"
+          },
+          {
+            "name": "Tim Sprecher"
+          },
+          {
+            "name": "Mohamed Taha"
+          },
+          {
+            "name": "Karthik Yadati"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.21938",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
+        "publishedAt": "2026-11-16T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Robot policies trained by imitation generalize poorly outside the environments and objects seen in training. Published data-scaling studies find that generalization grows with the diversity of training environments and objects rather than with more demonstrations per environment. Robot data is costly to collect across many environments, whereas egocentric human video can be recorded in the wild at scale; existing egocentric video, however, mostly shows daily-life activity and contains little skilled work in real workplaces. We present HubEgo-100K, a dataset built for diversity. This version of the paper covers the first release, v1.0: 10,124 hours of 1080p egocentric video with synchronized 100 Hz inertial (IMU) data from one head-mounted phone camera. In v1.0, 12,227 contributors record their own unscripted work in 15,548 environments (each one contributor's own setting of one type, such as their kitchen or workshop) across 11 setting types, 30 work categories, 56 task types and 35 action families, with 83% of hours in workplace settings. The release comprises 72,754 episodes with machine-generated action and language annotations, in LeRobot and MCAP formats under CC BY 4.0. We measure diversity along each axis, show that inside v1.0, with episodes in random order, new contributors and words keep appearing, and relate the measurements to published evidence on six data properties tied to policy performance, including hand visibility and inertial sensing. We also document collection, curation, privacy measures and data format, and provide a datasheet. Later versions of this paper will add benchmarks and cover further releases toward 100,000 hours.",
+        "title": "HubEgo-100K: In-the-Wild Egocentric Video of Skilled Work for Robot Learning",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-15T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1632,43 +1669,6 @@
         "ai_summary": null,
         "authors": [
           {
-            "name": "Javad Amirian"
-          },
-          {
-            "name": "Armin Kiani"
-          },
-          {
-            "name": "Loïc Schaeffer"
-          },
-          {
-            "name": "Tim Sprecher"
-          },
-          {
-            "name": "Mohamed Taha"
-          },
-          {
-            "name": "Karthik Yadati"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.21938",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/datasets/HubLabs/HubEgo-100K",
-        "publishedAt": "2026-11-16T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "Robot policies trained by imitation generalize poorly outside the environments and objects seen in training. Published data-scaling studies find that generalization grows with the diversity of training environments and objects rather than with more demonstrations per environment. Robot data is costly to collect across many environments, whereas egocentric human video can be recorded in the wild at scale; existing egocentric video, however, mostly shows daily-life activity and contains little skilled work in real workplaces. We present HubEgo-100K, a dataset built for diversity. This version of the paper covers the first release, v1.0: 10,124 hours of 1080p egocentric video with synchronized 100 Hz inertial (IMU) data from one head-mounted phone camera. In v1.0, 12,227 contributors record their own unscripted work in 15,548 environments (each one contributor's own setting of one type, such as their kitchen or workshop) across 11 setting types, 30 work categories, 56 task types and 35 action families, with 83% of hours in workplace settings. The release comprises 72,754 episodes with machine-generated action and language annotations, in LeRobot and MCAP formats under CC BY 4.0. We measure diversity along each axis, show that inside v1.0, with episodes in random order, new contributors and words keep appearing, and relate the measurements to published evidence on six data properties tied to policy performance, including hand visibility and inertial sensing. We also document collection, curation, privacy measures and data format, and provide a datasheet. Later versions of this paper will add benchmarks and cover further releases toward 100,000 hours.",
-        "title": "HubEgo-100K: In-the-Wild Egocentric Video of Skilled Work for Robot Learning",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-15T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
             "name": "Haocheng Wang"
           },
           {
@@ -1753,7 +1753,7 @@
           }
         ],
         "githubRepo": "https://github.com/Aayush-Marasini/WeightBench",
-        "githubStars": 3,
+        "githubStars": 5,
         "id": "2611.18553",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1787,7 +1787,7 @@
           }
         ],
         "githubRepo": "https://github.com/ngquangtrung57/M3OPD-Reasoner",
-        "githubStars": 2,
+        "githubStars": 4,
         "id": "2611.23034",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1904,7 +1904,7 @@
           }
         ],
         "githubRepo": "https://github.com/weiguangzhao/GameRealm",
-        "githubStars": 16,
+        "githubStars": 17,
         "id": "2611.23140",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1941,7 +1941,7 @@
           }
         ],
         "githubRepo": "https://github.com/AIGeeksGroup/PanDWM",
-        "githubStars": 7,
+        "githubStars": 8,
         "id": "2611.19857",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1977,6 +1977,6 @@
       "publishedAt": "2026-11-15T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-22T12:27:51.695283+00:00",
+  "fetched_at": "2026-11-23T14:20:59.961978+00:00",
   "limit": 100
 }
