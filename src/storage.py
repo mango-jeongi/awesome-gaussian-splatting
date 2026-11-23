@@ -17,6 +17,18 @@ class ConcurrentWriteError(RuntimeError):
     """A writer's input changed before publication; its staged files remain inactive."""
 
 
+def canonical_data_path(root: str | Path) -> Path:
+    """Use the monthly store after the legacy canonical file is retired."""
+    data = Path(root) / "data"
+    legacy = data / "papers.json"
+    manifest = data / "manifest.json"
+    if legacy.exists() or legacy.is_symlink():
+        return legacy
+    if manifest.exists() or manifest.is_symlink():
+        return manifest
+    return legacy
+
+
 def _encode(value: object) -> bytes:
     return (
         json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False) + "\n"

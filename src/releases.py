@@ -18,6 +18,7 @@ import httpx
 
 from src.public import compact
 from src.schema import PaperDatabase
+from src.storage import canonical_data_path
 
 MAX_BYTES = 200_000_000
 MAX_FILES = 5000
@@ -382,7 +383,7 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     create = commands.add_parser("pack")
     create.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
-    create.add_argument("--data", type=Path, default=Path("data/papers.json"))
+    create.add_argument("--data", type=Path)
     create.add_argument("--site", type=Path, default=Path("docs"))
     create.add_argument("--output", type=Path, required=True)
     create.add_argument("--release-tag")
@@ -443,7 +444,7 @@ def main():
             ).strip()
             if tagged != revision:
                 parser.error("Release tag must point to the exact candidate commit")
-        data = args.data if args.data.is_absolute() else args.root / args.data
+        data = args.root / args.data if args.data is not None else canonical_data_path(args.root)
         site = args.site if args.site.is_absolute() else args.root / args.site
         check_committed_inputs(args.root, data, site)
         result = pack(args.root, data, site, args.output, revision, args.release_tag)

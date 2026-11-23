@@ -164,6 +164,27 @@ def test_database_adapter_and_builder_use_manifest(tmp_path):
         PaperDatabase.load(tmp_path / "missing.json")
 
 
+def test_default_cli_catalog_keeps_legacy_until_cutover(tmp_path, monkeypatch, capsys):
+    from src import cli
+
+    monkeypatch.setattr(cli, "ROOT_DIR", tmp_path)
+    legacy = tmp_path / "data" / "papers.json"
+    manifest = tmp_path / "data" / "manifest.json"
+    db = sample()
+    db.save(legacy)
+    db.save(manifest)
+    assert cli.main(["validate"]) == 0
+    assert str(legacy) in capsys.readouterr().out
+
+    legacy.unlink()
+    assert cli.main(["validate"]) == 0
+    assert str(manifest) in capsys.readouterr().out
+    assert cli.main(["--data", str(manifest), "validate"]) == 0
+    assert cli.main(["graph"]) == 0
+    assert not legacy.exists()
+    assert load_store(manifest).total_count == db.total_count
+
+
 @pytest.mark.parametrize("filename", ["papers.json", "v2/manifest.json"])
 def test_stale_writer_cannot_overwrite_newer_database(tmp_path, filename):
     from src.schema import PaperRecord

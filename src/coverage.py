@@ -17,7 +17,7 @@ from src.public import compact
 from src.releases import safe_name, sha
 from src.schema import PaperDatabase
 from src.semanticscholar_history import SemanticScholarHistory, history_path
-from src.storage import _encode
+from src.storage import _encode, canonical_data_path
 from src.workers.coverage import ExtractionCoverage
 from src.workers.review import ReviewedExtractionStore
 
@@ -350,7 +350,7 @@ def coverage_snapshot(root, *, data_path=None, now=None):
     if now.utcoffset() is None:
         raise ValueError("Coverage requires an aware evaluation time")
     inputs = SnapshotInputs(root)
-    data = Path(data_path).resolve() if data_path else inputs.root / "data/papers.json"
+    data = Path(data_path).resolve() if data_path else canonical_data_path(inputs.root)
     name = data.relative_to(inputs.root).as_posix()
     db = _database(inputs, name)
     source_model = sha(_encode(db.model_dump(mode="json")))

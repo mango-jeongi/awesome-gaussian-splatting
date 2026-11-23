@@ -46,11 +46,12 @@ jobs:
           git merge --ff-only origin/feed
           echo "EXPECTED_FEED=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           mkdir -p reports/runs
+          catalog=$(uv run python -c 'from src.storage import canonical_data_path; print(canonical_data_path("."))')
           set +e
-          uv run python -m src.manual_operations --data data/papers.json --key "$REVIEW_KEY" --output "$RUNNER_TEMP/reviewed-source.pdf" > "reports/runs/worker-${REVIEW_KEY}-source.json" 2> "reports/runs/worker-${REVIEW_KEY}-source.error.txt"
+          uv run python -m src.manual_operations --data "$catalog" --key "$REVIEW_KEY" --output "$RUNNER_TEMP/reviewed-source.pdf" > "reports/runs/worker-${REVIEW_KEY}-source.json" 2> "reports/runs/worker-${REVIEW_KEY}-source.error.txt"
           operation_status=$?
           if (( operation_status == 0 )); then
-            arguments=(--data data/papers.json --ledger data/extraction/reviewed.json --result "data/extraction/review-inputs/${REVIEW_KEY}.result.json" --review "data/extraction/review-inputs/${REVIEW_KEY}.review.json" --pdf "$RUNNER_TEMP/reviewed-source.pdf")
+            arguments=(--data "$catalog" --ledger data/extraction/reviewed.json --result "data/extraction/review-inputs/${REVIEW_KEY}.result.json" --review "data/extraction/review-inputs/${REVIEW_KEY}.review.json" --pdf "$RUNNER_TEMP/reviewed-source.pdf")
             if [[ "$MODE" == preview ]]; then arguments+=(--dry-run); fi
             uv run python -m src.workers review-import "${arguments[@]}" > "reports/runs/worker-${REVIEW_KEY}-latest.json" 2> "reports/runs/worker-${REVIEW_KEY}-latest.error.txt"
             operation_status=$?
