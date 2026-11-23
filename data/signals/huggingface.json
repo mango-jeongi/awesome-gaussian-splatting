@@ -2898,6 +2898,98 @@
       "status": "not_found",
       "values": {}
     },
+    "2401.06003": {
+      "fetched_at": "2026-11-23T22:44:19.666029Z",
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.06003",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.06003",
+          "text": "TRIPS, combining Gaussian Splatting and ADOP techniques, achieves high-quality rendering of detailed scenes with real-time performance using a screen-space image pyramid and a differentiable render pipeline."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.06003",
+          "text": "Point-based radiance field rendering has demonstrated impressive results for\nnovel view synthesis, offering a compelling blend of rendering quality and\ncomputational efficiency. However, also latest approaches in this domain are\nnot without their shortcomings. 3D Gaussian Splatting [Kerbl and Kopanas et al.\n2023] struggles when tasked with rendering highly detailed scenes, due to\nblurring and cloudy artifacts. On the other hand, ADOP [R\\\"uckert et al. 2022]\ncan accommodate crisper images, but the neural reconstruction network decreases\nperformance, it grapples with temporal instability and it is unable to\neffectively address large gaps in the point cloud.\n  In this paper, we present TRIPS (Trilinear Point Splatting), an approach that\ncombines ideas from both Gaussian Splatting and ADOP. The fundamental concept\nbehind our novel technique involves rasterizing points into a screen-space\nimage pyramid, with the selection of the pyramid layer determined by the\nprojected point size. This approach allows rendering arbitrarily large points\nusing a single trilinear write. A lightweight neural network is then used to\nreconstruct a hole-free image including detail beyond splat resolution.\nImportantly, our render pipeline is entirely differentiable, allowing for\nautomatic optimization of both point sizes and positions.\n  Our evaluation demonstrate that TRIPS surpasses existing state-of-the-art\nmethods in terms of rendering quality while maintaining a real-time frame rate\nof 60 frames per second on readily available hardware. This performance extends\nto challenging scenarios, such as scenes featuring intricate geometry,\nexpansive landscapes, and auto-exposed footage."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/lfranke/trips"
+        },
+        "source_url": "https://huggingface.co/papers/2401.06003",
+        "stars": 560,
+        "submitted_on_daily_at": "2024-01-12T00:00:00.000Z",
+        "upvotes": 24
+      }
+    },
+    "2401.06116": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.08742": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.09720": {
+      "fetched_at": "2026-11-23T22:44:19.666029Z",
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.09720",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.09720",
+          "text": "A novel method, GaussianBody, uses 3D Gaussian Splatting for dynamic human reconstruction with explicit pose-guided deformation and pose refinement to achieve high-quality rendering and geometry reconstruction."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.09720",
+          "text": "In this work, we propose a novel clothed human reconstruction method called\nGaussianBody, based on 3D Gaussian Splatting. Compared with the costly neural\nradiance based models, 3D Gaussian Splatting has recently demonstrated great\nperformance in terms of training time and rendering quality. However, applying\nthe static 3D Gaussian Splatting model to the dynamic human reconstruction\nproblem is non-trivial due to complicated non-rigid deformations and rich cloth\ndetails. To address these challenges, our method considers explicit pose-guided\ndeformation to associate dynamic Gaussians across the canonical space and the\nobservation space, introducing a physically-based prior with regularized\ntransformations helps mitigate ambiguity between the two spaces. During the\ntraining process, we further propose a pose refinement strategy to update the\npose regression for compensating the inaccurate initial estimation and a\nsplit-with-scale mechanism to enhance the density of regressed point clouds.\nThe experiments validate that our method can achieve state-of-the-art\nphotorealistic novel-view rendering results with high-quality details for\ndynamic clothed human bodies, along with explicit geometry reconstruction."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.09720",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.11535": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
