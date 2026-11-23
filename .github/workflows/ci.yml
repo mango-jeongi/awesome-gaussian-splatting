@@ -67,3 +67,6 @@ jobs:
 
       - name: Validate OBT Schema (data/papers.json)
         run: uv run python -m src.cli validate
+
+      - name: Verify Pages release size budget
+        run: uv run python -c 'from pathlib import Path; from src.releases import read_site; read_site(Path("docs"))'
