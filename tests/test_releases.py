@@ -6,6 +6,7 @@ import pytest
 
 from src.builder import build_artifacts
 from src.releases import archive_bytes, load_archive, pack, safe_name, write_new
+from src.run_receipts import RunReceipt
 from src.schema import PaperDatabase, PaperRecord
 
 
@@ -46,7 +47,12 @@ def test_candidate_is_deterministic_and_rollback_uses_exact_archive(tmp_path):
     first, replay, later = [tmp_path / name for name in ("a", "replay", "b")]
     a = create(root, first)
     assert create(root, replay) == a
+    assert (first / "receipt.json").read_bytes() == (replay / "receipt.json").read_bytes()
     assert (first / "release.tar").read_bytes() == (replay / "release.tar").read_bytes()
+    run = RunReceipt.model_validate(a["run_receipt"])
+    assert run.job == "release.pack" and run.status == "succeeded"
+    assert run.inputs == {"input_digest": a["input_digest"], "source_revision": "a" * 40}
+    assert run.outputs == {"archive_sha256": a["archive_sha256"], "release_id": a["release_id"]}
     (root / "docs/index.html").write_text("<html>Version B</html>")
     b = create(root, later)
     assert b["release_id"] != a["release_id"]
@@ -55,6 +61,7 @@ def test_candidate_is_deterministic_and_rollback_uses_exact_archive(tmp_path):
     write_new(files, restore)
     assert (restore / "index.html").read_text() == "<html>Version A</html>"
     assert metadata["source_revision"] == "a" * 40
+    assert "run_receipt" not in metadata and not (restore / "receipt.json").exists()
     assert not any(name.endswith(".writer.lock") for name in files)
     assert metadata["public_build_digest"] == b["public_build_digest"]
     with pytest.raises(FileExistsError):
