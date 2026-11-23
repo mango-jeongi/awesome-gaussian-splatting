@@ -2,6 +2,20 @@
 
 Thank you for your interest in contributing! This project is an open-source, community-driven living aggregate of **3D/4D Gaussian Splatting** literature and neural rendering tools.
 
+## Branches, commits, and pull requests
+
+1. Pick or open an [issue](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues) before starting tracked work. Use [milestones](https://github.com/mango-jeongi/awesome-gaussian-splatting/milestones) for phase progress.
+2. Start a short branch from current `main`. Use `<issue-number>-<short-slug>`, such as `7-contributor-conventions`. For maintenance without an issue, use `chore/<short-slug>`.
+3. Commit each coherent change or validated data batch. Use an imperative subject of at most 72 characters, with `(#<issue-number>)` for tracked work. Keep an existing prefix when useful, such as `docs: document contributor conventions (#7)`.
+4. Open a PR targeting `main` and fill in the [PR template](.github/pull_request_template.md). In the PR description, write `Closes #<issue-number>` on its own line for each issue this PR completes. GitHub closes those issues when the PR merges into the default branch. Use `Refs #<issue-number>` when work remains. A commit's issue reference helps navigation, and the PR description shows what the merge will close.
+5. Wait for the checks on the current PR head before the maintainer merges. Keep `feed` for scheduled catalog updates and use a merge commit for its PRs so later batches retain their ancestry. The [release workflow](#immutable-release-retry-and-rollback) explains that lane.
+
+### Evidence for pipeline changes
+
+- For ingestion, migrations, or replay changes, link the run receipt and record the input revision, query or cutoff, applicable policy and schema versions, and output digest. Summarize record counts and rejected or unresolved cases. Check the persisted result for duplicate identifiers, unexpected schema changes, and safe replay as applicable.
+- For worker and release changes, record the tested commit and artifact digest. Exercise the relevant failure and retry path, and identify the prior verified release or checkpoint to restore.
+- Run the checks affected by your change using the locked environment (`uv sync --frozen --all-groups`). The full repository gate includes `uv run ruff check .`, `uv run ruff format --check .`, `uv run pytest -v`, and `uv run python -m src.cli validate`. Run `npm run check:css` for portal stylesheet changes and `actionlint` for workflow changes.
+
 ---
 
 ## How to Add Your Paper or Project
@@ -18,7 +32,7 @@ We welcome authors and researchers to submit new papers, official code repositor
 2. Ensure you have `uv` installed (`pip install uv` or `curl -LsSf https://astral.sh/uv/install.sh | sh`).
 3. Set up the environment:
    ```bash
-   uv sync --all-groups
+   uv sync --frozen --all-groups
    ```
 4. If your paper is on arXiv, you can run the CLI ingest command or append the record to `data/papers.json`:
    ```bash
@@ -34,7 +48,7 @@ We welcome authors and researchers to submit new papers, official code repositor
    uv run ruff check .
    uv run ruff format --check .
    ```
-6. Submit a pull request against the `feed` branch (or `main`).
+6. Submit a pull request against `main`. If the PR completes a submission issue, include `Closes #<issue-number>` in the description.
 
 ---
 
@@ -344,11 +358,8 @@ full-length context, warm performance and persistent model operation remain open
 
 ## Immutable release, retry and rollback
 
-Use a short branch from current `main` for each issue. Commit cohesive changes
-frequently, open a PR linked to its issue, and merge after the GitHub Actions
-checks pass. Use [Milestones](https://github.com/mango-jeongi/awesome-gaussian-splatting/milestones)
-for phase progress and [Issues](https://github.com/mango-jeongi/awesome-gaussian-splatting/issues)
-for remaining work.
+Follow the [branch and pull request conventions](#branches-commits-and-pull-requests)
+for contributions to `main`.
 
 Scheduled catalog jobs commit to `feed`. The midweek workflow builds and validates
 the candidate and creates a PR to `main` if one is needed. If GitHub asks for
