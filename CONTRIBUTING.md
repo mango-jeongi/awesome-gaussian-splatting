@@ -87,8 +87,13 @@ sidecars must remain alongside the active canonical store; metadata parity alone
 does not prove their preservation.
 
 This is an additive compatibility stage. All database callers accept either a
-legacy file or manifest through `--data`. Defaults and current remote workflows
-still use `data/papers.json`; the canonical cutover remains pending. The snapshot preserves legacy fields and record order.
+legacy file or manifest through `--data`. Default catalog commands use
+`data/papers.json` while it exists, so creating a preview `data/manifest.json`
+leaves active writers on v1. A reviewed cutover
+must remove the legacy file and add the validated manifest and components in
+the same commit. The prior Git revision retains the rollback input. Run
+`migrate` with an explicit `--data` when verifying a v2 source. The snapshot
+preserves legacy fields and record order.
 Legacy citation values have unknown observation freshness, including zero counts.
 
 Monthly shards have immutable SHA-256 filenames. A validated manifest is replaced
