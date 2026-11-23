@@ -211,7 +211,7 @@ def test_release_workflows_preserve_candidate_and_verification_order():
     assert "src.releases pack" in producer["run"]
     assert '"pages_artifact_name=' in producer["run"]
     upload = next(s for s in stage["steps"] if "upload-pages-artifact" in s.get("uses", ""))
-    assert upload["with"]["path"].endswith("papers-release/site")
+    assert upload["with"]["path"].endswith("attested-site")
     verify_index = next(
         i for i, s in enumerate(deploy["steps"]) if "src.releases verify-url" in s.get("run", "")
     )
