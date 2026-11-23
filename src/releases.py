@@ -17,6 +17,7 @@ from urllib.parse import quote, urlsplit
 import httpx
 
 from src.public import compact
+from src.run_receipts import run_receipt
 from src.schema import PaperDatabase
 
 MAX_BYTES = 200_000_000
@@ -279,6 +280,11 @@ def pack(root, data, site, output, revision, release_tag=None):
         "input_digest": release["input_digest"],
         "public_build_digest": manifest["build_digest"],
     }
+    receipt["run_receipt"] = run_receipt(
+        "release.pack",
+        inputs={"source_revision": revision, "input_digest": receipt["input_digest"]},
+        outputs={"release_id": receipt["release_id"], "archive_sha256": receipt["archive_sha256"]},
+    )
     (output / "receipt.json").write_bytes(compact(receipt))
     return receipt
 
@@ -377,6 +383,24 @@ def check_committed_inputs(root, data, site):
         raise ValueError("Candidate inputs/site contain uncommitted or ignored files")
 
 
+def _report_destination(parser, path, repo, *, outside=None):
+    report = path.resolve()
+    if (
+        report.exists()
+        or report == repo
+        or any(report.is_relative_to(p) for p in (repo / "data", repo / "docs"))
+        or (outside is not None and report.is_relative_to(outside))
+    ):
+        parser.error("Use a new report outside canonical data, deployed docs and restore output")
+    return report
+
+
+def _write_report(path, report):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("xb") as stream:
+        stream.write(compact(report))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
@@ -390,42 +414,47 @@ def main():
     restore.add_argument("--archive", type=Path, required=True)
     restore.add_argument("--expected-release-id", required=True)
     restore.add_argument("--output", type=Path, required=True)
+    restore.add_argument(
+        "--report", type=Path, help="Write a new receipt outside the restored site"
+    )
     deployed = commands.add_parser("verify-url")
     deployed.add_argument("--base-url", required=True)
     deployed.add_argument("--expected-release-id", required=True)
     deployed.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
+    repo = Path(__file__).resolve().parents[1]
     if args.command == "verify-url":
-        report_path = args.report.resolve()
-        repo = Path(__file__).resolve().parents[1]
-        if (
-            report_path.exists()
-            or report_path == repo
-            or any(
-                p == report_path or p in report_path.parents for p in (repo / "data", repo / "docs")
-            )
-        ):
-            parser.error("Use a new verification report outside canonical data and deployed docs")
+        report_path = _report_destination(parser, args.report, repo)
+        expected_id = args.expected_release_id
+        valid_id = bool(re.fullmatch(r"[a-f0-9]{64}", expected_id))
         failed = False
         try:
-            result = verify_url(args.base_url, args.expected_release_id)
+            result = verify_url(args.base_url, expected_id)
             result["status"] = "verified_static_bytes"
         except (ValueError, KeyError, TypeError, httpx.HTTPError) as error:
             failed = True
             result = {
                 "status": "verification_failed",
-                "release_id": args.expected_release_id,
+                "release_id": expected_id if valid_id else None,
                 "failure_type": type(error).__name__,
                 "static_bytes_verified": False,
             }
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        with report_path.open("xb") as stream:
-            stream.write(compact(result))
+        inputs = {"deployment_base_sha256": sha(args.base_url.rstrip("/").encode())}
+        if valid_id:
+            inputs["release_id"] = expected_id
+        else:
+            inputs["release_id_request_sha256"] = sha(expected_id.encode())
+        result["run_receipt"] = run_receipt(
+            "release.verify-url",
+            inputs=inputs,
+            outputs={"verification_sha256": sha(compact(result))},
+            status="failed" if failed else "succeeded",
+        )
+        _write_report(report_path, result)
         print(json.dumps(result))
         if failed:
             raise SystemExit(1)
         return
-    repo = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     if output == repo or any(
         p == output or p in output.parents for p in (repo / "data", repo / "docs")
@@ -448,8 +477,30 @@ def main():
         check_committed_inputs(args.root, data, site)
         result = pack(args.root, data, site, args.output, revision, args.release_tag)
     else:
+        report_path = (
+            _report_destination(parser, args.report, repo, outside=output) if args.report else None
+        )
         files, result = load_archive(args.archive, args.expected_release_id)
+        if report_path is not None:
+            report_path.parent.mkdir(parents=True, exist_ok=True)
         write_new(files, args.output)
+        if report_path is not None:
+            receipt = {
+                "release_id": result["release_id"],
+                "source_revision": result["source_revision"],
+                "site_files": len(files),
+                "run_receipt": run_receipt(
+                    "release.restore",
+                    inputs={"release_id": result["release_id"]},
+                    outputs={"site_inventory_sha256": sha(compact(inventory(files)))},
+                ),
+            }
+            try:
+                _write_report(report_path, receipt)
+            except OSError as error:
+                raise OSError(
+                    "Site restored, but the restore receipt could not be written"
+                ) from error
     print(json.dumps({key: result[key] for key in ("release_id", "source_revision")}))
 
 
