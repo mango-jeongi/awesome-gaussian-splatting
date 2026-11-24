@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-23T23:00:24Z",
-  "total_count": 4167,
+  "last_updated": "2026-11-24T04:14:13Z",
+  "total_count": 4169,
   "papers": [
     {
       "id": "2611.25338",
@@ -75561,6 +75561,105 @@
       ]
     },
     {
+      "id": "cvf:Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting",
+      "authors": [
+        "Jingyuan Gao",
+        "Yumeng Hu",
+        "Fei Gao",
+        "Mingjin Zhang"
+      ],
+      "first_author": "Gao et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+            "value": "Thermal infrared (TIR) 3D reconstruction provides geometry that is intrinsically coupled to the temperature field, even in low-light, nighttime, and smoke-obscured environments. TIR imaging measures self-emitted thermal radiation driven by object temperature and is largely independent of external illumination; therefore, simply carrying over visible-spectrum assumptions to TIR-based 3D reconstruction and novel view synthesis (NVS) often results in floating artifacts and blurred edges. In addition, radiometric inconsistency and low contrast in TIR weaken structure-from-motion (SfM) initialization, which in turn hinders subsequent 3D Gaussian Splatting (3DGS) optimization. We present PhysIR-Splat, a 3DGS framework that follows infrared radiative transfer: we explicitly model temperature, emissivity, and environmental irradiance on Gaussian primitives and, during rendering, jointly account for thermal emission, the reflected component, and atmospheric transmittance to produce physically consistent thermal synthesis. We also introduce VGGT-IR, a Transformer-based feed-forward initializer that takes TIR input with optional RGB and directly regresses camera poses and initial geometry, providing a modality-aligned and stable starting point for PhysIR-Splat. Extensive experiments demonstrate that our method significantly surpasses existing approaches in thermal reconstruction quality and cross-view consistency, effectively suppressing floating artifacts and enhancing boundary sharpness. The source code will be publicly available at : https://github.com/JingyuanGao0919/physir-splat.",
+            "observed_at": "2026-11-24T04:08:18.464060Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:08:18.464060Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T04:08:18.464060Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "published_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:08:18.464060Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T04:08:18.464060Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Thermal infrared (TIR) 3D reconstruction provides geometry that is intrinsically coupled to the temperature field, even in low-light, nighttime, and smoke-obscured environments. TIR imaging measures self-emitted thermal radiation driven by object temperature and is largely independent of external illumination; therefore, simply carrying over visible-spectrum assumptions to TIR-based 3D reconstruction and novel view synthesis (NVS) often results in floating artifacts and blurred edges. In addition, radiometric inconsistency and low contrast in TIR weaken structure-from-motion (SfM) initialization, which in turn hinders subsequent 3D Gaussian Splatting (3DGS) optimization. We present PhysIR-Splat, a 3DGS framework that follows infrared radiative transfer: we explicitly model temperature, emissivity, and environmental irradiance on Gaussian primitives and, during rendering, jointly account for thermal emission, the reflected component, and atmospheric transmittance to produce physically consistent thermal synthesis. We also introduce VGGT-IR, a Transformer-based feed-forward initializer that takes TIR input with optional RGB and directly regresses camera poses and initial geometry, providing a modality-aligned and stable starting point for PhysIR-Splat. Extensive experiments demonstrate that our method significantly surpasses existing approaches in thermal reconstruction quality and cross-view consistency, effectively suppressing floating artifacts and enhancing boundary sharpness. The source code will be publicly available at : https://github.com/JingyuanGao0919/physir-splat.",
+      "tldr": "Presents PhysIR-Splat, a 3DGS framework that follows infrared radiative transfer: we explicitly model temperature, emissivity, and environmental irradiance on Gaussian primitives and, during rendering,...",
+      "primary_category": "Medical, Defense & Multimodal Sensors",
+      "categories": [
+        "Medical, Defense & Multimodal Sensors"
+      ],
+      "tags": [
+        "Thermal & IR"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "2606.01950",
       "arxiv_id": "2606.01950",
       "doi": null,
@@ -75633,6 +75732,110 @@
         "2503.24009",
         "2504.16693"
       ]
+    },
+    {
+      "id": "cvf:Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "GauMVC: Generative Decoupled Gaussian Representation for Human-centric Multi-view Video Compression",
+      "authors": [
+        "Ruoke Yan",
+        "Mingjia Yang",
+        "Xinfeng Zhang",
+        "Haocheng Tang",
+        "Qian Yin",
+        "Zhipin Deng",
+        "Kai Zhang",
+        "Li Zhang",
+        "Siwei Ma"
+      ],
+      "first_author": "Yan et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+            "value": "Human-centric multi-view video has a clear semantic structure: a static background and dynamic human motion. We propose a generative compression framework that explicitly decouples these components. The background is modeled once with 3D Gaussian Splatting, while the human is represented by a personalized Gaussian avatar reconstructed from a sparse set of key views that are transmitted only once and driven by compact per-frame pose parameters from the Skinned Multi-Person Linear (SMPL) model. The encoder sends only three elements: the background, the key views, and the SMPL parameters, enabling high-fidelity multi-viewpoint synthesis at dramatically reduced bitrates. This shifts compression from low-level redundancy removal to semantics-aware generative modeling. Experiments across multiple human-centric datasets demonstrate superior rate-distortion performance, particularly for long and densely captured sequences, and naturally enable semantic editing.",
+            "observed_at": "2026-11-24T04:10:45.552984Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:10:45.552984Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T04:10:45.552984Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "published_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:10:45.552984Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T04:10:45.552984Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Human-centric multi-view video has a clear semantic structure: a static background and dynamic human motion. We propose a generative compression framework that explicitly decouples these components. The background is modeled once with 3D Gaussian Splatting, while the human is represented by a personalized Gaussian avatar reconstructed from a sparse set of key views that are transmitted only once and driven by compact per-frame pose parameters from the Skinned Multi-Person Linear (SMPL) model. The encoder sends only three elements: the background, the key views, and the SMPL parameters, enabling high-fidelity multi-viewpoint synthesis at dramatically reduced bitrates. This shifts compression from low-level redundancy removal to semantics-aware generative modeling. Experiments across multiple human-centric datasets demonstrate superior rate-distortion performance, particularly for long and densely captured sequences, and naturally enable semantic editing.",
+      "tldr": "Proposes a generative compression framework that explicitly decouples these components.",
+      "primary_category": "2D Gaussians, Geometry & Compression",
+      "categories": [
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "Compression"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
     },
     {
       "id": "2606.02068",
@@ -474883,6 +475086,7 @@
     "cvf:Galappaththige_Multi-View_Pose-Agnostic_Change_Localization_with_Zero_Labels_CVPR_2025_paper": "2412.03911",
     "cvf:Galerne_SGSST_Scaling_Gaussian_Splatting_Style_Transfer_CVPR_2025_paper": "cvf:Galerne_SGSST_Scaling_Gaussian_Splatting_Style_Transfer_CVPR_2025_paper",
     "cvf:Gao_Mani-GS_Gaussian_Splatting_Manipulation_with_Triangular_Mesh_CVPR_2025_paper": "cvf:Gao_Mani-GS_Gaussian_Splatting_Manipulation_with_Triangular_Mesh_CVPR_2025_paper",
+    "cvf:Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper": "cvf:Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper",
     "cvf:Gao_Towards_Realistic_Example-based_Modeling_via_3D_Gaussian_Stitching_CVPR_2025_paper": "cvf:Gao_Towards_Realistic_Example-based_Modeling_via_3D_Gaussian_Stitching_CVPR_2025_paper",
     "cvf:Ge_CompGS_Unleashing_2D_Compositionality_for_Compositional_Text-to-3D_via_Dynamically_Optimizing_CVPR_2025_paper": "cvf:Ge_CompGS_Unleashing_2D_Compositionality_for_Compositional_Text-to-3D_via_Dynamically_Optimizing_CVPR_2025_paper",
     "cvf:Gerogiannis_Arc2Avatar_Generating_Expressive_3D_Avatars_from_a_Single_Image_via_CVPR_2025_paper": "2501.05379",
@@ -475041,6 +475245,7 @@
     "cvf:Xu_DropoutGS_Dropping_Out_Gaussians_for_Better_Sparse-view_Rendering_CVPR_2025_paper": "2504.09491",
     "cvf:Xu_MAC-Ego3D_Multi-Agent_Gaussian_Consensus_for_Real-Time_Collaborative_Ego-Motion_and_Photorealistic_CVPR_2025_paper": "2412.09723",
     "cvf:Yan_GS-SLAM_Dense_Visual_SLAM_with_3D_Gaussian_Splatting_CVPR_2024_paper": "2311.11700",
+    "cvf:Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper": "cvf:Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper",
     "cvf:Yan_Instant_Gaussian_Stream_Fast_and_Generalizable_Streaming_of_Dynamic_Scene_CVPR_2025_paper": "cvf:Yan_Instant_Gaussian_Stream_Fast_and_Generalizable_Streaming_of_Dynamic_Scene_CVPR_2025_paper",
     "cvf:Yan_Multi-Scale_3D_Gaussian_Splatting_for_Anti-Aliased_Rendering_CVPR_2024_paper": "2311.17089",
     "cvf:Yang_Deformable_3D_Gaussians_for_High-Fidelity_Monocular_Dynamic_Scene_Reconstruction_CVPR_2024_paper": "2309.13101",
