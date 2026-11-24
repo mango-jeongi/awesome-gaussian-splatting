@@ -3208,6 +3208,121 @@
       "status": "not_found",
       "values": {}
     },
+    "2402.00752": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:25:14.482657Z",
+      "next_retry_at": "2026-12-01T04:25:14.482657Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.00763": {
+      "fetched_at": "2026-11-24T04:25:14.482657Z",
+      "last_attempt_at": "2026-11-24T04:25:14.482657Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.00763",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.00763",
+          "text": "360-GS enhances panoramic rendering using Gaussian splatting adapted to spherical projections, guided by layout priors, reducing artifacts and improving quality in novel views."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.00763",
+          "text": "3D Gaussian Splatting (3D-GS) has recently attracted great attention with\nreal-time and photo-realistic renderings. This technique typically takes\nperspective images as input and optimizes a set of 3D elliptical Gaussians by\nsplatting them onto the image planes, resulting in 2D Gaussians. However,\napplying 3D-GS to panoramic inputs presents challenges in effectively modeling\nthe projection onto the spherical surface of {360^circ} images using 2D\nGaussians. In practical applications, input panoramas are often sparse, leading\nto unreliable initialization of 3D Gaussians and subsequent degradation of\n3D-GS quality. In addition, due to the under-constrained geometry of\ntexture-less planes (e.g., walls and floors), 3D-GS struggles to model these\nflat regions with elliptical Gaussians, resulting in significant floaters in\nnovel views. To address these issues, we propose 360-GS, a novel 360^{circ}\nGaussian splatting for a limited set of panoramic inputs. Instead of splatting\n3D Gaussians directly onto the spherical surface, 360-GS projects them onto the\ntangent plane of the unit sphere and then maps them to the spherical\nprojections. This adaptation enables the representation of the projection using\nGaussians. We guide the optimization of 360-GS by exploiting layout priors\nwithin panoramas, which are simple to obtain and contain strong structural\ninformation about the indoor scene. Our experimental results demonstrate that\n360-GS allows panoramic rendering and outperforms state-of-the-art methods with\nfewer artifacts in novel view synthesis, thus providing immersive roaming in\nindoor scenarios."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.00763",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2402.00827": {
+      "fetched_at": "2026-11-24T04:25:14.482657Z",
+      "last_attempt_at": "2026-11-24T04:25:14.482657Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.00827",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.00827",
+          "text": "Emo-Avatar uses deferred neural rendering and StyleGAN with few-shot PTI and Laplacian pyramid texture sampling to generate high-quality, editable artistic video portraits efficiently."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.00827",
+          "text": "Artistic video portrait generation is a significant and sought-after task in\nthe fields of computer graphics and vision. While various methods have been\ndeveloped that integrate NeRFs or StyleGANs with instructional editing models\nfor creating and editing drivable portraits, these approaches face several\nchallenges. They often rely heavily on large datasets, require extensive\ncustomization processes, and frequently result in reduced image quality. To\naddress the above problems, we propose the Efficient Monotonic Video Style\nAvatar (Emo-Avatar) through deferred neural rendering that enhances StyleGAN's\ncapacity for producing dynamic, drivable portrait videos. We proposed a\ntwo-stage deferred neural rendering pipeline. In the first stage, we utilize\nfew-shot PTI initialization to initialize the StyleGAN generator through\nseveral extreme poses sampled from the video to capture the consistent\nrepresentation of aligned faces from the target portrait. In the second stage,\nwe propose a Laplacian pyramid for high-frequency texture sampling from UV maps\ndeformed by dynamic flow of expression for motion-aware texture prior\nintegration to provide torso features to enhance StyleGAN's ability to generate\ncomplete and upper body for portrait video rendering. Emo-Avatar reduces style\ncustomization time from hours to merely 5 minutes compared with existing\nmethods. In addition, Emo-Avatar requires only a single reference image for\nediting and employs region-aware contrastive learning with semantic invariant\nCLIP guidance, ensuring consistent high-resolution output and identity\npreservation. Through both quantitative and qualitative assessments, Emo-Avatar\ndemonstrates superior performance over existing methods in terms of training\nefficiency, rendering quality and editability in self- and cross-reenactment."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/andypinxinliu/HumanFaceProject"
+        },
+        "source_url": "https://huggingface.co/papers/2402.00827",
+        "stars": 3,
+        "submitted_on_daily_at": null,
+        "upvotes": 2
+      }
+    },
+    "2402.01459": {
+      "fetched_at": "2026-11-24T04:25:14.482657Z",
+      "last_attempt_at": "2026-11-24T04:25:14.482657Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.01459",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://waczjoan.github.io/gaussian-mesh-splatting/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.01459",
+          "text": "Gaussian Mesh Splatting (GaMeS) enhances Gaussian Splatting by allowing real-time, editable rendering using mesh-initialized Gaussian components."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.01459",
+          "text": "Recently, a range of neural network-based methods for image rendering have\nbeen introduced. One such widely-researched neural radiance field (NeRF) relies\non a neural network to represent 3D scenes, allowing for realistic view\nsynthesis from a small number of 2D images. However, most NeRF models are\nconstrained by long training and inference times. In comparison, Gaussian\nSplatting (GS) is a novel, state-of-the-art technique for rendering points in a\n3D scene by approximating their contribution to image pixels through Gaussian\ndistributions, warranting fast training and swift, real-time rendering. A\ndrawback of GS is the absence of a well-defined approach for its conditioning\ndue to the necessity to condition several hundred thousand Gaussian components.\nTo solve this, we introduce the Gaussian Mesh Splatting (GaMeS) model, which\nallows modification of Gaussian components in a similar way as meshes. We\nparameterize each Gaussian component by the vertices of the mesh face.\nFurthermore, our model needs mesh initialization on input or estimated mesh\nduring training. We also define Gaussian splats solely based on their location\non the mesh, allowing for automatic adjustments in position, scale, and\nrotation during animation. As a result, we obtain a real-time rendering of\neditable GS."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/waczjoan/gaussian-mesh-splatting"
+        },
+        "source_url": "https://huggingface.co/papers/2402.01459",
+        "stars": 512,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.03246": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:25:14.482657Z",
+      "next_retry_at": "2026-12-01T04:25:14.482657Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
