@@ -3101,6 +3101,113 @@
         "upvotes": 9
       }
     },
+    "2401.15318": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.15318",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.15318",
+          "text": "The framework combines 3D Gaussian Splatting with physics-based animations of solids and fluids to enhance visual fidelity and interaction in virtual scenes."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.15318",
+          "text": "We demonstrate the feasibility of integrating physics-based animations of\nsolids and fluids with 3D Gaussian Splatting (3DGS) to create novel effects in\nvirtual scenes reconstructed using 3DGS. Leveraging the coherence of the\nGaussian splatting and position-based dynamics (PBD) in the underlying\nrepresentation, we manage rendering, view synthesis, and the dynamics of solids\nand fluids in a cohesive manner. Similar to Gaussian shader, we enhance each\nGaussian kernel with an added normal, aligning the kernel's orientation with\nthe surface normal to refine the PBD simulation. This approach effectively\neliminates spiky noises that arise from rotational deformation in solids. It\nalso allows us to integrate physically based rendering to augment the dynamic\nsurface reflections on fluids. Consequently, our framework is capable of\nrealistically reproducing surface highlights on dynamic fluids and facilitating\ninteractions between scene objects and fluids from new views. For more\ninformation, please visit our project page at\nhttps://amysteriouscat.github.io/GaussianSplashing/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.15318",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.16416": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.16416",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16416",
+          "text": "Endo-4DGS, a real-time endoscopic reconstruction method, uses 3D Gaussian Splatting and MLPs to efficiently reconstruct surgical scenes with accurate depth estimation and surface normal constraints."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16416",
+          "text": "In the realm of robot-assisted minimally invasive surgery, dynamic scene\nreconstruction can significantly enhance downstream tasks and improve surgical\noutcomes. Neural Radiance Fields (NeRF)-based methods have recently risen to\nprominence for their exceptional ability to reconstruct scenes but are hampered\nby slow inference speed, prolonged training, and inconsistent depth estimation.\nSome previous work utilizes ground truth depth for optimization but is hard to\nacquire in the surgical domain. To overcome these obstacles, we present\nEndo-4DGS, a real-time endoscopic dynamic reconstruction approach that utilizes\n3D Gaussian Splatting (GS) for 3D representation. Specifically, we propose\nlightweight MLPs to capture temporal dynamics with Gaussian deformation fields.\nTo obtain a satisfactory Gaussian Initialization, we exploit a powerful depth\nestimation foundation model, Depth-Anything, to generate pseudo-depth maps as a\ngeometry prior. We additionally propose confidence-guided learning to tackle\nthe ill-pose problems in monocular depth estimation and enhance the\ndepth-guided reconstruction with surface normal constraints and depth\nregularization. Our approach has been validated on two surgical datasets, where\nit can effectively render in real-time, compute efficiently, and reconstruct\nwith remarkable accuracy."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.16416",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.16663": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.16663",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16663",
+          "text": "VR-GS system enables intuitive and efficient 3D content interaction in VR with real-time physical dynamics and realistic effects through Gaussian Splatting, deformable simulations, and two-level embedding."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16663",
+          "text": "As consumer Virtual Reality (VR) and Mixed Reality (MR) technologies gain\nmomentum, there's a growing focus on the development of engagements with 3D\nvirtual content. Unfortunately, traditional techniques for content creation,\nediting, and interaction within these virtual spaces are fraught with\ndifficulties. They tend to be not only engineering-intensive but also require\nextensive expertise, which adds to the frustration and inefficiency in virtual\nobject manipulation. Our proposed VR-GS system represents a leap forward in\nhuman-centered 3D content interaction, offering a seamless and intuitive user\nexperience. By developing a physical dynamics-aware interactive Gaussian\nSplatting in a Virtual Reality setting, and constructing a highly efficient\ntwo-level embedding strategy alongside deformable body simulations, VR-GS\nensures real-time execution with highly realistic dynamic responses. The\ncomponents of our Virtual Reality system are designed for high efficiency and\neffectiveness, starting from detailed scene reconstruction and object\nsegmentation, advancing through multi-view image in-painting, and extending to\ninteractive physics-based editing. The system also incorporates real-time\ndeformation embedding and dynamic shadow casting, ensuring a comprehensive and\nengaging virtual experience.Our project page is available at:\nhttps://yingjiang96.github.io/VR-GS/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.16663",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.17857": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": "2026-12-01T04:21:49.454886Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.00525": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": "2026-12-01T04:21:49.454886Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
