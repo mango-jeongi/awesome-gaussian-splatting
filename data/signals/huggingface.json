@@ -3434,6 +3434,117 @@
       "status": "not_found",
       "values": {}
     },
+    "2402.06390": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": "2026-12-01T12:03:02.671892Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.07181": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": "2026-12-01T12:03:02.671892Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.07207": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.07207",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.07207",
+          "text": "GALA3D is a generative framework for 3D content that uses large language models and conditioned diffusion for layout-guided, compositional scene generation, ensuring high fidelity and realistic object interactions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.07207",
+          "text": "We present GALA3D, generative 3D GAussians with LAyout-guided control, for\neffective compositional text-to-3D generation. We first utilize large language\nmodels (LLMs) to generate the initial layout and introduce a layout-guided 3D\nGaussian representation for 3D content generation with adaptive geometric\nconstraints. We then propose an object-scene compositional optimization\nmechanism with conditioned diffusion to collaboratively generate realistic 3D\nscenes with consistent geometry, texture, scale, and accurate interactions\namong multiple objects while simultaneously adjusting the coarse layout priors\nextracted from the LLMs to align with the generated scene. Experiments show\nthat GALA3D is a user-friendly, end-to-end framework for state-of-the-art\nscene-level 3D content generation and controllable editing while ensuring the\nhigh fidelity of object-level entities within the scene. Source codes and\nmodels will be available at https://gala3d.github.io/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.07207",
+        "submitted_on_daily_at": "2024-02-13T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2402.08682": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.08682",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.08682",
+          "text": "IM-3D improves text-to-3D generation by using video generators and Gaussian splatting to produce high-quality 3D outputs efficiently with minimized geometric inconsistencies."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.08682",
+          "text": "Most text-to-3D generators build upon off-the-shelf text-to-image models\ntrained on billions of images. They use variants of Score Distillation Sampling\n(SDS), which is slow, somewhat unstable, and prone to artifacts. A mitigation\nis to fine-tune the 2D generator to be multi-view aware, which can help\ndistillation or can be combined with reconstruction networks to output 3D\nobjects directly. In this paper, we further explore the design space of\ntext-to-3D models. We significantly improve multi-view generation by\nconsidering video instead of image generators. Combined with a 3D\nreconstruction algorithm which, by using Gaussian splatting, can optimize a\nrobust image-based loss, we directly produce high-quality 3D outputs from the\ngenerated views. Our new method, IM-3D, reduces the number of evaluations of\nthe 2D generator network 10-100x, resulting in a much more efficient pipeline,\nbetter quality, fewer geometric inconsistencies, and higher yield of usable 3D\nassets."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.08682",
+        "submitted_on_daily_at": "2024-02-14T00:00:00.000Z",
+        "upvotes": 13
+      }
+    },
+    "2402.10128": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.10128",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10128",
+          "text": "GES, a new representation using Generalized Exponential Function, outperforms Gaussian Splatting in 3D reconstruction and generation by requiring fewer particles and improving memory efficiency and rendering speed."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10128",
+          "text": "Advancements in 3D Gaussian Splatting have significantly accelerated 3D\nreconstruction and generation. However, it may require a large number of\nGaussians, which creates a substantial memory footprint. This paper introduces\nGES (Generalized Exponential Splatting), a novel representation that employs\nGeneralized Exponential Function (GEF) to model 3D scenes, requiring far fewer\nparticles to represent a scene and thus significantly outperforming Gaussian\nSplatting methods in efficiency with a plug-and-play replacement ability for\nGaussian-based utilities. GES is validated theoretically and empirically in\nboth principled 1D setup and realistic 3D scenes.\n  It is shown to represent signals with sharp edges more accurately, which are\ntypically challenging for Gaussians due to their inherent low-pass\ncharacteristics. Our empirical analysis demonstrates that GEF outperforms\nGaussians in fitting natural-occurring signals (e.g. squares, triangles, and\nparabolic signals), thereby reducing the need for extensive splitting\noperations that increase the memory footprint of Gaussian Splatting. With the\naid of a frequency-modulated loss, GES achieves competitive performance in\nnovel-view synthesis benchmarks while requiring less than half the memory\nstorage of Gaussian Splatting and increasing the rendering speed by up to 39%.\nThe code is available on the project website https://abdullahamdi.com/ges ."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ajhamdi/ges-splatting"
+        },
+        "source_url": "https://huggingface.co/papers/2402.10128",
+        "stars": 236,
+        "submitted_on_daily_at": "2024-02-16T00:00:00.000Z",
+        "upvotes": 16
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

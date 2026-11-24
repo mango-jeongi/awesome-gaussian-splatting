@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/awesome-gaussian-splatting/awesome-gaussian-splatting/src/cli.py", line 1023, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/awesome-gaussian-splatting/awesome-gaussian-splatting/src/cli.py", line 1019, in main
+    return int(args.func(args))
+               ^^^^^^^^^^^^^^^
+  File "/home/runner/work/awesome-gaussian-splatting/awesome-gaussian-splatting/src/cli.py", line 243, in cmd_daily
+    report = session.run(
+             ^^^^^^^^^^^^
+  File "/home/runner/work/awesome-gaussian-splatting/awesome-gaussian-splatting/src/daily.py", line 194, in run
+    source = self.source.fetch_page(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/awesome-gaussian-splatting/awesome-gaussian-splatting/src/extractors/arxiv.py", line 190, in fetch_page
+    raise ArxivRequestFailure(
+src.extractors.arxiv.ArxivRequestFailure: arXiv HTTP 429; attempts=1
