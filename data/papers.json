@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-24T17:25:51Z",
-  "total_count": 4176,
+  "last_updated": "2026-11-24T17:34:23Z",
+  "total_count": 4182,
   "papers": [
     {
       "id": "2611.27719",
@@ -57272,6 +57272,96 @@
       "db_references": []
     },
     {
+      "id": "cvf:Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting",
+      "authors": [
+        "Wubin Shi",
+        "Shaoyan Gai",
+        "Feipeng Da"
+      ],
+      "first_author": "Shi et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:30:44.052748Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:30:44.052748Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.html",
+            "value": "6D pose estimation is a key technology in computer vision and robotic manipulation. However, many methods remain heavily dependent on CAD models that are difficult to obtain. Object-level 3D reconstruction provides an alternative route, and 3D Gaussian Splatting (3DGS) shows convincing potential owing to its training and rendering efficiency. Nevertheless, under sparse reference views, 3DGS is prone to floating artifacts and appearance overfitting, which weakens the stability of pose estimation. We present PoseGaussian, a method for sparse-view 6D pose estimation for unseen objects that builds on improved 3DGS. First, we use sparse RGB-D views to inject a depth structure prior into the 3DGS initialization for stable structure, and we adopt adaptive density control, view-warping augmentation, and joint photometric-depth supervision to reduce floaters and appearance overfitting under sparse reference views. Next, in the pose estimation stage, we apply a two-stage learning-guided ICP initializer that exploits geometric features to obtain a stable initial pose. Finally, we introduce a 3DGS-based iterative pose refiner that aligns rendered and query images in both appearance and geometry, further improving pose estimation accuracy. Experiments on LINEMOD, GenMOP, and our real-world datasets show that PoseGaussian achieves significant improvements over baseline methods under model-free and sparse-view settings, demonstrating strong generalization to unseen objects and robustness to view sparsity.",
+            "observed_at": "2026-11-24T17:30:44.052748Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:30:44.052748Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "6D pose estimation is a key technology in computer vision and robotic manipulation. However, many methods remain heavily dependent on CAD models that are difficult to obtain. Object-level 3D reconstruction provides an alternative route, and 3D Gaussian Splatting (3DGS) shows convincing potential owing to its training and rendering efficiency. Nevertheless, under sparse reference views, 3DGS is prone to floating artifacts and appearance overfitting, which weakens the stability of pose estimation. We present PoseGaussian, a method for sparse-view 6D pose estimation for unseen objects that builds on improved 3DGS. First, we use sparse RGB-D views to inject a depth structure prior into the 3DGS initialization for stable structure, and we adopt adaptive density control, view-warping augmentation, and joint photometric-depth supervision to reduce floaters and appearance overfitting under sparse reference views. Next, in the pose estimation stage, we apply a two-stage learning-guided ICP initializer that exploits geometric features to obtain a stable initial pose. Finally, we introduce a 3DGS-based iterative pose refiner that aligns rendered and query images in both appearance and geometry, further improving pose estimation accuracy. Experiments on LINEMOD, GenMOP, and our real-world datasets show that PoseGaussian achieves significant improvements over baseline methods under model-free and sparse-view settings, demonstrating strong generalization to unseen objects and robustness to view sparsity.",
+      "tldr": "Presents PoseGaussian, a method for sparse-view 6D pose estimation for unseen objects that builds on improved 3DGS.",
+      "primary_category": "Active Perception, SLAM & Robotics",
+      "categories": [
+        "Active Perception, SLAM & Robotics",
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Sparse-View",
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "cvf:Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper",
       "arxiv_id": null,
       "doi": null,
@@ -57468,6 +57558,189 @@
       "db_references": []
     },
     {
+      "id": "cvf:Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain",
+      "authors": [
+        "Haodong Jing",
+        "Dongyao Jiang",
+        "Jixin Wang",
+        "Junhao Jia",
+        "Yanshu Li",
+        "Yongqiang Ma",
+        "Nanning Zheng"
+      ],
+      "first_author": "Jing et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:28:13.759497Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:28:13.759497Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.html",
+            "value": "Exploring human visual perception and understanding of the stereoscopic world represents a significant topic in computational neuroscience. Recent studies have provided rich Brain-3D datasets, conducted preliminary explorations into 3D visual reconstruction. However, existing research struggles to capture the differences in dynamic changes of 3D stimulus views, and there remains room for improvement in high-fidelity reconstruction and rendering. 3D Gaussian Splatting (3DGS) has recently achieved significant progress in stereoscopic view synthesis. Inspired by it, we propose BrainGS -- an innovative framework for decoding more realistic 3D objects from the brain. BrainGS incorporates a Fusion Time-Spatial Network to achieve comprehensive encoding of the brain, combined with the Multi-Attribute Controller (MAC), it decouples features using visual, semantic, and color as anchors, effectively learning the feature distribution of Brain-3D and providing initial control for 3DGS. The Multi-View Stabilizer (MVS) overcomes the challenge of capturing multi-view changes of 3D objects, creating more robust viewpoint representations. Comprehensive experiments and discussions on fMRI/EEG show the SOTA performance (2.936 FPD, 0.202 LPIPS) of BrainGS, providing reliable neural interpretations, offering new insights into brain stereovision understanding.",
+            "observed_at": "2026-11-24T17:28:13.759497Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:28:13.759497Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Exploring human visual perception and understanding of the stereoscopic world represents a significant topic in computational neuroscience. Recent studies have provided rich Brain-3D datasets, conducted preliminary explorations into 3D visual reconstruction. However, existing research struggles to capture the differences in dynamic changes of 3D stimulus views, and there remains room for improvement in high-fidelity reconstruction and rendering. 3D Gaussian Splatting (3DGS) has recently achieved significant progress in stereoscopic view synthesis. Inspired by it, we propose BrainGS -- an innovative framework for decoding more realistic 3D objects from the brain. BrainGS incorporates a Fusion Time-Spatial Network to achieve comprehensive encoding of the brain, combined with the Multi-Attribute Controller (MAC), it decouples features using visual, semantic, and color as anchors, effectively learning the feature distribution of Brain-3D and providing initial control for 3DGS. The Multi-View Stabilizer (MVS) overcomes the challenge of capturing multi-view changes of 3D objects, creating more robust viewpoint representations. Comprehensive experiments and discussions on fMRI/EEG show the SOTA performance (2.936 FPD, 0.202 LPIPS) of BrainGS, providing reliable neural interpretations, offering new insights into brain stereovision understanding.",
+      "tldr": "Inspired by it, we propose BrainGS -- an innovative framework for decoding more realistic 3D objects from the brain.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "cvf:Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "Learning Differentiable Hierarchies in 3D Gaussian Splatting",
+      "authors": [
+        "Youqi Pan",
+        "Wugen Zhou",
+        "Hongbin Zha"
+      ],
+      "first_author": "Pan et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:30:16.367879Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:30:16.367879Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "Although 3D Gaussian Splatting (3DGS) has achieved impressive performance in real-time rendering, its unordered Gaussians make level-of-detail (LoD) construction and model compression highly challenging, limiting its applicability in customized scenarios.In this work, we propose a learning-based Gaussian hierarchy representation that ranks Gaussians by their contribution to the scene, enabling flexible LoD representations across arbitrary Gaussian counts.We first introduce a unified, continuous formulation and metric for Gaussian hierarchy. Then, we introduce a hierarchy-based modulated rendering method built upon a Differentiable Decreasing Step Function, which enables efficient hierarchy learning while maintaining approximately equivalent rendering. Moreover, we develop a PDF-Guided Active-Region Sampling strategy that encourages the learned hierarchy to become widely distributed within its value range.Our method requires no additional training stages and produces Gaussian hierarchies within training time comparable to classical 3DGS. Experiments on multiple datasets show that our approach achieves performance comparable to or surpassing state-of-the-art methods in both LoD rendering and model pruning.",
+            "observed_at": "2026-11-24T17:30:16.367879Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:30:16.367879Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Although 3D Gaussian Splatting (3DGS) has achieved impressive performance in real-time rendering, its unordered Gaussians make level-of-detail (LoD) construction and model compression highly challenging, limiting its applicability in customized scenarios.In this work, we propose a learning-based Gaussian hierarchy representation that ranks Gaussians by their contribution to the scene, enabling flexible LoD representations across arbitrary Gaussian counts.We first introduce a unified, continuous formulation and metric for Gaussian hierarchy. Then, we introduce a hierarchy-based modulated rendering method built upon a Differentiable Decreasing Step Function, which enables efficient hierarchy learning while maintaining approximately equivalent rendering. Moreover, we develop a PDF-Guided Active-Region Sampling strategy that encourages the learned hierarchy to become widely distributed within its value range.Our method requires no additional training stages and produces Gaussian hierarchies within training time comparable to classical 3DGS. Experiments on multiple datasets show that our approach achieves performance comparable to or surpassing state-of-the-art methods in both LoD rendering and model pruning.",
+      "tldr": "Although 3D Gaussian Splatting (3DGS) has achieved impressive performance in real-time rendering, its unordered Gaussians make level-of-detail (LoD) construction and model compression highly challenging,...",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Compression",
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "2606.01950",
       "arxiv_id": "2606.01950",
       "doi": null,
@@ -57518,6 +57791,189 @@
         "Foundations"
       ],
       "primary_arxiv_category": "cs.RO",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "cvf:Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes",
+      "authors": [
+        "Hanjie Xu",
+        "Yuanxing Duan",
+        "Qiyu Dai",
+        "Ge Li",
+        "Baoquan Chen",
+        "He Wang"
+      ],
+      "first_author": "Xu et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:27:52.708516Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:27:52.708516Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.html",
+            "value": "We address the challenge of reconstructing long dynamic scenes from multi-view videos in a storage-efficient manner. Recent advances in Gaussian Splatting and its extensions to dynamic scenes have demonstrated impressive visual quality, but remain limited to short duration (<10 s), large storage size (>500 MB), and high GPU VRAM usage.To overcome these limitations, we introduce Layered 4D-Rotor Gaussian Splatting (L4DRotorGS), a novel compressed representation designed for long dynamic scenes. Our approach integrates a layered 4D representation, efficient training, and effective compression into a unified framework. Specifically, 4D Gaussians are first organized into layers based on their temporal extents and then partitioned into discrete temporal buckets. This structure allows for selective access and rendering of only the necessary subsets of 4D Gaussians, substantially reducing GPU memory requirements.To further compress the representation, we apply a series of techniques, Factorized Covariance Quantization, Layered Compression, and Residual Codebook Quantization, achieving a compression ratio of up to 22.3x while preserving high visual fidelity.We implement a highly optimized C++/CUDA framework for efficient training, compression, and real-time rendering, achieving over 500 FPS on an RTX 3090 GPU. Extensive experiments demonstrate the superior storage efficiency, visual quality, and rendering speed of L4DRotorGS, consistently outperforming prior methods in both quantitative metrics and perceptual quality on real-world long dynamic scenes.",
+            "observed_at": "2026-11-24T17:27:52.708516Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:27:52.708516Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "We address the challenge of reconstructing long dynamic scenes from multi-view videos in a storage-efficient manner. Recent advances in Gaussian Splatting and its extensions to dynamic scenes have demonstrated impressive visual quality, but remain limited to short duration (<10 s), large storage size (>500 MB), and high GPU VRAM usage.To overcome these limitations, we introduce Layered 4D-Rotor Gaussian Splatting (L4DRotorGS), a novel compressed representation designed for long dynamic scenes. Our approach integrates a layered 4D representation, efficient training, and effective compression into a unified framework. Specifically, 4D Gaussians are first organized into layers based on their temporal extents and then partitioned into discrete temporal buckets. This structure allows for selective access and rendering of only the necessary subsets of 4D Gaussians, substantially reducing GPU memory requirements.To further compress the representation, we apply a series of techniques, Factorized Covariance Quantization, Layered Compression, and Residual Codebook Quantization, achieving a compression ratio of up to 22.3x while preserving high visual fidelity.We implement a highly optimized C++/CUDA framework for efficient training, compression, and real-time rendering, achieving over 500 FPS on an RTX 3090 GPU. Extensive experiments demonstrate the superior storage efficiency, visual quality, and rendering speed of L4DRotorGS, consistently outperforming prior methods in both quantitative metrics and perceptual quality on real-world long dynamic scenes.",
+      "tldr": "Recent advances in Gaussian Splatting and its extensions to dynamic scenes have demonstrated impressive visual quality, but remain limited to short duration (<10 s), large storage size (>500 MB), and high...",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "4DGS",
+        "Compression",
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "cvf:Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting",
+      "authors": [
+        "Xulun Ye",
+        "Qin Zhang",
+        "Kun Zhou"
+      ],
+      "first_author": "Ye et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:26:59.138140Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:26:59.138140Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.html",
+            "value": "Language-guided 3D segmentation is crucial for linking 3D perception with semantic understanding, yet it remains vulnerable to the sparse and occluded views common in real-world RGB-D data. To overcome this, we present a real-time framework that leverages 3D Gaussian Splatting (3DGS) to build a semantically continuous and differentiable embedding field from partial observations. Our approach integrates two key components: a Dirichlet Process (DP) for the adaptive discovery of novel object categories, and a gradient low-rank mechanism that enhances class separability by reducing feature redundancy. This combination enables robust open-vocabulary segmentation guided directly by text prompts. Extensive experiments on challenging benchmarks demonstrate that our method achieves strong performance, exhibiting superior accuracy, robustness to partial inputs, and a powerful capacity for novel class discovery.Our code and models are available at https://github.com/Tap12345/LangGS.",
+            "observed_at": "2026-11-24T17:26:59.138140Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:26:59.138140Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper.pdf",
+      "code_url": "https://github.com/Tap12345/LangGS",
+      "project_url": null,
+      "abstract": "Language-guided 3D segmentation is crucial for linking 3D perception with semantic understanding, yet it remains vulnerable to the sparse and occluded views common in real-world RGB-D data. To overcome this, we present a real-time framework that leverages 3D Gaussian Splatting (3DGS) to build a semantically continuous and differentiable embedding field from partial observations. Our approach integrates two key components: a Dirichlet Process (DP) for the adaptive discovery of novel object categories, and a gradient low-rank mechanism that enhances class separability by reducing feature redundancy. This combination enables robust open-vocabulary segmentation guided directly by text prompts. Extensive experiments on challenging benchmarks demonstrate that our method achieves strong performance, exhibiting superior accuracy, robustness to partial inputs, and a powerful capacity for novel class discovery.Our code and models are available at https://github.com/Tap12345/LangGS.",
+      "tldr": "To overcome this, we present a real-time framework that leverages 3D Gaussian Splatting (3DGS) to build a semantically continuous and differentiable embedding field from partial observations.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
       "comment": null,
       "citation_count": 0,
       "influential_citation_count": 0,
@@ -79810,6 +80266,124 @@
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "ECCV 2026",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2604.00969",
+      "arxiv_id": "2604.00969",
+      "doi": null,
+      "source": "cvf",
+      "title": "DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving",
+      "authors": [
+        "Yiyao Zhu",
+        "Ying Xue",
+        "Haiming Zhang",
+        "Guangfeng Jiang",
+        "Wending Zhou",
+        "Xu Yan",
+        "Jiantao Gao",
+        "Yingjie Cai",
+        "Bingbing Liu",
+        "Zhen Li",
+        "Shaojie Shen"
+      ],
+      "first_author": "Zhu et al.",
+      "published_date": "2026-04-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 4,
+      "venue": "CVPR 2026",
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T17:26:16.261848Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T17:26:16.261848Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+            "value": "Vision-based autonomous driving has gained much attention due to its low costs and excellent performance. Compared with dense BEV (Bird's Eye View) or sparse query models, Gaussian-centric method is a comprehensive yet sparse representation by describing scene with 3D semantic Gaussians. In this paper, we introduce DLWM, a novel paradigm with Dual Latent World Models specifically designed to enable holistic gaussian-centric pre-training in autonomous driving using two stages. In the first stage, DLWM predicts 3D Gaussians from queries by self-supervised reconstructing multi-view semantic and depth images. Equipped with fine-grained contextual features, in the second stage, two latent world models are trained separately for temporal feature learning, including Gaussian-flow-guided latent prediction for downstream occupancy perception and forecasting tasks, and ego-planning-guided latent prediction for motion planning. Extensive experiments in SurroundOcc and nuScenes benchmarks demonstrate that DLWM shows significant performance gains across Gaussian-centric 3D occupancy perception, 4D occupancy forecasting and motion planning tasks.",
+            "observed_at": "2026-11-24T17:26:16.261848Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "arxiv_id": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+            "value": "2604.00969",
+            "observed_at": "2026-11-24T17:26:16.261848Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T17:26:16.261848Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "published_date": [
+          {
+            "source": "arxiv_v1",
+            "source_url": "https://arxiv.org/abs/2604.00969v1",
+            "value": "2026-04-01",
+            "observed_at": "2026-11-24T17:31:53.704705Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhu_DLWM_Dual_Latent_World_Models_enable_Holistic_Gaussian-centric_Pre-training_in_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Vision-based autonomous driving has gained much attention due to its low costs and excellent performance. Compared with dense BEV (Bird's Eye View) or sparse query models, Gaussian-centric method is a comprehensive yet sparse representation by describing scene with 3D semantic Gaussians. In this paper, we introduce DLWM, a novel paradigm with Dual Latent World Models specifically designed to enable holistic gaussian-centric pre-training in autonomous driving using two stages. In the first stage, DLWM predicts 3D Gaussians from queries by self-supervised reconstructing multi-view semantic and depth images. Equipped with fine-grained contextual features, in the second stage, two latent world models are trained separately for temporal feature learning, including Gaussian-flow-guided latent prediction for downstream occupancy perception and forecasting tasks, and ego-planning-guided latent prediction for motion planning. Extensive experiments in SurroundOcc and nuScenes benchmarks demonstrate that DLWM shows significant performance gains across Gaussian-centric 3D occupancy perception, 4D occupancy forecasting and motion planning tasks.",
+      "tldr": "Introduces DLWM, a novel paradigm with Dual Latent World Models specifically designed to enable holistic gaussian-centric pre-training in autonomous driving using two stages.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Autonomous Driving",
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
       "citation_count": 0,
       "influential_citation_count": 0,
       "openalex_id": null,
@@ -290302,6 +290876,7 @@
     "arxiv:2604.00648": "2604.00648",
     "arxiv:2604.00804": "2604.00804",
     "arxiv:2604.00928": "2604.00928",
+    "arxiv:2604.00969": "2604.00969",
     "arxiv:2604.01030": "2604.01030",
     "arxiv:2604.01204": "2604.01204",
     "arxiv:2604.01207": "2604.01207",
@@ -291588,6 +292163,7 @@
     "cvf:Jiang_GaussianShader_3D_Gaussian_Splatting_with_Shading_Functions_for_Reflective_Surfaces_CVPR_2024_paper": "2311.17977",
     "cvf:Jiang_HiFi4G_High-Fidelity_Human_Performance_Rendering_via_Compact_Gaussian_Splatting_CVPR_2024_paper": "2312.03461",
     "cvf:Jiang_Horizon-GS_Unified_3D_Gaussian_Splatting_for_Large-Scale_Aerial-to-Ground_Scenes_CVPR_2025_paper": "cvf:Jiang_Horizon-GS_Unified_3D_Gaussian_Splatting_for_Large-Scale_Aerial-to-Ground_Scenes_CVPR_2025_paper",
+    "cvf:Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper": "cvf:Jing_More_Natural_More_Real_Object-aware_Gaussian_Splatting_for_3D_Visual_CVPR_2026_paper",
     "cvf:Ju_DirectTriGS_Triplane-based_Gaussian_Splatting_Field_Representation_for_3D_Generation_CVPR_2025_paper": "cvf:Ju_DirectTriGS_Triplane-based_Gaussian_Splatting_Field_Representation_for_3D_Generation_CVPR_2025_paper",
     "cvf:Jun-Seong_Dr._Splat_Directly_Referring_3D_Gaussian_Splatting_via_Direct_Language_CVPR_2025_paper": "cvf:Jun-Seong_Dr._Splat_Directly_Referring_3D_Gaussian_Splatting_via_Direct_Language_CVPR_2025_paper",
     "cvf:Kairanda_Thin-Shell-SfT_Fine-Grained_Monocular_Non-rigid_3D_Surface_Tracking_with_Neural_Deformation_CVPR_2025_paper": "2503.19976",
@@ -291654,6 +292230,7 @@
     "cvf:Nam_Generative_Densification_Learning_to_Densify_Gaussians_for_High-Fidelity_Generalizable_3D_CVPR_2025_paper": "2412.06234",
     "cvf:Niedermayr_Compressed_3D_Gaussian_Splatting_for_Accelerated_Novel_View_Synthesis_CVPR_2024_paper": "2401.02436",
     "cvf:On_BIGS_Bimanual_Category-agnostic_Interaction_Reconstruction_from_Monocular_Videos_via_3D_CVPR_2025_paper": "cvf:On_BIGS_Bimanual_Category-agnostic_Interaction_Reconstruction_from_Monocular_Videos_via_3D_CVPR_2025_paper",
+    "cvf:Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper": "cvf:Pan_Learning_Differentiable_Hierarchies_in_3D_Gaussian_Splatting_CVPR_2026_paper",
     "cvf:Pang_ASH_Animatable_Gaussian_Splats_for_Efficient_and_Photoreal_Human_Rendering_CVPR_2024_paper": "2312.05941",
     "cvf:Park_DropGaussian_Structural_Regularization_for_Sparse-view_Gaussian_Splatting_CVPR_2025_paper": "cvf:Park_DropGaussian_Structural_Regularization_for_Sparse-view_Gaussian_Splatting_CVPR_2025_paper",
     "cvf:Park_SplineGS_Robust_Motion-Adaptive_Spline_for_Real-Time_Dynamic_3D_Gaussians_from_CVPR_2025_paper": "cvf:Park_SplineGS_Robust_Motion-Adaptive_Spline_for_Real-Time_Dynamic_3D_Gaussians_from_CVPR_2025_paper",
@@ -291676,6 +292253,7 @@
     "cvf:Shen_LOD-GS_Achieving_Levels_of_Detail_using_Scalable_Gaussian_Soup_CVPR_2025_paper": "doi:10.1109/cvpr52734.2025.00071",
     "cvf:Shi_Chain_of_Semantics_Programming_in_3D_Gaussian_Splatting_Representation_for_CVPR_2025_paper": "cvf:Shi_Chain_of_Semantics_Programming_in_3D_Gaussian_Splatting_Representation_for_CVPR_2025_paper",
     "cvf:Shi_Language_Embedded_3D_Gaussians_for_Open-Vocabulary_Scene_Understanding_CVPR_2024_paper": "2311.18482",
+    "cvf:Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper": "cvf:Shi_PoseGaussian_6D_Pose_Estimation_for_Unseen_Objects_via_Sparse-View_Object-Level_CVPR_2026_paper",
     "cvf:Stekovic_PyTorchGeoNodes_Enabling_Differentiable_Shape_Programs_for_3D_Shape_Reconstruction_CVPR_2025_paper": "2404.10620",
     "cvf:Sun_3DGStream_On-the-Fly_Training_of_3D_Gaussians_for_Efficient_Streaming_of_CVPR_2024_paper": "2403.01444",
     "cvf:Sun_Real-time_Free-view_Human_Rendering_from_Sparse-view_RGB_Videos_using_Double_CVPR_2025_paper": "2412.13183",
@@ -291718,6 +292296,7 @@
     "cvf:Xiong_TexGaussian_Generating_High-quality_PBR_Material_via_Octree-based_3D_Gaussian_Splatting_CVPR_2025_paper": "cvf:Xiong_TexGaussian_Generating_High-quality_PBR_Material_via_Octree-based_3D_Gaussian_Splatting_CVPR_2025_paper",
     "cvf:Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper": "cvf:Xu_DepthSplat_Connecting_Gaussian_Splatting_and_Depth_CVPR_2025_paper",
     "cvf:Xu_DropoutGS_Dropping_Out_Gaussians_for_Better_Sparse-view_Rendering_CVPR_2025_paper": "2504.09491",
+    "cvf:Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper": "cvf:Xu_Layered_4D-Rotor_Gaussian_Splatting_A_Compressed_Representation_for_Long_Dynamic_CVPR_2026_paper",
     "cvf:Xu_MAC-Ego3D_Multi-Agent_Gaussian_Consensus_for_Real-Time_Collaborative_Ego-Motion_and_Photorealistic_CVPR_2025_paper": "2412.09723",
     "cvf:Yan_GS-SLAM_Dense_Visual_SLAM_with_3D_Gaussian_Splatting_CVPR_2024_paper": "2311.11700",
     "cvf:Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper": "cvf:Yan_GauMVC_Generative_Decoupled_Gaussian_Representation_for_Human-centric_Multi-view_Video_Compression_CVPR_2026_paper",
@@ -291730,6 +292309,7 @@
     "cvf:Yang_NTR-Gaussian_Nighttime_Dynamic_Thermal_Reconstruction_with_4D_Gaussian_Splatting_Based_CVPR_2025_paper": "cvf:Yang_NTR-Gaussian_Nighttime_Dynamic_Thermal_Reconstruction_with_4D_Gaussian_Splatting_Based_CVPR_2025_paper",
     "cvf:Yang_SGCR_Spherical_Gaussians_for_Efficient_3D_Curve_Reconstruction_CVPR_2025_paper": "2505.04668",
     "cvf:Yao_RigGS_Rigging_of_3D_Gaussians_for_Modeling_Articulated_Objects_in_CVPR_2025_paper": "cvf:Yao_RigGS_Rigging_of_3D_Gaussians_for_Modeling_Articulated_Objects_in_CVPR_2025_paper",
+    "cvf:Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper": "cvf:Ye_LangRef3DGS_Natural_Language-Guided_3D_Referential_Segmentation_from_Partial_Observations_via_CVPR_2026_paper",
     "cvf:Yi_GaussianDreamer_Fast_Generation_from_Text_to_3D_Gaussians_by_Bridging_CVPR_2024_paper": "2310.08529",
     "cvf:Yu_CoGS_Controllable_Gaussian_Splatting_CVPR_2024_paper": "2312.05664",
     "cvf:Yu_Mip-Splatting_Alias-free_3D_Gaussian_Splatting_CVPR_2024_paper": "2311.16493",
