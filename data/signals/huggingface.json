@@ -2568,6 +2568,646 @@
         "upvotes": 1
       }
     },
+    "2312.15258": {
+      "fetched_at": "2026-11-22T12:28:18.169560Z",
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.15258",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15258",
+          "text": "Human101 is a framework that reconstructs high-fidelity dynamic 3D humans from single-view videos in real-time using 3D Gaussian Splatting and Human-centric Forward Gaussian Animation, achieving high rendering speeds and quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.15258",
+          "text": "Reconstructing the human body from single-view videos plays a pivotal role in\nthe virtual reality domain. One prevalent application scenario necessitates the\nrapid reconstruction of high-fidelity 3D digital humans while simultaneously\nensuring real-time rendering and interaction. Existing methods often struggle\nto fulfill both requirements. In this paper, we introduce Human101, a novel\nframework adept at producing high-fidelity dynamic 3D human reconstructions\nfrom 1-view videos by training 3D Gaussians in 100 seconds and rendering in\n100+ FPS. Our method leverages the strengths of 3D Gaussian Splatting, which\nprovides an explicit and efficient representation of 3D humans. Standing apart\nfrom prior NeRF-based pipelines, Human101 ingeniously applies a Human-centric\nForward Gaussian Animation method to deform the parameters of 3D Gaussians,\nthereby enhancing rendering speed (i.e., rendering 1024-resolution images at an\nimpressive 60+ FPS and rendering 512-resolution images at 100+ FPS).\nExperimental results indicate that our approach substantially eclipses current\nmethods, clocking up to a 10 times surge in frames per second and delivering\ncomparable or superior rendering quality. Code and demos will be released at\nhttps://github.com/longxiang-ai/Human101."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/longxiang-ai/human101"
+        },
+        "source_url": "https://huggingface.co/papers/2312.15258",
+        "stars": 110,
+        "submitted_on_daily_at": "2023-12-27T00:00:00.000Z",
+        "upvotes": 12
+      }
+    },
+    "2312.15676": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.15856": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.16047": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": "2026-11-29T12:28:18.169560Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2312.16084": {
+      "fetched_at": "2026-11-22T12:28:18.169560Z",
+      "last_attempt_at": "2026-11-22T12:28:18.169560Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.16084",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://langsplat.github.io/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.16084",
+          "text": "LangSplat constructs a 3D language field using a splatting technique with hierarchical semantics, enabling precise and efficient open-vocabulary querying in 3D spaces while significantly outperforming existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.16084",
+          "text": "Human lives in a 3D world and commonly uses natural language to interact with\na 3D scene. Modeling a 3D language field to support open-ended language queries\nin 3D has gained increasing attention recently. This paper introduces\nLangSplat, which constructs a 3D language field that enables precise and\nefficient open-vocabulary querying within 3D spaces. Unlike existing methods\nthat ground CLIP language embeddings in a NeRF model, LangSplat advances the\nfield by utilizing a collection of 3D Gaussians, each encoding language\nfeatures distilled from CLIP, to represent the language field. By employing a\ntile-based splatting technique for rendering language features, we circumvent\nthe costly rendering process inherent in NeRF. Instead of directly learning\nCLIP embeddings, LangSplat first trains a scene-wise language autoencoder and\nthen learns language features on the scene-specific latent space, thereby\nalleviating substantial memory demands imposed by explicit modeling. Existing\nmethods struggle with imprecise and vague 3D language fields, which fail to\ndiscern clear boundaries between objects. We delve into this issue and propose\nto learn hierarchical semantics using SAM, thereby eliminating the need for\nextensively querying the language field across various scales and the\nregularization of DINO features. Extensive experiments on open-vocabulary 3D\nobject localization and semantic segmentation demonstrate that LangSplat\nsignificantly outperforms the previous state-of-the-art method LERF by a large\nmargin. Notably, LangSplat is extremely efficient, achieving a {\\speed}\ntimes speedup compared to LERF at the resolution of 1440 times 1080. We\nstrongly recommend readers to check out our video results at\nhttps://langsplat.github.io"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/minghanqin/LangSplat"
+        },
+        "source_url": "https://huggingface.co/papers/2312.16084",
+        "stars": 1101,
+        "submitted_on_daily_at": "2023-12-27T00:00:00.000Z",
+        "upvotes": 15
+      }
+    },
+    "2312.17142": {
+      "fetched_at": "2026-11-23T10:21:15.018568Z",
+      "last_attempt_at": "2026-11-23T10:21:15.018568Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2312.17142",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "jiawei011/dreamgaussian4d",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/jiawei011/dreamgaussian4d"
+          },
+          {
+            "id": "yotty22/dreamgaussian4d",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/yotty22/dreamgaussian4d"
+          },
+          {
+            "id": "fpvs/dreamgaussian4d",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/fpvs/dreamgaussian4d"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 3,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.17142",
+          "text": "DreamGaussian4D efficiently generates 4D content with reduced optimization time, controllable motion, and high-quality animated meshes using Gaussian Splatting representation."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2312.17142",
+          "text": "Remarkable progress has been made in 4D content generation recently. However,\nexisting methods suffer from long optimization time, lack of motion\ncontrollability, and a low level of detail. In this paper, we introduce\nDreamGaussian4D, an efficient 4D generation framework that builds on 4D\nGaussian Splatting representation. Our key insight is that the explicit\nmodeling of spatial transformations in Gaussian Splatting makes it more\nsuitable for the 4D generation setting compared with implicit representations.\nDreamGaussian4D reduces the optimization time from several hours to just a few\nminutes, allows flexible control of the generated 3D motion, and produces\nanimated meshes that can be efficiently rendered in 3D engines."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/jiawei-ren/dreamgaussian4d"
+        },
+        "source_url": "https://huggingface.co/papers/2312.17142",
+        "stars": 619,
+        "submitted_on_daily_at": "2023-12-29T00:00:00.000Z",
+        "upvotes": 18
+      }
+    },
+    "2401.00834": {
+      "fetched_at": "2026-11-23T10:21:15.018568Z",
+      "last_attempt_at": "2026-11-23T10:21:15.018568Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.00834",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.00834",
+          "text": "A novel deblurring framework enhances real-time rendering quality of 3D Gaussian splatting by adjusting Gaussian covariance to counteract scene blurriness."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.00834",
+          "text": "Recent studies in Radiance Fields have paved the robust way for novel view\nsynthesis with their photorealistic rendering quality. Nevertheless, they\nusually employ neural networks and volumetric rendering, which are costly to\ntrain and impede their broad use in various real-time applications due to the\nlengthy rendering time. Lately 3D Gaussians splatting-based approach has been\nproposed to model the 3D scene, and it achieves remarkable visual quality while\nrendering the images in real-time. However, it suffers from severe degradation\nin the rendering quality if the training images are blurry. Blurriness commonly\noccurs due to the lens defocusing, object motion, and camera shake, and it\ninevitably intervenes in clean image acquisition. Several previous studies have\nattempted to render clean and sharp images from blurry input images using\nneural fields. The majority of those works, however, are designed only for\nvolumetric rendering-based neural radiance fields and are not straightforwardly\napplicable to rasterization-based 3D Gaussian splatting methods. Thus, we\npropose a novel real-time deblurring framework, deblurring 3D Gaussian\nSplatting, using a small Multi-Layer Perceptron (MLP) that manipulates the\ncovariance of each 3D Gaussian to model the scene blurriness. While deblurring\n3D Gaussian Splatting can still enjoy real-time rendering, it can reconstruct\nfine and sharp details from blurry images. A variety of experiments have been\nconducted on the benchmark, and the results have revealed the effectiveness of\nour approach for deblurring. Qualitative results are available at\nhttps://benhenryl.github.io/Deblurring-3D-Gaussian-Splatting/"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.00834",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.01339": {
+      "fetched_at": "2026-11-23T10:21:15.018568Z",
+      "last_attempt_at": "2026-11-23T10:21:15.018568Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.01339",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.01339",
+          "text": "Street Gaussians, an explicit scene representation, addresses limitations of NeRF-based methods for dynamic urban street scene modeling by incorporating point clouds, semantic logits, 3D Gaussians, and dynamic spherical harmonics, achieving high rendering speeds and performance."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.01339",
+          "text": "This paper aims to tackle the problem of modeling dynamic urban street scenes\nfrom monocular videos. Recent methods extend NeRF by incorporating tracked\nvehicle poses to animate vehicles, enabling photo-realistic view synthesis of\ndynamic urban street scenes. However, significant limitations are their slow\ntraining and rendering speed, coupled with the critical need for high precision\nin tracked vehicle poses. We introduce Street Gaussians, a new explicit scene\nrepresentation that tackles all these limitations. Specifically, the dynamic\nurban street is represented as a set of point clouds equipped with semantic\nlogits and 3D Gaussians, each associated with either a foreground vehicle or\nthe background. To model the dynamics of foreground object vehicles, each\nobject point cloud is optimized with optimizable tracked poses, along with a\ndynamic spherical harmonics model for the dynamic appearance. The explicit\nrepresentation allows easy composition of object vehicles and background, which\nin turn allows for scene editing operations and rendering at 133 FPS\n(1066times1600 resolution) within half an hour of training. The proposed\nmethod is evaluated on multiple challenging benchmarks, including KITTI and\nWaymo Open datasets. Experiments show that the proposed method consistently\noutperforms state-of-the-art methods across all datasets. Furthermore, the\nproposed representation delivers performance on par with that achieved using\nprecise ground-truth poses, despite relying only on poses from an off-the-shelf\ntracker. The code is available at https://zju3dv.github.io/street_gaussians/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.01339",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.01970": {
+      "fetched_at": "2026-11-23T10:21:15.018568Z",
+      "last_attempt_at": "2026-11-23T10:21:15.018568Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.01970",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.01970",
+          "text": "The work introduces a method to integrate vision-language embeddings into 3D Gaussian Splatting for efficient 3D reconstruction, improving multi-view semantic consistency and inference speed."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.01970",
+          "text": "Precisely perceiving the geometric and semantic properties of real-world 3D\nobjects is crucial for the continued evolution of augmented reality and robotic\napplications. To this end, we present  (), which\nincorporates vision-language embeddings of foundation models into 3D Gaussian\nSplatting (GS). The key contribution of this work is an efficient method to\nreconstruct and represent 3D vision-language models. This is achieved by\ndistilling feature maps generated from image-based foundation models into those\nrendered from our 3D model. To ensure high-quality rendering and fast training,\nwe introduce a novel scene representation by integrating strengths from both GS\nand multi-resolution hash encodings (MHE). Our effective training procedure\nalso introduces a pixel alignment loss that makes the rendered feature distance\nof same semantic entities close, following the pixel-level semantic boundaries.\nOur results demonstrate remarkable multi-view semantic consistency,\nfacilitating diverse downstream tasks, beating state-of-the-art methods by\n10.2 percent on open-vocabulary language-based object detection,\ndespite that we are 851times faster for inference. This research\nexplores the intersection of vision, language, and 3D scene representation,\npaving the way for enhanced scene understanding in uncontrolled real-world\nenvironments. We plan to release the code upon paper acceptance."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.01970",
+        "submitted_on_daily_at": "2024-01-05T00:00:00.000Z",
+        "upvotes": 7
+      }
+    },
+    "2401.02281": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T10:21:15.018568Z",
+      "next_retry_at": "2026-11-30T10:21:15.018568Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.02436": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T14:21:22.991128Z",
+      "next_retry_at": "2026-11-30T14:21:22.991128Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.02620": {
+      "fetched_at": "2026-11-23T14:21:22.991128Z",
+      "last_attempt_at": "2026-11-23T14:21:22.991128Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.02620",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.02620",
+          "text": "The paper reviews advancements in 3D generation, including object modeling, human modeling, and motion generation, driven by technologies like stable diffusion, NeRF, and 3DGS, and highlights the role of large language models in producing realistic and consistent 3D content."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.02620",
+          "text": "While AI-generated text and 2D images continue to expand its territory, 3D\ngeneration has gradually emerged as a trend that cannot be ignored. Since the\nyear 2023 an abundant amount of research papers has emerged in the domain of 3D\ngeneration. This growth encompasses not just the creation of 3D objects, but\nalso the rapid development of 3D character and motion generation. Several key\nfactors contribute to this progress. The enhanced fidelity in stable diffusion,\ncoupled with control methods that ensure multi-view consistency, and realistic\nhuman models like SMPL-X, contribute synergistically to the production of 3D\nmodels with remarkable consistency and near-realistic appearances. The\nadvancements in neural network-based 3D storing and rendering models, such as\nNeural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), have\naccelerated the efficiency and realism of neural rendered models. Furthermore,\nthe multimodality capabilities of large language models have enabled language\ninputs to transcend into human motion outputs. This paper aims to provide a\ncomprehensive overview and summary of the relevant papers published mostly\nduring the latter half year of 2023. It will begin by discussing the AI\ngenerated object models in 3D, followed by the generated 3D human models, and\nfinally, the generated 3D human motions, culminating in a conclusive summary\nand a vision for the future."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.02620",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.04099": {
+      "fetched_at": "2026-11-23T14:21:22.991128Z",
+      "last_attempt_at": "2026-11-23T14:21:22.991128Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.04099",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.04099",
+          "text": "An Amortized Generative 3D Gaussian framework (AGG) efficiently generates 3D Gaussians from a single image, offering competitive performance and speed advantages over existing methods."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.04099",
+          "text": "Given the growing need for automatic 3D content creation pipelines, various\n3D representations have been studied to generate 3D objects from a single\nimage. Due to its superior rendering efficiency, 3D Gaussian splatting-based\nmodels have recently excelled in both 3D reconstruction and generation. 3D\nGaussian splatting approaches for image to 3D generation are often\noptimization-based, requiring many computationally expensive score-distillation\nsteps. To overcome these challenges, we introduce an Amortized Generative 3D\nGaussian framework (AGG) that instantly produces 3D Gaussians from a single\nimage, eliminating the need for per-instance optimization. Utilizing an\nintermediate hybrid representation, AGG decomposes the generation of 3D\nGaussian locations and other appearance attributes for joint optimization.\nMoreover, we propose a cascaded pipeline that first generates a coarse\nrepresentation of the 3D data and later upsamples it with a 3D Gaussian\nsuper-resolution module. Our method is evaluated against existing\noptimization-based 3D Gaussian frameworks and sampling-based pipelines\nutilizing other 3D representations, where AGG showcases competitive generation\nabilities both qualitatively and quantitatively while being several orders of\nmagnitude faster. Project page: https://ir1d.github.io/AGG/"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.04099",
+        "submitted_on_daily_at": "2024-01-09T00:00:00.000Z",
+        "upvotes": 9
+      }
+    },
+    "2401.05345": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T14:21:22.991128Z",
+      "next_retry_at": "2026-11-30T14:21:22.991128Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.05925": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T14:21:22.991128Z",
+      "next_retry_at": "2026-11-30T14:21:22.991128Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.06003": {
+      "fetched_at": "2026-11-23T22:44:19.666029Z",
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.06003",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.06003",
+          "text": "TRIPS, combining Gaussian Splatting and ADOP techniques, achieves high-quality rendering of detailed scenes with real-time performance using a screen-space image pyramid and a differentiable render pipeline."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.06003",
+          "text": "Point-based radiance field rendering has demonstrated impressive results for\nnovel view synthesis, offering a compelling blend of rendering quality and\ncomputational efficiency. However, also latest approaches in this domain are\nnot without their shortcomings. 3D Gaussian Splatting [Kerbl and Kopanas et al.\n2023] struggles when tasked with rendering highly detailed scenes, due to\nblurring and cloudy artifacts. On the other hand, ADOP [R\\\"uckert et al. 2022]\ncan accommodate crisper images, but the neural reconstruction network decreases\nperformance, it grapples with temporal instability and it is unable to\neffectively address large gaps in the point cloud.\n  In this paper, we present TRIPS (Trilinear Point Splatting), an approach that\ncombines ideas from both Gaussian Splatting and ADOP. The fundamental concept\nbehind our novel technique involves rasterizing points into a screen-space\nimage pyramid, with the selection of the pyramid layer determined by the\nprojected point size. This approach allows rendering arbitrarily large points\nusing a single trilinear write. A lightweight neural network is then used to\nreconstruct a hole-free image including detail beyond splat resolution.\nImportantly, our render pipeline is entirely differentiable, allowing for\nautomatic optimization of both point sizes and positions.\n  Our evaluation demonstrate that TRIPS surpasses existing state-of-the-art\nmethods in terms of rendering quality while maintaining a real-time frame rate\nof 60 frames per second on readily available hardware. This performance extends\nto challenging scenarios, such as scenes featuring intricate geometry,\nexpansive landscapes, and auto-exposed footage."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/lfranke/trips"
+        },
+        "source_url": "https://huggingface.co/papers/2401.06003",
+        "stars": 560,
+        "submitted_on_daily_at": "2024-01-12T00:00:00.000Z",
+        "upvotes": 24
+      }
+    },
+    "2401.06116": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.08742": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.09720": {
+      "fetched_at": "2026-11-23T22:44:19.666029Z",
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.09720",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.09720",
+          "text": "A novel method, GaussianBody, uses 3D Gaussian Splatting for dynamic human reconstruction with explicit pose-guided deformation and pose refinement to achieve high-quality rendering and geometry reconstruction."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.09720",
+          "text": "In this work, we propose a novel clothed human reconstruction method called\nGaussianBody, based on 3D Gaussian Splatting. Compared with the costly neural\nradiance based models, 3D Gaussian Splatting has recently demonstrated great\nperformance in terms of training time and rendering quality. However, applying\nthe static 3D Gaussian Splatting model to the dynamic human reconstruction\nproblem is non-trivial due to complicated non-rigid deformations and rich cloth\ndetails. To address these challenges, our method considers explicit pose-guided\ndeformation to associate dynamic Gaussians across the canonical space and the\nobservation space, introducing a physically-based prior with regularized\ntransformations helps mitigate ambiguity between the two spaces. During the\ntraining process, we further propose a pose refinement strategy to update the\npose regression for compensating the inaccurate initial estimation and a\nsplit-with-scale mechanism to enhance the density of regressed point clouds.\nThe experiments validate that our method can achieve state-of-the-art\nphotorealistic novel-view rendering results with high-quality details for\ndynamic clothed human bodies, along with explicit geometry reconstruction."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.09720",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.11535": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:44:19.666029Z",
+      "next_retry_at": "2026-11-30T22:44:19.666029Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.12561": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.12561",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12561",
+          "text": "EndoGaussian achieves real-time endoscopic reconstruction using 3D Gaussian Splatting with efficient Gaussian initialization and spatio-temporal Gaussian tracking, outperforming existing methods in speed, quality, and training overhead."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12561",
+          "text": "Reconstructing deformable tissues from endoscopic videos is essential in many\ndownstream surgical applications. However, existing methods suffer from slow\nrendering speed, greatly limiting their practical use. In this paper, we\nintroduce EndoGaussian, a real-time endoscopic scene reconstruction framework\nbuilt on 3D Gaussian Splatting (3DGS). By integrating the efficient Gaussian\nrepresentation and highly-optimized rendering engine, our framework\nsignificantly boosts the rendering speed to a real-time level. To adapt 3DGS\nfor endoscopic scenes, we propose two strategies, Holistic Gaussian\nInitialization (HGI) and Spatio-temporal Gaussian Tracking (SGT), to handle the\nnon-trivial Gaussian initialization and tissue deformation problems,\nrespectively. In HGI, we leverage recent depth estimation models to predict\ndepth maps of input binocular/monocular image sequences, based on which pixels\nare re-projected and combined for holistic initialization. In SPT, we propose\nto model surface dynamics using a deformation field, which is composed of an\nefficient encoding voxel and a lightweight deformation decoder, allowing for\nGaussian tracking with minor training and rendering burden. Experiments on\npublic datasets demonstrate our efficacy against prior SOTAs in many aspects,\nincluding better rendering speed (195 FPS real-time, 100times gain), better\nrendering quality (37.848 PSNR), and less training overhead (within 2\nmin/scene), showing significant promise for intraoperative surgery\napplications. Code is available at:\nhttps://yifliu3.github.io/EndoGaussian/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.12561",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.12900": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.12900",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12900",
+          "text": "A novel framework, PSAvatar, combines point-based morphable shape models and 3D Gaussian representations for real-time, high-fidelity head avatar animation, addressing challenges in non-facial structure representation and rendering efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.12900",
+          "text": "Despite much progress, achieving real-time high-fidelity head avatar\nanimation is still difficult and existing methods have to trade-off between\nspeed and quality. 3DMM based methods often fail to model non-facial structures\nsuch as eyeglasses and hairstyles, while neural implicit models suffer from\ndeformation inflexibility and rendering inefficiency. Although 3D Gaussian has\nbeen demonstrated to possess promising capability for geometry representation\nand radiance field reconstruction, applying 3D Gaussian in head avatar creation\nremains a major challenge since it is difficult for 3D Gaussian to model the\nhead shape variations caused by changing poses and expressions. In this paper,\nwe introduce PSAvatar, a novel framework for animatable head avatar creation\nthat utilizes discrete geometric primitive to create a parametric morphable\nshape model and employs 3D Gaussian for fine detail representation and high\nfidelity rendering. The parametric morphable shape model is a Point-based\nMorphable Shape Model (PMSM) which uses points instead of meshes for 3D\nrepresentation to achieve enhanced representation flexibility. The PMSM first\nconverts the FLAME mesh to points by sampling on the surfaces as well as off\nthe meshes to enable the reconstruction of not only surface-like structures but\nalso complex geometries such as eyeglasses and hairstyles. By aligning these\npoints with the head shape in an analysis-by-synthesis manner, the PMSM makes\nit possible to utilize 3D Gaussian for fine detail representation and\nappearance modeling, thus enabling the creation of high-fidelity avatars. We\nshow that PSAvatar can reconstruct high-fidelity head avatars of a variety of\nsubjects and the avatars can be animated in real-time (ge 25 fps at a\nresolution of 512 times 512 )."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/pcl3dv/PSAvatar"
+        },
+        "source_url": "https://huggingface.co/papers/2401.12900",
+        "stars": 82,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.13352": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": "2026-11-30T22:49:52.974430Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.14032": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": "2026-11-30T22:49:52.974430Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2401.14828": {
+      "fetched_at": "2026-11-23T22:49:52.974430Z",
+      "last_attempt_at": "2026-11-23T22:49:52.974430Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.14828",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.14828",
+          "text": "TIPEditor, a text- and image-driven 3D scene editing framework, uses 2D personalization and 3D Gaussian splatting to achieve accurate and aligned edits within specified bounding boxes."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.14828",
+          "text": "Text-driven 3D scene editing has gained significant attention owing to its\nconvenience and user-friendliness. However, existing methods still lack\naccurate control of the specified appearance and location of the editing result\ndue to the inherent limitations of the text description. To this end, we\npropose a 3D scene editing framework, TIPEditor, that accepts both text and\nimage prompts and a 3D bounding box to specify the editing region. With the\nimage prompt, users can conveniently specify the detailed appearance/style of\nthe target content in complement to the text description, enabling accurate\ncontrol of the appearance. Specifically, TIP-Editor employs a stepwise 2D\npersonalization strategy to better learn the representation of the existing\nscene and the reference image, in which a localization loss is proposed to\nencourage correct object placement as specified by the bounding box.\nAdditionally, TIPEditor utilizes explicit and flexible 3D Gaussian splatting as\nthe 3D representation to facilitate local editing while keeping the background\nunchanged. Extensive experiments have demonstrated that TIP-Editor conducts\naccurate editing following the text and image prompts in the specified bounding\nbox region, consistently outperforming the baselines in editing quality, and\nthe alignment to the prompts, qualitatively and quantitatively."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.14828",
+        "submitted_on_daily_at": "2024-01-29T00:00:00.000Z",
+        "upvotes": 9
+      }
+    },
+    "2401.15318": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.15318",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.15318",
+          "text": "The framework combines 3D Gaussian Splatting with physics-based animations of solids and fluids to enhance visual fidelity and interaction in virtual scenes."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.15318",
+          "text": "We demonstrate the feasibility of integrating physics-based animations of\nsolids and fluids with 3D Gaussian Splatting (3DGS) to create novel effects in\nvirtual scenes reconstructed using 3DGS. Leveraging the coherence of the\nGaussian splatting and position-based dynamics (PBD) in the underlying\nrepresentation, we manage rendering, view synthesis, and the dynamics of solids\nand fluids in a cohesive manner. Similar to Gaussian shader, we enhance each\nGaussian kernel with an added normal, aligning the kernel's orientation with\nthe surface normal to refine the PBD simulation. This approach effectively\neliminates spiky noises that arise from rotational deformation in solids. It\nalso allows us to integrate physically based rendering to augment the dynamic\nsurface reflections on fluids. Consequently, our framework is capable of\nrealistically reproducing surface highlights on dynamic fluids and facilitating\ninteractions between scene objects and fluids from new views. For more\ninformation, please visit our project page at\nhttps://amysteriouscat.github.io/GaussianSplashing/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.15318",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.16416": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.16416",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16416",
+          "text": "Endo-4DGS, a real-time endoscopic reconstruction method, uses 3D Gaussian Splatting and MLPs to efficiently reconstruct surgical scenes with accurate depth estimation and surface normal constraints."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16416",
+          "text": "In the realm of robot-assisted minimally invasive surgery, dynamic scene\nreconstruction can significantly enhance downstream tasks and improve surgical\noutcomes. Neural Radiance Fields (NeRF)-based methods have recently risen to\nprominence for their exceptional ability to reconstruct scenes but are hampered\nby slow inference speed, prolonged training, and inconsistent depth estimation.\nSome previous work utilizes ground truth depth for optimization but is hard to\nacquire in the surgical domain. To overcome these obstacles, we present\nEndo-4DGS, a real-time endoscopic dynamic reconstruction approach that utilizes\n3D Gaussian Splatting (GS) for 3D representation. Specifically, we propose\nlightweight MLPs to capture temporal dynamics with Gaussian deformation fields.\nTo obtain a satisfactory Gaussian Initialization, we exploit a powerful depth\nestimation foundation model, Depth-Anything, to generate pseudo-depth maps as a\ngeometry prior. We additionally propose confidence-guided learning to tackle\nthe ill-pose problems in monocular depth estimation and enhance the\ndepth-guided reconstruction with surface normal constraints and depth\nregularization. Our approach has been validated on two surgical datasets, where\nit can effectively render in real-time, compute efficiently, and reconstruct\nwith remarkable accuracy."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.16416",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2401.16663": {
+      "fetched_at": "2026-11-24T04:21:49.454886Z",
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2401.16663",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16663",
+          "text": "VR-GS system enables intuitive and efficient 3D content interaction in VR with real-time physical dynamics and realistic effects through Gaussian Splatting, deformable simulations, and two-level embedding."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2401.16663",
+          "text": "As consumer Virtual Reality (VR) and Mixed Reality (MR) technologies gain\nmomentum, there's a growing focus on the development of engagements with 3D\nvirtual content. Unfortunately, traditional techniques for content creation,\nediting, and interaction within these virtual spaces are fraught with\ndifficulties. They tend to be not only engineering-intensive but also require\nextensive expertise, which adds to the frustration and inefficiency in virtual\nobject manipulation. Our proposed VR-GS system represents a leap forward in\nhuman-centered 3D content interaction, offering a seamless and intuitive user\nexperience. By developing a physical dynamics-aware interactive Gaussian\nSplatting in a Virtual Reality setting, and constructing a highly efficient\ntwo-level embedding strategy alongside deformable body simulations, VR-GS\nensures real-time execution with highly realistic dynamic responses. The\ncomponents of our Virtual Reality system are designed for high efficiency and\neffectiveness, starting from detailed scene reconstruction and object\nsegmentation, advancing through multi-view image in-painting, and extending to\ninteractive physics-based editing. The system also incorporates real-time\ndeformation embedding and dynamic shadow casting, ensuring a comprehensive and\nengaging virtual experience.Our project page is available at:\nhttps://yingjiang96.github.io/VR-GS/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2401.16663",
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2401.17857": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": "2026-12-01T04:21:49.454886Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.00525": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:21:49.454886Z",
+      "next_retry_at": "2026-12-01T04:21:49.454886Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
