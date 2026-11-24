@@ -1,8 +1,251 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-21T08:58:30Z",
-  "total_count": 4166,
+  "last_updated": "2026-11-23T10:21:00Z",
+  "total_count": 4170,
   "papers": [
+    {
+      "id": "2611.27719",
+      "arxiv_id": "2611.27719",
+      "doi": null,
+      "source": "arxiv",
+      "title": "VeilGS: Solving Darkness as a Veil of 2D Basis Maps over Retinex 3DGS",
+      "authors": [
+        "Mohab Kishawy",
+        "Chengzhou Tang",
+        "Shahram Shirani",
+        "Jun Chen"
+      ],
+      "first_author": "Kishawy et al.",
+      "published_date": "2026-11-20",
+      "updated_date": "2026-11-20",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.27719",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.27719v1",
+            "value": "2026-11-20",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.27719",
+      "pdf_url": "https://arxiv.org/pdf/2611.27719.pdf",
+      "code_url": null,
+      "project_url": "https://errorlogic1211.github.io/VeilGS/",
+      "abstract": "In a dark capture, the darkness is not uniform. How much light reaches a surface depends on where it lies relative to the few light sources, and the camera compresses what remains with a tone curve. Most low-light 3D reconstruction methods either apply one curve to every pixel of a view, so a dark object beside a lamp and a bright one in an unlit corner receive the same correction, or store the darkness in the 3D representation, where it can absorb scene detail. We present VeilGS, a 3D Gaussian Splatting method for low-light novel view synthesis that treats the degradation as a veil drawn over a clear scene. Each Gaussian carries an albedo and a shading latent instead of spherical harmonics, separating surface colour from illumination. Each view is darkened by a spatially varying gain followed by a global tone curve, and rendering without this veil gives the restored scene. A small network predicts a coarse basis for the gain from the observation, and its coefficients are solved for each view rather than learned. Training through this solve discourages the Gaussians from absorbing what the veil can explain. VeilGS needs no paired normal-light supervision and stores no per-view parameters. On Gaussian-DK, its restored renders score best on no-reference NIQE and CLIP-IQA and are rated highest in a blind user study with 55 participants. On LOM, it achieves results competitive with the state of the art.",
+      "tldr": "Presents VeilGS, a 3D Gaussian Splatting method for low-light novel view synthesis that treats the degradation as a veil drawn over a clear scene.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Relighting & BRDF",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Project page: https://errorlogic1211.github.io/VeilGS/",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.27003",
+      "arxiv_id": "2611.27003",
+      "doi": null,
+      "source": "arxiv",
+      "title": "S2D-Splat: Static-First Gaussian Reconstruction of Dynamic Driving Scenes with Layer-Wise Feature Guidance",
+      "authors": [
+        "Jinheng Li",
+        "Tianchen Deng",
+        "Bufan Zhang",
+        "Qu Chen",
+        "Jianwu Fang"
+      ],
+      "first_author": "Li et al.",
+      "published_date": "2026-11-20",
+      "updated_date": "2026-11-20",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.27003",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.27003v1",
+            "value": "2026-11-20",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.27003",
+      "pdf_url": "https://arxiv.org/pdf/2611.27003.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Moving objects introduce cross-frame inconsistencies that complicate camera estimation and static geometry recovery in driving scenes. Recent feed-forward Gaussian methods explicitly separate static and dynamic primitives, but often estimate camera parameters and geometry from shared features that jointly encode both components, leaving static reconstruction susceptible to dynamic interference. To address this challenge, we propose S2D-Splat, a feed-forward framework for static-first Gaussian reconstruction with layer-wise feature guidance. Our framework separates static and dynamic features before camera and geometry estimation, enabling the static branch to recover camera parameters and static 3D Gaussians with reduced dynamic interference. Intermediate static features are cached at each layer and reused as fixed conditioning at corresponding layers of the dynamic branch. This asymmetric information flow preserves the established static representations while providing stable geometric context for reconstructing dynamic 3D Gaussians. An instance-level motion decoder further queries the fused static and dynamic representations to estimate object trajectories, supporting motion-aligned Gaussian fusion and temporal interpolation. Experiments on Waymo and zero-shot evaluations on nuScenes and the MM-AU accident dataset demonstrate that S2D-Splat outperforms existing approaches on most evaluated metrics and generalizes to highly dynamic, pre-collision driving scenarios.",
+      "tldr": "To address this challenge, we propose S2D-Splat, a feed-forward framework for static-first Gaussian reconstruction with layer-wise feature guidance.",
+      "primary_category": "Autonomous Driving & Urban Scenes",
+      "categories": [
+        "Autonomous Driving & Urban Scenes",
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "Feed-Forward",
+        "Autonomous Driving",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.27525",
+      "arxiv_id": "2611.27525",
+      "doi": null,
+      "source": "arxiv",
+      "title": "PennyGS: Full Resolution 3DGS Training in Minutes on Consumer GPUs",
+      "authors": [
+        "Nicholas Jing Shou Nge",
+        "Yuang Shi",
+        "Geraldine Morin",
+        "Simone Gasparini",
+        "Anand Bhojan",
+        "Wei Tsang Ooi"
+      ],
+      "first_author": "Nge et al.",
+      "published_date": "2026-11-20",
+      "updated_date": "2026-11-20",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.27525",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.27525v1",
+            "value": "2026-11-20",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.27525",
+      "pdf_url": "https://arxiv.org/pdf/2611.27525.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting is increasingly fed by high-resolution captures from commodity devices, yet training still happens at reduced resolution with research-grade GPUs. We present PennyGS, a method to achieve full-resolution (4K) training of 3DGS on consumer GPUs by improving the efficiency of every stage of a training step. Improvements include a leaner splat with flat RGB color and a directional cone opacity, fused projection and key emission, forward rasterization optimizations with strided pixel sampling, an approximate tile SSIM loss, a warp-per-splat backward rasterization, and a fused backward projection and sparse Adam step. At the standard 30k-step budget, PennyGS is the fastest of 10 methods on Mip-NeRF 360 and Tanks&Temples 4K on all four GPUs at competitive quality, at least 3.9x faster than the quickest of the others, while peaking below 2 GB of GPU memory. On an RTX 3060, a full-resolution Mip-NeRF 360 scene trains in 6m 25s, faster than any other method trains it on an RTX 4090.",
+      "tldr": "Presents PennyGS, a method to achieve full-resolution (4K) training of 3DGS on consumer GPUs by improving the efficiency of every stage of a training step.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.GR",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.27407",
+      "arxiv_id": "2611.27407",
+      "doi": "10.5220/0014309700004084",
+      "source": "arxiv",
+      "title": "BladeR: Scalable, Shape-Guided 3D Reconstruction of Wind Turbine Blades from UAV Imagery",
+      "authors": [
+        "Jonathan Sterckx",
+        "Michiel Vlaminck",
+        "Hiep Luong"
+      ],
+      "first_author": "Sterckx et al.",
+      "published_date": "2026-11-20",
+      "updated_date": "2026-11-20",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.27407",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.27407v1",
+            "value": "2026-11-20",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.27407",
+      "pdf_url": "https://arxiv.org/pdf/2611.27407.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "The structural integrity of wind turbine blades is critical for safe, efficient energy production. Accurate 3D reconstruction allows precise localization and quantification of wear and early damage detection. While drone-based inspections are standard, their high-resolution imagery poses challenges such as weak texture, lighting variability, and high computational cost. We present BladeR, a scalable pipeline for high-quality 3D reconstruction from inspection imagery. A hierarchical sparse reconstruction strategy leverages GPS/IMU data and blade shape priors to guide advanced keypoint matchers on full-resolution images. For dense reconstruction, a tiled Gaussian Splatting framework processes 45 MP images at native resolution, isolates the blade from background, and adaptively enhances detail recovery along the leading edge. Validation against commercial and open-source baselines shows significant improvements in model completeness and detail.",
+      "tldr": "Presents BladeR, a scalable pipeline for high-quality 3D reconstruction from inspection imagery.",
+      "primary_category": "Autonomous Driving & Urban Scenes",
+      "categories": [
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "12 pages, 13 figures. Published at VISAPP 2026",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
     {
       "id": "2611.25338",
       "arxiv_id": "2611.25338",
@@ -5189,7 +5432,7 @@
       ],
       "first_author": "Ma et al.",
       "published_date": "2026-11-03",
-      "updated_date": "2026-11-15",
+      "updated_date": "2026-11-20",
       "year": 2026,
       "month": 11,
       "venue": null,
@@ -5212,6 +5455,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2611.04804v4",
+            "value": "2026-11-03",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.04804v5",
             "value": "2026-11-03",
             "observed_at": null,
             "reviewed_by": null,
@@ -6905,7 +7156,7 @@
       ],
       "first_author": "Chen et al.",
       "published_date": "2026-10-28",
-      "updated_date": "2026-10-28",
+      "updated_date": "2026-11-20",
       "year": 2026,
       "month": 10,
       "venue": null,
@@ -6924,15 +7175,23 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2610.38951v2",
+            "value": "2026-10-28",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2610.38951",
       "pdf_url": "https://arxiv.org/pdf/2610.38951.pdf",
       "code_url": "https://github.com/Jingong-Chen/GradSplat",
-      "project_url": null,
+      "project_url": "https://jingong-chen.github.io/GradSplat/",
       "abstract": "Feed-forward 3D Gaussian Splatting predicts a scene from a few images, but our predictor is less accurate than its own Gaussians optimized per scene on those images. This gap lies mostly in the shape of the Gaussians, their scale and rotation, since optimizing the shape alone recovers almost all of it and opacity and color recover less. Gradient steps on the input views correct this shape, and the model holds these views at inference. Log-anisotropy correction changes the axis ratios of each Gaussian in log space at constant volume, and in-forward gradient refinement renders the Gaussians into the input views and applies the gradient of the photometric loss with a learned recurrent update, first to opacity and color and then to the shape. GradSplat is a feed-forward model that refines its own Gaussians by learned gradient steps inside its forward pass, with no target view. On both complete six-view RealEstate10K protocols, it has the best PSNR and SSIM among nine methods and keeps its accuracy from $6$ to $42$ input views. Without fine-tuning, it is the most accurate on DL3DV and has the best PSNR and SSIM on ScanNet++. The code will be released at https://github.com/Jingong-Chen/GradSplat/.",
-      "tldr": "Feed-forward 3D Gaussian Splatting predicts a scene from a few images, but our predictor is less accurate than its own Gaussians optimized per scene on those images.",
+      "tldr": "Building upon this finding, we propose $\\textbf{GradSplat}$, a feed-forward model that performs gradient-conditioned Gaussian refinement within its forward pass, without requiring target views.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction"
@@ -20612,7 +20871,7 @@
       ],
       "first_author": "Boudaoud et al.",
       "published_date": "2026-09-25",
-      "updated_date": "2026-09-25",
+      "updated_date": "2026-11-20",
       "year": 2026,
       "month": 9,
       "venue": null,
@@ -20631,6 +20890,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2609.31248v2",
+            "value": "2026-09-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -20638,10 +20905,11 @@
       "pdf_url": "https://arxiv.org/pdf/2609.31248.pdf",
       "code_url": null,
       "project_url": null,
-      "abstract": "3D Gaussian Splatting reconstructs a scene as a collection of Gaussian primitives from a set of posed photographs called the capture. The number of primitives used to represent the scene affects reconstruction quality, storage, and rendering cost. How to select this number automatically across capture scales remains unresolved: configurations effective on standard benchmarks can leave larger captures with too few Gaussians to reconstruct fine details. We observe that the surface to represent, given by the capture's extent and resolution, is known before training, whereas its content complexity becomes apparent during training, through the reconstruction quality on the training views. We introduce TangoGS, which combines capture-derived model sizing with training-based adaptation: the capture determines the scale of the model, and training feedback determines its final size within that scale. Before training, TangoGS derives a learning allowance for model growth from the capture's total pixels after discounting views that re-observe the same scene points. During training, reconstruction quality guides how many Gaussians to add and remove. On 13 standard benchmark scenes, TangoGS matches the mean PSNR of the best-performing evaluated baseline, LeGS, with $48\\%$ fewer Gaussians. On eight large captures, the same configuration automatically scales to larger models when necessary, achieving the highest mean PSNR among evaluated methods: $0.54$ dB above the runner-up with $2.3\\times$ as many Gaussians. Together, capture-derived learning allowances and training-quality guided density control enable a state-of-the-art quality--size compromise across scene scales without retuning.",
-      "tldr": "Introduces TangoGS, which combines capture-derived model sizing with training-based adaptation: the capture determines the scale of the model, and training feedback determines its final size within that scale.",
-      "primary_category": "2D Gaussians, Geometry & Compression",
+      "abstract": "3D Gaussian Splatting reconstructs a scene from a set of posed photographs called the capture; Gaussian count affects reconstruction quality, storage, and rendering cost. How to select this number automatically across capture scales remains unresolved: density control techniques effective on standard benchmarks can leave larger captures with too few Gaussians to reconstruct fine details. We observe that the surface to represent, given by capture extent and resolution, is known before training, whereas the capacity needed to reconstruct its content depends strongly on the 3D optimization trajectory and becomes apparent during reconstruction. We introduce TailorGS, which unifies coverage-scaled exploration and coverage-weighted self-distillation under a non-redundant 3D scene coverage measure. Before training, TailorGS groups observed surface points into coarse voxels and shares each voxel's weight among views observing it from the same side. Combined with image resolution, these weights set a generous exploration cap that limits budget inflation from repeated observations. During the first 80% of training, TailorGS grows toward this cap. The resulting model serves as teacher for a single closed-form self-distillation step, balancing fidelity to its renderings against Gaussian count under the same coverage measure. The retained primitives are refined over the remaining 20% of training. On 13 standard scenes, TailorGS matches the mean PSNR of the best-performing evaluated baseline, LeGS, with 48% fewer Gaussians. On eight large captures, the same configuration automatically scales to larger models when necessary, achieving the highest mean PSNR across 13 evaluated baselines: 0.63 dB above the runner-up by allocating 2.8 times as many Gaussians.",
+      "tldr": "Introduces TailorGS, which unifies coverage-scaled exploration and coverage-weighted self-distillation under a non-redundant 3D scene coverage measure.",
+      "primary_category": "Foundations & Acceleration",
       "categories": [
+        "Foundations & Acceleration",
         "2D Gaussians, Geometry & Compression"
       ],
       "tags": [
@@ -61866,10 +62134,10 @@
       ],
       "first_author": "Xue et al.",
       "published_date": "2026-05-19",
-      "updated_date": "2026-05-19",
+      "updated_date": "2026-11-20",
       "year": 2026,
       "month": 5,
-      "venue": null,
+      "venue": "NEURIPS 2026",
       "published_date_precision": "day",
       "date_placement": "observed",
       "publication_date": null,
@@ -61885,15 +62153,33 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2605.19889v2",
+            "value": "2026-05-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "author_comment",
+            "source_url": "https://arxiv.org/abs/2605.19889",
+            "value": "NEURIPS 2026",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2605.19889",
       "pdf_url": "https://arxiv.org/pdf/2605.19889.pdf",
-      "code_url": null,
+      "code_url": "https://github.com/CVC-Color/glut",
       "project_url": null,
       "abstract": "3D Lookup Tables (3D LUTs) are widely used for color mapping, but their grid-based representation requires discretizing the RGB space, leading to a capacity-memory trade-off that becomes prohibitive when storing large numbers of LUTs. Recent approaches adopt implicit neural representations to improve scalability, yet their black-box nature limits interpretability and hinders intuitive, localized editing. In this paper, we propose Gaussian LUT (GLUT), a continuous and explicit color representation that models color transformations using a set of learnable 3D Gaussian primitives. By avoiding fixed-resolution grids, GLUT achieves flexible representational capacity while maintaining a compact memory footprint. Its explicit, spatially localized formulation further enables both accurate modeling and interpretability. Building on this representation, we introduce a compact conditional generator (CGLUT) that predicts GLUT parameters for multiple LUT instances, encoding diverse color styles in a single framework to enable smooth and controllable LUT style blending. Moreover, GLUT supports efficient, user-friendly editing by allowing localized adjustments to specific color regions without global retraining. Experimental results demonstrate that our approach outperforms prior neural LUT representations in both accuracy and efficiency, while offering improved interpretability and interactive control.",
-      "tldr": "Proposes Gaussian LUT (GLUT), a continuous and explicit color representation that models color transformations using a set of learnable 3D Gaussian primitives.",
+      "tldr": "Proposes Gaussian LUT (GLUT), a continuous and explicit representation of color transformations using learnable 3D Gaussian primitives.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -290608,6 +290894,10 @@
     "arxiv:2611.25979": "2611.25979",
     "arxiv:2611.26045": "2611.26045",
     "arxiv:2611.26128": "2611.26128",
+    "arxiv:2611.27003": "2611.27003",
+    "arxiv:2611.27407": "2611.27407",
+    "arxiv:2611.27525": "2611.27525",
+    "arxiv:2611.27719": "2611.27719",
     "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper": "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper",
     "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper": "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper",
     "cvf:Barda_Instant3dit_Multiview_Inpainting_for_Fast_Editing_of_3D_Objects_CVPR_2025_paper": "2412.00518",
@@ -295253,6 +295543,10 @@
     "doi:10.48550/arxiv.2611.25979": "2611.25979",
     "doi:10.48550/arxiv.2611.26045": "2611.26045",
     "doi:10.48550/arxiv.2611.26128": "2611.26128",
+    "doi:10.48550/arxiv.2611.27003": "2611.27003",
+    "doi:10.48550/arxiv.2611.27407": "2611.27407",
+    "doi:10.48550/arxiv.2611.27525": "2611.27525",
+    "doi:10.48550/arxiv.2611.27719": "2611.27719",
     "doi:10.5194/isprs-annals-x-2-2024-209-2024": "2404.17215",
     "doi:10.5194/isprs-annals-x-m-2-2025-215-2025": "paper:2025-a9c59fcf3c",
     "doi:10.5194/isprs-archives-xlviii-g-2025-1283-2025": "2502.13803",
@@ -295260,6 +295554,7 @@
     "doi:10.5220/0013305500003905": "2501.08174",
     "doi:10.5220/0013308500003912": "2503.14274",
     "doi:10.5220/0014031200004084": "2508.06968",
+    "doi:10.5220/0014309700004084": "2611.27407",
     "doi:10.52202/085713-3746": "2505.22854",
     "doi:10.5281/zenodo.19220047": "paper:2026-a706b6477e",
     "doi:10.55092/rl20260013": "paper:2026-9ec974b79a",
