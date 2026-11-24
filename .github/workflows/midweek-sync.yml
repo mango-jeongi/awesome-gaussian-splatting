@@ -91,7 +91,7 @@ jobs:
           plan="$RUNNER_TEMP/feed-public-cleanup-plan.json"
           receipt="reports/runs/feed-public-cleanup-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.json"
           uv run python -m src.public_cleanup plan --root docs/data "${retained[@]}" \
-            --max-scan-bytes 250000000 --output "$plan"
+            --max-delete-bytes 150000000 --max-scan-bytes 250000000 --output "$plan"
           uv run python -m src.public_cleanup apply --root docs/data --plan "$plan" --receipt "$receipt"
 
       - name: Push validated catalog to feed and open a PR if needed
