@@ -89,7 +89,7 @@
           }
         ],
         "githubRepo": "https://github.com/RainBowLuoCS/Gamer",
-        "githubStars": 1152,
+        "githubStars": 1237,
         "id": "2611.18397",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -98,7 +98,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
         "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
-        "upvotes": 145
+        "upvotes": 149
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -232,7 +232,7 @@
           }
         ],
         "githubRepo": "https://github.com/vibeprevisbench/vibeprevisbench",
-        "githubStars": 22,
+        "githubStars": 23,
         "id": "2611.15789",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -266,7 +266,7 @@
           }
         ],
         "githubRepo": "https://github.com/Mirix-AI/MIRIX",
-        "githubStars": 3508,
+        "githubStars": 3511,
         "id": "2611.12068",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -300,7 +300,7 @@
           }
         ],
         "githubRepo": "https://github.com/fscdc/MMFlash",
-        "githubStars": 45,
+        "githubStars": 46,
         "id": "2611.18482",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -309,7 +309,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Speculative decoding accelerates generation by letting a lightweight drafter propose tokens for parallel verification by a target model. Diffusion drafters such as DFlash propose an entire token block in a single forward pass, but mainly focus on text-only tasks, leaving multimodal drafting underexplored. To study this setting, we first introduce a metric of token-level visual dependence based on the KL divergence between next-token distributions with and without visual input. We find that acceptance rates decrease from 46% in the lowest visual-dependence quartile to 22% in the highest, with this disparity persisting after multimodal training. Motivated by this observation, we propose MMFlash, a simple and effective framework that adaptively upweights visually dependent tokens that the drafter predicts poorly. For long video inputs, MMFlash further employs sparse attention to reduce redundant attention computation and improve drafting quality. Across various multimodal benchmarks, MMFlash achieves lossless decoding speedups of up to 3.58times, outperforming EAGLE-3 and DFlash by up to 195.4% and 17.1%, respectively.",
         "title": "MMFlash: Faster Speculative Decoding for Vision-Language Models",
-        "upvotes": 42
+        "upvotes": 43
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -448,7 +448,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Text-to-SQL systems translate natural language questions into SQL queries over increasingly complex databases. However, widely used benchmarks evaluate questions independently, overlooking settings where earlier queries over the same database can supply joins or calculations for a new question. We introduce HARE (History-AwaRe Text-to-SQL BEnchmark) to measure the accuracy and cost of adapting historical SQL. HARE comprises 1,600 requests derived from a fixed pool of 823 verified queries across four datasets. Annotations record which components each request preserves and which edits it requires, distinguishing whole-query adaptation from partial reuse. Our method, MEM-SQL (Memory-EMpowered Text-to-SQL), stores whole-query templates, reusable SQL blocks, and mappings from domain concepts to schema elements. MEM-SQL uses a layer only if every requirement assigned to it has a match above that layer's threshold. With On-demand Schema Linking (OSL), MEM-SQL consults the schema only when no layer qualifies or the generator judges retrieved evidence insufficient. Across six language models on HARE, mean execution accuracy rises from 37.1% for Direct Generation without history to 50.0% for MEM-SQL, with 76.6% fewer input tokens and 68.8% lower latency on average. Further analysis shows that requests reusing several verified queries remain a bottleneck, with accuracy falling from 56.7% to 29.7%, most sharply when reused components must be placed in a new query structure or combined with a shared join. Applying OSL to three other memory designs consistently reduces generation cost, while its accuracy benefit depends on the memory design. Verified history can thus make generation both more accurate and cheaper, but its value depends on the evidence retained and when the system consults the schema.",
         "title": "MEM-SQL: Memory-Empowered Text-to-SQL",
-        "upvotes": 19
+        "upvotes": 20
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -519,7 +519,7 @@
         "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
         "summary": "Distribution matching distillation (DMD) has emerged as a leading paradigm for distilling diffusion models into few-step students, where an auxiliary fake score model tracks the student's distribution and the discrepancy between the teacher and fake predictions drives the student toward the teacher. In multi-step distillation, although only the student's final output is delivered, existing methods train the fake model on intermediate states or across all denoising steps. Consequently, the student's update signal becomes entangled with intermediate distributions, which can distort the matching direction and remain nonzero even after the student's final outputs already match the teacher distribution. To resolve this mismatch, we propose Endpoint Distribution Matching Distillation (eDMD), which trains a single shared fake model exclusively on the student's final outputs and uses it to correct every denoising step. Our theoretical analysis proves that this endpoint reference guarantees that the distribution matching term vanishes if and only if the student's final output distribution matches the teacher's, regardless of intermediate distributions. Beyond the fake reference, we further strengthen teacher supervision through a precise teacher (PT) that replaces single-step guided predictions with short multi-step trajectories on the final noise interval, paired with a calibrated query density for intermediate steps. Experiments on SD3-Medium, FLUX.2-klein (4B and 9B), and Qwen-Image-2.1 demonstrate that eDMD consistently outperforms existing distribution matching methods for 4-step generation.",
         "title": "eDMD: Endpoint Distribution Matching for Few-Step Diffusion Distillation",
-        "upvotes": 14
+        "upvotes": 15
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
     },
@@ -636,7 +636,7 @@
           }
         ],
         "githubRepo": "https://github.com/mdlm-steprefine/mdlm-steprefine",
-        "githubStars": 35,
+        "githubStars": 39,
         "id": "2611.12901",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -839,7 +839,7 @@
           }
         ],
         "githubRepo": "https://github.com/robbyant-research/Lingbot-ALOHA",
-        "githubStars": 10,
+        "githubStars": 11,
         "id": "2611.16439",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -851,6 +851,46 @@
         "upvotes": 10
       },
       "publishedAt": "2026-11-11T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Distilled few-step diffusion models exhibit diversity collapse because activation variance is concentrated into fewer directions in an intermediate block at the initial denoising step, and ReDiverse restores sample diversity by reintroducing teacher variance directions through adapter fine-tuning or training-free activation steering while preserving generation quality.",
+        "authors": [
+          {
+            "name": "Furkan Horoz"
+          },
+          {
+            "name": "Ozgur Kara"
+          },
+          {
+            "name": "Kaan Oktay"
+          },
+          {
+            "name": "Adil Kaan Akan"
+          },
+          {
+            "name": "Atakan Kara"
+          },
+          {
+            "name": "Anand Bhattad"
+          },
+          {
+            "name": "James Matthew Rehg"
+          }
+        ],
+        "githubRepo": "https://github.com/H-furkan/rediverse",
+        "githubStars": 30,
+        "id": "2611.18550",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://rediverse-distillation.github.io/rediverse-distillation/",
+        "publishedAt": "2026-11-13T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher's, reviving the teacher's feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.",
+        "title": "Restoring Diversity in Distilled Image and Video Generators by Probing Activations",
+        "upvotes": 9
+      },
+      "publishedAt": "2026-11-12T19:00:00.000Z"
     },
     {
       "paper": {
@@ -935,46 +975,6 @@
     },
     {
       "paper": {
-        "ai_summary": "Distilled few-step diffusion models exhibit diversity collapse because activation variance is concentrated into fewer directions in an intermediate block at the initial denoising step, and ReDiverse restores sample diversity by reintroducing teacher variance directions through adapter fine-tuning or training-free activation steering while preserving generation quality.",
-        "authors": [
-          {
-            "name": "Furkan Horoz"
-          },
-          {
-            "name": "Ozgur Kara"
-          },
-          {
-            "name": "Kaan Oktay"
-          },
-          {
-            "name": "Adil Kaan Akan"
-          },
-          {
-            "name": "Atakan Kara"
-          },
-          {
-            "name": "Anand Bhattad"
-          },
-          {
-            "name": "James Matthew Rehg"
-          }
-        ],
-        "githubRepo": "https://github.com/H-furkan/rediverse",
-        "githubStars": 25,
-        "id": "2611.18550",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://rediverse-distillation.github.io/rediverse-distillation/",
-        "publishedAt": "2026-11-13T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Distilling diffusion models into few-step student models substantially reduces sampling latency, but induces severe diversity collapse: samples generated from different random seeds show minimal variation. In this work, we investigate the root cause of this failure by probing the internal representations of student models relative to their teachers. We find that distilled students maintain total activation variance comparable to their teachers, but concentrate it into substantially fewer directions. This directional collapse is localized to an identifiable intermediate block at the initial denoising step. Consequently, diversity collapse stems from a misallocation of activation variance rather than an inherent loss of generative capacity. Guided by this finding, we propose ReDiverse to reinstate the missing variance directions. At training time, ReDiverse-FT fine-tunes a lightweight adapter that regresses student activations onto the teacher's, reviving the teacher's feature variance characteristic. At inference time, ReDiverse-TF introduces a training-free mechanism that steers activations along precomputed teacher principal directions. Across image and video distillation benchmarks, ReDiverse consistently restores sample diversity while preserving generation quality, further supported by the user study.",
-        "title": "Restoring Diversity in Distilled Image and Video Generators by Probing Activations",
-        "upvotes": 8
-      },
-      "publishedAt": "2026-11-12T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": null,
         "authors": [
           {
@@ -994,7 +994,7 @@
           }
         ],
         "githubRepo": "https://github.com/UmarGit/coffee-llm",
-        "githubStars": 4,
+        "githubStars": 5,
         "id": "2611.17169",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1231,7 +1231,7 @@
           }
         ],
         "githubRepo": "https://github.com/HKUST-LongGroup/MemInStream",
-        "githubStars": 12,
+        "githubStars": 13,
         "id": "2611.15640",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1391,6 +1391,34 @@
     },
     {
       "paper": {
+        "ai_summary": "Continual-ARC, a lifelong stream of ARC-AGI tasks, compares memory- and weight-based continual learning under frozen-weight agent harnesses, revealing that harness persistence rarely improves memorization and most harness methods underperform simple caching, while weight-based learning shows better generalization.",
+        "authors": [
+          {
+            "name": "Daniel Lenton"
+          },
+          {
+            "name": "Yusha Arif"
+          },
+          {
+            "name": "Haris Mahmood"
+          }
+        ],
+        "githubRepo": "https://github.com/unifyai/continual-arc",
+        "githubStars": 39,
+        "id": "2611.14505",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://continual-arc.unify.ai",
+        "publishedAt": "2026-11-11T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
+        "summary": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose Continual-ARC, a lifelong stream built from the three ARC-AGI editions, whose tasks need no domain knowledge. The same tasks return after dormant gaps with fresh instances, while new tasks keep arriving. On each instance, the learner may pay for demonstrations, submit answers, or act inside the harness, with retries permitted on incorrect submissions, which are paid for. Each instance is scored based on the share of this feedback budget consumed. Since a learner may keep anything between instances, memory-based and weight-based systems are scored on the same scale. After the stream, the learner is frozen and tested on fresh instances of the tasks it met, which measures memorization, and on unseen tasks, which measures generalization. We run an agent harness with frozen weights, with and without persistence, on Qwen3.5-9B and GLM-5.3 Flash, comparing them with two prompting floors, a program-induction method and Qwen3.5-9B's weights trained to imitate GLM-5.3 Flash. Persistence in the harness generally does not improve memorization unless provided with explicit expert guidance. Most harness-based methods still learn less than a floor that simply caches each task's demonstrations, across all models we tested. No harness-based method gains on unseen tasks, whereas weight-based learning shows substantial gains. This opens the door to future weight-based continual learning that could teach models to drive harnesses in new domains.",
+        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-10T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": null,
         "authors": [
           {
@@ -1478,34 +1506,6 @@
     },
     {
       "paper": {
-        "ai_summary": "Continual-ARC, a lifelong stream of ARC-AGI tasks, compares memory- and weight-based continual learning under frozen-weight agent harnesses, revealing that harness persistence rarely improves memorization and most harness methods underperform simple caching, while weight-based learning shows better generalization.",
-        "authors": [
-          {
-            "name": "Daniel Lenton"
-          },
-          {
-            "name": "Yusha Arif"
-          },
-          {
-            "name": "Haris Mahmood"
-          }
-        ],
-        "githubRepo": "https://github.com/unifyai/continual-arc",
-        "githubStars": 38,
-        "id": "2611.14505",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://continual-arc.unify.ai",
-        "publishedAt": "2026-11-11T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-16T00:00:00.000Z",
-        "summary": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose Continual-ARC, a lifelong stream built from the three ARC-AGI editions, whose tasks need no domain knowledge. The same tasks return after dormant gaps with fresh instances, while new tasks keep arriving. On each instance, the learner may pay for demonstrations, submit answers, or act inside the harness, with retries permitted on incorrect submissions, which are paid for. Each instance is scored based on the share of this feedback budget consumed. Since a learner may keep anything between instances, memory-based and weight-based systems are scored on the same scale. After the stream, the learner is frozen and tested on fresh instances of the tasks it met, which measures memorization, and on unseen tasks, which measures generalization. We run an agent harness with frozen weights, with and without persistence, on Qwen3.5-9B and GLM-5.3 Flash, comparing them with two prompting floors, a program-induction method and Qwen3.5-9B's weights trained to imitate GLM-5.3 Flash. Persistence in the harness generally does not improve memorization unless provided with explicit expert guidance. Most harness-based methods still learn less than a floor that simply caches each task's demonstrations, across all models we tested. No harness-based method gains on unseen tasks, whereas weight-based learning shows substantial gains. This opens the door to future weight-based continual learning that could teach models to drive harnesses in new domains.",
-        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
-        "upvotes": 2
-      },
-      "publishedAt": "2026-11-10T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": null,
         "authors": [
           {
@@ -1558,6 +1558,6 @@
       "publishedAt": "2026-11-11T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-21T12:24:56.927155+00:00",
+  "fetched_at": "2026-11-22T12:27:51.695283+00:00",
   "limit": 100
 }
