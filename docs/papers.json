@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-24T04:14:13Z",
-  "total_count": 4169,
+  "last_updated": "2026-11-24T04:22:36Z",
+  "total_count": 4172,
   "papers": [
     {
       "id": "2611.25338",
@@ -75297,6 +75297,98 @@
       ]
     },
     {
+      "id": "cvf:Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "Write Where It Matters: Policy-Guided Watermarks for 3D Gaussian Splatting",
+      "authors": [
+        "Nan Li",
+        "Yike Zeng",
+        "Qian Zhang",
+        "Qi Zhang",
+        "Zhiyi Pan",
+        "Wei Feng",
+        "Liang Wan"
+      ],
+      "first_author": "Li et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "Recent advances in 3D Gaussian Splatting (3DGS) enable photorealistic real-time rendering but also increase the risks of unauthorized copying and redistribution. Existing 3DGS watermarking methods typically rely on handcrafted thresholds or globally fixed hyperparameters to balance invisibility and robustness, making their embedding behavior static and scene-agnostic. We instead formulate 3DGS watermarking as a goal-directed decision process and introduce Write Where It Matters (W2M), the first reinforcement learning-based framework that adaptively learns where and how much to embed. By modeling the embedding process as a Markov Decision Process, W2M uses a lightweight policy network to allocate precise Gaussian updates directly from immediate reward feedback, iteratively. The reward incentivizes both rendering-space invisibility and decoding robustness under various image- and model-level distortions. To achieve efficiency, W2M operates on a structured 3DGS backbone organized around learnable anchors and applies policy-guided per-anchor gradient scaling. Extensive experiments across the Blender, LLFF, and Mip-NeRF 360 datasets demonstrate that W2M achieves state-of-the-art bit accuracy, strong perceptual fidelity, and structural consistency under both standard and adversarial conditions.",
+            "observed_at": "2026-11-24T04:16:31.531092Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:16:31.531092Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T04:16:31.531092Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T04:16:31.531092Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Recent advances in 3D Gaussian Splatting (3DGS) enable photorealistic real-time rendering but also increase the risks of unauthorized copying and redistribution. Existing 3DGS watermarking methods typically rely on handcrafted thresholds or globally fixed hyperparameters to balance invisibility and robustness, making their embedding behavior static and scene-agnostic. We instead formulate 3DGS watermarking as a goal-directed decision process and introduce Write Where It Matters (W2M), the first reinforcement learning-based framework that adaptively learns where and how much to embed. By modeling the embedding process as a Markov Decision Process, W2M uses a lightweight policy network to allocate precise Gaussian updates directly from immediate reward feedback, iteratively. The reward incentivizes both rendering-space invisibility and decoding robustness under various image- and model-level distortions. To achieve efficiency, W2M operates on a structured 3DGS backbone organized around learnable anchors and applies policy-guided per-anchor gradient scaling. Extensive experiments across the Blender, LLFF, and Mip-NeRF 360 datasets demonstrate that W2M achieves state-of-the-art bit accuracy, strong perceptual fidelity, and structural consistency under both standard and adversarial conditions.",
+      "tldr": "Extensive experiments across the Blender, LLFF, and Mip-NeRF 360 datasets demonstrate that W2M achieves state-of-the-art bit accuracy, strong perceptual fidelity, and structural consistency under both...",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "2606.02096",
       "arxiv_id": "2606.02096",
       "doi": null,
@@ -75561,6 +75653,95 @@
       ]
     },
     {
+      "id": "cvf:Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting",
+      "authors": [
+        "Yuming Meng",
+        "Dong Wu",
+        "Hongbin Zha"
+      ],
+      "first_author": "Meng et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "Understanding objects in dynamic 4D environments via natural language is crucial yet underexplored. While existing methods focus on static 3D referring segmentation or open-vocabulary 4D querying, they struggle to ground complex spatio-temporal referring expressions in explicit 4D reconstructions. We introduce Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting (STRS-4DGS), a novel task aiming to jointly identify and segment a target instance across space and time given a referring expression. To tackle this, we propose ST4R-Splat, the first framework for STRS-4DGS. Specifically, our framework incorporates an Instance-Aware 4D Gaussian Referring Field that assigns time-invariant embeddings for robust spatial grounding, and an Instance-Level Temporal State Mapping module that enables view-independent temporal localization directly in feature space. To provide rich spatio-temporal semantic supervision, we develop an automatic, MLLM-based captioning pipeline that generates decoupled spatial and temporal textual descriptions. Evaluated on our newly constructed STRS-4DGS benchmark, our method significantly outperforms adapted state-of-the-art baselines across both time-agnostic and time-sensitive metrics, establishing a strong foundation for language-driven 4D scene understanding.",
+            "observed_at": "2026-11-24T04:11:32.300809Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:11:32.300809Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T04:11:32.300809Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T04:11:32.300809Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Understanding objects in dynamic 4D environments via natural language is crucial yet underexplored. While existing methods focus on static 3D referring segmentation or open-vocabulary 4D querying, they struggle to ground complex spatio-temporal referring expressions in explicit 4D reconstructions. We introduce Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting (STRS-4DGS), a novel task aiming to jointly identify and segment a target instance across space and time given a referring expression. To tackle this, we propose ST4R-Splat, the first framework for STRS-4DGS. Specifically, our framework incorporates an Instance-Aware 4D Gaussian Referring Field that assigns time-invariant embeddings for robust spatial grounding, and an Instance-Level Temporal State Mapping module that enables view-independent temporal localization directly in feature space. To provide rich spatio-temporal semantic supervision, we develop an automatic, MLLM-based captioning pipeline that generates decoupled spatial and temporal textual descriptions. Evaluated on our newly constructed STRS-4DGS benchmark, our method significantly outperforms adapted state-of-the-art baselines across both time-agnostic and time-sensitive metrics, establishing a strong foundation for language-driven 4D scene understanding.",
+      "tldr": "Introduces Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting (STRS-4DGS), a novel task aiming to jointly identify and segment a target instance across space and time given a referring expression.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "4DGS",
+        "Foundations"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "cvf:Gao_PhysIR-Splat_Physically_Consistent_Thermal_Infrared_Radiative_Transfer_in_3D_Gaussian_CVPR_2026_paper",
       "arxiv_id": null,
       "doi": null,
@@ -75648,6 +75829,103 @@
       ],
       "tags": [
         "Thermal & IR"
+      ],
+      "primary_arxiv_category": null,
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "cvf:Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper",
+      "arxiv_id": null,
+      "doi": null,
+      "source": "cvf",
+      "title": "MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting",
+      "authors": [
+        "Yongjian Liao",
+        "Xu Zou",
+        "Wenjun Chen",
+        "Huixuan Li",
+        "Xiaoen Xie",
+        "Chunxi Li",
+        "Shixiang Huang",
+        "Gang Zhang",
+        "Jiahuan Zhou",
+        "Sheng Zhong",
+        "Luxin Yan"
+      ],
+      "first_author": "Liao et al.",
+      "published_date": "2026-06-01",
+      "updated_date": null,
+      "year": 2026,
+      "month": 6,
+      "venue": "CVPR 2026",
+      "published_date_precision": "month",
+      "date_placement": "month_start",
+      "publication_date": "2026-06-01",
+      "publication_year": 2026,
+      "publication_date_precision": "month",
+      "arxiv_doi": null,
+      "metadata_evidence": {
+        "abstract": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "Although 4D reconstruction based on Gaussian Splatting has achieved many impressive results, reconstructing real-world images captured by a casual monocular camera remains a significant challenge. In dynamic scenes, as the camera and objects move during the exposure time, these input images inevitably contain a considerable amount of motion blur, which severely compromises the quality of reconstruction and new viewpoint synthesis. The existing deblurring 3D Gaussian models still cannot handle motion blur issues in real dynamic scenes. To address these challenges, we propose MSCD-GS--a novel method for motion-separated collaborative deblurring 4D reconstruction via Gaussian Splatting, capable of effectively handling motion-blurred inputs. Specifically, due to the distinct motion characteristics of static and dynamic Gaussians, we perform separate motion models for dynamic scene reconstruction. To predict Gaussian changes over exposure time, we designed motion-aware networks for static and dynamic Gaussians, thereby synthesizing virtual blurred images. Finally, we utilize the results from the deblurring network and the synthesized images to supervise 4D reconstruction collaboratively. Extensive experiments demonstrate that MSCD-GS can effectively reconstruct high-quality dynamic scenes from blurred image inputs, with performance surpassing existing methods.",
+            "observed_at": "2026-11-24T04:14:50.488367Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_date": [
+          {
+            "source": "cvf_official_proceedings_bibtex",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "2026-06",
+            "observed_at": "2026-11-24T04:14:50.488367Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "publication_year": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": 2026,
+            "observed_at": "2026-11-24T04:14:50.488367Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ],
+        "venue": [
+          {
+            "source": "cvf_official_proceedings",
+            "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.html",
+            "value": "CVPR 2026",
+            "observed_at": "2026-11-24T04:14:50.488367Z",
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.html",
+      "pdf_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Although 4D reconstruction based on Gaussian Splatting has achieved many impressive results, reconstructing real-world images captured by a casual monocular camera remains a significant challenge. In dynamic scenes, as the camera and objects move during the exposure time, these input images inevitably contain a considerable amount of motion blur, which severely compromises the quality of reconstruction and new viewpoint synthesis. The existing deblurring 3D Gaussian models still cannot handle motion blur issues in real dynamic scenes. To address these challenges, we propose MSCD-GS--a novel method for motion-separated collaborative deblurring 4D reconstruction via Gaussian Splatting, capable of effectively handling motion-blurred inputs. Specifically, due to the distinct motion characteristics of static and dynamic Gaussians, we perform separate motion models for dynamic scene reconstruction. To predict Gaussian changes over exposure time, we designed motion-aware networks for static and dynamic Gaussians, thereby synthesizing virtual blurred images. Finally, we utilize the results from the deblurring network and the synthesized images to supervise 4D reconstruction collaboratively. Extensive experiments demonstrate that MSCD-GS can effectively reconstruct high-quality dynamic scenes from blurred image inputs, with performance surpassing existing methods.",
+      "tldr": "To address these challenges, we propose MSCD-GS--a novel method for motion-separated collaborative deblurring 4D reconstruction via Gaussian Splatting, capable of effectively handling motion-blurred inputs.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "4DGS",
+        "Foundations"
       ],
       "primary_arxiv_category": null,
       "comment": null,
@@ -475145,10 +475423,12 @@
     "cvf:Li_InsTaG_Learning_Personalized_3D_Talking_Head_from_Few-Second_Video_CVPR_2025_paper": "2502.20387",
     "cvf:Li_InstanceGaussian_Appearance-Semantic_Joint_Gaussian_Representation_for_3D_Instance-Level_Perception_CVPR_2025_paper": "2411.19235",
     "cvf:Li_Time_of_the_Flight_of_the_Gaussians_Optimizing_Depth_Indirectly_CVPR_2025_paper": "cvf:Li_Time_of_the_Flight_of_the_Gaussians_Optimizing_Depth_Indirectly_CVPR_2025_paper",
+    "cvf:Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper": "cvf:Li_Write_Where_It_Matters_Policy-Guided_Watermarks_for_3D_Gaussian_Splatting_CVPR_2026_paper",
     "cvf:Liang_DGTalker_Disentangled_Generative_Latent_Space_Learning_for_Audio-Driven_Gaussian_Talking_ICCV_2025_paper": "doi:10.1109/iccv51701.2025.01031",
     "cvf:Liang_GS-IR_3D_Gaussian_Splatting_for_Inverse_Rendering_CVPR_2024_paper": "2311.16473",
     "cvf:Liang_HiMoR_Monocular_Deformable_Gaussian_Reconstruction_with_Hierarchical_Motion_Representation_CVPR_2025_paper": "2504.06210",
     "cvf:Liang_Wonderland_Navigating_3D_Scenes_from_a_Single_Image_CVPR_2025_paper": "2412.12091",
+    "cvf:Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper": "cvf:Liao_MSCD-GS_Motion-Separated_Cooperative_Deblurring_Dynamic_Reconstruction_via_Gaussian_Splatting_CVPR_2026_paper",
     "cvf:Liao_SPC-GS_Gaussian_Splatting_with_Semantic-Prompt_Consistency_for_Indoor_Open-World_Free-view_CVPR_2025_paper": "cvf:Liao_SPC-GS_Gaussian_Splatting_with_Semantic-Prompt_Consistency_for_Indoor_Open-World_Free-view_CVPR_2025_paper",
     "cvf:Lin_Gaussian-Flow_4D_Reconstruction_with_Dynamic_3D_Gaussian_Particle_CVPR_2024_paper": "2312.03431",
     "cvf:Lin_HybridGS_Decoupling_Transients_and_Statics_with_2D_and_3D_Gaussian_CVPR_2025_paper": "cvf:Lin_HybridGS_Decoupling_Transients_and_Statics_with_2D_and_3D_Gaussian_CVPR_2025_paper",
@@ -475174,6 +475454,7 @@
     "cvf:Lu_UrbanCAD_Towards_Highly_Controllable_and_Photorealistic_3D_Vehicles_for_Urban_CVPR_2025_paper": "2411.19292",
     "cvf:Ma_Sparse_Point_Cloud_Patches_Rendering_via_Splitting_2D_Gaussians_CVPR_2025_paper": "cvf:Ma_Sparse_Point_Cloud_Patches_Rendering_via_Splitting_2D_Gaussians_CVPR_2025_paper",
     "cvf:Matsuki_Gaussian_Splatting_SLAM_CVPR_2024_paper": "2312.06741",
+    "cvf:Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper": "cvf:Meng_ST4R-Splat_Spatio-Temporal_Referring_Segmentation_in_4D_Gaussian_Splatting_CVPR_2026_paper",
     "cvf:Miao_EVolSplat_Efficient_Volume-based_Gaussian_Splatting_for_Urban_View_Synthesis_CVPR_2025_paper": "cvf:Miao_EVolSplat_Efficient_Volume-based_Gaussian_Splatting_for_Urban_View_Synthesis_CVPR_2025_paper",
     "cvf:Moreau_Human_Gaussian_Splatting_Real-time_Rendering_of_Animatable_Avatars_CVPR_2024_paper": "2311.17113",
     "cvf:Nam_Generative_Densification_Learning_to_Densify_Gaussians_for_High-Fidelity_Generalizable_3D_CVPR_2025_paper": "2412.06234",
