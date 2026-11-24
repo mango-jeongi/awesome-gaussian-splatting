@@ -3323,6 +3323,117 @@
       "status": "not_found",
       "values": {}
     },
+    "2402.03307": {
+      "fetched_at": "2026-11-24T04:31:13.348554Z",
+      "last_attempt_at": "2026-11-24T04:31:13.348554Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.03307",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.03307",
+          "text": "A novel method, 4D Gaussian Splatting, models dynamic scenes using anisotropic 4D Gaussians, achieving real-time rendering with high fidelity."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.03307",
+          "text": "We consider the problem of novel view synthesis (NVS) for dynamic scenes.\nRecent neural approaches have accomplished exceptional NVS results for static\n3D scenes, but extensions to 4D time-varying scenes remain non-trivial. Prior\nefforts often encode dynamics by learning a canonical space plus implicit or\nexplicit deformation fields, which struggle in challenging scenarios like\nsudden movements or capturing high-fidelity renderings. In this paper, we\nintroduce 4D Gaussian Splatting (4DGS), a novel method that represents dynamic\nscenes with anisotropic 4D XYZT Gaussians, inspired by the success of 3D\nGaussian Splatting in static scenes. We model dynamics at each timestamp by\ntemporally slicing the 4D Gaussians, which naturally compose dynamic 3D\nGaussians and can be seamlessly projected into images. As an explicit\nspatial-temporal representation, 4DGS demonstrates powerful capabilities for\nmodeling complicated dynamics and fine details, especially for scenes with\nabrupt motions. We further implement our temporal slicing and splatting\ntechniques in a highly optimized CUDA acceleration framework, achieving\nreal-time inference rendering speeds of up to 277 FPS on an RTX 3090 GPU and\n583 FPS on an RTX 4090 GPU. Rigorous evaluations on scenes with diverse motions\nshowcase the superior efficiency and effectiveness of 4DGS, which consistently\noutperforms existing methods both quantitatively and qualitatively."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/weify627/4D-Rotor-Gaussians"
+        },
+        "source_url": "https://huggingface.co/papers/2402.03307",
+        "stars": 188,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2402.03723": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:31:13.348554Z",
+      "next_retry_at": "2026-12-01T04:31:13.348554Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.04796": {
+      "fetched_at": "2026-11-24T04:31:13.348554Z",
+      "last_attempt_at": "2026-11-24T04:31:13.348554Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.04796",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.04796",
+          "text": "A mesh-based Gaussian Splatting method enables real-time interactive deformation of static scenes with high-quality rendering and reconstruction."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.04796",
+          "text": "Neural implicit representations, including Neural Distance Fields and Neural\nRadiance Fields, have demonstrated significant capabilities for reconstructing\nsurfaces with complicated geometry and topology, and generating novel views of\na scene. Nevertheless, it is challenging for users to directly deform or\nmanipulate these implicit representations with large deformations in the\nreal-time fashion. Gaussian Splatting(GS) has recently become a promising\nmethod with explicit geometry for representing static scenes and facilitating\nhigh-quality and real-time synthesis of novel views. However,it cannot be\neasily deformed due to the use of discrete Gaussians and lack of explicit\ntopology. To address this, we develop a novel GS-based method that enables\ninteractive deformation. Our key idea is to design an innovative mesh-based GS\nrepresentation, which is integrated into Gaussian learning and manipulation. 3D\nGaussians are defined over an explicit mesh, and they are bound with each\nother: the rendering of 3D Gaussians guides the mesh face split for adaptive\nrefinement, and the mesh face split directs the splitting of 3D Gaussians.\nMoreover, the explicit mesh constraints help regularize the Gaussian\ndistribution, suppressing poor-quality Gaussians(e.g. misaligned\nGaussians,long-narrow shaped Gaussians), thus enhancing visual quality and\navoiding artifacts during deformation. Based on this representation, we further\nintroduce a large-scale Gaussian deformation technique to enable deformable GS,\nwhich alters the parameters of 3D Gaussians according to the manipulation of\nthe associated mesh. Our method benefits from existing mesh deformation\ndatasets for more realistic data-driven Gaussian deformation. Extensive\nexperiments show that our approach achieves high-quality reconstruction and\neffective deformation, while maintaining the promising rendering results at a\nhigh frame rate(65 FPS on average)."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.04796",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.06149": {
+      "fetched_at": "2026-11-24T04:31:13.348554Z",
+      "last_attempt_at": "2026-11-24T04:31:13.348554Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.06149",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.06149",
+          "text": "HeadStudio uses 3D Gaussian splatting and FLAME representation to generate high-quality, animated digital avatars from text prompts with real-time rendering capabilities."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.06149",
+          "text": "Creating digital avatars from textual prompts has long been a desirable yet\nchallenging task. Despite the promising outcomes obtained through 2D diffusion\npriors in recent works, current methods face challenges in achieving\nhigh-quality and animated avatars effectively. In this paper, we present\nHeadStudio, a novel framework that utilizes 3D Gaussian splatting to\ngenerate realistic and animated avatars from text prompts. Our method drives 3D\nGaussians semantically to create a flexible and achievable appearance through\nthe intermediate FLAME representation. Specifically, we incorporate the FLAME\ninto both 3D representation and score distillation: 1) FLAME-based 3D Gaussian\nsplatting, driving 3D Gaussian points by rigging each point to a FLAME mesh. 2)\nFLAME-based score distillation sampling, utilizing FLAME-based fine-grained\ncontrol signal to guide score distillation from the text prompt. Extensive\nexperiments demonstrate the efficacy of HeadStudio in generating animatable\navatars from textual prompts, exhibiting visually appealing appearances. The\navatars are capable of rendering high-quality real-time (geq 40 fps) novel\nviews at a resolution of 1024. They can be smoothly controlled by real-world\nspeech and video. We hope that HeadStudio can advance digital avatar creation\nand that the present method can widely be applied across various domains."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.06149",
+        "submitted_on_daily_at": "2024-02-12T00:00:00.000Z",
+        "upvotes": 17
+      }
+    },
+    "2402.06198": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T04:31:13.348554Z",
+      "next_retry_at": "2026-12-01T04:31:13.348554Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
