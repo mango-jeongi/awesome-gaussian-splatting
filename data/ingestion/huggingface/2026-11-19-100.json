@@ -20,7 +20,7 @@
           }
         ],
         "githubRepo": "https://github.com/Carol-lyh/Jeveration",
-        "githubStars": 137,
+        "githubStars": 155,
         "id": "2611.24738",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -29,7 +29,7 @@
         "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
         "summary": "System One models such as Jev return decisions through fast, parallel prediction. In this paper, we introduce Jeveration, showing that the same decision paradigm can also generate high-quality images in a single forward pass. Jeveration builds on a frozen vision-language model, repurposing its visual-semantic knowledge for holistic image generation. The key challenge is to maintain global consistency. A single prompt admits many valid images, yet parallel predictions must converge on a coherent whole. We therefore condition all positions on a shared random state to coordinate parallel predictions, so that each draw yields a different but coherent image. Since the model tends to ignore this state under direct image supervision, we first learn a distribution over discrete image codes to guide single-pass generation. Beyond text-to-image generation, we further unify image-to-image generation and dense prediction within the same architecture, so that one checkpoint supports all three tasks, each in one forward pass. Experiments show that Jeveration generates a 512x512 image in 78 ms, up to 122x faster than existing unified models, while maintaining competitive image quality and dense prediction performance.",
         "title": "Jeveration: System One Models Now Generate",
-        "upvotes": 150
+        "upvotes": 154
       },
       "publishedAt": "2026-11-17T19:00:00.000Z"
     },
@@ -87,7 +87,7 @@
           }
         ],
         "githubRepo": "https://github.com/lijinzhao30/ALIVE",
-        "githubStars": 48,
+        "githubStars": 53,
         "id": "2611.21366",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -277,7 +277,7 @@
         "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
         "summary": "A central challenge in adapting large language models (LLMs) is capability preservation: an adaptation can achieve its target while degrading general capabilities. We introduce CurvDelta, a scalable framework that incorporates the preservation constraint into the parameterization of the model update. By analyzing the local geometry of the preservation constraint around the pre-adaptation model, CurvDelta constructs a low-curvature space in which parameter updates leave the preservation loss nearly invariant. We make its construction practical for LLMs through Kronecker-factored approximate curvature (K-FAC) and a factorized projection. We also introduce CurvLoRA, a low-rank variant within the same preservation geometry, designed for more efficient adaptation. Both methods apply to preservation-constrained adaptation tasks such as capability learning and selective unlearning. We evaluate our methods on mathematical reasoning, code generation, and knowledge unlearning. For mathematical reasoning and code generation, our approaches achieve competitive downstream performance while better preserving general capabilities, offering a favorable acquisition--retention trade-off relative to the baselines. For knowledge unlearning, our main results on TOFU and MUSE show a better balance between targeted forgetting and knowledge retention than the baselines, with retention performance close to the from-scratch retraining reference.",
         "title": "CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning",
-        "upvotes": 23
+        "upvotes": 24
       },
       "publishedAt": "2026-11-17T19:00:00.000Z"
     },
@@ -425,7 +425,7 @@
           }
         ],
         "githubRepo": "https://github.com/inclusionAI/CodeWorldModel",
-        "githubStars": 171,
+        "githubStars": 176,
         "id": "2611.22925",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -469,6 +469,122 @@
         "summary": "Autonomous LLM agents incur substantial cost and latency by invoking a large model (System-2) at every step, even when many intermediate actions choose among a small set of known candidates. Existing dual-system agents offload such decisions to a lightweight System-1 model, but rely on workflow-specific hooks authored per environment. We present AnyS1, a framework that turns human-authored procedural skills, whose instructions naturally specify where choices arise and which options apply, into a shared, domain-general source of decision points. Offline, AnyS1 mines grounded enumerable decisions across over 1,000 public skills, gathers execution-grounded trajectory states inside isolated containers to construct Any-DP, and trains a single calibrated 4B pointer System-1 with label smoothing. At run time, compiled workflows resolve routine decisions in one forward pass and fall back to System-2 when confidence falls below a calibrated threshold. Across three unseen benchmarks and distinct System-2 model families, AnyS1 preserves task reliability while cutting episode cost by 75-91% and model-call time by 63-92% relative to an uncompiled System-2 agent, and maintains performance under zero-shot threshold transfer.",
         "title": "Thinking Fast, Anywhere: One System-1 for the Decision Points of Any Agent Workflow",
         "upvotes": 17
+      },
+      "publishedAt": "2026-11-17T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Yanjun Fu"
+          },
+          {
+            "name": "Quanzeng You"
+          },
+          {
+            "name": "Jiadong Guo"
+          },
+          {
+            "name": "Yujie Lu"
+          },
+          {
+            "name": "Sai Charitha Akula"
+          },
+          {
+            "name": "Haiping Wu"
+          },
+          {
+            "name": "Miao Liu"
+          },
+          {
+            "name": "Sanghamitra Dutta"
+          },
+          {
+            "name": "Lu Yuan"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.19200",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-14T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
+        "summary": "Thinking with images empowers vision-language models (VLMs) to use an external Zoom-in tool for fine-grained visual search. Recent works employ supervised fine-tuning (SFT) and reinforcement learning (RL) with tool-specific designs to enable such capabilities. However, achieving logical reasoning alongside accurate and efficient tool use remains a significant challenge. To address this, we shift the focus away from increasing RL complexity and instead identify SFT data quality as a key bottleneck. We then propose LogT (short for Logically Think with Images), a fully automated SFT data engine that explicitly enforces logic-chain-guided reasoning. LogT generates an SFT dataset featuring challenging, visually grounded questions and structured tool-use traces with human-like logic. We validate our approach by fine-tuning two base models, Qwen2.5-VL-7B and InternVL3.5-8B, on the dataset and evaluating them across seven benchmark test sets. We show that LogT-SFT based on Qwen2.5-VL-7B outperforms the state-of-the-art trained with both SFT and RL, despite using 3.1times less data and >120times fewer GPU hours. Furthermore, applying a simple RL recipe without tool-specific design on LogT-SFT yields a model that surpasses prior methods with complex RL setups by a substantial 9.59-point margin. In addition to strong performance gains, our model exhibits higher tool-use accuracy and efficiency, as well as more structured and logically consistent reasoning traces, directly validating the effectiveness of our approach.",
+        "title": "LogT: Logically Think with Images for Visual Search",
+        "upvotes": 15
+      },
+      "publishedAt": "2026-11-13T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Zhenqing Ling"
+          },
+          {
+            "name": "Qirui Jiao"
+          },
+          {
+            "name": "Daoyuan Chen"
+          },
+          {
+            "name": "Cheng Chen"
+          },
+          {
+            "name": "Xinji Mai"
+          },
+          {
+            "name": "Haowen Gao"
+          },
+          {
+            "name": "Zhuo Zhang"
+          },
+          {
+            "name": "Xuchen Pan"
+          },
+          {
+            "name": "Mengsu Ding"
+          },
+          {
+            "name": "Jiaji Deng"
+          },
+          {
+            "name": "Yuexiang Xie"
+          },
+          {
+            "name": "Xiaoming Qin"
+          },
+          {
+            "name": "Weirui Kuang"
+          },
+          {
+            "name": "Zhaoyang Liu"
+          },
+          {
+            "name": "Yaliang Li"
+          },
+          {
+            "name": "Bolin Ding"
+          },
+          {
+            "name": "Jingren Zhou"
+          }
+        ],
+        "githubRepo": "https://github.com/agentscope-ai/Piccolo",
+        "githubStars": 64,
+        "id": "2611.24651",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://decisionplayground.agentscope.io/",
+        "publishedAt": "2026-11-18T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
+        "summary": "We present Piccolo, a family of multimodal decision models (0.8B to 27B) that coevolves model capabilities and training data via Agentic Data Engineering and recursive self-improvement (RSI). The models predict probabilities over candidate answers for general-purpose text and visual judgments, agent harnesses, data workflows, and interactive games. Piccolo-27B tops the Decision Index Vision Full leaderboard with a score of 75.59, while Piccolo-9B and Piccolo-4B achieve 68.35 and 67.46, respectively. All three rank first on the Private benchmark in their respective model-size categories. Research agents analyze model behavior, construct training data, conduct experiments, and use the results to refine subsequent proposals. Semantic slices and a shared research memory connect these actions across the model family's development. With training recipes comprising hundreds of thousands of examples, data selection and feedback-driven refinement are central to the self-improvement process. Our large-scale RSI exploration yields three counter-intuitive insights for decision-model development: (1) Backbone-recipe co-adaptation outweighs raw model recency: earlier backbones can surpass newer generations on visual tasks under identical recipes; (2) Targeted data curation enables 4B-9B models to rival 27B baselines on specialized workflows; and (3) Continuous loss reduction can decouple from and even degrade discrete decision accuracy. Together with the released weights and tools from the Data-Juicer and AgentScope ecosystems, Piccolo provides an actionable blueprint for building frontier decision models and scaling data-driven RSI.",
+        "title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
+        "upvotes": 14
       },
       "publishedAt": "2026-11-17T19:00:00.000Z"
     },
@@ -566,7 +682,7 @@
           }
         ],
         "githubRepo": "https://github.com/chuangwang123/strideworld",
-        "githubStars": 2,
+        "githubStars": 3,
         "id": "2611.24408",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -578,122 +694,6 @@
         "upvotes": 13
       },
       "publishedAt": "2026-11-17T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Zhenqing Ling"
-          },
-          {
-            "name": "Qirui Jiao"
-          },
-          {
-            "name": "Daoyuan Chen"
-          },
-          {
-            "name": "Cheng Chen"
-          },
-          {
-            "name": "Xinji Mai"
-          },
-          {
-            "name": "Haowen Gao"
-          },
-          {
-            "name": "Zhuo Zhang"
-          },
-          {
-            "name": "Xuchen Pan"
-          },
-          {
-            "name": "Mengsu Ding"
-          },
-          {
-            "name": "Jiaji Deng"
-          },
-          {
-            "name": "Yuexiang Xie"
-          },
-          {
-            "name": "Xiaoming Qin"
-          },
-          {
-            "name": "Weirui Kuang"
-          },
-          {
-            "name": "Zhaoyang Liu"
-          },
-          {
-            "name": "Yaliang Li"
-          },
-          {
-            "name": "Bolin Ding"
-          },
-          {
-            "name": "Jingren Zhou"
-          }
-        ],
-        "githubRepo": "https://github.com/agentscope-ai/Piccolo",
-        "githubStars": 64,
-        "id": "2611.24651",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://decisionplayground.agentscope.io/",
-        "publishedAt": "2026-11-18T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "We present Piccolo, a family of multimodal decision models (0.8B to 27B) that coevolves model capabilities and training data via Agentic Data Engineering and recursive self-improvement (RSI). The models predict probabilities over candidate answers for general-purpose text and visual judgments, agent harnesses, data workflows, and interactive games. Piccolo-27B tops the Decision Index Vision Full leaderboard with a score of 75.59, while Piccolo-9B and Piccolo-4B achieve 68.35 and 67.46, respectively. All three rank first on the Private benchmark in their respective model-size categories. Research agents analyze model behavior, construct training data, conduct experiments, and use the results to refine subsequent proposals. Semantic slices and a shared research memory connect these actions across the model family's development. With training recipes comprising hundreds of thousands of examples, data selection and feedback-driven refinement are central to the self-improvement process. Our large-scale RSI exploration yields three counter-intuitive insights for decision-model development: (1) Backbone-recipe co-adaptation outweighs raw model recency: earlier backbones can surpass newer generations on visual tasks under identical recipes; (2) Targeted data curation enables 4B-9B models to rival 27B baselines on specialized workflows; and (3) Continuous loss reduction can decouple from and even degrade discrete decision accuracy. Together with the released weights and tools from the Data-Juicer and AgentScope ecosystems, Piccolo provides an actionable blueprint for building frontier decision models and scaling data-driven RSI.",
-        "title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
-        "upvotes": 13
-      },
-      "publishedAt": "2026-11-17T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Yanjun Fu"
-          },
-          {
-            "name": "Quanzeng You"
-          },
-          {
-            "name": "Jiadong Guo"
-          },
-          {
-            "name": "Yujie Lu"
-          },
-          {
-            "name": "Sai Charitha Akula"
-          },
-          {
-            "name": "Haiping Wu"
-          },
-          {
-            "name": "Miao Liu"
-          },
-          {
-            "name": "Sanghamitra Dutta"
-          },
-          {
-            "name": "Lu Yuan"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.19200",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-14T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "Thinking with images empowers vision-language models (VLMs) to use an external Zoom-in tool for fine-grained visual search. Recent works employ supervised fine-tuning (SFT) and reinforcement learning (RL) with tool-specific designs to enable such capabilities. However, achieving logical reasoning alongside accurate and efficient tool use remains a significant challenge. To address this, we shift the focus away from increasing RL complexity and instead identify SFT data quality as a key bottleneck. We then propose LogT (short for Logically Think with Images), a fully automated SFT data engine that explicitly enforces logic-chain-guided reasoning. LogT generates an SFT dataset featuring challenging, visually grounded questions and structured tool-use traces with human-like logic. We validate our approach by fine-tuning two base models, Qwen2.5-VL-7B and InternVL3.5-8B, on the dataset and evaluating them across seven benchmark test sets. We show that LogT-SFT based on Qwen2.5-VL-7B outperforms the state-of-the-art trained with both SFT and RL, despite using 3.1times less data and >120times fewer GPU hours. Furthermore, applying a simple RL recipe without tool-specific design on LogT-SFT yields a model that surpasses prior methods with complex RL setups by a substantial 9.59-point margin. In addition to strong performance gains, our model exhibits higher tool-use accuracy and efficiency, as well as more structured and logically consistent reasoning traces, directly validating the effectiveness of our approach.",
-        "title": "LogT: Logically Think with Images for Visual Search",
-        "upvotes": 13
-      },
-      "publishedAt": "2026-11-13T19:00:00.000Z"
     },
     {
       "paper": {
@@ -844,8 +844,8 @@
             "name": "Ran Xu"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
+        "githubRepo": "https://github.com/SalesforceAIResearch/BLIPLive",
+        "githubStars": 3,
         "id": "2611.21553",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1048,7 +1048,7 @@
           }
         ],
         "githubRepo": "https://github.com/Xalp/LateComer",
-        "githubStars": 2,
+        "githubStars": 3,
         "id": "2611.24576",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1115,6 +1115,46 @@
         "ai_summary": null,
         "authors": [
           {
+            "name": "Wen Wang"
+          },
+          {
+            "name": "Jindong Wang"
+          },
+          {
+            "name": "Jiahua Bao"
+          },
+          {
+            "name": "Tu Yongsiqi"
+          },
+          {
+            "name": "Yihao Liu"
+          },
+          {
+            "name": "Junwei He"
+          },
+          {
+            "name": "Wenkui Fan"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.23824",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-18T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
+        "summary": "Reinforcement learning from terminal answer rewards enables search-augmented language models to interleave reasoning and retrieval without step-level annotations, yet outcome supervision assigns identical credit to every search in a trajectory regardless of whether it retrieved useful information. This limitation is especially severe when all sampled rollouts for a question fail, collapsing group-centered outcome advantages to zero even when trajectories gather markedly different evidence. We present Evidence-based Credit Assignment (ECA), which augments terminal outcome rewards with a training-only auxiliary signal measuring how retrieved documents improve the likelihood of a reference answer. Rather than scoring the full dialogue prefix, ECA queries a frozen snapshot of the current policy under an evidence-only prompt containing solely the question and the deduplicated documents observed so far, isolating the utility of retrieved passages from surface variations in generated thoughts or search queries. Within this framework, we compare two return formulations, ECA-Step (which accumulates step-clipped potential increments) and ECA-Horizon (which preserves the telescoping horizon gain in potential), paired with cross-fold group normalization, novelty gating, and search-local token assignment. Across seven Search QA benchmarks, ECA-Horizon improves strict macro exact match over an outcome-only GRPO baseline by 1.03 and 4.80 percentage points on Qwen2.5-3B- and 7B-Instruct, respectively, outperforming both RLOO and GiGPO. Zero-shot evaluation on MultiHop-RAG further demonstrates strong transfer to multi-hop inference queries.",
+        "title": "Evidence-Based Credit Assignment for Search-Augmented Language Models",
+        "upvotes": 9
+      },
+      "publishedAt": "2026-11-17T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
             "name": "Yicheng He"
           },
           {
@@ -1131,7 +1171,7 @@
           }
         ],
         "githubRepo": "https://github.com/bruno686/CriticNPU",
-        "githubStars": 1,
+        "githubStars": 0,
         "id": "2611.24733",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1211,46 +1251,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Wen Wang"
-          },
-          {
-            "name": "Jindong Wang"
-          },
-          {
-            "name": "Jiahua Bao"
-          },
-          {
-            "name": "Tu Yongsiqi"
-          },
-          {
-            "name": "Yihao Liu"
-          },
-          {
-            "name": "Junwei He"
-          },
-          {
-            "name": "Wenkui Fan"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.23824",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-18T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "Reinforcement learning from terminal answer rewards enables search-augmented language models to interleave reasoning and retrieval without step-level annotations, yet outcome supervision assigns identical credit to every search in a trajectory regardless of whether it retrieved useful information. This limitation is especially severe when all sampled rollouts for a question fail, collapsing group-centered outcome advantages to zero even when trajectories gather markedly different evidence. We present Evidence-based Credit Assignment (ECA), which augments terminal outcome rewards with a training-only auxiliary signal measuring how retrieved documents improve the likelihood of a reference answer. Rather than scoring the full dialogue prefix, ECA queries a frozen snapshot of the current policy under an evidence-only prompt containing solely the question and the deduplicated documents observed so far, isolating the utility of retrieved passages from surface variations in generated thoughts or search queries. Within this framework, we compare two return formulations, ECA-Step (which accumulates step-clipped potential increments) and ECA-Horizon (which preserves the telescoping horizon gain in potential), paired with cross-fold group normalization, novelty gating, and search-local token assignment. Across seven Search QA benchmarks, ECA-Horizon improves strict macro exact match over an outcome-only GRPO baseline by 1.03 and 4.80 percentage points on Qwen2.5-3B- and 7B-Instruct, respectively, outperforming both RLOO and GiGPO. Zero-shot evaluation on MultiHop-RAG further demonstrates strong transfer to multi-hop inference queries.",
-        "title": "Evidence-Based Credit Assignment for Search-Augmented Language Models",
-        "upvotes": 8
-      },
-      "publishedAt": "2026-11-17T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "Untrained neural networks with fixed random nonlinear features and Mahalanobis scoring can detect anomalies competitively on tabular and visual tasks without weight optimization or pretrained representations.",
         "authors": [
           {
@@ -1307,6 +1307,31 @@
         "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
         "summary": "Large language models (LLMs) have renewed interest in Page Stream Segmentation (PSS), splitting a multi-page file into its constituent documents. Yet published LLM methods still frame the task as boundary classification over one or a few neighboring pages, and commercial document-splitting APIs do not disclose their methods. We reimagine PSS for LLMs as a sequential process over the whole stream and propose RICoT (Recurrent Interleaved Chain-of-Thought), a prompting framework that works through the pages as a reader would: within a sliding window it reasons about each page and commits its boundary decision before moving on, and across windows it carries forward a compact record of what it has read, keeping per-call cost bounded. We also introduce FinancePSS-205, a benchmark of 205 real-world, de-identified financial page streams, to be released publicly. On FinancePSS-205, RICoT matches or outperforms pairwise and windowed prompting with the same backbone for each of three open-weight LLMs; on a TABME test subset, RICoT with GLM-5 reaches document F1 0.847 and boundary F1 0.915, above published zero-shot results. A 2B-parameter student, trained on a larger teacher's decisions with and without the page-level reasoning, performs comparably in both modes and comes within 0.05 document F1 of the strongest prompted model on FinancePSS-205.",
         "title": "RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation",
+        "upvotes": 6
+      },
+      "publishedAt": "2026-11-16T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Chorus shares one set of n-gram embedding tables across all layers, letting each layer project and rescale the embedding using its hidden state, achieving better quality with much smaller tables and lower optimizer memory.",
+        "authors": [
+          {
+            "name": "Stephen Chung"
+          },
+          {
+            "name": "Wenyu Du"
+          }
+        ],
+        "githubRepo": "https://github.com/dualverse-ai/chorus",
+        "githubStars": 1,
+        "id": "2611.23386",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://github.com/dualverse-ai/chorus",
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
+        "summary": "Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, which are looked up and added to the model's input or to its intermediate layers. Recent designs commonly use a separate n-gram embedding table for each layer, which makes the tables costly in memory and prevents layers from sharing what they learn. Sharing a single table, however, gives every layer the same embedding and leaves no room for layer-wise preferences, and it performs poorly in practice. We propose Chorus, in which one set of n-gram embedding tables serves the whole network and every layer reads it in its own way. Each layer maps the refined embedding through its own projection layer, after rescaling its components by factors computed from its current hidden state. Chorus matches the quality of existing n-gram methods with 87% smaller tables: with 1.2B table parameters it predicts text better than FactorEngram and DeepSeek's Engram do with 9.6B. It outperforms Engram, TN-gram and FactorEngram in every setting where we compared them, across table sizes from 20M to 9.6B parameters. We also show that the recently proposed memory-efficient optimizer Ember works well with Chorus, saving 99.2% of table-optimizer memory compared with AdamW without degrading training performance. These results enable further scaling of n-gram embedding tables along the table-size axis by reducing memory use and allowing shared knowledge to be reused across layers.",
+        "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
         "upvotes": 6
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
@@ -1378,7 +1403,7 @@
           }
         ],
         "githubRepo": "https://github.com/UESTC-Simon/DrawScore",
-        "githubStars": 6,
+        "githubStars": 9,
         "id": "2611.24681",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1449,25 +1474,37 @@
     },
     {
       "paper": {
-        "ai_summary": "Chorus shares one set of n-gram embedding tables across all layers, letting each layer project and rescale the embedding using its hidden state, achieving better quality with much smaller tables and lower optimizer memory.",
+        "ai_summary": "FVSCORE is a neuro-symbolic evaluation framework that compiles videos into prompt and implicit constraint propositions, verifies them with perceptual tools and soft temporal logic, and calibrates significant violations to produce interpretable, human-aligned feedback for video generation.",
         "authors": [
           {
-            "name": "Stephen Chung"
+            "name": "Do Xuan Long"
           },
           {
-            "name": "Wenyu Du"
+            "name": "Long T. Le"
+          },
+          {
+            "name": "Yiwen Song"
+          },
+          {
+            "name": "Min-Yen Kan"
+          },
+          {
+            "name": "Tomas Pfister"
+          },
+          {
+            "name": "Yale Song"
           }
         ],
-        "githubRepo": "https://github.com/dualverse-ai/chorus",
-        "githubStars": 1,
-        "id": "2611.23386",
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.22673",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": "https://github.com/dualverse-ai/chorus",
+        "projectPage": null,
         "publishedAt": "2026-11-17T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, which are looked up and added to the model's input or to its intermediate layers. Recent designs commonly use a separate n-gram embedding table for each layer, which makes the tables costly in memory and prevents layers from sharing what they learn. Sharing a single table, however, gives every layer the same embedding and leaves no room for layer-wise preferences, and it performs poorly in practice. We propose Chorus, in which one set of n-gram embedding tables serves the whole network and every layer reads it in its own way. Each layer maps the refined embedding through its own projection layer, after rescaling its components by factors computed from its current hidden state. Chorus matches the quality of existing n-gram methods with 87% smaller tables: with 1.2B table parameters it predicts text better than FactorEngram and DeepSeek's Engram do with 9.6B. It outperforms Engram, TN-gram and FactorEngram in every setting where we compared them, across table sizes from 20M to 9.6B parameters. We also show that the recently proposed memory-efficient optimizer Ember works well with Chorus, saving 99.2% of table-optimizer memory compared with AdamW without degrading training performance. These results enable further scaling of n-gram embedding tables along the table-size axis by reducing memory use and allowing shared knowledge to be reused across layers.",
-        "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+        "summary": "We introduce Faithfulness Video Score (FVSCORE), a neuro-symbolic framework for specification-driven video generation evaluation. Existing evaluators rely on holistic MLLM judgments or vision-language metrics, yet aligning their scores with human judgments and tracing them to specific temporal violations remain open challenges. FVSCORE addresses these limitations by compiling each video into explicit propositions capturing prompt requirements and implicit propositions capturing unstated physical, temporal, and cross-modal constraints. It grounds each proposition using specialized perceptual tools and evaluates the resulting confidence traces with soft temporal operators inspired by Linear Temporal Logic. A Significance-Aware Calibration step then aligns verification with human perception by retaining only perceptually significant violations before producing a timestamp- and evidence-grounded report. We conduct extensive experiments across public and complex multi-event benchmarks with the strongest video models to date, demonstrating that FVSCORE outperforms holistic and agent-based evaluators in human correlation while providing highly accurate and interpretable feedback.",
+        "title": "FVScore: Specification-Driven Neuro-Symbolic Video Evaluation",
         "upvotes": 5
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
@@ -1505,6 +1542,40 @@
     },
     {
       "paper": {
+        "ai_summary": "A foundation model fine-tuned from a large language model measures and predicts human behaviour and aligns simulated population responses with human statistics, improving accuracy over frontier LLMs.",
+        "authors": [
+          {
+            "name": "Haoran Ye"
+          },
+          {
+            "name": "Tianrui Huo"
+          },
+          {
+            "name": "Hangzhen Li"
+          },
+          {
+            "name": "Xin Zhang"
+          },
+          {
+            "name": "Guojie Song"
+          }
+        ],
+        "githubRepo": "https://github.com/ValueByte-AI/chiron",
+        "githubStars": 3,
+        "id": "2611.24830",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-18T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
+        "summary": "Large language models (LLMs) are increasingly used to infer psychological attributes, predict individual behaviour, and simulate human populations. However, despite generating plausible responses, they often misrepresent individuals and distort population statistics. Here we introduce Chiron, a foundation model to measure and predict human behaviour. We jointly fine-tune an LLM to represent psychological constructs, predict individual behaviour, and align population response distributions with human statistics. The training and evaluation data span 36 behavioural domains and 78 social science experiments, comprising 288,307 person records, 1,411,750 atomic behavioural decisions, and 99,953 psychometric assessments over 109 psychological constructs. In our evaluations, Chiron's psychological measurements agree more closely with human self-reports and exhibit fewer biases that undermine psychometric validity. It predicts individual behaviour more accurately than frontier LLMs (up to 28.4% relative improvement). In simulations of social science experiments, it more accurately captures the direction and magnitude of human experimental effects (82.2--94.3% lower effect-size estimation error). Together, these results establish Chiron as a unified computational instrument for measuring and predicting human behaviour.",
+        "title": "A Foundation Model to Measure and Predict Human Behaviour",
+        "upvotes": 5
+      },
+      "publishedAt": "2026-11-17T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": null,
         "authors": [
           {
@@ -1521,7 +1592,7 @@
           }
         ],
         "githubRepo": "https://github.com/showlab/vae-rhythm",
-        "githubStars": 3,
+        "githubStars": 5,
         "id": "2611.21114",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1678,7 +1749,7 @@
           }
         ],
         "githubRepo": "https://github.com/World-Snapshot/WSMs",
-        "githubStars": 22,
+        "githubStars": 25,
         "id": "2611.24917",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1743,7 +1814,7 @@
           }
         ],
         "githubRepo": "https://github.com/Shengxiang-Lin/PGPO",
-        "githubStars": 157,
+        "githubStars": 156,
         "id": "2611.23236",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1755,43 +1826,6 @@
         "upvotes": 4
       },
       "publishedAt": "2026-08-25T20:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "FVSCORE is a neuro-symbolic evaluation framework that compiles videos into prompt and implicit constraint propositions, verifies them with perceptual tools and soft temporal logic, and calibrates significant violations to produce interpretable, human-aligned feedback for video generation.",
-        "authors": [
-          {
-            "name": "Do Xuan Long"
-          },
-          {
-            "name": "Long T. Le"
-          },
-          {
-            "name": "Yiwen Song"
-          },
-          {
-            "name": "Min-Yen Kan"
-          },
-          {
-            "name": "Tomas Pfister"
-          },
-          {
-            "name": "Yale Song"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.22673",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-17T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "We introduce Faithfulness Video Score (FVSCORE), a neuro-symbolic framework for specification-driven video generation evaluation. Existing evaluators rely on holistic MLLM judgments or vision-language metrics, yet aligning their scores with human judgments and tracing them to specific temporal violations remain open challenges. FVSCORE addresses these limitations by compiling each video into explicit propositions capturing prompt requirements and implicit propositions capturing unstated physical, temporal, and cross-modal constraints. It grounds each proposition using specialized perceptual tools and evaluates the resulting confidence traces with soft temporal operators inspired by Linear Temporal Logic. A Significance-Aware Calibration step then aligns verification with human perception by retaining only perceptually significant violations before producing a timestamp- and evidence-grounded report. We conduct extensive experiments across public and complex multi-event benchmarks with the strongest video models to date, demonstrating that FVSCORE outperforms holistic and agent-based evaluators in human correlation while providing highly accurate and interpretable feedback.",
-        "title": "FVScore: Specification-Driven Neuro-Symbolic Video Evaluation",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-16T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1823,40 +1857,6 @@
         "upvotes": 4
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A foundation model fine-tuned from a large language model measures and predicts human behaviour and aligns simulated population responses with human statistics, improving accuracy over frontier LLMs.",
-        "authors": [
-          {
-            "name": "Haoran Ye"
-          },
-          {
-            "name": "Tianrui Huo"
-          },
-          {
-            "name": "Hangzhen Li"
-          },
-          {
-            "name": "Xin Zhang"
-          },
-          {
-            "name": "Guojie Song"
-          }
-        ],
-        "githubRepo": "https://github.com/ValueByte-AI/chiron",
-        "githubStars": 3,
-        "id": "2611.24830",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-18T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-19T00:00:00.000Z",
-        "summary": "Large language models (LLMs) are increasingly used to infer psychological attributes, predict individual behaviour, and simulate human populations. However, despite generating plausible responses, they often misrepresent individuals and distort population statistics. Here we introduce Chiron, a foundation model to measure and predict human behaviour. We jointly fine-tune an LLM to represent psychological constructs, predict individual behaviour, and align population response distributions with human statistics. The training and evaluation data span 36 behavioural domains and 78 social science experiments, comprising 288,307 person records, 1,411,750 atomic behavioural decisions, and 99,953 psychometric assessments over 109 psychological constructs. In our evaluations, Chiron's psychological measurements agree more closely with human self-reports and exhibit fewer biases that undermine psychometric validity. It predicts individual behaviour more accurately than frontier LLMs (up to 28.4% relative improvement). In simulations of social science experiments, it more accurately captures the direction and magnitude of human experimental effects (82.2--94.3% lower effect-size estimation error). Together, these results establish Chiron as a unified computational instrument for measuring and predicting human behaviour.",
-        "title": "A Foundation Model to Measure and Predict Human Behaviour",
-        "upvotes": 4
-      },
-      "publishedAt": "2026-11-17T19:00:00.000Z"
     },
     {
       "paper": {
@@ -2014,6 +2014,6 @@
       "publishedAt": "2026-11-17T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-23T14:20:59.961978+00:00",
+  "fetched_at": "2026-11-24T14:44:06.457232+00:00",
   "limit": 100
 }

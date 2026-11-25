@@ -3434,6 +3434,560 @@
       "status": "not_found",
       "values": {}
     },
+    "2402.06390": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": "2026-12-01T12:03:02.671892Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.07181": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": "2026-12-01T12:03:02.671892Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.07207": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.07207",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.07207",
+          "text": "GALA3D is a generative framework for 3D content that uses large language models and conditioned diffusion for layout-guided, compositional scene generation, ensuring high fidelity and realistic object interactions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.07207",
+          "text": "We present GALA3D, generative 3D GAussians with LAyout-guided control, for\neffective compositional text-to-3D generation. We first utilize large language\nmodels (LLMs) to generate the initial layout and introduce a layout-guided 3D\nGaussian representation for 3D content generation with adaptive geometric\nconstraints. We then propose an object-scene compositional optimization\nmechanism with conditioned diffusion to collaboratively generate realistic 3D\nscenes with consistent geometry, texture, scale, and accurate interactions\namong multiple objects while simultaneously adjusting the coarse layout priors\nextracted from the LLMs to align with the generated scene. Experiments show\nthat GALA3D is a user-friendly, end-to-end framework for state-of-the-art\nscene-level 3D content generation and controllable editing while ensuring the\nhigh fidelity of object-level entities within the scene. Source codes and\nmodels will be available at https://gala3d.github.io/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.07207",
+        "submitted_on_daily_at": "2024-02-13T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2402.08682": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.08682",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.08682",
+          "text": "IM-3D improves text-to-3D generation by using video generators and Gaussian splatting to produce high-quality 3D outputs efficiently with minimized geometric inconsistencies."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.08682",
+          "text": "Most text-to-3D generators build upon off-the-shelf text-to-image models\ntrained on billions of images. They use variants of Score Distillation Sampling\n(SDS), which is slow, somewhat unstable, and prone to artifacts. A mitigation\nis to fine-tune the 2D generator to be multi-view aware, which can help\ndistillation or can be combined with reconstruction networks to output 3D\nobjects directly. In this paper, we further explore the design space of\ntext-to-3D models. We significantly improve multi-view generation by\nconsidering video instead of image generators. Combined with a 3D\nreconstruction algorithm which, by using Gaussian splatting, can optimize a\nrobust image-based loss, we directly produce high-quality 3D outputs from the\ngenerated views. Our new method, IM-3D, reduces the number of evaluations of\nthe 2D generator network 10-100x, resulting in a much more efficient pipeline,\nbetter quality, fewer geometric inconsistencies, and higher yield of usable 3D\nassets."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.08682",
+        "submitted_on_daily_at": "2024-02-14T00:00:00.000Z",
+        "upvotes": 13
+      }
+    },
+    "2402.10128": {
+      "fetched_at": "2026-11-24T12:03:02.671892Z",
+      "last_attempt_at": "2026-11-24T12:03:02.671892Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.10128",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10128",
+          "text": "GES, a new representation using Generalized Exponential Function, outperforms Gaussian Splatting in 3D reconstruction and generation by requiring fewer particles and improving memory efficiency and rendering speed."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10128",
+          "text": "Advancements in 3D Gaussian Splatting have significantly accelerated 3D\nreconstruction and generation. However, it may require a large number of\nGaussians, which creates a substantial memory footprint. This paper introduces\nGES (Generalized Exponential Splatting), a novel representation that employs\nGeneralized Exponential Function (GEF) to model 3D scenes, requiring far fewer\nparticles to represent a scene and thus significantly outperforming Gaussian\nSplatting methods in efficiency with a plug-and-play replacement ability for\nGaussian-based utilities. GES is validated theoretically and empirically in\nboth principled 1D setup and realistic 3D scenes.\n  It is shown to represent signals with sharp edges more accurately, which are\ntypically challenging for Gaussians due to their inherent low-pass\ncharacteristics. Our empirical analysis demonstrates that GEF outperforms\nGaussians in fitting natural-occurring signals (e.g. squares, triangles, and\nparabolic signals), thereby reducing the need for extensive splitting\noperations that increase the memory footprint of Gaussian Splatting. With the\naid of a frequency-modulated loss, GES achieves competitive performance in\nnovel-view synthesis benchmarks while requiring less than half the memory\nstorage of Gaussian Splatting and increasing the rendering speed by up to 39%.\nThe code is available on the project website https://abdullahamdi.com/ges ."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/ajhamdi/ges-splatting"
+        },
+        "source_url": "https://huggingface.co/papers/2402.10128",
+        "stars": 236,
+        "submitted_on_daily_at": "2024-02-16T00:00:00.000Z",
+        "upvotes": 16
+      }
+    },
+    "2402.10259": {
+      "fetched_at": "2026-11-24T14:44:24.884511Z",
+      "last_attempt_at": "2026-11-24T14:44:24.884511Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.10259",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10259",
+          "text": "GaussianObject framework uses Gaussian splatting and diffusion models to reconstruct and render 3D objects from sparse views, achieving high-quality results with only 4 images."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.10259",
+          "text": "Reconstructing and rendering 3D objects from highly sparse views is of\ncritical importance for promoting applications of 3D vision techniques and\nimproving user experience. However, images from sparse views only contain very\nlimited 3D information, leading to two significant challenges: 1) Difficulty in\nbuilding multi-view consistency as images for matching are too few; 2)\nPartially omitted or highly compressed object information as view coverage is\ninsufficient. To tackle these challenges, we propose GaussianObject, a\nframework to represent and render the 3D object with Gaussian splatting, that\nachieves high rendering quality with only 4 input images. We first introduce\ntechniques of visual hull and floater elimination which explicitly inject\nstructure priors into the initial optimization process for helping build\nmulti-view consistency, yielding a coarse 3D Gaussian representation. Then we\nconstruct a Gaussian repair model based on diffusion models to supplement the\nomitted object information, where Gaussians are further refined. We design a\nself-generating strategy to obtain image pairs for training the repair model.\nOur GaussianObject is evaluated on several challenging datasets, including\nMipNeRF360, OmniObject3D, and OpenIllumination, achieving strong reconstruction\nresults from only 4 views and significantly outperforming previous\nstate-of-the-art methods."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/GaussianObject/GaussianObject"
+        },
+        "source_url": "https://huggingface.co/papers/2402.10259",
+        "stars": 1199,
+        "submitted_on_daily_at": "2024-02-19T00:00:00.000Z",
+        "upvotes": 16
+      }
+    },
+    "2402.10483": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T14:44:24.884511Z",
+      "next_retry_at": "2026-12-01T14:44:24.884511Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.13255": {
+      "fetched_at": "2026-11-24T14:44:24.884511Z",
+      "last_attempt_at": "2026-11-24T14:44:24.884511Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.13255",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.13255",
+          "text": "This paper provides a comprehensive overview of SLAM advancements, focusing on the latest developments in radiance fields and related techniques."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.13255",
+          "text": "Over the past two decades, research in the field of Simultaneous Localization\nand Mapping (SLAM) has undergone a significant evolution, highlighting its\ncritical role in enabling autonomous exploration of unknown environments. This\nevolution ranges from hand-crafted methods, through the era of deep learning,\nto more recent developments focused on Neural Radiance Fields (NeRFs) and 3D\nGaussian Splatting (3DGS) representations. Recognizing the growing body of\nresearch and the absence of a comprehensive survey on the topic, this paper\naims to provide the first comprehensive overview of SLAM progress through the\nlens of the latest advancements in radiance fields. It sheds light on the\nbackground, evolutionary path, inherent strengths and limitations, and serves\nas a fundamental reference to highlight the dynamic progress and specific\nchallenges."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/doongli/awesome-implicit-nerf-slam"
+        },
+        "source_url": "https://huggingface.co/papers/2402.13255",
+        "stars": 2165,
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.13827": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-24T14:44:24.884511Z",
+      "next_retry_at": "2026-12-01T14:44:24.884511Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2402.14650": {
+      "fetched_at": "2026-11-24T14:44:24.884511Z",
+      "last_attempt_at": "2026-11-24T14:44:24.884511Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.14650",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.14650",
+          "text": "GaussianPro improves 3D Gaussian Splatting by using a progressive propagation strategy with patch matching to better handle large-scale scenes with texture-less surfaces, enhancing rendering quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.14650",
+          "text": "The advent of 3D Gaussian Splatting (3DGS) has recently brought about a\nrevolution in the field of neural rendering, facilitating high-quality\nrenderings at real-time speed. However, 3DGS heavily depends on the initialized\npoint cloud produced by Structure-from-Motion (SfM) techniques. When tackling\nwith large-scale scenes that unavoidably contain texture-less surfaces, the SfM\ntechniques always fail to produce enough points in these surfaces and cannot\nprovide good initialization for 3DGS. As a result, 3DGS suffers from difficult\noptimization and low-quality renderings. In this paper, inspired by classical\nmulti-view stereo (MVS) techniques, we propose GaussianPro, a novel method that\napplies a progressive propagation strategy to guide the densification of the 3D\nGaussians. Compared to the simple split and clone strategies used in 3DGS, our\nmethod leverages the priors of the existing reconstructed geometries of the\nscene and patch matching techniques to produce new Gaussians with accurate\npositions and orientations. Experiments on both large-scale and small-scale\nscenes validate the effectiveness of our method, where our method significantly\nsurpasses 3DGS on the Waymo dataset, exhibiting an improvement of 1.15dB in\nterms of PSNR."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.14650",
+        "submitted_on_daily_at": "2024-02-23T00:00:00.000Z",
+        "upvotes": 8
+      }
+    },
+    "2402.15870": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.15870",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.15870",
+          "text": "Spec-Gaussian enhances 3D Gaussian splatting by using anisotropic spherical Gaussians to model specular and anisotropic surfaces, improving rendering quality without increasing complexity."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.15870",
+          "text": "The recent advancements in 3D Gaussian splatting (3D-GS) have not only\nfacilitated real-time rendering through modern GPU rasterization pipelines but\nhave also attained state-of-the-art rendering quality. Nevertheless, despite\nits exceptional rendering quality and performance on standard datasets, 3D-GS\nfrequently encounters difficulties in accurately modeling specular and\nanisotropic components. This issue stems from the limited ability of spherical\nharmonics (SH) to represent high-frequency information. To overcome this\nchallenge, we introduce Spec-Gaussian, an approach that utilizes an anisotropic\nspherical Gaussian (ASG) appearance field instead of SH for modeling the\nview-dependent appearance of each 3D Gaussian. Additionally, we have developed\na coarse-to-fine training strategy to improve learning efficiency and eliminate\nfloaters caused by overfitting in real-world scenes. Our experimental results\ndemonstrate that our method surpasses existing approaches in terms of rendering\nquality. Thanks to ASG, we have significantly improved the ability of 3D-GS to\nmodel scenes with specular and anisotropic components without increasing the\nnumber of 3D Gaussians. This improvement extends the applicability of 3D GS to\nhandle intricate scenarios with specular and anisotropic surfaces."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.15870",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.16607": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.16607",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.16607",
+          "text": "The novel method for creating 3D Gaussian avatars from monocular video inputs improves pose accuracy and surface alignment, achieving high-fidelity photo-realistic reconstructions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.16607",
+          "text": "In this paper, we present a novel method that facilitates the creation of\nvivid 3D Gaussian avatars from monocular video inputs (GVA). Our innovation\nlies in addressing the intricate challenges of delivering high-fidelity human\nbody reconstructions and aligning 3D Gaussians with human skin surfaces\naccurately. The key contributions of this paper are twofold. Firstly, we\nintroduce a pose refinement technique to improve hand and foot pose accuracy by\naligning normal maps and silhouettes. Precise pose is crucial for correct shape\nand appearance reconstruction. Secondly, we address the problems of unbalanced\naggregation and initialization bias that previously diminished the quality of\n3D Gaussian avatars, through a novel surface-guided re-initialization method\nthat ensures accurate alignment of 3D Gaussian points with avatar surfaces.\nExperimental results demonstrate that our proposed method achieves\nhigh-fidelity and vivid 3D Gaussian avatar reconstruction. Extensive\nexperimental analyses validate the performance qualitatively and\nquantitatively, demonstrating that it achieves state-of-the-art performance in\nphoto-realistic novel view synthesis while offering fine-grained control over\nthe human body and hand pose. Project page: https://3d-aigc.github.io/GVA/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.16607",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.17427": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.17427",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.17427",
+          "text": "VastGaussian addresses limitations in NeRF-based methods for large scene reconstruction by partitioning scenes and decoupling appearance modeling, achieving high-quality and real-time rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.17427",
+          "text": "Existing NeRF-based methods for large scene reconstruction often have\nlimitations in visual quality and rendering speed. While the recent 3D Gaussian\nSplatting works well on small-scale and object-centric scenes, scaling it up to\nlarge scenes poses challenges due to limited video memory, long optimization\ntime, and noticeable appearance variations. To address these challenges, we\npresent VastGaussian, the first method for high-quality reconstruction and\nreal-time rendering on large scenes based on 3D Gaussian Splatting. We propose\na progressive partitioning strategy to divide a large scene into multiple\ncells, where the training cameras and point cloud are properly distributed with\nan airspace-aware visibility criterion. These cells are merged into a complete\nscene after parallel optimization. We also introduce decoupled appearance\nmodeling into the optimization process to reduce appearance variations in the\nrendered images. Our approach outperforms existing NeRF-based methods and\nachieves state-of-the-art results on multiple large scene datasets, enabling\nfast optimization and high-fidelity real-time rendering."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/kangpeilun/VastGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2402.17427",
+        "stars": 510,
+        "submitted_on_daily_at": "2024-02-28T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2402.19441": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": "2026-12-02T10:55:08.534762Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.01444": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.01444",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://sjojok.top/3dgstream/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.01444",
+          "text": "3DGStream efficiently streams photo-realistic Free-Viewpoint Videos in real-time using 3D Gaussians and a Neural Transformation Cache, competitive in speed, quality, training time, and storage."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.01444",
+          "text": "Constructing photo-realistic Free-Viewpoint Videos (FVVs) of dynamic scenes\nfrom multi-view videos remains a challenging endeavor. Despite the remarkable\nadvancements achieved by current neural rendering techniques, these methods\ngenerally require complete video sequences for offline training and are not\ncapable of real-time rendering. To address these constraints, we introduce\n3DGStream, a method designed for efficient FVV streaming of real-world dynamic\nscenes. Our method achieves fast on-the-fly per-frame reconstruction within 12\nseconds and real-time rendering at 200 FPS. Specifically, we utilize 3D\nGaussians (3DGs) to represent the scene. Instead of the na\\\"ive approach of\ndirectly optimizing 3DGs per-frame, we employ a compact Neural Transformation\nCache (NTC) to model the translations and rotations of 3DGs, markedly reducing\nthe training time and storage required for each FVV frame. Furthermore, we\npropose an adaptive 3DG addition strategy to handle emerging objects in dynamic\nscenes. Experiments demonstrate that 3DGStream achieves competitive performance\nin terms of rendering speed, image quality, training time, and model storage\nwhen compared with state-of-the-art methods."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/SJoJoK/3DGStream"
+        },
+        "source_url": "https://huggingface.co/papers/2403.01444",
+        "stars": 472,
+        "submitted_on_daily_at": "2024-03-05T00:00:00.000Z",
+        "upvotes": 5
+      }
+    },
+    "2403.02751": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.03641": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.04116": {
+      "fetched_at": "2026-11-25T14:07:39.433207Z",
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.04116",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "CaiYuanhao/X-Gaussian",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/CaiYuanhao/X-Gaussian"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 1,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.04116",
+          "text": "A 3D Gaussian splatting-based framework, X-Gaussian, is proposed for efficient X-ray novel view synthesis with faster training and inference compared to NeRF."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.04116",
+          "text": "X-ray is widely applied for transmission imaging due to its stronger\npenetration than natural light. When rendering novel view X-ray projections,\nexisting methods mainly based on NeRF suffer from long training time and slow\ninference speed. In this paper, we propose a 3D Gaussian splatting-based\nframework, namely X-Gaussian, for X-ray novel view synthesis. Firstly, we\nredesign a radiative Gaussian point cloud model inspired by the isotropic\nnature of X-ray imaging. Our model excludes the influence of view direction\nwhen learning to predict the radiation intensity of 3D points. Based on this\nmodel, we develop a Differentiable Radiative Rasterization (DRR) with CUDA\nimplementation. Secondly, we customize an Angle-pose Cuboid Uniform\nInitialization (ACUI) strategy that directly uses the parameters of the X-ray\nscanner to compute the camera information and then uniformly samples point\npositions within a cuboid enclosing the scanned object. Experiments show that\nour X-Gaussian outperforms state-of-the-art methods by 6.5 dB while enjoying\nless than 15% training time and over 73x inference speed. The application on\nsparse-view CT reconstruction also reveals the practical values of our method.\nCode and models will be publicly available at\nhttps://github.com/caiyuanhao1998/X-Gaussian . A video demo of the training\nprocess visualization is at https://www.youtube.com/watch?v=gDVf_Ngeghg ."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/caiyuanhao1998/x-gaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.04116",
+        "stars": 336,
+        "submitted_on_daily_at": "2024-03-08T00:00:00.000Z",
+        "upvotes": 5
+      }
+    },
+    "2403.04926": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.05154": {
+      "fetched_at": "2026-11-25T14:07:39.433207Z",
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.05154",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.05154",
+          "text": "GSEdit uses Gaussian splatting and a pretrained image-based diffusion model for efficient text-guided 3D object editing while preserving details and viewpoint consistency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.05154",
+          "text": "We present GSEdit, a pipeline for text-guided 3D object editing based on\nGaussian Splatting models. Our method enables the editing of the style and\nappearance of 3D objects without altering their main details, all in a matter\nof minutes on consumer hardware. We tackle the problem by leveraging Gaussian\nsplatting to represent 3D scenes, and we optimize the model while progressively\nvarying the image supervision by means of a pretrained image-based diffusion\nmodel. The input object may be given as a 3D triangular mesh, or directly\nprovided as Gaussians from a generative model such as DreamGaussian. GSEdit\nensures consistency across different viewpoints, maintaining the integrity of\nthe original object's information. Compared to previously proposed methods\nrelying on NeRF-like MLP models, GSEdit stands out for its efficiency, making\n3D editing tasks much faster. Our editing process is refined via the\napplication of the SDS loss, ensuring that our edits are both precise and\naccurate. Our comprehensive evaluation demonstrates that GSEdit effectively\nalters object shape and appearance following the given textual instructions\nwhile preserving their coherence and detail."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.05154",
+        "submitted_on_daily_at": null,
+        "upvotes": 3
+      }
+    },
+    "2403.06908": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.06912": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.07494": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.07807": {
+      "fetched_at": "2026-11-25T17:58:24.693101Z",
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.07807",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.07807",
+          "text": "StyleGaussian is a 3D style transfer method that applies a reference image's style to a 3D scene in real-time while maintaining multi-view consistency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.07807",
+          "text": "We introduce StyleGaussian, a novel 3D style transfer technique that allows\ninstant transfer of any image's style to a 3D scene at 10 frames per second\n(fps). Leveraging 3D Gaussian Splatting (3DGS), StyleGaussian achieves style\ntransfer without compromising its real-time rendering ability and multi-view\nconsistency. It achieves instant style transfer with three steps: embedding,\ntransfer, and decoding. Initially, 2D VGG scene features are embedded into\nreconstructed 3D Gaussians. Next, the embedded features are transformed\naccording to a reference style image. Finally, the transformed features are\ndecoded into the stylized RGB. StyleGaussian has two novel designs. The first\nis an efficient feature rendering strategy that first renders low-dimensional\nfeatures and then maps them into high-dimensional features while embedding VGG\nfeatures. It cuts the memory consumption significantly and enables 3DGS to\nrender the high-dimensional memory-intensive features. The second is a\nK-nearest-neighbor-based 3D CNN. Working as the decoder for the stylized\nfeatures, it eliminates the 2D CNN operations that compromise strict multi-view\nconsistency. Extensive experiments show that StyleGaussian achieves instant 3D\nstylization with superior stylization quality while preserving real-time\nrendering and strict multi-view consistency. Project page:\nhttps://kunhao-liu.github.io/StyleGaussian/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/Kunhao-Liu/StyleGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.07807",
+        "stars": 216,
+        "submitted_on_daily_at": null,
+        "upvotes": 3
+      }
+    },
+    "2403.08321": {
+      "fetched_at": "2026-11-25T17:58:24.693101Z",
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.08321",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08321",
+          "text": "A dynamic Gaussian Splatting method, ManiGaussian, improves multi-task robotic manipulation by predicting scene-level spatiotemporal dynamics and providing future scene reconstruction for better action prediction."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08321",
+          "text": "Performing language-conditioned robotic manipulation tasks in unstructured\nenvironments is highly demanded for general intelligent robots. Conventional\nrobotic manipulation methods usually learn semantic representation of the\nobservation for action prediction, which ignores the scene-level spatiotemporal\ndynamics for human goal completion. In this paper, we propose a dynamic\nGaussian Splatting method named ManiGaussian for multi-task robotic\nmanipulation, which mines scene dynamics via future scene reconstruction.\nSpecifically, we first formulate the dynamic Gaussian Splatting framework that\ninfers the semantics propagation in the Gaussian embedding space, where the\nsemantic representation is leveraged to predict the optimal robot action. Then,\nwe build a Gaussian world model to parameterize the distribution in our dynamic\nGaussian Splatting framework, which provides informative supervision in the\ninteractive environment via future scene reconstruction. We evaluate our\nManiGaussian on 10 RLBench tasks with 166 variations, and the results\ndemonstrate our framework can outperform the state-of-the-art methods by 13.1\\%\nin average success rate. Project page:\nhttps://guanxinglu.github.io/ManiGaussian/."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/GuanxingLu/ManiGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.08321",
+        "stars": 285,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
