@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4191-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4186-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-25` | Total Papers: **4191** | With Official Code: **581***
+*Last updated: `2026-11-25` | Total Papers: **4186** | With Official Code: **581***
 
 ---
 
@@ -17,12 +17,12 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | Category | Papers | Description |
 | :--- | :---: | :--- |
 | **[Foundations & Acceleration](#foundations--acceleration)** | `1032` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
-| **[Dynamic & 4DGS](#dynamic--4dgs)** | `870` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
-| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `556` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
+| **[Dynamic & 4DGS](#dynamic--4dgs)** | `868` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
+| **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `555` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
 | **[Human Avatars & VR](#human-avatars--vr)** | `290` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
 | **[Generative Priors & 3D Reconstruction](#generative-priors--3d-reconstruction)** | `704` | Text-to-3D, image-to-3D, diffusion priors, SDS, feed-forward generalizable splatting, and sparse-view synthesis. |
-| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `323` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
-| **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `96` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
+| **[Autonomous Driving & Urban Scenes](#autonomous-driving--urban-scenes)** | `322` | Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping. |
+| **[Medical, Defense & Multimodal Sensors](#medical-defense--multimodal-sensors)** | `95` | Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR. |
 | **[2D Gaussians, Geometry & Compression](#2d-gaussians-geometry--compression)** | `319` | 2D Gaussian Splatting (2DGS), mesh extraction, SDF coupling, inverse rendering, relighting, and model compression. |
 
 ---
@@ -137,10 +137,10 @@ Showing 60 of 1032 papers. [Browse the full category](https://mango-jeongi.githu
 
 ### Dynamic & 4DGS
 
-*4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video.* (870 papers)
+*4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video.* (868 papers)
 
 <details>
-<summary><strong>View 870 papers in Dynamic & 4DGS</strong></summary>
+<summary><strong>View 868 papers in Dynamic & 4DGS</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -205,16 +205,16 @@ Showing 60 of 1032 papers. [Browse the full category](https://mango-jeongi.githu
 | `2026-10` | **A differentiable Lagrangian-coupled 3D Gaussian Splatting-SPH model for forward simulation and inverse analysis in solid mechanics**<br><sub>Recent advances in generative world models have increased interest in digital models that reproduce both the appearance of real objects and their response to physical interaction.</sub> | Xu et al. | `Physics & Simulation`, `Foundations` | [[arXiv:2610.04336]](https://arxiv.org/abs/2610.04336) [[PDF]](https://arxiv.org/pdf/2610.04336.pdf) |
 | `2026-10` | **Affine-Aligned Atlas for Canonical Gaussian Construction in Video Representation**<br><sub>Proposes an affine-atlas canonical Gaussian representation, which constructs canonical Gaussians in a larger affine-aligned atlas space.</sub> | Takabe et al. | `Foundations` | [[arXiv:2610.01114]](https://arxiv.org/abs/2610.01114) [[PDF]](https://arxiv.org/pdf/2610.01114.pdf) |
 
-Showing 60 of 870 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Dynamic%20%26%204DGS).
+Showing 60 of 868 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Dynamic%20%26%204DGS).
 
 </details>
 
 ### Active Perception, SLAM & Robotics
 
-*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (556 papers)
+*Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI.* (555 papers)
 
 <details>
-<summary><strong>View 556 papers in Active Perception, SLAM & Robotics</strong></summary>
+<summary><strong>View 555 papers in Active Perception, SLAM & Robotics</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -279,7 +279,7 @@ Showing 60 of 870 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-08` | **ProbSplat: Efficient Probabilistic Hardware for Gaussian Splatting in 3D Scene Reconstruction**<br><sub>Presents ProbSplat, a Compute-in-Memory (CIM)-inspired architecture based on programmable and energy efficient floating-gate inverter columns for probabilistic computing.</sub> | Gottumukkula et al. | `VR & XR`, `Foundations` | [[arXiv:2608.13143]](https://arxiv.org/abs/2608.13143) [[PDF]](https://arxiv.org/pdf/2608.13143.pdf) |
 | `2026-08` | **GS-CPE: Unified 6-Degree-of-Freedom Camera Pose Estimation via 3D Gaussian Splatting** **[IROS 2026]**<br><sub>Despite substantial progress in visual localization, from scene coordinate regression to direct camera pose regression, achieving both robust generalization and high accuracy remain challenging.</sub> | Weng et al. | `Anti-Aliasing`, `Foundations` | [[arXiv:2608.10938]](https://arxiv.org/abs/2608.10938) [[PDF]](https://arxiv.org/pdf/2608.10938.pdf) |
 
-Showing 60 of 556 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Active%20Perception%2C%20SLAM%20%26%20Robotics).
+Showing 60 of 555 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Active%20Perception%2C%20SLAM%20%26%20Robotics).
 
 </details>
 
@@ -433,10 +433,10 @@ Showing 60 of 704 papers. [Browse the full category](https://mango-jeongi.github
 
 ### Autonomous Driving & Urban Scenes
 
-*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (323 papers)
+*Street-level urban reconstruction, autonomous driving simulation, LiDAR-camera fusion, and aerial/UAV mapping.* (322 papers)
 
 <details>
-<summary><strong>View 323 papers in Autonomous Driving & Urban Scenes</strong></summary>
+<summary><strong>View 322 papers in Autonomous Driving & Urban Scenes</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -501,16 +501,16 @@ Showing 60 of 704 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-06` | **LIT-GS: LiDAR-Inertial-Thermal Gaussian Splatting for Illumination-Robust Mapping** **[IROS 2026]**<br><sub>Presents LIT-GS, a LiDAR-inertial-thermal Gaussian Splatting framework that injects LiDAR-derived plane geometry as an explicit constraint in both pose/structure refinement and Gaussian optimization.</sub> | Shi et al. | `LiDAR-Fusion`, `Thermal & IR`, `Foundations` | [[arXiv:2606.20424]](https://arxiv.org/abs/2606.20424) [[PDF]](https://arxiv.org/pdf/2606.20424.pdf) |
 | `2026-06` | **Geometry-Preserving in 3D Gaussian Splatting for LiDAR-Camera Extrinsic Calibration** **[ECCV 2026]**<br><sub>Proposes a framework that preserves the metric geometry of the Gaussian proxy by aggregating multi-view LiDAR observations for dense depth supervision and blocking photometric gradients from updating the...</sub> | Kwak et al. | `LiDAR-Fusion`, `Foundations` | [[arXiv:2606.20103]](https://arxiv.org/abs/2606.20103) [[PDF]](https://arxiv.org/pdf/2606.20103.pdf) |
 
-Showing 60 of 323 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
+Showing 60 of 322 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Autonomous%20Driving%20%26%20Urban%20Scenes).
 
 </details>
 
 ### Medical, Defense & Multimodal Sensors
 
-*Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR.* (96 papers)
+*Medical ultrasound/MRI/CT, endoscopic 3DGS, thermal infrared, X-ray, SAR, event cameras, and defense ISR.* (95 papers)
 
 <details>
-<summary><strong>View 96 papers in Medical, Defense & Multimodal Sensors</strong></summary>
+<summary><strong>View 95 papers in Medical, Defense & Multimodal Sensors</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -536,7 +536,6 @@ Showing 60 of 323 papers. [Browse the full category](https://mango-jeongi.github
 | `2026-08` | **XClipGS: Exact Half-Space Clipping for Medical Volume Gaussian Splatting**<br><sub>Presents XClipGS (eXact Clipping), which treats these as two separate problems: the render-time clip operator and supervision of the hidden interior.</sub> | Gao et al. | `Medical & Healthcare`, `Foundations` | [[arXiv:2608.07760]](https://arxiv.org/abs/2608.07760) [[PDF]](https://arxiv.org/pdf/2608.07760.pdf) [[Project]](https://gaozhongpai.github.io/XClipGS/) |
 | `2026-07` | **A 3DGS-Driven Dynamic Viewpoint and Vibrotactile Framework for Subsea Teleoperation Validated via fNIRS**<br><sub>Presents a multimodal teleoperation architecture built on a ROS-Unity framework that decouples proactive spatial planning from reactive boundary avoidance.</sub> | Xu et al. | `Thermal & IR`, `Foundations` | [[arXiv:2607.13067]](https://arxiv.org/abs/2607.13067) [[PDF]](https://arxiv.org/pdf/2607.13067.pdf) |
 | `2026-07` | **PhyMRI-SR: Toward Physics-Aware MRI Image Super-Resolution**<br><sub>To further enhance fidelity, we introduce three innovations: (1) a prior-aware Gaussian representation that combines an Anatomical Structure Prior for tissue-specific kernel initialization with an Imaging...</sub> | Wei et al. | `2DGS`, `Medical & Healthcare`, `Physics & Simulation`, `Foundations` | [[arXiv:2607.06238]](https://arxiv.org/abs/2607.06238) [[PDF]](https://arxiv.org/pdf/2607.06238.pdf) [[Project]](https://bio-med-i2-lab.github.io/projects/PhyMRI-SR) |
-| `2026-07` | **Geometry aware neural radiance fields for freehand ultrasound reconstruction**<br><sub>Employs geometry-aware NeRFs to reconstruct 3D ultrasound volumes from tracked 2D freehand sweeps while resolving sweep overlap artifacts.</sub> | Dou et al. | `Medical & Healthcare` | — |
 | `2026-06` | **Rendering Novel Views of MRI Using 3D Gaussian Splatting** **[ECCV 2026]**<br><sub>The objective of this paper is to improve radiological gradings measured on MRIs of spines, by resampling scans so that the new view planes are better aligned with the target anatomy than the original...</sub> | Park et al. | `Medical & Healthcare`, `Foundations` | [[arXiv:2606.26236]](https://arxiv.org/abs/2606.26236) [[PDF]](https://arxiv.org/pdf/2606.26236.pdf) |
 | `2026-06` | **Gastroendoscopy View Synthesis: A New Real Dataset and Evaluation**<br><sub>Presents the first real gastroscopy dataset for NVS, namely the GastroNVS dataset, which contains a set of gastroscopic images, camera poses, and a point cloud for real gastroendoscopy inspection.</sub> | Minai et al. | `Medical & Healthcare`, `Physics & Simulation`, `Foundations` | [[arXiv:2606.25427]](https://arxiv.org/abs/2606.25427) [[PDF]](https://arxiv.org/pdf/2606.25427.pdf) |
 | `2026-06` | **Characterizing Detectability in 3DGS Poisoning: A Stage-wise Benchmark**<br><sub>Introduces Poison-3DGS, a benchmark for stage-wise characterization of poisoning detection in 3DGS.</sub> | Bui-Huynh et al. | `Foundations` | [[arXiv:2606.03499]](https://arxiv.org/abs/2606.03499) [[PDF]](https://arxiv.org/pdf/2606.03499.pdf) |
@@ -574,8 +573,9 @@ Showing 60 of 323 papers. [Browse the full category](https://mango-jeongi.github
 | `2025-06` | **SAR-GS: Gaussian Splatting-Based SAR Image Rendering and Target Reconstruction**<br><sub>SAR-GS adapts Gaussian Splatting to simulate electromagnetic scattering and render Synthetic Aperture Radar (SAR) views of target objects.</sub> | Li et al. | `LiDAR-Fusion` | [[arXiv:2506.21633]](https://arxiv.org/abs/2506.21633) [[PDF]](https://arxiv.org/pdf/2506.21633.pdf) |
 | `2025-05` | **Render-FM: Feedforward Model for Real-time Photorealistic Volumetric Rendering** **[ECCV 2026]**<br><sub>Proposes Render-FM, a feedforward model that eliminates this bottleneck by directly regressing 6D Gaussian Splatting (6DGS) parameters from a CT volume in a single 2.8-second forward pass, a 500x speedup...</sub> | Gao et al. | `Medical & Healthcare`, `Foundations` | [[arXiv:2505.17338]](https://arxiv.org/abs/2505.17338) [[PDF]](https://arxiv.org/pdf/2505.17338.pdf) [[Project]](https://gaozhongpai.github.io/renderfm/) |
 | `2025-05` | **X-GRM: Large Gaussian Reconstruction Model for Sparse-view X-rays to Computed Tomography**<br><sub>Presents X-GRM (X-ray Gaussian Reconstruction Model), a large feedforward model for reconstructing 3D CT volumes from sparse-view 2D X-ray projections.</sub> | Liu et al. | `Sparse-View`, `Medical & Healthcare`, `Foundations` | [[arXiv:2505.15235]](https://arxiv.org/abs/2505.15235) [[PDF]](https://arxiv.org/pdf/2505.15235.pdf) [[Code]](https://github.com/CUHK-AIM-Group/X-GRM) |
+| `2025-04` | **IXGS-Intraoperative 3D Reconstruction from Sparse, Arbitrarily Posed Real X-rays**<br><sub>Introduces an anatomy-guided radiographic standardization step using style transfer, improving visual consistency across views, and enhancing reconstruction quality.</sub> | Jecklin et al. | `Sparse-View`, `Medical & Healthcare`, `Foundations` | [[arXiv:2504.14699]](https://arxiv.org/abs/2504.14699) [[PDF]](https://arxiv.org/pdf/2504.14699.pdf) |
 
-Showing 60 of 96 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Medical%2C%20Defense%20%26%20Multimodal%20Sensors).
+Showing 60 of 95 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Medical%2C%20Defense%20%26%20Multimodal%20Sensors).
 
 </details>
 
