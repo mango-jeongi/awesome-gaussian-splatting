@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from src.builder import generate_readme, gfm_slug
 from src.schema import PaperDatabase, TaxonomyConfig
+from src.storage import canonical_data_path
 
 
 def test_gfm_slug_exact_github_anchors():
@@ -31,7 +32,7 @@ def test_gfm_slug_exact_github_anchors():
 def test_readme_anchors_match_headings():
     """Verify that every category link in generate_readme matches its corresponding section heading."""
     tax = TaxonomyConfig.from_yaml("config/taxonomy.yaml")
-    db = PaperDatabase.load("data/papers.json")
+    db = PaperDatabase.load(canonical_data_path("."))
     readme = generate_readme(db, tax)
 
     for cat in tax.categories:
@@ -49,7 +50,7 @@ def test_readme_anchors_match_headings():
 def test_no_frontier_superlative():
     """Verify that the 'frontier' superlative has been removed from README generated titles."""
     tax = TaxonomyConfig.from_yaml("config/taxonomy.yaml")
-    db = PaperDatabase.load("data/papers.json")
+    db = PaperDatabase.load(canonical_data_path("."))
     readme = generate_readme(db, tax)
 
     # First heading should not contain frontier

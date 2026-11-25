@@ -5,13 +5,16 @@ import httpx
 from src.extractors.openalex import OpenAlexClient
 from src.openalex_cache import OpenAlexCache, refresh_openalex
 from src.schema import PaperDatabase
+from src.storage import canonical_data_path
 
 NOW = datetime(2026, 11, 9, tzinfo=UTC)
 
 
 def paper():
     return next(
-        p for p in PaperDatabase.load("data/papers.json").papers if p.id == "paper:2023-70a2202d04"
+        p
+        for p in PaperDatabase.load(canonical_data_path(".")).papers
+        if p.id == "paper:2023-70a2202d04"
     )
 
 
