@@ -9633,6 +9633,16 @@
             "reviewed_by": null,
             "reviewed_at": null
           }
+        ],
+        "tldr": [
+          {
+            "source": "arxiv_abstract_review",
+            "source_url": "https://arxiv.org/abs/2610.30468v3",
+            "value": "Research tooling that proposes, implements, and tests changes to 3D Gaussian splatting baselines and ties reported findings to logged experiments.",
+            "observed_at": null,
+            "reviewed_by": "Codex",
+            "reviewed_at": "2026-11-25T17:39:40.042050Z"
+          }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2610.30468",
@@ -9640,7 +9650,7 @@
       "code_url": null,
       "project_url": "https://seemandhar.github.io/splatlab",
       "abstract": "Scientific discovery requires more than generating hypotheses: ideas must be grounded in prior work, translated into executable methods, experimentally validated, challenged by counterevidence, and communicated through reproducible findings. Despite recent advances in autonomous research agents, closing this entire loop remains challenging in rapidly evolving computer-vision fields with complex training pipelines and expensive evaluations. We introduce SplatLab, an autonomous scientific discovery system for 3D Gaussian Splatting (3DGS) that integrates literature understanding, hypothesis generation, implementation, experimental refinement, falsification, and manuscript writing into a unified research pipeline. Given a research prompt, a target-paper URL, or no input at all, SplatLab identifies research opportunities, proposes novel methods, trains and ablates candidates across Mip-NeRF 360 and LLFF, and produces manuscripts grounded in verifiable experimental evidence. Unlike prior systems, SplatLab performs discovery over verified baseline implementations using domain-aligned modification scaffolds. A cascade-weighted Elo tournament evolves candidate methods using measured GPU performance and verbal-gradient feedback, while a standing falsifier incorporates adversarial stress testing directly into selection. An integrity audit binds reported claims to logged experiments, and reviewer-driven feedback can initiate further experimentation rather than merely revising text. SplatLab discovers methods achieving PSNR improvements of +0.18 to +3.78 dB over matched baselines, including +3.78 dB on astrophotographic nebula rendering, a previously unexplored setting for 3DGS. By closing the loop between scientific reasoning, executable experimentation, and evidence-backed communication, SplatLab compresses months of researcher effort into days of mostly autonomous compute.",
-      "tldr": "Introduces SplatLab, an autonomous scientific discovery system for 3D Gaussian Splatting (3DGS) that integrates literature understanding, hypothesis generation, implementation, experimental refinement,...",
+      "tldr": "Research tooling that proposes, implements, and tests changes to 3D Gaussian splatting baselines and ties reported findings to logged experiments.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
