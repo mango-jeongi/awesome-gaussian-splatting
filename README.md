@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4189-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4191-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-24` | Total Papers: **4189** | With Official Code: **581***
+*Last updated: `2026-11-25` | Total Papers: **4191** | With Official Code: **581***
 
 ---
 
@@ -16,7 +16,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 | Category | Papers | Description |
 | :--- | :---: | :--- |
-| **[Foundations & Acceleration](#foundations--acceleration)** | `1030` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
+| **[Foundations & Acceleration](#foundations--acceleration)** | `1032` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
 | **[Dynamic & 4DGS](#dynamic--4dgs)** | `870` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
 | **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `556` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
 | **[Human Avatars & VR](#human-avatars--vr)** | `290` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
@@ -63,10 +63,10 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Foundations & Acceleration
 
-*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1030 papers)
+*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1032 papers)
 
 <details>
-<summary><strong>View 1030 papers in Foundations & Acceleration</strong></summary>
+<summary><strong>View 1032 papers in Foundations & Acceleration</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -131,7 +131,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | `2026-10` | **DIGS: Distribution-Informed Gaussian Splatting for Training-Free Open-Vocabulary 3D Segmentation** **[NEURIPS 2026]**<br><sub>Presents DIGS, a training-free framework with two stages, class-agnostic mapping and multi-modal encoding, that decouples instance discovery from linguistic naming.</sub> | Zeng et al. | `Foundations` | [[arXiv:2610.16177]](https://arxiv.org/abs/2610.16177) [[PDF]](https://arxiv.org/pdf/2610.16177.pdf) [[Code]](https://github.com/ZephyrZos/DIGS) |
 | `2026-10` | **3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design**<br><sub>However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes.</sub> | Liao et al. | `Densification & Pruning`, `Foundations` | [[arXiv:2610.16292]](https://arxiv.org/abs/2610.16292) [[PDF]](https://arxiv.org/pdf/2610.16292.pdf) |
 
-Showing 60 of 1030 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
+Showing 60 of 1032 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
 
 </details>
 
