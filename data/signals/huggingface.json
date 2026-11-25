@@ -3660,6 +3660,140 @@
         "upvotes": 8
       }
     },
+    "2402.15870": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.15870",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.15870",
+          "text": "Spec-Gaussian enhances 3D Gaussian splatting by using anisotropic spherical Gaussians to model specular and anisotropic surfaces, improving rendering quality without increasing complexity."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.15870",
+          "text": "The recent advancements in 3D Gaussian splatting (3D-GS) have not only\nfacilitated real-time rendering through modern GPU rasterization pipelines but\nhave also attained state-of-the-art rendering quality. Nevertheless, despite\nits exceptional rendering quality and performance on standard datasets, 3D-GS\nfrequently encounters difficulties in accurately modeling specular and\nanisotropic components. This issue stems from the limited ability of spherical\nharmonics (SH) to represent high-frequency information. To overcome this\nchallenge, we introduce Spec-Gaussian, an approach that utilizes an anisotropic\nspherical Gaussian (ASG) appearance field instead of SH for modeling the\nview-dependent appearance of each 3D Gaussian. Additionally, we have developed\na coarse-to-fine training strategy to improve learning efficiency and eliminate\nfloaters caused by overfitting in real-world scenes. Our experimental results\ndemonstrate that our method surpasses existing approaches in terms of rendering\nquality. Thanks to ASG, we have significantly improved the ability of 3D-GS to\nmodel scenes with specular and anisotropic components without increasing the\nnumber of 3D Gaussians. This improvement extends the applicability of 3D GS to\nhandle intricate scenarios with specular and anisotropic surfaces."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.15870",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.16607": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.16607",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.16607",
+          "text": "The novel method for creating 3D Gaussian avatars from monocular video inputs improves pose accuracy and surface alignment, achieving high-fidelity photo-realistic reconstructions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.16607",
+          "text": "In this paper, we present a novel method that facilitates the creation of\nvivid 3D Gaussian avatars from monocular video inputs (GVA). Our innovation\nlies in addressing the intricate challenges of delivering high-fidelity human\nbody reconstructions and aligning 3D Gaussians with human skin surfaces\naccurately. The key contributions of this paper are twofold. Firstly, we\nintroduce a pose refinement technique to improve hand and foot pose accuracy by\naligning normal maps and silhouettes. Precise pose is crucial for correct shape\nand appearance reconstruction. Secondly, we address the problems of unbalanced\naggregation and initialization bias that previously diminished the quality of\n3D Gaussian avatars, through a novel surface-guided re-initialization method\nthat ensures accurate alignment of 3D Gaussian points with avatar surfaces.\nExperimental results demonstrate that our proposed method achieves\nhigh-fidelity and vivid 3D Gaussian avatar reconstruction. Extensive\nexperimental analyses validate the performance qualitatively and\nquantitatively, demonstrating that it achieves state-of-the-art performance in\nphoto-realistic novel view synthesis while offering fine-grained control over\nthe human body and hand pose. Project page: https://3d-aigc.github.io/GVA/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2402.16607",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2402.17427": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2402.17427",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.17427",
+          "text": "VastGaussian addresses limitations in NeRF-based methods for large scene reconstruction by partitioning scenes and decoupling appearance modeling, achieving high-quality and real-time rendering."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2402.17427",
+          "text": "Existing NeRF-based methods for large scene reconstruction often have\nlimitations in visual quality and rendering speed. While the recent 3D Gaussian\nSplatting works well on small-scale and object-centric scenes, scaling it up to\nlarge scenes poses challenges due to limited video memory, long optimization\ntime, and noticeable appearance variations. To address these challenges, we\npresent VastGaussian, the first method for high-quality reconstruction and\nreal-time rendering on large scenes based on 3D Gaussian Splatting. We propose\na progressive partitioning strategy to divide a large scene into multiple\ncells, where the training cameras and point cloud are properly distributed with\nan airspace-aware visibility criterion. These cells are merged into a complete\nscene after parallel optimization. We also introduce decoupled appearance\nmodeling into the optimization process to reduce appearance variations in the\nrendered images. Our approach outperforms existing NeRF-based methods and\nachieves state-of-the-art results on multiple large scene datasets, enabling\nfast optimization and high-fidelity real-time rendering."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/kangpeilun/VastGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2402.17427",
+        "stars": 510,
+        "submitted_on_daily_at": "2024-02-28T00:00:00.000Z",
+        "upvotes": 10
+      }
+    },
+    "2402.19441": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": "2026-12-02T10:55:08.534762Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.01444": {
+      "fetched_at": "2026-11-25T10:55:08.534762Z",
+      "last_attempt_at": "2026-11-25T10:55:08.534762Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.01444",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://sjojok.top/3dgstream/",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.01444",
+          "text": "3DGStream efficiently streams photo-realistic Free-Viewpoint Videos in real-time using 3D Gaussians and a Neural Transformation Cache, competitive in speed, quality, training time, and storage."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.01444",
+          "text": "Constructing photo-realistic Free-Viewpoint Videos (FVVs) of dynamic scenes\nfrom multi-view videos remains a challenging endeavor. Despite the remarkable\nadvancements achieved by current neural rendering techniques, these methods\ngenerally require complete video sequences for offline training and are not\ncapable of real-time rendering. To address these constraints, we introduce\n3DGStream, a method designed for efficient FVV streaming of real-world dynamic\nscenes. Our method achieves fast on-the-fly per-frame reconstruction within 12\nseconds and real-time rendering at 200 FPS. Specifically, we utilize 3D\nGaussians (3DGs) to represent the scene. Instead of the na\\\"ive approach of\ndirectly optimizing 3DGs per-frame, we employ a compact Neural Transformation\nCache (NTC) to model the translations and rotations of 3DGs, markedly reducing\nthe training time and storage required for each FVV frame. Furthermore, we\npropose an adaptive 3DG addition strategy to handle emerging objects in dynamic\nscenes. Experiments demonstrate that 3DGStream achieves competitive performance\nin terms of rendering speed, image quality, training time, and model storage\nwhen compared with state-of-the-art methods."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/SJoJoK/3DGStream"
+        },
+        "source_url": "https://huggingface.co/papers/2403.01444",
+        "stars": 472,
+        "submitted_on_daily_at": "2024-03-05T00:00:00.000Z",
+        "upvotes": 5
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
