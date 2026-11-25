@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from src.schema import PaperDatabase
-from src.storage import load_store, write_store
+from src.storage import canonical_data_path, load_store, write_store
 
 
 def sample():
@@ -84,7 +84,7 @@ def test_interrupted_commit_keeps_previous_snapshot(tmp_path, monkeypatch):
 
 
 def test_real_corpus_parity(tmp_path):
-    source = Path(__file__).resolve().parents[1] / "data" / "papers.json"
+    source = canonical_data_path(Path(__file__).resolve().parents[1])
     db = PaperDatabase.load(source)
     path = tmp_path / "manifest.json"
     write_store(db, path)
@@ -94,7 +94,7 @@ def test_real_corpus_parity(tmp_path):
 def test_cli_migration_preview_and_validation(tmp_path, capsys):
     from src.cli import main
 
-    source = Path(__file__).resolve().parents[1] / "data" / "papers.json"
+    source = canonical_data_path(Path(__file__).resolve().parents[1])
     manifest = tmp_path / "manifest.json"
     assert main(["--data", str(source), "migrate", "--dry-run", "--manifest", str(manifest)]) == 0
     assert not manifest.exists()

@@ -5,10 +5,11 @@ from pathlib import Path
 
 from src.public import DETAIL_LIMIT, build_public
 from src.schema import PaperDatabase
+from src.storage import canonical_data_path
 
 
 def fixture_5000():
-    source = PaperDatabase.load(Path(__file__).resolve().parents[1] / "data" / "papers.json")
+    source = PaperDatabase.load(canonical_data_path(Path(__file__).resolve().parents[1]))
     papers = []
     for position in range(5000):
         original = source.papers[position % len(source.papers)]
