@@ -50,12 +50,27 @@ class AuthorReview(CaptureReview):
     listing_authors: list[str] = Field(min_length=1, max_length=200)
     approved_authors: list[str] = Field(min_length=1, max_length=200)
 
+    malformed_author_tag: str | None = Field(
+        default=None, pattern=r'^<meta name="citation_author" content="[^"<>]+">$', max_length=512
+    )
+    corrected_author_tag: str | None = Field(
+        default=None, pattern=r'^<meta name="citation_author" content="[^"<>]+">$', max_length=512
+    )
+
     @model_validator(mode="after")
     def actual_variant(self):
-        if self.approved_authors == self.listing_authors or any(
-            not name.strip() for name in self.listing_authors + self.approved_authors
-        ):
-            raise ValueError("Author adjudication requires nonempty names and an actual variant")
+        if any(not name.strip() for name in self.listing_authors + self.approved_authors):
+            raise ValueError("Author adjudication requires nonempty names")
+        if self.malformed_author_tag or self.corrected_author_tag:
+            if (
+                not self.malformed_author_tag
+                or not self.corrected_author_tag
+                or self.malformed_author_tag == self.corrected_author_tag
+                or self.approved_authors != self.listing_authors
+            ):
+                raise ValueError("Source tag adjudication must preserve the listing authors")
+        elif self.approved_authors == self.listing_authors:
+            raise ValueError("Author adjudication requires an actual variant")
         return self
 
 
@@ -221,7 +236,12 @@ def parse_reviewed_capture(raw, listing, capture, listing_sha256):
     update = (
         {"title": review.approved_title} if title_review else {"authors": review.approved_authors}
     )
-    publication = parse_publication(raw.decode("utf-8"), listing.model_copy(update=update))
+    html = raw.decode("utf-8")
+    if isinstance(review, AuthorReview) and review.malformed_author_tag:
+        if html.count(review.malformed_author_tag) != 1 or review.corrected_author_tag in html:
+            raise ValueError("Reviewed source tag must identify one original author element")
+        html = html.replace(review.malformed_author_tag, review.corrected_author_tag, 1)
+    publication = parse_publication(html, listing.model_copy(update=update))
     method = (
         "reviewed_title_variant_exact_authors_edition_pdf"
         if title_review
@@ -268,7 +288,7 @@ def _apply_review(root, review, *, title_review):
             raise ValueError("Review does not identify the original listing row")
         existing = state["captures"].get(review.source_url)
         if existing:
-            if existing.get(key) != review.model_dump(mode="json"):
+            if key not in existing or type(review).model_validate(existing[key]) != review:
                 raise ValueError(
                     "Changing an existing metadata adjudication requires a new review epoch"
                 )
