@@ -577,6 +577,10 @@ supply an `AuthorReview` with the complete `listing_authors` and
 `approved_authors` arrays. Both types require source URL, frozen listing and
 retained HTTP-200 body SHA-256, dated reviewer/reason and source evidence.
 Review the actual source and independent evidence before preparing either form.
+If the listing is correct and one citation-author tag is malformed, include
+`malformed_author_tag` and `corrected_author_tag` as complete meta elements.
+Keep both author arrays equal to the verified listing. The correction applies
+only during parsing. Capture and replay preserve the original response digest.
 
 Application is offline and holds the capture lock. It only replaces the reviewed
 field in the expected in-memory row; raw listing/body bytes and the original

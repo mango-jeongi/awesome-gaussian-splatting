@@ -112,3 +112,26 @@ def test_tampered_or_combined_stored_reviews_fail_before_network(tmp_path, combi
     ) as client:
         with pytest.raises(ValueError):
             run(tmp_path, client, max_requests=0)
+
+
+def test_source_tag_review_preserves_listing_and_raw_response(tmp_path):
+    review = failed_author_capture(tmp_path)
+    data = review.model_dump()
+    data.update(
+        approved_authors=review.listing_authors,
+        malformed_author_tag='<meta name="citation_author" content="Correct, Alice">',
+        corrected_author_tag='<meta name="citation_author" content="Example, Alice">',
+    )
+    correction = AuthorReview.model_validate(data)
+    result = apply_author_review(tmp_path, correction)
+    assert result["publication"]["authors"] == review.listing_authors
+    captured = (tmp_path / "responses" / f"{review.response_sha256}.html").read_bytes()
+    assert hashlib.sha256(captured).hexdigest() == review.response_sha256
+    assert correction.malformed_author_tag.encode() in captured
+    assert apply_author_review(tmp_path, correction)["status"] == "no_op"
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda request: pytest.fail("Unexpected network"))
+    ) as client:
+        replay = run(tmp_path, client, max_requests=0)
+    assert replay["selected_metadata_complete"]
+    assert replay["reviewed_author_variant_records"] == 1
