@@ -184,14 +184,14 @@ def main():
     edges = {(p.id, t) for p in legacy.papers for t in p.db_references}
     removed = []
     for a, b in sorted(old_edges - edges):
-        assert a in legacy.archive and b in legacy.archive
-        removed.append(
-            {
-                "source": a,
-                "target": b,
-                "disposition": "Both endpoints are explicitly archived; edge retained in baseline/archival evidence",
-            }
-        )
+        archived_source = legacy.archive.get(a)
+        if archived_source is not None:
+            assert b in archived_source["paper"]["db_references"], (a, b)
+            disposition = "Source archived with its original outgoing reference"
+        else:
+            assert b in legacy.archive, (a, b)
+            disposition = "Target archived; original incoming reference retained in baseline"
+        removed.append({"source": a, "target": b, "disposition": disposition})
     report = {
         "source_raw_sha256": source_hash,
         "source_records": legacy.total_count,
