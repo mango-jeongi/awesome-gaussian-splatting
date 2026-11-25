@@ -1,6 +1,6 @@
 # Awesome 3D Gaussian Splatting (3DGS) — Comprehensive Research Database
 
-[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4186-10b981)](#taxonomy-overview)
+[![CI Quality Gate](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/ci.yml) [![Daily arXiv Feed](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml/badge.svg)](https://github.com/mango-jeongi/awesome-gaussian-splatting/actions/workflows/daily-feed.yml) [![Searchable Web Database](https://img.shields.io/badge/Web_Database-GitHub_Pages-0ea5e9?logo=github)](https://mango-jeongi.github.io/awesome-gaussian-splatting/) [![Papers Indexed](https://img.shields.io/badge/Papers_Indexed-4185-10b981)](#taxonomy-overview)
 
 > **Interactive Searchable Database**: Browse, filter by subdomain or technical tags, and export BibTeX citations at **[mango-jeongi.github.io/awesome-gaussian-splatting](https://mango-jeongi.github.io/awesome-gaussian-splatting/)**.
 
@@ -8,7 +8,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 - **Living Aggregate**: Continuous tracking across arXiv preprints, expanding to Hugging Face, OpenAlex, Semantic Scholar, and conference proceedings.
 - **Weekly Release Cycle**: Daily arXiv ingestion lands on `feed`, synced to `main` every Wednesday and published to GitHub Pages with tagged releases every Sunday.
 
-*Last updated: `2026-11-25` | Total Papers: **4186** | With Official Code: **581***
+*Last updated: `2026-11-25` | Total Papers: **4185** | With Official Code: **581***
 
 ---
 
@@ -16,7 +16,7 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 | Category | Papers | Description |
 | :--- | :---: | :--- |
-| **[Foundations & Acceleration](#foundations--acceleration)** | `1032` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
+| **[Foundations & Acceleration](#foundations--acceleration)** | `1031` | Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines. |
 | **[Dynamic & 4DGS](#dynamic--4dgs)** | `868` | 4D Gaussian Splatting, dynamic scene reconstruction, spacetime deformation, and free-viewpoint video. |
 | **[Active Perception, SLAM & Robotics](#active-perception-slam--robotics)** | `555` | Visual SLAM, odometry, active mapping, next-best-view planning, manipulation, and embodied AI. |
 | **[Human Avatars & VR](#human-avatars--vr)** | `290` | Animatable head and full-body Gaussian avatars, SMPL-X binding, relightable humans, and VR/XR telepresence. |
@@ -63,10 +63,10 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 
 ### Foundations & Acceleration
 
-*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1032 papers)
+*Core 3DGS theory, fast rasterizers, anti-aliasing, level-of-detail, and CUDA rendering pipelines.* (1031 papers)
 
 <details>
-<summary><strong>View 1032 papers in Foundations & Acceleration</strong></summary>
+<summary><strong>View 1031 papers in Foundations & Acceleration</strong></summary>
 
 | Date | Title & TL;DR | Authors | Tags | Links |
 | :---: | :--- | :--- | :--- | :---: |
@@ -98,7 +98,6 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | `2026-11` | **3D Gaussian Splatting within Self-Learned Neural View-Dependent Color Fields** **[NEURIPS 2026]**<br><sub>Proposes to learn a radiance field within a continuous view-dependent color field parameterized by neural networks.</sub> | Yang et al. | `Foundations` | [[arXiv:2611.03114]](https://arxiv.org/abs/2611.03114) [[PDF]](https://arxiv.org/pdf/2611.03114.pdf) [[Code]](https://github.com/yangyixi21/Neural-Color-Fields-3DGS) |
 | `2026-11` | **VLSplat: Vision-Language Guided Object-Centric 3D Gaussian Splatting via Scene Graph** **[NEURIPS 2026]**<br><sub>Presents VLSplat, a vision-language guided approach for object-centric semantic lifting in 3D Gaussian Splatting.</sub> | Jeon et al. | `Foundations` | [[arXiv:2611.01939]](https://arxiv.org/abs/2611.01939) [[PDF]](https://arxiv.org/pdf/2611.01939.pdf) [[Project]](https://vlsplat.github.io/) |
 | `2026-11` | **Unified Loss-Aware Density Control for 3D Gaussian Splatting** **[NEURIPS 2026]**<br><sub>Across standard 3DGS benchmarks, our method produces more targeted primitive allocation and achieves improved rendering quality with comparable or smaller Gaussian budgets compared to baselines.</sub> | Kim et al. | `Densification & Pruning`, `Foundations` | [[arXiv:2611.02044]](https://arxiv.org/abs/2611.02044) [[PDF]](https://arxiv.org/pdf/2611.02044.pdf) |
-| `2026-11` | **AbacusGS: Gaussian Splatting without Per-Splat Sorting**<br><sub>Presents AbacusGS, which stores the blending order of a 3DGS scene in the scene layout.</sub> | Ding et al. | `CUDA & Rasterization`, `Foundations` | [[arXiv:2611.01534]](https://arxiv.org/abs/2611.01534) [[PDF]](https://arxiv.org/pdf/2611.01534.pdf) |
 | `2026-10` | **3D Gaussian Splatting: A New Paradigm for Wireless Environment Representation**<br><sub>Wireless channels are shaped by the surrounding propagation environment, making explicit environment representation an effective approach for characterizing channels.</sub> | Zhang et al. | `Foundations` | [[arXiv:2611.01122]](https://arxiv.org/abs/2611.01122) [[PDF]](https://arxiv.org/pdf/2611.01122.pdf) [[Code]](https://github.com/AI4Wireless/3DGS_for_Wireless) |
 | `2026-10` | **MLLM-GS: Multimodal Large Language Model Prior-Guided Fast Novel View Synthesis in Extreme Environments**<br><sub>To this end, we propose MLLM-GS, a multimodal large language model (MLLM) prior-guided framework for fast NVS in extreme environments.</sub> | Wu et al. | `CUDA & Rasterization`, `Foundations` | [[arXiv:2610.39936]](https://arxiv.org/abs/2610.39936) [[PDF]](https://arxiv.org/pdf/2610.39936.pdf) [[Project]](https://wzlwlm13.github.io/MLLM-GS) |
 | `2026-10` | **BudSplat: Feed-forward 3D Gaussian Splatting under a Rendering Budget**<br><sub>Proposes BudSplat, a compact feed-forward 3DGS framework that learns to keep the most valuable Gaussians under a limited primitive count.</sub> | Xu et al. | `Densification & Pruning`, `Feed-Forward`, `Compression`, `Foundations` | [[arXiv:2610.38278]](https://arxiv.org/abs/2610.38278) [[PDF]](https://arxiv.org/pdf/2610.38278.pdf) |
@@ -130,8 +129,9 @@ An autonomous research database aggregating **3D/4D Gaussian Splatting** and neu
 | `2026-10` | **Gaussian Splatting for Real-Time Scene Reconstruction: Methods, Systems, and Trade-offs**<br><sub>3D Gaussian Splatting (3DGS) allows for high-quality real-time novel-view synthesis.</sub> | Dahal et al. | `SLAM`, `Sparse-View`, `Compression`, `Foundations` | [[arXiv:2610.17513]](https://arxiv.org/abs/2610.17513) [[PDF]](https://arxiv.org/pdf/2610.17513.pdf) |
 | `2026-10` | **DIGS: Distribution-Informed Gaussian Splatting for Training-Free Open-Vocabulary 3D Segmentation** **[NEURIPS 2026]**<br><sub>Presents DIGS, a training-free framework with two stages, class-agnostic mapping and multi-modal encoding, that decouples instance discovery from linguistic naming.</sub> | Zeng et al. | `Foundations` | [[arXiv:2610.16177]](https://arxiv.org/abs/2610.16177) [[PDF]](https://arxiv.org/pdf/2610.16177.pdf) [[Code]](https://github.com/ZephyrZos/DIGS) |
 | `2026-10` | **3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design**<br><sub>However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes.</sub> | Liao et al. | `Densification & Pruning`, `Foundations` | [[arXiv:2610.16292]](https://arxiv.org/abs/2610.16292) [[PDF]](https://arxiv.org/pdf/2610.16292.pdf) |
+| `2026-10` | **SplatQ: Interaction-Aware Pruning of 3D Gaussian Splatting via Quadratic Selection** **[ICLR 2027]**<br><sub>Proposes SplatQ, a combinatorial pruning algorithm that coordinates regional budget allocation and joint Gaussian selection under a fixed budget.</sub> | Ye et al. | `Densification & Pruning`, `Compression`, `Foundations` | [[arXiv:2610.13503]](https://arxiv.org/abs/2610.13503) [[PDF]](https://arxiv.org/pdf/2610.13503.pdf) |
 
-Showing 60 of 1032 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
+Showing 60 of 1031 papers. [Browse the full category](https://mango-jeongi.github.io/awesome-gaussian-splatting/#/catalog?category=Foundations%20%26%20Acceleration).
 
 </details>
 
