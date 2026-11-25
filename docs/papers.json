@@ -185509,6 +185509,19 @@
             "reviewed_at": "2026-11-09T21:25:37.999340Z"
           }
         ],
+        "categories": [
+          {
+            "source": "arxiv_method_review",
+            "source_url": "https://arxiv.org/html/2509.16806v5",
+            "value": [
+              "Medical, Defense & Multimodal Sensors",
+              "Dynamic & 4DGS"
+            ],
+            "observed_at": null,
+            "reviewed_by": "Codex",
+            "reviewed_at": "2026-11-25T17:41:00.644880Z"
+          }
+        ],
         "date_placement": [
           {
             "source": "official-arxiv-exact-ID-seed-review",
@@ -185564,6 +185577,16 @@
             "reviewed_by": "Codex (exact official title, author and identity comparison)",
             "reviewed_at": "2026-11-09T21:25:37.999340Z"
           }
+        ],
+        "tldr": [
+          {
+            "source": "arxiv_method_review",
+            "source_url": "https://arxiv.org/html/2509.16806v5",
+            "value": "MedGS uses folded Gaussian primitives for interpolation and segmentation of medical image slices, supporting anatomical surface reconstruction.",
+            "observed_at": null,
+            "reviewed_by": "Codex",
+            "reviewed_at": "2026-11-25T17:41:00.644880Z"
+          }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2509.16806",
@@ -185571,11 +185594,10 @@
       "code_url": "https://github.com/gmum/MedGS",
       "project_url": null,
       "abstract": "Endoluminal endoscopic procedures are essential for diagnosing colorectal cancer and other severe conditions in the digestive tract, urogenital system, and airways. 3D reconstruction and novel-view synthesis from endoscopic images are promising tools for enhancing diagnosis. Moreover, integrating physiological deformations and interaction with the endoscope enables the development of simulation tools from real video data. However, constrained camera trajectories and view-dependent lighting create artifacts, leading to inaccurate or overfitted reconstructions. We present MedGS, a novel 3D reconstruction framework leveraging the unique property of endoscopic imaging, where a single light source is closely aligned with the camera. Our method separates light effects from tissue properties. MedGS enhances 3D Gaussian Splatting with a physically based relightable model. We boost the traditional light transport formulation with a specialized MLP capturing complex light-related effects while ensuring reduced artifacts and better generalization across novel views. MedGS achieves superior reconstruction quality compared to baseline methods on both public and in-house datasets. Unlike existing approaches, MedGS enables tissue modifications while preserving a physically accurate response to light, making it closer to real-world clinical use. Repository: https://github.com/gmum/MedGS",
-      "tldr": "To address these challenges, we present \\our{}, a novel framework based on Gaussian Splatting (GS) designed for high-fidelity 3D anatomical reconstruction.",
+      "tldr": "MedGS uses folded Gaussian primitives for interpolation and segmentation of medical image slices, supporting anatomical surface reconstruction.",
       "primary_category": "Medical, Defense & Multimodal Sensors",
       "categories": [
         "Medical, Defense & Multimodal Sensors",
-        "Human Avatars & VR",
         "Dynamic & 4DGS"
       ],
       "tags": [
