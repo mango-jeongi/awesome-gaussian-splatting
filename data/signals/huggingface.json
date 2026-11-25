@@ -3794,6 +3794,104 @@
         "upvotes": 5
       }
     },
+    "2403.02751": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.03641": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.04116": {
+      "fetched_at": "2026-11-25T14:07:39.433207Z",
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.04116",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [
+          {
+            "id": "CaiYuanhao/X-Gaussian",
+            "relationship": "provider_linked_not_verified_official",
+            "url": "https://huggingface.co/spaces/CaiYuanhao/X-Gaussian"
+          }
+        ],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 1,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.04116",
+          "text": "A 3D Gaussian splatting-based framework, X-Gaussian, is proposed for efficient X-ray novel view synthesis with faster training and inference compared to NeRF."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.04116",
+          "text": "X-ray is widely applied for transmission imaging due to its stronger\npenetration than natural light. When rendering novel view X-ray projections,\nexisting methods mainly based on NeRF suffer from long training time and slow\ninference speed. In this paper, we propose a 3D Gaussian splatting-based\nframework, namely X-Gaussian, for X-ray novel view synthesis. Firstly, we\nredesign a radiative Gaussian point cloud model inspired by the isotropic\nnature of X-ray imaging. Our model excludes the influence of view direction\nwhen learning to predict the radiation intensity of 3D points. Based on this\nmodel, we develop a Differentiable Radiative Rasterization (DRR) with CUDA\nimplementation. Secondly, we customize an Angle-pose Cuboid Uniform\nInitialization (ACUI) strategy that directly uses the parameters of the X-ray\nscanner to compute the camera information and then uniformly samples point\npositions within a cuboid enclosing the scanned object. Experiments show that\nour X-Gaussian outperforms state-of-the-art methods by 6.5 dB while enjoying\nless than 15% training time and over 73x inference speed. The application on\nsparse-view CT reconstruction also reveals the practical values of our method.\nCode and models will be publicly available at\nhttps://github.com/caiyuanhao1998/X-Gaussian . A video demo of the training\nprocess visualization is at https://www.youtube.com/watch?v=gDVf_Ngeghg ."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/caiyuanhao1998/x-gaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.04116",
+        "stars": 336,
+        "submitted_on_daily_at": "2024-03-08T00:00:00.000Z",
+        "upvotes": 5
+      }
+    },
+    "2403.04926": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": "2026-12-02T14:07:39.433207Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.05154": {
+      "fetched_at": "2026-11-25T14:07:39.433207Z",
+      "last_attempt_at": "2026-11-25T14:07:39.433207Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.05154",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.05154",
+          "text": "GSEdit uses Gaussian splatting and a pretrained image-based diffusion model for efficient text-guided 3D object editing while preserving details and viewpoint consistency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.05154",
+          "text": "We present GSEdit, a pipeline for text-guided 3D object editing based on\nGaussian Splatting models. Our method enables the editing of the style and\nappearance of 3D objects without altering their main details, all in a matter\nof minutes on consumer hardware. We tackle the problem by leveraging Gaussian\nsplatting to represent 3D scenes, and we optimize the model while progressively\nvarying the image supervision by means of a pretrained image-based diffusion\nmodel. The input object may be given as a 3D triangular mesh, or directly\nprovided as Gaussians from a generative model such as DreamGaussian. GSEdit\nensures consistency across different viewpoints, maintaining the integrity of\nthe original object's information. Compared to previously proposed methods\nrelying on NeRF-like MLP models, GSEdit stands out for its efficiency, making\n3D editing tasks much faster. Our editing process is refined via the\napplication of the SDS loss, ensuring that our edits are both precise and\naccurate. Our comprehensive evaluation demonstrates that GSEdit effectively\nalters object shape and appearance following the given textual instructions\nwhile preserving their coherence and detail."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.05154",
+        "submitted_on_daily_at": null,
+        "upvotes": 3
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
