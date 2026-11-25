@@ -3892,6 +3892,102 @@
         "upvotes": 3
       }
     },
+    "2403.06908": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.06912": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.07494": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": "2026-12-02T17:58:24.693101Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.07807": {
+      "fetched_at": "2026-11-25T17:58:24.693101Z",
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.07807",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.07807",
+          "text": "StyleGaussian is a 3D style transfer method that applies a reference image's style to a 3D scene in real-time while maintaining multi-view consistency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.07807",
+          "text": "We introduce StyleGaussian, a novel 3D style transfer technique that allows\ninstant transfer of any image's style to a 3D scene at 10 frames per second\n(fps). Leveraging 3D Gaussian Splatting (3DGS), StyleGaussian achieves style\ntransfer without compromising its real-time rendering ability and multi-view\nconsistency. It achieves instant style transfer with three steps: embedding,\ntransfer, and decoding. Initially, 2D VGG scene features are embedded into\nreconstructed 3D Gaussians. Next, the embedded features are transformed\naccording to a reference style image. Finally, the transformed features are\ndecoded into the stylized RGB. StyleGaussian has two novel designs. The first\nis an efficient feature rendering strategy that first renders low-dimensional\nfeatures and then maps them into high-dimensional features while embedding VGG\nfeatures. It cuts the memory consumption significantly and enables 3DGS to\nrender the high-dimensional memory-intensive features. The second is a\nK-nearest-neighbor-based 3D CNN. Working as the decoder for the stylized\nfeatures, it eliminates the 2D CNN operations that compromise strict multi-view\nconsistency. Extensive experiments show that StyleGaussian achieves instant 3D\nstylization with superior stylization quality while preserving real-time\nrendering and strict multi-view consistency. Project page:\nhttps://kunhao-liu.github.io/StyleGaussian/"
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/Kunhao-Liu/StyleGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.07807",
+        "stars": 216,
+        "submitted_on_daily_at": null,
+        "upvotes": 3
+      }
+    },
+    "2403.08321": {
+      "fetched_at": "2026-11-25T17:58:24.693101Z",
+      "last_attempt_at": "2026-11-25T17:58:24.693101Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.08321",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08321",
+          "text": "A dynamic Gaussian Splatting method, ManiGaussian, improves multi-task robotic manipulation by predicting scene-level spatiotemporal dynamics and providing future scene reconstruction for better action prediction."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08321",
+          "text": "Performing language-conditioned robotic manipulation tasks in unstructured\nenvironments is highly demanded for general intelligent robots. Conventional\nrobotic manipulation methods usually learn semantic representation of the\nobservation for action prediction, which ignores the scene-level spatiotemporal\ndynamics for human goal completion. In this paper, we propose a dynamic\nGaussian Splatting method named ManiGaussian for multi-task robotic\nmanipulation, which mines scene dynamics via future scene reconstruction.\nSpecifically, we first formulate the dynamic Gaussian Splatting framework that\ninfers the semantics propagation in the Gaussian embedding space, where the\nsemantic representation is leveraged to predict the optimal robot action. Then,\nwe build a Gaussian world model to parameterize the distribution in our dynamic\nGaussian Splatting framework, which provides informative supervision in the\ninteractive environment via future scene reconstruction. We evaluate our\nManiGaussian on 10 RLBench tasks with 166 variations, and the results\ndemonstrate our framework can outperform the state-of-the-art methods by 13.1\\%\nin average success rate. Project page:\nhttps://guanxinglu.github.io/ManiGaussian/."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/GuanxingLu/ManiGaussian"
+        },
+        "source_url": "https://huggingface.co/papers/2403.08321",
+        "stars": 285,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
