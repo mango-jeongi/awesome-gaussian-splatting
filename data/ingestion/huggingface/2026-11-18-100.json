@@ -434,7 +434,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend. This report describes the design principles and systems engineering behind the series, spanning architecture selection, large-scale pretraining, and reasoning and agentic post-training. We study how sparse activation, attention design, model depth and width, and speculative decoding balance model capacity with computation, memory access, and execution overhead. Our pretraining infrastructure builds on MindSpore HyperParallel, combining topology-aware hybrid sharding, efficient distributed optimizer execution, and coordinated management of long-sequence workloads and activation memory. CPU affinity and core isolation further reduce host scheduling interference. Together, these mechanisms support the pretraining of a 285B-parameter model on 8,192 Ascend 910C cards, providing a concrete setting for the architectural and systems studies. For post-training, we introduce TeleGym, a unified agent execution platform that connects execution, evaluation, and trajectory construction to policy optimization. Disaggregated asynchronous execution, bounded oversampling, and partial rollout accommodate heterogeneous task durations while preserving trajectory continuity across policy updates. Together, these advances establish an Ascend-oriented training foundation for the continued development of Xing 4 across model scales and increasingly demanding reasoning and agent workloads.",
         "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
-        "upvotes": 166
+        "upvotes": 168
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -525,7 +525,7 @@
           }
         ],
         "githubRepo": "https://github.com/SLAI-AITP/AscendGYM",
-        "githubStars": 34,
+        "githubStars": 35,
         "id": "2611.17621",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -534,7 +534,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs. Existing Ascend kernel benchmarks primarily focus on kernel generation, with less emphasis on the ability of agents to optimize existing implementations under input configurations drawn from real workloads. To address this requirement, we introduce AscendGYM, a benchmark whose initial suite comprises 48 kernels across three difficulty levels. Each kernel is paired with test cases whose data types and tensor shapes are collected from real-world training and inference tasks. Consequently, performance improvements on AscendGYM map directly to the corresponding workloads. In terms of usability, two evaluation modes are supported in AscendGYM: model evaluation and model-harness evaluation. The kernel optimization capabilities of both trained models and custom agents are allowed to be measured. It provides a complete execution environment that closely reproduces how Ascend kernels are invoked in practical pipelines. For model evaluation, it additionally includes a built-in harness equipped with search orchestration and experience accumulation. Finally, we propose a new metric, the Speedup-Token Score (STS), which quantifies performance gains relative to token cost. By jointly considering speedup and cost, STS enables the assessment of practical kernel optimization capability of a model or harness under an acceptable budget. AscendGYM is available at https://github.com/SLAI-AITP/AscendGYM.",
         "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
-        "upvotes": 94
+        "upvotes": 95
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -559,7 +559,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs. In weight-space programming, a large language model (LLM) writes target weights by hand without gradient-based training, so those reasons no longer apply. Should we keep the Transformer? Given minimal guidance, ten labeled examples, and a sandbox, mainly on multiple-choice questions, we task three frontier LLMs with either generating the weights of a fixed architecture or designing the architecture themselves. When free to design, all three compile plain-text facts into a sparse table queried by a fixed procedure, reaching up to 54.4% test accuracy. An LLM-designed model achieves higher test accuracy than the most accurate released Transformer that the same LLM wrote while using about 1,800x fewer parameters. Without gradients, they choose a table, in which the LLM can state what each weight means and can find and rewrite a wrong one. Each wrong answer points to one row, and removing a row changes about one other answer. From this, we propose an associative-memory-based model up to 17x faster on GPUs than a same-sized Transformer. We also test pretrained weights, other benchmarks, and tasks where models generate answers. Pretrained LLMs remain more accurate; the claim concerns which structure to build when writing weights.",
         "title": "Weight-Space Programming Doesn't Need Transformers",
-        "upvotes": 55
+        "upvotes": 56
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -596,7 +596,7 @@
           }
         ],
         "githubRepo": "https://github.com/GaotangLi/Multi-Branch-Transformer",
-        "githubStars": 13,
+        "githubStars": 14,
         "id": "2611.19800",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -605,7 +605,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Transformer language models are commonly scaled by making their blocks wider or stacking them deeper. In this work, we explore a complementary path: branching, the parallel composition of full Transformer blocks. We introduce the Multi-Branch Transformer (MBT), which processes the input through shared initial layers, executes independently parameterized branches of sequential blocks in parallel, and fuses their outputs before shared final layers. At comparable training compute, we study three MBT variants: Wide-Shallow preserves block width, Narrow-Deep preserves sequential depth, and Balanced interpolates between them. In controlled pretraining experiments at four mixture-of-experts scales (0.8B to 2.1B total parameters), 2-branch Wide-Shallow MBTs consistently outperform sequential Transformers under matched parameter and training-compute budgets. Balanced MBTs improve further and retain comparable quality as the number of branches increases. To improve inference efficiency at long contexts, we introduce Joint-KV, which constructs a shared KV cache from branch representations at each depth. Our final recipe combines Balanced MBTs with Joint-KV, supported by an inference engine that exploits branch grouping and shared-cache reuse. Fitted scaling curves indicate that standard Transformers require up to 1.26x as much training body compute to match our final models' validation loss. These models reduce full-model KV-cache storage by up to 34% and deliver up to 51.4% higher decoding throughput on a single H200 GPU. Ablation studies show that branching yields gains beyond changes in width and depth, enables an effective KV-sharing strategy (Joint-KV), remains robust across fusion functions, and performs best in the middle layers. These findings show that branching offers a practical path for scaling language models toward both better modeling quality and faster inference.",
         "title": "Multi-Branch Transformer",
-        "upvotes": 49
+        "upvotes": 51
       },
       "publishedAt": "2026-11-14T19:00:00.000Z"
     },
@@ -630,7 +630,7 @@
           }
         ],
         "githubRepo": "https://github.com/showlab/ForceHarness",
-        "githubStars": 51,
+        "githubStars": 52,
         "id": "2611.21099",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -688,7 +688,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Harness optimization is often studied with a fixed policy model and benchmark. When either changes, the optimizer must decide which parts of an evolved harness to reuse or revise, but the harness alone may not explain why earlier edits were made or how they performed. In this work, we study Continual Recursive Self-Improvement (CRSI), a setting for continuing existing harness-optimization methods across compatible benchmarks or policy models. We propose Self-Improvement Memory (SIM) for the harness optimizer, rather than the task-solving policy. SIM groups edits by recurring harness problem and records their rationale, predicted and observed outcomes, and evaluation context. New attempts extend this history as optimization continues. In our experiments across four domains, SIM achieves higher final scores than harness-only and root-cause-only continuation in cross-dataset and pairwise cross-model comparisons. Across ten independent source runs in coding, paired continuations with SIM improve final scores by an average of 2.36 points over harness-only continuation (p=0.003).",
         "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
-        "upvotes": 39
+        "upvotes": 41
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
     },
@@ -719,7 +719,7 @@
           }
         ],
         "githubRepo": "https://github.com/apple-aiml-research/ml-fastframes",
-        "githubStars": 146,
+        "githubStars": 174,
         "id": "2611.23226",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -848,7 +848,7 @@
           }
         ],
         "githubRepo": "https://github.com/heaveho-humanoid/Heave-Ho",
-        "githubStars": 30,
+        "githubStars": 32,
         "id": "2611.22275",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -858,46 +858,6 @@
         "summary": "Collaboration promises to extend humanoid capabilities beyond what individual robots can achieve. However, realizing this potential requires coordinated whole-body interactions, coherent long-horizon planning, and precise synchronization across robots. We introduce Heave-Ho, a decentralized framework for long-horizon collaborative multi-humanoid loco-manipulation. At the low level, we develop a multi-agent post-training framework that adapts a humanoid foundation tracking model to physically coupled interactions between humanoids, enabling coordinated decentralized control from local observations alone. At the high level, we train a vision-language planner and design a speech-based leader-follower coordination mechanism to synchronize decentralized execution without network communication. Trained with two identical humanoids, our system scales to teams of up to ten robots and generalizes to heterogeneous teams without retraining. To benchmark these capabilities, we introduce HH-Bench, comprising 12 tasks involving teams of 2 to 10 humanoids, including heterogeneous teams. Systematic evaluations show that Heave-Ho consistently outperforms baseline methods, while real-world experiments demonstrate robust decentralized collaboration across challenging tasks.",
         "title": "Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration",
         "upvotes": 23
-      },
-      "publishedAt": "2026-11-16T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "This unified foundation model enables the recovery of dense geometry, camera poses, and object tracking from diverse, uncalibrated observations in 4D scenes using a shared geometry and motion branch architecture.",
-        "authors": [
-          {
-            "name": "Yifan Wang"
-          },
-          {
-            "name": "Weiguang Zhao"
-          },
-          {
-            "name": "Ni Yang"
-          },
-          {
-            "name": "Haoyu Guo"
-          },
-          {
-            "name": "Junting Dong"
-          },
-          {
-            "name": "Weinan Zhang"
-          },
-          {
-            "name": "Chunhua Shen"
-          }
-        ],
-        "githubRepo": "https://github.com/yyfz/Pi4",
-        "githubStars": 442,
-        "id": "2611.23144",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://yyfz.github.io/pi4",
-        "publishedAt": "2026-11-17T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "π^4 is a unified foundation model for 4D scene perception. From diverse, uncalibrated RGB observations in the wild---a single image, an unordered collection, or a video sequence---it recovers dense geometry, camera poses, and metric scale, together with 2D/3D point tracks and moving-object masks for multi-image inputs. It couples a geometry branch with a geometry-conditioned motion branch, which predicts image-space correspondences that are lifted into 3D using reconstructed target-view geometry. Across diverse benchmarks, π^4 achieves the best overall average rank in geometry evaluation, alongside competitive performance in single- and multiview 2D/3D point tracking and moving-object segmentation. With a shared backbone, the full geometry-and-motion system contains approximately 0.5B parameters---less than half the size of most baselines. It produces joint reconstructions and tracks in one forward pass, including large-scale scenes with thousands of input images despite training with contexts of at most 64 views. We further present the data and training recipe underlying these capabilities, together with empirical studies of key design choices. Code and models are available at https://github.com/yyfz/Pi4.",
-        "title": "π^4: A Foundation Model for 4D Scene Geometry and Motion",
-        "upvotes": 21
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -937,9 +897,49 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Understanding long videos requires locating evidence, resolving visual details, and integrating observations into an answer. Even when relevant evidence is present, performing these operations within long, dense visual sequences burdens both perception and reasoning. Video agents enable selective inspection, but returning frames to the planner still accumulates visual information in its reasoning context. Delegating perception reduces this burden, yet sparse sampling can miss decisive details, and per-frame descriptions can preserve context growth. We introduce VideoNexus, a training-free framework that separates detailed video perception from evidence-driven planning and reasoning. The planner controls where to inspect, what to resolve, and how densely to sample. Perception sub-agents process native audio-video in independent contexts and return compact, temporally grounded evidence for iterative search and verification. Using Gemini 3.8 Flash for both planning and perception, VideoNexus achieves 88.6% accuracy on full LVBench, exceeding same-backbone static ingestion and built-in agentic processing by 3.6 and 1.1 points, respectively, at 44% of the latter's measured API cost. A paired LVBench subset ablation shows lower planner input and higher accuracy. With Kimi K3 as the shared backbone, VideoNexus improves over the official Video-GAIA ReAct harness by 8.5 points in our evaluation. These results support compact evidence exchange for combining detailed observation with efficient planning and reasoning.",
         "title": "VideoNexus: Video Perception Beyond the Reasoning Context",
-        "upvotes": 20
+        "upvotes": 21
       },
       "publishedAt": "2026-11-15T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "This unified foundation model enables the recovery of dense geometry, camera poses, and object tracking from diverse, uncalibrated observations in 4D scenes using a shared geometry and motion branch architecture.",
+        "authors": [
+          {
+            "name": "Yifan Wang"
+          },
+          {
+            "name": "Weiguang Zhao"
+          },
+          {
+            "name": "Ni Yang"
+          },
+          {
+            "name": "Haoyu Guo"
+          },
+          {
+            "name": "Junting Dong"
+          },
+          {
+            "name": "Weinan Zhang"
+          },
+          {
+            "name": "Chunhua Shen"
+          }
+        ],
+        "githubRepo": "https://github.com/yyfz/Pi4",
+        "githubStars": 475,
+        "id": "2611.23144",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://yyfz.github.io/pi4",
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "π^4 is a unified foundation model for 4D scene perception. From diverse, uncalibrated RGB observations in the wild---a single image, an unordered collection, or a video sequence---it recovers dense geometry, camera poses, and metric scale, together with 2D/3D point tracks and moving-object masks for multi-image inputs. It couples a geometry branch with a geometry-conditioned motion branch, which predicts image-space correspondences that are lifted into 3D using reconstructed target-view geometry. Across diverse benchmarks, π^4 achieves the best overall average rank in geometry evaluation, alongside competitive performance in single- and multiview 2D/3D point tracking and moving-object segmentation. With a shared backbone, the full geometry-and-motion system contains approximately 0.5B parameters---less than half the size of most baselines. It produces joint reconstructions and tracks in one forward pass, including large-scale scenes with thousands of input images despite training with contexts of at most 64 views. We further present the data and training recipe underlying these capabilities, together with empirical studies of key design choices. Code and models are available at https://github.com/yyfz/Pi4.",
+        "title": "π^4: A Foundation Model for 4D Scene Geometry and Motion",
+        "upvotes": 21
+      },
+      "publishedAt": "2026-11-16T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1121,7 +1121,7 @@
           }
         ],
         "githubRepo": "https://github.com/zfkarl/MedJev",
-        "githubStars": 191,
+        "githubStars": 254,
         "id": "2611.20992",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1161,7 +1161,7 @@
           }
         ],
         "githubRepo": "https://github.com/kulibinai/cadmageddon",
-        "githubStars": 14,
+        "githubStars": 15,
         "id": "2611.22563",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1170,7 +1170,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "CAD practitioners often work with proprietary parts that they are unwilling to share with external services. For individuals and small companies, bringing this work in-house also requires computational resources they can afford. We introduce CADMAGEDDON, an open-source agent that reconstructs editable CAD from meshes and can run locally on single-GPU systems and current-generation laptops. The method decomposes this complex task into a chain of simple visual decisions about what to construct and what to correct. Geometric tools support precise construction, allowing the agent to focus on visual reasoning. Using the mid-sized Qwen3.8-27B model, CADMAGEDDON outperforms prior approaches, including systems based on frontier models, in reconstruction quality on all the main benchmarks. CADMAGEDDON integrates with FreeCAD, bringing its reconstructions into practitioners' existing CAD workflows. Code: https://github.com/kulibinai/cadmageddon",
         "title": "CADMAGEDDON: High-Fidelity CAD Reconstruction with Local Inference",
-        "upvotes": 10
+        "upvotes": 11
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -1192,7 +1192,7 @@
         "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
         "summary": "Learned lossless codecs make smaller files than common classical codecs, yet the images we archive and train on still use classical codecs. A main reason is time: a learned codec takes seconds to decode a photo that a classical codec opens in milliseconds, and their faster variants give up most of their gain in size. We argue that much of this time is spent waiting, not computing: the network waits for the values it conditions on, and the arithmetic decoder reads them one at a time. We introduce FMT (Fixed-step Multiscale Tree), a lossless image format whose decoding order and entropy coder are designed together so that neither wait grows with the image. FMT stores an image as a coarse-to-fine tree whose steps hold independent values: a GPU predicts each step at once and decodes it in parallel rANS lanes that carry their states from step to step, so an image of any size decodes in a fixed number of sequential steps. On this tree we build a family of bit-exact codecs, from a rule with no network to large networks, and no codec we ran on the same GPU beats any of them on both size and speed. Without a network, FMT beats NVIDIA's HTJ2K on size and speed; with a large one, it decodes Kodak photos 9 to 61X faster than learned codecs we ran on the same A100, at the same size or smaller.",
         "title": "FMT: Lossless Image Compression in a Fixed Number of Parallel Steps",
-        "upvotes": 10
+        "upvotes": 11
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
     },
@@ -1275,7 +1275,7 @@
           }
         ],
         "githubRepo": "https://github.com/J-sandler/DNeo",
-        "githubStars": 12,
+        "githubStars": 13,
         "id": "2611.21925",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1400,7 +1400,7 @@
           }
         ],
         "githubRepo": "https://github.com/StanfordMIMI/Glyph",
-        "githubStars": 20,
+        "githubStars": 31,
         "id": "2611.08922",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1604,7 +1604,7 @@
           }
         ],
         "githubRepo": "https://github.com/kulibinai/MillBill",
-        "githubStars": 7,
+        "githubStars": 8,
         "id": "2611.22565",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1706,6 +1706,46 @@
     },
     {
       "paper": {
+        "ai_summary": "TPHC combines tensor-parallel shards with hyper-connection residual streams to enable more independent stream updates, improving language model loss and zero-shot reasoning with modest training overhead.",
+        "authors": [
+          {
+            "name": "Xinying Hu"
+          },
+          {
+            "name": "You Wu"
+          },
+          {
+            "name": "Haoyi Wu"
+          },
+          {
+            "name": "Jianchao Tan"
+          },
+          {
+            "name": "Kefeng Zhang"
+          },
+          {
+            "name": "Yuchen Xie"
+          },
+          {
+            "name": "Kewei Tu"
+          }
+        ],
+        "githubRepo": "https://github.com/wuyou2002/TPHC",
+        "githubStars": 1,
+        "id": "2611.23026",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Hyper-Connections (HC) expand the residual stream of a Transformer into N parallel streams, and manifold-constrained HC (mHC) stabilizes them at scale. However, mHC benefits little from more than four streams, partly because each sublayer writes a single output to all streams, limiting how differently they can be updated. In this work, we propose TPHC, which integrates tensor-parallel (TP) shards with HC streams to promote greater independence across streams. Specifically, we route a separate mixture of the residual streams to each TP shard and keep the individual shard outputs separate during write-back, so each stream can receive a different mixture of those outputs. This design makes the residual-stream updates more expressive without adding parameters or FLOPs to the attention or FFN sublayers. With native support for stream sharding under TP, TPHC requires only 9% more training time than mHC on an 8B model when both use four streams. Increasing the number of streams from four to sixteen raises its training time by only 19%. On a 1.1B model trained on 100B tokens, TPHC reduces validation loss by 0.7-1.0% and raises average zero-shot accuracy across six commonsense reasoning benchmarks by 0.3-0.7 percentage points relative to mHC at matched stream counts Nin{4,8,16}. Our code is available at https://github.com/wuyou2002/TPHC.",
+        "title": "TPHC: Improving Hyper-Connections with Tensor-Parallel Grouped Updates",
+        "upvotes": 4
+      },
+      "publishedAt": "2026-11-16T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": "ResWAM combines visual residual learning in frozen DINOv3 features with a lightweight dual-branch DiT trained via conditional flow matching to improve vision-language-action policy success while lowering training and inference compute.",
         "authors": [
           {
@@ -1753,7 +1793,7 @@
           }
         ],
         "githubRepo": "https://github.com/Aayush-Marasini/WeightBench",
-        "githubStars": 5,
+        "githubStars": 7,
         "id": "2611.18553",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1765,6 +1805,28 @@
         "upvotes": 3
       },
       "publishedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "A simple monocular pose estimator trained on synthetic spacecraft images shows poor real-world transfer, with overconfident pose errors and uneven gains from backbone adaptation and photometric augmentation under different lighting.",
+        "authors": [
+          {
+            "name": "Nikolay Dolgov"
+          }
+        ],
+        "githubRepo": "https://github.com/lokindoo/spacecraft-pose-estimation",
+        "githubStars": 2,
+        "id": "2611.20321",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://zenodo.org/records/24140385",
+        "publishedAt": "2026-11-15T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Vision-based navigation systems for orbit must be trained almost entirely on synthetic imagery, because real labelled images of a given spacecraft in flight rarely exist. Benchmarks like SPEED+ are built for that situation: the training set comes from a simulator, and the test sets are real images of a satellite mockup under two kinds of lighting. That simulator approximates how light reflects off mylar and aluminium, and like every scientific simulator it is misspecified. Its error is radiometric, since it misses the specular highlights, hard shadows and sensor saturation common in real images. We probe the resulting synthetic-to-real gap, the central risk for such systems, with a deliberately simple monocular pose estimator. In a 2x2 study of backbone adaptation and photometric augmentation, trained on synthetic images and tested on both real hardware-in-the-loop domains, we find three things. (1) The model does not know it is failing: regions conformally calibrated to 90% on synthetic data cover only 9-15% of rotation errors on sunlamp and 21-38% on lightbox, so a wrong pose carries the confidence of a correct one. (2) Transfer is asymmetric: scaling data and features improved synthetic rotation error from 1.65 to 1.03 rad but moved the harshly lit sunlamp domain by only 0.05 rad, under twice its seed s.d., whereas adapting the backbone's last stage carried 63-83% of its extra synthetic gain to both real domains. (3) Once the backbone adapts, augmentation helps only in the direction it models: our photometric stack improved the diffusely lit lightbox domain from 1.17 to 0.99 rad on every seed but moved sunlamp no more than seed-to-seed variation, while with the backbone frozen it helped sunlamp more. Every post-review experiment was pre-registered, and the code, per-image predictions and pre-registration record are at https://github.com/lokindoo/spacecraft-pose-estimation.",
+        "title": "Unreasonable Confidence from Simulator Misspecification: Directional Robustness on the SPEED+ Sim-to-Real Benchmark",
+        "upvotes": 3
+      },
+      "publishedAt": "2026-11-14T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1787,7 +1849,7 @@
           }
         ],
         "githubRepo": "https://github.com/ngquangtrung57/M3OPD-Reasoner",
-        "githubStars": 4,
+        "githubStars": 6,
         "id": "2611.23034",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1799,68 +1861,6 @@
         "upvotes": 3
       },
       "publishedAt": "2026-11-16T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "TPHC combines tensor-parallel shards with hyper-connection residual streams to enable more independent stream updates, improving language model loss and zero-shot reasoning with modest training overhead.",
-        "authors": [
-          {
-            "name": "Xinying Hu"
-          },
-          {
-            "name": "You Wu"
-          },
-          {
-            "name": "Haoyi Wu"
-          },
-          {
-            "name": "Jianchao Tan"
-          },
-          {
-            "name": "Kefeng Zhang"
-          },
-          {
-            "name": "Yuchen Xie"
-          },
-          {
-            "name": "Kewei Tu"
-          }
-        ],
-        "githubRepo": "https://github.com/wuyou2002/TPHC",
-        "githubStars": 1,
-        "id": "2611.23026",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-17T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "Hyper-Connections (HC) expand the residual stream of a Transformer into N parallel streams, and manifold-constrained HC (mHC) stabilizes them at scale. However, mHC benefits little from more than four streams, partly because each sublayer writes a single output to all streams, limiting how differently they can be updated. In this work, we propose TPHC, which integrates tensor-parallel (TP) shards with HC streams to promote greater independence across streams. Specifically, we route a separate mixture of the residual streams to each TP shard and keep the individual shard outputs separate during write-back, so each stream can receive a different mixture of those outputs. This design makes the residual-stream updates more expressive without adding parameters or FLOPs to the attention or FFN sublayers. With native support for stream sharding under TP, TPHC requires only 9% more training time than mHC on an 8B model when both use four streams. Increasing the number of streams from four to sixteen raises its training time by only 19%. On a 1.1B model trained on 100B tokens, TPHC reduces validation loss by 0.7-1.0% and raises average zero-shot accuracy across six commonsense reasoning benchmarks by 0.3-0.7 percentage points relative to mHC at matched stream counts Nin{4,8,16}. Our code is available at https://github.com/wuyou2002/TPHC.",
-        "title": "TPHC: Improving Hyper-Connections with Tensor-Parallel Grouped Updates",
-        "upvotes": 3
-      },
-      "publishedAt": "2026-11-16T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A simple monocular pose estimator trained on synthetic spacecraft images shows poor real-world transfer, with overconfident pose errors and uneven gains from backbone adaptation and photometric augmentation under different lighting.",
-        "authors": [
-          {
-            "name": "Nikolay Dolgov"
-          }
-        ],
-        "githubRepo": "https://github.com/lokindoo/spacecraft-pose-estimation",
-        "githubStars": 2,
-        "id": "2611.20321",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://zenodo.org/records/24140385",
-        "publishedAt": "2026-11-15T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-18T00:00:00.000Z",
-        "summary": "Vision-based navigation systems for orbit must be trained almost entirely on synthetic imagery, because real labelled images of a given spacecraft in flight rarely exist. Benchmarks like SPEED+ are built for that situation: the training set comes from a simulator, and the test sets are real images of a satellite mockup under two kinds of lighting. That simulator approximates how light reflects off mylar and aluminium, and like every scientific simulator it is misspecified. Its error is radiometric, since it misses the specular highlights, hard shadows and sensor saturation common in real images. We probe the resulting synthetic-to-real gap, the central risk for such systems, with a deliberately simple monocular pose estimator. In a 2x2 study of backbone adaptation and photometric augmentation, trained on synthetic images and tested on both real hardware-in-the-loop domains, we find three things. (1) The model does not know it is failing: regions conformally calibrated to 90% on synthetic data cover only 9-15% of rotation errors on sunlamp and 21-38% on lightbox, so a wrong pose carries the confidence of a correct one. (2) Transfer is asymmetric: scaling data and features improved synthetic rotation error from 1.65 to 1.03 rad but moved the harshly lit sunlamp domain by only 0.05 rad, under twice its seed s.d., whereas adapting the backbone's last stage carried 63-83% of its extra synthetic gain to both real domains. (3) Once the backbone adapts, augmentation helps only in the direction it models: our photometric stack improved the diffusely lit lightbox domain from 1.17 to 0.99 rad on every seed but moved sunlamp no more than seed-to-seed variation, while with the backbone frozen it helped sunlamp more. Every post-review experiment was pre-registered, and the code, per-image predictions and pre-registration record are at https://github.com/lokindoo/spacecraft-pose-estimation.",
-        "title": "Unreasonable Confidence from Simulator Misspecification: Directional Robustness on the SPEED+ Sim-to-Real Benchmark",
-        "upvotes": 2
-      },
-      "publishedAt": "2026-11-14T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1977,6 +1977,6 @@
       "publishedAt": "2026-11-15T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-23T14:20:59.961978+00:00",
+  "fetched_at": "2026-11-24T14:44:06.457232+00:00",
   "limit": 100
 }
