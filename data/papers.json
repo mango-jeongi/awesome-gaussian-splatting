@@ -1,8 +1,698 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2026-11-25T10:54:46Z",
-  "total_count": 4190,
+  "last_updated": "2026-11-26T10:29:46Z",
+  "total_count": 4209,
   "papers": [
+    {
+      "id": "2611.34810",
+      "arxiv_id": "2611.34810",
+      "doi": null,
+      "source": "arxiv",
+      "title": "WorldExpand: Building Coherent 3D Worlds via Sparse Joint Panoramic Expansion",
+      "authors": [
+        "Yuyang Yin",
+        "Chenjie Cao",
+        "Xuhui Zuo",
+        "Yuning Gong",
+        "Pengfei Wang",
+        "Junta Wu",
+        "Zhenwei Wang",
+        "Yao Zhao",
+        "Tengfei Wang",
+        "Yunchao Wei",
+        "Chunchao Guo"
+      ],
+      "first_author": "Yin et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34810",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34810v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34810",
+      "pdf_url": "https://arxiv.org/pdf/2611.34810.pdf",
+      "code_url": null,
+      "project_url": "https://yuyangyin.github.io/WorldExpand_web/",
+      "abstract": "Constructing complete 3D worlds from a single panorama is challenging because large portions of the scene remain unobserved. Existing panoramic-video methods expand spatial coverage through dense sequential generation, but neighboring frames contain substantial redundancy, long trajectories accumulate errors, and independently generated directions may be inconsistent. We present WorldExpand, which formulates single-panorama world expansion as the generation of sparse, complementary, and high-resolution panoramic observations. This representation concentrates the generation budget on informative scene regions and preserves the fine-grained details required for 3D construction. WorldExpand addresses two key challenges: where to observe and how to synthesize. Our Coverage-Guided View Selection identifies informative target locations using scene-adaptive quadrants and warp-based coverage scores, while our Joint Panoramic Diffusion uses Gaussian-splatting-based geometric warps to jointly synthesize four pose-grounded and cross-view-consistent panoramas. A diagnostic-guided global--local attention schedule retains global attention only in sensitive layers, reducing the training and inference costs of high-resolution joint generation. The resulting posed panoramas can be directly fed into an existing reconstruction pipeline to build an explicit 3D representation. Experiments show that WorldExpand recovers content behind occluders and around distant corners, improves both novel-view synthesis and downstream 3D reconstruction metrics across various datasets, and generalizes robustly to diverse in-the-wild scenes. WorldExpand runs significantly faster than the state-of-the-art panoramic-video method while producing higher-resolution observations with stronger cross-view consistency.",
+      "tldr": "Presents WorldExpand, which formulates single-panorama world expansion as the generation of sparse, complementary, and high-resolution panoramic observations.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Diffusion",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Project Page: https://yuyangyin.github.io/WorldExpand_web/",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33920",
+      "arxiv_id": "2611.33920",
+      "doi": null,
+      "source": "arxiv",
+      "title": "UPP-Gauss: Ultrasound Propagation Physics-informed Gaussian Splatting for B-mode Novel-View Synthesis",
+      "authors": [
+        "Guil Jung",
+        "Seok-Hwan Oh",
+        "Myeong-Gee Kim",
+        "Young-Min Kim",
+        "Hyeon-Jik Lee",
+        "Sang-Yun Kim",
+        "Hyeok-Jun Kwon",
+        "Hyuk-Sool Kwon",
+        "Hyeon-Min Bae"
+      ],
+      "first_author": "Jung et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33920",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33920v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33920",
+      "pdf_url": "https://arxiv.org/pdf/2611.33920.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Accurate novel-view synthesis of B-mode ultrasound images requires modeling acoustic propagation through tissue and the resulting appearance variations across probe poses. We propose Ultrasound Propagation Physics-informed Gaussian Splatting (UPP-Gauss), which integrates these acoustic interactions into an explicit Gaussian representation. UPP-Gauss constructs acoustic maps by sampling three 3D Gaussian fields using the probe pose and acoustic beam propagation direction, then combines these maps according to ultrasound propagation to synthesize B-mode images. Across three acoustically diverse datasets, UPP-Gauss achieves the best reconstruction quality with efficient rendering, improving PSNR over the best baseline on each dataset by 1.43 dB on average. These results demonstrate accurate and efficient B-mode novel-view synthesis through explicit Gaussian modeling of ultrasound propagation.",
+      "tldr": "Proposes Ultrasound Propagation Physics-informed Gaussian Splatting (UPP-Gauss), which integrates these acoustic interactions into an explicit Gaussian representation.",
+      "primary_category": "Medical, Defense & Multimodal Sensors",
+      "categories": [
+        "Medical, Defense & Multimodal Sensors"
+      ],
+      "tags": [
+        "Medical & Healthcare",
+        "Physics & Simulation",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "5 pages, 3 figures",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33905",
+      "arxiv_id": "2611.33905",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Tortho-Gaussian++: Suppressing Geometric Drift and Floaters for Robust Gravity-Aligned TDOM Generation in Large-Scale Aerial Scenes",
+      "authors": [
+        "Xiang Wang",
+        "Xin Wang",
+        "Zongqian Zhan"
+      ],
+      "first_author": "Wang et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33905",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33905v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33905",
+      "pdf_url": "https://arxiv.org/pdf/2611.33905.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) has demonstrated remarkable performance in aerial scene reconstruction, motivating its recent extension to true digital orthophoto maps (TDOMs) generation. We propose Tortho-Gaussian++, a novel 3DGS training framework that suppresses geometric drift and floaters and automatically prunes unreliable peripheral regions, coupled with a robust gravity-aligned TDOM rendering solution. First, we explore geometric support via viewing-ray-based geometric observability analysis, quantitatively characterizing the reliability for each Gaussian and subsequently pruning peripheral regions with particularly weak geometric support. Second, the optimizer state initialization is refined for newly created Gaussians during densification, intrinsically suppressing drift and floaters without external priors. Lastly, a robust gravity direction estimation solution is designed, combining image-derived gravity cues, camera-distribution priors and nadir views, to achieve a gravity-aligned orthogonal projection reference for TDOM rendering. Extensive experiments on multiple large-scale UAV (Unmanned Aerial Vehicle) datasets demonstrate that our Tortho-Gaussian++ outperforms vanilla 3DGS by 0.5-3.5 dB in average PSNR and yields comparable or superior performance to prior-guided 3DGS methods. Notably, it reduces the training time, VRAM and Gaussian number by 45.5%, 47.2%, and 58.6%, respectively. Qualitative evaluations confirm that our method effectively suppresses drift and floaters, while robust gravity direction estimation reduces tilt-induced facade artifacts in TDOMs.",
+      "tldr": "Proposes Tortho-Gaussian++, a novel 3DGS training framework that suppresses geometric drift and floaters and automatically prunes unreliable peripheral regions, coupled with a robust gravity-aligned TDOM...",
+      "primary_category": "Autonomous Driving & Urban Scenes",
+      "categories": [
+        "Autonomous Driving & Urban Scenes",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Compression",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33796",
+      "arxiv_id": "2611.33796",
+      "doi": null,
+      "source": "arxiv",
+      "title": "SprintGS: Eliminating Redundancy for Fast 3D Gaussian Splatting Training",
+      "authors": [
+        "Ryosuke Watanabe",
+        "Tomoaki Konno"
+      ],
+      "first_author": "Watanabe et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33796",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33796v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33796",
+      "pdf_url": "https://arxiv.org/pdf/2611.33796.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) renders photorealistic novel views in real time, but its per-scene training (optimization) remains slow. Recent fast training methods such as FastGS shorten training to a few minutes by reducing the number of Gaussians. Profiling FastGS, we find two costs that remain even in its compact model. First, rasterization is still the largest cost, and redundant work remains in it. Second, the loss computation does not shrink with the number of Gaussians, so its share of the training time grows as the model becomes compact. We present SprintGS, a training framework built on FastGS that keeps the model compact and reduces both costs. For rasterization, scheduled tile culling limits each Gaussian to the tiles where it matters, using a coarse footprint that is annealed to the exact one before training ends; convergence-aware pruning removes converged, nearly transparent Gaussians; and a shuffle-efficient backward pass reduces the data exchanged between GPU threads. For the loss, a fused loss computes the loss and its image gradient in the forward pass without a loss map, removing most of its cost. SprintGS trains 2.15x faster than FastGS at comparable quality, and 1.81x faster in its high-quality setting. It also accelerates other fast training methods and dynamic, sparse-view, and surface reconstruction.",
+      "tldr": "Presents SprintGS, a training framework built on FastGS that keeps the model compact and reduces both costs.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Densification & Pruning",
+        "Sparse-View",
+        "Compression",
+        "Mesh & Surface",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33824",
+      "arxiv_id": "2611.33824",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Revisiting Monocular In-Hand Object Scanning: Dataset, Pose Estimation, and Surface Reconstruction",
+      "authors": [
+        "Di Wu",
+        "Jeeeun Kim",
+        "Shu Kong"
+      ],
+      "first_author": "Wu et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33824",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33824v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33824",
+      "pdf_url": "https://arxiv.org/pdf/2611.33824.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "In-Hand Object Scanning (IHOS) from monocular video captured by a commodity smartphone holds immense potential to democratize 3D digitization for non-expert users, facilitating applications in digital archiving, augmented reality, and custom fabrication. Yet, IHOS remains largely understudied due to a lack of realistic datasets and systematic benchmarks. To bridge this gap, we introduce ToysRUs, a high-quality dataset featuring diverse figurines captured by 4K Ultra High-Definition (UHD) monocular videos. Studying IHOS from first principles, we examine structure-from-motion (SfM) for camera pose estimation, which is key to IHOS. We identify two key challenges: small baselines between consecutive frames, and sparse feature matches across large-view, long-range frames, further exacerbated by dynamic hand occlusions. Guided by these insights, we propose performing SfM on video sub-sequences sampled at sufficient angular intervals, and iteratively stitches the corresponding sub-trajectories into a unified global trajectory. Furthermore, for high-fidelity surface reconstruction, we introduce occlusion-aware 2D Gaussian Splatting, which incorporates opacity rendering and omits the opacity loss on hand regions. Quantitative and qualitative evaluations demonstrate that our framework significantly outperforms existing approaches, including neural implicit representations and 3D foundation models, in both geometric accuracy and photometric fidelity.",
+      "tldr": "To bridge this gap, we introduce ToysRUs, a high-quality dataset featuring diverse figurines captured by 4K Ultra High-Definition (UHD) monocular videos.",
+      "primary_category": "2D Gaussians, Geometry & Compression",
+      "categories": [
+        "2D Gaussians, Geometry & Compression",
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "2DGS",
+        "Mesh & Surface",
+        "Medical & Healthcare",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.34155",
+      "arxiv_id": "2611.34155",
+      "doi": null,
+      "source": "arxiv",
+      "title": "OceanFix: Reference-Guided Diffusion for Sparse-View Underwater 3D Reconstruction",
+      "authors": [
+        "Gen Li",
+        "Maoxin Chen",
+        "Yao Xiao",
+        "Xinyang Li",
+        "Yu Pan"
+      ],
+      "first_author": "Li et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34155",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34155v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34155",
+      "pdf_url": "https://arxiv.org/pdf/2611.34155.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Recent advances in Gaussian splatting have enabled efficient underwater reconstruction, but sparse observations, light attenuation, and backscatter still leave scene regions underconstrained and cause novel-view artifacts. We present OceanFix, a reference-guided framework for sparse-view underwater 3D reconstruction that combines diffusion-based view repair with Gaussian scene refinement. Our repair model follows a two-stage training strategy that separates underwater appearance adaptation from geometric refinement. The first stage learns underwater appearance from reference observations and estimated medium features. The second uses camera poses and reference depth to align reference features, with relative-depth supervision guiding structural repair without requiring target-view depth at inference. We further propose medium-aware distillation that transfers repaired views into the 3D scene according to geometric repair demand and channel-specific optical observability. Through iterative rendering, repair, and distillation, OceanFix refines underconstrained regions while retaining supervision from the observed views. Experiments on underwater datasets demonstrate that OceanFix improves rendering quality in sparse-view 3D reconstruction, reducing visible artifacts and recovering finer scene details.",
+      "tldr": "Presents OceanFix, a reference-guided framework for sparse-view underwater 3D reconstruction that combines diffusion-based view repair with Gaussian scene refinement.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "Medical, Defense & Multimodal Sensors"
+      ],
+      "tags": [
+        "Diffusion",
+        "Sparse-View",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.34932",
+      "arxiv_id": "2611.34932",
+      "doi": null,
+      "source": "arxiv",
+      "title": "MERLoc: Robust Robot Localization in Dynamic Environments with Pose-Based Retrieval over 3D Gaussian Splatting References",
+      "authors": [
+        "Michael Baumgartner",
+        "Dario Mylonopoulos",
+        "Sammy Christen",
+        "Markus Gross",
+        "Moritz Bacher"
+      ],
+      "first_author": "Baumgartner et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34932",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34932v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34932",
+      "pdf_url": "https://arxiv.org/pdf/2611.34932.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Robots operating in previously mapped spaces must localize accurately despite moving people and rearranged objects. Most localization pipelines match the query against a sparse set of captured reference images retrieved by appearance, which is brittle under scene change and repeating structures. We present MERLoc, which turns a single metric 3D Gaussian Splatting scan into a dense Functional Reference Memory. Reference views are sampled over the navigable space for the robot's morphology and sensors at a target density and rendered offline. Pre-encoding them for the chosen off-the-shelf localizer removes the reference encoder from inference. A pose-based retrieval strategy then selects references by spatial proximity and viewing direction rather than appearance, sidestepping visual ambiguities whenever a prior exists. Across one classical and four learned localizers in simulated and real dynamic scenes, pose-based retrieval matches or outperforms appearance retrieval in most cases, even when the latter is gated by the same prior. On real data, it lowers position RMSE by 15-60 % in nine of ten backend/split combinations, and the rendered memory outperforms real-image caches posed by Structure-from-Motion. The system runs onboard a Jetson Orin NX at 5 Hz, enabling a navigation policy to successfully traverse a hallway with people roaming and rearranging objects.",
+      "tldr": "Presents MERLoc, which turns a single metric 3D Gaussian Splatting scan into a dense Functional Reference Memory.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Active Perception, SLAM & Robotics"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.RO",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.34478",
+      "arxiv_id": "2611.34478",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Feed-Forward Adaptive Gaussian Splatting for Interactive Medical Volume Rendering",
+      "authors": [
+        "Zhongpai Gao",
+        "Benjamin Planche",
+        "Meng Zheng",
+        "Anwesa Choudhuri",
+        "Chaoyi Zhou",
+        "Terrence Chen",
+        "Ziyan Wu"
+      ],
+      "first_author": "Gao et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34478",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34478v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34478",
+      "pdf_url": "https://arxiv.org/pdf/2611.34478.pdf",
+      "code_url": null,
+      "project_url": "https://gaozhongpai.github.io/renderfmnext/",
+      "abstract": "Path-traced rendering shows CT and MR volumes with realistic lighting, but it restarts after every change of view, clipping plane or transfer function (TF), the map from voxel intensity to colour and opacity, which limits the frame rate. Feed-forward Gaussian splatting models such as RenderFM predict the Gaussians directly from the volume instead of fitting them to each scan, and are fast. RenderFM, however, handles only CT, runs its network again after every TF edit, has no clipping operator, and places its Gaussians on a uniform 3-mm grid that blurs organ boundaries and cut faces. We present RenderFM-Next, a feed-forward model that addresses these limits. One network handles both CT and MR. Its Gaussians are predicted once per volume: a new TF needs no pass of this network, and a clipping plane cuts them exactly, using operators from prior work. The model predicts coarse 3-mm Gaussians for the whole volume and refines them to 1.5 mm only where refinement improves the image. A small score head ranks the coarse Gaussians by how much refining them would reduce the rendering error; at render time the user chooses how many are refined, and those next to a clipping plane are always refined, which sharpens cut faces. We build a benchmark of about 2,000 CT and MR scans with path-traced references under clinical presets, TF edits and clipping. Our RenderFM-Next improves over RenderFM retrained on this benchmark by 2.8 dB on CT and 2.4 dB on MR and renders a 1600x1600 view in 4-6 ms. Refinement adds 0.30 / 0.69 dB over the same model trained without it (0.51 / 1.17 dB on cut faces), and refining a learned 10% of the coarse Gaussians matches a random 50% with 2.4x fewer Gaussians. Project page: https://gaozhongpai.github.io/renderfmnext/",
+      "tldr": "Presents RenderFM-Next, a feed-forward model that addresses these limits.",
+      "primary_category": "Medical, Defense & Multimodal Sensors",
+      "categories": [
+        "Medical, Defense & Multimodal Sensors",
+        "Generative Priors & 3D Reconstruction"
+      ],
+      "tags": [
+        "Feed-Forward",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33698",
+      "arxiv_id": "2611.33698",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Efficient Scene-Distribution-Aware Second-Order Optimization for 3D Gaussian Splatting",
+      "authors": [
+        "Hyunseung Son",
+        "Young Sun Choi",
+        "Youngsik Yun",
+        "Kibeom Hong",
+        "Youngjung Uh"
+      ],
+      "first_author": "Son et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33698",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33698v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33698",
+      "pdf_url": "https://arxiv.org/pdf/2611.33698.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) optimization updates the Gaussian parameters one training view at a time, tens of thousands of times. Unlike such single-view updates, multi-view batches reduce dependence on individual training views, and second-order optimization reduces the number of updates with larger, structured parameter changes. Because fewer updates leave fewer chances to correct a change that fits only the views used in one update, scene coverage becomes more important for each second-order update. Multi-view second-order updates, however, are expensive. Pixel sampling reduces this cost, but two issues remain. First, selecting views without considering overlap leaves some views redundant. To address this, we propose a view selection strategy that reduces this redundancy. Second, existing work processes the sampled pixels of each view in a separate pass and recomputes alpha compositing for these pixels from scratch. We introduce two implementation strategies that reduce both overheads by processing the sampled pixels of multiple views in joint passes and reusing the transmittance and accumulated color cached during rendering. On three datasets, our method reaches higher PSNR than the sampled second-order baseline in less than half its optimization time, with competitive SSIM and LPIPS.",
+      "tldr": "To address this, we propose a view selection strategy that reduces this redundancy.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "16 pages, 2 figures, 5 tables. Accepted to ACCV 2026",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.34223",
+      "arxiv_id": "2611.34223",
+      "doi": null,
+      "source": "arxiv",
+      "title": "AnyCam4D: Ray-Based 4D Gaussian Rendering for Arbitrary Camera Models",
+      "authors": [
+        "Sascha Kirch",
+        "Rafael Pagés",
+        "Jan Ondřej",
+        "Clara Pérez-Molina",
+        "Sergio Martin"
+      ],
+      "first_author": "Kirch et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34223",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34223v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34223",
+      "pdf_url": "https://arxiv.org/pdf/2611.34223.pdf",
+      "code_url": null,
+      "project_url": "https://sascha-kirch.github.io/anycam4d/",
+      "abstract": "Real cameras are not pinholes, yet most dynamic Gaussian splatting assumes they are. Footage is therefore undistorted first, losing field of view or detail, especially with wide-angle and fisheye cameras. Static Gaussian splatting has largely solved this with ray-based rendering, which suits any camera. Native 4D Gaussians, which model motion in space-time, cannot use it directly: each Gaussian's orientation and size cannot be recovered reliably from its covariance. We present AnyCam4D, which trains native 4D Gaussians on original footage by ray-based rasterization, preserving field of view and resolution at about the per-step cost of standard projection. Our key contribution is a numerically stable way to obtain orientation and size: we condition a square root of the 4D covariance. Trained models render through other cameras, with rolling shutter, depth of field or chromatic aberration. With a synthetic 170-degree fisheye camera, training on original images improves peak signal-to-noise ratio (PSNR) by 3.0-8.1 dB. On real footage, AnyCam4D has lower perceptual error than the standard projection adapted to each camera, at comparable PSNR and without camera-specific derivations. With the synthetic camera rotated 60-80 degrees away from the capture rig's view, it leads by 6.2 dB against ground truth.",
+      "tldr": "Presents AnyCam4D, which trains native 4D Gaussians on original footage by ray-based rasterization, preserving field of view and resolution at about the per-step cost of standard projection.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "4DGS",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Project page: https://sascha-kirch.github.io/anycam4d/",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.34939",
+      "arxiv_id": "2611.34939",
+      "doi": null,
+      "source": "arxiv",
+      "title": "A Mesh for Every Moment",
+      "authors": [
+        "Roy Or-El",
+        "Jeong Joon Park",
+        "Ira Kemelmacher-Shlizerman"
+      ],
+      "first_author": "Or-El et al.",
+      "published_date": "2026-11-25",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.34939",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.34939v1",
+            "value": "2026-11-25",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.34939",
+      "pdf_url": "https://arxiv.org/pdf/2611.34939.pdf",
+      "code_url": null,
+      "project_url": "https://memo-4d.github.io",
+      "abstract": "We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame. Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose fixed grids limit the detail they can capture. At the core of MEMO is a per-Gaussian motion model inspired by Gaussian processes, which represents each Gaussian's position and rotation over time as a combination of temporal Gaussian kernels. The model keeps every Gaussian a valid surface element throughout the sequence and carries an implicit representation of the dynamic geometry, so a mesh can be derived at any time from a field defined by the Gaussians. Although common in real captures, large and fast motion poses a challenge that dynamic Gaussian splatting methods usually overlook. To account for it, we design a track-based initialization scheme that fits each Gaussian's initial trajectory to point tracks in closed form. We evaluate MEMO on Blender-Moments, a new benchmark of nine animated scenes with ground-truth meshes at every frame, and on two real-world datasets. MEMO reconstructs the most accurate geometry among state-of-the-art methods, and remains competitive in novel-view synthesis and training time. Project page: https://memo-4d.github.io",
+      "tldr": "Presents MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "4DGS",
+        "Mesh & Surface",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "Project page: https://memo-4d.github.io",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
     {
       "id": "2611.32025",
       "arxiv_id": "2611.32025",
@@ -55,6 +745,69 @@
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": "17 pages, 5 figures, including supplementary material",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33374",
+      "arxiv_id": "2611.33374",
+      "doi": null,
+      "source": "arxiv",
+      "title": "VersionGS: Compact and Motion-Robust Dynamic Gaussian Splatting via Versioned Gaussians",
+      "authors": [
+        "Shihang Wei",
+        "Yichi Zhang",
+        "Fengqing Zhu"
+      ],
+      "first_author": "Wei et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33374",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33374v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33374",
+      "pdf_url": "https://arxiv.org/pdf/2611.33374.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Recent dynamic Gaussian splatting methods encode temporal change, either as smooth functions of time or as constrained updates between frames. We observe that their reconstruction quality degrades significantly under fast motion. In challenging dance sequences, their PSNR drops by 1.1-4.0 dB on high-motion frames compared to low-motion frames. To overcome this limitation, we propose VersionGS, a method that directly encodes per-frame Gaussian states and uses motion estimation only to guide reconstruction. Within each group of frames, unchanged Gaussians keep their current versions in a shared dictionary, while modified Gaussians are appended as new versions. To maximize version reuse, we introduce selective sequential construction, which refines the Gaussians selected by optical flow, photograph differences or rendering errors and leaves the others unchanged. The dictionary is then pruned, fine-tuned with simulated quantization and encoded as images. Adjusting the pruning ratio trades off storage and quality without rebuilding the dictionary. On the fast dance sequences of DanceNet3D, VersionGS improves foreground PSNR by 2.7 dB over the best baseline, and its PSNR decreases by less than 0.3 dB on the highest-motion frames. On N3DV and Technicolor, it requires 6.0x and 5.7x less storage than TAD-GS, the strongest baseline overall, while achieving even higher PSNR. Finally, playback is fast and requires no motion model or neural network, only a 3DGS rasterizer.",
+      "tldr": "Proposes VersionGS, a method that directly encodes per-frame Gaussian states and uses motion estimation only to guide reconstruction.",
+      "primary_category": "Dynamic & 4DGS",
+      "categories": [
+        "Dynamic & 4DGS",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "CUDA & Rasterization",
+        "Densification & Pruning",
+        "4DGS",
+        "Compression",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "16 pages, 6 figures, 12 tables, including supplementary material",
       "citation_count": 0,
       "influential_citation_count": 0,
       "openalex_id": null,
@@ -122,6 +875,68 @@
       "db_references": []
     },
     {
+      "id": "2611.33467",
+      "arxiv_id": "2611.33467",
+      "doi": null,
+      "source": "arxiv",
+      "title": "SplatWAM: Splatting World Action Models for Real-Time 3D Imagination",
+      "authors": [
+        "Frank Tsu-Fang Lu",
+        "Karthik Sundar Senthilkumar",
+        "Christopher Thirgood",
+        "Oscar Mendez",
+        "Simon Hadfield"
+      ],
+      "first_author": "Lu et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33467",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33467v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33467",
+      "pdf_url": "https://arxiv.org/pdf/2611.33467.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "World models typically predict future observations in pixel or latent space, limiting their ability to directly represent true 3D scene evolution. We present SplatWAM (Splatting World Action Model), a generative world model that learns action-conditioned dynamics directly over compact 3D Gaussian primitives. A tokenizer SplatWAM-T first encodes a variable number of unposed views into a fixed budget of Gaussian tokens. A dynamics model SplatWAM-D then predicts future Gaussian states in a single forward pass per action, using log-Euclidean covariance coordinates and differentiable rendering supervision to facilitate learning in an explicit 3D space. Each predicted state can be rasterized from arbitrary viewpoints, enforcing a shared 3D representation across views by construction. On OGBench Scene, SplatWAM renders novel views 12x faster than video world models (~80 FPS on an RTX 5090) with up to 2.0 dB higher PSNR. We further introduce SplatWAM-P, a lightweight flow-matching policy head jointly trained with the dynamics model. Across 8 task suites, model-free Gaussian-token policies outperform pixel-based counterparts by up to 24.8 percentage points. SplatWAM-P improves over Latent Particle World Model (LPWM) by 12 percentage points and matches HIQL without a learned value function. On LIBERO, our ~1B model outperforms WorldVLA (~7B) and the robot-pretrained OpenVLA (~7B), while matching OpenVLA-OFT when both are trained without large-scale robot pretraining. Code and checkpoints will be released.",
+      "tldr": "Presents SplatWAM (Splatting World Action Model), a generative world model that learns action-conditioned dynamics directly over compact 3D Gaussian primitives.",
+      "primary_category": "Generative Priors & 3D Reconstruction",
+      "categories": [
+        "Generative Priors & 3D Reconstruction",
+        "Autonomous Driving & Urban Scenes"
+      ],
+      "tags": [
+        "Sparse-View",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "21 pages, 15 figures, 13 tables",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "2611.32202",
       "arxiv_id": "2611.32202",
       "doi": null,
@@ -177,6 +992,64 @@
       ],
       "primary_arxiv_category": "cs.CV",
       "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.32718",
+      "arxiv_id": "2611.32718",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Seeing to Drive on a Single Board: Attention-Free Depth for Onboard Robot Navigation",
+      "authors": [
+        "Itai Mizlish",
+        "Boaz Ben-Moshe"
+      ],
+      "first_author": "Mizlish et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.32718",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.32718v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.32718",
+      "pdf_url": "https://arxiv.org/pdf/2611.32718.pdf",
+      "code_url": "https://github.com/itaim18/DANIEL",
+      "project_url": null,
+      "abstract": "A small ground robot can carry one camera and a few watts of compute, but the depth foundation models that could turn that camera into a range sensor are vision transformers sized for GPUs. We bring one to a Raspberry Pi 5 with the Hailo-8L, an accelerator that runs every layer in integer arithmetic, attention included. Quantised for it, Depth Anything V2 loses large parts of the scene, and we measure why: at 449 tokens, 91% of softmax weights fall below one int8 step while carrying 17-33% of the attention mass. Our answer is to distil, not quantise. An attention-free ResNet-34 U-Net student of Depth Anything V2-Large (24.5M parameters) runs at 27.1 FPS on the chip, its int8 output matches its float twin (Pearson 0.99993), and on held-out scenes of its simulated yard it is the most accurate depth network on the chip (AbsRel 0.269 against 0.354-0.530). On 1,000 stereo-verified points of a real outdoor drive it is not resolvably different from the vendor's Depth Anything V2-Small build, while running faster (27.1 vs 21.6 FPS). Ranging obstacles by where they meet the floor needs only the camera height, so mapping, hybrid-A* planning and SLAM run on the Pi's own CPU. In real-time hardware-in-the-loop tests in a Gaussian-splat reconstruction of a real yard, the stack reaches the goal without contact in 7.9$\\pm$1.1 of 10 scenes, against 9.2$\\pm$0.4 with exact obstacles, and in 7.7$\\pm$0.7 on its own pose with simulated wheel odometry (ten seeds each; 8.2$\\pm$0.4 with the real Pi and Hailo-8L in the loop, five seeds). The source code, pre-trained models and data are available at https://github.com/itaim18/DANIEL.",
+      "tldr": "A small ground robot can carry one camera and a few watts of compute, but the depth foundation models that could turn that camera into a range sensor are vision transformers sized for GPUs.",
+      "primary_category": "Active Perception, SLAM & Robotics",
+      "categories": [
+        "Active Perception, SLAM & Robotics"
+      ],
+      "tags": [
+        "SLAM",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.RO",
+      "comment": "13 pages, 14 figures, 5 tables. Code, models and data: https://github.com/itaim18/DANIEL",
       "citation_count": 0,
       "influential_citation_count": 0,
       "openalex_id": null,
@@ -266,7 +1139,7 @@
       ],
       "first_author": "Zhang et al.",
       "published_date": "2026-11-24",
-      "updated_date": "2026-11-24",
+      "updated_date": "2026-11-25",
       "year": 2026,
       "month": 11,
       "venue": null,
@@ -285,12 +1158,20 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.32335v2",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2611.32335",
       "pdf_url": "https://arxiv.org/pdf/2611.32335.pdf",
-      "code_url": null,
+      "code_url": "https://github.com/InSAI-Lab/GOLD-SLAM",
       "project_url": null,
       "abstract": "Panoramic cameras capture nearly the entire spherical field of view in a single frame. However, the mismatch between this panoramic coverage and the field of view of LiDAR poses a substantial challenge for panoramic Gaussian splatting SLAM that relies on LiDAR depth priors. We introduce GOLD-SLAM, a Gaussian-splatting Omnidirectional LiDAR-Depth SLAM system that combines high-quality rendering with accurate geometric reconstruction. It performs tracking and mapping in the spherical domain and uses tracked visual features in regions without LiDAR coverage to improve pose estimation. To address insufficient coverage of newly observed surfaces and floating artifacts during incremental mapping, we introduce Depth-Aware Map Extension and Pruning (DAEP). To enable broader evaluation, we collect a new dataset, WHOLE, using a UAV platform across Weak-geometry, High-dynamic, Omnidirectional, Low-light, and Easy scenarios. Extensive experiments on public benchmarks and WHOLE demonstrate competitive rendering quality and improved geometric accuracy relative to perspective systems. Compared with existing panoramic baselines, GOLD-SLAM improves mean PSNR by 5.56-9.10 dB and reduces mean Depth-L1 by 71.9-83.9%. To assess deployment feasibility on resource-constrained platforms such as UAVs, we evaluate an embedded configuration of GOLD-SLAM on a Jetson Orin NX (16 GB), demonstrating online operation at the cost of reconstruction quality.",
       "tldr": "Introduces GOLD-SLAM, a Gaussian-splatting Omnidirectional LiDAR-Depth SLAM system that combines high-quality rendering with accurate geometric reconstruction.",
@@ -304,6 +1185,254 @@
         "SLAM",
         "Compression",
         "LiDAR-Fusion",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.33380",
+      "arxiv_id": "2611.33380",
+      "doi": null,
+      "source": "arxiv",
+      "title": "FOCI: Trajectory Optimization on Gaussian Splats for Gaussian Robots",
+      "authors": [
+        "Mario Gomez Andreu",
+        "Carlos Martinez Cuenca",
+        "Maximum Wilder-Smith",
+        "Victor Klemm",
+        "Vaishakh Patil",
+        "Marco Hutter",
+        "Jesus Tordesillas"
+      ],
+      "first_author": "Andreu et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.33380",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.33380v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.33380",
+      "pdf_url": "https://arxiv.org/pdf/2611.33380.pdf",
+      "code_url": "https://github.com/leggedrobotics/foci",
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) has recently gained popularity as a faster alternative to Neural Radiance Fields (NeRFs) in 3D reconstruction and view synthesis methods. Leveraging the spatial information encoded in 3DGS, this work proposes FOCI (Field Overlap Collision Integral), an algorithm that is able to optimize trajectories directly on the Gaussians themselves. FOCI leverages a novel and interpretable collision formulation for 3DGS using the notion of the overlap integral between Gaussians. The formulation presented applies to different robot morphologies (e.g., fixed and mobile base manipulators, legged robots, UAVs) and handles both static and dynamic Gaussian-Splat environments. Contrary to other approaches, which represent the robot with conservative bounding boxes that underestimate the traversability of the environment, we propose to represent the environment and the robot as Gaussian Splats. This not only has desirable computational properties, but also allows for orientation-aware planning, allowing the robot to pass through very tight and narrow spaces. We extensively test our algorithm in both synthetic and real Gaussian Splats, showcasing that collision-free trajectories for legged, aerial and manipulator robots can be computed in seconds, even with hundreds of thousands of Gaussians making up the environment. The code is available at https://github.com/leggedrobotics/foci",
+      "tldr": "Leveraging the spatial information encoded in 3DGS, this work proposes FOCI (Field Overlap Collision Integral), an algorithm that is able to optimize trajectories directly on the Gaussians themselves.",
+      "primary_category": "Active Perception, SLAM & Robotics",
+      "categories": [
+        "Active Perception, SLAM & Robotics",
+        "Dynamic & 4DGS"
+      ],
+      "tags": [
+        "4DGS",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.RO",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.32998",
+      "arxiv_id": "2611.32998",
+      "doi": null,
+      "source": "arxiv",
+      "title": "First-Hit Photoconsistency for Neural Surface Reconstruction",
+      "authors": [
+        "Gabriel Lenain",
+        "Edmond Boyer",
+        "Jean Ponce"
+      ],
+      "first_author": "Lenain et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.32998",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.32998v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.32998",
+      "pdf_url": "https://arxiv.org/pdf/2611.32998.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Recent neural implicit and Gaussian splatting approaches have achieved impressive results in multi-view surface reconstruction. However, jointly optimizing geometry and appearance introduces ambiguities. A parametric appearance model can compensate for geometric errors, reproducing the input images accurately without an accurate surface. We demonstrate accurate neural implicit surface reconstruction using only multi-view patch photoconsistency with geometry-based visibility, without volumetric rendering or parametric appearance models. For each reference ray, sphere tracing computes the first surface intersection. Its position and normal define a local patch whose photoconsistency is evaluated across visible neighboring views using colors sampled directly from the input images. For efficient sphere tracing, we use a 1-Lipschitz multi-layer perceptron. We use a single photoconsistency loss, without foreground masks or auxiliary geometric regularization. Experiments show that our method achieves the lowest mean Chamfer distance on BlendedMVS (BMVS) among compared methods and matches the geometric accuracy of leading reconstruction methods on DTU.",
+      "tldr": "Experiments show that our method achieves the lowest mean Chamfer distance on BlendedMVS (BMVS) among compared methods and matches the geometric accuracy of leading reconstruction methods on DTU.",
+      "primary_category": "Human Avatars & VR",
+      "categories": [
+        "Human Avatars & VR",
+        "2D Gaussians, Geometry & Compression"
+      ],
+      "tags": [
+        "Mesh & Surface",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.32628",
+      "arxiv_id": "2611.32628",
+      "doi": null,
+      "source": "arxiv",
+      "title": "Completion-Aware Compression for Progressive 3D Gaussian Splatting",
+      "authors": [
+        "Reagan Koo",
+        "Yeong-Gyu Kim",
+        "Eun-Seok Ryu"
+      ],
+      "first_author": "Koo et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.32628",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.32628v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.32628",
+      "pdf_url": "https://arxiv.org/pdf/2611.32628.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "3D Gaussian Splatting (3DGS) enables high-quality novel-view rendering, but its large scene representations are costly to transmit. Pruning and compression reduce file sizes, yet progressive delivery also requires usable reconstructions before the full scene arrives. Existing progressive representations provide partial scenes, but level-based updates are limited by predefined coding boundaries. This paper presents a progressive 3DGS codec that balances attribute fidelity with the image benefit of making Gaussians available earlier. Its single compact stream supports partial 3D reconstruction and adds newly decoded Gaussians as more bytes arrive. The stream supports fine-grained updates at arbitrary received-byte budgets, without separate encodings or later attribute refinement. At matched complete-file sizes and received bytes, completion-aware allocation improves 1/8 PSNR over attribute-only allocation by 0.48-1.43 dB. The proposed codec compresses original 3DGS representations by 62-88 times while retaining near-reference Full PSNR. Under the evaluated 50-Mbps delivery model, partial reconstruction becomes available in approximately 0.2 s.",
+      "tldr": "Presents a progressive 3DGS codec that balances attribute fidelity with the image benefit of making Gaussians available earlier.",
+      "primary_category": "2D Gaussians, Geometry & Compression",
+      "categories": [
+        "2D Gaussians, Geometry & Compression",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Compression",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": "23 pages, 6 main-paper figures and 4 supplementary figures",
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
+      "id": "2611.32735",
+      "arxiv_id": "2611.32735",
+      "doi": null,
+      "source": "arxiv",
+      "title": "AnyPrune: Optimization-Free Pruning for Any Feedforward 3D Gaussian Splatting Pipeline",
+      "authors": [
+        "Nicola Leonetti",
+        "Federico Stella",
+        "Aoxiang Fan",
+        "Saqib Javed",
+        "Pascal Fua",
+        "Luigi Di Stefano"
+      ],
+      "first_author": "Leonetti et al.",
+      "published_date": "2026-11-24",
+      "updated_date": "2026-11-24",
+      "year": 2026,
+      "month": 11,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2611.32735",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.32735v1",
+            "value": "2026-11-24",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2611.32735",
+      "pdf_url": "https://arxiv.org/pdf/2611.32735.pdf",
+      "code_url": null,
+      "project_url": null,
+      "abstract": "Feedforward 3D Gaussian Splatting (3DGS) pipelines reconstruct a scene from images in a single forward pass, representing it as real-time-renderable 3D Gaussians. However, the resulting representations contain far more Gaussians than are needed to render the scene faithfully, especially when there are many input views. This drastically increases memory and storage requirements. Existing pruning methods either require costly re-optimization, which defeats the purpose of a single forward pass, or rely on simple strategies that do not exploit all the available information. We present AnyPrune, a transformer-based, optimization-free pruning module designed to work on top of any feedforward 3DGS pipeline. To remove unnecessary Gaussians, AnyPrune learns and exploits pipeline-specific redundancy patterns through a short single-GPU training on the frozen target feedforward pipeline. AnyPrune achieves better rendering quality than existing optimization-free pruning methods in most settings and generalizes to unseen datasets, as shown through extensive experiments across multiple feedforward pipelines, datasets, and input view counts. It prunes a 1.6M-Gaussian field in about $5\\,\\mathrm{s}$ on a consumer GPU, faster than every method that merges Gaussians or re-optimizes the field. It can also be combined with the pruning built into feedforward pipelines, pruning further at moderate ratios while preserving or improving rendering quality. Finally, it can even suggest a scene-specific pruning ratio that retains most of the quality.",
+      "tldr": "Presents AnyPrune, a transformer-based, optimization-free pruning module designed to work on top of any feedforward 3DGS pipeline.",
+      "primary_category": "Foundations & Acceleration",
+      "categories": [
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "Densification & Pruning",
+        "Compression",
         "Foundations"
       ],
       "primary_arxiv_category": "cs.CV",
@@ -2720,7 +3849,7 @@
       ],
       "first_author": "Tang et al.",
       "published_date": "2026-11-17",
-      "updated_date": "2026-11-17",
+      "updated_date": "2026-11-25",
       "year": 2026,
       "month": 11,
       "venue": null,
@@ -2735,6 +3864,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2611.22095v1",
+            "value": "2026-11-17",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2611.22095v2",
             "value": "2026-11-17",
             "observed_at": null,
             "reviewed_by": null,
@@ -31079,6 +32216,74 @@
       "db_references": []
     },
     {
+      "id": "2608.29269",
+      "arxiv_id": "2608.29269",
+      "doi": null,
+      "source": "arxiv",
+      "title": "LightFuse: Relightable Interactive Gaussian Scene Reconstruction via Multi-Scan Fusion and 2D Gaussian Ray Tracing",
+      "authors": [
+        "Haonan Zhou",
+        "Gaoxiang Linghu",
+        "Youlin Jia",
+        "Chuanyu Cheng",
+        "Hongyu Cui",
+        "Kewei Wei",
+        "Bruce X. B. Yu",
+        "Gaoang Wang"
+      ],
+      "first_author": "Zhou et al.",
+      "published_date": "2026-08-29",
+      "updated_date": "2026-11-25",
+      "year": 2026,
+      "month": 8,
+      "venue": null,
+      "published_date_precision": "day",
+      "date_placement": "observed",
+      "publication_date": null,
+      "publication_year": null,
+      "publication_date_precision": "unknown",
+      "arxiv_doi": "10.48550/arxiv.2608.29269",
+      "metadata_evidence": {
+        "published_date": [
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2608.29269v2",
+            "value": "2026-08-29",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          }
+        ]
+      },
+      "paper_url": "https://arxiv.org/abs/2608.29269",
+      "pdf_url": "https://arxiv.org/pdf/2608.29269.pdf",
+      "code_url": null,
+      "project_url": "https://zhn202.github.io/LightFuse/",
+      "abstract": "Relightable interactive scene reconstruction aims to build an editable 3D model from scans of different object arrangements, so that novel layouts can be rendered under novel illumination. However, Gaussian-splatting-based methods bake illumination into appearance and thus cannot jointly reconstruct scans captured under different lighting, while existing multi-illumination inverse rendering methods struggle to handle scenes whose geometry changes across captures. We present LightFuse, a 2D Gaussian inverse rendering framework that bridges this gap by extending interactive scene reconstruction with explicit material-illumination decomposition and physically based relighting. LightFuse fuses observations across states to reconstruct a shared background and movable objects. Since geometry optimized by splatting alone is ill-suited for ray-tracing-based inverse rendering, it then performs ray-tracing-oriented geometry refinement to obtain more complete and consistent surfaces. Because rearrangement leaves materials unchanged, we jointly optimize a shared set of materials across all scans under varying illumination, with differentiable one-bounce ray tracing disentangling them from the per-scan environment lighting. Experiments on novel-state relighting of synthetic scenes and novel-state synthesis of captured real scenes show that LightFuse outperforms interactive reconstruction and adapted inverse rendering baselines, improving novel-state relighting PSNR by 6.01 dB over the strongest baseline and achieving the highest PSNR on captured scenes. Project page: https://zhn202.github.io/LightFuse/ .",
+      "tldr": "Presents LightFuse, a 2D Gaussian inverse rendering framework that bridges this gap by extending interactive scene reconstruction with explicit material-illumination decomposition and physically based...",
+      "primary_category": "2D Gaussians, Geometry & Compression",
+      "categories": [
+        "2D Gaussians, Geometry & Compression",
+        "Foundations & Acceleration"
+      ],
+      "tags": [
+        "2DGS",
+        "Medical & Healthcare",
+        "Relighting & BRDF",
+        "Ray Tracing",
+        "Foundations"
+      ],
+      "primary_arxiv_category": "cs.CV",
+      "comment": null,
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "openalex_id": null,
+      "referenced_works": [],
+      "db_citation_count": 0,
+      "db_citations": [],
+      "db_references": []
+    },
+    {
       "id": "2608.29346",
       "arxiv_id": "2608.29346",
       "doi": null,
@@ -44029,7 +45234,7 @@
       ],
       "first_author": "Zhao et al.",
       "published_date": "2026-07-15",
-      "updated_date": "2026-09-12",
+      "updated_date": "2026-11-24",
       "year": 2026,
       "month": 7,
       "venue": null,
@@ -44048,6 +45253,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2607.13682v5",
+            "value": "2026-07-15",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -44056,7 +45269,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "Does an uncertainty map identify where a reconstruction is wrong? In sparse-view computed tomography (CT), we find a sharp gap between whole-volume evaluation and error localization inside the object. We derive clamp-aware analytic moments for factorized Gaussian-density distributions, with a variance pass through existing rendering interfaces that is $7.9\\times$ faster than a 16-sample estimator. On a 15-scene benchmark, median variance--error Spearman correlation falls from $0.846$ over the whole volume to $0.108$ in foreground. The pattern recurs across representations and acquisition settings. Two analyses help explain the discrepancy: region contrast dominates global covariance, while $72$--$96\\%$ of in-object squared error is shared across independently trained members. Spread is unchanged by a common error, although shared error alone does not determine ranking. Correcting the offset between the deployed reconstruction and predictive mean improves foreground correlation by only $0.0014$. The diagnosis separates two remedies. A log-normal control improves scale transfer without restoring localization; a supervised error predictor raises foreground correlation to $0.427$ on the benchmark and $0.566$ on eight held-out human subjects under simulated acquisition. A verified retrospective re-execution on eight additional subjects retains a median of $0.537$, with the same frozen predictors. The central lesson is to validate uncertainty in the region, and against the error target, for which it will be used.",
-      "tldr": "Does an uncertainty map identify where a reconstruction is wrong?",
+      "tldr": "Radiative Gaussian Splatting enables fast and high-quality reconstruction in sparse-view CT, but reliable localization of reconstruction errors within the imaged anatomy remains challenging.",
       "primary_category": "Generative Priors & 3D Reconstruction",
       "categories": [
         "Generative Priors & 3D Reconstruction",
@@ -44166,7 +45379,7 @@
       ],
       "first_author": "NVIDIA et al.",
       "published_date": "2026-07-15",
-      "updated_date": "2026-11-11",
+      "updated_date": "2026-11-25",
       "year": 2026,
       "month": 7,
       "venue": null,
@@ -44189,6 +45402,14 @@
           {
             "source": "arxiv",
             "source_url": "http://arxiv.org/abs/2607.14203v2",
+            "value": "2026-07-15",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2607.14203v3",
             "value": "2026-07-15",
             "observed_at": null,
             "reviewed_by": null,
@@ -48716,7 +49937,7 @@
       ],
       "first_author": "Dario et al.",
       "published_date": "2026-07-01",
-      "updated_date": "2026-07-01",
+      "updated_date": "2026-11-24",
       "year": 2026,
       "month": 7,
       "venue": null,
@@ -48735,6 +49956,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2607.01200v2",
+            "value": "2026-07-01",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -48742,7 +49971,7 @@
       "pdf_url": "https://arxiv.org/pdf/2607.01200.pdf",
       "code_url": null,
       "project_url": null,
-      "abstract": "Fast quadrotor flight requires safe obstacle avoidance under tight onboard compute limits. While 3D Gaussian Splatting (3DGS) provides a continuous, geometry-aware scene representation for perception-driven navigation, existing 3DGS safety filters use reduced-order models such as single- and double-integrators that ignore actuator limits and assume commanded accelerations are realized instantaneously. Building on an analytic collision cone barrier for 3DGS, we introduce a nonlinear, actuator-aware safety filter enforced through the full quadrotor dynamics. We derive a high-relative-degree collision cone exponential CBF and a backup CBF that preserves QP feasibility under input constraints using a forward-simulated backup policy. Compared with a state-of-the-art 3DGS safety filter, our approach reduces trajectory jerk by 47% and runs 2.25 times faster. We validate the method in simulation and on hardware for real-time navigation in cluttered, perception-derived environments.",
+      "abstract": "Fast quadrotor flight requires safe obstacle avoidance under tight onboard compute limits. While 3D Gaussian Splatting (3DGS) provides a continuous, geometry-aware scene representation for perception-driven navigation, existing 3DGS safety filters use reduced-order models such as single- and double-integrators that ignore actuator limits and assume commanded accelerations are realized instantaneously. Building on an analytic collision cone barrier for 3DGS, we introduce a nonlinear, actuator-aware safety filter enforced through the full quadrotor dynamics. We derive a high-relative-degree collision cone exponential CBF (ECBF) and a backup CBF whose forward-simulated backup policy provides a certified admissible fallback whenever the QP is infeasible under input constraints. Compared with a state-of-the-art 3DGS safety filter, our approach reduces trajectory jerk by 47% and runs 2.25 times faster. We demonstrate the ECBF in simulation and validate the backup CBF on hardware for real-time navigation in cluttered, perception-derived environments.",
       "tldr": "Building on an analytic collision cone barrier for 3DGS, we introduce a nonlinear, actuator-aware safety filter enforced through the full quadrotor dynamics.",
       "primary_category": "Active Perception, SLAM & Robotics",
       "categories": [
@@ -56519,7 +57748,7 @@
       ],
       "first_author": "Cong et al.",
       "published_date": "2026-06-09",
-      "updated_date": "2026-06-09",
+      "updated_date": "2026-11-25",
       "year": 2026,
       "month": 6,
       "venue": null,
@@ -56538,6 +57767,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2606.11390v2",
+            "value": "2026-06-09",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -56545,7 +57782,7 @@
       "pdf_url": "https://arxiv.org/pdf/2606.11390.pdf",
       "code_url": null,
       "project_url": null,
-      "abstract": "Gaussian splatting methods have become increasingly popular for neural reconstruction of the real world. However, they are often limited in scale and resolution due to compute and memory constraints. We present a multi-GPU Gaussian splatting approach that scales reconstruction to higher resolutions and larger scenes while abstracting away the code complexity typically associated with distributing a model. To accomplish this, we propose a PyTorch backend that distributes the Gaussian parameters and splatting operators across GPUs via CUDA unified memory and NVLink. Because distribution occurs at the operator level, the model code requires no explicit cross-device communication. More broadly, the backend exposes multiple GPUs as an aggregate PyTorch device and supports other PyTorch operators. We demonstrate city-scale reconstructions with street-level detail consisting of over 1 billion Gaussian splats, more than 25 times as many as the current state of the art.",
+      "abstract": "Gaussian splatting methods have become increasingly popular for neural reconstruction of the real world. However, they are often limited in scale and resolution due to compute and memory constraints. We present a multi-GPU Gaussian splatting approach that scales reconstruction to higher resolutions and larger scenes while abstracting away the code complexity typically associated with distributing a model. We demonstrate city-scale reconstructions with street-level detail consisting of over 1 billion Gaussian splats. To accomplish this, we propose a PyTorch backend that distributes parameters and operators across GPUs via CUDA unified memory, with optional NVLink support. Because distribution occurs at the operator level, the model code requires no explicit cross-device communication. More broadly, the backend exposes multiple GPUs as an aggregate asynchronous PyTorch device and supports a broad set of PyTorch operators enabling the distribution of general PyTorch workloads.",
       "tldr": "Presents a multi-GPU Gaussian splatting approach that scales reconstruction to higher resolutions and larger scenes while abstracting away the code complexity typically associated with distributing a model.",
       "primary_category": "Autonomous Driving & Urban Scenes",
       "categories": [
@@ -63342,7 +64579,7 @@
       ],
       "first_author": "Liu et al.",
       "published_date": "2026-05-19",
-      "updated_date": "2026-05-19",
+      "updated_date": "2026-11-24",
       "year": 2026,
       "month": 5,
       "venue": null,
@@ -63361,6 +64598,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2605.20044v2",
+            "value": "2026-05-19",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -63369,7 +64614,7 @@
       "code_url": null,
       "project_url": null,
       "abstract": "3D Gaussian Splatting (3DGS) provides an explicit and efficient scene representation, but its primitives lack inherent object-level identity, hindering downstream tasks such as open-vocabulary scene understanding. Existing methods typically address this by either distilling high-dimensional feature embeddings into Gaussians or by lifting 2D mask labels into 3D via heuristic refinement. However, feature-based approaches incur heavy storage and decoding overhead, while lifting-based pipelines remain vulnerable to label contamination: Gaussians necessary for appearance reconstruction often receive incorrect object labels during 2D-to-3D projection. We propose OP2GS, an object-aware Gaussian representation that augments each primitive with an explicit instance identity and a dedicated instance opacity $σ^{*}$ for object-mask rendering. The original opacity $σ$ remains responsible for visual reconstruction, while $σ^{*}$ models whether a Gaussian should contribute to a particular object mask. This dual-opacity formulation decouples visual existence from instance occupancy: mislabeled Gaussians can remain available for image rendering while becoming transparent in the object-mask branch. To learn this representation, we introduce a random object loss that optimizes the 1D instance occupancy field using the standard transmittance-based visibility of 3DGS. Semantic descriptors are then attached at the object level through multi-view aggregation, eliminating per-Gaussian feature storage. Compared with feature-training approaches, OP2GS achieves competitive open-vocabulary performance while significantly reducing computational overhead. Compared with training-free pipelines, it leverages physically consistent occupancy learning to resolve visibility ambiguities.",
-      "tldr": "Proposes OP2GS, an object-aware Gaussian representation that augments each primitive with an explicit instance identity and a dedicated instance opacity $σ^{*}$ for object-mask rendering.",
+      "tldr": "Proposes OP2GS, a lightweight object-aware Gaussian representation that augments each primitive with an explicit instance label and a dedicated instance opacity $σ^{*}$, which serves as an instance...",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -64890,7 +66135,7 @@
       ],
       "first_author": "Yuan et al.",
       "published_date": "2026-05-15",
-      "updated_date": "2026-05-15",
+      "updated_date": "2026-11-24",
       "year": 2026,
       "month": 5,
       "venue": null,
@@ -64909,6 +66154,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2605.16582v2",
+            "value": "2026-05-15",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -64916,8 +66169,8 @@
       "pdf_url": "https://arxiv.org/pdf/2605.16582.pdf",
       "code_url": null,
       "project_url": null,
-      "abstract": "We present ArtMesh, a mesh-native method for reconstructing articulated objects explicitly as connected triangle meshes with per-part rigid motion from multi-view images in start and end states. Existing 3D Gaussian Splatting pipelines for articulated reconstruction inherit the unstructured point-based geometry of their splatting base, which provides no surface topology for reasoning about part boundaries or enforcing motion consistency along the object's connectivity. ArtMesh instead builds on a mesh-based differentiable rendering backbone, enabling part-aware dynamics to act directly on the structured topology. To make the topology compatible with articulation, we introduce part-aware restricted Delaunay remeshing, producing connected submeshes whose triangles do not cross semantic part boundaries. The dynamic mesh field then optimizes articulation using bidirectional Vertex-wise Motion Consistency on transported mesh vertices and Pixel-wise Motion Consistency on rendered RGB-D observations. We introduce Articulate-100, a new benchmark of 100 articulated objects spanning 16 PartNet-Mobility categories. On this benchmark, ArtMesh outperforms prior 3DGS-based pipelines in joint parameter estimation and part-level geometric reconstruction, with the largest gains on objects with many movable parts.",
-      "tldr": "Presents ArtMesh, a mesh-native method for reconstructing articulated objects explicitly as connected triangle meshes with per-part rigid motion from multi-view images in start and end states.",
+      "abstract": "We present ArtMesh, a mesh-native method for reconstructing articulated objects explicitly as connected triangle meshes with per-part rigid motion from multi-view observations in start and end states. Existing 3D Gaussian Splatting pipelines for articulated reconstruction inherit the unstructured point-based geometry of their splatting base, which provides no surface topology for reasoning about part boundaries or enforcing motion consistency along the object's connectivity. ArtMesh instead builds on a mesh-based differentiable rendering backbone, enabling part-aware dynamics to act directly on the structured topology. To make the topology compatible with articulation, we introduce part-aware restricted Delaunay remeshing, producing connected submeshes whose triangles do not cross semantic part boundaries. The dynamic mesh field then optimizes articulation using bidirectional Vertex-wise Motion Consistency on transported mesh vertices and Pixel-wise Motion Consistency on rendered images. We introduce Articulate-100, a new benchmark of 100 articulated objects spanning 16 PartNet-Mobility categories. On this benchmark, given ground-truth part masks, ArtMesh achieves the best aggregate joint-axis estimation and part-level geometric reconstruction among prior 3DGS-based pipelines, with the largest gains on objects with many movable parts.",
+      "tldr": "Presents ArtMesh, a mesh-native method for reconstructing articulated objects explicitly as connected triangle meshes with per-part rigid motion from multi-view observations in start and end states.",
       "primary_category": "Dynamic & 4DGS",
       "categories": [
         "Dynamic & 4DGS"
@@ -99453,7 +100706,7 @@
       ],
       "first_author": "Ma et al.",
       "published_date": "2026-01-31",
-      "updated_date": "2026-01-31",
+      "updated_date": "2026-11-25",
       "year": 2026,
       "month": 1,
       "venue": null,
@@ -99472,12 +100725,20 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2602.00671v2",
+            "value": "2026-01-31",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
       "paper_url": "https://arxiv.org/abs/2602.00671",
       "pdf_url": "https://arxiv.org/pdf/2602.00671.pdf",
-      "code_url": null,
+      "code_url": "https://github.com/USTC-iVC-3D-Group/HPC",
       "project_url": null,
       "abstract": "While dynamic Gaussian Splatting has driven significant advances in free-viewpoint video, maintaining its rendering quality with a small memory footprint for efficient streaming transmission still presents an ongoing challenge. Existing streaming dynamic Gaussian Splatting compression methods typically leverage a latent representation to drive the neural network for predicting Gaussian residuals between frames. Their core latent representations can be categorized into structured grid-based and unstructured point-based paradigms. However, the former incurs significant parameter redundancy by inevitably modeling unoccupied space, while the latter suffers from limited compactness as it fails to exploit local correlations. To relieve these limitations, we propose HPC, a novel streaming dynamic Gaussian Splatting compression framework. It employs a hierarchical point-based latent representation that operates on a per-Gaussian basis to avoid parameter redundancy in unoccupied space. Guided by a tailored aggregation scheme, these latent points achieve high compactness with low spatial redundancy. To improve compression efficiency, we further undertake the first investigation to compress neural networks for streaming dynamic Gaussian Splatting through mining and exploiting the inter-frame correlation of parameters. Combined with latent compression, this forms a fully end-to-end compression framework. Comprehensive experimental evaluations demonstrate that HPC substantially outperforms state-of-the-art methods. It achieves a storage reduction of 67% against its baseline while maintaining high reconstruction fidelity.",
       "tldr": "To relieve these limitations, we propose HPC, a novel streaming dynamic Gaussian Splatting compression framework.",
@@ -109041,7 +110302,7 @@
       ],
       "first_author": "Kumar et al.",
       "published_date": "2025-12-15",
-      "updated_date": "2026-03-15",
+      "updated_date": "2026-11-24",
       "year": 2025,
       "month": 12,
       "venue": null,
@@ -109060,6 +110321,14 @@
             "observed_at": null,
             "reviewed_by": null,
             "reviewed_at": null
+          },
+          {
+            "source": "arxiv",
+            "source_url": "http://arxiv.org/abs/2512.12898v3",
+            "value": "2025-12-15",
+            "observed_at": null,
+            "reviewed_by": null,
+            "reviewed_at": null
           }
         ]
       },
@@ -109067,8 +110336,8 @@
       "pdf_url": "https://arxiv.org/pdf/2512.12898.pdf",
       "code_url": null,
       "project_url": "https://abhi1kumar.github.io/qonvolution/",
-      "abstract": "Gaussian Splatting has revolutionized the field of Novel View Synthesis (NVS) with faster training and real-time rendering. However, its reconstruction fidelity still trails behind the powerful radiance models such as Zip-NeRF. Motivated by our theoretical result that both queries (such as coordinates) and neighborhood are important to learn high-fidelity signals, this paper proposes Queried-Convolutions (Qonvolutions), a simple yet powerful modification using the neighborhood properties of convolution. Qonvolutions convolve a low-fidelity signal with queries to output residual and achieve high-fidelity reconstruction. We empirically demonstrate that combining Gaussian splatting with Qonvolution neural networks (QNNs) results in state-of-the-art NVS on real-world scenes, even outperforming Zip-NeRF on image fidelity. QNNs also enhance performance of 1D regression, 2D regression and 2D super-resolution tasks.",
-      "tldr": "Motivated by our theoretical result that both queries (such as coordinates) and neighborhood are important to learn high-fidelity signals, this paper proposes Queried-Convolutions (Qonvolutions), a simple...",
+      "abstract": "Gaussian Splatting (GS) has revolutionized Novel View Synthesis (NVS) with fast training and real-time rendering, yet pushing its fidelity to arbitrary high levels remains an open challenge. We theoretically explain this barrier by proving that discrete Gaussian representations require an exponentially increasing number of primitives to raise training PSNR, which inevitably triggers optimization issues and validation overfitting. To bypass this scaling limit without primitive bloat, we formulate detail recovery as a continuous neural field over coarse renderings and prove that monotonically reducing approximation risk to zero requires jointly leveraging low-fidelity signals, local neighborhood, and coordinate queries. Guided by this result, we augment splatted renderings with an existing Coordinate-Convolution Neural Network (CCNN) that jointly convolves rendered low-fidelity signals with 2D pixel coordinate queries to synthesize residuals. Integrating CCNN into five diverse Gaussian Splatting baselines establishes new state-of-the-art fidelity across NVS benchmarks while preserving real-time rendering speeds with minimal training and storage overhead. Beyond NVS, they also consistently boost performance of 1D/2D regression and 2D super-resolution tasks.",
+      "tldr": "Gaussian Splatting (GS) has revolutionized Novel View Synthesis (NVS) with fast training and real-time rendering, yet pushing its fidelity to arbitrary high levels remains an open challenge.",
       "primary_category": "Foundations & Acceleration",
       "categories": [
         "Foundations & Acceleration"
@@ -291810,6 +293079,7 @@
     "arxiv:2608.29048": "2608.29048",
     "arxiv:2608.29106": "2608.29106",
     "arxiv:2608.29184": "2608.29184",
+    "arxiv:2608.29269": "2608.29269",
     "arxiv:2608.29346": "2608.29346",
     "arxiv:2608.29538": "2608.29538",
     "arxiv:2608.30054": "2608.30054",
@@ -292300,6 +293570,24 @@
     "arxiv:2611.32202": "2611.32202",
     "arxiv:2611.32231": "2611.32231",
     "arxiv:2611.32335": "2611.32335",
+    "arxiv:2611.32628": "2611.32628",
+    "arxiv:2611.32718": "2611.32718",
+    "arxiv:2611.32735": "2611.32735",
+    "arxiv:2611.32998": "2611.32998",
+    "arxiv:2611.33374": "2611.33374",
+    "arxiv:2611.33380": "2611.33380",
+    "arxiv:2611.33467": "2611.33467",
+    "arxiv:2611.33698": "2611.33698",
+    "arxiv:2611.33796": "2611.33796",
+    "arxiv:2611.33824": "2611.33824",
+    "arxiv:2611.33905": "2611.33905",
+    "arxiv:2611.33920": "2611.33920",
+    "arxiv:2611.34155": "2611.34155",
+    "arxiv:2611.34223": "2611.34223",
+    "arxiv:2611.34478": "2611.34478",
+    "arxiv:2611.34810": "2611.34810",
+    "arxiv:2611.34932": "2611.34932",
+    "arxiv:2611.34939": "2611.34939",
     "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper": "cvf:Aira_Gaussian_Splatting_for_Efficient_Satellite_Image_Photogrammetry_CVPR_2025_paper",
     "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper": "cvf:Bao_Free360_Layered_Gaussian_Splatting_for_Unbounded_360-Degree_View_Synthesis_from_CVPR_2025_paper",
     "cvf:Barda_Instant3dit_Multiview_Inpainting_for_Fast_Editing_of_3D_Objects_CVPR_2025_paper": "2412.00518",
@@ -296485,6 +297773,7 @@
     "doi:10.48550/arxiv.2608.29048": "2608.29048",
     "doi:10.48550/arxiv.2608.29106": "2608.29106",
     "doi:10.48550/arxiv.2608.29184": "2608.29184",
+    "doi:10.48550/arxiv.2608.29269": "2608.29269",
     "doi:10.48550/arxiv.2608.29346": "2608.29346",
     "doi:10.48550/arxiv.2608.29538": "2608.29538",
     "doi:10.48550/arxiv.2608.30054": "2608.30054",
@@ -296971,6 +298260,24 @@
     "doi:10.48550/arxiv.2611.32202": "2611.32202",
     "doi:10.48550/arxiv.2611.32231": "2611.32231",
     "doi:10.48550/arxiv.2611.32335": "2611.32335",
+    "doi:10.48550/arxiv.2611.32628": "2611.32628",
+    "doi:10.48550/arxiv.2611.32718": "2611.32718",
+    "doi:10.48550/arxiv.2611.32735": "2611.32735",
+    "doi:10.48550/arxiv.2611.32998": "2611.32998",
+    "doi:10.48550/arxiv.2611.33374": "2611.33374",
+    "doi:10.48550/arxiv.2611.33380": "2611.33380",
+    "doi:10.48550/arxiv.2611.33467": "2611.33467",
+    "doi:10.48550/arxiv.2611.33698": "2611.33698",
+    "doi:10.48550/arxiv.2611.33796": "2611.33796",
+    "doi:10.48550/arxiv.2611.33824": "2611.33824",
+    "doi:10.48550/arxiv.2611.33905": "2611.33905",
+    "doi:10.48550/arxiv.2611.33920": "2611.33920",
+    "doi:10.48550/arxiv.2611.34155": "2611.34155",
+    "doi:10.48550/arxiv.2611.34223": "2611.34223",
+    "doi:10.48550/arxiv.2611.34478": "2611.34478",
+    "doi:10.48550/arxiv.2611.34810": "2611.34810",
+    "doi:10.48550/arxiv.2611.34932": "2611.34932",
+    "doi:10.48550/arxiv.2611.34939": "2611.34939",
     "doi:10.5194/isprs-annals-x-2-2024-209-2024": "2404.17215",
     "doi:10.5194/isprs-annals-x-m-2-2025-215-2025": "paper:2025-a9c59fcf3c",
     "doi:10.5194/isprs-archives-xlviii-g-2025-1283-2025": "2502.13803",
