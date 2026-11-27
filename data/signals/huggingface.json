@@ -4264,6 +4264,98 @@
       "status": "not_found",
       "values": {}
     },
+    "2403.10860": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11056": {
+      "fetched_at": "2026-11-27T10:34:34.477054Z",
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11056",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11056",
+          "text": "Analytic-Splatting improves 3D Gaussian Splatting by analytically approximating Gaussian integrals within pixel windows to enhance anti-aliasing and detail preservation across resolutions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11056",
+          "text": "The 3D Gaussian Splatting (3DGS) gained its popularity recently by combining\nthe advantages of both primitive-based and volumetric 3D representations,\nresulting in improved quality and efficiency for 3D scene rendering. However,\n3DGS is not alias-free, and its rendering at varying resolutions could produce\nsevere blurring or jaggies. This is because 3DGS treats each pixel as an\nisolated, single point rather than as an area, causing insensitivity to changes\nin the footprints of pixels. Consequently, this discrete sampling scheme\ninevitably results in aliasing, owing to the restricted sampling bandwidth. In\nthis paper, we derive an analytical solution to address this issue. More\nspecifically, we use a conditioned logistic function as the analytic\napproximation of the cumulative distribution function (CDF) in a\none-dimensional Gaussian signal and calculate the Gaussian integral by\nsubtracting the CDFs. We then introduce this approximation in the\ntwo-dimensional pixel shading, and present Analytic-Splatting, which\nanalytically approximates the Gaussian integral within the 2D-pixel window area\nto better capture the intensity response of each pixel. Moreover, we use the\napproximated response of the pixel window integral area to participate in the\ntransmittance calculation of volume rendering, making Analytic-Splatting\nsensitive to the changes in pixel footprint at different resolutions.\nExperiments on various datasets validate that our approach has better\nanti-aliasing capability that gives more details and better fidelity."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11056",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11134": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11247": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11273": {
+      "fetched_at": "2026-11-27T10:34:34.477054Z",
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11273",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11273",
+          "text": "BrightDreamer is an end-to-end text-to-3D generation system that efficiently produces 3D objects represented by deformed Gaussian splats, demonstrating high speed and quality, especially with complex text prompts."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11273",
+          "text": "Text-to-3D synthesis has recently seen intriguing advances by combining the\ntext-to-image models with 3D representation methods, e.g., Gaussian Splatting\n(GS), via Score Distillation Sampling (SDS). However, a hurdle of existing\nmethods is the low efficiency, per-prompt optimization for a single 3D object.\nTherefore, it is imperative for a paradigm shift from per-prompt optimization\nto one-stage generation for any unseen text prompts, which yet remains\nchallenging. A hurdle is how to directly generate a set of millions of 3D\nGaussians to represent a 3D object. This paper presents BrightDreamer, an\nend-to-end single-stage approach that can achieve generalizable and fast (77\nms) text-to-3D generation. Our key idea is to formulate the generation process\nas estimating the 3D deformation from an anchor shape with predefined\npositions. For this, we first propose a Text-guided Shape Deformation (TSD)\nnetwork to predict the deformed shape and its new positions, used as the\ncenters (one attribute) of 3D Gaussians. To estimate the other four attributes\n(i.e., scaling, rotation, opacity, and SH coefficient), we then design a novel\nText-guided Triplane Generator (TTG) to generate a triplane representation for\na 3D object. The center of each Gaussian enables us to transform the triplane\nfeature into the four attributes. The generated 3D Gaussians can be finally\nrendered at 705 frames per second. Extensive experiments demonstrate the\nsuperiority of our method over existing methods. Also, BrightDreamer possesses\na strong semantic understanding capability even for complex text prompts. The\nproject code is available at https://vlislab22.github.io/BrightDreamer."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/lutao2021/BrightDreamer"
+        },
+        "source_url": "https://huggingface.co/papers/2403.11273",
+        "stars": 90,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
