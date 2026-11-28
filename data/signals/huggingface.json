@@ -4406,6 +4406,132 @@
       "status": "not_found",
       "values": {}
     },
+    "2403.11447": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11447",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11447",
+          "text": "A motion-aware framework enhances dynamic scene reconstruction using 3D Gaussian Splatting by integrating optical flow, improving rendering quality and efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11447",
+          "text": "3D Gaussian Splatting (3DGS) has become an emerging tool for dynamic scene\nreconstruction. However, existing methods focus mainly on extending static 3DGS\ninto a time-variant representation, while overlooking the rich motion\ninformation carried by 2D observations, thus suffering from performance\ndegradation and model redundancy. To address the above problem, we propose a\nnovel motion-aware enhancement framework for dynamic scene reconstruction,\nwhich mines useful motion cues from optical flow to improve different paradigms\nof dynamic 3DGS. Specifically, we first establish a correspondence between 3D\nGaussian movements and pixel-level flow. Then a novel flow augmentation method\nis introduced with additional insights into uncertainty and loss collaboration.\nMoreover, for the prevalent deformation-based paradigm that presents a harder\noptimization problem, a transient-aware deformation auxiliary module is\nproposed. We conduct extensive experiments on both multi-view and monocular\nscenes to verify the merits of our work. Compared with the baselines, our\nmethod shows significant superiority in both rendering quality and efficiency."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11447",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11453": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11453",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11453",
+          "text": "GauMesh combines 3D Gaussian splatting and mesh rendering to effectively model and render complex dynamic scenes by simultaneously optimizing geometry, texture, and Gaussian representation."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11453",
+          "text": "This is only a preview version of GauMesh. Recently, primitive-based\nrendering has been proven to achieve convincing results in solving the problem\nof modeling and rendering the 3D dynamic scene from 2D images. Despite this, in\nthe context of novel view synthesis, each type of primitive has its inherent\ndefects in terms of representation ability. It is difficult to exploit the mesh\nto depict the fuzzy geometry. Meanwhile, the point-based splatting (e.g. the 3D\nGaussian Splatting) method usually produces artifacts or blurry pixels in the\narea with smooth geometry and sharp textures. As a result, it is difficult,\neven not impossible, to represent the complex and dynamic scene with a single\ntype of primitive. To this end, we propose a novel approach, GauMesh, to bridge\nthe 3D Gaussian and Mesh for modeling and rendering the dynamic scenes. Given a\nsequence of tracked mesh as initialization, our goal is to simultaneously\noptimize the mesh geometry, color texture, opacity maps, a set of 3D Gaussians,\nand the deformation field. At a specific time, we perform alpha-blending on\nthe RGB and opacity values based on the merged and re-ordered z-buffers from\nmesh and 3D Gaussian rasterizations. This produces the final rendering, which\nis supervised by the ground-truth image. Experiments demonstrate that our\napproach adapts the appropriate type of primitives to represent the different\nparts of the dynamic scene and outperforms all the baseline methods in both\nquantitative and qualitative comparisons without losing render speed."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11453",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11460": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": "2026-12-05T12:52:02.962081Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11577": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11577",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11577",
+          "text": "3D Gaussian Splatting enables faster multimodal sensor calibration by replacing traditional implicit neural representations with a more efficient rendering approach."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11577",
+          "text": "Reliable multimodal sensor fusion algorithms require accurate spatiotemporal calibration. Recently, targetless calibration techniques based on implicit neural representations have proven to provide precise and robust results. Nevertheless, such methods are inherently slow to train given the high computational overhead caused by the large number of sampled points required for volume rendering. With the recent introduction of 3D Gaussian Splatting as a faster alternative to implicit representation methods, we propose to leverage this new rendering approach to achieve faster multi-sensor calibration. We introduce 3DGS-Calib, a new calibration method that relies on the speed and rendering accuracy of 3D Gaussian Splatting to achieve multimodal spatiotemporal calibration that is accurate, robust, and with a substantial speed-up compared to methods relying on implicit neural representations. We demonstrate the superiority of our proposal with experimental results on sequences from KITTI-360, a widely used driving dataset."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11577",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11589": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11589",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11589",
+          "text": "UV Gaussians model 3D human bodies by integrating mesh deformations and 2D UV-space Gaussian textures, enabling faster and higher-quality rendering of novel views and poses."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11589",
+          "text": "Reconstructing photo-realistic drivable human avatars from multi-view image\nsequences has been a popular and challenging topic in the field of computer\nvision and graphics. While existing NeRF-based methods can achieve high-quality\nnovel view rendering of human models, both training and inference processes are\ntime-consuming. Recent approaches have utilized 3D Gaussians to represent the\nhuman body, enabling faster training and rendering. However, they undermine the\nimportance of the mesh guidance and directly predict Gaussians in 3D space with\ncoarse mesh guidance. This hinders the learning procedure of the Gaussians and\ntends to produce blurry textures. Therefore, we propose UV Gaussians, which\nmodels the 3D human body by jointly learning mesh deformations and 2D UV-space\nGaussian textures. We utilize the embedding of UV map to learn Gaussian\ntextures in 2D space, leveraging the capabilities of powerful 2D networks to\nextract features. Additionally, through an independent Mesh network, we\noptimize pose-dependent geometric deformations, thereby guiding Gaussian\nrendering and significantly enhancing rendering quality. We collect and process\na new dataset of human motion, which includes multi-view images, scanned\nmodels, parametric model registration, and corresponding texture maps.\nExperimental results demonstrate that our method achieves state-of-the-art\nsynthesis of novel view and novel pose. The code and data will be made\navailable on the homepage https://alex-jyj.github.io/UV-Gaussians/ once the\npaper is accepted."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11589",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",

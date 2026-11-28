@@ -32,7 +32,7 @@
           }
         ],
         "githubRepo": "https://github.com/AIGeeksGroup/MotionMamba2.0",
-        "githubStars": 40,
+        "githubStars": 46,
         "id": "2611.29897",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -41,35 +41,7 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving. Existing autoregressive diffusion methods generate motion incrementally, but bounded attention caches limit access to distant history, while repeated denoising introduces substantial inference overhead. We present Motion Mamba 2.0, a Mamba-based root-body diffusion architecture that integrates local attention, resumable recurrent states, and persistent content memory (PCM) for long-horizon controllable motion generation. PCM transforms compressed motion history from Mamba recurrent states, together with state changes and text-conditioned features, into dynamically updated content slots accessible to local attention. To enable efficient inference, we further develop an execution scheme tailored to this architecture, combining CUDA Graph replay, fused kernels, and execution-flow simplification while preserving the canonical history update. Evaluations on retargeted HiPHI demonstrate accurate terminal control over rollouts of up to 39.52 s, while short-horizon comparisons on BONES Seed and retargeted HumanML3D show that the model also retains strong spatial control and text-motion matching. On an RTX 4090, the optimized execution reduces median complete-window latency from 1685.35 to 276.14 ms, achieving a median paired speedup of 6.138times while preserving identical outputs and committed states in the tested rollouts. Moreover, we conduct extensive real-world evaluation on the Unitree G1, demonstrating sequential text-guided action composition, expressive motion, and interactive locomotion through keyboard and mouse control.",
         "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-        "upvotes": 226
-      },
-      "publishedAt": "2026-11-22T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "WorldLeague benchmarks 13 AI systems on 60 simulated robot tasks spanning exploration, rearrangement, and adaptation, measuring progress and success to compare autonomous physical goal achievement.",
-        "authors": [
-          {
-            "name": "Xinyang Zhou"
-          },
-          {
-            "name": "Qi Li"
-          },
-          {
-            "name": "Xinchao Wang"
-          }
-        ],
-        "githubRepo": "https://github.com/xyangzhou/WorldLeague",
-        "githubStars": 22,
-        "id": "2611.30989",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://xyangzhou.github.io/WorldLeague/",
-        "publishedAt": "2026-11-23T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce WorldLeague, a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in WorldSeek, rearrange objects in WorldShape, and adapt to changes in WorldShift. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's Physical Agency Profile. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
-        "title": "WorldLeague: Benchmarking Physical Agency",
-        "upvotes": 137
+        "upvotes": 229
       },
       "publishedAt": "2026-11-22T19:00:00.000Z"
     },
@@ -124,7 +96,7 @@
           }
         ],
         "githubRepo": "https://github.com/DravenALG/Embo-Harness",
-        "githubStars": 73,
+        "githubStars": 76,
         "id": "2611.31201",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -133,7 +105,35 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Frontier multimodal models exhibit extraordinary generalization in generating robot actions from observations and instructions, enabling a new paradigm in which they serve directly as policies within closed-loop robotic harnesses. However, the design principles of such harnesses, and the capabilities underlying their strong performance, remain unclear. We present Embo-Harness, a framework for systematically studying frontier-model-as-policy harnesses. We investigate four components of the robotic agentic loop, namely, prompting, planning, action execution, and tool use, and distill six empirical findings into a practical recipe. This recipe prioritizes interfaces that exploit the model's native visual reasoning and tool-use capabilities over handcrafted plans, skills, or action priors, and identifies effective choices for action representation, chunking, reasoning effort, visual observations, short multi-action sequences, and policy refinement. On RoboLab-120, Embo-Harness achieves an 83.3\\% success rate, outperforming the strongest reported baseline by 26.2 percentage points. It also succeeds in 15 of 20 zero-shot trials across four real-world manipulation tasks. Beyond performance, controlled interventions indicate that the studied model depends more strongly on accurate spatial target estimation than on explicit low-level joint or trajectory generation. These results provide both a practical recipe for building strong frontier-model-as-policy harnesses and a clearer account of the capabilities that drive their performance.",
         "title": "Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness",
-        "upvotes": 106
+        "upvotes": 107
+      },
+      "publishedAt": "2026-11-22T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "WorldLeague benchmarks 13 AI systems on 60 simulated robot tasks spanning exploration, rearrangement, and adaptation, measuring progress and success to compare autonomous physical goal achievement.",
+        "authors": [
+          {
+            "name": "Xinyang Zhou"
+          },
+          {
+            "name": "Qi Li"
+          },
+          {
+            "name": "Xinchao Wang"
+          }
+        ],
+        "githubRepo": "https://github.com/xyangzhou/WorldLeague",
+        "githubStars": 22,
+        "id": "2611.30989",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://xyangzhou.github.io/WorldLeague/",
+        "publishedAt": "2026-11-23T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "AI systems can now operate Blender, follow instructions in complex video games, and manipulate objects with robot arms. What range of physical goals can today's AI systems achieve autonomously? Answering this question requires testing systems on tasks that demand different combinations of perception, memory, planning, and action. We introduce WorldLeague, a benchmark that compares AI systems on a common set of 60 simulated robot tasks by measuring progress toward each task's physical goal from the robot's trajectory. Robots explore scenes to gather evidence in WorldSeek, rearrange objects in WorldShape, and adapt to changes in WorldShift. Tying these goals to a single control interface limits which AI systems can be compared. In WorldLeague, vision-language models (VLMs) choose targets and motions, while vision-language-action models (VLAs) and world-action models (WAMs) use their native controls. For each of six capability dimensions, we measure how much progress a system makes toward its goals (Interactive Score) and how often it achieves them (physical success rate). Together, these measures form the system's Physical Agency Profile. Among 13 representative AI systems, Claude Fable 5.2 achieves 13 of the 60 goals and earns the highest mean Interactive Score (28.58/100). Fable leads in four dimensions, while GPT-6.1-Sol and GPT-6-Astra tie for first on rule-following tasks. Even when VLMs answer every final question correctly, they receive an Interactive Score of zero in 71.8\\% of those episodes. WorldLeague gives Embodied AI, Physical AI, and Agentic AI a shared basis for comparing what AI systems achieve autonomously, from partial progress toward a physical goal to full goal completion. Project Webpage: https://xyangzhou.github.io/WorldLeague",
+        "title": "WorldLeague: Benchmarking Physical Agency",
+        "upvotes": 86
       },
       "publishedAt": "2026-11-22T19:00:00.000Z"
     },
@@ -209,7 +209,7 @@
           }
         ],
         "githubRepo": "https://github.com/OpenDCAI/GameFactory-3A",
-        "githubStars": 1422,
+        "githubStars": 1431,
         "id": "2611.30013",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -255,6 +255,49 @@
         "upvotes": 61
       },
       "publishedAt": "2026-11-08T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "WeMM-Ecom, a family of multimodal large language models spanning dense and mixture-of-experts sizes, is trained with continued pre-training and hybrid-thinking post-training to achieve strong e-commerce and general-purpose results and is deployed in WeChat.",
+        "authors": [
+          {
+            "name": "Binhui Xie"
+          },
+          {
+            "name": "Jinmin Li"
+          },
+          {
+            "name": "Haomiao Tang"
+          },
+          {
+            "name": "Guangting Wang"
+          },
+          {
+            "name": "Song Jin"
+          },
+          {
+            "name": "Jianwei Zhu"
+          },
+          {
+            "name": "Fengyun Rao"
+          },
+          {
+            "name": "Jing Lyu"
+          }
+        ],
+        "githubRepo": "https://github.com/Tencent/WeMM-Ecom",
+        "githubStars": 79,
+        "id": "2611.30662",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://huggingface.co/collections/tencent/wemm-ecom",
+        "publishedAt": "2026-11-23T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "We present WeMM-Ecom, a family of multimodal large language models that deliver frontier e-commerce capabilities while achieving state-of-the-art general-purpose performance at their respective scales. The family spans five sizes, from a 0.8B dense model to a 35B mixture-of-experts model with 3B active parameters. Our training pipeline begins with two-stage continued pre-training that progressively raises the proportion of e-commerce data within a diverse multimodal data mixture, followed by hybrid-thinking post-training that combines on-policy distillation and reinforcement learning to support both non-thinking and thinking modes. For evaluation, we construct a comprehensive suite of 28 e-commerce benchmarks (23 in-house and five open-source) covering eight business scenarios and complement it with 64 public general-purpose benchmarks. On the e-commerce suite, WeMM-Ecom-35B-A3B surpasses substantially larger open-source flagship models, including Qwen3.8-Flash-Next, HY4, and DeepSeek-V4.1-Flash. On the general-purpose suite, every WeMM-Ecom model surpasses its similarly sized Qwen3.5 counterpart, with the lightweight variants (e.g., WeMM-Ecom-2B) showing clear advantages over leading lightweight models such as Qwen3.5-2B, MiniCPM-V-4.7-1B, and LFM3-VL-2B. Beyond benchmarks, WeMM-Ecom now powers hundreds of production use cases in WeChat, including catalog management, multimodal product search, and livestream commerce, serving billion-scale requests per day. We publicly release all model weights and detail our data curation, training recipe, and benchmark construction to facilitate future work on domain-specialized multimodal models. We have released the model weights and code to facilitate future research at https://github.com/Tencent/WeMM-Ecom.",
+        "title": "WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
+        "upvotes": 54
+      },
+      "publishedAt": "2026-11-22T19:00:00.000Z"
     },
     {
       "paper": {
@@ -304,7 +347,7 @@
           }
         ],
         "githubRepo": "https://github.com/Hugo-AGI/nanoAstra",
-        "githubStars": 33,
+        "githubStars": 35,
         "id": "2611.29338",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -313,52 +356,9 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Recently, GPT-6 Astra demonstrates strong generalization in robot control, yet limited disclosure of its training leaves open how such capabilities can be reproduced. We introduce nanoAstra, an approach to training vision-language models (VLMs) for generalizable manipulation that combines semantic action modeling with capability-preserving supervised fine-tuning (CP-SFT). nanoAstra represents robot behavior as semantic steps composed of reusable, parameterized action primitives, guided by explicit progress descriptions. Meanwhile, CP-SFT uses an explicit robot-specific system prompt to constrain manipulation outputs to a structured action space, aiming to focus adaptation on robot-specific contexts and promote specialization while minimizing interference with broader pretrained capabilities. With this formulation, we train nanoAstra on more than 5,000 hours of robot data together with general VQA data. On RoboTwin 2.0's randomized benchmark, nanoAstra-9B achieves a 17.8% zero-shot success rate, substantially outperforming advanced VLA and WAM baselines as well as similarly sized VLMs. With inference faster than the corresponding motion execution on a single H20 GPU, our model supports action-chunk-like streaming execution that overlaps inference with motion, reducing the robot's idle time from 35.0% to 6.9%.",
         "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
-        "upvotes": 56
+        "upvotes": 46
       },
       "publishedAt": "2026-11-21T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "WeMM-Ecom, a family of multimodal large language models spanning dense and mixture-of-experts sizes, is trained with continued pre-training and hybrid-thinking post-training to achieve strong e-commerce and general-purpose results and is deployed in WeChat.",
-        "authors": [
-          {
-            "name": "Binhui Xie"
-          },
-          {
-            "name": "Jinmin Li"
-          },
-          {
-            "name": "Haomiao Tang"
-          },
-          {
-            "name": "Guangting Wang"
-          },
-          {
-            "name": "Song Jin"
-          },
-          {
-            "name": "Jianwei Zhu"
-          },
-          {
-            "name": "Fengyun Rao"
-          },
-          {
-            "name": "Jing Lyu"
-          }
-        ],
-        "githubRepo": "https://github.com/Tencent/WeMM-Ecom",
-        "githubStars": 72,
-        "id": "2611.30662",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://huggingface.co/collections/tencent/wemm-ecom",
-        "publishedAt": "2026-11-23T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "We present WeMM-Ecom, a family of multimodal large language models that deliver frontier e-commerce capabilities while achieving state-of-the-art general-purpose performance at their respective scales. The family spans five sizes, from a 0.8B dense model to a 35B mixture-of-experts model with 3B active parameters. Our training pipeline begins with two-stage continued pre-training that progressively raises the proportion of e-commerce data within a diverse multimodal data mixture, followed by hybrid-thinking post-training that combines on-policy distillation and reinforcement learning to support both non-thinking and thinking modes. For evaluation, we construct a comprehensive suite of 28 e-commerce benchmarks (23 in-house and five open-source) covering eight business scenarios and complement it with 64 public general-purpose benchmarks. On the e-commerce suite, WeMM-Ecom-35B-A3B surpasses substantially larger open-source flagship models, including Qwen3.8-Flash-Next, HY4, and DeepSeek-V4.1-Flash. On the general-purpose suite, every WeMM-Ecom model surpasses its similarly sized Qwen3.5 counterpart, with the lightweight variants (e.g., WeMM-Ecom-2B) showing clear advantages over leading lightweight models such as Qwen3.5-2B, MiniCPM-V-4.7-1B, and LFM3-VL-2B. Beyond benchmarks, WeMM-Ecom now powers hundreds of production use cases in WeChat, including catalog management, multimodal product search, and livestream commerce, serving billion-scale requests per day. We publicly release all model weights and detail our data curation, training recipe, and benchmark construction to facilitate future work on domain-specialized multimodal models. We have released the model weights and code to facilitate future research at https://github.com/Tencent/WeMM-Ecom.",
-        "title": "WeMM-Ecom: Advancing Multimodal Content Understanding for WeChat E-Commerce",
-        "upvotes": 55
-      },
-      "publishedAt": "2026-11-22T19:00:00.000Z"
     },
     {
       "paper": {
@@ -593,7 +593,7 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Multimodal foundation models can play video games well when the game waits for them, but often fail when it keeps running. We find that much of this gap lies in the harness, which decides what the model sees, what it remembers, and how its outputs become actions over time. Existing harnesses such as VISTA improve the first two, yet turn each model call into at most one action, so the agent acts only as often as its model thinks. We introduce AutoPILOT, which changes the third: in each model call, the model can send a primitive action, start an open-loop macro, or write a closed-loop controller that keeps playing from the screen without further model calls until it hands control back. To evaluate agents in real-time games, we build AFK-Bench, 120 diverse browser games grouped by how they respond to inaction and playable in real time or with the clock paused. With GPT-6.1 Sol under the same budgets, AutoPILOT reaches 68.6% real-time success against 38.3% for VISTA, and on GameWorld it keeps 80.0% in real time while VISTA drops from 84.1% to 42.9%. Its gains hold across models, and it reaches VISTA's final success rate at a fifth of its API cost. Our results suggest that how a harness turns model outputs into actions over time is a central yet underexplored part of agent design, and we hope AutoPILOT and AFK-Bench will serve as a foundation for agents in a world that does not wait.",
         "title": "AutoPILOT: A Visual Agent Harness for Real-Time Gameplay",
-        "upvotes": 35
+        "upvotes": 36
       },
       "publishedAt": "2026-11-19T19:00:00.000Z"
     },
@@ -724,7 +724,7 @@
           }
         ],
         "githubRepo": "https://github.com/AMAP-ML/plan4d",
-        "githubStars": 34,
+        "githubStars": 36,
         "id": "2611.26516",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -782,7 +782,7 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Large and diverse video sources, such as egocentric human video and heterogeneous robot recordings, carry rich dynamics but come either without actions or without a shared action space. Latent action models (LAMs) can recover these dynamics, but they train their inverse- and forward-dynamics models (IDM, FDM) from scratch, trading off pixel reconstruction against latent capacity and accuracy. Pretrained video world models natively generate high-fidelity dynamics, yet represent them densely, entangled across all layers. Viewing the world model as a LAM, we show that these dynamics can be extracted with minimal changes to the model. Native LAM operates one pretrained video diffusion transformer as both IDM and FDM, with learnable dynamics registers as the only causal bridge between the two, and trains on counterfactual temporal pairs that differ in motion alone, so that the registers distill a video's dynamics into a compact native latent action. We further propose a pretraining paradigm for vision-language-action (VLA) policies, Pretraining Actions from World models (PAWlicy), in which Native LAM serves as a dynamics teacher on large-scale video; unlike world action models, it never generates video. Native latent actions outperform existing LAMs on the LARY benchmark in both action classification and control regression, and replay the same motion on new robots, in new scenes, and from human hands to robots, although no transfer objective is used in training. With a 3.8B model, PAWlicy reaches a 93.6% average success rate on RoboTwin 2.0 trained with domain-randomized demonstrations, the highest among VLAs. On RoboDojo, it is competitive on every dimension we evaluate, and its Precision, evaluated by us, is on par with the leading leaderboard entries. On real robots, it improves over the pi_0.5 baseline on both tasks. Both stages use only public data and a publicly released world model.",
         "title": "World Models as Native Latent Action Models",
-        "upvotes": 28
+        "upvotes": 29
       },
       "publishedAt": "2026-11-22T19:00:00.000Z"
     },
@@ -825,7 +825,7 @@
           }
         ],
         "githubRepo": "https://github.com/NUS-HPC-AI-Lab/LoopRes",
-        "githubStars": 84,
+        "githubStars": 90,
         "id": "2611.31094",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1543,7 +1543,7 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Beam is a sparse Mixture-of-Experts (MoE) model with 501.3B total parameters and 23.4B active parameters, specifically built and optimized for coding, reasoning, and agentic workloads. Beam delivers frontier level reasoning, while requiring 3-4x less inference compute than many models of its class. Pretrained on 23.8T diverse, curated, high-quality tokens, Beam features a 1M-token context window achieved through a novel two-stage midtraining phase, built on verifiable, correctness-anchored data. Post-training leveraged a large-scale, fully asynchronous reinforcement learning (RL) campaign across 10.5K GB300 GPUs, generating over 100M rollouts over 4 weeks of training. We believe this is one of the largest scale RL runs conducted by any open lab to date. Across our evaluation suite, capabilities continued to improve as we increased RL compute, with no sign of a plateau. Supported by deep hardware-model co-design, FP8/NVFP4 quantization, and a 1.93B-parameter speculative decoding drafter (DFlash 2), Beam maximizes serving throughput with efficient, flexible deployment. Averaged across conversation turns and harm categories, Beam refuses or pivots on 88.9% of harmful requests while complying with 81.5% of harmless requests, achieving the highest refusal/pivot rate on harmful requests among open-weight models on the Pareto frontier.",
         "title": "Beam Model Technical Report",
-        "upvotes": 22
+        "upvotes": 24
       },
       "publishedAt": "2026-11-18T19:00:00.000Z"
     },
@@ -1632,58 +1632,6 @@
     },
     {
       "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Yuxi Wang"
-          },
-          {
-            "name": "Yufei Liu"
-          },
-          {
-            "name": "Chengkai Jin"
-          },
-          {
-            "name": "Qingyue Chen"
-          },
-          {
-            "name": "Wenqi Ouyang"
-          },
-          {
-            "name": "Tianyi Wei"
-          },
-          {
-            "name": "Kerui Ren"
-          },
-          {
-            "name": "Siyuan Huang"
-          },
-          {
-            "name": "Zhiqi Shen"
-          },
-          {
-            "name": "Hongsheng Li"
-          },
-          {
-            "name": "Xingang Pan"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.30597",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://vidihand2.github.io/",
-        "publishedAt": "2026-11-23T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Learning robot manipulation from egocentric human videos requires accurate metric 3D hand motion. Recent methods leverage pretrained video diffusion model (VDM) priors to recover occluded hands directly from full-frame videos, but their appearance-based depth regression generalizes poorly to unseen cameras. In this work, we propose ViDiHand2, a geometry-driven framework that reformulates VDM-based hand depth estimation from direct regression into fine-grained geometric constraint solving. Specifically, we introduce Fine-Grained Geometric Lifting and Clip-Level Ray Fitting, which recover metric depth by enforcing geometric consistency between pixel-aligned 2D joints and the metric structure of MANO hands, while leveraging temporal observations across the clip. Since the lifting relies on these 2D joints, to improve robustness under occlusion and image truncation, we further develop Confidence-Gated Fusion to adaptively combine geometrically lifted joints with MANO predictions according to localization confidence. Finally, we enhance the VDM backbone to better capture spatial-temporal representations and produce the per-frame 2D joint and MANO predictions that both steps rely on. Extensive experiments on seven public datasets demonstrate that ViDiHand2 consistently outperforms 18 baselines, reducing in-the-wild absolute joint error by 42% and detection failures by 8.82x compared with the best baseline on each metric, while running at 57 FPS. The code is available at https://github.com/NTUYWANG103/ViDiHand.",
-        "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
-        "upvotes": 20
-      },
-      "publishedAt": "2026-11-22T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "A discrimination-aware latent-space learning framework combines task guidance with on-policy retrieval feedback to preserve discriminative evidence in multimodal embeddings and improve retrieval across modalities and tasks.",
         "authors": [
           {
@@ -1736,6 +1684,58 @@
         "upvotes": 19
       },
       "publishedAt": "2026-11-18T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Yuxi Wang"
+          },
+          {
+            "name": "Yufei Liu"
+          },
+          {
+            "name": "Chengkai Jin"
+          },
+          {
+            "name": "Qingyue Chen"
+          },
+          {
+            "name": "Wenqi Ouyang"
+          },
+          {
+            "name": "Tianyi Wei"
+          },
+          {
+            "name": "Kerui Ren"
+          },
+          {
+            "name": "Siyuan Huang"
+          },
+          {
+            "name": "Zhiqi Shen"
+          },
+          {
+            "name": "Hongsheng Li"
+          },
+          {
+            "name": "Xingang Pan"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.30597",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://vidihand2.github.io/",
+        "publishedAt": "2026-11-23T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "Learning robot manipulation from egocentric human videos requires accurate metric 3D hand motion. Recent methods leverage pretrained video diffusion model (VDM) priors to recover occluded hands directly from full-frame videos, but their appearance-based depth regression generalizes poorly to unseen cameras. In this work, we propose ViDiHand2, a geometry-driven framework that reformulates VDM-based hand depth estimation from direct regression into fine-grained geometric constraint solving. Specifically, we introduce Fine-Grained Geometric Lifting and Clip-Level Ray Fitting, which recover metric depth by enforcing geometric consistency between pixel-aligned 2D joints and the metric structure of MANO hands, while leveraging temporal observations across the clip. Since the lifting relies on these 2D joints, to improve robustness under occlusion and image truncation, we further develop Confidence-Gated Fusion to adaptively combine geometrically lifted joints with MANO predictions according to localization confidence. Finally, we enhance the VDM backbone to better capture spatial-temporal representations and produce the per-frame 2D joint and MANO predictions that both steps rely on. Extensive experiments on seven public datasets demonstrate that ViDiHand2 consistently outperforms 18 baselines, reducing in-the-wild absolute joint error by 42% and detection failures by 8.82x compared with the best baseline on each metric, while running at 57 FPS. The code is available at https://github.com/NTUYWANG103/ViDiHand.",
+        "title": "ViDiHand2: Unifying Video Diffusion Priors and Hand Geometry for 3D Hand Motion Reconstruction in the Wild",
+        "upvotes": 19
+      },
+      "publishedAt": "2026-11-22T19:00:00.000Z"
     },
     {
       "paper": {
@@ -1822,7 +1822,7 @@
           }
         ],
         "githubRepo": "https://github.com/isLinXu/open-vision-banana",
-        "githubStars": 26,
+        "githubStars": 27,
         "id": "2611.28489",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1832,34 +1832,6 @@
         "summary": "Vision Banana showed that a closed image generator, instruction-tuned to paint perception outputs as RGB images, becomes a generalist vision model. Does this carry over to open generators, and if not, what fails? We answer with Open Vision Banana (OVB), an open framework that adapts the 7B diffusion generator of Qwen-Image-2.1 into one instruction-driven model for metric depth, semantic, instance, and referring segmentation, using a single shared low-rank adapter and public data. Each task is a task contract whose RGB encoder, instruction, and decoder share one specification and are checked before training. Studying 42 externally evaluated checkpoints from two 100k-update runs, six exact weight-space merges, and eight controlled shorter runs, we find that the gap to the closed system is specific and measurable. Geometry is learned early while absolute scale is not: median-aligned NYUv2 δ_1 stays at 0.89--0.93 throughout training as unaligned δ_1 wanders between 0.11 and 0.50. The scale is not committed by a single sample: a ten-seed ensemble lifts unaligned δ_1 from 0.348 to 0.516 without retraining. Depth and 2D segmentation compete for the shared adapter, and weight merging moves along this trade-off without escaping it. Finally, lower validation flow loss comes with lower Cityscapes accuracy (Spearman ρapprox-0.9 between loss reduction and mIoU), so the loss cannot select checkpoints. We release code, contracts, training data, and all evaluation outputs.",
         "title": "Open Vision Banana: An Open Framework for Unified Visual Perception through Generation in RGB Space",
         "upvotes": 18
-      },
-      "publishedAt": "2026-11-20T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "A single diffusion transformer can unify encoding, generation, and decoding by treating them as position-aligned sequence maps distinguished by a mode token and timestep, improving image generation quality and efficiency.",
-        "authors": [
-          {
-            "name": "Hao-Yu Hsu"
-          },
-          {
-            "name": "Shenlong Wang"
-          },
-          {
-            "name": "Alexander G. Schwing"
-          }
-        ],
-        "githubRepo": "https://github.com/haoyuhsu/Unified-LDM",
-        "githubStars": 3,
-        "id": "2611.29064",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://haoyuhsu.github.io/Unified-LDM/",
-        "publishedAt": "2026-11-21T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Latent generative models typically rely on three separate networks: an encoder that tokenizes pixels, a generator that models the latent distribution, and a decoder that maps latents back to pixels. UNITE recently merged the first two into a single generative encoder trained in one stage, but its decoder remains a separate network. We ask whether this last network can be folded in too, so that one diffusion transformer encodes, generates, and decodes. Simply letting the shared backbone decode does not help. What makes it work is to cast all three modes as position-aligned sequence maps over one fully shared backbone, distinguished only by a mode token and the timestep. The resulting model, UNIFIED, is simple: one network trained from scratch in a single stage with only reconstruction and flow-matching losses, without adversarial losses or pretrained encoders (e.g., DINO). On ImageNet-1K 256x256 at matched parameters, UNIFIED improves gFID over UNITE at three sizes (~60M, ~115M, and ~215M) and reaches 2.08 with 215M parameters, the lowest among compared models under 250M parameters. On text-to-image generation, UNIFIED-B (218M) reaches a GenEval score of 0.87 at 512x512, exceeding single-stage pixel diffusion models with around one billion parameters. Full unification of latent diffusion is thus not merely feasible but beneficial.",
-        "title": "Single-Transformer Latent Diffusion",
-        "upvotes": 17
       },
       "publishedAt": "2026-11-20T19:00:00.000Z"
     },
@@ -1944,6 +1916,34 @@
     },
     {
       "paper": {
+        "ai_summary": "A single diffusion transformer can unify encoding, generation, and decoding by treating them as position-aligned sequence maps distinguished by a mode token and timestep, improving image generation quality and efficiency.",
+        "authors": [
+          {
+            "name": "Hao-Yu Hsu"
+          },
+          {
+            "name": "Shenlong Wang"
+          },
+          {
+            "name": "Alexander G. Schwing"
+          }
+        ],
+        "githubRepo": "https://github.com/haoyuhsu/Unified-LDM",
+        "githubStars": 3,
+        "id": "2611.29064",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": "https://haoyuhsu.github.io/Unified-LDM/",
+        "publishedAt": "2026-11-21T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "Latent generative models typically rely on three separate networks: an encoder that tokenizes pixels, a generator that models the latent distribution, and a decoder that maps latents back to pixels. UNITE recently merged the first two into a single generative encoder trained in one stage, but its decoder remains a separate network. We ask whether this last network can be folded in too, so that one diffusion transformer encodes, generates, and decodes. Simply letting the shared backbone decode does not help. What makes it work is to cast all three modes as position-aligned sequence maps over one fully shared backbone, distinguished only by a mode token and the timestep. The resulting model, UNIFIED, is simple: one network trained from scratch in a single stage with only reconstruction and flow-matching losses, without adversarial losses or pretrained encoders (e.g., DINO). On ImageNet-1K 256x256 at matched parameters, UNIFIED improves gFID over UNITE at three sizes (~60M, ~115M, and ~215M) and reaches 2.08 with 215M parameters, the lowest among compared models under 250M parameters. On text-to-image generation, UNIFIED-B (218M) reaches a GenEval score of 0.87 at 512x512, exceeding single-stage pixel diffusion models with around one billion parameters. Full unification of latent diffusion is thus not merely feasible but beneficial.",
+        "title": "Single-Transformer Latent Diffusion",
+        "upvotes": 16
+      },
+      "publishedAt": "2026-11-20T19:00:00.000Z"
+    },
+    {
+      "paper": {
         "ai_summary": null,
         "authors": [
           {
@@ -2021,7 +2021,7 @@
           }
         ],
         "githubRepo": "https://github.com/AetherLabsAI/GameAnything",
-        "githubStars": 36,
+        "githubStars": 41,
         "id": "2611.29238",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -2089,7 +2089,7 @@
           }
         ],
         "githubRepo": "https://github.com/uclanlp/OpenVLHarness",
-        "githubStars": 658,
+        "githubStars": 689,
         "id": "2611.31198",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -2193,37 +2193,6 @@
     },
     {
       "paper": {
-        "ai_summary": "Language models can edit their own neural network weights to improve task performance, though the resulting gains are poorly understood and sometimes matched by random search.",
-        "authors": [
-          {
-            "name": "Guoming Ling"
-          },
-          {
-            "name": "Shanshan Zhong"
-          },
-          {
-            "name": "Kaixuan Zhang"
-          },
-          {
-            "name": "Zhongzhan Huang"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.28833",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-21T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Frontier language models can now read and edit the weights of a neural network much like code and thereby improve a small model, an approach known as Weight-Space Programming (WSP). We further explore applying WSP to a language model itself, which we call Self-WSP. Specifically, Qwen3.5-0.8B reads its own weights, proposes an edit, and then continues with the edited weights as both problem solver and editor. We find many cases of genuine self-improvement. Self-edits can raise GSM8K accuracy from 11.8% to 62.2% and MATH500 accuracy from 7.0% to 32.2%, sometimes by changing only 16 parameters, and in some cases repeated self-editing keeps improving the model. A closer look, however, reveals that these gains lack interpretability. The model shows little understanding of the edits it makes, and WSP driven by random search sometimes performs comparably. Self-WSP thus holds promise as a path toward recursive self-improvement (RSI), but realizing this promise requires further exploration.",
-        "title": "Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?",
-        "upvotes": 13
-      },
-      "publishedAt": "2026-11-20T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "WorldLatent unifies 4D perception and generation in a shared multimodal latent space, enabling a single model to perform zero-shot 4D perception, coherent 4D generation, and controllable editing.",
         "authors": [
           {
@@ -2256,6 +2225,68 @@
         "summary": "Generative Pre-Training (GPT) represents a profound milestone in natural language processing, serving as the foundation for most of today's state-of-the-art large language models. By casting diverse understanding and generation problems into a shared token representation, GPT enables a single architecture and unified optimization loop to master heterogeneous tasks across massive corpora, giving rise to powerful foundation models for natural language. In contrast, 4D spatiotemporal vision lacks a common representational protocol: perception (such as depth and camera estimation) and generation are either handled by separate one-way pipelines or bolted together from unaligned single-modality spaces. In this work, we introduce WorldLatent, a framework that formulates a unified 4D latent space as a common protocol for both world perception and generation. Rather than relying on fragmented, task-specific models or stacked single-modality representations, our framework proposes a multimodal VAE architecture that compresses and fuses complex 4D visual appearance, geometry, and dynamics into a single structured latent representation. Within this formulation, perception and generation operate as complementary denoising processes over the same latent space, enabling one generative model to learn both capabilities simultaneously within a single training loop. Experiments across representative 4D benchmarks verify that our fused latent protocol achieves specialist-level zero-shot 4D perception, coherent 4D generation, and controllable editing from a single model. By demonstrating that diverse 4D tasks can be seamlessly unified under a shared representational protocol, our work provides a scalable foundation for general-purpose 4D spatial intelligence.",
         "title": "WorldLatent: A Unified 4D Latent Space for World Perception and Generation",
         "upvotes": 12
+      },
+      "publishedAt": "2026-11-22T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Language models can edit their own neural network weights to improve task performance, though the resulting gains are poorly understood and sometimes matched by random search.",
+        "authors": [
+          {
+            "name": "Guoming Ling"
+          },
+          {
+            "name": "Shanshan Zhong"
+          },
+          {
+            "name": "Kaixuan Zhang"
+          },
+          {
+            "name": "Zhongzhan Huang"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.28833",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-21T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "Frontier language models can now read and edit the weights of a neural network much like code and thereby improve a small model, an approach known as Weight-Space Programming (WSP). We further explore applying WSP to a language model itself, which we call Self-WSP. Specifically, Qwen3.5-0.8B reads its own weights, proposes an edit, and then continues with the edited weights as both problem solver and editor. We find many cases of genuine self-improvement. Self-edits can raise GSM8K accuracy from 11.8% to 62.2% and MATH500 accuracy from 7.0% to 32.2%, sometimes by changing only 16 parameters, and in some cases repeated self-editing keeps improving the model. A closer look, however, reveals that these gains lack interpretability. The model shows little understanding of the edits it makes, and WSP driven by random search sometimes performs comparably. Self-WSP thus holds promise as a path toward recursive self-improvement (RSI), but realizing this promise requires further exploration.",
+        "title": "Self-WSP: Can Language Models Improve Themselves Through Weight-Space Programming?",
+        "upvotes": 12
+      },
+      "publishedAt": "2026-11-20T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Loop-PP schedules cyclic pipeline stages for depth-recurrent models, overlapping communication and compute while preserving exact numerical equivalence, reducing memory and increasing throughput on MoE models.",
+        "authors": [
+          {
+            "name": "Yunjia Xi"
+          },
+          {
+            "name": "Jiarui Qin"
+          },
+          {
+            "name": "Di Yin"
+          },
+          {
+            "name": "Xing Sun"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.30581",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-23T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "Depth-recurrent (Looped) models raise effective depth by applying a shared stack of blocks several times. Scaling them usually requires pipeline parallelism, but commonly used interleaved 1F1B is drawn for an acyclic stage graph in which each micro-batch enters each stage once. Once that stack is split across stages, the same stage is visited several times on one micro-batch and later stages feed earlier ones: native 1F1B has no slot for the extra visit, cannot rank a first iteration against a second, and its neighbour-only send/receive order has no back edge to the first stage, so the arrangement stalls or fires out of order. We present Loop-PP, which rebuilds both the timetable and the communication for this cyclic layout. It schedules different iterations of the same stage separately, specializes a 1F1B skeleton into a globally consistent order over those visits, and emits a static instruction stream per rank that separates posting from waiting so communication overlaps local compute. Loop-PP is bit-identical to a single-stage reference. On 8B-60B MoE models, it lowers peak memory by as much as 32.8\\%, and with compute budget fixed, the best observed throughput rises by 12.7\\%.",
+        "title": "A Pipeline-Parallel System for Depth-Recurrent Models",
+        "upvotes": 11
       },
       "publishedAt": "2026-11-22T19:00:00.000Z"
     },
@@ -2484,34 +2515,61 @@
     },
     {
       "paper": {
-        "ai_summary": "Loop-PP schedules cyclic pipeline stages for depth-recurrent models, overlapping communication and compute while preserving exact numerical equivalence, reducing memory and increasing throughput on MoE models.",
+        "ai_summary": "A hierarchical memory system using a vision-language model to select keyframes and an executor to act on them improves long-horizon robotic manipulation by retaining sparse visual details.",
         "authors": [
           {
-            "name": "Yunjia Xi"
+            "name": "Guangyu Zhao"
           },
           {
-            "name": "Jiarui Qin"
+            "name": "Yongchang Zhang"
           },
           {
-            "name": "Di Yin"
+            "name": "Ruizhang Jiang"
           },
           {
-            "name": "Xing Sun"
+            "name": "Zhihong Yu"
+          },
+          {
+            "name": "Yuhao Zhang"
+          },
+          {
+            "name": "Tao Wu"
+          },
+          {
+            "name": "Qimin Zhou"
+          },
+          {
+            "name": "Kunsong Shi"
+          },
+          {
+            "name": "Haoran Wen"
+          },
+          {
+            "name": "Zeyu Zhang"
+          },
+          {
+            "name": "Yin Li"
+          },
+          {
+            "name": "Kun Zhan"
+          },
+          {
+            "name": "Yiwu Zhong"
           }
         ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.30581",
+        "githubRepo": "https://github.com/PKU-VaLuE-Lab/MomentMem",
+        "githubStars": 11,
+        "id": "2611.26745",
         "linkedSpaces": null,
         "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-23T00:00:00.000Z",
+        "projectPage": "https://pku-value-lab.github.io/MomentMem/",
+        "publishedAt": "2026-11-19T00:00:00.000Z",
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Depth-recurrent (Looped) models raise effective depth by applying a shared stack of blocks several times. Scaling them usually requires pipeline parallelism, but commonly used interleaved 1F1B is drawn for an acyclic stage graph in which each micro-batch enters each stage once. Once that stack is split across stages, the same stage is visited several times on one micro-batch and later stages feed earlier ones: native 1F1B has no slot for the extra visit, cannot rank a first iteration against a second, and its neighbour-only send/receive order has no back edge to the first stage, so the arrangement stalls or fires out of order. We present Loop-PP, which rebuilds both the timetable and the communication for this cyclic layout. It schedules different iterations of the same stage separately, specializes a 1F1B skeleton into a globally consistent order over those visits, and emits a static instruction stream per rank that separates posting from waiting so communication overlaps local compute. Loop-PP is bit-identical to a single-stage reference. On 8B-60B MoE models, it lowers peak memory by as much as 32.8\\%, and with compute budget fixed, the best observed throughput rises by 12.7\\%.",
-        "title": "A Pipeline-Parallel System for Depth-Recurrent Models",
-        "upvotes": 10
+        "summary": "Robotic manipulation often requires remembering visual information that is no longer observable, such as the original location of an object. Existing approaches typically rely on full observation histories, which become redundant over long horizons, or text summaries, which may omit precise visual details. We study visual moment memory, the ability to retain such details from key moments for subsequent manipulation. To support this study, we introduce VMBench, a suite of long-horizon manipulation tasks requiring memory of spatial locations, visual appearances, and their associations. We further propose MomentMem, a hierarchical architecture in which a VLM-based memorizer selects keyframes and an executor predicts actions conditioned on the selected memories. This separation enables us to evaluate memory selection alongside closed-loop task success and to study memorizer generalization independently of the executor. On VMBench, MomentMem achieves 49.9% average success, outperforming the strongest evaluated baseline by 31.7 percentage points. Moreover, we find that the memorizer transfers well to unseen appearances zero-shot. It can also adapt to an unseen task with only a few memory annotations, reaching 43.7% success, close to the 44.3% obtained with full memory supervision. Further experiments show competitive performance on RMBench and improvements in real-robot manipulation. These results highlight the value of retaining sparse visual evidence for memory-dependent manipulation. Our code is available at https://github.com/PKU-VaLuE-Lab/MomentMem.",
+        "title": "MomentMem: Memorizing Key Moments for Robot Manipulation",
+        "upvotes": 9
       },
-      "publishedAt": "2026-11-22T19:00:00.000Z"
+      "publishedAt": "2026-11-18T19:00:00.000Z"
     },
     {
       "paper": {
@@ -2684,89 +2742,6 @@
     },
     {
       "paper": {
-        "ai_summary": "A hierarchical memory system using a vision-language model to select keyframes and an executor to act on them improves long-horizon robotic manipulation by retaining sparse visual details.",
-        "authors": [
-          {
-            "name": "Guangyu Zhao"
-          },
-          {
-            "name": "Yongchang Zhang"
-          },
-          {
-            "name": "Ruizhang Jiang"
-          },
-          {
-            "name": "Zhihong Yu"
-          },
-          {
-            "name": "Yuhao Zhang"
-          },
-          {
-            "name": "Tao Wu"
-          },
-          {
-            "name": "Qimin Zhou"
-          },
-          {
-            "name": "Kunsong Shi"
-          },
-          {
-            "name": "Haoran Wen"
-          },
-          {
-            "name": "Zeyu Zhang"
-          },
-          {
-            "name": "Yin Li"
-          },
-          {
-            "name": "Kun Zhan"
-          },
-          {
-            "name": "Yiwu Zhong"
-          }
-        ],
-        "githubRepo": "https://github.com/PKU-VaLuE-Lab/MomentMem",
-        "githubStars": 10,
-        "id": "2611.26745",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": "https://pku-value-lab.github.io/MomentMem/",
-        "publishedAt": "2026-11-19T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Robotic manipulation often requires remembering visual information that is no longer observable, such as the original location of an object. Existing approaches typically rely on full observation histories, which become redundant over long horizons, or text summaries, which may omit precise visual details. We study visual moment memory, the ability to retain such details from key moments for subsequent manipulation. To support this study, we introduce VMBench, a suite of long-horizon manipulation tasks requiring memory of spatial locations, visual appearances, and their associations. We further propose MomentMem, a hierarchical architecture in which a VLM-based memorizer selects keyframes and an executor predicts actions conditioned on the selected memories. This separation enables us to evaluate memory selection alongside closed-loop task success and to study memorizer generalization independently of the executor. On VMBench, MomentMem achieves 49.9% average success, outperforming the strongest evaluated baseline by 31.7 percentage points. Moreover, we find that the memorizer transfers well to unseen appearances zero-shot. It can also adapt to an unseen task with only a few memory annotations, reaching 43.7% success, close to the 44.3% obtained with full memory supervision. Further experiments show competitive performance on RMBench and improvements in real-robot manipulation. These results highlight the value of retaining sparse visual evidence for memory-dependent manipulation. Our code is available at https://github.com/PKU-VaLuE-Lab/MomentMem.",
-        "title": "MomentMem: Memorizing Key Moments for Robot Manipulation",
-        "upvotes": 7
-      },
-      "publishedAt": "2026-11-18T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": "Adopting reasoning-oriented post-training recipes for knowledge tasks leads models to memorize self-generated hallucinations, especially on difficult questions, and makes them less likely to abstain from those false facts later.",
-        "authors": [
-          {
-            "name": "Anirudh Atmakuru"
-          },
-          {
-            "name": "Tanya Goyal"
-          }
-        ],
-        "githubRepo": null,
-        "githubStars": null,
-        "id": "2611.26863",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-19T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
-        "summary": "Reasoning domains have shaped the post-training recipes of frontier models even though they are trained and deployed in domains beyond math and code. In this paper, we study the consequences of directly adopting reasoning-centric training recipes, e.g., the use of outcome-based rewards for reinforcement learning (RL), injection of \"cognitive\" behaviors such as proposing and backtracking from hypotheses in reasoning chains, etc., for knowledge tasks. We hypothesize that these decisions, while useful for reasoning, inadvertently encourage models to memorize hallucinations they themselves generate in their long reasoning chains when trained on knowledge tasks. To study this, we train models with standard post-training, extract their self-generated hallucinations during RL, and track memorization throughout the rest of training. Our experiments on six open models across two model families and two architectures confirm our hypothesis. We find that models' recall of hallucinations reinforced during training increases by 4.83% on average, compared to just 0.17% for self-hallucinations that receive no training signal. In fact, models even memorize false facts that they immediately retract in their reasoning; a backtracking template inherited from reasoning-centric training that has no benefit for knowledge recall. Furthermore, we find that memorization is strongest on the hardest training questions, and rewarding a hallucination makes the model less likely to abstain from it later (by 7.23% on average). Overall, our work identifies and systematically studies a previously unexamined pathway through which models learn hallucinations during training.",
-        "title": "LLMs Memorize Their Own Hallucinations During Post-Training",
-        "upvotes": 6
-      },
-      "publishedAt": "2026-11-18T19:00:00.000Z"
-    },
-    {
-      "paper": {
         "ai_summary": "Context-Grounded Skill Internalization mitigates context misalignment in skill-removed fine-tuning by detecting and masking or rewriting unsupported skill references, preserving task success while reducing training and processing costs.",
         "authors": [
           {
@@ -2795,9 +2770,34 @@
         "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
         "summary": "Skill internalization offers a way for agents to learn useful behaviors from skills and use them without explicit guidance in context at inference time. A common approach is to generate demonstration trajectories with the skill in context and then fine-tune the same model on its own trajectories with the skill removed. However, this leads to the problem that the model may learn to reference the removed skill, which we named as context misalignment (CoMi). In this work, we first analyze agent behaviors related to CoMi under this common pipeline. Across ALFWorld, WebShop, and ARC-AGI-1, skill-removed fine-tuning consistently results in CoMi: 12.2-46.0% of test trajectories reference the removed skill. To address this problem, we develop Context-Grounded Skill Internalization (CGSI). CGSI uses a sentence detector to identify unsupported references and then masks or rewrites the selected sentences before fine-tuning. Experimental results demonstrate the effectiveness of CGSI and reveal two key findings. (i) Compared with directly fine-tuning with the skill removed, CGSI reduces CoMi at test time by 72.5-94.6% while preserving task success. (ii) Compared with existing reinforcement learning-based skill-internalization baselines, CGSI achieves comparable performance with substantially less training time. CGSI also significantly reduces processing costs compared with large-scale trajectory auditing and correction.",
         "title": "Context-Grounded Skill Internalization for Vision-Language Agents",
-        "upvotes": 5
+        "upvotes": 6
       },
       "publishedAt": "2026-11-22T19:00:00.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": "Adopting reasoning-oriented post-training recipes for knowledge tasks leads models to memorize self-generated hallucinations, especially on difficult questions, and makes them less likely to abstain from those false facts later.",
+        "authors": [
+          {
+            "name": "Anirudh Atmakuru"
+          },
+          {
+            "name": "Tanya Goyal"
+          }
+        ],
+        "githubRepo": null,
+        "githubStars": null,
+        "id": "2611.26863",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-19T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-24T00:00:00.000Z",
+        "summary": "Reasoning domains have shaped the post-training recipes of frontier models even though they are trained and deployed in domains beyond math and code. In this paper, we study the consequences of directly adopting reasoning-centric training recipes, e.g., the use of outcome-based rewards for reinforcement learning (RL), injection of \"cognitive\" behaviors such as proposing and backtracking from hypotheses in reasoning chains, etc., for knowledge tasks. We hypothesize that these decisions, while useful for reasoning, inadvertently encourage models to memorize hallucinations they themselves generate in their long reasoning chains when trained on knowledge tasks. To study this, we train models with standard post-training, extract their self-generated hallucinations during RL, and track memorization throughout the rest of training. Our experiments on six open models across two model families and two architectures confirm our hypothesis. We find that models' recall of hallucinations reinforced during training increases by 4.83% on average, compared to just 0.17% for self-hallucinations that receive no training signal. In fact, models even memorize false facts that they immediately retract in their reasoning; a backtracking template inherited from reasoning-centric training that has no benefit for knowledge recall. Furthermore, we find that memorization is strongest on the hardest training questions, and rewarding a hallucination makes the model less likely to abstain from it later (by 7.23% on average). Overall, our work identifies and systematically studies a previously unexamined pathway through which models learn hallucinations during training.",
+        "title": "LLMs Memorize Their Own Hallucinations During Post-Training",
+        "upvotes": 6
+      },
+      "publishedAt": "2026-11-18T19:00:00.000Z"
     },
     {
       "paper": {
@@ -2875,7 +2875,7 @@
           }
         ],
         "githubRepo": "https://github.com/GlanceNav/GlanceNav",
-        "githubStars": 4,
+        "githubStars": 5,
         "id": "2611.30900",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -3922,6 +3922,6 @@
       "publishedAt": "2026-11-18T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-27T10:34:14.399522+00:00",
+  "fetched_at": "2026-11-28T12:51:39.281641+00:00",
   "limit": 100
 }

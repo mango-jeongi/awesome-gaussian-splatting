@@ -81,7 +81,7 @@
           }
         ],
         "githubRepo": "https://github.com/yuhangdai427/NoPeWorld",
-        "githubStars": 64,
+        "githubStars": 73,
         "id": "2611.27963",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -90,7 +90,7 @@
         "submittedOnDailyAt": "2026-11-23T00:00:00.000Z",
         "summary": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT's hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .",
         "title": "Non-penetrating World Models",
-        "upvotes": 62
+        "upvotes": 63
       },
       "publishedAt": "2026-11-19T19:00:00.000Z"
     },
@@ -103,7 +103,7 @@
           }
         ],
         "githubRepo": "https://github.com/DiffuSpace/Clover-35B-A3B-Preview",
-        "githubStars": 168,
+        "githubStars": 170,
         "id": "2611.24636",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -186,7 +186,7 @@
           }
         ],
         "githubRepo": "https://github.com/Clare-Nie/MemOnce",
-        "githubStars": 32,
+        "githubStars": 39,
         "id": "2611.27973",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -281,7 +281,7 @@
           }
         ],
         "githubRepo": "https://github.com/cyChen2003/duopra",
-        "githubStars": 132,
+        "githubStars": 152,
         "id": "2611.25773",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -290,7 +290,7 @@
         "submittedOnDailyAt": "2026-11-23T00:00:00.000Z",
         "summary": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections. Frontend-backend agents separate initiation from execution: the frontend decides whether and what to request, while the backend determines how. Execution can be offloaded, but unsent requests cannot be executed, and incomplete ones can misdirect the backend. On Full-Duplex-Bench v3 (FDB v3), most failures of Realtime-Venus-Audio + Harness in our streaming pipeline occur before a domain tool executes. We introduce Duopra, a full-duplex interaction model that learns task execution alongside conversational control. Duopra treats the backend as a tool, accepting a self-contained natural-language request. Direct calls and backend delegation share an action interface and requirements for faithful initiation and correct execution. Its three-stage training combines protocol SFT, full-duplex RL rewarding timely and complete execution, and projector-only repair of talker conditioning after thinker updates. With the same backend, Pass@1 rises from 4.7% to 44.7%; Duopra achieves 47.7% calling tools directly (26.0% after SFT) and 49.3% with a DeepSeek backend. It improves three FDB v1.0 takeover rates over the base model. These results show that task agency can coexist with key conversational agency.",
         "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
-        "upvotes": 17
+        "upvotes": 16
       },
       "publishedAt": "2026-11-18T19:00:00.000Z"
     },
@@ -315,7 +315,7 @@
           }
         ],
         "githubRepo": "https://github.com/davidegardenal/TIPO",
-        "githubStars": 12,
+        "githubStars": 16,
         "id": "2611.27398",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -327,6 +327,40 @@
         "upvotes": 14
       },
       "publishedAt": "2026-11-20T05:03:29.000Z"
+    },
+    {
+      "paper": {
+        "ai_summary": null,
+        "authors": [
+          {
+            "name": "Yiyang Zhu"
+          },
+          {
+            "name": "Guangyuan Liu"
+          },
+          {
+            "name": "Jingdi Lei"
+          },
+          {
+            "name": "Li Wei"
+          },
+          {
+            "name": "Chau Yuen"
+          }
+        ],
+        "githubRepo": "https://github.com/YiyangZYY/CounterPoint",
+        "githubStars": 3,
+        "id": "2611.24249",
+        "linkedSpaces": null,
+        "numTotalSpaces": null,
+        "projectPage": null,
+        "publishedAt": "2026-11-18T00:00:00.000Z",
+        "submittedOnDailyAt": "2026-11-23T00:00:00.000Z",
+        "summary": "Advancing physical artificial intelligence (Physical AI) requires moving beyond static object recognition to ground how real-world mechanics (e.g., impact, friction, and force transfer) unfold over time. While multimodal aligners seek to capture these interactions by matching multi-sensor streams, prevailing architectures compress each temporal sequence into a single pooled embedding. We show that this paradigm fails on twin events: distinct physical executions recorded under identical task conditions. Collapsing the temporal dimension averages out transient cross-modal dynamics, effectively reducing physical event alignment to static scene recognition. Formally, we prove that as sequence length increases, any temporally pooled representation converges to the stationary recording condition. Consequently, as windows grow, no choice of loss function or embedding geometry can disambiguate twin events from pooled features alone. Instead, we show that physical events are uniquely identified by the event gap, namely the instantaneous, synchronous co-fluctuations across modalities that are erased by pooling and accumulate only along unpooled trajectories. To recover this signal, we introduce CounterPoint, a lightweight plug-in module that strips out each modality's temporal mean to score frame-level cross-modal agreement. Integrated across four state-of-the-art (SOTA) multimodal aligners, CounterPoint shifts representations from coarse condition matching to fine-grained physical event alignment, consistently outperforming existing temporal alignment methods.",
+        "title": "From Points to Trajectories: Rethinking Multimodal Alignment for Physical Events",
+        "upvotes": 12
+      },
+      "publishedAt": "2026-11-17T19:00:00.000Z"
     },
     {
       "paper": {
@@ -361,40 +395,6 @@
         "submittedOnDailyAt": "2026-11-23T00:00:00.000Z",
         "summary": "Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show. Given only these visible structures, can vision-language models (VLMs) infer the invisible radio field they shape? Probing true physical reasoning requires exact fields in real cities, alongside controlled interventions where a single physical factor changes. We build a label-free engine that turns any coordinate on Earth into a ray-traceable city, simulates matched single-factor counterfactuals, and computes every answer exactly. This yields RadioVISTA, a benchmark and training dataset for visual reasoning about invisible fields. Physically, a radio field is the sum of its propagation paths, yet across six continents we uncover a striking field-path dissociation: frontier VLMs accurately judge where a field is strong, but fail to tell whether a single direct or one-wall path exists. Open models fail even earlier at reading the field itself, and are systematically wrong, scoring below random guessing even when credited for any of four attempts. On unseen cities, fine-tuning brings a 9B open model close to frontier proprietary models on fields, yet neither supervised nor reinforcement fine-tuning improves path tracing. Supervising only final answers teaches models to approximate the field, yet leaves single-path geometry out of reach.",
         "title": "Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields",
-        "upvotes": 11
-      },
-      "publishedAt": "2026-11-17T19:00:00.000Z"
-    },
-    {
-      "paper": {
-        "ai_summary": null,
-        "authors": [
-          {
-            "name": "Yiyang Zhu"
-          },
-          {
-            "name": "Guangyuan Liu"
-          },
-          {
-            "name": "Jingdi Lei"
-          },
-          {
-            "name": "Li Wei"
-          },
-          {
-            "name": "Chau Yuen"
-          }
-        ],
-        "githubRepo": "https://github.com/YiyangZYY/CounterPoint",
-        "githubStars": 2,
-        "id": "2611.24249",
-        "linkedSpaces": null,
-        "numTotalSpaces": null,
-        "projectPage": null,
-        "publishedAt": "2026-11-18T00:00:00.000Z",
-        "submittedOnDailyAt": "2026-11-23T00:00:00.000Z",
-        "summary": "Advancing physical artificial intelligence (Physical AI) requires moving beyond static object recognition to ground how real-world mechanics (e.g., impact, friction, and force transfer) unfold over time. While multimodal aligners seek to capture these interactions by matching multi-sensor streams, prevailing architectures compress each temporal sequence into a single pooled embedding. We show that this paradigm fails on twin events: distinct physical executions recorded under identical task conditions. Collapsing the temporal dimension averages out transient cross-modal dynamics, effectively reducing physical event alignment to static scene recognition. Formally, we prove that as sequence length increases, any temporally pooled representation converges to the stationary recording condition. Consequently, as windows grow, no choice of loss function or embedding geometry can disambiguate twin events from pooled features alone. Instead, we show that physical events are uniquely identified by the event gap, namely the instantaneous, synchronous co-fluctuations across modalities that are erased by pooling and accumulate only along unpooled trajectories. To recover this signal, we introduce CounterPoint, a lightweight plug-in module that strips out each modality's temporal mean to score frame-level cross-modal agreement. Integrated across four state-of-the-art (SOTA) multimodal aligners, CounterPoint shifts representations from coarse condition matching to fine-grained physical event alignment, consistently outperforming existing temporal alignment methods.",
-        "title": "From Points to Trajectories: Rethinking Multimodal Alignment for Physical Events",
         "upvotes": 11
       },
       "publishedAt": "2026-11-17T19:00:00.000Z"
@@ -503,7 +503,7 @@
           }
         ],
         "githubRepo": "https://github.com/hebing-sjtu/GameWM",
-        "githubStars": 23,
+        "githubStars": 24,
         "id": "2611.19247",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -543,7 +543,7 @@
           }
         ],
         "githubRepo": "https://github.com/starsholic/AeroRSI",
-        "githubStars": 17,
+        "githubStars": 20,
         "id": "2611.24077",
         "linkedSpaces": null,
         "numTotalSpaces": null,
@@ -1037,6 +1037,6 @@
       "publishedAt": "2026-11-16T19:00:00.000Z"
     }
   ],
-  "fetched_at": "2026-11-27T10:34:14.399522+00:00",
+  "fetched_at": "2026-11-28T12:51:39.281641+00:00",
   "limit": 100
 }
