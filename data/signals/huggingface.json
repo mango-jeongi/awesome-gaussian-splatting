@@ -3988,6 +3988,550 @@
         "upvotes": 1
       }
     },
+    "2403.08498": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T22:55:12.334724Z",
+      "next_retry_at": "2026-12-02T22:55:12.334724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.08551": {
+      "fetched_at": "2026-11-25T22:55:12.334724Z",
+      "last_attempt_at": "2026-11-25T22:55:12.334724Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.08551",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08551",
+          "text": "Gaussian Splatting, a novel image representation and compression method, achieves high visual quality and fast rendering speeds with lower GPU memory usage and faster fitting time compared to existing INRs."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.08551",
+          "text": "Implicit neural representations (INRs) recently achieved great success in\nimage representation and compression, offering high visual quality and fast\nrendering speeds with 10-1000 FPS, assuming sufficient GPU resources are\navailable. However, this requirement often hinders their use on low-end devices\nwith limited memory. In response, we propose a groundbreaking paradigm of image\nrepresentation and compression by 2D Gaussian Splatting, named GaussianImage.\nWe first introduce 2D Gaussian to represent the image, where each Gaussian has\n8 parameters including position, covariance and color. Subsequently, we unveil\na novel rendering algorithm based on accumulated summation. Remarkably, our\nmethod with a minimum of 3times lower GPU memory usage and 5times faster\nfitting time not only rivals INRs (e.g., WIRE, I-NGP) in representation\nperformance, but also delivers a faster rendering speed of 1500-2000 FPS\nregardless of parameter size. Furthermore, we integrate existing vector\nquantization technique to build an image codec. Experimental results\ndemonstrate that our codec attains rate-distortion performance comparable to\ncompression-based INRs such as COIN and COIN++, while facilitating decoding\nspeeds of approximately 1000 FPS. Additionally, preliminary proof of concept\nshows that our codec surpasses COIN and COIN++ in performance when using\npartial bits-back coding."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/xinjie-q/gaussianimage"
+        },
+        "source_url": "https://huggingface.co/papers/2403.08551",
+        "stars": 418,
+        "submitted_on_daily_at": "2024-03-14T00:00:00.000Z",
+        "upvotes": 11
+      }
+    },
+    "2403.08733": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T22:55:12.334724Z",
+      "next_retry_at": "2026-12-02T22:55:12.334724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.09143": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T22:55:12.334724Z",
+      "next_retry_at": "2026-12-02T22:55:12.334724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.09413": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-25T22:55:12.334724Z",
+      "next_retry_at": "2026-12-02T22:55:12.334724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.09434": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-26T10:30:12.265929Z",
+      "next_retry_at": "2026-12-03T10:30:12.265929Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.09637": {
+      "fetched_at": "2026-11-26T10:30:12.265929Z",
+      "last_attempt_at": "2026-11-26T10:30:12.265929Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.09637",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09637",
+          "text": "GaussianGrasper uses 3D Gaussian Splatting and Efficient Feature Distillation to enable robotic manipulation based on language instructions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09637",
+          "text": "Constructing a 3D scene capable of accommodating open-ended language queries,\nis a pivotal pursuit, particularly within the domain of robotics. Such\ntechnology facilitates robots in executing object manipulations based on human\nlanguage directives. To tackle this challenge, some research efforts have been\ndedicated to the development of language-embedded implicit fields. However,\nimplicit fields (e.g. NeRF) encounter limitations due to the necessity of\nprocessing a large number of input views for reconstruction, coupled with their\ninherent inefficiencies in inference. Thus, we present the GaussianGrasper,\nwhich utilizes 3D Gaussian Splatting to explicitly represent the scene as a\ncollection of Gaussian primitives. Our approach takes a limited set of RGB-D\nviews and employs a tile-based splatting technique to create a feature field.\nIn particular, we propose an Efficient Feature Distillation (EFD) module that\nemploys contrastive learning to efficiently and accurately distill language\nembeddings derived from foundational models. With the reconstructed geometry of\nthe Gaussian field, our method enables the pre-trained grasping model to\ngenerate collision-free grasp pose candidates. Furthermore, we propose a\nnormal-guided grasp module to select the best grasp pose. Through comprehensive\nreal-world experiments, we demonstrate that GaussianGrasper enables robots to\naccurately query and grasp objects with language instructions, providing a new\nsolution for language-guided manipulation tasks. Data and codes can be\navailable at https://github.com/MrSecant/GaussianGrasper."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/mrsecant/gaussiangrasper"
+        },
+        "source_url": "https://huggingface.co/papers/2403.09637",
+        "stars": 176,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2403.09875": {
+      "fetched_at": "2026-11-26T10:30:12.265929Z",
+      "last_attempt_at": "2026-11-26T10:30:12.265929Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.09875",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09875",
+          "text": "Combining optical tactile data with monocular depth estimation improves 3D scene synthesis by providing a fused depth and uncertainty map for training."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09875",
+          "text": "In this work, we propose a novel method to supervise 3D Gaussian Splatting\n(3DGS) scenes using optical tactile sensors. Optical tactile sensors have\nbecome widespread in their use in robotics for manipulation and object\nrepresentation; however, raw optical tactile sensor data is unsuitable to\ndirectly supervise a 3DGS scene. Our representation leverages a Gaussian\nProcess Implicit Surface to implicitly represent the object, combining many\ntouches into a unified representation with uncertainty. We merge this model\nwith a monocular depth estimation network, which is aligned in a two stage\nprocess, coarsely aligning with a depth camera and then finely adjusting to\nmatch our touch data. For every training image, our method produces a\ncorresponding fused depth and uncertainty map. Utilizing this additional\ninformation, we propose a new loss function, variance weighted depth supervised\nloss, for training the 3DGS scene model. We leverage the DenseTact optical\ntactile sensor and RealSense RGB-D camera to show that combining touch and\nvision in this manner leads to quantitatively and qualitatively better results\nthan vision or touch alone in a few-view scene syntheses on opaque as well as\non reflective and transparent objects. Please see our project page at\nhttp://armlabstanford.github.io/touch-gs"
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.09875",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.09981": {
+      "fetched_at": "2026-11-26T10:30:12.265929Z",
+      "last_attempt_at": "2026-11-26T10:30:12.265929Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.09981",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": "https://lizhiqi49.github.io/MVControl",
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09981",
+          "text": "A novel architecture called Multi-view ControlNet and an efficient pipeline are introduced to achieve controllable text-to-3D generation by enhancing multi-view diffusion models with additional condition inputs and using hybrid diffusion guidance with 3D Gaussians and SuGaR representation."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.09981",
+          "text": "While text-to-3D and image-to-3D generation tasks have received considerable\nattention, one important but under-explored field between them is controllable\ntext-to-3D generation, which we mainly focus on in this work. To address this\ntask, 1) we introduce Multi-view ControlNet (MVControl), a novel neural network\narchitecture designed to enhance existing pre-trained multi-view diffusion\nmodels by integrating additional input conditions, such as edge, depth, normal,\nand scribble maps. Our innovation lies in the introduction of a conditioning\nmodule that controls the base diffusion model using both local and global\nembeddings, which are computed from the input condition images and camera\nposes. Once trained, MVControl is able to offer 3D diffusion guidance for\noptimization-based 3D generation. And, 2) we propose an efficient multi-stage\n3D generation pipeline that leverages the benefits of recent large\nreconstruction models and score distillation algorithm. Building upon our\nMVControl architecture, we employ a unique hybrid diffusion guidance method to\ndirect the optimization process. In pursuit of efficiency, we adopt 3D\nGaussians as our representation instead of the commonly used implicit\nrepresentations. We also pioneer the use of SuGaR, a hybrid representation that\nbinds Gaussians to mesh triangle faces. This approach alleviates the issue of\npoor geometry in 3D Gaussians and enables the direct sculpting of fine-grained\ngeometry on the mesh. Extensive experiments demonstrate that our method\nachieves robust generalization and enables the controllable generation of\nhigh-quality 3D content."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/WU-CVGL/MVControl-threestudio"
+        },
+        "source_url": "https://huggingface.co/papers/2403.09981",
+        "stars": 216,
+        "submitted_on_daily_at": "2024-03-18T00:00:00.000Z",
+        "upvotes": 7
+      }
+    },
+    "2403.10050": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-26T10:30:12.265929Z",
+      "next_retry_at": "2026-12-03T10:30:12.265929Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.10147": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-26T13:44:25.685724Z",
+      "next_retry_at": "2026-12-03T13:44:25.685724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.10242": {
+      "fetched_at": "2026-11-26T13:44:25.685724Z",
+      "last_attempt_at": "2026-11-26T13:44:25.685724Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.10242",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.10242",
+          "text": "A two-stage framework using orthogonal plane decomposition and epipolar attention addresses issues in 3D reconstruction from single images, improving consistency and quality."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.10242",
+          "text": "Reconstructing detailed 3D objects from single-view images remains a\nchallenging task due to the limited information available. In this paper, we\nintroduce FDGaussian, a novel two-stage framework for single-image 3D\nreconstruction. Recent methods typically utilize pre-trained 2D diffusion\nmodels to generate plausible novel views from the input image, yet they\nencounter issues with either multi-view inconsistency or lack of geometric\nfidelity. To overcome these challenges, we propose an orthogonal plane\ndecomposition mechanism to extract 3D geometric features from the 2D input,\nenabling the generation of consistent multi-view images. Moreover, we further\naccelerate the state-of-the-art Gaussian Splatting incorporating epipolar\nattention to fuse images from different viewpoints. We demonstrate that\nFDGaussian generates images with high consistency across different views and\nreconstructs high-quality 3D objects, both qualitatively and quantitatively.\nMore examples can be found at our website https://qjfeng.net/FDGaussian/."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.10242",
+        "submitted_on_daily_at": "2024-03-18T00:00:00.000Z",
+        "upvotes": 11
+      }
+    },
+    "2403.10427": {
+      "fetched_at": "2026-11-26T13:44:25.685724Z",
+      "last_attempt_at": "2026-11-26T13:44:25.685724Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.10427",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.10427",
+          "text": "Extended 3D Gaussian Splatting handles unstructured photo collections by modeling appearance and training transient Gaussians to address occluders, achieving state-of-the-art results."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.10427",
+          "text": "Implicit neural representation methods have shown impressive advancements in\nlearning 3D scenes from unstructured in-the-wild photo collections but are\nstill limited by the large computational cost of volumetric rendering. More\nrecently, 3D Gaussian Splatting emerged as a much faster alternative with\nsuperior rendering quality and training efficiency, especially for small-scale\nand object-centric scenarios. Nevertheless, this technique suffers from poor\nperformance on unstructured in-the-wild data. To tackle this, we extend over 3D\nGaussian Splatting to handle unstructured image collections. We achieve this by\nmodeling appearance to seize photometric variations in the rendered images.\nAdditionally, we introduce a new mechanism to train transient Gaussians to\nhandle the presence of scene occluders in an unsupervised manner. Experiments\non diverse photo collection scenes and multi-pass acquisition of outdoor\nlandmarks show the effectiveness of our method over prior works achieving\nstate-of-the-art results with improved efficiency."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.10427",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.10683": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-26T13:44:25.685724Z",
+      "next_retry_at": "2026-12-03T13:44:25.685724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.10814": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-26T13:44:25.685724Z",
+      "next_retry_at": "2026-12-03T13:44:25.685724Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.10860": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11056": {
+      "fetched_at": "2026-11-27T10:34:34.477054Z",
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11056",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11056",
+          "text": "Analytic-Splatting improves 3D Gaussian Splatting by analytically approximating Gaussian integrals within pixel windows to enhance anti-aliasing and detail preservation across resolutions."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11056",
+          "text": "The 3D Gaussian Splatting (3DGS) gained its popularity recently by combining\nthe advantages of both primitive-based and volumetric 3D representations,\nresulting in improved quality and efficiency for 3D scene rendering. However,\n3DGS is not alias-free, and its rendering at varying resolutions could produce\nsevere blurring or jaggies. This is because 3DGS treats each pixel as an\nisolated, single point rather than as an area, causing insensitivity to changes\nin the footprints of pixels. Consequently, this discrete sampling scheme\ninevitably results in aliasing, owing to the restricted sampling bandwidth. In\nthis paper, we derive an analytical solution to address this issue. More\nspecifically, we use a conditioned logistic function as the analytic\napproximation of the cumulative distribution function (CDF) in a\none-dimensional Gaussian signal and calculate the Gaussian integral by\nsubtracting the CDFs. We then introduce this approximation in the\ntwo-dimensional pixel shading, and present Analytic-Splatting, which\nanalytically approximates the Gaussian integral within the 2D-pixel window area\nto better capture the intensity response of each pixel. Moreover, we use the\napproximated response of the pixel window integral area to participate in the\ntransmittance calculation of volume rendering, making Analytic-Splatting\nsensitive to the changes in pixel footprint at different resolutions.\nExperiments on various datasets validate that our approach has better\nanti-aliasing capability that gives more details and better fidelity."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11056",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11134": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11247": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": "2026-12-04T10:34:34.477054Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11273": {
+      "fetched_at": "2026-11-27T10:34:34.477054Z",
+      "last_attempt_at": "2026-11-27T10:34:34.477054Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11273",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11273",
+          "text": "BrightDreamer is an end-to-end text-to-3D generation system that efficiently produces 3D objects represented by deformed Gaussian splats, demonstrating high speed and quality, especially with complex text prompts."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11273",
+          "text": "Text-to-3D synthesis has recently seen intriguing advances by combining the\ntext-to-image models with 3D representation methods, e.g., Gaussian Splatting\n(GS), via Score Distillation Sampling (SDS). However, a hurdle of existing\nmethods is the low efficiency, per-prompt optimization for a single 3D object.\nTherefore, it is imperative for a paradigm shift from per-prompt optimization\nto one-stage generation for any unseen text prompts, which yet remains\nchallenging. A hurdle is how to directly generate a set of millions of 3D\nGaussians to represent a 3D object. This paper presents BrightDreamer, an\nend-to-end single-stage approach that can achieve generalizable and fast (77\nms) text-to-3D generation. Our key idea is to formulate the generation process\nas estimating the 3D deformation from an anchor shape with predefined\npositions. For this, we first propose a Text-guided Shape Deformation (TSD)\nnetwork to predict the deformed shape and its new positions, used as the\ncenters (one attribute) of 3D Gaussians. To estimate the other four attributes\n(i.e., scaling, rotation, opacity, and SH coefficient), we then design a novel\nText-guided Triplane Generator (TTG) to generate a triplane representation for\na 3D object. The center of each Gaussian enables us to transform the triplane\nfeature into the four attributes. The generated 3D Gaussians can be finally\nrendered at 705 frames per second. Extensive experiments demonstrate the\nsuperiority of our method over existing methods. Also, BrightDreamer possesses\na strong semantic understanding capability even for complex text prompts. The\nproject code is available at https://vlislab22.github.io/BrightDreamer."
+        },
+        "repository_evidence": {
+          "ownership": "unverified",
+          "url": "https://github.com/lutao2021/BrightDreamer"
+        },
+        "source_url": "https://huggingface.co/papers/2403.11273",
+        "stars": 90,
+        "submitted_on_daily_at": null,
+        "upvotes": 1
+      }
+    },
+    "2403.11324": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T13:42:41.675942Z",
+      "next_retry_at": "2026-12-04T13:42:41.675942Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11364": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T13:42:41.675942Z",
+      "next_retry_at": "2026-12-04T13:42:41.675942Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11367": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T13:42:41.675942Z",
+      "next_retry_at": "2026-12-04T13:42:41.675942Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11396": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T13:42:41.675942Z",
+      "next_retry_at": "2026-12-04T13:42:41.675942Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11427": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-27T13:42:41.675942Z",
+      "next_retry_at": "2026-12-04T13:42:41.675942Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11447": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11447",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11447",
+          "text": "A motion-aware framework enhances dynamic scene reconstruction using 3D Gaussian Splatting by integrating optical flow, improving rendering quality and efficiency."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11447",
+          "text": "3D Gaussian Splatting (3DGS) has become an emerging tool for dynamic scene\nreconstruction. However, existing methods focus mainly on extending static 3DGS\ninto a time-variant representation, while overlooking the rich motion\ninformation carried by 2D observations, thus suffering from performance\ndegradation and model redundancy. To address the above problem, we propose a\nnovel motion-aware enhancement framework for dynamic scene reconstruction,\nwhich mines useful motion cues from optical flow to improve different paradigms\nof dynamic 3DGS. Specifically, we first establish a correspondence between 3D\nGaussian movements and pixel-level flow. Then a novel flow augmentation method\nis introduced with additional insights into uncertainty and loss collaboration.\nMoreover, for the prevalent deformation-based paradigm that presents a harder\noptimization problem, a transient-aware deformation auxiliary module is\nproposed. We conduct extensive experiments on both multi-view and monocular\nscenes to verify the merits of our work. Compared with the baselines, our\nmethod shows significant superiority in both rendering quality and efficiency."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11447",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11453": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11453",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11453",
+          "text": "GauMesh combines 3D Gaussian splatting and mesh rendering to effectively model and render complex dynamic scenes by simultaneously optimizing geometry, texture, and Gaussian representation."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11453",
+          "text": "This is only a preview version of GauMesh. Recently, primitive-based\nrendering has been proven to achieve convincing results in solving the problem\nof modeling and rendering the 3D dynamic scene from 2D images. Despite this, in\nthe context of novel view synthesis, each type of primitive has its inherent\ndefects in terms of representation ability. It is difficult to exploit the mesh\nto depict the fuzzy geometry. Meanwhile, the point-based splatting (e.g. the 3D\nGaussian Splatting) method usually produces artifacts or blurry pixels in the\narea with smooth geometry and sharp textures. As a result, it is difficult,\neven not impossible, to represent the complex and dynamic scene with a single\ntype of primitive. To this end, we propose a novel approach, GauMesh, to bridge\nthe 3D Gaussian and Mesh for modeling and rendering the dynamic scenes. Given a\nsequence of tracked mesh as initialization, our goal is to simultaneously\noptimize the mesh geometry, color texture, opacity maps, a set of 3D Gaussians,\nand the deformation field. At a specific time, we perform alpha-blending on\nthe RGB and opacity values based on the merged and re-ordered z-buffers from\nmesh and 3D Gaussian rasterizations. This produces the final rendering, which\nis supervised by the ground-truth image. Experiments demonstrate that our\napproach adapts the appropriate type of primitives to represent the different\nparts of the dynamic scene and outperforms all the baseline methods in both\nquantitative and qualitative comparisons without losing render speed."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11453",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11460": {
+      "fetched_at": null,
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": "2026-12-05T12:52:02.962081Z",
+      "provider": "huggingface",
+      "provider_id": null,
+      "response_schema_version": "1",
+      "status": "not_found",
+      "values": {}
+    },
+    "2403.11577": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11577",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11577",
+          "text": "3D Gaussian Splatting enables faster multimodal sensor calibration by replacing traditional implicit neural representations with a more efficient rendering approach."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11577",
+          "text": "Reliable multimodal sensor fusion algorithms require accurate spatiotemporal calibration. Recently, targetless calibration techniques based on implicit neural representations have proven to provide precise and robust results. Nevertheless, such methods are inherently slow to train given the high computational overhead caused by the large number of sampled points required for volume rendering. With the recent introduction of 3D Gaussian Splatting as a faster alternative to implicit representation methods, we propose to leverage this new rendering approach to achieve faster multi-sensor calibration. We introduce 3DGS-Calib, a new calibration method that relies on the speed and rendering accuracy of 3D Gaussian Splatting to achieve multimodal spatiotemporal calibration that is accurate, robust, and with a substantial speed-up compared to methods relying on implicit neural representations. We demonstrate the superiority of our proposal with experimental results on sequences from KITTI-360, a widely used driving dataset."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11577",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
+    "2403.11589": {
+      "fetched_at": "2026-11-28T12:52:02.962081Z",
+      "last_attempt_at": "2026-11-28T12:52:02.962081Z",
+      "next_retry_at": null,
+      "provider": "huggingface",
+      "provider_id": "2403.11589",
+      "response_schema_version": "hf-paper-v2",
+      "status": "ok",
+      "values": {
+        "linked_spaces": [],
+        "linked_spaces_complete": true,
+        "linked_spaces_total": 0,
+        "project_page_evidence": null,
+        "provider_ai_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11589",
+          "text": "UV Gaussians model 3D human bodies by integrating mesh deformations and 2D UV-space Gaussian textures, enabling faster and higher-quality rendering of novel views and poses."
+        },
+        "provider_summary": {
+          "provider": "huggingface",
+          "source_url": "https://huggingface.co/papers/2403.11589",
+          "text": "Reconstructing photo-realistic drivable human avatars from multi-view image\nsequences has been a popular and challenging topic in the field of computer\nvision and graphics. While existing NeRF-based methods can achieve high-quality\nnovel view rendering of human models, both training and inference processes are\ntime-consuming. Recent approaches have utilized 3D Gaussians to represent the\nhuman body, enabling faster training and rendering. However, they undermine the\nimportance of the mesh guidance and directly predict Gaussians in 3D space with\ncoarse mesh guidance. This hinders the learning procedure of the Gaussians and\ntends to produce blurry textures. Therefore, we propose UV Gaussians, which\nmodels the 3D human body by jointly learning mesh deformations and 2D UV-space\nGaussian textures. We utilize the embedding of UV map to learn Gaussian\ntextures in 2D space, leveraging the capabilities of powerful 2D networks to\nextract features. Additionally, through an independent Mesh network, we\noptimize pose-dependent geometric deformations, thereby guiding Gaussian\nrendering and significantly enhancing rendering quality. We collect and process\na new dataset of human motion, which includes multi-view images, scanned\nmodels, parametric model registration, and corresponding texture maps.\nExperimental results demonstrate that our method achieves state-of-the-art\nsynthesis of novel view and novel pose. The code and data will be made\navailable on the homepage https://alex-jyj.github.io/UV-Gaussians/ once the\npaper is accepted."
+        },
+        "repository_evidence": null,
+        "source_url": "https://huggingface.co/papers/2403.11589",
+        "submitted_on_daily_at": null,
+        "upvotes": 0
+      }
+    },
     "2611.07902": {
       "fetched_at": null,
       "last_attempt_at": "2026-11-09T16:21:42.441841Z",
